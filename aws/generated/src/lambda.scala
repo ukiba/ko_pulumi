@@ -131,6 +131,32 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.CodeSigningConfigPoliciesArgs.builder
       builder.policies(args(argsBuilder).build)
 
+  /** Manages an AWS Lambda Network Connector. A network connector provisions elastic network interfaces (ENIs) in the subnets you specify, routing outbound traffic from [Lambda MicroVMs](https://docs.aws.amazon.com/lambda/latest/dg/microvms-networking.html) through your VPC \u2014 for example to reach private resources, or to give MicroVM traffic a stable source IP by exiting through your NAT gateway. */
+  def CoreNetworkConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.lambda.CoreNetworkConnectorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.lambda.CoreNetworkConnectorArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.aws.lambda.CoreNetworkConnector(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.lambda.CoreNetworkConnectorArgs.Builder)
+    /**
+     * @param configuration Network configuration of the connector. See `configuration` Block below.
+     * @return builder
+     */
+    def configuration(args: Endofunction[com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationArgs.Builder]):
+        com.pulumi.aws.lambda.CoreNetworkConnectorArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationArgs.builder
+      builder.configuration(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.CoreNetworkConnectorTimeoutsArgs.Builder]):
+        com.pulumi.aws.lambda.CoreNetworkConnectorArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.CoreNetworkConnectorTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   /**
    * Manages an AWS Lambda Event Source Mapping. Use this resource to connect Lambda functions to event sources like Kinesis, DynamoDB, SQS, Amazon MQ, and Managed Streaming for Apache Kafka (MSK).
    * 
@@ -628,6 +654,48 @@ object lambda:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  /** Manages an AWS Lambda MicroVMs Image. Use this resource to define the base image, application code, and runtime configuration from which MicroVMs are launched. */
+  def MicrovmsImage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.lambda.MicrovmsImageArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.lambda.MicrovmsImageArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.lambda.MicrovmsImage(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.lambda.MicrovmsImageArgs.Builder)
+    /**
+     * @param codeArtifact Code artifact containing the application code and metadata for the image. See below.
+     * @return builder
+     */
+    def codeArtifact(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageCodeArtifactArgs.Builder]):
+        com.pulumi.aws.lambda.MicrovmsImageArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.MicrovmsImageCodeArtifactArgs.builder
+      builder.codeArtifact(args(argsBuilder).build)
+
+    /**
+     * @param cpuConfigurations CPU configuration for the MicroVM. See `cpuConfiguration` Block below.
+     * @return builder
+     */
+    def cpuConfigurations(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageCpuConfigurationArgs.Builder]*):
+        com.pulumi.aws.lambda.MicrovmsImageArgs.Builder =
+      def argsBuilder = com.pulumi.aws.lambda.inputs.MicrovmsImageCpuConfigurationArgs.builder
+      builder.cpuConfigurations(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageTimeoutsArgs.Builder]):
+        com.pulumi.aws.lambda.MicrovmsImageArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.MicrovmsImageTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   /** Manages an AWS Lambda permission. Use this resource to grant external sources (e.g., EventBridge Rules, SNS, or S3) permission to invoke Lambda functions. */
   def Permission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lambda.PermissionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -746,6 +814,31 @@ object lambda:
         com.pulumi.aws.lambda.inputs.CodeSigningConfigState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.CodeSigningConfigPoliciesArgs.builder
       builder.policies(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationArgs.Builder)
+    /**
+     * @param vpcEgressConfiguration Configuration for routing egress traffic through a VPC. See `vpcEgressConfiguration` Block below.
+     * @return builder
+     */
+    def vpcEgressConfiguration(args: Endofunction[com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationVpcEgressConfigurationArgs.Builder]):
+        com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationVpcEgressConfigurationArgs.builder
+      builder.vpcEgressConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.lambda.inputs.CoreNetworkConnectorState.Builder)
+    /**
+     * @param configuration Network configuration of the connector. See `configuration` Block below.
+     * @return builder
+     */
+    def configuration(args: Endofunction[com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationArgs.Builder]):
+        com.pulumi.aws.lambda.inputs.CoreNetworkConnectorState.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationArgs.builder
+      builder.configuration(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.CoreNetworkConnectorTimeoutsArgs.Builder]):
+        com.pulumi.aws.lambda.inputs.CoreNetworkConnectorState.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.CoreNetworkConnectorTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigArgs.Builder)
     /**
@@ -1088,3 +1181,27 @@ object lambda:
         com.pulumi.aws.lambda.inputs.FunctionUrlState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionUrlCorsArgs.builder
       builder.cors(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.lambda.inputs.MicrovmsImageState.Builder)
+    /**
+     * @param codeArtifact Code artifact containing the application code and metadata for the image. See below.
+     * @return builder
+     */
+    def codeArtifact(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageCodeArtifactArgs.Builder]):
+        com.pulumi.aws.lambda.inputs.MicrovmsImageState.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.MicrovmsImageCodeArtifactArgs.builder
+      builder.codeArtifact(args(argsBuilder).build)
+
+    /**
+     * @param cpuConfigurations CPU configuration for the MicroVM. See `cpuConfiguration` Block below.
+     * @return builder
+     */
+    def cpuConfigurations(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageCpuConfigurationArgs.Builder]*):
+        com.pulumi.aws.lambda.inputs.MicrovmsImageState.Builder =
+      def argsBuilder = com.pulumi.aws.lambda.inputs.MicrovmsImageCpuConfigurationArgs.builder
+      builder.cpuConfigurations(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageTimeoutsArgs.Builder]):
+        com.pulumi.aws.lambda.inputs.MicrovmsImageState.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.MicrovmsImageTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)

@@ -214,7 +214,7 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var cryptoKey = new CryptoKeyIAMBinding("cryptoKey", CryptoKeyIAMBindingArgs.builder()
-   *             .cryptoKeyId(key.id())
+   *             .cryptoKeyId(key.get("id"))
    *             .role("roles/cloudkms.cryptoKeyEncrypter")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -250,7 +250,7 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var cryptoKey = new CryptoKeyIAMBinding("cryptoKey", CryptoKeyIAMBindingArgs.builder()
-   *             .cryptoKeyId(key.id())
+   *             .cryptoKeyId(key.get("id"))
    *             .role("roles/cloudkms.cryptoKeyEncrypter")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(CryptoKeyIAMBindingConditionArgs.builder()
@@ -288,7 +288,7 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var cryptoKey = new CryptoKeyIAMMember("cryptoKey", CryptoKeyIAMMemberArgs.builder()
-   *             .cryptoKeyId(key.id())
+   *             .cryptoKeyId(key.get("id"))
    *             .role("roles/cloudkms.cryptoKeyEncrypter")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -324,7 +324,7 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var cryptoKey = new CryptoKeyIAMMember("cryptoKey", CryptoKeyIAMMemberArgs.builder()
-   *             .cryptoKeyId(key.id())
+   *             .cryptoKeyId(key.get("id"))
    *             .role("roles/cloudkms.cryptoKeyEncrypter")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(CryptoKeyIAMMemberConditionArgs.builder()
@@ -493,7 +493,7 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var cryptoKey = new CryptoKeyIAMBinding("cryptoKey", CryptoKeyIAMBindingArgs.builder()
-   *             .cryptoKeyId(key.id())
+   *             .cryptoKeyId(key.get("id"))
    *             .role("roles/cloudkms.cryptoKeyEncrypter")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -529,7 +529,7 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var cryptoKey = new CryptoKeyIAMBinding("cryptoKey", CryptoKeyIAMBindingArgs.builder()
-   *             .cryptoKeyId(key.id())
+   *             .cryptoKeyId(key.get("id"))
    *             .role("roles/cloudkms.cryptoKeyEncrypter")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(CryptoKeyIAMBindingConditionArgs.builder()
@@ -567,7 +567,7 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var cryptoKey = new CryptoKeyIAMMember("cryptoKey", CryptoKeyIAMMemberArgs.builder()
-   *             .cryptoKeyId(key.id())
+   *             .cryptoKeyId(key.get("id"))
    *             .role("roles/cloudkms.cryptoKeyEncrypter")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -603,7 +603,7 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var cryptoKey = new CryptoKeyIAMMember("cryptoKey", CryptoKeyIAMMemberArgs.builder()
-   *             .cryptoKeyId(key.id())
+   *             .cryptoKeyId(key.get("id"))
    *             .role("roles/cloudkms.cryptoKeyEncrypter")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(CryptoKeyIAMMemberConditionArgs.builder()
@@ -772,7 +772,7 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var cryptoKey = new CryptoKeyIAMBinding("cryptoKey", CryptoKeyIAMBindingArgs.builder()
-   *             .cryptoKeyId(key.id())
+   *             .cryptoKeyId(key.get("id"))
    *             .role("roles/cloudkms.cryptoKeyEncrypter")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -808,7 +808,7 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var cryptoKey = new CryptoKeyIAMBinding("cryptoKey", CryptoKeyIAMBindingArgs.builder()
-   *             .cryptoKeyId(key.id())
+   *             .cryptoKeyId(key.get("id"))
    *             .role("roles/cloudkms.cryptoKeyEncrypter")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(CryptoKeyIAMBindingConditionArgs.builder()
@@ -846,7 +846,7 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var cryptoKey = new CryptoKeyIAMMember("cryptoKey", CryptoKeyIAMMemberArgs.builder()
-   *             .cryptoKeyId(key.id())
+   *             .cryptoKeyId(key.get("id"))
    *             .role("roles/cloudkms.cryptoKeyEncrypter")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -882,7 +882,7 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var cryptoKey = new CryptoKeyIAMMember("cryptoKey", CryptoKeyIAMMemberArgs.builder()
-   *             .cryptoKeyId(key.id())
+   *             .cryptoKeyId(key.get("id"))
    *             .role("roles/cloudkms.cryptoKeyEncrypter")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(CryptoKeyIAMMemberConditionArgs.builder()
@@ -972,8 +972,8 @@ object kms:
    * Three different resources help you manage your IAM policy for Cloud Key Management Service EkmConnection. Each of these resources serves a different use case:
    * 
    * * `gcp.kms.EkmConnectionIamPolicy`: Authoritative. Sets the IAM policy for the ekmconnection and replaces any existing policy already attached.
-   * * `gcp.kms.EkmConnectionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the ekmconnection are preserved.
-   * * `gcp.kms.EkmConnectionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the ekmconnection are preserved.
+   * * `gcp.kms.EkmConnectionIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the ekmconnection are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.kms.EkmConnectionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the ekmconnection are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -981,7 +981,7 @@ object kms:
    * 
    * &gt; **Note:** `gcp.kms.EkmConnectionIamPolicy` **cannot** be used in conjunction with `gcp.kms.EkmConnectionIamBinding` and `gcp.kms.EkmConnectionIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.kms.EkmConnectionIamBinding` resources **can be** used in conjunction with `gcp.kms.EkmConnectionIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.kms.EkmConnectionIamBinding` resources **can be** used in conjunction with `gcp.kms.EkmConnectionIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1020,9 +1020,9 @@ object kms:
    *             .build());
    * 
    *         var policy = new EkmConnectionIamPolicy("policy", EkmConnectionIamPolicyArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1072,9 +1072,9 @@ object kms:
    *             .build());
    * 
    *         var policy = new EkmConnectionIamPolicy("policy", EkmConnectionIamPolicyArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1107,9 +1107,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EkmConnectionIamBinding("binding", EkmConnectionIamBindingArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1145,9 +1145,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EkmConnectionIamBinding("binding", EkmConnectionIamBindingArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(EkmConnectionIamBindingConditionArgs.builder()
@@ -1186,9 +1186,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EkmConnectionIamMember("member", EkmConnectionIamMemberArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1224,9 +1224,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EkmConnectionIamMember("member", EkmConnectionIamMemberArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(EkmConnectionIamMemberConditionArgs.builder()
@@ -1250,8 +1250,8 @@ object kms:
    * Three different resources help you manage your IAM policy for Cloud Key Management Service EkmConnection. Each of these resources serves a different use case:
    * 
    * * `gcp.kms.EkmConnectionIamPolicy`: Authoritative. Sets the IAM policy for the ekmconnection and replaces any existing policy already attached.
-   * * `gcp.kms.EkmConnectionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the ekmconnection are preserved.
-   * * `gcp.kms.EkmConnectionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the ekmconnection are preserved.
+   * * `gcp.kms.EkmConnectionIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the ekmconnection are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.kms.EkmConnectionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the ekmconnection are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1259,7 +1259,7 @@ object kms:
    * 
    * &gt; **Note:** `gcp.kms.EkmConnectionIamPolicy` **cannot** be used in conjunction with `gcp.kms.EkmConnectionIamBinding` and `gcp.kms.EkmConnectionIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.kms.EkmConnectionIamBinding` resources **can be** used in conjunction with `gcp.kms.EkmConnectionIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.kms.EkmConnectionIamBinding` resources **can be** used in conjunction with `gcp.kms.EkmConnectionIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1298,9 +1298,9 @@ object kms:
    *             .build());
    * 
    *         var policy = new EkmConnectionIamPolicy("policy", EkmConnectionIamPolicyArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1350,9 +1350,9 @@ object kms:
    *             .build());
    * 
    *         var policy = new EkmConnectionIamPolicy("policy", EkmConnectionIamPolicyArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1385,9 +1385,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EkmConnectionIamBinding("binding", EkmConnectionIamBindingArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1423,9 +1423,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EkmConnectionIamBinding("binding", EkmConnectionIamBindingArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(EkmConnectionIamBindingConditionArgs.builder()
@@ -1464,9 +1464,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EkmConnectionIamMember("member", EkmConnectionIamMemberArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1502,9 +1502,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EkmConnectionIamMember("member", EkmConnectionIamMemberArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(EkmConnectionIamMemberConditionArgs.builder()
@@ -1574,8 +1574,8 @@ object kms:
    * Three different resources help you manage your IAM policy for Cloud Key Management Service EkmConnection. Each of these resources serves a different use case:
    * 
    * * `gcp.kms.EkmConnectionIamPolicy`: Authoritative. Sets the IAM policy for the ekmconnection and replaces any existing policy already attached.
-   * * `gcp.kms.EkmConnectionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the ekmconnection are preserved.
-   * * `gcp.kms.EkmConnectionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the ekmconnection are preserved.
+   * * `gcp.kms.EkmConnectionIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the ekmconnection are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.kms.EkmConnectionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the ekmconnection are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1583,7 +1583,7 @@ object kms:
    * 
    * &gt; **Note:** `gcp.kms.EkmConnectionIamPolicy` **cannot** be used in conjunction with `gcp.kms.EkmConnectionIamBinding` and `gcp.kms.EkmConnectionIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.kms.EkmConnectionIamBinding` resources **can be** used in conjunction with `gcp.kms.EkmConnectionIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.kms.EkmConnectionIamBinding` resources **can be** used in conjunction with `gcp.kms.EkmConnectionIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1622,9 +1622,9 @@ object kms:
    *             .build());
    * 
    *         var policy = new EkmConnectionIamPolicy("policy", EkmConnectionIamPolicyArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1674,9 +1674,9 @@ object kms:
    *             .build());
    * 
    *         var policy = new EkmConnectionIamPolicy("policy", EkmConnectionIamPolicyArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1709,9 +1709,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EkmConnectionIamBinding("binding", EkmConnectionIamBindingArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1747,9 +1747,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EkmConnectionIamBinding("binding", EkmConnectionIamBindingArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(EkmConnectionIamBindingConditionArgs.builder()
@@ -1788,9 +1788,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EkmConnectionIamMember("member", EkmConnectionIamMemberArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1826,9 +1826,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EkmConnectionIamMember("member", EkmConnectionIamMemberArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(EkmConnectionIamMemberConditionArgs.builder()
@@ -1852,8 +1852,8 @@ object kms:
    * Three different resources help you manage your IAM policy for Cloud Key Management Service EkmConnection. Each of these resources serves a different use case:
    * 
    * * `gcp.kms.EkmConnectionIamPolicy`: Authoritative. Sets the IAM policy for the ekmconnection and replaces any existing policy already attached.
-   * * `gcp.kms.EkmConnectionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the ekmconnection are preserved.
-   * * `gcp.kms.EkmConnectionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the ekmconnection are preserved.
+   * * `gcp.kms.EkmConnectionIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the ekmconnection are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.kms.EkmConnectionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the ekmconnection are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1861,7 +1861,7 @@ object kms:
    * 
    * &gt; **Note:** `gcp.kms.EkmConnectionIamPolicy` **cannot** be used in conjunction with `gcp.kms.EkmConnectionIamBinding` and `gcp.kms.EkmConnectionIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.kms.EkmConnectionIamBinding` resources **can be** used in conjunction with `gcp.kms.EkmConnectionIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.kms.EkmConnectionIamBinding` resources **can be** used in conjunction with `gcp.kms.EkmConnectionIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1900,9 +1900,9 @@ object kms:
    *             .build());
    * 
    *         var policy = new EkmConnectionIamPolicy("policy", EkmConnectionIamPolicyArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1952,9 +1952,9 @@ object kms:
    *             .build());
    * 
    *         var policy = new EkmConnectionIamPolicy("policy", EkmConnectionIamPolicyArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1987,9 +1987,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EkmConnectionIamBinding("binding", EkmConnectionIamBindingArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2025,9 +2025,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EkmConnectionIamBinding("binding", EkmConnectionIamBindingArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(EkmConnectionIamBindingConditionArgs.builder()
@@ -2066,9 +2066,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EkmConnectionIamMember("member", EkmConnectionIamMemberArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2104,9 +2104,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EkmConnectionIamMember("member", EkmConnectionIamMemberArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(EkmConnectionIamMemberConditionArgs.builder()
@@ -2176,8 +2176,8 @@ object kms:
    * Three different resources help you manage your IAM policy for Cloud Key Management Service EkmConnection. Each of these resources serves a different use case:
    * 
    * * `gcp.kms.EkmConnectionIamPolicy`: Authoritative. Sets the IAM policy for the ekmconnection and replaces any existing policy already attached.
-   * * `gcp.kms.EkmConnectionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the ekmconnection are preserved.
-   * * `gcp.kms.EkmConnectionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the ekmconnection are preserved.
+   * * `gcp.kms.EkmConnectionIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the ekmconnection are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.kms.EkmConnectionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the ekmconnection are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2185,7 +2185,7 @@ object kms:
    * 
    * &gt; **Note:** `gcp.kms.EkmConnectionIamPolicy` **cannot** be used in conjunction with `gcp.kms.EkmConnectionIamBinding` and `gcp.kms.EkmConnectionIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.kms.EkmConnectionIamBinding` resources **can be** used in conjunction with `gcp.kms.EkmConnectionIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.kms.EkmConnectionIamBinding` resources **can be** used in conjunction with `gcp.kms.EkmConnectionIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2224,9 +2224,9 @@ object kms:
    *             .build());
    * 
    *         var policy = new EkmConnectionIamPolicy("policy", EkmConnectionIamPolicyArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2276,9 +2276,9 @@ object kms:
    *             .build());
    * 
    *         var policy = new EkmConnectionIamPolicy("policy", EkmConnectionIamPolicyArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2311,9 +2311,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EkmConnectionIamBinding("binding", EkmConnectionIamBindingArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2349,9 +2349,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EkmConnectionIamBinding("binding", EkmConnectionIamBindingArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(EkmConnectionIamBindingConditionArgs.builder()
@@ -2390,9 +2390,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EkmConnectionIamMember("member", EkmConnectionIamMemberArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2428,9 +2428,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EkmConnectionIamMember("member", EkmConnectionIamMemberArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(EkmConnectionIamMemberConditionArgs.builder()
@@ -2454,8 +2454,8 @@ object kms:
    * Three different resources help you manage your IAM policy for Cloud Key Management Service EkmConnection. Each of these resources serves a different use case:
    * 
    * * `gcp.kms.EkmConnectionIamPolicy`: Authoritative. Sets the IAM policy for the ekmconnection and replaces any existing policy already attached.
-   * * `gcp.kms.EkmConnectionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the ekmconnection are preserved.
-   * * `gcp.kms.EkmConnectionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the ekmconnection are preserved.
+   * * `gcp.kms.EkmConnectionIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the ekmconnection are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.kms.EkmConnectionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the ekmconnection are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2463,7 +2463,7 @@ object kms:
    * 
    * &gt; **Note:** `gcp.kms.EkmConnectionIamPolicy` **cannot** be used in conjunction with `gcp.kms.EkmConnectionIamBinding` and `gcp.kms.EkmConnectionIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.kms.EkmConnectionIamBinding` resources **can be** used in conjunction with `gcp.kms.EkmConnectionIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.kms.EkmConnectionIamBinding` resources **can be** used in conjunction with `gcp.kms.EkmConnectionIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2502,9 +2502,9 @@ object kms:
    *             .build());
    * 
    *         var policy = new EkmConnectionIamPolicy("policy", EkmConnectionIamPolicyArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2554,9 +2554,9 @@ object kms:
    *             .build());
    * 
    *         var policy = new EkmConnectionIamPolicy("policy", EkmConnectionIamPolicyArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2589,9 +2589,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EkmConnectionIamBinding("binding", EkmConnectionIamBindingArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2627,9 +2627,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EkmConnectionIamBinding("binding", EkmConnectionIamBindingArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(EkmConnectionIamBindingConditionArgs.builder()
@@ -2668,9 +2668,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EkmConnectionIamMember("member", EkmConnectionIamMemberArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2706,9 +2706,9 @@ object kms:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EkmConnectionIamMember("member", EkmConnectionIamMemberArgs.builder()
-   *             .project(example_ekmconnection.project())
-   *             .location(example_ekmconnection.location())
-   *             .name(example_ekmconnection.name())
+   *             .project(example_ekmconnection.get("project"))
+   *             .location(example_ekmconnection.get("location"))
+   *             .name(example_ekmconnection.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(EkmConnectionIamMemberConditionArgs.builder()
@@ -4248,7 +4248,7 @@ object kms:
      * 
      *     public static void stack(Context ctx) {
      *         final var foo = KmsFunctions.getCryptoKeyIamPolicy(GetCryptoKeyIamPolicyArgs.builder()
-     *             .cryptoKeyId(cryptoKey.id())
+     *             .cryptoKeyId(cryptoKey.get("id"))
      *             .build());
      * 
      *     }
@@ -4289,7 +4289,7 @@ object kms:
      * 
      *     public static void stack(Context ctx) {
      *         final var foo = KmsFunctions.getCryptoKeyIamPolicy(GetCryptoKeyIamPolicyArgs.builder()
-     *             .cryptoKeyId(cryptoKey.id())
+     *             .cryptoKeyId(cryptoKey.get("id"))
      *             .build());
      * 
      *     }

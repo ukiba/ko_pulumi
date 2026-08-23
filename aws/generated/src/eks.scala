@@ -157,6 +157,33 @@ object eks:
       builder.encryptionConfig(args(argsBuilder).build)
 
     /**
+     * @param kubeApiServerConfig Configuration block for customizing the Kubernetes API server. Detailed below.
+     * @return builder
+     */
+    def kubeApiServerConfig(args: Endofunction[com.pulumi.aws.eks.inputs.ClusterKubeApiServerConfigArgs.Builder]):
+        com.pulumi.aws.eks.ClusterArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.ClusterKubeApiServerConfigArgs.builder
+      builder.kubeApiServerConfig(args(argsBuilder).build)
+
+    /**
+     * @param kubeControllerManagerConfig Configuration block for customizing the Kubernetes controller manager. Detailed below.
+     * @return builder
+     */
+    def kubeControllerManagerConfig(args: Endofunction[com.pulumi.aws.eks.inputs.ClusterKubeControllerManagerConfigArgs.Builder]):
+        com.pulumi.aws.eks.ClusterArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.ClusterKubeControllerManagerConfigArgs.builder
+      builder.kubeControllerManagerConfig(args(argsBuilder).build)
+
+    /**
+     * @param kubeSchedulerConfig Configuration block for customizing the Kubernetes scheduler. Detailed below.
+     * @return builder
+     */
+    def kubeSchedulerConfig(args: Endofunction[com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigArgs.Builder]):
+        com.pulumi.aws.eks.ClusterArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigArgs.builder
+      builder.kubeSchedulerConfig(args(argsBuilder).build)
+
+    /**
      * @param kubernetesNetworkConfig Configuration block with kubernetes network configuration for the cluster. Detailed below. If removed, the provider will only perform drift detection if a configuration value is provided.
      * @return builder
      */
@@ -628,6 +655,58 @@ object eks:
       def argsBuilder = com.pulumi.aws.eks.inputs.ClusterIdentityOidcArgs.builder
       builder.oidcs(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.eks.inputs.ClusterKubeApiServerConfigArgs.Builder)
+    /**
+     * @param serviceNodePortRange Configuration block for the port range available for NodePort services. Detailed below.
+     * @return builder
+     */
+    def serviceNodePortRange(args: Endofunction[com.pulumi.aws.eks.inputs.ClusterKubeApiServerConfigServiceNodePortRangeArgs.Builder]):
+        com.pulumi.aws.eks.inputs.ClusterKubeApiServerConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.ClusterKubeApiServerConfigServiceNodePortRangeArgs.builder
+      builder.serviceNodePortRange(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.eks.inputs.ClusterKubeControllerManagerConfigArgs.Builder)
+    /**
+     * @param horizontalPodAutoscalerControllerConfig Configuration block for the horizontal pod autoscaler controller. Detailed below.
+     * 
+     * &gt; **NOTE:** The `horizontalPodAutoscalerControllerConfig` requires a Provisioned Control Plane scaling tier (e.g., `tier-xl` or higher). It cannot be configured on clusters using the `standard` tier.
+     * @return builder
+     */
+    def horizontalPodAutoscalerControllerConfig(args: Endofunction[com.pulumi.aws.eks.inputs.ClusterKubeControllerManagerConfigHorizontalPodAutoscalerControllerConfigArgs.Builder]):
+        com.pulumi.aws.eks.inputs.ClusterKubeControllerManagerConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.ClusterKubeControllerManagerConfigHorizontalPodAutoscalerControllerConfigArgs.builder
+      builder.horizontalPodAutoscalerControllerConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigArgs.Builder)
+    /**
+     * @param nodeResourcesFit Configuration block for the NodeResourcesFit scheduler plugin. Detailed below.
+     * @return builder
+     */
+    def nodeResourcesFit(args: Endofunction[com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigNodeResourcesFitArgs.Builder]):
+        com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigNodeResourcesFitArgs.builder
+      builder.nodeResourcesFit(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigNodeResourcesFitArgs.Builder)
+    /**
+     * @param scoringStrategy Configuration block for the scoring strategy used to rank nodes during scheduling. Detailed below.
+     * @return builder
+     */
+    def scoringStrategy(args: Endofunction[com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigNodeResourcesFitScoringStrategyArgs.Builder]):
+        com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigNodeResourcesFitArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigNodeResourcesFitScoringStrategyArgs.builder
+      builder.scoringStrategy(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigNodeResourcesFitScoringStrategyArgs.Builder)
+    /**
+     * @param resources List of resource weight configuration blocks for scoring nodes. Detailed below.
+     * @return builder
+     */
+    def resources(args: Endofunction[com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigNodeResourcesFitScoringStrategyResourceArgs.Builder]*):
+        com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigNodeResourcesFitScoringStrategyArgs.Builder =
+      def argsBuilder = com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigNodeResourcesFitScoringStrategyResourceArgs.builder
+      builder.resources(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.eks.inputs.ClusterKubernetesNetworkConfigArgs.Builder)
     /**
      * @param elasticLoadBalancing Configuration block with elastic load balancing configuration for the cluster. Detailed below.
@@ -732,6 +811,33 @@ object eks:
         com.pulumi.aws.eks.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.aws.eks.inputs.ClusterIdentityArgs.builder
       builder.identities(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param kubeApiServerConfig Configuration block for customizing the Kubernetes API server. Detailed below.
+     * @return builder
+     */
+    def kubeApiServerConfig(args: Endofunction[com.pulumi.aws.eks.inputs.ClusterKubeApiServerConfigArgs.Builder]):
+        com.pulumi.aws.eks.inputs.ClusterState.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.ClusterKubeApiServerConfigArgs.builder
+      builder.kubeApiServerConfig(args(argsBuilder).build)
+
+    /**
+     * @param kubeControllerManagerConfig Configuration block for customizing the Kubernetes controller manager. Detailed below.
+     * @return builder
+     */
+    def kubeControllerManagerConfig(args: Endofunction[com.pulumi.aws.eks.inputs.ClusterKubeControllerManagerConfigArgs.Builder]):
+        com.pulumi.aws.eks.inputs.ClusterState.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.ClusterKubeControllerManagerConfigArgs.builder
+      builder.kubeControllerManagerConfig(args(argsBuilder).build)
+
+    /**
+     * @param kubeSchedulerConfig Configuration block for customizing the Kubernetes scheduler. Detailed below.
+     * @return builder
+     */
+    def kubeSchedulerConfig(args: Endofunction[com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigArgs.Builder]):
+        com.pulumi.aws.eks.inputs.ClusterState.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigArgs.builder
+      builder.kubeSchedulerConfig(args(argsBuilder).build)
 
     /**
      * @param kubernetesNetworkConfig Configuration block with kubernetes network configuration for the cluster. Detailed below. If removed, the provider will only perform drift detection if a configuration value is provided.

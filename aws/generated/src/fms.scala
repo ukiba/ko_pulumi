@@ -94,7 +94,7 @@ object fms:
 
   extension (builder: com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataArgs.Builder)
     /**
-     * @param policyOption Contains the Network Firewall firewall policy options to configure a centralized deployment model. See the `policyOption` block.
+     * @param policyOption Network Firewall firewall policy options to configure a centralized deployment model. See the `policyOption` block.
      * @return builder
      */
     def policyOption(args: Endofunction[com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionArgs.Builder]):

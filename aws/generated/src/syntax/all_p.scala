@@ -112,6 +112,7 @@ export ko_pulumi.aws.arcregionswitch.rdsCreateCrossRegionReadReplicaConfigs
 export ko_pulumi.aws.arcregionswitch.rdsPromoteReadReplicaConfigs
 export ko_pulumi.aws.arcregionswitch.recordSets
 export ko_pulumi.aws.arcregionswitch.regionAndRoutingControls
+export ko_pulumi.aws.arcregionswitch.regionEventSourceMappings
 export ko_pulumi.aws.arcregionswitch.regionSwitchPlanConfigs
 export ko_pulumi.aws.arcregionswitch.reportConfigurations
 export ko_pulumi.aws.arcregionswitch.reportOutputs
@@ -212,11 +213,13 @@ export ko_pulumi.aws.bedrock.requestHeaderConfiguration
 export ko_pulumi.aws.bedrock.resource
 export ko_pulumi.aws.bedrock.retrieval
 export ko_pulumi.aws.bedrock.retrievalConfig
+export ko_pulumi.aws.bedrock.retrievalConfigs
 export ko_pulumi.aws.bedrock.retrievalConfiguration
 export ko_pulumi.aws.bedrock.retrieveAndGenerateConfig
 export ko_pulumi.aws.bedrock.retrieveAndGenerateSourceConfig
 export ko_pulumi.aws.bedrock.retrieveConfig
 export ko_pulumi.aws.bedrock.retrieveSourceConfig
+export ko_pulumi.aws.bedrock.routeToTarget
 export ko_pulumi.aws.bedrock.routingConfigurations
 export ko_pulumi.aws.bedrock.rule
 export ko_pulumi.aws.bedrock.s3
@@ -249,6 +252,8 @@ export ko_pulumi.aws.bedrock.slidingWindows
 export ko_pulumi.aws.bedrock.smithyModel
 export ko_pulumi.aws.bedrock.sourceConfiguration
 export ko_pulumi.aws.bedrock.sqlKnowledgeBaseConfiguration
+export ko_pulumi.aws.bedrock.staticOverride
+export ko_pulumi.aws.bedrock.staticRoute
 export ko_pulumi.aws.bedrock.storage
 export ko_pulumi.aws.bedrock.storageConfiguration
 export ko_pulumi.aws.bedrock.storageLocations
@@ -274,6 +279,7 @@ export ko_pulumi.aws.bedrock.toolSpec
 export ko_pulumi.aws.bedrock.tools
 export ko_pulumi.aws.bedrock.topicPolicyConfig
 export ko_pulumi.aws.bedrock.topicsConfigs
+export ko_pulumi.aws.bedrock.trafficSplits
 export ko_pulumi.aws.bedrock.trainingDataConfig
 export ko_pulumi.aws.bedrock.trainingMetrics
 export ko_pulumi.aws.bedrock.transformation
@@ -605,7 +611,9 @@ export ko_pulumi.aws.eks.remoteNodeNetworks
 export ko_pulumi.aws.eks.remotePodNetworks
 export ko_pulumi.aws.eks.resources
 export ko_pulumi.aws.eks.scalingConfig
+export ko_pulumi.aws.eks.scoringStrategy
 export ko_pulumi.aws.eks.selectors
+export ko_pulumi.aws.eks.serviceNodePortRange
 export ko_pulumi.aws.eks.storageConfig
 export ko_pulumi.aws.eks.taints
 export ko_pulumi.aws.eks.timeouts
@@ -901,13 +909,18 @@ export ko_pulumi.aws.macie2.tagCriterion
 export ko_pulumi.aws.macie2.tagScopeTerm
 export ko_pulumi.aws.macie2.tagValues
 export ko_pulumi.aws.mailmanager.policyStatements
+export ko_pulumi.aws.mailmanager.privateNetworkConfiguration
+export ko_pulumi.aws.mailmanager.publicNetworkConfiguration
 export ko_pulumi.aws.mailmanager.publishToSns
 export ko_pulumi.aws.mailmanager.relay
 export ko_pulumi.aws.mailmanager.replaceRecipient
 export ko_pulumi.aws.mailmanager.rules
 export ko_pulumi.aws.mailmanager.send
 export ko_pulumi.aws.mailmanager.stringExpression
+export ko_pulumi.aws.mailmanager.timeouts
+export ko_pulumi.aws.mailmanager.tlsAuthConfiguration
 export ko_pulumi.aws.mailmanager.tlsExpression
+export ko_pulumi.aws.mailmanager.trustStore
 export ko_pulumi.aws.mediaconvert.reservationPlanSettings
 export ko_pulumi.aws.medialive.passThroughSettings
 export ko_pulumi.aws.medialive.rawSettings
@@ -1120,8 +1133,11 @@ export ko_pulumi.aws.rekognition.regionsOfInterests
 export ko_pulumi.aws.rekognition.s3Destination
 export ko_pulumi.aws.rekognition.settings
 export ko_pulumi.aws.rekognition.timeouts
+export ko_pulumi.aws.resiliencehub.permissionModel
 export ko_pulumi.aws.resiliencehub.policy
 export ko_pulumi.aws.resiliencehub.region
+export ko_pulumi.aws.resiliencehub.resourceConfiguration
+export ko_pulumi.aws.resiliencehub.resourceTags
 export ko_pulumi.aws.resiliencehub.software
 export ko_pulumi.aws.resiliencehub.timeouts
 export ko_pulumi.aws.resourceexplorer.timeouts
@@ -1460,6 +1476,7 @@ export ko_pulumi.aws.wafregional.sizeConstraints
 export ko_pulumi.aws.wafregional.sqlInjectionMatchTuples
 export ko_pulumi.aws.wafv2.passwordField
 export ko_pulumi.aws.wafv2.phoneNumberFields
+export ko_pulumi.aws.wafv2.preParseTextTransformations
 export ko_pulumi.aws.wafv2.queryArgument
 export ko_pulumi.aws.wafv2.queryString
 export ko_pulumi.aws.wafv2.rateBasedStatement

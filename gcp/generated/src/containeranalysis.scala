@@ -77,8 +77,8 @@ object containeranalysis:
    * Three different resources help you manage your IAM policy for Container Registry Note. Each of these resources serves a different use case:
    * 
    * * `gcp.containeranalysis.NoteIamPolicy`: Authoritative. Sets the IAM policy for the note and replaces any existing policy already attached.
-   * * `gcp.containeranalysis.NoteIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the note are preserved.
-   * * `gcp.containeranalysis.NoteIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the note are preserved.
+   * * `gcp.containeranalysis.NoteIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the note are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.containeranalysis.NoteIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the note are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -123,8 +123,8 @@ object containeranalysis:
    *             .build());
    * 
    *         var policy = new NoteIamPolicy("policy", NoteIamPolicyArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -158,8 +158,8 @@ object containeranalysis:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NoteIamBinding("binding", NoteIamBindingArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .role("roles/containeranalysis.notes.occurrences.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -194,8 +194,8 @@ object containeranalysis:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NoteIamMember("member", NoteIamMemberArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .role("roles/containeranalysis.notes.occurrences.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -214,8 +214,8 @@ object containeranalysis:
    * Three different resources help you manage your IAM policy for Container Registry Note. Each of these resources serves a different use case:
    * 
    * * `gcp.containeranalysis.NoteIamPolicy`: Authoritative. Sets the IAM policy for the note and replaces any existing policy already attached.
-   * * `gcp.containeranalysis.NoteIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the note are preserved.
-   * * `gcp.containeranalysis.NoteIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the note are preserved.
+   * * `gcp.containeranalysis.NoteIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the note are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.containeranalysis.NoteIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the note are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -260,8 +260,8 @@ object containeranalysis:
    *             .build());
    * 
    *         var policy = new NoteIamPolicy("policy", NoteIamPolicyArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -295,8 +295,8 @@ object containeranalysis:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NoteIamBinding("binding", NoteIamBindingArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .role("roles/containeranalysis.notes.occurrences.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -331,8 +331,8 @@ object containeranalysis:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NoteIamMember("member", NoteIamMemberArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .role("roles/containeranalysis.notes.occurrences.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -389,8 +389,8 @@ object containeranalysis:
    * Three different resources help you manage your IAM policy for Container Registry Note. Each of these resources serves a different use case:
    * 
    * * `gcp.containeranalysis.NoteIamPolicy`: Authoritative. Sets the IAM policy for the note and replaces any existing policy already attached.
-   * * `gcp.containeranalysis.NoteIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the note are preserved.
-   * * `gcp.containeranalysis.NoteIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the note are preserved.
+   * * `gcp.containeranalysis.NoteIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the note are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.containeranalysis.NoteIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the note are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -435,8 +435,8 @@ object containeranalysis:
    *             .build());
    * 
    *         var policy = new NoteIamPolicy("policy", NoteIamPolicyArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -470,8 +470,8 @@ object containeranalysis:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NoteIamBinding("binding", NoteIamBindingArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .role("roles/containeranalysis.notes.occurrences.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -506,8 +506,8 @@ object containeranalysis:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NoteIamMember("member", NoteIamMemberArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .role("roles/containeranalysis.notes.occurrences.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -526,8 +526,8 @@ object containeranalysis:
    * Three different resources help you manage your IAM policy for Container Registry Note. Each of these resources serves a different use case:
    * 
    * * `gcp.containeranalysis.NoteIamPolicy`: Authoritative. Sets the IAM policy for the note and replaces any existing policy already attached.
-   * * `gcp.containeranalysis.NoteIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the note are preserved.
-   * * `gcp.containeranalysis.NoteIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the note are preserved.
+   * * `gcp.containeranalysis.NoteIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the note are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.containeranalysis.NoteIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the note are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -572,8 +572,8 @@ object containeranalysis:
    *             .build());
    * 
    *         var policy = new NoteIamPolicy("policy", NoteIamPolicyArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -607,8 +607,8 @@ object containeranalysis:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NoteIamBinding("binding", NoteIamBindingArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .role("roles/containeranalysis.notes.occurrences.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -643,8 +643,8 @@ object containeranalysis:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NoteIamMember("member", NoteIamMemberArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .role("roles/containeranalysis.notes.occurrences.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -701,8 +701,8 @@ object containeranalysis:
    * Three different resources help you manage your IAM policy for Container Registry Note. Each of these resources serves a different use case:
    * 
    * * `gcp.containeranalysis.NoteIamPolicy`: Authoritative. Sets the IAM policy for the note and replaces any existing policy already attached.
-   * * `gcp.containeranalysis.NoteIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the note are preserved.
-   * * `gcp.containeranalysis.NoteIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the note are preserved.
+   * * `gcp.containeranalysis.NoteIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the note are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.containeranalysis.NoteIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the note are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -747,8 +747,8 @@ object containeranalysis:
    *             .build());
    * 
    *         var policy = new NoteIamPolicy("policy", NoteIamPolicyArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -782,8 +782,8 @@ object containeranalysis:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NoteIamBinding("binding", NoteIamBindingArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .role("roles/containeranalysis.notes.occurrences.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -818,8 +818,8 @@ object containeranalysis:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NoteIamMember("member", NoteIamMemberArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .role("roles/containeranalysis.notes.occurrences.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -838,8 +838,8 @@ object containeranalysis:
    * Three different resources help you manage your IAM policy for Container Registry Note. Each of these resources serves a different use case:
    * 
    * * `gcp.containeranalysis.NoteIamPolicy`: Authoritative. Sets the IAM policy for the note and replaces any existing policy already attached.
-   * * `gcp.containeranalysis.NoteIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the note are preserved.
-   * * `gcp.containeranalysis.NoteIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the note are preserved.
+   * * `gcp.containeranalysis.NoteIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the note are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.containeranalysis.NoteIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the note are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -884,8 +884,8 @@ object containeranalysis:
    *             .build());
    * 
    *         var policy = new NoteIamPolicy("policy", NoteIamPolicyArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -919,8 +919,8 @@ object containeranalysis:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NoteIamBinding("binding", NoteIamBindingArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .role("roles/containeranalysis.notes.occurrences.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -955,8 +955,8 @@ object containeranalysis:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NoteIamMember("member", NoteIamMemberArgs.builder()
-   *             .project(note.project())
-   *             .note(note.name())
+   *             .project(note.get("project"))
+   *             .note(note.get("name"))
    *             .role("roles/containeranalysis.notes.occurrences.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

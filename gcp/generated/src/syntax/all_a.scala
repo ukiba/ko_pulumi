@@ -18,6 +18,16 @@ export ko_pulumi.gcp.accesscontextmanager.egressFrom
 export ko_pulumi.gcp.accesscontextmanager.egressPolicies
 export ko_pulumi.gcp.accesscontextmanager.egressTo
 export ko_pulumi.gcp.accesscontextmanager.expr
+export ko_pulumi.gcp.agenticapplications.airQuality
+export ko_pulumi.gcp.agenticapplications.artifactExamples
+export ko_pulumi.gcp.agenticapplications.artifactsConfig
+export ko_pulumi.gcp.agenticapplications.bigqueryResource
+export ko_pulumi.gcp.agenticapplications.bureauLaborStatistics
+export ko_pulumi.gcp.agenticapplications.coindesk
+export ko_pulumi.gcp.agenticapplications.columns
+export ko_pulumi.gcp.agenticapplications.documentExamples
+export ko_pulumi.gcp.agenticapplications.documentGenerationOptions
+export ko_pulumi.gcp.agenticapplications.externalDataSources
 export ko_pulumi.gcp.agentidentity.apiKey
 export ko_pulumi.gcp.agentidentity.authProviderTypeParams
 export ko_pulumi.gcp.agentregistry.agentSpec
@@ -156,6 +166,7 @@ export ko_pulumi.gcp.bigquery.copy
 export ko_pulumi.gcp.bigquery.credential
 export ko_pulumi.gcp.bigquery.csvOptions
 export ko_pulumi.gcp.bigquery.dataBoostIsolationReadOnly
+export ko_pulumi.gcp.bigquery.dataGovernanceTag
 export ko_pulumi.gcp.bigquery.dataMaskingPolicy
 export ko_pulumi.gcp.bigquery.dataset
 export ko_pulumi.gcp.bigquery.defaultDataset
@@ -757,6 +768,7 @@ export ko_pulumi.gcp.dataplex.executionSpec
 export ko_pulumi.gcp.dataplex.executionStatuses
 export ko_pulumi.gcp.dataproc.accelerators
 export ko_pulumi.gcp.dataproc.approximateUsages
+export ko_pulumi.gcp.dataproc.attachedDiskConfigs
 export ko_pulumi.gcp.dataproc.authenticationConfig
 export ko_pulumi.gcp.dataproc.autoscaling
 export ko_pulumi.gcp.dataproc.autoscalingConfig
@@ -923,7 +935,9 @@ export ko_pulumi.gcp.firebase.dns
 export ko_pulumi.gcp.firebase.errorStatuses
 export ko_pulumi.gcp.firebase.errors
 export ko_pulumi.gcp.firestore.cmekConfig
+export ko_pulumi.gcp.firestore.collectionGroupScope
 export ko_pulumi.gcp.firestore.dailyRecurrence
+export ko_pulumi.gcp.firestore.databaseScope
 export ko_pulumi.gcp.folder.allow
 export ko_pulumi.gcp.folder.auditLogConfigs
 export ko_pulumi.gcp.folder.booleanPolicy

@@ -38,8 +38,8 @@ object binaryauthorization:
    * Three different resources help you manage your IAM policy for Binary Authorization Attestor. Each of these resources serves a different use case:
    * 
    * * `gcp.binaryauthorization.AttestorIamPolicy`: Authoritative. Sets the IAM policy for the attestor and replaces any existing policy already attached.
-   * * `gcp.binaryauthorization.AttestorIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the attestor are preserved.
-   * * `gcp.binaryauthorization.AttestorIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the attestor are preserved.
+   * * `gcp.binaryauthorization.AttestorIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the attestor are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.binaryauthorization.AttestorIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the attestor are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -84,8 +84,8 @@ object binaryauthorization:
    *             .build());
    * 
    *         var policy = new AttestorIamPolicy("policy", AttestorIamPolicyArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -119,8 +119,8 @@ object binaryauthorization:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AttestorIamBinding("binding", AttestorIamBindingArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -155,8 +155,8 @@ object binaryauthorization:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AttestorIamMember("member", AttestorIamMemberArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -175,8 +175,8 @@ object binaryauthorization:
    * Three different resources help you manage your IAM policy for Binary Authorization Attestor. Each of these resources serves a different use case:
    * 
    * * `gcp.binaryauthorization.AttestorIamPolicy`: Authoritative. Sets the IAM policy for the attestor and replaces any existing policy already attached.
-   * * `gcp.binaryauthorization.AttestorIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the attestor are preserved.
-   * * `gcp.binaryauthorization.AttestorIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the attestor are preserved.
+   * * `gcp.binaryauthorization.AttestorIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the attestor are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.binaryauthorization.AttestorIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the attestor are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -221,8 +221,8 @@ object binaryauthorization:
    *             .build());
    * 
    *         var policy = new AttestorIamPolicy("policy", AttestorIamPolicyArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -256,8 +256,8 @@ object binaryauthorization:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AttestorIamBinding("binding", AttestorIamBindingArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -292,8 +292,8 @@ object binaryauthorization:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AttestorIamMember("member", AttestorIamMemberArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -350,8 +350,8 @@ object binaryauthorization:
    * Three different resources help you manage your IAM policy for Binary Authorization Attestor. Each of these resources serves a different use case:
    * 
    * * `gcp.binaryauthorization.AttestorIamPolicy`: Authoritative. Sets the IAM policy for the attestor and replaces any existing policy already attached.
-   * * `gcp.binaryauthorization.AttestorIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the attestor are preserved.
-   * * `gcp.binaryauthorization.AttestorIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the attestor are preserved.
+   * * `gcp.binaryauthorization.AttestorIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the attestor are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.binaryauthorization.AttestorIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the attestor are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -396,8 +396,8 @@ object binaryauthorization:
    *             .build());
    * 
    *         var policy = new AttestorIamPolicy("policy", AttestorIamPolicyArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -431,8 +431,8 @@ object binaryauthorization:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AttestorIamBinding("binding", AttestorIamBindingArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -467,8 +467,8 @@ object binaryauthorization:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AttestorIamMember("member", AttestorIamMemberArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -487,8 +487,8 @@ object binaryauthorization:
    * Three different resources help you manage your IAM policy for Binary Authorization Attestor. Each of these resources serves a different use case:
    * 
    * * `gcp.binaryauthorization.AttestorIamPolicy`: Authoritative. Sets the IAM policy for the attestor and replaces any existing policy already attached.
-   * * `gcp.binaryauthorization.AttestorIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the attestor are preserved.
-   * * `gcp.binaryauthorization.AttestorIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the attestor are preserved.
+   * * `gcp.binaryauthorization.AttestorIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the attestor are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.binaryauthorization.AttestorIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the attestor are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -533,8 +533,8 @@ object binaryauthorization:
    *             .build());
    * 
    *         var policy = new AttestorIamPolicy("policy", AttestorIamPolicyArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -568,8 +568,8 @@ object binaryauthorization:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AttestorIamBinding("binding", AttestorIamBindingArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -604,8 +604,8 @@ object binaryauthorization:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AttestorIamMember("member", AttestorIamMemberArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -662,8 +662,8 @@ object binaryauthorization:
    * Three different resources help you manage your IAM policy for Binary Authorization Attestor. Each of these resources serves a different use case:
    * 
    * * `gcp.binaryauthorization.AttestorIamPolicy`: Authoritative. Sets the IAM policy for the attestor and replaces any existing policy already attached.
-   * * `gcp.binaryauthorization.AttestorIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the attestor are preserved.
-   * * `gcp.binaryauthorization.AttestorIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the attestor are preserved.
+   * * `gcp.binaryauthorization.AttestorIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the attestor are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.binaryauthorization.AttestorIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the attestor are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -708,8 +708,8 @@ object binaryauthorization:
    *             .build());
    * 
    *         var policy = new AttestorIamPolicy("policy", AttestorIamPolicyArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -743,8 +743,8 @@ object binaryauthorization:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AttestorIamBinding("binding", AttestorIamBindingArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -779,8 +779,8 @@ object binaryauthorization:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AttestorIamMember("member", AttestorIamMemberArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -799,8 +799,8 @@ object binaryauthorization:
    * Three different resources help you manage your IAM policy for Binary Authorization Attestor. Each of these resources serves a different use case:
    * 
    * * `gcp.binaryauthorization.AttestorIamPolicy`: Authoritative. Sets the IAM policy for the attestor and replaces any existing policy already attached.
-   * * `gcp.binaryauthorization.AttestorIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the attestor are preserved.
-   * * `gcp.binaryauthorization.AttestorIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the attestor are preserved.
+   * * `gcp.binaryauthorization.AttestorIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the attestor are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.binaryauthorization.AttestorIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the attestor are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -845,8 +845,8 @@ object binaryauthorization:
    *             .build());
    * 
    *         var policy = new AttestorIamPolicy("policy", AttestorIamPolicyArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -880,8 +880,8 @@ object binaryauthorization:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AttestorIamBinding("binding", AttestorIamBindingArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -916,8 +916,8 @@ object binaryauthorization:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AttestorIamMember("member", AttestorIamMemberArgs.builder()
-   *             .project(attestor.project())
-   *             .attestor(attestor.name())
+   *             .project(attestor.get("project"))
+   *             .attestor(attestor.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

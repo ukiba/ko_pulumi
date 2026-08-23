@@ -660,7 +660,7 @@ object opensearch:
 
   extension (builder: com.pulumi.aws.opensearch.inputs.AuthorizeVpcEndpointAccessState.Builder)
     /**
-     * @param authorizedPrincipals Information about the Amazon Web Services account or service that was provided access to the domain. See authorized principal attribute for further details.
+     * @param authorizedPrincipals Information about the Amazon Web Services account or service that was provided access to the domain. See `authorizedPrincipal` Block for further details.
      * @return builder
      */
     def authorizedPrincipals(args: Endofunction[com.pulumi.aws.opensearch.inputs.AuthorizeVpcEndpointAccessAuthorizedPrincipalArgs.Builder]*):

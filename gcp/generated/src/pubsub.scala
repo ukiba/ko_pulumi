@@ -177,7 +177,7 @@ object pubsub:
      * 
      *     public static void stack(Context ctx) {
      *         final var policy = PubsubFunctions.getSubscriptionIamPolicy(GetSubscriptionIamPolicyArgs.builder()
-     *             .subscription(subscription.id())
+     *             .subscription(subscription.get("id"))
      *             .build());
      * 
      *     }
@@ -218,7 +218,7 @@ object pubsub:
      * 
      *     public static void stack(Context ctx) {
      *         final var policy = PubsubFunctions.getSubscriptionIamPolicy(GetSubscriptionIamPolicyArgs.builder()
-     *             .subscription(subscription.id())
+     *             .subscription(subscription.get("id"))
      *             .build());
      * 
      *     }
@@ -287,8 +287,8 @@ object pubsub:
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Schema. Each of these resources serves a different use case:
    * 
    * * `gcp.pubsub.SchemaIamPolicy`: Authoritative. Sets the IAM policy for the schema and replaces any existing policy already attached.
-   * * `gcp.pubsub.SchemaIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the schema are preserved.
-   * * `gcp.pubsub.SchemaIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the schema are preserved.
+   * * `gcp.pubsub.SchemaIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the schema are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.pubsub.SchemaIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the schema are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -333,8 +333,8 @@ object pubsub:
    *             .build());
    * 
    *         var policy = new SchemaIamPolicy("policy", SchemaIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -368,8 +368,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SchemaIamBinding("binding", SchemaIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -404,8 +404,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SchemaIamMember("member", SchemaIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -424,8 +424,8 @@ object pubsub:
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Schema. Each of these resources serves a different use case:
    * 
    * * `gcp.pubsub.SchemaIamPolicy`: Authoritative. Sets the IAM policy for the schema and replaces any existing policy already attached.
-   * * `gcp.pubsub.SchemaIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the schema are preserved.
-   * * `gcp.pubsub.SchemaIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the schema are preserved.
+   * * `gcp.pubsub.SchemaIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the schema are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.pubsub.SchemaIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the schema are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -470,8 +470,8 @@ object pubsub:
    *             .build());
    * 
    *         var policy = new SchemaIamPolicy("policy", SchemaIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -505,8 +505,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SchemaIamBinding("binding", SchemaIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -541,8 +541,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SchemaIamMember("member", SchemaIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -599,8 +599,8 @@ object pubsub:
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Schema. Each of these resources serves a different use case:
    * 
    * * `gcp.pubsub.SchemaIamPolicy`: Authoritative. Sets the IAM policy for the schema and replaces any existing policy already attached.
-   * * `gcp.pubsub.SchemaIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the schema are preserved.
-   * * `gcp.pubsub.SchemaIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the schema are preserved.
+   * * `gcp.pubsub.SchemaIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the schema are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.pubsub.SchemaIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the schema are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -645,8 +645,8 @@ object pubsub:
    *             .build());
    * 
    *         var policy = new SchemaIamPolicy("policy", SchemaIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -680,8 +680,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SchemaIamBinding("binding", SchemaIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -716,8 +716,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SchemaIamMember("member", SchemaIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -736,8 +736,8 @@ object pubsub:
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Schema. Each of these resources serves a different use case:
    * 
    * * `gcp.pubsub.SchemaIamPolicy`: Authoritative. Sets the IAM policy for the schema and replaces any existing policy already attached.
-   * * `gcp.pubsub.SchemaIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the schema are preserved.
-   * * `gcp.pubsub.SchemaIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the schema are preserved.
+   * * `gcp.pubsub.SchemaIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the schema are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.pubsub.SchemaIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the schema are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -782,8 +782,8 @@ object pubsub:
    *             .build());
    * 
    *         var policy = new SchemaIamPolicy("policy", SchemaIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -817,8 +817,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SchemaIamBinding("binding", SchemaIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -853,8 +853,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SchemaIamMember("member", SchemaIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -911,8 +911,8 @@ object pubsub:
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Schema. Each of these resources serves a different use case:
    * 
    * * `gcp.pubsub.SchemaIamPolicy`: Authoritative. Sets the IAM policy for the schema and replaces any existing policy already attached.
-   * * `gcp.pubsub.SchemaIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the schema are preserved.
-   * * `gcp.pubsub.SchemaIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the schema are preserved.
+   * * `gcp.pubsub.SchemaIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the schema are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.pubsub.SchemaIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the schema are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -957,8 +957,8 @@ object pubsub:
    *             .build());
    * 
    *         var policy = new SchemaIamPolicy("policy", SchemaIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -992,8 +992,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SchemaIamBinding("binding", SchemaIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1028,8 +1028,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SchemaIamMember("member", SchemaIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1048,8 +1048,8 @@ object pubsub:
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Schema. Each of these resources serves a different use case:
    * 
    * * `gcp.pubsub.SchemaIamPolicy`: Authoritative. Sets the IAM policy for the schema and replaces any existing policy already attached.
-   * * `gcp.pubsub.SchemaIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the schema are preserved.
-   * * `gcp.pubsub.SchemaIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the schema are preserved.
+   * * `gcp.pubsub.SchemaIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the schema are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.pubsub.SchemaIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the schema are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1094,8 +1094,8 @@ object pubsub:
    *             .build());
    * 
    *         var policy = new SchemaIamPolicy("policy", SchemaIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1129,8 +1129,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SchemaIamBinding("binding", SchemaIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1165,8 +1165,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SchemaIamMember("member", SchemaIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .schema(example.name())
+   *             .project(example.get("project"))
+   *             .schema(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1460,6 +1460,50 @@ object pubsub:
    * }
    * </pre>
    * 
+   * ## gcp.pubsub.SubscriptionIAMPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.pubsub.SubscriptionIAMPolicy;
+   * import com.pulumi.gcp.pubsub.SubscriptionIAMPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/editor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var editor = new SubscriptionIAMPolicy("editor", SubscriptionIAMPolicyArgs.builder()
+   *             .subscription("your-subscription-name")
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
    * ## gcp.pubsub.SubscriptionIAMBinding
    * 
    * <pre>
@@ -1666,6 +1710,50 @@ object pubsub:
    *             .subscription("your-subscription-name")
    *             .role("roles/editor")
    *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.pubsub.SubscriptionIAMPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.pubsub.SubscriptionIAMPolicy;
+   * import com.pulumi.gcp.pubsub.SubscriptionIAMPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/editor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var editor = new SubscriptionIAMPolicy("editor", SubscriptionIAMPolicyArgs.builder()
+   *             .subscription("your-subscription-name")
+   *             .policyData(admin.policyData())
    *             .build());
    * 
    *     }}{@code
@@ -1886,6 +1974,50 @@ object pubsub:
    * }
    * </pre>
    * 
+   * ## gcp.pubsub.SubscriptionIAMPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.pubsub.SubscriptionIAMPolicy;
+   * import com.pulumi.gcp.pubsub.SubscriptionIAMPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/editor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var editor = new SubscriptionIAMPolicy("editor", SubscriptionIAMPolicyArgs.builder()
+   *             .subscription("your-subscription-name")
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
    * ## gcp.pubsub.SubscriptionIAMBinding
    * 
    * <pre>
@@ -2045,8 +2177,8 @@ object pubsub:
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Topic. Each of these resources serves a different use case:
    * 
    * * `gcp.pubsub.TopicIAMPolicy`: Authoritative. Sets the IAM policy for the topic and replaces any existing policy already attached.
-   * * `gcp.pubsub.TopicIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the topic are preserved.
-   * * `gcp.pubsub.TopicIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the topic are preserved.
+   * * `gcp.pubsub.TopicIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the topic are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.pubsub.TopicIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the topic are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2091,8 +2223,8 @@ object pubsub:
    *             .build());
    * 
    *         var policy = new TopicIAMPolicy("policy", TopicIAMPolicyArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2126,8 +2258,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TopicIAMBinding("binding", TopicIAMBindingArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2162,8 +2294,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TopicIAMMember("member", TopicIAMMemberArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2182,8 +2314,8 @@ object pubsub:
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Topic. Each of these resources serves a different use case:
    * 
    * * `gcp.pubsub.TopicIAMPolicy`: Authoritative. Sets the IAM policy for the topic and replaces any existing policy already attached.
-   * * `gcp.pubsub.TopicIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the topic are preserved.
-   * * `gcp.pubsub.TopicIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the topic are preserved.
+   * * `gcp.pubsub.TopicIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the topic are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.pubsub.TopicIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the topic are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2228,8 +2360,8 @@ object pubsub:
    *             .build());
    * 
    *         var policy = new TopicIAMPolicy("policy", TopicIAMPolicyArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2263,8 +2395,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TopicIAMBinding("binding", TopicIAMBindingArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2299,8 +2431,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TopicIAMMember("member", TopicIAMMemberArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2357,8 +2489,8 @@ object pubsub:
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Topic. Each of these resources serves a different use case:
    * 
    * * `gcp.pubsub.TopicIAMPolicy`: Authoritative. Sets the IAM policy for the topic and replaces any existing policy already attached.
-   * * `gcp.pubsub.TopicIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the topic are preserved.
-   * * `gcp.pubsub.TopicIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the topic are preserved.
+   * * `gcp.pubsub.TopicIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the topic are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.pubsub.TopicIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the topic are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2403,8 +2535,8 @@ object pubsub:
    *             .build());
    * 
    *         var policy = new TopicIAMPolicy("policy", TopicIAMPolicyArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2438,8 +2570,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TopicIAMBinding("binding", TopicIAMBindingArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2474,8 +2606,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TopicIAMMember("member", TopicIAMMemberArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2494,8 +2626,8 @@ object pubsub:
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Topic. Each of these resources serves a different use case:
    * 
    * * `gcp.pubsub.TopicIAMPolicy`: Authoritative. Sets the IAM policy for the topic and replaces any existing policy already attached.
-   * * `gcp.pubsub.TopicIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the topic are preserved.
-   * * `gcp.pubsub.TopicIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the topic are preserved.
+   * * `gcp.pubsub.TopicIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the topic are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.pubsub.TopicIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the topic are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2540,8 +2672,8 @@ object pubsub:
    *             .build());
    * 
    *         var policy = new TopicIAMPolicy("policy", TopicIAMPolicyArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2575,8 +2707,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TopicIAMBinding("binding", TopicIAMBindingArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2611,8 +2743,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TopicIAMMember("member", TopicIAMMemberArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2669,8 +2801,8 @@ object pubsub:
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Topic. Each of these resources serves a different use case:
    * 
    * * `gcp.pubsub.TopicIAMPolicy`: Authoritative. Sets the IAM policy for the topic and replaces any existing policy already attached.
-   * * `gcp.pubsub.TopicIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the topic are preserved.
-   * * `gcp.pubsub.TopicIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the topic are preserved.
+   * * `gcp.pubsub.TopicIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the topic are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.pubsub.TopicIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the topic are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2715,8 +2847,8 @@ object pubsub:
    *             .build());
    * 
    *         var policy = new TopicIAMPolicy("policy", TopicIAMPolicyArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2750,8 +2882,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TopicIAMBinding("binding", TopicIAMBindingArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2786,8 +2918,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TopicIAMMember("member", TopicIAMMemberArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2806,8 +2938,8 @@ object pubsub:
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Topic. Each of these resources serves a different use case:
    * 
    * * `gcp.pubsub.TopicIAMPolicy`: Authoritative. Sets the IAM policy for the topic and replaces any existing policy already attached.
-   * * `gcp.pubsub.TopicIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the topic are preserved.
-   * * `gcp.pubsub.TopicIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the topic are preserved.
+   * * `gcp.pubsub.TopicIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the topic are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.pubsub.TopicIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the topic are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2852,8 +2984,8 @@ object pubsub:
    *             .build());
    * 
    *         var policy = new TopicIAMPolicy("policy", TopicIAMPolicyArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2887,8 +3019,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TopicIAMBinding("binding", TopicIAMBindingArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2923,8 +3055,8 @@ object pubsub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TopicIAMMember("member", TopicIAMMemberArgs.builder()
-   *             .project(example.project())
-   *             .topic(example.name())
+   *             .project(example.get("project"))
+   *             .topic(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

@@ -25,6 +25,7 @@ export ko_pulumi.aws.amp.configuration
 export ko_pulumi.aws.amp.destination
 export ko_pulumi.aws.amp.destinations
 export ko_pulumi.aws.amp.eks
+export ko_pulumi.aws.amp.exporter
 export ko_pulumi.aws.amplify.autoBranchCreationConfig
 export ko_pulumi.aws.amplify.cacheConfig
 export ko_pulumi.aws.amplify.certificateSettings
@@ -114,6 +115,8 @@ export ko_pulumi.aws.appsync.eventConfig
 export ko_pulumi.aws.arcregionswitch.arcRoutingControlConfigs
 export ko_pulumi.aws.arcregionswitch.asgs
 export ko_pulumi.aws.arcregionswitch.associatedAlarms
+export ko_pulumi.aws.arcregionswitch.auroraProvisionedScalingConfigs
+export ko_pulumi.aws.arcregionswitch.auroraServerlessScalingConfigs
 export ko_pulumi.aws.arcregionswitch.conditions
 export ko_pulumi.aws.arcregionswitch.customActionLambdaConfigs
 export ko_pulumi.aws.arcregionswitch.documentDbConfigs
@@ -171,6 +174,7 @@ export ko_pulumi.aws.bcmdata.`export`
 export ko_pulumi.aws.bcmdata.dataQueries
 export ko_pulumi.aws.bcmdata.destinationConfigurations
 export ko_pulumi.aws.bedrock.actionGroupExecutor
+export ko_pulumi.aws.bedrock.actions
 export ko_pulumi.aws.bedrock.agent
 export ko_pulumi.aws.bedrock.agentDescriptor
 export ko_pulumi.aws.bedrock.agentRuntimeArtifact
@@ -179,10 +183,12 @@ export ko_pulumi.aws.bedrock.agentcoreBrowser
 export ko_pulumi.aws.bedrock.agentcoreCodeInterpreter
 export ko_pulumi.aws.bedrock.agentcoreGateway
 export ko_pulumi.aws.bedrock.agentcoreMemoryConfiguration
+export ko_pulumi.aws.bedrock.agentcoreMemoryConfigurations
 export ko_pulumi.aws.bedrock.agentcoreRuntime
 export ko_pulumi.aws.bedrock.agentcoreRuntimeEnvironments
 export ko_pulumi.aws.bedrock.allowedWorkloadConfiguration
 export ko_pulumi.aws.bedrock.any
+export ko_pulumi.aws.bedrock.anyOfs
 export ko_pulumi.aws.bedrock.apiGateway
 export ko_pulumi.aws.bedrock.apiGatewayToolConfiguration
 export ko_pulumi.aws.bedrock.apiKey
@@ -229,6 +235,7 @@ export ko_pulumi.aws.bedrock.conditions
 export ko_pulumi.aws.bedrock.config
 export ko_pulumi.aws.bedrock.configs
 export ko_pulumi.aws.bedrock.configuration
+export ko_pulumi.aws.bedrock.configurationBundle
 export ko_pulumi.aws.bedrock.confluenceConfiguration
 export ko_pulumi.aws.bedrock.connections
 export ko_pulumi.aws.bedrock.consolidation
@@ -257,10 +264,13 @@ export ko_pulumi.aws.bedrock.datasetLocation
 export ko_pulumi.aws.bedrock.datasetMetricConfigs
 export ko_pulumi.aws.bedrock.definition
 export ko_pulumi.aws.bedrock.deletionProtectionConfiguration
+export ko_pulumi.aws.bedrock.disabled
+export ko_pulumi.aws.bedrock.disableds
 export ko_pulumi.aws.bedrock.efsAccessPoint
 export ko_pulumi.aws.bedrock.efsAccessPoints
 export ko_pulumi.aws.bedrock.embeddingModelConfiguration
 export ko_pulumi.aws.bedrock.enterprisePolicies
+export ko_pulumi.aws.bedrock.environmentActuals
 export ko_pulumi.aws.bedrock.environmentArtifact
 export ko_pulumi.aws.bedrock.environments
 export ko_pulumi.aws.bedrock.evaluationConfig
@@ -796,7 +806,10 @@ export ko_pulumi.aws.lambda.allowedPublishers
 export ko_pulumi.aws.lambda.amazonManagedKafkaEventSourceConfig
 export ko_pulumi.aws.lambda.capacityProviderConfig
 export ko_pulumi.aws.lambda.capacityProviderScalingConfigs
+export ko_pulumi.aws.lambda.codeArtifact
+export ko_pulumi.aws.lambda.configuration
 export ko_pulumi.aws.lambda.cors
+export ko_pulumi.aws.lambda.cpuConfigurations
 export ko_pulumi.aws.lambda.deadLetterConfig
 export ko_pulumi.aws.lambda.destinationConfig
 export ko_pulumi.aws.lambda.documentDbEventSourceConfig
@@ -876,6 +889,7 @@ export ko_pulumi.aws.mailmanager.actions
 export ko_pulumi.aws.mailmanager.addHeader
 export ko_pulumi.aws.mailmanager.analysis
 export ko_pulumi.aws.mailmanager.archive
+export ko_pulumi.aws.mailmanager.authentication
 export ko_pulumi.aws.mailmanager.booleanExpression
 export ko_pulumi.aws.mailmanager.bounce
 export ko_pulumi.aws.mailmanager.conditions
@@ -961,10 +975,12 @@ export ko_pulumi.aws.mwaa.errors
 export ko_pulumi.aws.networkfirewall.actionDefinition
 export ko_pulumi.aws.networkfirewall.associationSyncStates
 export ko_pulumi.aws.networkfirewall.attachments
+export ko_pulumi.aws.networkfirewall.attributeFilters
 export ko_pulumi.aws.networkfirewall.availabilityZoneMappings
 export ko_pulumi.aws.networkfirewall.certificateAuthorities
 export ko_pulumi.aws.networkfirewall.certificates
 export ko_pulumi.aws.networkfirewall.checkCertificateRevocationStatus
+export ko_pulumi.aws.networkfirewall.containerMonitoringConfigurations
 export ko_pulumi.aws.networkfirewall.customActions
 export ko_pulumi.aws.networkfirewall.destinationPorts
 export ko_pulumi.aws.networkfirewall.destinations
@@ -1089,9 +1105,12 @@ export ko_pulumi.aws.redshiftserverless.endpoints
 export ko_pulumi.aws.rekognition.boundingBox
 export ko_pulumi.aws.rekognition.connectedHome
 export ko_pulumi.aws.rekognition.dataSharingPreference
+export ko_pulumi.aws.resiliencehub.associatedSystems
 export ko_pulumi.aws.resiliencehub.availabilitySlo
 export ko_pulumi.aws.resiliencehub.az
+export ko_pulumi.aws.resiliencehub.crossAccountRoles
 export ko_pulumi.aws.resiliencehub.dataRecovery
+export ko_pulumi.aws.resiliencehub.eks
 export ko_pulumi.aws.resourcegroups.configurations
 export ko_pulumi.aws.route53.aliasTarget
 export ko_pulumi.aws.route53.aliases

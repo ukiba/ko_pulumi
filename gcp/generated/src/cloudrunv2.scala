@@ -158,8 +158,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) Job. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.JobIamPolicy`: Authoritative. Sets the IAM policy for the job and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.JobIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the job are preserved.
-   * * `gcp.cloudrunv2.JobIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the job are preserved.
+   * * `gcp.cloudrunv2.JobIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the job are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.JobIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the job are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -204,9 +204,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new JobIamPolicy("policy", JobIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -240,9 +240,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new JobIamBinding("binding", JobIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -277,9 +277,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new JobIamMember("member", JobIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -298,8 +298,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) Job. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.JobIamPolicy`: Authoritative. Sets the IAM policy for the job and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.JobIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the job are preserved.
-   * * `gcp.cloudrunv2.JobIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the job are preserved.
+   * * `gcp.cloudrunv2.JobIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the job are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.JobIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the job are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -344,9 +344,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new JobIamPolicy("policy", JobIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -380,9 +380,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new JobIamBinding("binding", JobIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -417,9 +417,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new JobIamMember("member", JobIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -480,8 +480,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) Job. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.JobIamPolicy`: Authoritative. Sets the IAM policy for the job and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.JobIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the job are preserved.
-   * * `gcp.cloudrunv2.JobIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the job are preserved.
+   * * `gcp.cloudrunv2.JobIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the job are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.JobIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the job are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -526,9 +526,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new JobIamPolicy("policy", JobIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -562,9 +562,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new JobIamBinding("binding", JobIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -599,9 +599,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new JobIamMember("member", JobIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -620,8 +620,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) Job. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.JobIamPolicy`: Authoritative. Sets the IAM policy for the job and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.JobIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the job are preserved.
-   * * `gcp.cloudrunv2.JobIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the job are preserved.
+   * * `gcp.cloudrunv2.JobIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the job are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.JobIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the job are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -666,9 +666,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new JobIamPolicy("policy", JobIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -702,9 +702,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new JobIamBinding("binding", JobIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -739,9 +739,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new JobIamMember("member", JobIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -802,8 +802,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) Job. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.JobIamPolicy`: Authoritative. Sets the IAM policy for the job and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.JobIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the job are preserved.
-   * * `gcp.cloudrunv2.JobIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the job are preserved.
+   * * `gcp.cloudrunv2.JobIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the job are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.JobIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the job are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -848,9 +848,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new JobIamPolicy("policy", JobIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -884,9 +884,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new JobIamBinding("binding", JobIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -921,9 +921,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new JobIamMember("member", JobIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -942,8 +942,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) Job. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.JobIamPolicy`: Authoritative. Sets the IAM policy for the job and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.JobIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the job are preserved.
-   * * `gcp.cloudrunv2.JobIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the job are preserved.
+   * * `gcp.cloudrunv2.JobIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the job are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.JobIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the job are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -988,9 +988,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new JobIamPolicy("policy", JobIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1024,9 +1024,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new JobIamBinding("binding", JobIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1061,9 +1061,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new JobIamMember("member", JobIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1205,8 +1205,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) Service. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.ServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.cloudrunv2.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.cloudrunv2.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1251,9 +1251,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new ServiceIamPolicy("policy", ServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1287,9 +1287,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ServiceIamBinding("binding", ServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1324,9 +1324,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ServiceIamMember("member", ServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1345,8 +1345,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) Service. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.ServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.cloudrunv2.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.cloudrunv2.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1391,9 +1391,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new ServiceIamPolicy("policy", ServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1427,9 +1427,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ServiceIamBinding("binding", ServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1464,9 +1464,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ServiceIamMember("member", ServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1527,8 +1527,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) Service. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.ServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.cloudrunv2.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.cloudrunv2.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1573,9 +1573,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new ServiceIamPolicy("policy", ServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1609,9 +1609,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ServiceIamBinding("binding", ServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1646,9 +1646,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ServiceIamMember("member", ServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1667,8 +1667,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) Service. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.ServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.cloudrunv2.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.cloudrunv2.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1713,9 +1713,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new ServiceIamPolicy("policy", ServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1749,9 +1749,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ServiceIamBinding("binding", ServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1786,9 +1786,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ServiceIamMember("member", ServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1849,8 +1849,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) Service. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.ServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.cloudrunv2.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.cloudrunv2.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1895,9 +1895,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new ServiceIamPolicy("policy", ServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1931,9 +1931,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ServiceIamBinding("binding", ServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1968,9 +1968,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ServiceIamMember("member", ServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1989,8 +1989,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) Service. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.ServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.cloudrunv2.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.cloudrunv2.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2035,9 +2035,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new ServiceIamPolicy("policy", ServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2071,9 +2071,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ServiceIamBinding("binding", ServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2108,9 +2108,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ServiceIamMember("member", ServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2225,8 +2225,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) WorkerPool. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.WorkerPoolIamPolicy`: Authoritative. Sets the IAM policy for the workerpool and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.WorkerPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workerpool are preserved.
-   * * `gcp.cloudrunv2.WorkerPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workerpool are preserved.
+   * * `gcp.cloudrunv2.WorkerPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workerpool are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.WorkerPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workerpool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2271,9 +2271,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new WorkerPoolIamPolicy("policy", WorkerPoolIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2307,9 +2307,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkerPoolIamBinding("binding", WorkerPoolIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2344,9 +2344,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkerPoolIamMember("member", WorkerPoolIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2365,8 +2365,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) WorkerPool. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.WorkerPoolIamPolicy`: Authoritative. Sets the IAM policy for the workerpool and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.WorkerPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workerpool are preserved.
-   * * `gcp.cloudrunv2.WorkerPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workerpool are preserved.
+   * * `gcp.cloudrunv2.WorkerPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workerpool are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.WorkerPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workerpool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2411,9 +2411,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new WorkerPoolIamPolicy("policy", WorkerPoolIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2447,9 +2447,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkerPoolIamBinding("binding", WorkerPoolIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2484,9 +2484,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkerPoolIamMember("member", WorkerPoolIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2547,8 +2547,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) WorkerPool. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.WorkerPoolIamPolicy`: Authoritative. Sets the IAM policy for the workerpool and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.WorkerPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workerpool are preserved.
-   * * `gcp.cloudrunv2.WorkerPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workerpool are preserved.
+   * * `gcp.cloudrunv2.WorkerPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workerpool are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.WorkerPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workerpool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2593,9 +2593,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new WorkerPoolIamPolicy("policy", WorkerPoolIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2629,9 +2629,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkerPoolIamBinding("binding", WorkerPoolIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2666,9 +2666,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkerPoolIamMember("member", WorkerPoolIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2687,8 +2687,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) WorkerPool. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.WorkerPoolIamPolicy`: Authoritative. Sets the IAM policy for the workerpool and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.WorkerPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workerpool are preserved.
-   * * `gcp.cloudrunv2.WorkerPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workerpool are preserved.
+   * * `gcp.cloudrunv2.WorkerPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workerpool are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.WorkerPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workerpool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2733,9 +2733,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new WorkerPoolIamPolicy("policy", WorkerPoolIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2769,9 +2769,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkerPoolIamBinding("binding", WorkerPoolIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2806,9 +2806,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkerPoolIamMember("member", WorkerPoolIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2869,8 +2869,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) WorkerPool. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.WorkerPoolIamPolicy`: Authoritative. Sets the IAM policy for the workerpool and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.WorkerPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workerpool are preserved.
-   * * `gcp.cloudrunv2.WorkerPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workerpool are preserved.
+   * * `gcp.cloudrunv2.WorkerPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workerpool are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.WorkerPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workerpool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2915,9 +2915,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new WorkerPoolIamPolicy("policy", WorkerPoolIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2951,9 +2951,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkerPoolIamBinding("binding", WorkerPoolIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2988,9 +2988,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkerPoolIamMember("member", WorkerPoolIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3009,8 +3009,8 @@ object cloudrunv2:
    * Three different resources help you manage your IAM policy for Cloud Run (v2 API) WorkerPool. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudrunv2.WorkerPoolIamPolicy`: Authoritative. Sets the IAM policy for the workerpool and replaces any existing policy already attached.
-   * * `gcp.cloudrunv2.WorkerPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workerpool are preserved.
-   * * `gcp.cloudrunv2.WorkerPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workerpool are preserved.
+   * * `gcp.cloudrunv2.WorkerPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workerpool are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudrunv2.WorkerPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workerpool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3055,9 +3055,9 @@ object cloudrunv2:
    *             .build());
    * 
    *         var policy = new WorkerPoolIamPolicy("policy", WorkerPoolIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3091,9 +3091,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkerPoolIamBinding("binding", WorkerPoolIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3128,9 +3128,9 @@ object cloudrunv2:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkerPoolIamMember("member", WorkerPoolIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3612,6 +3612,16 @@ object cloudrunv2:
       builder.nodeSelector(args(argsBuilder).build)
 
     /**
+     * @param sandboxes Configuration for sandboxes.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sandboxes(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesArgs.Builder]):
+        com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesArgs.builder
+      builder.sandboxes(args(argsBuilder).build)
+
+    /**
      * @param scaling Scaling settings for this Revision.
      * Structure is documented below.
      * @return builder
@@ -3883,6 +3893,38 @@ object cloudrunv2:
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeHttpGetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeHttpGetHttpHeaderArgs.builder
       builder.httpHeaders(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesArgs.Builder)
+    /**
+     * @param templates Sandbox templates that can be launched through the `sandbox` CLI.
+     * Structure is documented below.
+     * @return builder
+     */
+    def templates(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateArgs.Builder]*):
+        com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateArgs.builder
+      builder.templates(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateArgs.Builder)
+    /**
+     * @param envs List of environment variables to set in the sandbox.
+     * Structure is documented below.
+     * @return builder
+     */
+    def envs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateEnvArgs.Builder]*):
+        com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateEnvArgs.builder
+      builder.envs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param volumeMounts Volume to mount into the container&#39;s filesystem.
+     * Structure is documented below.
+     * @return builder
+     */
+    def volumeMounts(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateVolumeMountArgs.Builder]*):
+        com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateVolumeMountArgs.builder
+      builder.volumeMounts(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeArgs.Builder)
     /**

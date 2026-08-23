@@ -18,7 +18,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.AccessArgs.Builder)
     /**
-     * @param homeDirectoryMappings Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to make them visible. See Home Directory Mappings below.
+     * @param homeDirectoryMappings Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to make them visible. See `homeDirectoryMappings` Block below.
      * @return builder
      */
     def homeDirectoryMappings(args: Endofunction[com.pulumi.aws.transfer.inputs.AccessHomeDirectoryMappingArgs.Builder]*):
@@ -27,7 +27,7 @@ object transfer:
       builder.homeDirectoryMappings(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param posixProfile Specifies the full POSIX identity, including user ID (Uid), group ID (Gid), and any secondary groups IDs (SecondaryGids), that controls your users&#39; access to your Amazon EFS file systems. See Posix Profile below.
+     * @param posixProfile Full POSIX identity, including user ID (Uid), group ID (Gid), and any secondary groups IDs (SecondaryGids), that controls your users&#39; access to your Amazon EFS file systems. See `posixProfile` Block below.
      * @return builder
      */
     def posixProfile(args: Endofunction[com.pulumi.aws.transfer.inputs.AccessPosixProfileArgs.Builder]):
@@ -82,7 +82,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.ConnectorArgs.Builder)
     /**
-     * @param as2Config Either SFTP or AS2 is configured.The parameters to configure for the connector object. Fields documented below.
+     * @param as2Config Either SFTP or AS2 is configured. Parameters to configure for the connector object. See `as2Config` Block below.
      * @return builder
      */
     def as2Config(args: Endofunction[com.pulumi.aws.transfer.inputs.ConnectorAs2ConfigArgs.Builder]):
@@ -91,7 +91,7 @@ object transfer:
       builder.as2Config(args(argsBuilder).build)
 
     /**
-     * @param egressConfig Specifies the egress configuration for the connector. When set, enables routing through customer VPCs using VPC Lattice for private connectivity. Fields documented below.
+     * @param egressConfig Egress configuration for the connector. When set, enables routing through customer VPCs using VPC Lattice for private connectivity. See `egressConfig` Block below.
      * @return builder
      */
     def egressConfig(args: Endofunction[com.pulumi.aws.transfer.inputs.ConnectorEgressConfigArgs.Builder]):
@@ -100,7 +100,7 @@ object transfer:
       builder.egressConfig(args(argsBuilder).build)
 
     /**
-     * @param sftpConfig Either SFTP or AS2 is configured.The parameters to configure for the connector object. Fields documented below.
+     * @param sftpConfig Either SFTP or AS2 is configured. Parameters to configure for the connector object. See `sftpConfig` Block below.
      * @return builder
      */
     def sftpConfig(args: Endofunction[com.pulumi.aws.transfer.inputs.ConnectorSftpConfigArgs.Builder]):
@@ -161,7 +161,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.ServerArgs.Builder)
     /**
-     * @param endpointDetails The virtual private cloud (VPC) endpoint settings that you want to configure for your SFTP server. See `endpointDetails` Block below for details.
+     * @param endpointDetails Virtual private cloud (VPC) endpoint settings that you want to configure for your SFTP server. See `endpointDetails` Block below for details.
      * @return builder
      */
     def endpointDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.ServerEndpointDetailsArgs.Builder]):
@@ -170,7 +170,7 @@ object transfer:
       builder.endpointDetails(args(argsBuilder).build)
 
     /**
-     * @param protocolDetails The protocol settings that are configured for your server. See `protocolDetails` Block below for details.
+     * @param protocolDetails Protocol settings that are configured for your server. See `protocolDetails` Block below for details.
      * @return builder
      */
     def protocolDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.ServerProtocolDetailsArgs.Builder]):
@@ -179,7 +179,7 @@ object transfer:
       builder.protocolDetails(args(argsBuilder).build)
 
     /**
-     * @param s3StorageOptions Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default. See `s3StorageOptions` Block below for details.
+     * @param s3StorageOptions Whether performance for your Amazon S3 directories is optimized. This is disabled by default. See `s3StorageOptions` Block below for details.
      * @return builder
      */
     def s3StorageOptions(args: Endofunction[com.pulumi.aws.transfer.inputs.ServerS3StorageOptionsArgs.Builder]):
@@ -188,7 +188,7 @@ object transfer:
       builder.s3StorageOptions(args(argsBuilder).build)
 
     /**
-     * @param workflowDetails Specifies the workflow details. See `workflowDetails` Block below for details.
+     * @param workflowDetails Workflow details. See `workflowDetails` Block below for details.
      * @return builder
      */
     def workflowDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.ServerWorkflowDetailsArgs.Builder]):
@@ -276,7 +276,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.UserArgs.Builder)
     /**
-     * @param homeDirectoryMappings Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to make them visible. See Home Directory Mappings below.
+     * @param homeDirectoryMappings Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to make them visible. See `homeDirectoryMappings` Block below.
      * @return builder
      */
     def homeDirectoryMappings(args: Endofunction[com.pulumi.aws.transfer.inputs.UserHomeDirectoryMappingArgs.Builder]*):
@@ -285,7 +285,7 @@ object transfer:
       builder.homeDirectoryMappings(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param posixProfile Specifies the full POSIX identity, including user ID (Uid), group ID (Gid), and any secondary groups IDs (SecondaryGids), that controls your users&#39; access to your Amazon EFS file systems. See Posix Profile below.
+     * @param posixProfile Full POSIX identity, including user ID (Uid), group ID (Gid), and any secondary groups IDs (SecondaryGids), that controls your users&#39; access to your Amazon EFS file systems. See `posixProfile` Block below.
      * @return builder
      */
     def posixProfile(args: Endofunction[com.pulumi.aws.transfer.inputs.UserPosixProfileArgs.Builder]):
@@ -310,7 +310,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.WebAppArgs.Builder)
     /**
-     * @param endpointDetails Block for the endpoint configuration for the web app. If not specified, the web app will be created with a public endpoint.
+     * @param endpointDetails Block for the endpoint configuration for the web app. If not specified, the web app will be created with a public endpoint. See `endpointDetails` Block below.
      * @return builder
      */
     def endpointDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.WebAppEndpointDetailsArgs.Builder]):
@@ -319,7 +319,7 @@ object transfer:
       builder.endpointDetails(args(argsBuilder).build)
 
     /**
-     * @param identityProviderDetails Block for details of the identity provider to use with the web app. See Identity provider details below.
+     * @param identityProviderDetails Block for details of the identity provider to use with the web app. See `identityProviderDetails` Block below.
      * 
      * The following arguments are optional:
      * @return builder
@@ -330,8 +330,7 @@ object transfer:
       builder.identityProviderDetails(args(argsBuilder).build)
 
     /**
-     * @param webAppUnits Block for number of concurrent connections or the user sessions on the web app.
-     * * provisioned - (Optional) Number of units of concurrent connections.
+     * @param webAppUnits Block for number of concurrent connections or the user sessions on the web app. See `webAppUnits` Block below.
      * @return builder
      */
     def webAppUnits(args: Endofunction[com.pulumi.aws.transfer.inputs.WebAppWebAppUnitArgs.Builder]*):
@@ -364,7 +363,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.WorkflowArgs.Builder)
     /**
-     * @param onExceptionSteps Specifies the steps (actions) to take if errors are encountered during execution of the workflow. See Workflow Steps below.
+     * @param onExceptionSteps Steps (actions) to take if errors are encountered during execution of the workflow. See `onExceptionSteps` Block below.
      * @return builder
      */
     def onExceptionSteps(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepArgs.Builder]*):
@@ -373,7 +372,7 @@ object transfer:
       builder.onExceptionSteps(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param steps Specifies the details for the steps that are in the specified workflow. See Workflow Steps below.
+     * @param steps Details for the steps that are in the specified workflow. See `steps` Block below.
      * @return builder
      */
     def steps(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowStepArgs.Builder]*):
@@ -383,7 +382,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.AccessState.Builder)
     /**
-     * @param homeDirectoryMappings Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to make them visible. See Home Directory Mappings below.
+     * @param homeDirectoryMappings Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to make them visible. See `homeDirectoryMappings` Block below.
      * @return builder
      */
     def homeDirectoryMappings(args: Endofunction[com.pulumi.aws.transfer.inputs.AccessHomeDirectoryMappingArgs.Builder]*):
@@ -392,7 +391,7 @@ object transfer:
       builder.homeDirectoryMappings(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param posixProfile Specifies the full POSIX identity, including user ID (Uid), group ID (Gid), and any secondary groups IDs (SecondaryGids), that controls your users&#39; access to your Amazon EFS file systems. See Posix Profile below.
+     * @param posixProfile Full POSIX identity, including user ID (Uid), group ID (Gid), and any secondary groups IDs (SecondaryGids), that controls your users&#39; access to your Amazon EFS file systems. See `posixProfile` Block below.
      * @return builder
      */
     def posixProfile(args: Endofunction[com.pulumi.aws.transfer.inputs.AccessPosixProfileArgs.Builder]):
@@ -402,7 +401,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.ConnectorEgressConfigArgs.Builder)
     /**
-     * @param vpcLattice VPC Lattice configuration for routing connector traffic through customer VPCs. Fields documented below.
+     * @param vpcLattice VPC Lattice configuration for routing connector traffic through customer VPCs. See `vpcLattice` Block below.
      * @return builder
      */
     def vpcLattice(args: Endofunction[com.pulumi.aws.transfer.inputs.ConnectorEgressConfigVpcLatticeArgs.Builder]):
@@ -412,7 +411,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.ConnectorState.Builder)
     /**
-     * @param as2Config Either SFTP or AS2 is configured.The parameters to configure for the connector object. Fields documented below.
+     * @param as2Config Either SFTP or AS2 is configured. Parameters to configure for the connector object. See `as2Config` Block below.
      * @return builder
      */
     def as2Config(args: Endofunction[com.pulumi.aws.transfer.inputs.ConnectorAs2ConfigArgs.Builder]):
@@ -421,7 +420,7 @@ object transfer:
       builder.as2Config(args(argsBuilder).build)
 
     /**
-     * @param egressConfig Specifies the egress configuration for the connector. When set, enables routing through customer VPCs using VPC Lattice for private connectivity. Fields documented below.
+     * @param egressConfig Egress configuration for the connector. When set, enables routing through customer VPCs using VPC Lattice for private connectivity. See `egressConfig` Block below.
      * @return builder
      */
     def egressConfig(args: Endofunction[com.pulumi.aws.transfer.inputs.ConnectorEgressConfigArgs.Builder]):
@@ -430,7 +429,7 @@ object transfer:
       builder.egressConfig(args(argsBuilder).build)
 
     /**
-     * @param sftpConfig Either SFTP or AS2 is configured.The parameters to configure for the connector object. Fields documented below.
+     * @param sftpConfig Either SFTP or AS2 is configured. Parameters to configure for the connector object. See `sftpConfig` Block below.
      * @return builder
      */
     def sftpConfig(args: Endofunction[com.pulumi.aws.transfer.inputs.ConnectorSftpConfigArgs.Builder]):
@@ -440,7 +439,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.ServerState.Builder)
     /**
-     * @param endpointDetails The virtual private cloud (VPC) endpoint settings that you want to configure for your SFTP server. See `endpointDetails` Block below for details.
+     * @param endpointDetails Virtual private cloud (VPC) endpoint settings that you want to configure for your SFTP server. See `endpointDetails` Block below for details.
      * @return builder
      */
     def endpointDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.ServerEndpointDetailsArgs.Builder]):
@@ -449,7 +448,7 @@ object transfer:
       builder.endpointDetails(args(argsBuilder).build)
 
     /**
-     * @param protocolDetails The protocol settings that are configured for your server. See `protocolDetails` Block below for details.
+     * @param protocolDetails Protocol settings that are configured for your server. See `protocolDetails` Block below for details.
      * @return builder
      */
     def protocolDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.ServerProtocolDetailsArgs.Builder]):
@@ -458,7 +457,7 @@ object transfer:
       builder.protocolDetails(args(argsBuilder).build)
 
     /**
-     * @param s3StorageOptions Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default. See `s3StorageOptions` Block below for details.
+     * @param s3StorageOptions Whether performance for your Amazon S3 directories is optimized. This is disabled by default. See `s3StorageOptions` Block below for details.
      * @return builder
      */
     def s3StorageOptions(args: Endofunction[com.pulumi.aws.transfer.inputs.ServerS3StorageOptionsArgs.Builder]):
@@ -467,7 +466,7 @@ object transfer:
       builder.s3StorageOptions(args(argsBuilder).build)
 
     /**
-     * @param workflowDetails Specifies the workflow details. See `workflowDetails` Block below for details.
+     * @param workflowDetails Workflow details. See `workflowDetails` Block below for details.
      * @return builder
      */
     def workflowDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.ServerWorkflowDetailsArgs.Builder]):
@@ -477,7 +476,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.ServerWorkflowDetailsArgs.Builder)
     /**
-     * @param onPartialUpload A trigger that starts a workflow if a file is only partially uploaded. See Workflow Detail below. See `onPartialUpload` Block below for details.
+     * @param onPartialUpload Trigger that starts a workflow if a file is only partially uploaded. See `onPartialUpload` Block below for details.
      * @return builder
      */
     def onPartialUpload(args: Endofunction[com.pulumi.aws.transfer.inputs.ServerWorkflowDetailsOnPartialUploadArgs.Builder]):
@@ -486,7 +485,7 @@ object transfer:
       builder.onPartialUpload(args(argsBuilder).build)
 
     /**
-     * @param onUpload A trigger that starts a workflow: the workflow begins to execute after a file is uploaded. See `onUpload` Block below for details.
+     * @param onUpload Trigger that starts a workflow: the workflow begins to execute after a file is uploaded. See `onUpload` Block below for details.
      * @return builder
      */
     def onUpload(args: Endofunction[com.pulumi.aws.transfer.inputs.ServerWorkflowDetailsOnUploadArgs.Builder]):
@@ -496,7 +495,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.UserState.Builder)
     /**
-     * @param homeDirectoryMappings Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to make them visible. See Home Directory Mappings below.
+     * @param homeDirectoryMappings Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to make them visible. See `homeDirectoryMappings` Block below.
      * @return builder
      */
     def homeDirectoryMappings(args: Endofunction[com.pulumi.aws.transfer.inputs.UserHomeDirectoryMappingArgs.Builder]*):
@@ -505,7 +504,7 @@ object transfer:
       builder.homeDirectoryMappings(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param posixProfile Specifies the full POSIX identity, including user ID (Uid), group ID (Gid), and any secondary groups IDs (SecondaryGids), that controls your users&#39; access to your Amazon EFS file systems. See Posix Profile below.
+     * @param posixProfile Full POSIX identity, including user ID (Uid), group ID (Gid), and any secondary groups IDs (SecondaryGids), that controls your users&#39; access to your Amazon EFS file systems. See `posixProfile` Block below.
      * @return builder
      */
     def posixProfile(args: Endofunction[com.pulumi.aws.transfer.inputs.UserPosixProfileArgs.Builder]):
@@ -515,7 +514,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WebAppEndpointDetailsArgs.Builder)
     /**
-     * @param vpc Block defining VPC configuration for hosting the web app endpoint within a VPC. See Vpc below.
+     * @param vpc Block defining VPC configuration for hosting the web app endpoint within a VPC. See `vpc` Block below.
      * @return builder
      */
     def vpc(args: Endofunction[com.pulumi.aws.transfer.inputs.WebAppEndpointDetailsVpcArgs.Builder]):
@@ -525,7 +524,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WebAppIdentityProviderDetailsArgs.Builder)
     /**
-     * @param identityCenterConfig Block that describes the values to use for the IAM Identity Center settings. See Identity center config below.
+     * @param identityCenterConfig Block that describes the values to use for the IAM Identity Center settings. See `identityCenterConfig` Block below.
      * @return builder
      */
     def identityCenterConfig(args: Endofunction[com.pulumi.aws.transfer.inputs.WebAppIdentityProviderDetailsIdentityCenterConfigArgs.Builder]):
@@ -535,7 +534,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WebAppState.Builder)
     /**
-     * @param endpointDetails Block for the endpoint configuration for the web app. If not specified, the web app will be created with a public endpoint.
+     * @param endpointDetails Block for the endpoint configuration for the web app. If not specified, the web app will be created with a public endpoint. See `endpointDetails` Block below.
      * @return builder
      */
     def endpointDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.WebAppEndpointDetailsArgs.Builder]):
@@ -544,7 +543,7 @@ object transfer:
       builder.endpointDetails(args(argsBuilder).build)
 
     /**
-     * @param identityProviderDetails Block for details of the identity provider to use with the web app. See Identity provider details below.
+     * @param identityProviderDetails Block for details of the identity provider to use with the web app. See `identityProviderDetails` Block below.
      * 
      * The following arguments are optional:
      * @return builder
@@ -555,8 +554,7 @@ object transfer:
       builder.identityProviderDetails(args(argsBuilder).build)
 
     /**
-     * @param webAppUnits Block for number of concurrent connections or the user sessions on the web app.
-     * * provisioned - (Optional) Number of units of concurrent connections.
+     * @param webAppUnits Block for number of concurrent connections or the user sessions on the web app. See `webAppUnits` Block below.
      * @return builder
      */
     def webAppUnits(args: Endofunction[com.pulumi.aws.transfer.inputs.WebAppWebAppUnitArgs.Builder]*):
@@ -566,7 +564,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepArgs.Builder)
     /**
-     * @param copyStepDetails Details for a step that performs a file copy. See Copy Step Details below.
+     * @param copyStepDetails Details for a step that performs a file copy. See `copyStepDetails` Block below.
      * @return builder
      */
     def copyStepDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepCopyStepDetailsArgs.Builder]):
@@ -575,7 +573,7 @@ object transfer:
       builder.copyStepDetails(args(argsBuilder).build)
 
     /**
-     * @param customStepDetails Details for a step that invokes a lambda function.
+     * @param customStepDetails Details for a step that invokes a lambda function. See `customStepDetails` Block below.
      * @return builder
      */
     def customStepDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepCustomStepDetailsArgs.Builder]):
@@ -584,7 +582,7 @@ object transfer:
       builder.customStepDetails(args(argsBuilder).build)
 
     /**
-     * @param decryptStepDetails Details for a step that decrypts the file.
+     * @param decryptStepDetails Details for a step that decrypts the file. See `decryptStepDetails` Block below.
      * @return builder
      */
     def decryptStepDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepDecryptStepDetailsArgs.Builder]):
@@ -593,7 +591,7 @@ object transfer:
       builder.decryptStepDetails(args(argsBuilder).build)
 
     /**
-     * @param deleteStepDetails Details for a step that deletes the file.
+     * @param deleteStepDetails Details for a step that deletes the file. See `deleteStepDetails` Block below.
      * @return builder
      */
     def deleteStepDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepDeleteStepDetailsArgs.Builder]):
@@ -602,7 +600,7 @@ object transfer:
       builder.deleteStepDetails(args(argsBuilder).build)
 
     /**
-     * @param tagStepDetails Details for a step that creates one or more tags.
+     * @param tagStepDetails Details for a step that creates one or more tags. See `tagStepDetails` Block below.
      * @return builder
      */
     def tagStepDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepTagStepDetailsArgs.Builder]):
@@ -612,7 +610,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepCopyStepDetailsArgs.Builder)
     /**
-     * @param destinationFileLocation Specifies the location for the file being copied. Use ${Transfer:username} in this field to parametrize the destination prefix by username.
+     * @param destinationFileLocation Location for the file being copied. Use `${Transfer:username}` in this field to parametrize the destination prefix by username. See `destinationFileLocation` Block below.
      * @return builder
      */
     def destinationFileLocation(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepCopyStepDetailsDestinationFileLocationArgs.Builder]):
@@ -622,7 +620,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepCopyStepDetailsDestinationFileLocationArgs.Builder)
     /**
-     * @param efsFileLocation Specifies the details for the EFS file being copied.
+     * @param efsFileLocation Details for the EFS file being copied. See `efsFileLocation` Block below.
      * @return builder
      */
     def efsFileLocation(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepCopyStepDetailsDestinationFileLocationEfsFileLocationArgs.Builder]):
@@ -631,7 +629,7 @@ object transfer:
       builder.efsFileLocation(args(argsBuilder).build)
 
     /**
-     * @param s3FileLocation Specifies the details for the S3 file being copied.
+     * @param s3FileLocation Details for the S3 file being copied. See `s3FileLocation` Block below.
      * @return builder
      */
     def s3FileLocation(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepCopyStepDetailsDestinationFileLocationS3FileLocationArgs.Builder]):
@@ -641,7 +639,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepDecryptStepDetailsArgs.Builder)
     /**
-     * @param destinationFileLocation Specifies the location for the file being copied. Use ${Transfer:username} in this field to parametrize the destination prefix by username.
+     * @param destinationFileLocation Location for the file being copied. Use `${Transfer:username}` in this field to parametrize the destination prefix by username. See `destinationFileLocation` Block below.
      * @return builder
      */
     def destinationFileLocation(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepDecryptStepDetailsDestinationFileLocationArgs.Builder]):
@@ -651,7 +649,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepDecryptStepDetailsDestinationFileLocationArgs.Builder)
     /**
-     * @param efsFileLocation Specifies the details for the EFS file being copied.
+     * @param efsFileLocation Details for the EFS file being copied. See `efsFileLocation` Block below.
      * @return builder
      */
     def efsFileLocation(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepDecryptStepDetailsDestinationFileLocationEfsFileLocationArgs.Builder]):
@@ -660,7 +658,7 @@ object transfer:
       builder.efsFileLocation(args(argsBuilder).build)
 
     /**
-     * @param s3FileLocation Specifies the details for the S3 file being copied.
+     * @param s3FileLocation Details for the S3 file being copied. See `s3FileLocation` Block below.
      * @return builder
      */
     def s3FileLocation(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepDecryptStepDetailsDestinationFileLocationS3FileLocationArgs.Builder]):
@@ -670,7 +668,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepTagStepDetailsArgs.Builder)
     /**
-     * @param tags Array that contains from 1 to 10 key/value pairs. See S3 Tags below.
+     * @param tags Array that contains from 1 to 10 key/value pairs. See `tags` Block below.
      * @return builder
      */
     def tags(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepTagStepDetailsTagArgs.Builder]*):
@@ -680,7 +678,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowState.Builder)
     /**
-     * @param onExceptionSteps Specifies the steps (actions) to take if errors are encountered during execution of the workflow. See Workflow Steps below.
+     * @param onExceptionSteps Steps (actions) to take if errors are encountered during execution of the workflow. See `onExceptionSteps` Block below.
      * @return builder
      */
     def onExceptionSteps(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepArgs.Builder]*):
@@ -689,7 +687,7 @@ object transfer:
       builder.onExceptionSteps(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param steps Specifies the details for the steps that are in the specified workflow. See Workflow Steps below.
+     * @param steps Details for the steps that are in the specified workflow. See `steps` Block below.
      * @return builder
      */
     def steps(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowStepArgs.Builder]*):
@@ -699,7 +697,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowStepArgs.Builder)
     /**
-     * @param copyStepDetails Details for a step that performs a file copy. See Copy Step Details below.
+     * @param copyStepDetails Details for a step that performs a file copy. See `copyStepDetails` Block below.
      * @return builder
      */
     def copyStepDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowStepCopyStepDetailsArgs.Builder]):
@@ -708,7 +706,7 @@ object transfer:
       builder.copyStepDetails(args(argsBuilder).build)
 
     /**
-     * @param customStepDetails Details for a step that invokes a lambda function.
+     * @param customStepDetails Details for a step that invokes a lambda function. See `customStepDetails` Block below.
      * @return builder
      */
     def customStepDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowStepCustomStepDetailsArgs.Builder]):
@@ -717,7 +715,7 @@ object transfer:
       builder.customStepDetails(args(argsBuilder).build)
 
     /**
-     * @param decryptStepDetails Details for a step that decrypts the file.
+     * @param decryptStepDetails Details for a step that decrypts the file. See `decryptStepDetails` Block below.
      * @return builder
      */
     def decryptStepDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowStepDecryptStepDetailsArgs.Builder]):
@@ -726,7 +724,7 @@ object transfer:
       builder.decryptStepDetails(args(argsBuilder).build)
 
     /**
-     * @param deleteStepDetails Details for a step that deletes the file.
+     * @param deleteStepDetails Details for a step that deletes the file. See `deleteStepDetails` Block below.
      * @return builder
      */
     def deleteStepDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowStepDeleteStepDetailsArgs.Builder]):
@@ -735,7 +733,7 @@ object transfer:
       builder.deleteStepDetails(args(argsBuilder).build)
 
     /**
-     * @param tagStepDetails Details for a step that creates one or more tags.
+     * @param tagStepDetails Details for a step that creates one or more tags. See `tagStepDetails` Block below.
      * @return builder
      */
     def tagStepDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowStepTagStepDetailsArgs.Builder]):
@@ -745,7 +743,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowStepCopyStepDetailsArgs.Builder)
     /**
-     * @param destinationFileLocation Specifies the location for the file being copied. Use ${Transfer:username} in this field to parametrize the destination prefix by username.
+     * @param destinationFileLocation Location for the file being copied. Use `${Transfer:username}` in this field to parametrize the destination prefix by username. See `destinationFileLocation` Block below.
      * @return builder
      */
     def destinationFileLocation(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowStepCopyStepDetailsDestinationFileLocationArgs.Builder]):
@@ -755,7 +753,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowStepCopyStepDetailsDestinationFileLocationArgs.Builder)
     /**
-     * @param efsFileLocation Specifies the details for the EFS file being copied.
+     * @param efsFileLocation Details for the EFS file being copied. See `efsFileLocation` Block below.
      * @return builder
      */
     def efsFileLocation(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowStepCopyStepDetailsDestinationFileLocationEfsFileLocationArgs.Builder]):
@@ -764,7 +762,7 @@ object transfer:
       builder.efsFileLocation(args(argsBuilder).build)
 
     /**
-     * @param s3FileLocation Specifies the details for the S3 file being copied.
+     * @param s3FileLocation Details for the S3 file being copied. See `s3FileLocation` Block below.
      * @return builder
      */
     def s3FileLocation(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowStepCopyStepDetailsDestinationFileLocationS3FileLocationArgs.Builder]):
@@ -774,7 +772,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowStepDecryptStepDetailsArgs.Builder)
     /**
-     * @param destinationFileLocation Specifies the location for the file being copied. Use ${Transfer:username} in this field to parametrize the destination prefix by username.
+     * @param destinationFileLocation Location for the file being copied. Use `${Transfer:username}` in this field to parametrize the destination prefix by username. See `destinationFileLocation` Block below.
      * @return builder
      */
     def destinationFileLocation(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowStepDecryptStepDetailsDestinationFileLocationArgs.Builder]):
@@ -784,7 +782,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowStepDecryptStepDetailsDestinationFileLocationArgs.Builder)
     /**
-     * @param efsFileLocation Specifies the details for the EFS file being copied.
+     * @param efsFileLocation Details for the EFS file being copied. See `efsFileLocation` Block below.
      * @return builder
      */
     def efsFileLocation(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowStepDecryptStepDetailsDestinationFileLocationEfsFileLocationArgs.Builder]):
@@ -793,7 +791,7 @@ object transfer:
       builder.efsFileLocation(args(argsBuilder).build)
 
     /**
-     * @param s3FileLocation Specifies the details for the S3 file being copied.
+     * @param s3FileLocation Details for the S3 file being copied. See `s3FileLocation` Block below.
      * @return builder
      */
     def s3FileLocation(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowStepDecryptStepDetailsDestinationFileLocationS3FileLocationArgs.Builder]):
@@ -803,7 +801,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowStepTagStepDetailsArgs.Builder)
     /**
-     * @param tags Array that contains from 1 to 10 key/value pairs. See S3 Tags below.
+     * @param tags Array that contains from 1 to 10 key/value pairs. See `tags` Block below.
      * @return builder
      */
     def tags(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowStepTagStepDetailsTagArgs.Builder]*):

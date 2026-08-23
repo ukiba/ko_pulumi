@@ -559,7 +559,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.FileCacheLustreConfigurationArgs.Builder)
     /**
-     * @param logConfigurations Configuration for Lustre logging used to write the enabled logging events for the cache.
+     * @param logConfigurations Configuration for Lustre logging used to write the enabled logging events for the cache. See `logConfiguration` Block below.
      * @return builder
      */
     def logConfigurations(args: Endofunction[com.pulumi.aws.fsx.inputs.FileCacheLustreConfigurationLogConfigurationArgs.Builder]*):
@@ -688,7 +688,7 @@ object fsx:
       builder.diskIopsConfiguration(args(argsBuilder).build)
 
     /**
-     * @param endpoints Endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror. See Endpoints below.
+     * @param endpoints Endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror. See `endpoints` below.
      * @return builder
      */
     def endpoints(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapFileSystemEndpointArgs.Builder]*):
@@ -754,7 +754,7 @@ object fsx:
       builder.activeDirectoryConfiguration(args(argsBuilder).build)
 
     /**
-     * @param endpoints Endpoints that are used to access data or to manage the storage virtual machine using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror. See Endpoints below.
+     * @param endpoints Endpoints that are used to access data or to manage the storage virtual machine using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror. See `endpoints` below.
      * @return builder
      */
     def endpoints(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapStorageVirtualMachineEndpointArgs.Builder]*):

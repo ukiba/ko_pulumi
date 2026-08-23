@@ -516,7 +516,7 @@ object rds:
 
   extension (builder: com.pulumi.aws.rds.ProxyArgs.Builder)
     /**
-     * @param auths Configuration block(s) with authorization mechanisms to connect to the associated instances or clusters. Required when `defaultAuthScheme` is `NONE` or unspecified. Described below.
+     * @param auths Configuration block(s) with authorization mechanisms to connect to the associated instances or clusters. Required when `defaultAuthScheme` is `NONE` or unspecified. See the `auth` block below.
      * @return builder
      */
     def auths(args: Endofunction[com.pulumi.aws.rds.inputs.ProxyAuthArgs.Builder]*):
@@ -812,6 +812,18 @@ object rds:
       val argsBuilder = com.pulumi.aws.rds.inputs.GetSnapshotPlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getSnapshotPlain(args(argsBuilder).build)
 
+    /** Provides details about an AWS RDS (Relational Database) Snapshots. */
+    inline def getSnapshots(args: Endofunction[com.pulumi.aws.rds.inputs.GetSnapshotsArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetSnapshotsResult] =
+      val argsBuilder = com.pulumi.aws.rds.inputs.GetSnapshotsArgs.builder
+      com.pulumi.aws.rds.RdsFunctions.getSnapshots(args(argsBuilder).build)
+
+    /** Provides details about an AWS RDS (Relational Database) Snapshots. */
+    inline def getSnapshotsPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetSnapshotsPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetSnapshotsResult] =
+      val argsBuilder = com.pulumi.aws.rds.inputs.GetSnapshotsPlainArgs.builder
+      com.pulumi.aws.rds.RdsFunctions.getSnapshotsPlain(args(argsBuilder).build)
+
     /** Use this data source to get information about an RDS subnet group. */
     inline def getSubnetGroup(args: Endofunction[com.pulumi.aws.rds.inputs.GetSubnetGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetSubnetGroupResult] =
@@ -1031,6 +1043,16 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.GetInstancesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.rds.inputs.GetSnapshotsArgs.Builder)
+    /**
+     * @param filters Configuration block(s) used to filter snapshots with AWS supported attributes. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.rds.inputs.GetSnapshotsFilterArgs.Builder]*):
+        com.pulumi.aws.rds.inputs.GetSnapshotsArgs.Builder =
+      def argsBuilder = com.pulumi.aws.rds.inputs.GetSnapshotsFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.rds.inputs.GlobalClusterState.Builder)
     /**
      * @param globalClusterMembers Set of objects containing Global Cluster members.
@@ -1144,7 +1166,7 @@ object rds:
 
   extension (builder: com.pulumi.aws.rds.inputs.ProxyState.Builder)
     /**
-     * @param auths Configuration block(s) with authorization mechanisms to connect to the associated instances or clusters. Required when `defaultAuthScheme` is `NONE` or unspecified. Described below.
+     * @param auths Configuration block(s) with authorization mechanisms to connect to the associated instances or clusters. Required when `defaultAuthScheme` is `NONE` or unspecified. See the `auth` block below.
      * @return builder
      */
     def auths(args: Endofunction[com.pulumi.aws.rds.inputs.ProxyAuthArgs.Builder]*):

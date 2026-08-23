@@ -191,6 +191,15 @@ object amp:
       builder.destination(args(argsBuilder).build)
 
     /**
+     * @param exporter Configuration block for additional exporters. See `exporter` Block for details.
+     * @return builder
+     */
+    def exporter(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperExporterArgs.Builder]):
+        com.pulumi.aws.amp.ScraperArgs.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.ScraperExporterArgs.builder
+      builder.exporter(args(argsBuilder).build)
+
+    /**
      * @param roleConfiguration Configuration block to enable writing to an Amazon Managed Service for Prometheus workspace in a different account. See `roleConfiguration` Block for details.
      * @return builder
      */
@@ -400,6 +409,16 @@ object amp:
       val argsBuilder = com.pulumi.aws.amp.inputs.ScraperDestinationCloudwatchArgs.builder
       builder.cloudwatch(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.amp.inputs.ScraperExporterArgs.Builder)
+    /**
+     * @param opensearch Configuration block for an OpenSearch exporter. See `opensearch` Block for details.
+     * @return builder
+     */
+    def opensearch(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperExporterOpensearchArgs.Builder]):
+        com.pulumi.aws.amp.inputs.ScraperExporterArgs.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.ScraperExporterOpensearchArgs.builder
+      builder.opensearch(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.amp.inputs.ScraperLoggingConfigurationLoggingDestinationArgs.Builder)
     /**
      * @param cloudwatchLogs Configuration block for CloudWatch Logs destination. See `cloudwatchLogs` Block below.
@@ -455,6 +474,15 @@ object amp:
         com.pulumi.aws.amp.inputs.ScraperState.Builder =
       val argsBuilder = com.pulumi.aws.amp.inputs.ScraperDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
+
+    /**
+     * @param exporter Configuration block for additional exporters. See `exporter` Block for details.
+     * @return builder
+     */
+    def exporter(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperExporterArgs.Builder]):
+        com.pulumi.aws.amp.inputs.ScraperState.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.ScraperExporterArgs.builder
+      builder.exporter(args(argsBuilder).build)
 
     /**
      * @param roleConfiguration Configuration block to enable writing to an Amazon Managed Service for Prometheus workspace in a different account. See `roleConfiguration` Block for details.

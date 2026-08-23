@@ -835,6 +835,15 @@ object wafv2:
       builder.fieldToMatch(args(argsBuilder).build)
 
     /**
+     * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
+     * @return builder
+     */
+    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementPreParseTextTransformationArgs.Builder]*):
+        com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementArgs.Builder =
+      def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementPreParseTextTransformationArgs.builder
+      builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
      * At least one required.
      * See Text Transformation below for details.
@@ -1404,6 +1413,15 @@ object wafv2:
       builder.fieldToMatch(args(argsBuilder).build)
 
     /**
+     * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
+     * @return builder
+     */
+    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementPreParseTextTransformationArgs.Builder]*):
+        com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder =
+      def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementPreParseTextTransformationArgs.builder
+      builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
      * At least one required.
      * See Text Transformation below for details.
@@ -1652,6 +1670,15 @@ object wafv2:
       builder.fieldToMatch(args(argsBuilder).build)
 
     /**
+     * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
+     * @return builder
+     */
+    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementPreParseTextTransformationArgs.Builder]*):
+        com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder =
+      def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementPreParseTextTransformationArgs.builder
+      builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
      * At least one required.
      * See Text Transformation below for details.
@@ -1858,6 +1885,15 @@ object wafv2:
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
+
+    /**
+     * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
+     * @return builder
+     */
+    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementPreParseTextTransformationArgs.Builder]*):
+        com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder =
+      def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementPreParseTextTransformationArgs.builder
+      builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
@@ -2068,6 +2104,15 @@ object wafv2:
       builder.fieldToMatch(args(argsBuilder).build)
 
     /**
+     * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
+     * @return builder
+     */
+    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementPreParseTextTransformationArgs.Builder]*):
+        com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder =
+      def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementPreParseTextTransformationArgs.builder
+      builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
      * At least one required.
      * See Text Transformation below for details.
@@ -2274,6 +2319,15 @@ object wafv2:
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
+
+    /**
+     * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
+     * @return builder
+     */
+    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementPreParseTextTransformationArgs.Builder]*):
+        com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder =
+      def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementPreParseTextTransformationArgs.builder
+      builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
@@ -2484,6 +2538,15 @@ object wafv2:
       builder.fieldToMatch(args(argsBuilder).build)
 
     /**
+     * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
+     * @return builder
+     */
+    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementPreParseTextTransformationArgs.Builder]*):
+        com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder =
+      def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementPreParseTextTransformationArgs.builder
+      builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
      * At least one required.
      * See Text Transformation below for details.
@@ -2690,6 +2753,15 @@ object wafv2:
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
+
+    /**
+     * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
+     * @return builder
+     */
+    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementPreParseTextTransformationArgs.Builder]*):
+        com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementArgs.Builder =
+      def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementPreParseTextTransformationArgs.builder
+      builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
@@ -2900,6 +2972,15 @@ object wafv2:
       builder.fieldToMatch(args(argsBuilder).build)
 
     /**
+     * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
+     * @return builder
+     */
+    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementPreParseTextTransformationArgs.Builder]*):
+        com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementArgs.Builder =
+      def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementPreParseTextTransformationArgs.builder
+      builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
      * At least one required.
      * See Text Transformation below for details.
@@ -3106,6 +3187,15 @@ object wafv2:
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
+
+    /**
+     * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
+     * @return builder
+     */
+    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementPreParseTextTransformationArgs.Builder]*):
+        com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementArgs.Builder =
+      def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementPreParseTextTransformationArgs.builder
+      builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
@@ -3316,6 +3406,15 @@ object wafv2:
       builder.fieldToMatch(args(argsBuilder).build)
 
     /**
+     * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
+     * @return builder
+     */
+    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementPreParseTextTransformationArgs.Builder]*):
+        com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementArgs.Builder =
+      def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementPreParseTextTransformationArgs.builder
+      builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
      * At least one required.
      * See Text Transformation below for details.
@@ -3522,6 +3621,15 @@ object wafv2:
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
+
+    /**
+     * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
+     * @return builder
+     */
+    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementPreParseTextTransformationArgs.Builder]*):
+        com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementArgs.Builder =
+      def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementPreParseTextTransformationArgs.builder
+      builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.

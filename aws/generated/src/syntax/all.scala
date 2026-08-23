@@ -110,6 +110,7 @@ export ko_pulumi.aws.ram.RamFunctions
 export ko_pulumi.aws.rds.RdsFunctions
 export ko_pulumi.aws.redshift.RedshiftFunctions
 export ko_pulumi.aws.redshiftserverless.RedshiftserverlessFunctions
+export ko_pulumi.aws.resiliencehub.ResiliencehubFunctions
 export ko_pulumi.aws.resourceexplorer.ResourceexplorerFunctions
 export ko_pulumi.aws.resourcegroupstaggingapi.ResourcegroupstaggingapiFunctions
 export ko_pulumi.aws.route53.Route53Functions

@@ -30,21 +30,13 @@ object dataform:
     //
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
-    /**
-     * Retrieves the current IAM policy data for repository
-     * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
-     * See Provider Versions for more details on beta resources.
-     */
+    /** Retrieves the current IAM policy data for repository */
     inline def getRepositoryIamPolicy(args: Endofunction[com.pulumi.gcp.dataform.inputs.GetRepositoryIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataform.outputs.GetRepositoryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.GetRepositoryIamPolicyArgs.builder
       com.pulumi.gcp.dataform.DataformFunctions.getRepositoryIamPolicy(args(argsBuilder).build)
 
-    /**
-     * Retrieves the current IAM policy data for repository
-     * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
-     * See Provider Versions for more details on beta resources.
-     */
+    /** Retrieves the current IAM policy data for repository */
     inline def getRepositoryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataform.inputs.GetRepositoryIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataform.outputs.GetRepositoryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.GetRepositoryIamPolicyPlainArgs.builder
@@ -69,12 +61,9 @@ object dataform:
   /**
    * A resource represents a Dataform Git repository
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about Repository, see:
    * 
-   * * [API documentation](https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories)
+   * * [API documentation](https://cloud.google.com/dataform/reference/rest/v1/projects.locations.repositories)
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dataform/docs/)
    */

@@ -606,7 +606,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.BucketNotificationArgs.Builder)
     /**
-     * @param lambdaFunctions Used to configure notifications to a Lambda Function. See below.
+     * @param lambdaFunctions Notification configuration to a Lambda Function. See below.
      * @return builder
      */
     def lambdaFunctions(args: Endofunction[com.pulumi.aws.s3.inputs.BucketNotificationLambdaFunctionArgs.Builder]*):
@@ -1733,7 +1733,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.VectorsVectorBucketArgs.Builder)
     /**
-     * @param encryptionConfigurations Encryption configuration for the vector bucket. See Encryption Configuration below for more details.
+     * @param encryptionConfigurations Encryption configuration for the vector bucket. See `encryptionConfiguration` below for more details.
      * @return builder
      */
     def encryptionConfigurations(args: Endofunction[com.pulumi.aws.s3.inputs.VectorsVectorBucketEncryptionConfigurationArgs.Builder]*):
@@ -2341,7 +2341,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketNotificationState.Builder)
     /**
-     * @param lambdaFunctions Used to configure notifications to a Lambda Function. See below.
+     * @param lambdaFunctions Notification configuration to a Lambda Function. See below.
      * @return builder
      */
     def lambdaFunctions(args: Endofunction[com.pulumi.aws.s3.inputs.BucketNotificationLambdaFunctionArgs.Builder]*):
@@ -3452,7 +3452,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.VectorsVectorBucketState.Builder)
     /**
-     * @param encryptionConfigurations Encryption configuration for the vector bucket. See Encryption Configuration below for more details.
+     * @param encryptionConfigurations Encryption configuration for the vector bucket. See `encryptionConfiguration` below for more details.
      * @return builder
      */
     def encryptionConfigurations(args: Endofunction[com.pulumi.aws.s3.inputs.VectorsVectorBucketEncryptionConfigurationArgs.Builder]*):

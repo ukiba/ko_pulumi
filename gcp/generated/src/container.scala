@@ -1987,6 +1987,15 @@ object container:
       builder.gkeBackupAgentConfig(args(argsBuilder).build)
 
     /**
+     * @param highScaleCheckpointingConfig The status of the High Scale Checkpointing addon, which enables Multi-Tier Checkpointing for Machine Learning workloads. Structure is documented below.
+     * @return builder
+     */
+    def highScaleCheckpointingConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterAddonsConfigHighScaleCheckpointingConfigArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterAddonsConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterAddonsConfigHighScaleCheckpointingConfigArgs.builder
+      builder.highScaleCheckpointingConfig(args(argsBuilder).build)
+
+    /**
      * @param horizontalPodAutoscaling The status of the Horizontal Pod Autoscaling
      * addon, which increases or decreases the number of replica pods a replication controller
      * has based on the resource usage of the existing pods.

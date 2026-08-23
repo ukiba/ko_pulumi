@@ -131,8 +131,6 @@ object auditmanager:
   extension (builder: com.pulumi.aws.auditmanager.ControlArgs.Builder)
     /**
      * @param controlMappingSources Data mapping sources. See `controlMappingSources` below.
-     * 
-     * The following arguments are optional:
      * @return builder
      */
     def controlMappingSources(args: Endofunction[com.pulumi.aws.auditmanager.inputs.ControlControlMappingSourceArgs.Builder]*):
@@ -246,7 +244,7 @@ object auditmanager:
 
   extension (builder: com.pulumi.aws.auditmanager.inputs.ControlControlMappingSourceArgs.Builder)
     /**
-     * @param sourceKeyword The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. See `sourceKeyword` below.
+     * @param sourceKeyword Keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. See `sourceKeyword` below.
      * @return builder
      */
     def sourceKeyword(args: Endofunction[com.pulumi.aws.auditmanager.inputs.ControlControlMappingSourceSourceKeywordArgs.Builder]):
@@ -257,8 +255,6 @@ object auditmanager:
   extension (builder: com.pulumi.aws.auditmanager.inputs.ControlState.Builder)
     /**
      * @param controlMappingSources Data mapping sources. See `controlMappingSources` below.
-     * 
-     * The following arguments are optional:
      * @return builder
      */
     def controlMappingSources(args: Endofunction[com.pulumi.aws.auditmanager.inputs.ControlControlMappingSourceArgs.Builder]*):

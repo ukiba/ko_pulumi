@@ -150,7 +150,7 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.InputVpcArgs.builder
       builder.vpc(args(argsBuilder).build)
 
-  /** Resource for managing an AWS MediaLive InputSecurityGroup. */
+  /** Manages an AWS MediaLive Input Security Group. */
   def InputSecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.medialive.InputSecurityGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.medialive.InputSecurityGroupArgs.builder

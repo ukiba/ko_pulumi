@@ -16,8 +16,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex AspectType. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.AspectTypeIamPolicy`: Authoritative. Sets the IAM policy for the aspecttype and replaces any existing policy already attached.
-   * * `gcp.dataplex.AspectTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the aspecttype are preserved.
-   * * `gcp.dataplex.AspectTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the aspecttype are preserved.
+   * * `gcp.dataplex.AspectTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the aspecttype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.AspectTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the aspecttype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -62,9 +62,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new AspectTypeIamPolicy("policy", AspectTypeIamPolicyArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -98,9 +98,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AspectTypeIamBinding("binding", AspectTypeIamBindingArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -135,9 +135,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AspectTypeIamMember("member", AspectTypeIamMemberArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -156,8 +156,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex AspectType. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.AspectTypeIamPolicy`: Authoritative. Sets the IAM policy for the aspecttype and replaces any existing policy already attached.
-   * * `gcp.dataplex.AspectTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the aspecttype are preserved.
-   * * `gcp.dataplex.AspectTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the aspecttype are preserved.
+   * * `gcp.dataplex.AspectTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the aspecttype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.AspectTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the aspecttype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -202,9 +202,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new AspectTypeIamPolicy("policy", AspectTypeIamPolicyArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -238,9 +238,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AspectTypeIamBinding("binding", AspectTypeIamBindingArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -275,9 +275,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AspectTypeIamMember("member", AspectTypeIamMemberArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -335,8 +335,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex AspectType. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.AspectTypeIamPolicy`: Authoritative. Sets the IAM policy for the aspecttype and replaces any existing policy already attached.
-   * * `gcp.dataplex.AspectTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the aspecttype are preserved.
-   * * `gcp.dataplex.AspectTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the aspecttype are preserved.
+   * * `gcp.dataplex.AspectTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the aspecttype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.AspectTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the aspecttype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -381,9 +381,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new AspectTypeIamPolicy("policy", AspectTypeIamPolicyArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -417,9 +417,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AspectTypeIamBinding("binding", AspectTypeIamBindingArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -454,9 +454,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AspectTypeIamMember("member", AspectTypeIamMemberArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -475,8 +475,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex AspectType. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.AspectTypeIamPolicy`: Authoritative. Sets the IAM policy for the aspecttype and replaces any existing policy already attached.
-   * * `gcp.dataplex.AspectTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the aspecttype are preserved.
-   * * `gcp.dataplex.AspectTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the aspecttype are preserved.
+   * * `gcp.dataplex.AspectTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the aspecttype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.AspectTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the aspecttype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -521,9 +521,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new AspectTypeIamPolicy("policy", AspectTypeIamPolicyArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -557,9 +557,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AspectTypeIamBinding("binding", AspectTypeIamBindingArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -594,9 +594,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AspectTypeIamMember("member", AspectTypeIamMemberArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -654,8 +654,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex AspectType. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.AspectTypeIamPolicy`: Authoritative. Sets the IAM policy for the aspecttype and replaces any existing policy already attached.
-   * * `gcp.dataplex.AspectTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the aspecttype are preserved.
-   * * `gcp.dataplex.AspectTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the aspecttype are preserved.
+   * * `gcp.dataplex.AspectTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the aspecttype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.AspectTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the aspecttype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -700,9 +700,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new AspectTypeIamPolicy("policy", AspectTypeIamPolicyArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -736,9 +736,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AspectTypeIamBinding("binding", AspectTypeIamBindingArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -773,9 +773,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AspectTypeIamMember("member", AspectTypeIamMemberArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -794,8 +794,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex AspectType. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.AspectTypeIamPolicy`: Authoritative. Sets the IAM policy for the aspecttype and replaces any existing policy already attached.
-   * * `gcp.dataplex.AspectTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the aspecttype are preserved.
-   * * `gcp.dataplex.AspectTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the aspecttype are preserved.
+   * * `gcp.dataplex.AspectTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the aspecttype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.AspectTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the aspecttype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -840,9 +840,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new AspectTypeIamPolicy("policy", AspectTypeIamPolicyArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -876,9 +876,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AspectTypeIamBinding("binding", AspectTypeIamBindingArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -913,9 +913,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AspectTypeIamMember("member", AspectTypeIamMemberArgs.builder()
-   *             .project(testAspectTypeBasic.project())
-   *             .location(testAspectTypeBasic.location())
-   *             .aspectTypeId(testAspectTypeBasic.aspectTypeId())
+   *             .project(testAspectTypeBasic.get("project"))
+   *             .location(testAspectTypeBasic.get("location"))
+   *             .aspectTypeId(testAspectTypeBasic.get("aspectTypeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -997,8 +997,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Asset. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.AssetIamPolicy`: Authoritative. Sets the IAM policy for the asset and replaces any existing policy already attached.
-   * * `gcp.dataplex.AssetIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the asset are preserved.
-   * * `gcp.dataplex.AssetIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the asset are preserved.
+   * * `gcp.dataplex.AssetIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the asset are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.AssetIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the asset are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1043,11 +1043,11 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new AssetIamPolicy("policy", AssetIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1081,11 +1081,11 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AssetIamBinding("binding", AssetIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1120,11 +1120,11 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AssetIamMember("member", AssetIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1143,8 +1143,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Asset. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.AssetIamPolicy`: Authoritative. Sets the IAM policy for the asset and replaces any existing policy already attached.
-   * * `gcp.dataplex.AssetIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the asset are preserved.
-   * * `gcp.dataplex.AssetIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the asset are preserved.
+   * * `gcp.dataplex.AssetIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the asset are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.AssetIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the asset are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1189,11 +1189,11 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new AssetIamPolicy("policy", AssetIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1227,11 +1227,11 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AssetIamBinding("binding", AssetIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1266,11 +1266,11 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AssetIamMember("member", AssetIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1328,8 +1328,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Asset. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.AssetIamPolicy`: Authoritative. Sets the IAM policy for the asset and replaces any existing policy already attached.
-   * * `gcp.dataplex.AssetIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the asset are preserved.
-   * * `gcp.dataplex.AssetIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the asset are preserved.
+   * * `gcp.dataplex.AssetIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the asset are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.AssetIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the asset are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1374,11 +1374,11 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new AssetIamPolicy("policy", AssetIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1412,11 +1412,11 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AssetIamBinding("binding", AssetIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1451,11 +1451,11 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AssetIamMember("member", AssetIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1474,8 +1474,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Asset. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.AssetIamPolicy`: Authoritative. Sets the IAM policy for the asset and replaces any existing policy already attached.
-   * * `gcp.dataplex.AssetIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the asset are preserved.
-   * * `gcp.dataplex.AssetIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the asset are preserved.
+   * * `gcp.dataplex.AssetIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the asset are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.AssetIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the asset are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1520,11 +1520,11 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new AssetIamPolicy("policy", AssetIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1558,11 +1558,11 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AssetIamBinding("binding", AssetIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1597,11 +1597,11 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AssetIamMember("member", AssetIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1659,8 +1659,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Asset. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.AssetIamPolicy`: Authoritative. Sets the IAM policy for the asset and replaces any existing policy already attached.
-   * * `gcp.dataplex.AssetIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the asset are preserved.
-   * * `gcp.dataplex.AssetIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the asset are preserved.
+   * * `gcp.dataplex.AssetIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the asset are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.AssetIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the asset are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1705,11 +1705,11 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new AssetIamPolicy("policy", AssetIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1743,11 +1743,11 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AssetIamBinding("binding", AssetIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1782,11 +1782,11 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AssetIamMember("member", AssetIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1805,8 +1805,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Asset. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.AssetIamPolicy`: Authoritative. Sets the IAM policy for the asset and replaces any existing policy already attached.
-   * * `gcp.dataplex.AssetIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the asset are preserved.
-   * * `gcp.dataplex.AssetIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the asset are preserved.
+   * * `gcp.dataplex.AssetIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the asset are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.AssetIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the asset are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1851,11 +1851,11 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new AssetIamPolicy("policy", AssetIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1889,11 +1889,11 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AssetIamBinding("binding", AssetIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1928,11 +1928,11 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AssetIamMember("member", AssetIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.dataplexZone())
-   *             .asset(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("dataplexZone"))
+   *             .asset(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2081,8 +2081,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex DataProduct. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.DataProductIamPolicy`: Authoritative. Sets the IAM policy for the dataproduct and replaces any existing policy already attached.
-   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved.
-   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved.
+   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2127,9 +2127,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new DataProductIamPolicy("policy", DataProductIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2163,9 +2163,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataProductIamBinding("binding", DataProductIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2200,9 +2200,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataProductIamMember("member", DataProductIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2221,8 +2221,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex DataProduct. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.DataProductIamPolicy`: Authoritative. Sets the IAM policy for the dataproduct and replaces any existing policy already attached.
-   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved.
-   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved.
+   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2267,9 +2267,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new DataProductIamPolicy("policy", DataProductIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2303,9 +2303,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataProductIamBinding("binding", DataProductIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2340,9 +2340,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataProductIamMember("member", DataProductIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2400,8 +2400,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex DataProduct. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.DataProductIamPolicy`: Authoritative. Sets the IAM policy for the dataproduct and replaces any existing policy already attached.
-   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved.
-   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved.
+   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2446,9 +2446,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new DataProductIamPolicy("policy", DataProductIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2482,9 +2482,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataProductIamBinding("binding", DataProductIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2519,9 +2519,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataProductIamMember("member", DataProductIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2540,8 +2540,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex DataProduct. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.DataProductIamPolicy`: Authoritative. Sets the IAM policy for the dataproduct and replaces any existing policy already attached.
-   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved.
-   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved.
+   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2586,9 +2586,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new DataProductIamPolicy("policy", DataProductIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2622,9 +2622,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataProductIamBinding("binding", DataProductIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2659,9 +2659,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataProductIamMember("member", DataProductIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2719,8 +2719,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex DataProduct. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.DataProductIamPolicy`: Authoritative. Sets the IAM policy for the dataproduct and replaces any existing policy already attached.
-   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved.
-   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved.
+   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2765,9 +2765,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new DataProductIamPolicy("policy", DataProductIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2801,9 +2801,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataProductIamBinding("binding", DataProductIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2838,9 +2838,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataProductIamMember("member", DataProductIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2859,8 +2859,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex DataProduct. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.DataProductIamPolicy`: Authoritative. Sets the IAM policy for the dataproduct and replaces any existing policy already attached.
-   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved.
-   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved.
+   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2905,9 +2905,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new DataProductIamPolicy("policy", DataProductIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2941,9 +2941,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataProductIamBinding("binding", DataProductIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2978,9 +2978,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataProductIamMember("member", DataProductIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .dataProductId(example.dataProductId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataProductId(example.get("dataProductId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3338,8 +3338,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Datascan. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.DatascanIamPolicy`: Authoritative. Sets the IAM policy for the datascan and replaces any existing policy already attached.
-   * * `gcp.dataplex.DatascanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datascan are preserved.
-   * * `gcp.dataplex.DatascanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datascan are preserved.
+   * * `gcp.dataplex.DatascanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datascan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.DatascanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datascan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3384,9 +3384,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new DatascanIamPolicy("policy", DatascanIamPolicyArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3420,9 +3420,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DatascanIamBinding("binding", DatascanIamBindingArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3457,9 +3457,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DatascanIamMember("member", DatascanIamMemberArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3478,8 +3478,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Datascan. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.DatascanIamPolicy`: Authoritative. Sets the IAM policy for the datascan and replaces any existing policy already attached.
-   * * `gcp.dataplex.DatascanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datascan are preserved.
-   * * `gcp.dataplex.DatascanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datascan are preserved.
+   * * `gcp.dataplex.DatascanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datascan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.DatascanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datascan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3524,9 +3524,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new DatascanIamPolicy("policy", DatascanIamPolicyArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3560,9 +3560,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DatascanIamBinding("binding", DatascanIamBindingArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3597,9 +3597,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DatascanIamMember("member", DatascanIamMemberArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3657,8 +3657,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Datascan. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.DatascanIamPolicy`: Authoritative. Sets the IAM policy for the datascan and replaces any existing policy already attached.
-   * * `gcp.dataplex.DatascanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datascan are preserved.
-   * * `gcp.dataplex.DatascanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datascan are preserved.
+   * * `gcp.dataplex.DatascanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datascan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.DatascanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datascan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3703,9 +3703,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new DatascanIamPolicy("policy", DatascanIamPolicyArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3739,9 +3739,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DatascanIamBinding("binding", DatascanIamBindingArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3776,9 +3776,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DatascanIamMember("member", DatascanIamMemberArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3797,8 +3797,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Datascan. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.DatascanIamPolicy`: Authoritative. Sets the IAM policy for the datascan and replaces any existing policy already attached.
-   * * `gcp.dataplex.DatascanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datascan are preserved.
-   * * `gcp.dataplex.DatascanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datascan are preserved.
+   * * `gcp.dataplex.DatascanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datascan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.DatascanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datascan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3843,9 +3843,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new DatascanIamPolicy("policy", DatascanIamPolicyArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3879,9 +3879,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DatascanIamBinding("binding", DatascanIamBindingArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3916,9 +3916,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DatascanIamMember("member", DatascanIamMemberArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3976,8 +3976,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Datascan. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.DatascanIamPolicy`: Authoritative. Sets the IAM policy for the datascan and replaces any existing policy already attached.
-   * * `gcp.dataplex.DatascanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datascan are preserved.
-   * * `gcp.dataplex.DatascanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datascan are preserved.
+   * * `gcp.dataplex.DatascanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datascan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.DatascanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datascan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4022,9 +4022,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new DatascanIamPolicy("policy", DatascanIamPolicyArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4058,9 +4058,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DatascanIamBinding("binding", DatascanIamBindingArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4095,9 +4095,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DatascanIamMember("member", DatascanIamMemberArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4116,8 +4116,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Datascan. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.DatascanIamPolicy`: Authoritative. Sets the IAM policy for the datascan and replaces any existing policy already attached.
-   * * `gcp.dataplex.DatascanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datascan are preserved.
-   * * `gcp.dataplex.DatascanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datascan are preserved.
+   * * `gcp.dataplex.DatascanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datascan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.DatascanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datascan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4162,9 +4162,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new DatascanIamPolicy("policy", DatascanIamPolicyArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4198,9 +4198,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DatascanIamBinding("binding", DatascanIamBindingArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4235,9 +4235,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DatascanIamMember("member", DatascanIamMemberArgs.builder()
-   *             .project(basicProfile.project())
-   *             .location(basicProfile.location())
-   *             .dataScanId(basicProfile.dataScanId())
+   *             .project(basicProfile.get("project"))
+   *             .location(basicProfile.get("location"))
+   *             .dataScanId(basicProfile.get("dataScanId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4343,8 +4343,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex EntryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.EntryGroupIamPolicy`: Authoritative. Sets the IAM policy for the entrygroup and replaces any existing policy already attached.
-   * * `gcp.dataplex.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved.
-   * * `gcp.dataplex.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved.
+   * * `gcp.dataplex.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4389,9 +4389,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new EntryGroupIamPolicy("policy", EntryGroupIamPolicyArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4425,9 +4425,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryGroupIamBinding("binding", EntryGroupIamBindingArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4462,9 +4462,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryGroupIamMember("member", EntryGroupIamMemberArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4483,8 +4483,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex EntryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.EntryGroupIamPolicy`: Authoritative. Sets the IAM policy for the entrygroup and replaces any existing policy already attached.
-   * * `gcp.dataplex.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved.
-   * * `gcp.dataplex.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved.
+   * * `gcp.dataplex.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4529,9 +4529,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new EntryGroupIamPolicy("policy", EntryGroupIamPolicyArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4565,9 +4565,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryGroupIamBinding("binding", EntryGroupIamBindingArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4602,9 +4602,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryGroupIamMember("member", EntryGroupIamMemberArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4662,8 +4662,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex EntryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.EntryGroupIamPolicy`: Authoritative. Sets the IAM policy for the entrygroup and replaces any existing policy already attached.
-   * * `gcp.dataplex.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved.
-   * * `gcp.dataplex.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved.
+   * * `gcp.dataplex.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4708,9 +4708,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new EntryGroupIamPolicy("policy", EntryGroupIamPolicyArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4744,9 +4744,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryGroupIamBinding("binding", EntryGroupIamBindingArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4781,9 +4781,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryGroupIamMember("member", EntryGroupIamMemberArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4802,8 +4802,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex EntryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.EntryGroupIamPolicy`: Authoritative. Sets the IAM policy for the entrygroup and replaces any existing policy already attached.
-   * * `gcp.dataplex.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved.
-   * * `gcp.dataplex.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved.
+   * * `gcp.dataplex.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4848,9 +4848,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new EntryGroupIamPolicy("policy", EntryGroupIamPolicyArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4884,9 +4884,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryGroupIamBinding("binding", EntryGroupIamBindingArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4921,9 +4921,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryGroupIamMember("member", EntryGroupIamMemberArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4981,8 +4981,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex EntryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.EntryGroupIamPolicy`: Authoritative. Sets the IAM policy for the entrygroup and replaces any existing policy already attached.
-   * * `gcp.dataplex.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved.
-   * * `gcp.dataplex.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved.
+   * * `gcp.dataplex.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5027,9 +5027,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new EntryGroupIamPolicy("policy", EntryGroupIamPolicyArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5063,9 +5063,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryGroupIamBinding("binding", EntryGroupIamBindingArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5100,9 +5100,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryGroupIamMember("member", EntryGroupIamMemberArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5121,8 +5121,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex EntryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.EntryGroupIamPolicy`: Authoritative. Sets the IAM policy for the entrygroup and replaces any existing policy already attached.
-   * * `gcp.dataplex.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved.
-   * * `gcp.dataplex.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved.
+   * * `gcp.dataplex.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5167,9 +5167,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new EntryGroupIamPolicy("policy", EntryGroupIamPolicyArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5203,9 +5203,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryGroupIamBinding("binding", EntryGroupIamBindingArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5240,9 +5240,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryGroupIamMember("member", EntryGroupIamMemberArgs.builder()
-   *             .project(testEntryGroupBasic.project())
-   *             .location(testEntryGroupBasic.location())
-   *             .entryGroupId(testEntryGroupBasic.entryGroupId())
+   *             .project(testEntryGroupBasic.get("project"))
+   *             .location(testEntryGroupBasic.get("location"))
+   *             .entryGroupId(testEntryGroupBasic.get("entryGroupId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5350,8 +5350,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex EntryType. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.EntryTypeIamPolicy`: Authoritative. Sets the IAM policy for the entrytype and replaces any existing policy already attached.
-   * * `gcp.dataplex.EntryTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrytype are preserved.
-   * * `gcp.dataplex.EntryTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrytype are preserved.
+   * * `gcp.dataplex.EntryTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrytype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.EntryTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrytype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5396,9 +5396,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new EntryTypeIamPolicy("policy", EntryTypeIamPolicyArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5432,9 +5432,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryTypeIamBinding("binding", EntryTypeIamBindingArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5469,9 +5469,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryTypeIamMember("member", EntryTypeIamMemberArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5490,8 +5490,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex EntryType. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.EntryTypeIamPolicy`: Authoritative. Sets the IAM policy for the entrytype and replaces any existing policy already attached.
-   * * `gcp.dataplex.EntryTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrytype are preserved.
-   * * `gcp.dataplex.EntryTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrytype are preserved.
+   * * `gcp.dataplex.EntryTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrytype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.EntryTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrytype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5536,9 +5536,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new EntryTypeIamPolicy("policy", EntryTypeIamPolicyArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5572,9 +5572,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryTypeIamBinding("binding", EntryTypeIamBindingArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5609,9 +5609,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryTypeIamMember("member", EntryTypeIamMemberArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5669,8 +5669,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex EntryType. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.EntryTypeIamPolicy`: Authoritative. Sets the IAM policy for the entrytype and replaces any existing policy already attached.
-   * * `gcp.dataplex.EntryTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrytype are preserved.
-   * * `gcp.dataplex.EntryTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrytype are preserved.
+   * * `gcp.dataplex.EntryTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrytype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.EntryTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrytype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5715,9 +5715,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new EntryTypeIamPolicy("policy", EntryTypeIamPolicyArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5751,9 +5751,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryTypeIamBinding("binding", EntryTypeIamBindingArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5788,9 +5788,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryTypeIamMember("member", EntryTypeIamMemberArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5809,8 +5809,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex EntryType. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.EntryTypeIamPolicy`: Authoritative. Sets the IAM policy for the entrytype and replaces any existing policy already attached.
-   * * `gcp.dataplex.EntryTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrytype are preserved.
-   * * `gcp.dataplex.EntryTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrytype are preserved.
+   * * `gcp.dataplex.EntryTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrytype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.EntryTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrytype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5855,9 +5855,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new EntryTypeIamPolicy("policy", EntryTypeIamPolicyArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5891,9 +5891,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryTypeIamBinding("binding", EntryTypeIamBindingArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5928,9 +5928,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryTypeIamMember("member", EntryTypeIamMemberArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5988,8 +5988,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex EntryType. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.EntryTypeIamPolicy`: Authoritative. Sets the IAM policy for the entrytype and replaces any existing policy already attached.
-   * * `gcp.dataplex.EntryTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrytype are preserved.
-   * * `gcp.dataplex.EntryTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrytype are preserved.
+   * * `gcp.dataplex.EntryTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrytype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.EntryTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrytype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6034,9 +6034,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new EntryTypeIamPolicy("policy", EntryTypeIamPolicyArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6070,9 +6070,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryTypeIamBinding("binding", EntryTypeIamBindingArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6107,9 +6107,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryTypeIamMember("member", EntryTypeIamMemberArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6128,8 +6128,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex EntryType. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.EntryTypeIamPolicy`: Authoritative. Sets the IAM policy for the entrytype and replaces any existing policy already attached.
-   * * `gcp.dataplex.EntryTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrytype are preserved.
-   * * `gcp.dataplex.EntryTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrytype are preserved.
+   * * `gcp.dataplex.EntryTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrytype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.EntryTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrytype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6174,9 +6174,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new EntryTypeIamPolicy("policy", EntryTypeIamPolicyArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6210,9 +6210,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryTypeIamBinding("binding", EntryTypeIamBindingArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6247,9 +6247,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryTypeIamMember("member", EntryTypeIamMemberArgs.builder()
-   *             .project(testEntryTypeBasic.project())
-   *             .location(testEntryTypeBasic.location())
-   *             .entryTypeId(testEntryTypeBasic.entryTypeId())
+   *             .project(testEntryTypeBasic.get("project"))
+   *             .location(testEntryTypeBasic.get("location"))
+   *             .entryTypeId(testEntryTypeBasic.get("entryTypeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6317,8 +6317,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Glossary. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.GlossaryIamPolicy`: Authoritative. Sets the IAM policy for the glossary and replaces any existing policy already attached.
-   * * `gcp.dataplex.GlossaryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the glossary are preserved.
-   * * `gcp.dataplex.GlossaryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the glossary are preserved.
+   * * `gcp.dataplex.GlossaryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the glossary are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.GlossaryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the glossary are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6363,9 +6363,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new GlossaryIamPolicy("policy", GlossaryIamPolicyArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6399,9 +6399,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new GlossaryIamBinding("binding", GlossaryIamBindingArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6436,9 +6436,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new GlossaryIamMember("member", GlossaryIamMemberArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6457,8 +6457,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Glossary. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.GlossaryIamPolicy`: Authoritative. Sets the IAM policy for the glossary and replaces any existing policy already attached.
-   * * `gcp.dataplex.GlossaryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the glossary are preserved.
-   * * `gcp.dataplex.GlossaryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the glossary are preserved.
+   * * `gcp.dataplex.GlossaryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the glossary are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.GlossaryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the glossary are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6503,9 +6503,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new GlossaryIamPolicy("policy", GlossaryIamPolicyArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6539,9 +6539,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new GlossaryIamBinding("binding", GlossaryIamBindingArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6576,9 +6576,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new GlossaryIamMember("member", GlossaryIamMemberArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6636,8 +6636,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Glossary. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.GlossaryIamPolicy`: Authoritative. Sets the IAM policy for the glossary and replaces any existing policy already attached.
-   * * `gcp.dataplex.GlossaryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the glossary are preserved.
-   * * `gcp.dataplex.GlossaryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the glossary are preserved.
+   * * `gcp.dataplex.GlossaryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the glossary are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.GlossaryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the glossary are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6682,9 +6682,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new GlossaryIamPolicy("policy", GlossaryIamPolicyArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6718,9 +6718,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new GlossaryIamBinding("binding", GlossaryIamBindingArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6755,9 +6755,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new GlossaryIamMember("member", GlossaryIamMemberArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6776,8 +6776,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Glossary. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.GlossaryIamPolicy`: Authoritative. Sets the IAM policy for the glossary and replaces any existing policy already attached.
-   * * `gcp.dataplex.GlossaryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the glossary are preserved.
-   * * `gcp.dataplex.GlossaryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the glossary are preserved.
+   * * `gcp.dataplex.GlossaryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the glossary are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.GlossaryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the glossary are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6822,9 +6822,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new GlossaryIamPolicy("policy", GlossaryIamPolicyArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6858,9 +6858,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new GlossaryIamBinding("binding", GlossaryIamBindingArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6895,9 +6895,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new GlossaryIamMember("member", GlossaryIamMemberArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6955,8 +6955,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Glossary. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.GlossaryIamPolicy`: Authoritative. Sets the IAM policy for the glossary and replaces any existing policy already attached.
-   * * `gcp.dataplex.GlossaryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the glossary are preserved.
-   * * `gcp.dataplex.GlossaryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the glossary are preserved.
+   * * `gcp.dataplex.GlossaryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the glossary are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.GlossaryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the glossary are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -7001,9 +7001,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new GlossaryIamPolicy("policy", GlossaryIamPolicyArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -7037,9 +7037,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new GlossaryIamBinding("binding", GlossaryIamBindingArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7074,9 +7074,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new GlossaryIamMember("member", GlossaryIamMemberArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7095,8 +7095,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Glossary. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.GlossaryIamPolicy`: Authoritative. Sets the IAM policy for the glossary and replaces any existing policy already attached.
-   * * `gcp.dataplex.GlossaryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the glossary are preserved.
-   * * `gcp.dataplex.GlossaryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the glossary are preserved.
+   * * `gcp.dataplex.GlossaryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the glossary are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.GlossaryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the glossary are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -7141,9 +7141,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new GlossaryIamPolicy("policy", GlossaryIamPolicyArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -7177,9 +7177,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new GlossaryIamBinding("binding", GlossaryIamBindingArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7214,9 +7214,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new GlossaryIamMember("member", GlossaryIamMemberArgs.builder()
-   *             .project(glossaryTestId.project())
-   *             .location(glossaryTestId.location())
-   *             .glossaryId(glossaryTestId.glossaryId())
+   *             .project(glossaryTestId.get("project"))
+   *             .location(glossaryTestId.get("location"))
+   *             .glossaryId(glossaryTestId.get("glossaryId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7297,8 +7297,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Lake. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.LakeIamPolicy`: Authoritative. Sets the IAM policy for the lake and replaces any existing policy already attached.
-   * * `gcp.dataplex.LakeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the lake are preserved.
-   * * `gcp.dataplex.LakeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the lake are preserved.
+   * * `gcp.dataplex.LakeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the lake are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.LakeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the lake are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -7343,9 +7343,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new LakeIamPolicy("policy", LakeIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -7379,9 +7379,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LakeIamBinding("binding", LakeIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7416,9 +7416,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LakeIamMember("member", LakeIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7437,8 +7437,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Lake. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.LakeIamPolicy`: Authoritative. Sets the IAM policy for the lake and replaces any existing policy already attached.
-   * * `gcp.dataplex.LakeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the lake are preserved.
-   * * `gcp.dataplex.LakeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the lake are preserved.
+   * * `gcp.dataplex.LakeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the lake are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.LakeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the lake are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -7483,9 +7483,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new LakeIamPolicy("policy", LakeIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -7519,9 +7519,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LakeIamBinding("binding", LakeIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7556,9 +7556,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LakeIamMember("member", LakeIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7616,8 +7616,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Lake. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.LakeIamPolicy`: Authoritative. Sets the IAM policy for the lake and replaces any existing policy already attached.
-   * * `gcp.dataplex.LakeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the lake are preserved.
-   * * `gcp.dataplex.LakeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the lake are preserved.
+   * * `gcp.dataplex.LakeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the lake are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.LakeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the lake are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -7662,9 +7662,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new LakeIamPolicy("policy", LakeIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -7698,9 +7698,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LakeIamBinding("binding", LakeIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7735,9 +7735,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LakeIamMember("member", LakeIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7756,8 +7756,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Lake. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.LakeIamPolicy`: Authoritative. Sets the IAM policy for the lake and replaces any existing policy already attached.
-   * * `gcp.dataplex.LakeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the lake are preserved.
-   * * `gcp.dataplex.LakeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the lake are preserved.
+   * * `gcp.dataplex.LakeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the lake are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.LakeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the lake are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -7802,9 +7802,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new LakeIamPolicy("policy", LakeIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -7838,9 +7838,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LakeIamBinding("binding", LakeIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7875,9 +7875,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LakeIamMember("member", LakeIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7935,8 +7935,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Lake. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.LakeIamPolicy`: Authoritative. Sets the IAM policy for the lake and replaces any existing policy already attached.
-   * * `gcp.dataplex.LakeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the lake are preserved.
-   * * `gcp.dataplex.LakeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the lake are preserved.
+   * * `gcp.dataplex.LakeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the lake are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.LakeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the lake are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -7981,9 +7981,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new LakeIamPolicy("policy", LakeIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8017,9 +8017,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LakeIamBinding("binding", LakeIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8054,9 +8054,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LakeIamMember("member", LakeIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8075,8 +8075,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Lake. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.LakeIamPolicy`: Authoritative. Sets the IAM policy for the lake and replaces any existing policy already attached.
-   * * `gcp.dataplex.LakeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the lake are preserved.
-   * * `gcp.dataplex.LakeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the lake are preserved.
+   * * `gcp.dataplex.LakeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the lake are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.LakeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the lake are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -8121,9 +8121,9 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new LakeIamPolicy("policy", LakeIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8157,9 +8157,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LakeIamBinding("binding", LakeIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8194,9 +8194,9 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LakeIamMember("member", LakeIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8334,8 +8334,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Task. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.TaskIamPolicy`: Authoritative. Sets the IAM policy for the task and replaces any existing policy already attached.
-   * * `gcp.dataplex.TaskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the task are preserved.
-   * * `gcp.dataplex.TaskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the task are preserved.
+   * * `gcp.dataplex.TaskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the task are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.TaskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the task are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -8380,10 +8380,10 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new TaskIamPolicy("policy", TaskIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8417,10 +8417,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TaskIamBinding("binding", TaskIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8455,10 +8455,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TaskIamMember("member", TaskIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8477,8 +8477,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Task. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.TaskIamPolicy`: Authoritative. Sets the IAM policy for the task and replaces any existing policy already attached.
-   * * `gcp.dataplex.TaskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the task are preserved.
-   * * `gcp.dataplex.TaskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the task are preserved.
+   * * `gcp.dataplex.TaskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the task are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.TaskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the task are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -8523,10 +8523,10 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new TaskIamPolicy("policy", TaskIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8560,10 +8560,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TaskIamBinding("binding", TaskIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8598,10 +8598,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TaskIamMember("member", TaskIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8659,8 +8659,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Task. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.TaskIamPolicy`: Authoritative. Sets the IAM policy for the task and replaces any existing policy already attached.
-   * * `gcp.dataplex.TaskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the task are preserved.
-   * * `gcp.dataplex.TaskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the task are preserved.
+   * * `gcp.dataplex.TaskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the task are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.TaskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the task are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -8705,10 +8705,10 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new TaskIamPolicy("policy", TaskIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8742,10 +8742,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TaskIamBinding("binding", TaskIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8780,10 +8780,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TaskIamMember("member", TaskIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8802,8 +8802,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Task. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.TaskIamPolicy`: Authoritative. Sets the IAM policy for the task and replaces any existing policy already attached.
-   * * `gcp.dataplex.TaskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the task are preserved.
-   * * `gcp.dataplex.TaskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the task are preserved.
+   * * `gcp.dataplex.TaskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the task are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.TaskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the task are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -8848,10 +8848,10 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new TaskIamPolicy("policy", TaskIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8885,10 +8885,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TaskIamBinding("binding", TaskIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8923,10 +8923,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TaskIamMember("member", TaskIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8984,8 +8984,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Task. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.TaskIamPolicy`: Authoritative. Sets the IAM policy for the task and replaces any existing policy already attached.
-   * * `gcp.dataplex.TaskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the task are preserved.
-   * * `gcp.dataplex.TaskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the task are preserved.
+   * * `gcp.dataplex.TaskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the task are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.TaskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the task are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -9030,10 +9030,10 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new TaskIamPolicy("policy", TaskIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9067,10 +9067,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TaskIamBinding("binding", TaskIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9105,10 +9105,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TaskIamMember("member", TaskIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9127,8 +9127,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Task. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.TaskIamPolicy`: Authoritative. Sets the IAM policy for the task and replaces any existing policy already attached.
-   * * `gcp.dataplex.TaskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the task are preserved.
-   * * `gcp.dataplex.TaskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the task are preserved.
+   * * `gcp.dataplex.TaskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the task are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.TaskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the task are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -9173,10 +9173,10 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new TaskIamPolicy("policy", TaskIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9210,10 +9210,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TaskIamBinding("binding", TaskIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9248,10 +9248,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TaskIamMember("member", TaskIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .taskId(example.taskId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .taskId(example.get("taskId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9333,8 +9333,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Zone. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.ZoneIamPolicy`: Authoritative. Sets the IAM policy for the zone and replaces any existing policy already attached.
-   * * `gcp.dataplex.ZoneIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the zone are preserved.
-   * * `gcp.dataplex.ZoneIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the zone are preserved.
+   * * `gcp.dataplex.ZoneIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the zone are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.ZoneIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the zone are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -9379,10 +9379,10 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new ZoneIamPolicy("policy", ZoneIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9416,10 +9416,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ZoneIamBinding("binding", ZoneIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9454,10 +9454,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ZoneIamMember("member", ZoneIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9476,8 +9476,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Zone. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.ZoneIamPolicy`: Authoritative. Sets the IAM policy for the zone and replaces any existing policy already attached.
-   * * `gcp.dataplex.ZoneIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the zone are preserved.
-   * * `gcp.dataplex.ZoneIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the zone are preserved.
+   * * `gcp.dataplex.ZoneIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the zone are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.ZoneIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the zone are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -9522,10 +9522,10 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new ZoneIamPolicy("policy", ZoneIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9559,10 +9559,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ZoneIamBinding("binding", ZoneIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9597,10 +9597,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ZoneIamMember("member", ZoneIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9658,8 +9658,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Zone. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.ZoneIamPolicy`: Authoritative. Sets the IAM policy for the zone and replaces any existing policy already attached.
-   * * `gcp.dataplex.ZoneIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the zone are preserved.
-   * * `gcp.dataplex.ZoneIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the zone are preserved.
+   * * `gcp.dataplex.ZoneIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the zone are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.ZoneIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the zone are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -9704,10 +9704,10 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new ZoneIamPolicy("policy", ZoneIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9741,10 +9741,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ZoneIamBinding("binding", ZoneIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9779,10 +9779,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ZoneIamMember("member", ZoneIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9801,8 +9801,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Zone. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.ZoneIamPolicy`: Authoritative. Sets the IAM policy for the zone and replaces any existing policy already attached.
-   * * `gcp.dataplex.ZoneIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the zone are preserved.
-   * * `gcp.dataplex.ZoneIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the zone are preserved.
+   * * `gcp.dataplex.ZoneIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the zone are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.ZoneIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the zone are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -9847,10 +9847,10 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new ZoneIamPolicy("policy", ZoneIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9884,10 +9884,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ZoneIamBinding("binding", ZoneIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9922,10 +9922,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ZoneIamMember("member", ZoneIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9983,8 +9983,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Zone. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.ZoneIamPolicy`: Authoritative. Sets the IAM policy for the zone and replaces any existing policy already attached.
-   * * `gcp.dataplex.ZoneIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the zone are preserved.
-   * * `gcp.dataplex.ZoneIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the zone are preserved.
+   * * `gcp.dataplex.ZoneIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the zone are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.ZoneIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the zone are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -10029,10 +10029,10 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new ZoneIamPolicy("policy", ZoneIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -10066,10 +10066,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ZoneIamBinding("binding", ZoneIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -10104,10 +10104,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ZoneIamMember("member", ZoneIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -10126,8 +10126,8 @@ object dataplex:
    * Three different resources help you manage your IAM policy for Dataplex Zone. Each of these resources serves a different use case:
    * 
    * * `gcp.dataplex.ZoneIamPolicy`: Authoritative. Sets the IAM policy for the zone and replaces any existing policy already attached.
-   * * `gcp.dataplex.ZoneIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the zone are preserved.
-   * * `gcp.dataplex.ZoneIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the zone are preserved.
+   * * `gcp.dataplex.ZoneIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the zone are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataplex.ZoneIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the zone are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -10172,10 +10172,10 @@ object dataplex:
    *             .build());
    * 
    *         var policy = new ZoneIamPolicy("policy", ZoneIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -10209,10 +10209,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ZoneIamBinding("binding", ZoneIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -10247,10 +10247,10 @@ object dataplex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ZoneIamMember("member", ZoneIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .lake(example.lake())
-   *             .dataplexZone(example.name())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .lake(example.get("lake"))
+   *             .dataplexZone(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

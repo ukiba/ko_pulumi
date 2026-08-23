@@ -144,7 +144,7 @@ object workspaces:
 
   extension (builder: com.pulumi.aws.workspaces.PoolArgs.Builder)
     /**
-     * @param applicationSettings Application settings configuration for the WorkSpaces Pool. See `applicationSettings` below.
+     * @param applicationSettings Application settings configuration for the WorkSpaces Pool. See `applicationSettings` Block below.
      * @return builder
      */
     def applicationSettings(args: Endofunction[com.pulumi.aws.workspaces.inputs.PoolApplicationSettingArgs.Builder]*):
@@ -162,7 +162,7 @@ object workspaces:
       builder.capacity(args(argsBuilder).build)
 
     /**
-     * @param timeoutSettings Timeout settings configuration for the WorkSpaces Pool. See `timeoutSettings` below.
+     * @param timeoutSettings Timeout settings configuration for the WorkSpaces Pool. See `timeoutSettings` Block below.
      * @return builder
      */
     def timeoutSettings(args: Endofunction[com.pulumi.aws.workspaces.inputs.PoolTimeoutSettingArgs.Builder]*):
@@ -332,7 +332,7 @@ object workspaces:
 
   extension (builder: com.pulumi.aws.workspaces.inputs.PoolState.Builder)
     /**
-     * @param applicationSettings Application settings configuration for the WorkSpaces Pool. See `applicationSettings` below.
+     * @param applicationSettings Application settings configuration for the WorkSpaces Pool. See `applicationSettings` Block below.
      * @return builder
      */
     def applicationSettings(args: Endofunction[com.pulumi.aws.workspaces.inputs.PoolApplicationSettingArgs.Builder]*):
@@ -350,7 +350,7 @@ object workspaces:
       builder.capacity(args(argsBuilder).build)
 
     /**
-     * @param capacityStatuses Capacity status of the WorkSpaces Pool. See `capacityStatus` below.
+     * @param capacityStatuses Capacity status of the WorkSpaces Pool. See `capacityStatus` Block below.
      * @return builder
      */
     def capacityStatuses(args: Endofunction[com.pulumi.aws.workspaces.inputs.PoolCapacityStatusArgs.Builder]*):
@@ -359,7 +359,7 @@ object workspaces:
       builder.capacityStatuses(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param timeoutSettings Timeout settings configuration for the WorkSpaces Pool. See `timeoutSettings` below.
+     * @param timeoutSettings Timeout settings configuration for the WorkSpaces Pool. See `timeoutSettings` Block below.
      * @return builder
      */
     def timeoutSettings(args: Endofunction[com.pulumi.aws.workspaces.inputs.PoolTimeoutSettingArgs.Builder]*):

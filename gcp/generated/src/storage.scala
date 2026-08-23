@@ -313,7 +313,7 @@ object storage:
    *             .build());
    * 
    *         var policy = new BucketIAMPolicy("policy", BucketIAMPolicyArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -363,7 +363,7 @@ object storage:
    *             .build());
    * 
    *         var policy = new BucketIAMPolicy("policy", BucketIAMPolicyArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -396,7 +396,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BucketIAMBinding("binding", BucketIAMBindingArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -432,7 +432,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BucketIAMBinding("binding", BucketIAMBindingArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(BucketIAMBindingConditionArgs.builder()
@@ -471,7 +471,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BucketIAMMember("member", BucketIAMMemberArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -507,7 +507,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BucketIAMMember("member", BucketIAMMemberArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(BucketIAMMemberConditionArgs.builder()
@@ -578,7 +578,7 @@ object storage:
    *             .build());
    * 
    *         var policy = new BucketIAMPolicy("policy", BucketIAMPolicyArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -628,7 +628,7 @@ object storage:
    *             .build());
    * 
    *         var policy = new BucketIAMPolicy("policy", BucketIAMPolicyArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -661,7 +661,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BucketIAMBinding("binding", BucketIAMBindingArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -697,7 +697,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BucketIAMBinding("binding", BucketIAMBindingArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(BucketIAMBindingConditionArgs.builder()
@@ -736,7 +736,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BucketIAMMember("member", BucketIAMMemberArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -772,7 +772,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BucketIAMMember("member", BucketIAMMemberArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(BucketIAMMemberConditionArgs.builder()
@@ -886,7 +886,7 @@ object storage:
    *             .build());
    * 
    *         var policy = new BucketIAMPolicy("policy", BucketIAMPolicyArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -936,7 +936,7 @@ object storage:
    *             .build());
    * 
    *         var policy = new BucketIAMPolicy("policy", BucketIAMPolicyArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -969,7 +969,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BucketIAMBinding("binding", BucketIAMBindingArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1005,7 +1005,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BucketIAMBinding("binding", BucketIAMBindingArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(BucketIAMBindingConditionArgs.builder()
@@ -1044,7 +1044,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BucketIAMMember("member", BucketIAMMemberArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1080,7 +1080,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BucketIAMMember("member", BucketIAMMemberArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(BucketIAMMemberConditionArgs.builder()
@@ -1151,7 +1151,7 @@ object storage:
    *             .build());
    * 
    *         var policy = new BucketIAMPolicy("policy", BucketIAMPolicyArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1201,7 +1201,7 @@ object storage:
    *             .build());
    * 
    *         var policy = new BucketIAMPolicy("policy", BucketIAMPolicyArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1234,7 +1234,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BucketIAMBinding("binding", BucketIAMBindingArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1270,7 +1270,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BucketIAMBinding("binding", BucketIAMBindingArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(BucketIAMBindingConditionArgs.builder()
@@ -1309,7 +1309,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BucketIAMMember("member", BucketIAMMemberArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1345,7 +1345,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BucketIAMMember("member", BucketIAMMemberArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(BucketIAMMemberConditionArgs.builder()
@@ -1459,7 +1459,7 @@ object storage:
    *             .build());
    * 
    *         var policy = new BucketIAMPolicy("policy", BucketIAMPolicyArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1509,7 +1509,7 @@ object storage:
    *             .build());
    * 
    *         var policy = new BucketIAMPolicy("policy", BucketIAMPolicyArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1542,7 +1542,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BucketIAMBinding("binding", BucketIAMBindingArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1578,7 +1578,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BucketIAMBinding("binding", BucketIAMBindingArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(BucketIAMBindingConditionArgs.builder()
@@ -1617,7 +1617,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BucketIAMMember("member", BucketIAMMemberArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1653,7 +1653,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BucketIAMMember("member", BucketIAMMemberArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(BucketIAMMemberConditionArgs.builder()
@@ -1724,7 +1724,7 @@ object storage:
    *             .build());
    * 
    *         var policy = new BucketIAMPolicy("policy", BucketIAMPolicyArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1774,7 +1774,7 @@ object storage:
    *             .build());
    * 
    *         var policy = new BucketIAMPolicy("policy", BucketIAMPolicyArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1807,7 +1807,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BucketIAMBinding("binding", BucketIAMBindingArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1843,7 +1843,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BucketIAMBinding("binding", BucketIAMBindingArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(BucketIAMBindingConditionArgs.builder()
@@ -1882,7 +1882,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BucketIAMMember("member", BucketIAMMemberArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1918,7 +1918,7 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BucketIAMMember("member", BucketIAMMemberArgs.builder()
-   *             .bucket(default_.name())
+   *             .bucket(default_.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(BucketIAMMemberConditionArgs.builder()
@@ -2422,8 +2422,8 @@ object storage:
    *             .build());
    * 
    *         var policy = new ManagedFolderIamPolicy("policy", ManagedFolderIamPolicyArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2473,8 +2473,8 @@ object storage:
    *             .build());
    * 
    *         var policy = new ManagedFolderIamPolicy("policy", ManagedFolderIamPolicyArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2507,8 +2507,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ManagedFolderIamBinding("binding", ManagedFolderIamBindingArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2544,8 +2544,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ManagedFolderIamBinding("binding", ManagedFolderIamBindingArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(ManagedFolderIamBindingConditionArgs.builder()
@@ -2584,8 +2584,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ManagedFolderIamMember("member", ManagedFolderIamMemberArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2621,8 +2621,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ManagedFolderIamMember("member", ManagedFolderIamMemberArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(ManagedFolderIamMemberConditionArgs.builder()
@@ -2694,8 +2694,8 @@ object storage:
    *             .build());
    * 
    *         var policy = new ManagedFolderIamPolicy("policy", ManagedFolderIamPolicyArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2745,8 +2745,8 @@ object storage:
    *             .build());
    * 
    *         var policy = new ManagedFolderIamPolicy("policy", ManagedFolderIamPolicyArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2779,8 +2779,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ManagedFolderIamBinding("binding", ManagedFolderIamBindingArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2816,8 +2816,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ManagedFolderIamBinding("binding", ManagedFolderIamBindingArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(ManagedFolderIamBindingConditionArgs.builder()
@@ -2856,8 +2856,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ManagedFolderIamMember("member", ManagedFolderIamMemberArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2893,8 +2893,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ManagedFolderIamMember("member", ManagedFolderIamMemberArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(ManagedFolderIamMemberConditionArgs.builder()
@@ -3008,8 +3008,8 @@ object storage:
    *             .build());
    * 
    *         var policy = new ManagedFolderIamPolicy("policy", ManagedFolderIamPolicyArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3059,8 +3059,8 @@ object storage:
    *             .build());
    * 
    *         var policy = new ManagedFolderIamPolicy("policy", ManagedFolderIamPolicyArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3093,8 +3093,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ManagedFolderIamBinding("binding", ManagedFolderIamBindingArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3130,8 +3130,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ManagedFolderIamBinding("binding", ManagedFolderIamBindingArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(ManagedFolderIamBindingConditionArgs.builder()
@@ -3170,8 +3170,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ManagedFolderIamMember("member", ManagedFolderIamMemberArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3207,8 +3207,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ManagedFolderIamMember("member", ManagedFolderIamMemberArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(ManagedFolderIamMemberConditionArgs.builder()
@@ -3280,8 +3280,8 @@ object storage:
    *             .build());
    * 
    *         var policy = new ManagedFolderIamPolicy("policy", ManagedFolderIamPolicyArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3331,8 +3331,8 @@ object storage:
    *             .build());
    * 
    *         var policy = new ManagedFolderIamPolicy("policy", ManagedFolderIamPolicyArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3365,8 +3365,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ManagedFolderIamBinding("binding", ManagedFolderIamBindingArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3402,8 +3402,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ManagedFolderIamBinding("binding", ManagedFolderIamBindingArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(ManagedFolderIamBindingConditionArgs.builder()
@@ -3442,8 +3442,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ManagedFolderIamMember("member", ManagedFolderIamMemberArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3479,8 +3479,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ManagedFolderIamMember("member", ManagedFolderIamMemberArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(ManagedFolderIamMemberConditionArgs.builder()
@@ -3594,8 +3594,8 @@ object storage:
    *             .build());
    * 
    *         var policy = new ManagedFolderIamPolicy("policy", ManagedFolderIamPolicyArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3645,8 +3645,8 @@ object storage:
    *             .build());
    * 
    *         var policy = new ManagedFolderIamPolicy("policy", ManagedFolderIamPolicyArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3679,8 +3679,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ManagedFolderIamBinding("binding", ManagedFolderIamBindingArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3716,8 +3716,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ManagedFolderIamBinding("binding", ManagedFolderIamBindingArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(ManagedFolderIamBindingConditionArgs.builder()
@@ -3756,8 +3756,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ManagedFolderIamMember("member", ManagedFolderIamMemberArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3793,8 +3793,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ManagedFolderIamMember("member", ManagedFolderIamMemberArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(ManagedFolderIamMemberConditionArgs.builder()
@@ -3866,8 +3866,8 @@ object storage:
    *             .build());
    * 
    *         var policy = new ManagedFolderIamPolicy("policy", ManagedFolderIamPolicyArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3917,8 +3917,8 @@ object storage:
    *             .build());
    * 
    *         var policy = new ManagedFolderIamPolicy("policy", ManagedFolderIamPolicyArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3951,8 +3951,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ManagedFolderIamBinding("binding", ManagedFolderIamBindingArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3988,8 +3988,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ManagedFolderIamBinding("binding", ManagedFolderIamBindingArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(ManagedFolderIamBindingConditionArgs.builder()
@@ -4028,8 +4028,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ManagedFolderIamMember("member", ManagedFolderIamMemberArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4065,8 +4065,8 @@ object storage:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ManagedFolderIamMember("member", ManagedFolderIamMemberArgs.builder()
-   *             .bucket(folder.bucket())
-   *             .managedFolder(folder.name())
+   *             .bucket(folder.get("bucket"))
+   *             .managedFolder(folder.get("name"))
    *             .role("roles/storage.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(ManagedFolderIamMemberConditionArgs.builder()

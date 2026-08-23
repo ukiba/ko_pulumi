@@ -157,6 +157,9 @@ object accesscontextmanager:
    * in the provider configuration. Otherwise the ACM API will return a 403 error.
    * Your account must have the `serviceusage.services.use` permission on the
    * `billingProject` you defined.
+   * 
+   * &gt; **Note:** When importing this resource by ID, use only the numeric access policy ID
+   * (for example, `123456789`) and omit the `accessPolicies/` prefix.
    */
   def AccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.AccessPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -169,8 +172,8 @@ object accesscontextmanager:
    * Three different resources help you manage your IAM policy for Access Context Manager (VPC Service Controls) AccessPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.accesscontextmanager.AccessPolicyIamPolicy`: Authoritative. Sets the IAM policy for the accesspolicy and replaces any existing policy already attached.
-   * * `gcp.accesscontextmanager.AccessPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the accesspolicy are preserved.
-   * * `gcp.accesscontextmanager.AccessPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the accesspolicy are preserved.
+   * * `gcp.accesscontextmanager.AccessPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the accesspolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.accesscontextmanager.AccessPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the accesspolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -215,7 +218,7 @@ object accesscontextmanager:
    *             .build());
    * 
    *         var policy = new AccessPolicyIamPolicy("policy", AccessPolicyIamPolicyArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -249,7 +252,7 @@ object accesscontextmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AccessPolicyIamBinding("binding", AccessPolicyIamBindingArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .role("roles/accesscontextmanager.policyAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -284,7 +287,7 @@ object accesscontextmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AccessPolicyIamMember("member", AccessPolicyIamMemberArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .role("roles/accesscontextmanager.policyAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -304,8 +307,8 @@ object accesscontextmanager:
    * Three different resources help you manage your IAM policy for Access Context Manager (VPC Service Controls) AccessPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.accesscontextmanager.AccessPolicyIamPolicy`: Authoritative. Sets the IAM policy for the accesspolicy and replaces any existing policy already attached.
-   * * `gcp.accesscontextmanager.AccessPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the accesspolicy are preserved.
-   * * `gcp.accesscontextmanager.AccessPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the accesspolicy are preserved.
+   * * `gcp.accesscontextmanager.AccessPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the accesspolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.accesscontextmanager.AccessPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the accesspolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -350,7 +353,7 @@ object accesscontextmanager:
    *             .build());
    * 
    *         var policy = new AccessPolicyIamPolicy("policy", AccessPolicyIamPolicyArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -384,7 +387,7 @@ object accesscontextmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AccessPolicyIamBinding("binding", AccessPolicyIamBindingArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .role("roles/accesscontextmanager.policyAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -419,7 +422,7 @@ object accesscontextmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AccessPolicyIamMember("member", AccessPolicyIamMemberArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .role("roles/accesscontextmanager.policyAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -478,8 +481,8 @@ object accesscontextmanager:
    * Three different resources help you manage your IAM policy for Access Context Manager (VPC Service Controls) AccessPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.accesscontextmanager.AccessPolicyIamPolicy`: Authoritative. Sets the IAM policy for the accesspolicy and replaces any existing policy already attached.
-   * * `gcp.accesscontextmanager.AccessPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the accesspolicy are preserved.
-   * * `gcp.accesscontextmanager.AccessPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the accesspolicy are preserved.
+   * * `gcp.accesscontextmanager.AccessPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the accesspolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.accesscontextmanager.AccessPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the accesspolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -524,7 +527,7 @@ object accesscontextmanager:
    *             .build());
    * 
    *         var policy = new AccessPolicyIamPolicy("policy", AccessPolicyIamPolicyArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -558,7 +561,7 @@ object accesscontextmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AccessPolicyIamBinding("binding", AccessPolicyIamBindingArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .role("roles/accesscontextmanager.policyAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -593,7 +596,7 @@ object accesscontextmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AccessPolicyIamMember("member", AccessPolicyIamMemberArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .role("roles/accesscontextmanager.policyAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -613,8 +616,8 @@ object accesscontextmanager:
    * Three different resources help you manage your IAM policy for Access Context Manager (VPC Service Controls) AccessPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.accesscontextmanager.AccessPolicyIamPolicy`: Authoritative. Sets the IAM policy for the accesspolicy and replaces any existing policy already attached.
-   * * `gcp.accesscontextmanager.AccessPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the accesspolicy are preserved.
-   * * `gcp.accesscontextmanager.AccessPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the accesspolicy are preserved.
+   * * `gcp.accesscontextmanager.AccessPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the accesspolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.accesscontextmanager.AccessPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the accesspolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -659,7 +662,7 @@ object accesscontextmanager:
    *             .build());
    * 
    *         var policy = new AccessPolicyIamPolicy("policy", AccessPolicyIamPolicyArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -693,7 +696,7 @@ object accesscontextmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AccessPolicyIamBinding("binding", AccessPolicyIamBindingArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .role("roles/accesscontextmanager.policyAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -728,7 +731,7 @@ object accesscontextmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AccessPolicyIamMember("member", AccessPolicyIamMemberArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .role("roles/accesscontextmanager.policyAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -787,8 +790,8 @@ object accesscontextmanager:
    * Three different resources help you manage your IAM policy for Access Context Manager (VPC Service Controls) AccessPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.accesscontextmanager.AccessPolicyIamPolicy`: Authoritative. Sets the IAM policy for the accesspolicy and replaces any existing policy already attached.
-   * * `gcp.accesscontextmanager.AccessPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the accesspolicy are preserved.
-   * * `gcp.accesscontextmanager.AccessPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the accesspolicy are preserved.
+   * * `gcp.accesscontextmanager.AccessPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the accesspolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.accesscontextmanager.AccessPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the accesspolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -833,7 +836,7 @@ object accesscontextmanager:
    *             .build());
    * 
    *         var policy = new AccessPolicyIamPolicy("policy", AccessPolicyIamPolicyArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -867,7 +870,7 @@ object accesscontextmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AccessPolicyIamBinding("binding", AccessPolicyIamBindingArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .role("roles/accesscontextmanager.policyAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -902,7 +905,7 @@ object accesscontextmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AccessPolicyIamMember("member", AccessPolicyIamMemberArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .role("roles/accesscontextmanager.policyAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -922,8 +925,8 @@ object accesscontextmanager:
    * Three different resources help you manage your IAM policy for Access Context Manager (VPC Service Controls) AccessPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.accesscontextmanager.AccessPolicyIamPolicy`: Authoritative. Sets the IAM policy for the accesspolicy and replaces any existing policy already attached.
-   * * `gcp.accesscontextmanager.AccessPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the accesspolicy are preserved.
-   * * `gcp.accesscontextmanager.AccessPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the accesspolicy are preserved.
+   * * `gcp.accesscontextmanager.AccessPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the accesspolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.accesscontextmanager.AccessPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the accesspolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -968,7 +971,7 @@ object accesscontextmanager:
    *             .build());
    * 
    *         var policy = new AccessPolicyIamPolicy("policy", AccessPolicyIamPolicyArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1002,7 +1005,7 @@ object accesscontextmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AccessPolicyIamBinding("binding", AccessPolicyIamBindingArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .role("roles/accesscontextmanager.policyAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1037,7 +1040,7 @@ object accesscontextmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AccessPolicyIamMember("member", AccessPolicyIamMemberArgs.builder()
-   *             .name(access_policy.name())
+   *             .name(access_policy.get("name"))
    *             .role("roles/accesscontextmanager.policyAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1200,6 +1203,16 @@ object accesscontextmanager:
 
   extension (builder: com.pulumi.gcp.accesscontextmanager.GcpUserAccessBindingArgs.Builder)
     /**
+     * @param principal Optional. Immutable. The principal that is subject to the access policies in this policy binding.
+     * Structure is documented below.
+     * @return builder
+     */
+    def principal(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingPrincipalArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.GcpUserAccessBindingArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingPrincipalArgs.builder
+      builder.principal(args(argsBuilder).build)
+
+    /**
      * @param scopedAccessSettings Optional. A list of scoped access settings that set this binding&#39;s restrictions on a subset of applications.
      * Structure is documented below.
      * @return builder
@@ -1315,10 +1328,7 @@ object accesscontextmanager:
    * perimeter in certain contexts (e.g. to read data from a Cloud Storage bucket
    * or query against a BigQuery dataset).
    * 
-   * &gt; **Note:** By default, updates to this resource will remove the EgressPolicy from the
-   * from the perimeter and add it back in a non-atomic manner. To ensure that the new EgressPolicy
-   * is added before the old one is removed, add a `lifecycle` block with `createBeforeDestroy = true` to this resource.
-   * **Note:** If this resource is used alongside a `gcp.accesscontextmanager.ServicePerimeter` resource,
+   * &gt; **Note:** If this resource is used alongside a `gcp.accesscontextmanager.ServicePerimeter` resource,
    * the service perimeter resource must have a `lifecycle` block with `ignoreChanges = [spec[0].egress_policies]` so
    * they don&#39;t fight over which egress rules should be in the policy.
    * 
@@ -1368,10 +1378,7 @@ object accesscontextmanager:
    * Individual ingress policies can be limited by restricting which services and/
    * or actions they match using the ingressTo field.
    * 
-   * &gt; **Note:** By default, updates to this resource will remove the IngressPolicy from the
-   * from the perimeter and add it back in a non-atomic manner. To ensure that the new IngressPolicy
-   * is added before the old one is removed, add a `lifecycle` block with `createBeforeDestroy = true` to this resource.
-   * **Note:** If this resource is used alongside a `gcp.accesscontextmanager.ServicePerimeter` resource,
+   * &gt; **Note:** If this resource is used alongside a `gcp.accesscontextmanager.ServicePerimeter` resource,
    * the service perimeter resource must have a `lifecycle` block with `ignoreChanges = [spec[0].ingress_policies]` so
    * they don&#39;t fight over which ingress rules should be in the policy.
    * 
@@ -1867,7 +1874,7 @@ object accesscontextmanager:
 
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingArgs.Builder)
     /**
-     * @param activeSettings Optional. Access settings for this scoped access settings. This field may be empty if dryRunSettings is set.
+     * @param activeSettings Optional. Access settings for this scoped access settings. This field may be empty if `dryRunSettings` is set.
      * Structure is documented below.
      * @return builder
      */
@@ -1877,7 +1884,7 @@ object accesscontextmanager:
       builder.activeSettings(args(argsBuilder).build)
 
     /**
-     * @param dryRunSettings Optional. Dry-run access settings for this scoped access settings. This field may be empty if activeSettings is set. Cannot contain session settings.
+     * @param dryRunSettings Optional. Dry-run access settings for this scoped access settings. This field may be empty if `activeSettings` is set. Cannot contain session settings.
      * Structure is documented below.
      * @return builder
      */
@@ -1919,6 +1926,16 @@ object accesscontextmanager:
       builder.restrictedClientApplication(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingState.Builder)
+    /**
+     * @param principal Optional. Immutable. The principal that is subject to the access policies in this policy binding.
+     * Structure is documented below.
+     * @return builder
+     */
+    def principal(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingPrincipalArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingState.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingPrincipalArgs.builder
+      builder.principal(args(argsBuilder).build)
+
     /**
      * @param scopedAccessSettings Optional. A list of scoped access settings that set this binding&#39;s restrictions on a subset of applications.
      * Structure is documented below.

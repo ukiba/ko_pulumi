@@ -150,7 +150,7 @@ object appfabric:
       builder.authRequest(args(argsBuilder).build)
 
     /**
-     * @param tenants Contains information about an application tenant, such as the application display name and identifier.
+     * @param tenants Information about an application tenant. See `tenant` Block below.
      * @return builder
      */
     def tenants(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionTenantArgs.Builder]*):

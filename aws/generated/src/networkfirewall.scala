@@ -4,6 +4,36 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object networkfirewall:
+  /** Manages an AWS Network Firewall Container Association. A container association links Amazon ECS or Amazon EKS clusters to Network Firewall, resolving container IP addresses into a dynamic IP set you can reference from stateful rule groups. */
+  def ContainerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.networkfirewall.ContainerAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.networkfirewall.ContainerAssociationArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.networkfirewall.ContainerAssociation(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.networkfirewall.ContainerAssociationArgs.Builder)
+    /**
+     * @param containerMonitoringConfigurations One or more monitoring configurations, up to 5. See `containerMonitoringConfiguration` Block below.
+     * @return builder
+     */
+    def containerMonitoringConfigurations(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.ContainerAssociationContainerMonitoringConfigurationArgs.Builder]*):
+        com.pulumi.aws.networkfirewall.ContainerAssociationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.networkfirewall.inputs.ContainerAssociationContainerMonitoringConfigurationArgs.builder
+      builder.containerMonitoringConfigurations(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.ContainerAssociationTimeoutsArgs.Builder]):
+        com.pulumi.aws.networkfirewall.ContainerAssociationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.networkfirewall.inputs.ContainerAssociationTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   /** Provides an AWS Network Firewall Firewall Resource */
   def Firewall(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.FirewallArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -290,6 +320,31 @@ object networkfirewall:
     def timeouts(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.VpcEndpointAssociationTimeoutsArgs.Builder]):
         com.pulumi.aws.networkfirewall.VpcEndpointAssociationArgs.Builder =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.VpcEndpointAssociationTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.networkfirewall.inputs.ContainerAssociationContainerMonitoringConfigurationArgs.Builder)
+    /**
+     * @param attributeFilters Key-value pairs that filter which containers within the cluster are monitored. For Amazon EKS, filter by namespace and Kubernetes labels. For Amazon ECS, filter by container instance attributes; attribute filters only match containers on the EC2 launch type, not Fargate. See `attributeFilter` Block below.
+     * @return builder
+     */
+    def attributeFilters(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.ContainerAssociationContainerMonitoringConfigurationAttributeFilterArgs.Builder]*):
+        com.pulumi.aws.networkfirewall.inputs.ContainerAssociationContainerMonitoringConfigurationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.networkfirewall.inputs.ContainerAssociationContainerMonitoringConfigurationAttributeFilterArgs.builder
+      builder.attributeFilters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.networkfirewall.inputs.ContainerAssociationState.Builder)
+    /**
+     * @param containerMonitoringConfigurations One or more monitoring configurations, up to 5. See `containerMonitoringConfiguration` Block below.
+     * @return builder
+     */
+    def containerMonitoringConfigurations(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.ContainerAssociationContainerMonitoringConfigurationArgs.Builder]*):
+        com.pulumi.aws.networkfirewall.inputs.ContainerAssociationState.Builder =
+      def argsBuilder = com.pulumi.aws.networkfirewall.inputs.ContainerAssociationContainerMonitoringConfigurationArgs.builder
+      builder.containerMonitoringConfigurations(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.ContainerAssociationTimeoutsArgs.Builder]):
+        com.pulumi.aws.networkfirewall.inputs.ContainerAssociationState.Builder =
+      val argsBuilder = com.pulumi.aws.networkfirewall.inputs.ContainerAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.networkfirewall.inputs.FirewallFirewallStatusArgs.Builder)

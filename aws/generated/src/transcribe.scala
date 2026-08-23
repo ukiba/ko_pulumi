@@ -25,7 +25,7 @@ object transcribe:
 
   extension (builder: com.pulumi.aws.transcribe.LanguageModelArgs.Builder)
     /**
-     * @param inputDataConfig The input data config for the LanguageModel. See Input Data Config for more details.
+     * @param inputDataConfig Input data configuration for the LanguageModel. See `inputDataConfig` Block for details.
      * @return builder
      */
     def inputDataConfig(args: Endofunction[com.pulumi.aws.transcribe.inputs.LanguageModelInputDataConfigArgs.Builder]):
@@ -80,7 +80,7 @@ object transcribe:
 
   extension (builder: com.pulumi.aws.transcribe.inputs.LanguageModelState.Builder)
     /**
-     * @param inputDataConfig The input data config for the LanguageModel. See Input Data Config for more details.
+     * @param inputDataConfig Input data configuration for the LanguageModel. See `inputDataConfig` Block for details.
      * @return builder
      */
     def inputDataConfig(args: Endofunction[com.pulumi.aws.transcribe.inputs.LanguageModelInputDataConfigArgs.Builder]):

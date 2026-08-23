@@ -12,6 +12,9 @@ object certificatemanager:
    * * [API documentation](https://docs.cloud.google.com/certificate-manager/docs/reference/certificate-manager/rest/v1/projects.locations.certificates)
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/certificate-manager/docs/certificates)
+   * 
+   * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `self_managed.pem_private_key_wo`.
+   * Read more about Write-only Arguments.
    */
   def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.certificatemanager.CertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

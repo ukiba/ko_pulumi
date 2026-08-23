@@ -3394,6 +3394,16 @@ object ces:
       builder.rewriterConfig(args(argsBuilder).build)
 
     /**
+     * @param snippetsConfig Snippets configuration.
+     * Structure is documented below.
+     * @return builder
+     */
+    def snippetsConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigSnippetsConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigSnippetsConfigArgs.builder
+      builder.snippetsConfig(args(argsBuilder).build)
+
+    /**
      * @param summarizationConfig Summarization configuration.
      * Structure is documented below.
      * @return builder
@@ -3644,6 +3654,17 @@ object ces:
         com.pulumi.gcp.ces.inputs.ToolOpenApiToolTlsConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolOpenApiToolTlsConfigCaCertArgs.builder
       builder.caCerts(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolPythonFunctionArgs.Builder)
+    /**
+     * @param serviceDirectoryConfig Service Directory configuration for the tool.
+     * Structure is documented below.
+     * @return builder
+     */
+    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolPythonFunctionServiceDirectoryConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolPythonFunctionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolPythonFunctionServiceDirectoryConfigArgs.builder
+      builder.serviceDirectoryConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardArgs.Builder)
     /**

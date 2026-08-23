@@ -209,6 +209,37 @@ object vertex:
       builder.modelConfig(args(argsBuilder).build)
 
   /**
+   * A reusable metric configuration for Vertex AI evaluation. EvaluationMetrics
+   * define how model outputs are scored, supporting predefined metrics,
+   * LLM-based metrics, pointwise and pairwise comparisons, and custom code
+   * execution metrics.
+   * 
+   * To get more information about EvaluationMetric, see:
+   * 
+   * * [API documentation](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.evaluationMetrics)
+   * * How-to Guides
+   *     * [Official Documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/evaluation/overview)
+   */
+  def AiEvaluationMetric(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.vertex.AiEvaluationMetricArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.vertex.AiEvaluationMetricArgs.builder
+    com.pulumi.gcp.vertex.AiEvaluationMetric(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.vertex.AiEvaluationMetricArgs.Builder)
+    /**
+     * @param encryptionSpec Customer-managed encryption key spec for this EvaluationMetric. If set,
+     * this EvaluationMetric will be secured by this key.
+     * Structure is documented below.
+     * @return builder
+     */
+    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEvaluationMetricEncryptionSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.AiEvaluationMetricArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEvaluationMetricEncryptionSpecArgs.builder
+      builder.encryptionSpec(args(argsBuilder).build)
+
+  /**
    * Vertex AI Feature Group.
    * 
    * To get more information about FeatureGroup, see:
@@ -261,8 +292,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureGroupIamPolicy`: Authoritative. Sets the IAM policy for the featuregroup and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featuregroup are preserved.
-   * * `gcp.vertex.AiFeatureGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featuregroup are preserved.
+   * * `gcp.vertex.AiFeatureGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featuregroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featuregroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -310,8 +341,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureGroupIamPolicy("policy", AiFeatureGroupIamPolicyArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -345,8 +376,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureGroupIamBinding("binding", AiFeatureGroupIamBindingArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -381,8 +412,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureGroupIamMember("member", AiFeatureGroupIamMemberArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -401,8 +432,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureGroupIamPolicy`: Authoritative. Sets the IAM policy for the featuregroup and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featuregroup are preserved.
-   * * `gcp.vertex.AiFeatureGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featuregroup are preserved.
+   * * `gcp.vertex.AiFeatureGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featuregroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featuregroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -450,8 +481,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureGroupIamPolicy("policy", AiFeatureGroupIamPolicyArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -485,8 +516,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureGroupIamBinding("binding", AiFeatureGroupIamBindingArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -521,8 +552,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureGroupIamMember("member", AiFeatureGroupIamMemberArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -580,8 +611,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureGroupIamPolicy`: Authoritative. Sets the IAM policy for the featuregroup and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featuregroup are preserved.
-   * * `gcp.vertex.AiFeatureGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featuregroup are preserved.
+   * * `gcp.vertex.AiFeatureGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featuregroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featuregroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -629,8 +660,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureGroupIamPolicy("policy", AiFeatureGroupIamPolicyArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -664,8 +695,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureGroupIamBinding("binding", AiFeatureGroupIamBindingArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -700,8 +731,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureGroupIamMember("member", AiFeatureGroupIamMemberArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -720,8 +751,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureGroupIamPolicy`: Authoritative. Sets the IAM policy for the featuregroup and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featuregroup are preserved.
-   * * `gcp.vertex.AiFeatureGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featuregroup are preserved.
+   * * `gcp.vertex.AiFeatureGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featuregroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featuregroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -769,8 +800,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureGroupIamPolicy("policy", AiFeatureGroupIamPolicyArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -804,8 +835,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureGroupIamBinding("binding", AiFeatureGroupIamBindingArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -840,8 +871,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureGroupIamMember("member", AiFeatureGroupIamMemberArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -899,8 +930,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureGroupIamPolicy`: Authoritative. Sets the IAM policy for the featuregroup and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featuregroup are preserved.
-   * * `gcp.vertex.AiFeatureGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featuregroup are preserved.
+   * * `gcp.vertex.AiFeatureGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featuregroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featuregroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -948,8 +979,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureGroupIamPolicy("policy", AiFeatureGroupIamPolicyArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -983,8 +1014,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureGroupIamBinding("binding", AiFeatureGroupIamBindingArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1019,8 +1050,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureGroupIamMember("member", AiFeatureGroupIamMemberArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1039,8 +1070,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureGroupIamPolicy`: Authoritative. Sets the IAM policy for the featuregroup and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featuregroup are preserved.
-   * * `gcp.vertex.AiFeatureGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featuregroup are preserved.
+   * * `gcp.vertex.AiFeatureGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featuregroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featuregroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1088,8 +1119,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureGroupIamPolicy("policy", AiFeatureGroupIamPolicyArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1123,8 +1154,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureGroupIamBinding("binding", AiFeatureGroupIamBindingArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1159,8 +1190,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureGroupIamMember("member", AiFeatureGroupIamMemberArgs.builder()
-   *             .region(featureGroup.region())
-   *             .featureGroup(featureGroup.name())
+   *             .region(featureGroup.get("region"))
+   *             .featureGroup(featureGroup.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1346,8 +1377,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStoreFeatureview. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamPolicy`: Authoritative. Sets the IAM policy for the featureonlinestorefeatureview and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestorefeatureview are preserved.
-   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestorefeatureview are preserved.
+   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestorefeatureview are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestorefeatureview are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1395,9 +1426,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureOnlineStoreFeatureviewIamPolicy("policy", AiFeatureOnlineStoreFeatureviewIamPolicyArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1431,9 +1462,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureOnlineStoreFeatureviewIamBinding("binding", AiFeatureOnlineStoreFeatureviewIamBindingArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1468,9 +1499,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureOnlineStoreFeatureviewIamMember("member", AiFeatureOnlineStoreFeatureviewIamMemberArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1489,8 +1520,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStoreFeatureview. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamPolicy`: Authoritative. Sets the IAM policy for the featureonlinestorefeatureview and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestorefeatureview are preserved.
-   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestorefeatureview are preserved.
+   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestorefeatureview are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestorefeatureview are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1538,9 +1569,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureOnlineStoreFeatureviewIamPolicy("policy", AiFeatureOnlineStoreFeatureviewIamPolicyArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1574,9 +1605,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureOnlineStoreFeatureviewIamBinding("binding", AiFeatureOnlineStoreFeatureviewIamBindingArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1611,9 +1642,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureOnlineStoreFeatureviewIamMember("member", AiFeatureOnlineStoreFeatureviewIamMemberArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1670,8 +1701,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStoreFeatureview. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamPolicy`: Authoritative. Sets the IAM policy for the featureonlinestorefeatureview and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestorefeatureview are preserved.
-   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestorefeatureview are preserved.
+   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestorefeatureview are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestorefeatureview are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1719,9 +1750,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureOnlineStoreFeatureviewIamPolicy("policy", AiFeatureOnlineStoreFeatureviewIamPolicyArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1755,9 +1786,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureOnlineStoreFeatureviewIamBinding("binding", AiFeatureOnlineStoreFeatureviewIamBindingArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1792,9 +1823,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureOnlineStoreFeatureviewIamMember("member", AiFeatureOnlineStoreFeatureviewIamMemberArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1813,8 +1844,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStoreFeatureview. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamPolicy`: Authoritative. Sets the IAM policy for the featureonlinestorefeatureview and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestorefeatureview are preserved.
-   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestorefeatureview are preserved.
+   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestorefeatureview are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestorefeatureview are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1862,9 +1893,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureOnlineStoreFeatureviewIamPolicy("policy", AiFeatureOnlineStoreFeatureviewIamPolicyArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1898,9 +1929,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureOnlineStoreFeatureviewIamBinding("binding", AiFeatureOnlineStoreFeatureviewIamBindingArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1935,9 +1966,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureOnlineStoreFeatureviewIamMember("member", AiFeatureOnlineStoreFeatureviewIamMemberArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1994,8 +2025,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStoreFeatureview. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamPolicy`: Authoritative. Sets the IAM policy for the featureonlinestorefeatureview and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestorefeatureview are preserved.
-   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestorefeatureview are preserved.
+   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestorefeatureview are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestorefeatureview are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2043,9 +2074,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureOnlineStoreFeatureviewIamPolicy("policy", AiFeatureOnlineStoreFeatureviewIamPolicyArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2079,9 +2110,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureOnlineStoreFeatureviewIamBinding("binding", AiFeatureOnlineStoreFeatureviewIamBindingArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2116,9 +2147,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureOnlineStoreFeatureviewIamMember("member", AiFeatureOnlineStoreFeatureviewIamMemberArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2137,8 +2168,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStoreFeatureview. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamPolicy`: Authoritative. Sets the IAM policy for the featureonlinestorefeatureview and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestorefeatureview are preserved.
-   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestorefeatureview are preserved.
+   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestorefeatureview are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestorefeatureview are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2186,9 +2217,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureOnlineStoreFeatureviewIamPolicy("policy", AiFeatureOnlineStoreFeatureviewIamPolicyArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2222,9 +2253,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureOnlineStoreFeatureviewIamBinding("binding", AiFeatureOnlineStoreFeatureviewIamBindingArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2259,9 +2290,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureOnlineStoreFeatureviewIamMember("member", AiFeatureOnlineStoreFeatureviewIamMemberArgs.builder()
-   *             .region(featureview.region())
-   *             .featureOnlineStore(featureview.featureOnlineStore())
-   *             .featureView(featureview.name())
+   *             .region(featureview.get("region"))
+   *             .featureOnlineStore(featureview.get("featureOnlineStore"))
+   *             .featureView(featureview.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2312,8 +2343,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStore. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureOnlineStoreIamPolicy`: Authoritative. Sets the IAM policy for the featureonlinestore and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureOnlineStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestore are preserved.
-   * * `gcp.vertex.AiFeatureOnlineStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestore are preserved.
+   * * `gcp.vertex.AiFeatureOnlineStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestore are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureOnlineStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestore are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2361,8 +2392,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureOnlineStoreIamPolicy("policy", AiFeatureOnlineStoreIamPolicyArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2396,8 +2427,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureOnlineStoreIamBinding("binding", AiFeatureOnlineStoreIamBindingArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2432,8 +2463,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureOnlineStoreIamMember("member", AiFeatureOnlineStoreIamMemberArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2452,8 +2483,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStore. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureOnlineStoreIamPolicy`: Authoritative. Sets the IAM policy for the featureonlinestore and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureOnlineStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestore are preserved.
-   * * `gcp.vertex.AiFeatureOnlineStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestore are preserved.
+   * * `gcp.vertex.AiFeatureOnlineStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestore are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureOnlineStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestore are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2501,8 +2532,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureOnlineStoreIamPolicy("policy", AiFeatureOnlineStoreIamPolicyArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2536,8 +2567,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureOnlineStoreIamBinding("binding", AiFeatureOnlineStoreIamBindingArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2572,8 +2603,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureOnlineStoreIamMember("member", AiFeatureOnlineStoreIamMemberArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2631,8 +2662,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStore. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureOnlineStoreIamPolicy`: Authoritative. Sets the IAM policy for the featureonlinestore and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureOnlineStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestore are preserved.
-   * * `gcp.vertex.AiFeatureOnlineStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestore are preserved.
+   * * `gcp.vertex.AiFeatureOnlineStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestore are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureOnlineStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestore are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2680,8 +2711,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureOnlineStoreIamPolicy("policy", AiFeatureOnlineStoreIamPolicyArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2715,8 +2746,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureOnlineStoreIamBinding("binding", AiFeatureOnlineStoreIamBindingArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2751,8 +2782,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureOnlineStoreIamMember("member", AiFeatureOnlineStoreIamMemberArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2771,8 +2802,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStore. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureOnlineStoreIamPolicy`: Authoritative. Sets the IAM policy for the featureonlinestore and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureOnlineStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestore are preserved.
-   * * `gcp.vertex.AiFeatureOnlineStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestore are preserved.
+   * * `gcp.vertex.AiFeatureOnlineStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestore are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureOnlineStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestore are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2820,8 +2851,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureOnlineStoreIamPolicy("policy", AiFeatureOnlineStoreIamPolicyArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2855,8 +2886,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureOnlineStoreIamBinding("binding", AiFeatureOnlineStoreIamBindingArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2891,8 +2922,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureOnlineStoreIamMember("member", AiFeatureOnlineStoreIamMemberArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2950,8 +2981,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStore. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureOnlineStoreIamPolicy`: Authoritative. Sets the IAM policy for the featureonlinestore and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureOnlineStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestore are preserved.
-   * * `gcp.vertex.AiFeatureOnlineStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestore are preserved.
+   * * `gcp.vertex.AiFeatureOnlineStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestore are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureOnlineStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestore are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2999,8 +3030,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureOnlineStoreIamPolicy("policy", AiFeatureOnlineStoreIamPolicyArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3034,8 +3065,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureOnlineStoreIamBinding("binding", AiFeatureOnlineStoreIamBindingArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3070,8 +3101,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureOnlineStoreIamMember("member", AiFeatureOnlineStoreIamMemberArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3090,8 +3121,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStore. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureOnlineStoreIamPolicy`: Authoritative. Sets the IAM policy for the featureonlinestore and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureOnlineStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestore are preserved.
-   * * `gcp.vertex.AiFeatureOnlineStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestore are preserved.
+   * * `gcp.vertex.AiFeatureOnlineStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featureonlinestore are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureOnlineStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featureonlinestore are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3139,8 +3170,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureOnlineStoreIamPolicy("policy", AiFeatureOnlineStoreIamPolicyArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3174,8 +3205,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureOnlineStoreIamBinding("binding", AiFeatureOnlineStoreIamBindingArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3210,8 +3241,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureOnlineStoreIamMember("member", AiFeatureOnlineStoreIamMemberArgs.builder()
-   *             .region(featureOnlineStore.region())
-   *             .featureOnlineStore(featureOnlineStore.name())
+   *             .region(featureOnlineStore.get("region"))
+   *             .featureOnlineStore(featureOnlineStore.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3353,8 +3384,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeaturestoreEntitytype. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureStoreEntityTypeIamPolicy`: Authoritative. Sets the IAM policy for the featurestoreentitytype and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureStoreEntityTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestoreentitytype are preserved.
-   * * `gcp.vertex.AiFeatureStoreEntityTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestoreentitytype are preserved.
+   * * `gcp.vertex.AiFeatureStoreEntityTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestoreentitytype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureStoreEntityTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestoreentitytype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3402,8 +3433,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureStoreEntityTypeIamPolicy("policy", AiFeatureStoreEntityTypeIamPolicyArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3437,8 +3468,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureStoreEntityTypeIamBinding("binding", AiFeatureStoreEntityTypeIamBindingArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3473,8 +3504,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureStoreEntityTypeIamMember("member", AiFeatureStoreEntityTypeIamMemberArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3494,8 +3525,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeaturestoreEntitytype. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureStoreEntityTypeIamPolicy`: Authoritative. Sets the IAM policy for the featurestoreentitytype and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureStoreEntityTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestoreentitytype are preserved.
-   * * `gcp.vertex.AiFeatureStoreEntityTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestoreentitytype are preserved.
+   * * `gcp.vertex.AiFeatureStoreEntityTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestoreentitytype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureStoreEntityTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestoreentitytype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3543,8 +3574,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureStoreEntityTypeIamPolicy("policy", AiFeatureStoreEntityTypeIamPolicyArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3578,8 +3609,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureStoreEntityTypeIamBinding("binding", AiFeatureStoreEntityTypeIamBindingArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3614,8 +3645,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureStoreEntityTypeIamMember("member", AiFeatureStoreEntityTypeIamMemberArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3671,8 +3702,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeaturestoreEntitytype. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureStoreEntityTypeIamPolicy`: Authoritative. Sets the IAM policy for the featurestoreentitytype and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureStoreEntityTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestoreentitytype are preserved.
-   * * `gcp.vertex.AiFeatureStoreEntityTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestoreentitytype are preserved.
+   * * `gcp.vertex.AiFeatureStoreEntityTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestoreentitytype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureStoreEntityTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestoreentitytype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3720,8 +3751,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureStoreEntityTypeIamPolicy("policy", AiFeatureStoreEntityTypeIamPolicyArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3755,8 +3786,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureStoreEntityTypeIamBinding("binding", AiFeatureStoreEntityTypeIamBindingArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3791,8 +3822,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureStoreEntityTypeIamMember("member", AiFeatureStoreEntityTypeIamMemberArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3812,8 +3843,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeaturestoreEntitytype. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureStoreEntityTypeIamPolicy`: Authoritative. Sets the IAM policy for the featurestoreentitytype and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureStoreEntityTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestoreentitytype are preserved.
-   * * `gcp.vertex.AiFeatureStoreEntityTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestoreentitytype are preserved.
+   * * `gcp.vertex.AiFeatureStoreEntityTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestoreentitytype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureStoreEntityTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestoreentitytype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3861,8 +3892,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureStoreEntityTypeIamPolicy("policy", AiFeatureStoreEntityTypeIamPolicyArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3896,8 +3927,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureStoreEntityTypeIamBinding("binding", AiFeatureStoreEntityTypeIamBindingArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3932,8 +3963,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureStoreEntityTypeIamMember("member", AiFeatureStoreEntityTypeIamMemberArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3989,8 +4020,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeaturestoreEntitytype. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureStoreEntityTypeIamPolicy`: Authoritative. Sets the IAM policy for the featurestoreentitytype and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureStoreEntityTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestoreentitytype are preserved.
-   * * `gcp.vertex.AiFeatureStoreEntityTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestoreentitytype are preserved.
+   * * `gcp.vertex.AiFeatureStoreEntityTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestoreentitytype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureStoreEntityTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestoreentitytype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4038,8 +4069,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureStoreEntityTypeIamPolicy("policy", AiFeatureStoreEntityTypeIamPolicyArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4073,8 +4104,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureStoreEntityTypeIamBinding("binding", AiFeatureStoreEntityTypeIamBindingArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4109,8 +4140,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureStoreEntityTypeIamMember("member", AiFeatureStoreEntityTypeIamMemberArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4130,8 +4161,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI FeaturestoreEntitytype. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureStoreEntityTypeIamPolicy`: Authoritative. Sets the IAM policy for the featurestoreentitytype and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureStoreEntityTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestoreentitytype are preserved.
-   * * `gcp.vertex.AiFeatureStoreEntityTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestoreentitytype are preserved.
+   * * `gcp.vertex.AiFeatureStoreEntityTypeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestoreentitytype are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureStoreEntityTypeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestoreentitytype are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4179,8 +4210,8 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureStoreEntityTypeIamPolicy("policy", AiFeatureStoreEntityTypeIamPolicyArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4214,8 +4245,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureStoreEntityTypeIamBinding("binding", AiFeatureStoreEntityTypeIamBindingArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4250,8 +4281,8 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureStoreEntityTypeIamMember("member", AiFeatureStoreEntityTypeIamMemberArgs.builder()
-   *             .featurestore(entity.featurestore())
-   *             .entitytype(entity.name())
+   *             .featurestore(entity.get("featurestore"))
+   *             .entitytype(entity.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4301,8 +4332,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI Featurestore. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureStoreIamPolicy`: Authoritative. Sets the IAM policy for the featurestore and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestore are preserved.
-   * * `gcp.vertex.AiFeatureStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestore are preserved.
+   * * `gcp.vertex.AiFeatureStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestore are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestore are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4350,9 +4381,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureStoreIamPolicy("policy", AiFeatureStoreIamPolicyArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4386,9 +4417,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureStoreIamBinding("binding", AiFeatureStoreIamBindingArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4423,9 +4454,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureStoreIamMember("member", AiFeatureStoreIamMemberArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4444,8 +4475,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI Featurestore. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureStoreIamPolicy`: Authoritative. Sets the IAM policy for the featurestore and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestore are preserved.
-   * * `gcp.vertex.AiFeatureStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestore are preserved.
+   * * `gcp.vertex.AiFeatureStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestore are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestore are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4493,9 +4524,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureStoreIamPolicy("policy", AiFeatureStoreIamPolicyArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4529,9 +4560,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureStoreIamBinding("binding", AiFeatureStoreIamBindingArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4566,9 +4597,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureStoreIamMember("member", AiFeatureStoreIamMemberArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4626,8 +4657,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI Featurestore. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureStoreIamPolicy`: Authoritative. Sets the IAM policy for the featurestore and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestore are preserved.
-   * * `gcp.vertex.AiFeatureStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestore are preserved.
+   * * `gcp.vertex.AiFeatureStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestore are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestore are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4675,9 +4706,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureStoreIamPolicy("policy", AiFeatureStoreIamPolicyArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4711,9 +4742,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureStoreIamBinding("binding", AiFeatureStoreIamBindingArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4748,9 +4779,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureStoreIamMember("member", AiFeatureStoreIamMemberArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4769,8 +4800,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI Featurestore. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureStoreIamPolicy`: Authoritative. Sets the IAM policy for the featurestore and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestore are preserved.
-   * * `gcp.vertex.AiFeatureStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestore are preserved.
+   * * `gcp.vertex.AiFeatureStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestore are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestore are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4818,9 +4849,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureStoreIamPolicy("policy", AiFeatureStoreIamPolicyArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4854,9 +4885,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureStoreIamBinding("binding", AiFeatureStoreIamBindingArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4891,9 +4922,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureStoreIamMember("member", AiFeatureStoreIamMemberArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4951,8 +4982,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI Featurestore. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureStoreIamPolicy`: Authoritative. Sets the IAM policy for the featurestore and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestore are preserved.
-   * * `gcp.vertex.AiFeatureStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestore are preserved.
+   * * `gcp.vertex.AiFeatureStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestore are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestore are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5000,9 +5031,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureStoreIamPolicy("policy", AiFeatureStoreIamPolicyArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5036,9 +5067,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureStoreIamBinding("binding", AiFeatureStoreIamBindingArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5073,9 +5104,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureStoreIamMember("member", AiFeatureStoreIamMemberArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5094,8 +5125,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI Featurestore. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiFeatureStoreIamPolicy`: Authoritative. Sets the IAM policy for the featurestore and replaces any existing policy already attached.
-   * * `gcp.vertex.AiFeatureStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestore are preserved.
-   * * `gcp.vertex.AiFeatureStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestore are preserved.
+   * * `gcp.vertex.AiFeatureStoreIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the featurestore are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiFeatureStoreIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the featurestore are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5143,9 +5174,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiFeatureStoreIamPolicy("policy", AiFeatureStoreIamPolicyArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5179,9 +5210,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiFeatureStoreIamBinding("binding", AiFeatureStoreIamBindingArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5216,9 +5247,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiFeatureStoreIamMember("member", AiFeatureStoreIamMemberArgs.builder()
-   *             .project(featurestore.project())
-   *             .region(featurestore.region())
-   *             .featurestore(featurestore.name())
+   *             .project(featurestore.get("project"))
+   *             .region(featurestore.get("region"))
+   *             .featurestore(featurestore.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5589,6 +5620,7 @@ object vertex:
     /**
      * @param trafficConfig (Optional, Beta)
      * Optional. Traffic distribution configuration for the Reasoning Engine.
+     * &gt; **Note:** Because revision IDs do not exist before the resource is created, the best practice for initial deployment is to set `trafficSplitAlwaysLatest {}`. Once the resource is created, you can update the configuration to a manual split using newly generated revision IDs, short names (e.g. `rev-1`), or keywords such as `LATEST` and `PREVIOUS`.
      * Structure is documented below.
      * @return builder
      */
@@ -5601,8 +5633,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI ReasoningEngine. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiReasoningEngineIamPolicy`: Authoritative. Sets the IAM policy for the reasoningengine and replaces any existing policy already attached.
-   * * `gcp.vertex.AiReasoningEngineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the reasoningengine are preserved.
-   * * `gcp.vertex.AiReasoningEngineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the reasoningengine are preserved.
+   * * `gcp.vertex.AiReasoningEngineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the reasoningengine are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiReasoningEngineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the reasoningengine are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5647,9 +5679,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiReasoningEngineIamPolicy("policy", AiReasoningEngineIamPolicyArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5683,9 +5715,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiReasoningEngineIamBinding("binding", AiReasoningEngineIamBindingArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5720,9 +5752,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiReasoningEngineIamMember("member", AiReasoningEngineIamMemberArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5741,8 +5773,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI ReasoningEngine. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiReasoningEngineIamPolicy`: Authoritative. Sets the IAM policy for the reasoningengine and replaces any existing policy already attached.
-   * * `gcp.vertex.AiReasoningEngineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the reasoningengine are preserved.
-   * * `gcp.vertex.AiReasoningEngineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the reasoningengine are preserved.
+   * * `gcp.vertex.AiReasoningEngineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the reasoningengine are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiReasoningEngineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the reasoningengine are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5787,9 +5819,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiReasoningEngineIamPolicy("policy", AiReasoningEngineIamPolicyArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5823,9 +5855,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiReasoningEngineIamBinding("binding", AiReasoningEngineIamBindingArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5860,9 +5892,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiReasoningEngineIamMember("member", AiReasoningEngineIamMemberArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5920,8 +5952,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI ReasoningEngine. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiReasoningEngineIamPolicy`: Authoritative. Sets the IAM policy for the reasoningengine and replaces any existing policy already attached.
-   * * `gcp.vertex.AiReasoningEngineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the reasoningengine are preserved.
-   * * `gcp.vertex.AiReasoningEngineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the reasoningengine are preserved.
+   * * `gcp.vertex.AiReasoningEngineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the reasoningengine are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiReasoningEngineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the reasoningengine are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5966,9 +5998,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiReasoningEngineIamPolicy("policy", AiReasoningEngineIamPolicyArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6002,9 +6034,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiReasoningEngineIamBinding("binding", AiReasoningEngineIamBindingArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6039,9 +6071,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiReasoningEngineIamMember("member", AiReasoningEngineIamMemberArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6060,8 +6092,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI ReasoningEngine. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiReasoningEngineIamPolicy`: Authoritative. Sets the IAM policy for the reasoningengine and replaces any existing policy already attached.
-   * * `gcp.vertex.AiReasoningEngineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the reasoningengine are preserved.
-   * * `gcp.vertex.AiReasoningEngineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the reasoningengine are preserved.
+   * * `gcp.vertex.AiReasoningEngineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the reasoningengine are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiReasoningEngineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the reasoningengine are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6106,9 +6138,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiReasoningEngineIamPolicy("policy", AiReasoningEngineIamPolicyArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6142,9 +6174,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiReasoningEngineIamBinding("binding", AiReasoningEngineIamBindingArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6179,9 +6211,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiReasoningEngineIamMember("member", AiReasoningEngineIamMemberArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6239,8 +6271,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI ReasoningEngine. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiReasoningEngineIamPolicy`: Authoritative. Sets the IAM policy for the reasoningengine and replaces any existing policy already attached.
-   * * `gcp.vertex.AiReasoningEngineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the reasoningengine are preserved.
-   * * `gcp.vertex.AiReasoningEngineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the reasoningengine are preserved.
+   * * `gcp.vertex.AiReasoningEngineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the reasoningengine are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiReasoningEngineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the reasoningengine are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6285,9 +6317,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiReasoningEngineIamPolicy("policy", AiReasoningEngineIamPolicyArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6321,9 +6353,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiReasoningEngineIamBinding("binding", AiReasoningEngineIamBindingArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6358,9 +6390,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiReasoningEngineIamMember("member", AiReasoningEngineIamMemberArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6379,8 +6411,8 @@ object vertex:
    * Three different resources help you manage your IAM policy for Vertex AI ReasoningEngine. Each of these resources serves a different use case:
    * 
    * * `gcp.vertex.AiReasoningEngineIamPolicy`: Authoritative. Sets the IAM policy for the reasoningengine and replaces any existing policy already attached.
-   * * `gcp.vertex.AiReasoningEngineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the reasoningengine are preserved.
-   * * `gcp.vertex.AiReasoningEngineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the reasoningengine are preserved.
+   * * `gcp.vertex.AiReasoningEngineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the reasoningengine are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.vertex.AiReasoningEngineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the reasoningengine are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6425,9 +6457,9 @@ object vertex:
    *             .build());
    * 
    *         var policy = new AiReasoningEngineIamPolicy("policy", AiReasoningEngineIamPolicyArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6461,9 +6493,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AiReasoningEngineIamBinding("binding", AiReasoningEngineIamBindingArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6498,9 +6530,9 @@ object vertex:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AiReasoningEngineIamMember("member", AiReasoningEngineIamMemberArgs.builder()
-   *             .project(reasoningEngine.project())
-   *             .region(reasoningEngine.region())
-   *             .reasoningEngine(reasoningEngine.name())
+   *             .project(reasoningEngine.get("project"))
+   *             .region(reasoningEngine.get("region"))
+   *             .reasoningEngine(reasoningEngine.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7385,6 +7417,18 @@ object vertex:
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigArgs.builder
       builder.modelConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiEvaluationMetricState.Builder)
+    /**
+     * @param encryptionSpec Customer-managed encryption key spec for this EvaluationMetric. If set,
+     * this EvaluationMetric will be secured by this key.
+     * Structure is documented below.
+     * @return builder
+     */
+    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEvaluationMetricEncryptionSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiEvaluationMetricState.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEvaluationMetricEncryptionSpecArgs.builder
+      builder.encryptionSpec(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.vertex.inputs.AiFeatureGroupBigQueryArgs.Builder)
     /**
      * @param bigQuerySource The BigQuery source URI that points to either a BigQuery Table or View.
@@ -8211,6 +8255,29 @@ object vertex:
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicManagedMemoryTopicArgs.builder
       builder.managedMemoryTopic(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigArgs.Builder)
+    /**
+     * @param generationTriggerConfig Optional. Configuration for triggering memory generation.
+     * Structure is documented below.
+     * @return builder
+     */
+    def generationTriggerConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigGenerationTriggerConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigGenerationTriggerConfigArgs.builder
+      builder.generationTriggerConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigGenerationTriggerConfigArgs.Builder)
+    /**
+     * @param generationRule Optional. The active rule that determines when to flush the buffer. If not set,
+     * then the stream will be force flushed immediately.
+     * Structure is documented below.
+     * @return builder
+     */
+    def generationRule(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigGenerationTriggerConfigGenerationRuleArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigGenerationTriggerConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigGenerationTriggerConfigGenerationRuleArgs.builder
+      builder.generationRule(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigStructuredMemoryConfigArgs.Builder)
     /**
      * @param schemaConfigs Optional. List of schema configs that this structured memory config applies to.
@@ -8532,6 +8599,7 @@ object vertex:
     /**
      * @param trafficConfig (Optional, Beta)
      * Optional. Traffic distribution configuration for the Reasoning Engine.
+     * &gt; **Note:** Because revision IDs do not exist before the resource is created, the best practice for initial deployment is to set `trafficSplitAlwaysLatest {}`. Once the resource is created, you can update the configuration to a manual split using newly generated revision IDs, short names (e.g. `rev-1`), or keywords such as `LATEST` and `PREVIOUS`.
      * Structure is documented below.
      * @return builder
      */

@@ -132,7 +132,7 @@ object autoscaling:
 
   extension (builder: com.pulumi.aws.autoscaling.GroupArgs.Builder)
     /**
-     * @param availabilityZoneDistribution The instance capacity distribution across Availability Zones. See Availability Zone Distribution below for more details.
+     * @param availabilityZoneDistribution The instance capacity distribution across Availability Zones. See `availabilityZoneDistribution` Block below for more details.
      * @return builder
      */
     def availabilityZoneDistribution(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupAvailabilityZoneDistributionArgs.Builder]):
@@ -141,7 +141,7 @@ object autoscaling:
       builder.availabilityZoneDistribution(args(argsBuilder).build)
 
     /**
-     * @param capacityReservationSpecification The capacity reservation specification for the Auto Scaling group allows you to prioritize launching into On-Demand Capacity Reservations. See Capacity Reservation Specification below for more details.
+     * @param capacityReservationSpecification The capacity reservation specification for the Auto Scaling group allows you to prioritize launching into On-Demand Capacity Reservations. See `capacityReservationSpecification` Block below for more details.
      * @return builder
      */
     def capacityReservationSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupCapacityReservationSpecificationArgs.Builder]):
@@ -194,7 +194,7 @@ object autoscaling:
       builder.instanceRefresh(args(argsBuilder).build)
 
     /**
-     * @param launchTemplate Nested argument with Launch template specification to use to launch instances. See Launch Template below for more details.
+     * @param launchTemplate Nested argument with Launch template specification to use to launch instances. See `launchTemplate` Block below for more details.
      * @return builder
      */
     def launchTemplate(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupLaunchTemplateArgs.Builder]):
@@ -203,7 +203,7 @@ object autoscaling:
       builder.launchTemplate(args(argsBuilder).build)
 
     /**
-     * @param mixedInstancesPolicy Configuration block containing settings to define launch targets for Auto Scaling groups. See Mixed Instances Policy below for more details.
+     * @param mixedInstancesPolicy Configuration block containing settings to define launch targets for Auto Scaling groups. See `mixedInstancesPolicy` Block below for more details.
      * @return builder
      */
     def mixedInstancesPolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyArgs.Builder]):
@@ -212,7 +212,7 @@ object autoscaling:
       builder.mixedInstancesPolicy(args(argsBuilder).build)
 
     /**
-     * @param tags Configuration block(s) containing resource tags. See Tag below for more details.
+     * @param tags Configuration block(s) containing resource tags. See `tag` Block below for more details.
      * @return builder
      */
     def tags(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupTagArgs.Builder]*):
@@ -653,7 +653,7 @@ object autoscaling:
 
   extension (builder: com.pulumi.aws.autoscaling.inputs.GroupState.Builder)
     /**
-     * @param availabilityZoneDistribution The instance capacity distribution across Availability Zones. See Availability Zone Distribution below for more details.
+     * @param availabilityZoneDistribution The instance capacity distribution across Availability Zones. See `availabilityZoneDistribution` Block below for more details.
      * @return builder
      */
     def availabilityZoneDistribution(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupAvailabilityZoneDistributionArgs.Builder]):
@@ -662,7 +662,7 @@ object autoscaling:
       builder.availabilityZoneDistribution(args(argsBuilder).build)
 
     /**
-     * @param capacityReservationSpecification The capacity reservation specification for the Auto Scaling group allows you to prioritize launching into On-Demand Capacity Reservations. See Capacity Reservation Specification below for more details.
+     * @param capacityReservationSpecification The capacity reservation specification for the Auto Scaling group allows you to prioritize launching into On-Demand Capacity Reservations. See `capacityReservationSpecification` Block below for more details.
      * @return builder
      */
     def capacityReservationSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupCapacityReservationSpecificationArgs.Builder]):
@@ -715,7 +715,7 @@ object autoscaling:
       builder.instanceRefresh(args(argsBuilder).build)
 
     /**
-     * @param launchTemplate Nested argument with Launch template specification to use to launch instances. See Launch Template below for more details.
+     * @param launchTemplate Nested argument with Launch template specification to use to launch instances. See `launchTemplate` Block below for more details.
      * @return builder
      */
     def launchTemplate(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupLaunchTemplateArgs.Builder]):
@@ -724,7 +724,7 @@ object autoscaling:
       builder.launchTemplate(args(argsBuilder).build)
 
     /**
-     * @param mixedInstancesPolicy Configuration block containing settings to define launch targets for Auto Scaling groups. See Mixed Instances Policy below for more details.
+     * @param mixedInstancesPolicy Configuration block containing settings to define launch targets for Auto Scaling groups. See `mixedInstancesPolicy` Block below for more details.
      * @return builder
      */
     def mixedInstancesPolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyArgs.Builder]):
@@ -733,7 +733,7 @@ object autoscaling:
       builder.mixedInstancesPolicy(args(argsBuilder).build)
 
     /**
-     * @param tags Configuration block(s) containing resource tags. See Tag below for more details.
+     * @param tags Configuration block(s) containing resource tags. See `tag` Block below for more details.
      * @return builder
      */
     def tags(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupTagArgs.Builder]*):

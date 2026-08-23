@@ -155,8 +155,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog EntryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.EntryGroupIamPolicy`: Authoritative. Sets the IAM policy for the entrygroup and replaces any existing policy already attached.
-   * * `gcp.datacatalog.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved.
-   * * `gcp.datacatalog.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved.
+   * * `gcp.datacatalog.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -201,7 +201,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new EntryGroupIamPolicy("policy", EntryGroupIamPolicyArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -235,7 +235,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryGroupIamBinding("binding", EntryGroupIamBindingArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -270,7 +270,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryGroupIamMember("member", EntryGroupIamMemberArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -290,8 +290,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog EntryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.EntryGroupIamPolicy`: Authoritative. Sets the IAM policy for the entrygroup and replaces any existing policy already attached.
-   * * `gcp.datacatalog.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved.
-   * * `gcp.datacatalog.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved.
+   * * `gcp.datacatalog.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -336,7 +336,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new EntryGroupIamPolicy("policy", EntryGroupIamPolicyArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -370,7 +370,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryGroupIamBinding("binding", EntryGroupIamBindingArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -405,7 +405,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryGroupIamMember("member", EntryGroupIamMemberArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -465,8 +465,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog EntryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.EntryGroupIamPolicy`: Authoritative. Sets the IAM policy for the entrygroup and replaces any existing policy already attached.
-   * * `gcp.datacatalog.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved.
-   * * `gcp.datacatalog.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved.
+   * * `gcp.datacatalog.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -511,7 +511,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new EntryGroupIamPolicy("policy", EntryGroupIamPolicyArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -545,7 +545,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryGroupIamBinding("binding", EntryGroupIamBindingArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -580,7 +580,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryGroupIamMember("member", EntryGroupIamMemberArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -600,8 +600,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog EntryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.EntryGroupIamPolicy`: Authoritative. Sets the IAM policy for the entrygroup and replaces any existing policy already attached.
-   * * `gcp.datacatalog.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved.
-   * * `gcp.datacatalog.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved.
+   * * `gcp.datacatalog.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -646,7 +646,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new EntryGroupIamPolicy("policy", EntryGroupIamPolicyArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -680,7 +680,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryGroupIamBinding("binding", EntryGroupIamBindingArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -715,7 +715,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryGroupIamMember("member", EntryGroupIamMemberArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -775,8 +775,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog EntryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.EntryGroupIamPolicy`: Authoritative. Sets the IAM policy for the entrygroup and replaces any existing policy already attached.
-   * * `gcp.datacatalog.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved.
-   * * `gcp.datacatalog.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved.
+   * * `gcp.datacatalog.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -821,7 +821,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new EntryGroupIamPolicy("policy", EntryGroupIamPolicyArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -855,7 +855,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryGroupIamBinding("binding", EntryGroupIamBindingArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -890,7 +890,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryGroupIamMember("member", EntryGroupIamMemberArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -910,8 +910,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog EntryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.EntryGroupIamPolicy`: Authoritative. Sets the IAM policy for the entrygroup and replaces any existing policy already attached.
-   * * `gcp.datacatalog.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved.
-   * * `gcp.datacatalog.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved.
+   * * `gcp.datacatalog.EntryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the entrygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.EntryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the entrygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -956,7 +956,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new EntryGroupIamPolicy("policy", EntryGroupIamPolicyArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -990,7 +990,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EntryGroupIamBinding("binding", EntryGroupIamBindingArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1025,7 +1025,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EntryGroupIamMember("member", EntryGroupIamMemberArgs.builder()
-   *             .entryGroup(basicEntryGroup.name())
+   *             .entryGroup(basicEntryGroup.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1093,8 +1093,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog PolicyTag. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.PolicyTagIamPolicy`: Authoritative. Sets the IAM policy for the policytag and replaces any existing policy already attached.
-   * * `gcp.datacatalog.PolicyTagIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the policytag are preserved.
-   * * `gcp.datacatalog.PolicyTagIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the policytag are preserved.
+   * * `gcp.datacatalog.PolicyTagIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the policytag are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.PolicyTagIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the policytag are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1139,7 +1139,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new PolicyTagIamPolicy("policy", PolicyTagIamPolicyArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1173,7 +1173,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new PolicyTagIamBinding("binding", PolicyTagIamBindingArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1208,7 +1208,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new PolicyTagIamMember("member", PolicyTagIamMemberArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1228,8 +1228,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog PolicyTag. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.PolicyTagIamPolicy`: Authoritative. Sets the IAM policy for the policytag and replaces any existing policy already attached.
-   * * `gcp.datacatalog.PolicyTagIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the policytag are preserved.
-   * * `gcp.datacatalog.PolicyTagIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the policytag are preserved.
+   * * `gcp.datacatalog.PolicyTagIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the policytag are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.PolicyTagIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the policytag are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1274,7 +1274,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new PolicyTagIamPolicy("policy", PolicyTagIamPolicyArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1308,7 +1308,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new PolicyTagIamBinding("binding", PolicyTagIamBindingArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1343,7 +1343,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new PolicyTagIamMember("member", PolicyTagIamMemberArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1398,8 +1398,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog PolicyTag. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.PolicyTagIamPolicy`: Authoritative. Sets the IAM policy for the policytag and replaces any existing policy already attached.
-   * * `gcp.datacatalog.PolicyTagIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the policytag are preserved.
-   * * `gcp.datacatalog.PolicyTagIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the policytag are preserved.
+   * * `gcp.datacatalog.PolicyTagIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the policytag are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.PolicyTagIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the policytag are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1444,7 +1444,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new PolicyTagIamPolicy("policy", PolicyTagIamPolicyArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1478,7 +1478,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new PolicyTagIamBinding("binding", PolicyTagIamBindingArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1513,7 +1513,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new PolicyTagIamMember("member", PolicyTagIamMemberArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1533,8 +1533,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog PolicyTag. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.PolicyTagIamPolicy`: Authoritative. Sets the IAM policy for the policytag and replaces any existing policy already attached.
-   * * `gcp.datacatalog.PolicyTagIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the policytag are preserved.
-   * * `gcp.datacatalog.PolicyTagIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the policytag are preserved.
+   * * `gcp.datacatalog.PolicyTagIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the policytag are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.PolicyTagIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the policytag are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1579,7 +1579,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new PolicyTagIamPolicy("policy", PolicyTagIamPolicyArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1613,7 +1613,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new PolicyTagIamBinding("binding", PolicyTagIamBindingArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1648,7 +1648,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new PolicyTagIamMember("member", PolicyTagIamMemberArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1703,8 +1703,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog PolicyTag. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.PolicyTagIamPolicy`: Authoritative. Sets the IAM policy for the policytag and replaces any existing policy already attached.
-   * * `gcp.datacatalog.PolicyTagIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the policytag are preserved.
-   * * `gcp.datacatalog.PolicyTagIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the policytag are preserved.
+   * * `gcp.datacatalog.PolicyTagIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the policytag are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.PolicyTagIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the policytag are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1749,7 +1749,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new PolicyTagIamPolicy("policy", PolicyTagIamPolicyArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1783,7 +1783,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new PolicyTagIamBinding("binding", PolicyTagIamBindingArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1818,7 +1818,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new PolicyTagIamMember("member", PolicyTagIamMemberArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1838,8 +1838,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog PolicyTag. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.PolicyTagIamPolicy`: Authoritative. Sets the IAM policy for the policytag and replaces any existing policy already attached.
-   * * `gcp.datacatalog.PolicyTagIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the policytag are preserved.
-   * * `gcp.datacatalog.PolicyTagIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the policytag are preserved.
+   * * `gcp.datacatalog.PolicyTagIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the policytag are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.PolicyTagIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the policytag are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1884,7 +1884,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new PolicyTagIamPolicy("policy", PolicyTagIamPolicyArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1918,7 +1918,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new PolicyTagIamBinding("binding", PolicyTagIamBindingArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1953,7 +1953,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new PolicyTagIamMember("member", PolicyTagIamMemberArgs.builder()
-   *             .policyTag(basicPolicyTag.name())
+   *             .policyTag(basicPolicyTag.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2066,8 +2066,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog TagTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.TagTemplateIamPolicy`: Authoritative. Sets the IAM policy for the tagtemplate and replaces any existing policy already attached.
-   * * `gcp.datacatalog.TagTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagtemplate are preserved.
-   * * `gcp.datacatalog.TagTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagtemplate are preserved.
+   * * `gcp.datacatalog.TagTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagtemplate are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.TagTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagtemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2112,7 +2112,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new TagTemplateIamPolicy("policy", TagTemplateIamPolicyArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2146,7 +2146,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagTemplateIamBinding("binding", TagTemplateIamBindingArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2181,7 +2181,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagTemplateIamMember("member", TagTemplateIamMemberArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2201,8 +2201,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog TagTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.TagTemplateIamPolicy`: Authoritative. Sets the IAM policy for the tagtemplate and replaces any existing policy already attached.
-   * * `gcp.datacatalog.TagTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagtemplate are preserved.
-   * * `gcp.datacatalog.TagTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagtemplate are preserved.
+   * * `gcp.datacatalog.TagTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagtemplate are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.TagTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagtemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2247,7 +2247,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new TagTemplateIamPolicy("policy", TagTemplateIamPolicyArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2281,7 +2281,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagTemplateIamBinding("binding", TagTemplateIamBindingArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2316,7 +2316,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagTemplateIamMember("member", TagTemplateIamMemberArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2376,8 +2376,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog TagTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.TagTemplateIamPolicy`: Authoritative. Sets the IAM policy for the tagtemplate and replaces any existing policy already attached.
-   * * `gcp.datacatalog.TagTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagtemplate are preserved.
-   * * `gcp.datacatalog.TagTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagtemplate are preserved.
+   * * `gcp.datacatalog.TagTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagtemplate are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.TagTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagtemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2422,7 +2422,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new TagTemplateIamPolicy("policy", TagTemplateIamPolicyArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2456,7 +2456,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagTemplateIamBinding("binding", TagTemplateIamBindingArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2491,7 +2491,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagTemplateIamMember("member", TagTemplateIamMemberArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2511,8 +2511,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog TagTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.TagTemplateIamPolicy`: Authoritative. Sets the IAM policy for the tagtemplate and replaces any existing policy already attached.
-   * * `gcp.datacatalog.TagTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagtemplate are preserved.
-   * * `gcp.datacatalog.TagTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagtemplate are preserved.
+   * * `gcp.datacatalog.TagTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagtemplate are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.TagTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagtemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2557,7 +2557,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new TagTemplateIamPolicy("policy", TagTemplateIamPolicyArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2591,7 +2591,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagTemplateIamBinding("binding", TagTemplateIamBindingArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2626,7 +2626,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagTemplateIamMember("member", TagTemplateIamMemberArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2686,8 +2686,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog TagTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.TagTemplateIamPolicy`: Authoritative. Sets the IAM policy for the tagtemplate and replaces any existing policy already attached.
-   * * `gcp.datacatalog.TagTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagtemplate are preserved.
-   * * `gcp.datacatalog.TagTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagtemplate are preserved.
+   * * `gcp.datacatalog.TagTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagtemplate are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.TagTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagtemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2732,7 +2732,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new TagTemplateIamPolicy("policy", TagTemplateIamPolicyArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2766,7 +2766,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagTemplateIamBinding("binding", TagTemplateIamBindingArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2801,7 +2801,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagTemplateIamMember("member", TagTemplateIamMemberArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2821,8 +2821,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog TagTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.TagTemplateIamPolicy`: Authoritative. Sets the IAM policy for the tagtemplate and replaces any existing policy already attached.
-   * * `gcp.datacatalog.TagTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagtemplate are preserved.
-   * * `gcp.datacatalog.TagTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagtemplate are preserved.
+   * * `gcp.datacatalog.TagTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagtemplate are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.TagTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagtemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2867,7 +2867,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new TagTemplateIamPolicy("policy", TagTemplateIamPolicyArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2901,7 +2901,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagTemplateIamBinding("binding", TagTemplateIamBindingArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2936,7 +2936,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagTemplateIamMember("member", TagTemplateIamMemberArgs.builder()
-   *             .tagTemplate(basicTagTemplate.name())
+   *             .tagTemplate(basicTagTemplate.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3004,8 +3004,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog Taxonomy. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.TaxonomyIamPolicy`: Authoritative. Sets the IAM policy for the taxonomy and replaces any existing policy already attached.
-   * * `gcp.datacatalog.TaxonomyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the taxonomy are preserved.
-   * * `gcp.datacatalog.TaxonomyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the taxonomy are preserved.
+   * * `gcp.datacatalog.TaxonomyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the taxonomy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.TaxonomyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the taxonomy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3050,7 +3050,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new TaxonomyIamPolicy("policy", TaxonomyIamPolicyArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3084,7 +3084,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TaxonomyIamBinding("binding", TaxonomyIamBindingArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3119,7 +3119,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TaxonomyIamMember("member", TaxonomyIamMemberArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3138,8 +3138,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog Taxonomy. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.TaxonomyIamPolicy`: Authoritative. Sets the IAM policy for the taxonomy and replaces any existing policy already attached.
-   * * `gcp.datacatalog.TaxonomyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the taxonomy are preserved.
-   * * `gcp.datacatalog.TaxonomyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the taxonomy are preserved.
+   * * `gcp.datacatalog.TaxonomyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the taxonomy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.TaxonomyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the taxonomy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3184,7 +3184,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new TaxonomyIamPolicy("policy", TaxonomyIamPolicyArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3218,7 +3218,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TaxonomyIamBinding("binding", TaxonomyIamBindingArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3253,7 +3253,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TaxonomyIamMember("member", TaxonomyIamMemberArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3311,8 +3311,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog Taxonomy. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.TaxonomyIamPolicy`: Authoritative. Sets the IAM policy for the taxonomy and replaces any existing policy already attached.
-   * * `gcp.datacatalog.TaxonomyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the taxonomy are preserved.
-   * * `gcp.datacatalog.TaxonomyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the taxonomy are preserved.
+   * * `gcp.datacatalog.TaxonomyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the taxonomy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.TaxonomyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the taxonomy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3357,7 +3357,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new TaxonomyIamPolicy("policy", TaxonomyIamPolicyArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3391,7 +3391,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TaxonomyIamBinding("binding", TaxonomyIamBindingArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3426,7 +3426,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TaxonomyIamMember("member", TaxonomyIamMemberArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3445,8 +3445,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog Taxonomy. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.TaxonomyIamPolicy`: Authoritative. Sets the IAM policy for the taxonomy and replaces any existing policy already attached.
-   * * `gcp.datacatalog.TaxonomyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the taxonomy are preserved.
-   * * `gcp.datacatalog.TaxonomyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the taxonomy are preserved.
+   * * `gcp.datacatalog.TaxonomyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the taxonomy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.TaxonomyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the taxonomy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3491,7 +3491,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new TaxonomyIamPolicy("policy", TaxonomyIamPolicyArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3525,7 +3525,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TaxonomyIamBinding("binding", TaxonomyIamBindingArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3560,7 +3560,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TaxonomyIamMember("member", TaxonomyIamMemberArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3618,8 +3618,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog Taxonomy. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.TaxonomyIamPolicy`: Authoritative. Sets the IAM policy for the taxonomy and replaces any existing policy already attached.
-   * * `gcp.datacatalog.TaxonomyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the taxonomy are preserved.
-   * * `gcp.datacatalog.TaxonomyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the taxonomy are preserved.
+   * * `gcp.datacatalog.TaxonomyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the taxonomy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.TaxonomyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the taxonomy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3664,7 +3664,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new TaxonomyIamPolicy("policy", TaxonomyIamPolicyArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3698,7 +3698,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TaxonomyIamBinding("binding", TaxonomyIamBindingArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3733,7 +3733,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TaxonomyIamMember("member", TaxonomyIamMemberArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3752,8 +3752,8 @@ object datacatalog:
    * Three different resources help you manage your IAM policy for Data Catalog Taxonomy. Each of these resources serves a different use case:
    * 
    * * `gcp.datacatalog.TaxonomyIamPolicy`: Authoritative. Sets the IAM policy for the taxonomy and replaces any existing policy already attached.
-   * * `gcp.datacatalog.TaxonomyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the taxonomy are preserved.
-   * * `gcp.datacatalog.TaxonomyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the taxonomy are preserved.
+   * * `gcp.datacatalog.TaxonomyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the taxonomy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.datacatalog.TaxonomyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the taxonomy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3798,7 +3798,7 @@ object datacatalog:
    *             .build());
    * 
    *         var policy = new TaxonomyIamPolicy("policy", TaxonomyIamPolicyArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3832,7 +3832,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TaxonomyIamBinding("binding", TaxonomyIamBindingArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3867,7 +3867,7 @@ object datacatalog:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TaxonomyIamMember("member", TaxonomyIamMemberArgs.builder()
-   *             .taxonomy(basicTaxonomy.name())
+   *             .taxonomy(basicTaxonomy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

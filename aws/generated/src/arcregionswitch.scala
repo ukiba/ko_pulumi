@@ -55,7 +55,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.PlanArgs.Builder)
     /**
-     * @param associatedAlarms Set of CloudWatch alarms associated with the plan. See Associated Alarms below.
+     * @param associatedAlarms CloudWatch alarms associated with the plan. See `associatedAlarms` Block for details.
      * @return builder
      */
     def associatedAlarms(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanAssociatedAlarmArgs.Builder]*):
@@ -64,7 +64,7 @@ object arcregionswitch:
       builder.associatedAlarms(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param reportConfigurations Configuration for automated execution reports. See Report Configuration below.
+     * @param reportConfigurations Configuration for automated execution reports. See `reportConfiguration` Block for details.
      * @return builder
      */
     def reportConfigurations(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanReportConfigurationArgs.Builder]*):
@@ -78,7 +78,7 @@ object arcregionswitch:
       builder.timeouts(args(argsBuilder).build)
 
     /**
-     * @param triggers Set of triggers that can initiate the plan execution. See Triggers below.
+     * @param triggers Triggers that can initiate the plan execution. See `triggers` Block for details.
      * @return builder
      */
     def triggers(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanTriggerArgs.Builder]*):
@@ -87,7 +87,7 @@ object arcregionswitch:
       builder.triggers(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param workflows List of workflows that define the steps to execute. See Workflow below.
+     * @param workflows Workflows that define the steps to execute. See `workflow` Block for details.
      * 
      * The following arguments are optional:
      * @return builder
@@ -99,7 +99,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanReportConfigurationArgs.Builder)
     /**
-     * @param reportOutputs Output destination for the report. See Report Output below.
+     * @param reportOutputs Output destination for the report. See `reportOutput` Block for details.
      * @return builder
      */
     def reportOutputs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanReportConfigurationReportOutputArgs.Builder]*):
@@ -109,7 +109,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanReportConfigurationReportOutputArgs.Builder)
     /**
-     * @param s3Configurations S3 output configuration. See S3 Configuration below.
+     * @param s3Configurations S3 output configuration. See `s3Configuration` Block for details.
      * @return builder
      */
     def s3Configurations(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanReportConfigurationReportOutputS3ConfigurationArgs.Builder]*):
@@ -119,7 +119,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanState.Builder)
     /**
-     * @param associatedAlarms Set of CloudWatch alarms associated with the plan. See Associated Alarms below.
+     * @param associatedAlarms CloudWatch alarms associated with the plan. See `associatedAlarms` Block for details.
      * @return builder
      */
     def associatedAlarms(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanAssociatedAlarmArgs.Builder]*):
@@ -128,7 +128,7 @@ object arcregionswitch:
       builder.associatedAlarms(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param reportConfigurations Configuration for automated execution reports. See Report Configuration below.
+     * @param reportConfigurations Configuration for automated execution reports. See `reportConfiguration` Block for details.
      * @return builder
      */
     def reportConfigurations(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanReportConfigurationArgs.Builder]*):
@@ -142,7 +142,7 @@ object arcregionswitch:
       builder.timeouts(args(argsBuilder).build)
 
     /**
-     * @param triggers Set of triggers that can initiate the plan execution. See Triggers below.
+     * @param triggers Triggers that can initiate the plan execution. See `triggers` Block for details.
      * @return builder
      */
     def triggers(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanTriggerArgs.Builder]*):
@@ -151,7 +151,7 @@ object arcregionswitch:
       builder.triggers(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param workflows List of workflows that define the steps to execute. See Workflow below.
+     * @param workflows Workflows that define the steps to execute. See `workflow` Block for details.
      * 
      * The following arguments are optional:
      * @return builder
@@ -163,7 +163,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanTriggerArgs.Builder)
     /**
-     * @param conditions List of conditions that must be met. See Conditions below.
+     * @param conditions Conditions that must be met. See `conditions` Block for details.
      * @return builder
      */
     def conditions(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanTriggerConditionArgs.Builder]*):
@@ -173,7 +173,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowArgs.Builder)
     /**
-     * @param steps List of steps in the workflow. See Step below.
+     * @param steps Steps in the workflow. See `step` Block for details.
      * @return builder
      */
     def steps(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepArgs.Builder]*):
@@ -183,7 +183,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepArcRoutingControlConfigArgs.Builder)
     /**
-     * @param regionAndRoutingControls List of regions and their routing controls. See Region and Routing Controls below.
+     * @param regionAndRoutingControls Regions and their routing controls. See `regionAndRoutingControls` Block for details.
      * @return builder
      */
     def regionAndRoutingControls(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepArcRoutingControlConfigRegionAndRoutingControlArgs.Builder]*):
@@ -193,7 +193,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepArcRoutingControlConfigRegionAndRoutingControlArgs.Builder)
     /**
-     * @param routingControls List of routing controls. See Routing Control below.
+     * @param routingControls Routing controls. See `routingControl` Block for details.
      * @return builder
      */
     def routingControls(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepArcRoutingControlConfigRegionAndRoutingControlRoutingControlArgs.Builder]*):
@@ -203,7 +203,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepArgs.Builder)
     /**
-     * @param arcRoutingControlConfigs Configuration for ARC routing control. See ARC Routing Control Config below.
+     * @param arcRoutingControlConfigs Configuration for ARC routing control. See `arcRoutingControlConfig` Block for details.
      * @return builder
      */
     def arcRoutingControlConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepArcRoutingControlConfigArgs.Builder]*):
@@ -212,7 +212,25 @@ object arcregionswitch:
       builder.arcRoutingControlConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param customActionLambdaConfigs Configuration for Lambda function execution. See Custom Action Lambda Config below.
+     * @param auroraProvisionedScalingConfigs Configuration for Aurora provisioned scaling. See `auroraProvisionedScalingConfig` Block for details.
+     * @return builder
+     */
+    def auroraProvisionedScalingConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepAuroraProvisionedScalingConfigArgs.Builder]*):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepArgs.Builder =
+      def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepAuroraProvisionedScalingConfigArgs.builder
+      builder.auroraProvisionedScalingConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param auroraServerlessScalingConfigs Configuration for Aurora Serverless scaling. See `auroraServerlessScalingConfig` Block for details.
+     * @return builder
+     */
+    def auroraServerlessScalingConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepAuroraServerlessScalingConfigArgs.Builder]*):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepArgs.Builder =
+      def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepAuroraServerlessScalingConfigArgs.builder
+      builder.auroraServerlessScalingConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param customActionLambdaConfigs Configuration for Lambda function execution. See `customActionLambdaConfig` Block for details.
      * @return builder
      */
     def customActionLambdaConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepCustomActionLambdaConfigArgs.Builder]*):
@@ -221,7 +239,7 @@ object arcregionswitch:
       builder.customActionLambdaConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param documentDbConfigs Configuration for DocumentDB global cluster operations. See DocumentDB Config below.
+     * @param documentDbConfigs Configuration for DocumentDB global cluster operations. See `documentDbConfig` Block for details.
      * @return builder
      */
     def documentDbConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepDocumentDbConfigArgs.Builder]*):
@@ -230,7 +248,7 @@ object arcregionswitch:
       builder.documentDbConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param ec2AsgCapacityIncreaseConfigs Configuration for EC2 Auto Scaling group capacity increase. See EC2 ASG Capacity Increase Config below.
+     * @param ec2AsgCapacityIncreaseConfigs Configuration for EC2 Auto Scaling group capacity increase. See `ec2AsgCapacityIncreaseConfig` Block for details.
      * @return builder
      */
     def ec2AsgCapacityIncreaseConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepEc2AsgCapacityIncreaseConfigArgs.Builder]*):
@@ -239,7 +257,7 @@ object arcregionswitch:
       builder.ec2AsgCapacityIncreaseConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param ecsCapacityIncreaseConfigs Configuration for ECS service capacity increase. See ECS Capacity Increase Config below.
+     * @param ecsCapacityIncreaseConfigs Configuration for ECS service capacity increase. See `ecsCapacityIncreaseConfig` Block for details.
      * @return builder
      */
     def ecsCapacityIncreaseConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepEcsCapacityIncreaseConfigArgs.Builder]*):
@@ -248,7 +266,7 @@ object arcregionswitch:
       builder.ecsCapacityIncreaseConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param eksResourceScalingConfigs Configuration for EKS resource scaling. See EKS Resource Scaling Config below.
+     * @param eksResourceScalingConfigs Configuration for EKS resource scaling. See `eksResourceScalingConfig` Block for details.
      * @return builder
      */
     def eksResourceScalingConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepEksResourceScalingConfigArgs.Builder]*):
@@ -257,7 +275,7 @@ object arcregionswitch:
       builder.eksResourceScalingConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param executionApprovalConfigs Configuration for manual approval steps. See Execution Approval Config below.
+     * @param executionApprovalConfigs Configuration for manual approval steps. See `executionApprovalConfig` Block for details.
      * @return builder
      */
     def executionApprovalConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepExecutionApprovalConfigArgs.Builder]*):
@@ -266,7 +284,7 @@ object arcregionswitch:
       builder.executionApprovalConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param globalAuroraConfigs Configuration for Aurora Global Database operations. See Global Aurora Config below.
+     * @param globalAuroraConfigs Configuration for Aurora Global Database operations. See `globalAuroraConfig` Block for details.
      * @return builder
      */
     def globalAuroraConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepGlobalAuroraConfigArgs.Builder]*):
@@ -275,7 +293,25 @@ object arcregionswitch:
       builder.globalAuroraConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param parallelConfigs Configuration for parallel execution of multiple steps. See Parallel Config below.
+     * @param lambdaEventSourceMappingConfigs Configuration for Lambda event source mapping operations. See `lambdaEventSourceMappingConfig` Block for details.
+     * @return builder
+     */
+    def lambdaEventSourceMappingConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepLambdaEventSourceMappingConfigArgs.Builder]*):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepArgs.Builder =
+      def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepLambdaEventSourceMappingConfigArgs.builder
+      builder.lambdaEventSourceMappingConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param neptuneGlobalDatabaseConfigs Configuration for Neptune global database operations. See `neptuneGlobalDatabaseConfig` Block for details.
+     * @return builder
+     */
+    def neptuneGlobalDatabaseConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepNeptuneGlobalDatabaseConfigArgs.Builder]*):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepArgs.Builder =
+      def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepNeptuneGlobalDatabaseConfigArgs.builder
+      builder.neptuneGlobalDatabaseConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param parallelConfigs Configuration for parallel execution of multiple steps. See `parallelConfig` Block for details.
      * @return builder
      */
     def parallelConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigArgs.Builder]*):
@@ -284,7 +320,7 @@ object arcregionswitch:
       builder.parallelConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param rdsCreateCrossRegionReadReplicaConfigs Configuration for creating cross-region RDS read replicas. See RDS Create Cross Region Read Replica Config below.
+     * @param rdsCreateCrossRegionReadReplicaConfigs Configuration for creating cross-region RDS read replicas. See `rdsCreateCrossRegionReadReplicaConfig` Block for details.
      * @return builder
      */
     def rdsCreateCrossRegionReadReplicaConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepRdsCreateCrossRegionReadReplicaConfigArgs.Builder]*):
@@ -293,7 +329,7 @@ object arcregionswitch:
       builder.rdsCreateCrossRegionReadReplicaConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param rdsPromoteReadReplicaConfigs Configuration for promoting RDS read replicas. See RDS Promote Read Replica Config below.
+     * @param rdsPromoteReadReplicaConfigs Configuration for promoting RDS read replicas. See `rdsPromoteReadReplicaConfig` Block for details.
      * @return builder
      */
     def rdsPromoteReadReplicaConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepRdsPromoteReadReplicaConfigArgs.Builder]*):
@@ -301,13 +337,17 @@ object arcregionswitch:
       def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepRdsPromoteReadReplicaConfigArgs.builder
       builder.rdsPromoteReadReplicaConfigs(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param regionSwitchPlanConfigs Configuration for executing a nested region switch plan. See `regionSwitchPlanConfig` Block for details.
+     * @return builder
+     */
     def regionSwitchPlanConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepRegionSwitchPlanConfigArgs.Builder]*):
         com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepArgs.Builder =
       def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepRegionSwitchPlanConfigArgs.builder
       builder.regionSwitchPlanConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param route53HealthCheckConfigs Configuration for Route53 health check operations. See Route53 Health Check Config below.
+     * @param route53HealthCheckConfigs Configuration for Route53 health check operations. See `route53HealthCheckConfig` Block for details.
      * @return builder
      */
     def route53HealthCheckConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepRoute53HealthCheckConfigArgs.Builder]*):
@@ -317,7 +357,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepCustomActionLambdaConfigArgs.Builder)
     /**
-     * @param lambdas Lambda function configuration. See Lambda below.
+     * @param lambdas Lambda function configuration. See `lambda` Block for details.
      * @return builder
      */
     def lambdas(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepCustomActionLambdaConfigLambdaArgs.Builder]*):
@@ -326,7 +366,7 @@ object arcregionswitch:
       builder.lambdas(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param ungracefuls Ungraceful behavior configuration. See Ungraceful below.
+     * @param ungracefuls Ungraceful behavior configuration. See `workflow.step.custom_action_lambda_config.ungraceful` Block for details.
      * @return builder
      */
     def ungracefuls(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepCustomActionLambdaConfigUngracefulArgs.Builder]*):
@@ -335,6 +375,10 @@ object arcregionswitch:
       builder.ungracefuls(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepDocumentDbConfigArgs.Builder)
+    /**
+     * @param ungracefuls Ungraceful behavior configuration. See `workflow.step.document_db_config.ungraceful` Block for details.
+     * @return builder
+     */
     def ungracefuls(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepDocumentDbConfigUngracefulArgs.Builder]*):
         com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepDocumentDbConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepDocumentDbConfigUngracefulArgs.builder
@@ -342,7 +386,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepEc2AsgCapacityIncreaseConfigArgs.Builder)
     /**
-     * @param asgs Auto Scaling group configuration. See ASG below.
+     * @param asgs Auto Scaling group configuration. See `asg` Block for details.
      * @return builder
      */
     def asgs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepEc2AsgCapacityIncreaseConfigAsgArgs.Builder]*):
@@ -351,7 +395,7 @@ object arcregionswitch:
       builder.asgs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param ungraceful Ungraceful behavior configuration. See Ungraceful below.
+     * @param ungraceful Ungraceful behavior configuration. See `workflow.step.ec2_asg_capacity_increase_config.ungraceful` Block for details.
      * @return builder
      */
     def ungraceful(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepEc2AsgCapacityIncreaseConfigUngracefulArgs.Builder]):
@@ -361,7 +405,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepEcsCapacityIncreaseConfigArgs.Builder)
     /**
-     * @param services ECS service configuration. See ECS Service below.
+     * @param services ECS service configuration. See `service` Block for details.
      * @return builder
      */
     def services(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepEcsCapacityIncreaseConfigServiceArgs.Builder]*):
@@ -370,7 +414,7 @@ object arcregionswitch:
       builder.services(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param ungraceful Ungraceful behavior configuration. See Ungraceful Capacity below.
+     * @param ungraceful Ungraceful behavior configuration. See `workflow.step.ecs_capacity_increase_config.ungraceful` Block for details.
      * @return builder
      */
     def ungraceful(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepEcsCapacityIncreaseConfigUngracefulArgs.Builder]):
@@ -380,7 +424,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepEksResourceScalingConfigArgs.Builder)
     /**
-     * @param eksClusters List of EKS clusters. See EKS Clusters below.
+     * @param eksClusters EKS clusters. See `eksClusters` Block for details.
      * @return builder
      */
     def eksClusters(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepEksResourceScalingConfigEksClusterArgs.Builder]*):
@@ -389,7 +433,7 @@ object arcregionswitch:
       builder.eksClusters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param kubernetesResourceTypes Kubernetes resource type. See Kubernetes Resource Type below.
+     * @param kubernetesResourceTypes Kubernetes resource type. See `kubernetesResourceType` Block for details.
      * @return builder
      */
     def kubernetesResourceTypes(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepEksResourceScalingConfigKubernetesResourceTypeArgs.Builder]*):
@@ -398,7 +442,7 @@ object arcregionswitch:
       builder.kubernetesResourceTypes(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param scalingResources List of scaling resources. See Scaling Resources below.
+     * @param scalingResources Scaling resources. See `scalingResources` Block for details.
      * @return builder
      */
     def scalingResources(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepEksResourceScalingConfigScalingResourceArgs.Builder]*):
@@ -407,7 +451,7 @@ object arcregionswitch:
       builder.scalingResources(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param ungracefuls Ungraceful behavior configuration. See Ungraceful Capacity below.
+     * @param ungracefuls Ungraceful behavior configuration. See `workflow.step.eks_resource_scaling_config.ungraceful` Block for details.
      * @return builder
      */
     def ungracefuls(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepEksResourceScalingConfigUngracefulArgs.Builder]*):
@@ -417,7 +461,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepEksResourceScalingConfigScalingResourceArgs.Builder)
     /**
-     * @param resources Set of resources to scale. See Resources below.
+     * @param resources Resources to scale. See `resources` Block for details.
      * @return builder
      */
     def resources(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepEksResourceScalingConfigScalingResourceResourceArgs.Builder]*):
@@ -427,7 +471,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepGlobalAuroraConfigArgs.Builder)
     /**
-     * @param ungracefuls Ungraceful behavior configuration. See Ungraceful Aurora below.
+     * @param ungracefuls Ungraceful behavior configuration. See `workflow.step.global_aurora_config.ungraceful` Block for details.
      * @return builder
      */
     def ungracefuls(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepGlobalAuroraConfigUngracefulArgs.Builder]*):
@@ -435,9 +479,38 @@ object arcregionswitch:
       def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepGlobalAuroraConfigUngracefulArgs.builder
       builder.ungracefuls(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepLambdaEventSourceMappingConfigArgs.Builder)
+    /**
+     * @param regionEventSourceMappings Event source mappings per region. See `regionEventSourceMapping` Block for details.
+     * @return builder
+     */
+    def regionEventSourceMappings(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepLambdaEventSourceMappingConfigRegionEventSourceMappingArgs.Builder]*):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepLambdaEventSourceMappingConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepLambdaEventSourceMappingConfigRegionEventSourceMappingArgs.builder
+      builder.regionEventSourceMappings(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param ungracefuls Ungraceful behavior configuration. See `workflow.step.lambda_event_source_mapping_config.ungraceful` Block for details.
+     * @return builder
+     */
+    def ungracefuls(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepLambdaEventSourceMappingConfigUngracefulArgs.Builder]*):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepLambdaEventSourceMappingConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepLambdaEventSourceMappingConfigUngracefulArgs.builder
+      builder.ungracefuls(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepNeptuneGlobalDatabaseConfigArgs.Builder)
+    /**
+     * @param ungracefuls Ungraceful behavior configuration. See `workflow.step.neptune_global_database_config.ungraceful` Block for details.
+     * @return builder
+     */
+    def ungracefuls(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepNeptuneGlobalDatabaseConfigUngracefulArgs.Builder]*):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepNeptuneGlobalDatabaseConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepNeptuneGlobalDatabaseConfigUngracefulArgs.builder
+      builder.ungracefuls(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigArgs.Builder)
     /**
-     * @param steps List of steps to execute in parallel. Uses the same schema as Step but without `parallelConfig` to prevent infinite nesting.
+     * @param steps Steps to execute in parallel. See `step` Block for details. The parallel step schema matches `step` Block but does not support `parallelConfig` to prevent infinite nesting.
      * @return builder
      */
     def steps(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepArgs.Builder]*):
@@ -447,7 +520,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepArcRoutingControlConfigArgs.Builder)
     /**
-     * @param regionAndRoutingControls List of regions and their routing controls. See Region and Routing Controls below.
+     * @param regionAndRoutingControls Regions and their routing controls. See `regionAndRoutingControls` Block for details.
      * @return builder
      */
     def regionAndRoutingControls(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepArcRoutingControlConfigRegionAndRoutingControlArgs.Builder]*):
@@ -457,7 +530,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepArcRoutingControlConfigRegionAndRoutingControlArgs.Builder)
     /**
-     * @param routingControls List of routing controls. See Routing Control below.
+     * @param routingControls Routing controls. See `routingControl` Block for details.
      * @return builder
      */
     def routingControls(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepArcRoutingControlConfigRegionAndRoutingControlRoutingControlArgs.Builder]*):
@@ -467,7 +540,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepArgs.Builder)
     /**
-     * @param arcRoutingControlConfigs Configuration for ARC routing control. See ARC Routing Control Config below.
+     * @param arcRoutingControlConfigs Configuration for ARC routing control. See `arcRoutingControlConfig` Block for details.
      * @return builder
      */
     def arcRoutingControlConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepArcRoutingControlConfigArgs.Builder]*):
@@ -476,7 +549,25 @@ object arcregionswitch:
       builder.arcRoutingControlConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param customActionLambdaConfigs Configuration for Lambda function execution. See Custom Action Lambda Config below.
+     * @param auroraProvisionedScalingConfigs Configuration for Aurora provisioned scaling. See `auroraProvisionedScalingConfig` Block for details.
+     * @return builder
+     */
+    def auroraProvisionedScalingConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepAuroraProvisionedScalingConfigArgs.Builder]*):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepArgs.Builder =
+      def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepAuroraProvisionedScalingConfigArgs.builder
+      builder.auroraProvisionedScalingConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param auroraServerlessScalingConfigs Configuration for Aurora Serverless scaling. See `auroraServerlessScalingConfig` Block for details.
+     * @return builder
+     */
+    def auroraServerlessScalingConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepAuroraServerlessScalingConfigArgs.Builder]*):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepArgs.Builder =
+      def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepAuroraServerlessScalingConfigArgs.builder
+      builder.auroraServerlessScalingConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param customActionLambdaConfigs Configuration for Lambda function execution. See `customActionLambdaConfig` Block for details.
      * @return builder
      */
     def customActionLambdaConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepCustomActionLambdaConfigArgs.Builder]*):
@@ -485,7 +576,7 @@ object arcregionswitch:
       builder.customActionLambdaConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param documentDbConfigs Configuration for DocumentDB global cluster operations. See DocumentDB Config below.
+     * @param documentDbConfigs Configuration for DocumentDB global cluster operations. See `documentDbConfig` Block for details.
      * @return builder
      */
     def documentDbConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepDocumentDbConfigArgs.Builder]*):
@@ -494,7 +585,7 @@ object arcregionswitch:
       builder.documentDbConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param ec2AsgCapacityIncreaseConfigs Configuration for EC2 Auto Scaling group capacity increase. See EC2 ASG Capacity Increase Config below.
+     * @param ec2AsgCapacityIncreaseConfigs Configuration for EC2 Auto Scaling group capacity increase. See `ec2AsgCapacityIncreaseConfig` Block for details.
      * @return builder
      */
     def ec2AsgCapacityIncreaseConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepEc2AsgCapacityIncreaseConfigArgs.Builder]*):
@@ -503,7 +594,7 @@ object arcregionswitch:
       builder.ec2AsgCapacityIncreaseConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param ecsCapacityIncreaseConfigs Configuration for ECS service capacity increase. See ECS Capacity Increase Config below.
+     * @param ecsCapacityIncreaseConfigs Configuration for ECS service capacity increase. See `ecsCapacityIncreaseConfig` Block for details.
      * @return builder
      */
     def ecsCapacityIncreaseConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepEcsCapacityIncreaseConfigArgs.Builder]*):
@@ -512,7 +603,7 @@ object arcregionswitch:
       builder.ecsCapacityIncreaseConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param eksResourceScalingConfigs Configuration for EKS resource scaling. See EKS Resource Scaling Config below.
+     * @param eksResourceScalingConfigs Configuration for EKS resource scaling. See `eksResourceScalingConfig` Block for details.
      * @return builder
      */
     def eksResourceScalingConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepEksResourceScalingConfigArgs.Builder]*):
@@ -521,7 +612,7 @@ object arcregionswitch:
       builder.eksResourceScalingConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param executionApprovalConfigs Configuration for manual approval steps. See Execution Approval Config below.
+     * @param executionApprovalConfigs Configuration for manual approval steps. See `executionApprovalConfig` Block for details.
      * @return builder
      */
     def executionApprovalConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepExecutionApprovalConfigArgs.Builder]*):
@@ -530,7 +621,7 @@ object arcregionswitch:
       builder.executionApprovalConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param globalAuroraConfigs Configuration for Aurora Global Database operations. See Global Aurora Config below.
+     * @param globalAuroraConfigs Configuration for Aurora Global Database operations. See `globalAuroraConfig` Block for details.
      * @return builder
      */
     def globalAuroraConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepGlobalAuroraConfigArgs.Builder]*):
@@ -539,7 +630,25 @@ object arcregionswitch:
       builder.globalAuroraConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param rdsCreateCrossRegionReadReplicaConfigs Configuration for creating cross-region RDS read replicas. See RDS Create Cross Region Read Replica Config below.
+     * @param lambdaEventSourceMappingConfigs Configuration for Lambda event source mapping operations. See `lambdaEventSourceMappingConfig` Block for details.
+     * @return builder
+     */
+    def lambdaEventSourceMappingConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepLambdaEventSourceMappingConfigArgs.Builder]*):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepArgs.Builder =
+      def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepLambdaEventSourceMappingConfigArgs.builder
+      builder.lambdaEventSourceMappingConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param neptuneGlobalDatabaseConfigs Configuration for Neptune global database operations. See `neptuneGlobalDatabaseConfig` Block for details.
+     * @return builder
+     */
+    def neptuneGlobalDatabaseConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepNeptuneGlobalDatabaseConfigArgs.Builder]*):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepArgs.Builder =
+      def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepNeptuneGlobalDatabaseConfigArgs.builder
+      builder.neptuneGlobalDatabaseConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param rdsCreateCrossRegionReadReplicaConfigs Configuration for creating cross-region RDS read replicas. See `rdsCreateCrossRegionReadReplicaConfig` Block for details.
      * @return builder
      */
     def rdsCreateCrossRegionReadReplicaConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRdsCreateCrossRegionReadReplicaConfigArgs.Builder]*):
@@ -548,7 +657,7 @@ object arcregionswitch:
       builder.rdsCreateCrossRegionReadReplicaConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param rdsPromoteReadReplicaConfigs Configuration for promoting RDS read replicas. See RDS Promote Read Replica Config below.
+     * @param rdsPromoteReadReplicaConfigs Configuration for promoting RDS read replicas. See `rdsPromoteReadReplicaConfig` Block for details.
      * @return builder
      */
     def rdsPromoteReadReplicaConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRdsPromoteReadReplicaConfigArgs.Builder]*):
@@ -556,13 +665,17 @@ object arcregionswitch:
       def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRdsPromoteReadReplicaConfigArgs.builder
       builder.rdsPromoteReadReplicaConfigs(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param regionSwitchPlanConfigs Configuration for executing a nested region switch plan. See `regionSwitchPlanConfig` Block for details.
+     * @return builder
+     */
     def regionSwitchPlanConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRegionSwitchPlanConfigArgs.Builder]*):
         com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepArgs.Builder =
       def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRegionSwitchPlanConfigArgs.builder
       builder.regionSwitchPlanConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param route53HealthCheckConfigs Configuration for Route53 health check operations. See Route53 Health Check Config below.
+     * @param route53HealthCheckConfigs Configuration for Route53 health check operations. See `route53HealthCheckConfig` Block for details.
      * @return builder
      */
     def route53HealthCheckConfigs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRoute53HealthCheckConfigArgs.Builder]*):
@@ -572,7 +685,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepCustomActionLambdaConfigArgs.Builder)
     /**
-     * @param lambdas Lambda function configuration. See Lambda below.
+     * @param lambdas Lambda function configuration. See `lambda` Block for details.
      * @return builder
      */
     def lambdas(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepCustomActionLambdaConfigLambdaArgs.Builder]*):
@@ -581,7 +694,7 @@ object arcregionswitch:
       builder.lambdas(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param ungracefuls Ungraceful behavior configuration. See Ungraceful below.
+     * @param ungracefuls Ungraceful behavior configuration. See `workflow.step.custom_action_lambda_config.ungraceful` Block for details.
      * @return builder
      */
     def ungracefuls(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepCustomActionLambdaConfigUngracefulArgs.Builder]*):
@@ -590,6 +703,10 @@ object arcregionswitch:
       builder.ungracefuls(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepDocumentDbConfigArgs.Builder)
+    /**
+     * @param ungracefuls Ungraceful behavior configuration. See `workflow.step.document_db_config.ungraceful` Block for details.
+     * @return builder
+     */
     def ungracefuls(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepDocumentDbConfigUngracefulArgs.Builder]*):
         com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepDocumentDbConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepDocumentDbConfigUngracefulArgs.builder
@@ -597,7 +714,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepEc2AsgCapacityIncreaseConfigArgs.Builder)
     /**
-     * @param asgs Auto Scaling group configuration. See ASG below.
+     * @param asgs Auto Scaling group configuration. See `asg` Block for details.
      * @return builder
      */
     def asgs(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepEc2AsgCapacityIncreaseConfigAsgArgs.Builder]*):
@@ -606,7 +723,7 @@ object arcregionswitch:
       builder.asgs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param ungraceful Ungraceful behavior configuration. See Ungraceful below.
+     * @param ungraceful Ungraceful behavior configuration. See `workflow.step.ec2_asg_capacity_increase_config.ungraceful` Block for details.
      * @return builder
      */
     def ungraceful(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepEc2AsgCapacityIncreaseConfigUngracefulArgs.Builder]):
@@ -616,7 +733,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepEcsCapacityIncreaseConfigArgs.Builder)
     /**
-     * @param services ECS service configuration. See ECS Service below.
+     * @param services ECS service configuration. See `service` Block for details.
      * @return builder
      */
     def services(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepEcsCapacityIncreaseConfigServiceArgs.Builder]*):
@@ -625,7 +742,7 @@ object arcregionswitch:
       builder.services(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param ungraceful Ungraceful behavior configuration. See Ungraceful Capacity below.
+     * @param ungraceful Ungraceful behavior configuration. See `workflow.step.ecs_capacity_increase_config.ungraceful` Block for details.
      * @return builder
      */
     def ungraceful(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepEcsCapacityIncreaseConfigUngracefulArgs.Builder]):
@@ -635,7 +752,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepEksResourceScalingConfigArgs.Builder)
     /**
-     * @param eksClusters List of EKS clusters. See EKS Clusters below.
+     * @param eksClusters EKS clusters. See `eksClusters` Block for details.
      * @return builder
      */
     def eksClusters(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepEksResourceScalingConfigEksClusterArgs.Builder]*):
@@ -644,7 +761,7 @@ object arcregionswitch:
       builder.eksClusters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param kubernetesResourceTypes Kubernetes resource type. See Kubernetes Resource Type below.
+     * @param kubernetesResourceTypes Kubernetes resource type. See `kubernetesResourceType` Block for details.
      * @return builder
      */
     def kubernetesResourceTypes(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepEksResourceScalingConfigKubernetesResourceTypeArgs.Builder]*):
@@ -653,7 +770,7 @@ object arcregionswitch:
       builder.kubernetesResourceTypes(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param scalingResources List of scaling resources. See Scaling Resources below.
+     * @param scalingResources Scaling resources. See `scalingResources` Block for details.
      * @return builder
      */
     def scalingResources(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepEksResourceScalingConfigScalingResourceArgs.Builder]*):
@@ -662,7 +779,7 @@ object arcregionswitch:
       builder.scalingResources(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param ungracefuls Ungraceful behavior configuration. See Ungraceful Capacity below.
+     * @param ungracefuls Ungraceful behavior configuration. See `workflow.step.eks_resource_scaling_config.ungraceful` Block for details.
      * @return builder
      */
     def ungracefuls(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepEksResourceScalingConfigUngracefulArgs.Builder]*):
@@ -672,7 +789,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepEksResourceScalingConfigScalingResourceArgs.Builder)
     /**
-     * @param resources Set of resources to scale. See Resources below.
+     * @param resources Resources to scale. See `resources` Block for details.
      * @return builder
      */
     def resources(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepEksResourceScalingConfigScalingResourceResourceArgs.Builder]*):
@@ -682,7 +799,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepGlobalAuroraConfigArgs.Builder)
     /**
-     * @param ungracefuls Ungraceful behavior configuration. See Ungraceful Aurora below.
+     * @param ungracefuls Ungraceful behavior configuration. See `workflow.step.global_aurora_config.ungraceful` Block for details.
      * @return builder
      */
     def ungracefuls(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepGlobalAuroraConfigUngracefulArgs.Builder]*):
@@ -690,9 +807,38 @@ object arcregionswitch:
       def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepGlobalAuroraConfigUngracefulArgs.builder
       builder.ungracefuls(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepLambdaEventSourceMappingConfigArgs.Builder)
+    /**
+     * @param regionEventSourceMappings Event source mappings per region. See `regionEventSourceMapping` Block for details.
+     * @return builder
+     */
+    def regionEventSourceMappings(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepLambdaEventSourceMappingConfigRegionEventSourceMappingArgs.Builder]*):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepLambdaEventSourceMappingConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepLambdaEventSourceMappingConfigRegionEventSourceMappingArgs.builder
+      builder.regionEventSourceMappings(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param ungracefuls Ungraceful behavior configuration. See `workflow.step.lambda_event_source_mapping_config.ungraceful` Block for details.
+     * @return builder
+     */
+    def ungracefuls(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepLambdaEventSourceMappingConfigUngracefulArgs.Builder]*):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepLambdaEventSourceMappingConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepLambdaEventSourceMappingConfigUngracefulArgs.builder
+      builder.ungracefuls(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepNeptuneGlobalDatabaseConfigArgs.Builder)
+    /**
+     * @param ungracefuls Ungraceful behavior configuration. See `workflow.step.neptune_global_database_config.ungraceful` Block for details.
+     * @return builder
+     */
+    def ungracefuls(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepNeptuneGlobalDatabaseConfigUngracefulArgs.Builder]*):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepNeptuneGlobalDatabaseConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepNeptuneGlobalDatabaseConfigUngracefulArgs.builder
+      builder.ungracefuls(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRoute53HealthCheckConfigArgs.Builder)
     /**
-     * @param recordSets Configuration block for record sets. See Record Set below.
+     * @param recordSets Configuration block for record sets. See `recordSet` Block for details.
      * @return builder
      */
     def recordSets(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRoute53HealthCheckConfigRecordSetArgs.Builder]*):
@@ -702,7 +848,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepRoute53HealthCheckConfigArgs.Builder)
     /**
-     * @param recordSets Configuration block for record sets. See Record Set below.
+     * @param recordSets Configuration block for record sets. See `recordSet` Block for details.
      * @return builder
      */
     def recordSets(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepRoute53HealthCheckConfigRecordSetArgs.Builder]*):

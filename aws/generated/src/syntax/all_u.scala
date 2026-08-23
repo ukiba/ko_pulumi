@@ -42,6 +42,8 @@ export ko_pulumi.aws.bedrock.video
 export ko_pulumi.aws.bedrock.videoExtractionConfiguration
 export ko_pulumi.aws.bedrock.vpcConfig
 export ko_pulumi.aws.bedrock.webConfiguration
+export ko_pulumi.aws.bedrock.weightedOverride
+export ko_pulumi.aws.bedrock.weightedRoute
 export ko_pulumi.aws.bedrock.wordPolicyConfig
 export ko_pulumi.aws.bedrock.wordsConfigs
 export ko_pulumi.aws.bedrock.workloadIdentityDetails
@@ -128,6 +130,7 @@ export ko_pulumi.aws.kinesis.vpcConfig
 export ko_pulumi.aws.kinesisanalyticsv2.vpcConfiguration
 export ko_pulumi.aws.kms.xksProxyAuthenticationCredential
 export ko_pulumi.aws.lambda.vpcConfig
+export ko_pulumi.aws.lambda.vpcEgressConfiguration
 export ko_pulumi.aws.lb.unhealthyStateRouting
 export ko_pulumi.aws.lb.urlRewriteConfig
 export ko_pulumi.aws.lb.urlRewriteConfigs

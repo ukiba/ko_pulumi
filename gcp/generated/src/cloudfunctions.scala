@@ -126,8 +126,8 @@ object cloudfunctions:
    * Three different resources help you manage your IAM policy for Cloud Functions CloudFunction. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudfunctions.FunctionIamPolicy`: Authoritative. Sets the IAM policy for the cloudfunction and replaces any existing policy already attached.
-   * * `gcp.cloudfunctions.FunctionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the cloudfunction are preserved.
-   * * `gcp.cloudfunctions.FunctionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the cloudfunction are preserved.
+   * * `gcp.cloudfunctions.FunctionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the cloudfunction are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudfunctions.FunctionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the cloudfunction are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -172,9 +172,9 @@ object cloudfunctions:
    *             .build());
    * 
    *         var policy = new FunctionIamPolicy("policy", FunctionIamPolicyArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -208,9 +208,9 @@ object cloudfunctions:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FunctionIamBinding("binding", FunctionIamBindingArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -245,9 +245,9 @@ object cloudfunctions:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FunctionIamMember("member", FunctionIamMemberArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -266,8 +266,8 @@ object cloudfunctions:
    * Three different resources help you manage your IAM policy for Cloud Functions CloudFunction. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudfunctions.FunctionIamPolicy`: Authoritative. Sets the IAM policy for the cloudfunction and replaces any existing policy already attached.
-   * * `gcp.cloudfunctions.FunctionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the cloudfunction are preserved.
-   * * `gcp.cloudfunctions.FunctionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the cloudfunction are preserved.
+   * * `gcp.cloudfunctions.FunctionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the cloudfunction are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudfunctions.FunctionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the cloudfunction are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -312,9 +312,9 @@ object cloudfunctions:
    *             .build());
    * 
    *         var policy = new FunctionIamPolicy("policy", FunctionIamPolicyArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -348,9 +348,9 @@ object cloudfunctions:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FunctionIamBinding("binding", FunctionIamBindingArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -385,9 +385,9 @@ object cloudfunctions:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FunctionIamMember("member", FunctionIamMemberArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -445,8 +445,8 @@ object cloudfunctions:
    * Three different resources help you manage your IAM policy for Cloud Functions CloudFunction. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudfunctions.FunctionIamPolicy`: Authoritative. Sets the IAM policy for the cloudfunction and replaces any existing policy already attached.
-   * * `gcp.cloudfunctions.FunctionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the cloudfunction are preserved.
-   * * `gcp.cloudfunctions.FunctionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the cloudfunction are preserved.
+   * * `gcp.cloudfunctions.FunctionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the cloudfunction are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudfunctions.FunctionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the cloudfunction are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -491,9 +491,9 @@ object cloudfunctions:
    *             .build());
    * 
    *         var policy = new FunctionIamPolicy("policy", FunctionIamPolicyArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -527,9 +527,9 @@ object cloudfunctions:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FunctionIamBinding("binding", FunctionIamBindingArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -564,9 +564,9 @@ object cloudfunctions:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FunctionIamMember("member", FunctionIamMemberArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -585,8 +585,8 @@ object cloudfunctions:
    * Three different resources help you manage your IAM policy for Cloud Functions CloudFunction. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudfunctions.FunctionIamPolicy`: Authoritative. Sets the IAM policy for the cloudfunction and replaces any existing policy already attached.
-   * * `gcp.cloudfunctions.FunctionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the cloudfunction are preserved.
-   * * `gcp.cloudfunctions.FunctionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the cloudfunction are preserved.
+   * * `gcp.cloudfunctions.FunctionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the cloudfunction are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudfunctions.FunctionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the cloudfunction are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -631,9 +631,9 @@ object cloudfunctions:
    *             .build());
    * 
    *         var policy = new FunctionIamPolicy("policy", FunctionIamPolicyArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -667,9 +667,9 @@ object cloudfunctions:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FunctionIamBinding("binding", FunctionIamBindingArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -704,9 +704,9 @@ object cloudfunctions:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FunctionIamMember("member", FunctionIamMemberArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -764,8 +764,8 @@ object cloudfunctions:
    * Three different resources help you manage your IAM policy for Cloud Functions CloudFunction. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudfunctions.FunctionIamPolicy`: Authoritative. Sets the IAM policy for the cloudfunction and replaces any existing policy already attached.
-   * * `gcp.cloudfunctions.FunctionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the cloudfunction are preserved.
-   * * `gcp.cloudfunctions.FunctionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the cloudfunction are preserved.
+   * * `gcp.cloudfunctions.FunctionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the cloudfunction are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudfunctions.FunctionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the cloudfunction are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -810,9 +810,9 @@ object cloudfunctions:
    *             .build());
    * 
    *         var policy = new FunctionIamPolicy("policy", FunctionIamPolicyArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -846,9 +846,9 @@ object cloudfunctions:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FunctionIamBinding("binding", FunctionIamBindingArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -883,9 +883,9 @@ object cloudfunctions:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FunctionIamMember("member", FunctionIamMemberArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -904,8 +904,8 @@ object cloudfunctions:
    * Three different resources help you manage your IAM policy for Cloud Functions CloudFunction. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudfunctions.FunctionIamPolicy`: Authoritative. Sets the IAM policy for the cloudfunction and replaces any existing policy already attached.
-   * * `gcp.cloudfunctions.FunctionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the cloudfunction are preserved.
-   * * `gcp.cloudfunctions.FunctionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the cloudfunction are preserved.
+   * * `gcp.cloudfunctions.FunctionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the cloudfunction are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudfunctions.FunctionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the cloudfunction are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -950,9 +950,9 @@ object cloudfunctions:
    *             .build());
    * 
    *         var policy = new FunctionIamPolicy("policy", FunctionIamPolicyArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -986,9 +986,9 @@ object cloudfunctions:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FunctionIamBinding("binding", FunctionIamBindingArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1023,9 +1023,9 @@ object cloudfunctions:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FunctionIamMember("member", FunctionIamMemberArgs.builder()
-   *             .project(function.project())
-   *             .region(function.region())
-   *             .cloudFunction(function.name())
+   *             .project(function.get("project"))
+   *             .region(function.get("region"))
+   *             .cloudFunction(function.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

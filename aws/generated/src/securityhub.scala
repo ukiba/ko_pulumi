@@ -212,6 +212,22 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.ConnectorV2ConnectorProviderArgs.builder
       builder.connectorProvider(args(argsBuilder).build)
 
+  /**
+   * Manages an opt-in [Security Hub V2](https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html) feature, such as network scanning (NetScan), for the calling account in the current AWS Region.
+   * 
+   * &gt; **NOTE:** Security Hub V2 must be enabled (see `aws.securityhub.AccountV2`) before you can enable a feature. Use `dependsOn` to ensure the correct ordering.
+   * 
+   * &gt; **NOTE:** Deleting this resource does not disable the feature, the resource in simply removed from state instead.
+   * 
+   * &gt; **NOTE:** You cannot enable a feature that is managed by an organization policy.
+   */
+  def FeatureV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.securityhub.FeatureV2Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.securityhub.FeatureV2Args.builder
+    com.pulumi.aws.securityhub.FeatureV2(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
   /** Manages a Security Hub finding aggregator. Security Hub needs to be enabled in a region in order for the aggregator to pull through findings. */
   def FindingAggregator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.FindingAggregatorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

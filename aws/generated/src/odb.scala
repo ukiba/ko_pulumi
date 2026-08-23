@@ -55,7 +55,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.CloudExadataInfrastructureArgs.Builder)
     /**
-     * @param customerContactsToSendToOcis Email addresses of contacts to receive notification from Oracle about maintenance updates for the Exadata infrastructure. Changing this will force terraform to create new resource.
+     * @param customerContactsToSendToOcis Email addresses of contacts to receive notification from Oracle about maintenance updates for the Exadata infrastructure. Changing this will force terraform to create new resource. See `customerContactsToSendToOci` Block below.
      * @return builder
      */
     def customerContactsToSendToOcis(args: Endofunction[com.pulumi.aws.odb.inputs.CloudExadataInfrastructureCustomerContactsToSendToOciArgs.Builder]*):
@@ -109,6 +109,24 @@ object odb:
     def timeouts(args: Endofunction[com.pulumi.aws.odb.inputs.CloudVmClusterTimeoutsArgs.Builder]):
         com.pulumi.aws.odb.CloudVmClusterArgs.Builder =
       val argsBuilder = com.pulumi.aws.odb.inputs.CloudVmClusterTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  /**
+   * Manages an AWS Oracle Database{@literal @}AWS Associate Disassociate IAM Role.
+   * 
+   * Currently supported `resourceArn` targets are Cloud VM Clusters and Cloud Autonomous VM Clusters.
+   */
+  def IamRoleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.odb.IamRoleAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.odb.IamRoleAssociationArgs.builder
+    com.pulumi.aws.odb.IamRoleAssociation(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.odb.IamRoleAssociationArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.odb.inputs.IamRoleAssociationTimeoutsArgs.Builder]):
+        com.pulumi.aws.odb.IamRoleAssociationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.IamRoleAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   /** Resource for managing odb Network resource in AWS for Oracle Database{@literal @}AWS. */
@@ -404,6 +422,18 @@ object odb:
       val argsBuilder = com.pulumi.aws.odb.inputs.GetGiVersionsPlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getGiVersionsPlain(args(argsBuilder).build)
 
+    /** Provides details about an AWS Oracle Database{@literal @}AWS Associate Disassociate IAM Role. */
+    inline def getIamRoleAssociation(args: Endofunction[com.pulumi.aws.odb.inputs.GetIamRoleAssociationArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetIamRoleAssociationResult] =
+      val argsBuilder = com.pulumi.aws.odb.inputs.GetIamRoleAssociationArgs.builder
+      com.pulumi.aws.odb.OdbFunctions.getIamRoleAssociation(args(argsBuilder).build)
+
+    /** Provides details about an AWS Oracle Database{@literal @}AWS Associate Disassociate IAM Role. */
+    inline def getIamRoleAssociationPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetIamRoleAssociationPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetIamRoleAssociationResult] =
+      val argsBuilder = com.pulumi.aws.odb.inputs.GetIamRoleAssociationPlainArgs.builder
+      com.pulumi.aws.odb.OdbFunctions.getIamRoleAssociationPlain(args(argsBuilder).build)
+
     /** Data source for to retrieve network resource in AWS for Oracle Database{@literal @}AWS. */
     inline def getNetwork(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetNetworkResult] =
@@ -470,7 +500,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowArgs.Builder)
     /**
-     * @param daysOfWeeks Days of the week when maintenance can be performed. Changing this will force terraform to create new resource.
+     * @param daysOfWeeks Days of the week when maintenance can be performed. Changing this will force terraform to create new resource. See `daysOfWeek` Block below.
      * @return builder
      */
     def daysOfWeeks(args: Endofunction[com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs.Builder]*):
@@ -479,7 +509,7 @@ object odb:
       builder.daysOfWeeks(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param months Months when maintenance can be performed. Changing this will force terraform to create new resource.
+     * @param months Months when maintenance can be performed. Changing this will force terraform to create new resource. See `months` Block below.
      * @return builder
      */
     def months(args: Endofunction[com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowMonthArgs.Builder]*):
@@ -504,7 +534,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.inputs.CloudExadataInfrastructureMaintenanceWindowArgs.Builder)
     /**
-     * @param daysOfWeeks Days of the week when maintenance can be performed.
+     * @param daysOfWeeks Days of the week when maintenance can be performed. See `daysOfWeek` Block below.
      * @return builder
      */
     def daysOfWeeks(args: Endofunction[com.pulumi.aws.odb.inputs.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs.Builder]*):
@@ -513,7 +543,7 @@ object odb:
       builder.daysOfWeeks(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param months Months when maintenance can be performed.
+     * @param months Months when maintenance can be performed. See `months` Block below.
      * @return builder
      */
     def months(args: Endofunction[com.pulumi.aws.odb.inputs.CloudExadataInfrastructureMaintenanceWindowMonthArgs.Builder]*):
@@ -523,7 +553,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.inputs.CloudExadataInfrastructureState.Builder)
     /**
-     * @param customerContactsToSendToOcis Email addresses of contacts to receive notification from Oracle about maintenance updates for the Exadata infrastructure. Changing this will force terraform to create new resource.
+     * @param customerContactsToSendToOcis Email addresses of contacts to receive notification from Oracle about maintenance updates for the Exadata infrastructure. Changing this will force terraform to create new resource. See `customerContactsToSendToOci` Block below.
      * @return builder
      */
     def customerContactsToSendToOcis(args: Endofunction[com.pulumi.aws.odb.inputs.CloudExadataInfrastructureCustomerContactsToSendToOciArgs.Builder]*):
@@ -546,6 +576,10 @@ object odb:
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheArgs.Builder)
+    /**
+     * @param dbPlans List of IORM (I/O Resource Manager) database plans for the VM cluster. See `dbPlans` Block below.
+     * @return builder
+     */
     def dbPlans(args: Endofunction[com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheDbPlanArgs.Builder]*):
         com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheArgs.Builder =
       def argsBuilder = com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheDbPlanArgs.builder
@@ -562,7 +596,7 @@ object odb:
       builder.dataCollectionOptions(args(argsBuilder).build)
 
     /**
-     * @param iormConfigCaches Exadata IORM (I/O Resource Manager) configuration cache details for the VM cluster.
+     * @param iormConfigCaches Exadata IORM (I/O Resource Manager) configuration cache details for the VM cluster. See `iormConfigCache` Block below.
      * @return builder
      */
     def iormConfigCaches(args: Endofunction[com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheArgs.Builder]*):
@@ -573,6 +607,12 @@ object odb:
     def timeouts(args: Endofunction[com.pulumi.aws.odb.inputs.CloudVmClusterTimeoutsArgs.Builder]):
         com.pulumi.aws.odb.inputs.CloudVmClusterState.Builder =
       val argsBuilder = com.pulumi.aws.odb.inputs.CloudVmClusterTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.odb.inputs.IamRoleAssociationState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.odb.inputs.IamRoleAssociationTimeoutsArgs.Builder]):
+        com.pulumi.aws.odb.inputs.IamRoleAssociationState.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.IamRoleAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder)
@@ -594,6 +634,10 @@ object odb:
       def argsBuilder = com.pulumi.aws.odb.inputs.NetworkManagedServiceKmsAccessArgs.builder
       builder.kmsAccesses(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param managedS3BackupAccesses Managed S3 backup access configuration. See `managedS3BackupAccess` Block below.
+     * @return builder
+     */
     def managedS3BackupAccesses(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkManagedServiceManagedS3BackupAccessArgs.Builder]*):
         com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder =
       def argsBuilder = com.pulumi.aws.odb.inputs.NetworkManagedServiceManagedS3BackupAccessArgs.builder
@@ -608,6 +652,10 @@ object odb:
       def argsBuilder = com.pulumi.aws.odb.inputs.NetworkManagedServiceS3AccessArgs.builder
       builder.s3Accesses(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param serviceNetworkEndpoints Service network endpoint configuration. See `serviceNetworkEndpoint` Block below.
+     * @return builder
+     */
     def serviceNetworkEndpoints(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkManagedServiceServiceNetworkEndpointArgs.Builder]*):
         com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder =
       def argsBuilder = com.pulumi.aws.odb.inputs.NetworkManagedServiceServiceNetworkEndpointArgs.builder
@@ -641,7 +689,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.inputs.NetworkState.Builder)
     /**
-     * @param managedServices Managed services configuration for the ODB network.
+     * @param managedServices Managed services configuration for the ODB network. See `managedServices` Block below.
      * @return builder
      */
     def managedServices(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder]*):
@@ -650,7 +698,7 @@ object odb:
       builder.managedServices(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param ociDnsForwardingConfigs Number of storage servers requested for the Exadata infrastructure.
+     * @param ociDnsForwardingConfigs DNS resolver endpoints in OCI for forwarding DNS queries for the `ociPrivateZone` domain. See `ociDnsForwardingConfigs` Block below.
      * @return builder
      */
     def ociDnsForwardingConfigs(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkOciDnsForwardingConfigArgs.Builder]*):

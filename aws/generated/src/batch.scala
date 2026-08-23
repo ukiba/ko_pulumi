@@ -296,7 +296,7 @@ object batch:
 
   extension (builder: com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesArgs.Builder)
     /**
-     * @param containers Properties of the container that&#39;s used on the Amazon EKS pod. See containers below.
+     * @param containers Properties of the container that&#39;s used on the Amazon EKS pod. See `containers` below.
      * @return builder
      */
     def containers(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesContainerArgs.Builder]*):
@@ -314,7 +314,7 @@ object batch:
       builder.imagePullSecrets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param initContainers Containers which run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. See containers below.
+     * @param initContainers Containers which run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. See `initContainers` below.
      * @return builder
      */
     def initContainers(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesInitContainerArgs.Builder]*):
@@ -323,7 +323,7 @@ object batch:
       builder.initContainers(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param metadata Metadata about the Kubernetes pod.
+     * @param metadata Metadata about the Kubernetes pod. See `metadata` below.
      * @return builder
      */
     def metadata(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesMetadataArgs.Builder]):
@@ -332,7 +332,7 @@ object batch:
       builder.metadata(args(argsBuilder).build)
 
     /**
-     * @param volumes Volumes for a job definition that uses Amazon EKS resources. AWS Batch supports emptyDir, hostPath, and secret volume types.
+     * @param volumes Volumes for a job definition that uses Amazon EKS resources. See `volumes` below.
      * @return builder
      */
     def volumes(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesVolumeArgs.Builder]*):
@@ -342,7 +342,7 @@ object batch:
 
   extension (builder: com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesContainerArgs.Builder)
     /**
-     * @param envs Environment variables to pass to a container. See EKS Environment below.
+     * @param envs Environment variables to pass to a container. See `env` below.
      * @return builder
      */
     def envs(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesContainerEnvArgs.Builder]*):
@@ -351,7 +351,7 @@ object batch:
       builder.envs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param resources Type and amount of resources to assign to a container. The supported resources include `memory`, `cpu`, and `nvidia.com/gpu`.
+     * @param resources Type and amount of resources to assign to a container. See `resources` below.
      * @return builder
      */
     def resources(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesContainerResourcesArgs.Builder]):
@@ -369,7 +369,7 @@ object batch:
       builder.securityContext(args(argsBuilder).build)
 
     /**
-     * @param volumeMounts Volume mounts for the container.
+     * @param volumeMounts Volume mounts for the container. See `volumeMounts` below.
      * @return builder
      */
     def volumeMounts(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesContainerVolumeMountArgs.Builder]*):
@@ -379,7 +379,7 @@ object batch:
 
   extension (builder: com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesInitContainerArgs.Builder)
     /**
-     * @param envs Environment variables to pass to a container. See EKS Environment below.
+     * @param envs Environment variables to pass to a container. See `env` below.
      * @return builder
      */
     def envs(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesInitContainerEnvArgs.Builder]*):
@@ -388,7 +388,7 @@ object batch:
       builder.envs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param resources Type and amount of resources to assign to a container. The supported resources include `memory`, `cpu`, and `nvidia.com/gpu`.
+     * @param resources Type and amount of resources to assign to a container. See `resources` below.
      * @return builder
      */
     def resources(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesInitContainerResourcesArgs.Builder]):
@@ -406,7 +406,7 @@ object batch:
       builder.securityContext(args(argsBuilder).build)
 
     /**
-     * @param volumeMounts Volume mounts for the container.
+     * @param volumeMounts Volume mounts for the container. See `volumeMounts` below.
      * @return builder
      */
     def volumeMounts(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesInitContainerVolumeMountArgs.Builder]*):
@@ -415,16 +415,28 @@ object batch:
       builder.volumeMounts(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesVolumeArgs.Builder)
+    /**
+     * @param emptyDir Empty directory to mount on the pod. See `emptyDir` below.
+     * @return builder
+     */
     def emptyDir(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesVolumeEmptyDirArgs.Builder]):
         com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesVolumeArgs.Builder =
       val argsBuilder = com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesVolumeEmptyDirArgs.builder
       builder.emptyDir(args(argsBuilder).build)
 
+    /**
+     * @param hostPath Path on the host that&#39;s mounted to the pod. See `hostPath` below.
+     * @return builder
+     */
     def hostPath(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesVolumeHostPathArgs.Builder]):
         com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesVolumeArgs.Builder =
       val argsBuilder = com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesVolumeHostPathArgs.builder
       builder.hostPath(args(argsBuilder).build)
 
+    /**
+     * @param secret Secret to mount as a volume. See `secret` below.
+     * @return builder
+     */
     def secret(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesVolumeSecretArgs.Builder]):
         com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesVolumeArgs.Builder =
       val argsBuilder = com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesVolumeSecretArgs.builder

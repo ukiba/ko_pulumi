@@ -6,6 +6,9 @@ import jp.ukiba.ko_pulumi
 export ko_pulumi.gcp.accesscontextmanager.vpcAccessibleServices
 export ko_pulumi.gcp.accesscontextmanager.vpcNetworkSources
 export ko_pulumi.gcp.accesscontextmanager.vpcSubnetwork
+export ko_pulumi.gcp.agenticapplications.usda
+export ko_pulumi.gcp.agenticapplications.visualizationExamples
+export ko_pulumi.gcp.agenticapplications.visualizationOptions
 export ko_pulumi.gcp.alloydb.weeklySchedule
 export ko_pulumi.gcp.apihub.userPasswordConfig
 export ko_pulumi.gcp.appengine.urlDispatchRules
@@ -79,6 +82,7 @@ export ko_pulumi.gcp.cloudrunv2.vpcAccess
 export ko_pulumi.gcp.cloudsecuritycompliance.validation
 export ko_pulumi.gcp.cloudsecuritycompliance.values
 export ko_pulumi.gcp.cloudtasks.uriOverride
+export ko_pulumi.gcp.colab.vmImage
 export ko_pulumi.gcp.colab.workbenchRuntime
 export ko_pulumi.gcp.composer.webServer
 export ko_pulumi.gcp.composer.webServerConfig

@@ -134,8 +134,6 @@ object lb:
       com.pulumi.aws.lb.LbFunctions.getTargetGroupPlain(args(argsBuilder).build)
 
     /**
-     * &gt; **Note:** `awsAlbTrustStore` is known as `aws.lb.TrustStore`. The functionality is identical.
-     * 
      * Provides information about a Load Balancer Trust Store.
      * 
      * This data source can prove useful when a module accepts an LB Trust Store as an
@@ -148,8 +146,6 @@ object lb:
       com.pulumi.aws.lb.LbFunctions.getTrustStore(args(argsBuilder).build)
 
     /**
-     * &gt; **Note:** `awsAlbTrustStore` is known as `aws.lb.TrustStore`. The functionality is identical.
-     * 
      * Provides information about a Load Balancer Trust Store.
      * 
      * This data source can prove useful when a module accepts an LB Trust Store as an
@@ -626,7 +622,8 @@ object lb:
       builder.queryStrings(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param sourceIps Contains a single attribute `values`, which contains a set of source IPs in CIDR notation.
+     * @param sourceIps Source IP address to match.
+     * Detailed below.
      * @return builder
      */
     def sourceIps(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleConditionSourceIpArgs.Builder]*):
@@ -636,7 +633,7 @@ object lb:
 
   extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleConditionQueryStringArgs.Builder)
     /**
-     * @param values Set of `key`-`value` pairs indicating the query string parameters to match.
+     * @param values Set of source IP addresses in CIDR format for Application Load Balancers
      * @return builder
      */
     def values(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleConditionQueryStringValueArgs.Builder]*):
@@ -902,7 +899,7 @@ object lb:
       builder.queryStrings(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param sourceIp Contains a single `values` item which is a list of source IP CIDR notations to match. You can use both IPv4 and IPv6 addresses. Wildcards are not supported. Condition is satisfied if the source IP address of the request matches one of the CIDR blocks. Condition is not satisfied by the addresses in the `X-Forwarded-For` header, use `httpHeader` condition instead.
+     * @param sourceIp Source IP address to match. For ALB, use `values` to specify CIDR ranges. For NLB, use `ipAddressType` to match the IP address type (`ipv4` or `ipv6`). Source IP block fields documented below.
      * 
      * &gt; **NOTE::** Exactly one of `hostHeader`, `httpHeader`, `httpRequestMethod`, `pathPattern`, `queryString` or `sourceIp` must be set per condition.
      * @return builder

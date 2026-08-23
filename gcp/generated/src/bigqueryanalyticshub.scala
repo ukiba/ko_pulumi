@@ -67,8 +67,8 @@ object bigqueryanalyticshub:
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub DataExchange. Each of these resources serves a different use case:
    * 
    * * `gcp.bigqueryanalyticshub.DataExchangeIamPolicy`: Authoritative. Sets the IAM policy for the dataexchange and replaces any existing policy already attached.
-   * * `gcp.bigqueryanalyticshub.DataExchangeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataexchange are preserved.
-   * * `gcp.bigqueryanalyticshub.DataExchangeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataexchange are preserved.
+   * * `gcp.bigqueryanalyticshub.DataExchangeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataexchange are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigqueryanalyticshub.DataExchangeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataexchange are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -113,9 +113,9 @@ object bigqueryanalyticshub:
    *             .build());
    * 
    *         var policy = new DataExchangeIamPolicy("policy", DataExchangeIamPolicyArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -149,9 +149,9 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataExchangeIamBinding("binding", DataExchangeIamBindingArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -186,9 +186,9 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataExchangeIamMember("member", DataExchangeIamMemberArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -207,8 +207,8 @@ object bigqueryanalyticshub:
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub DataExchange. Each of these resources serves a different use case:
    * 
    * * `gcp.bigqueryanalyticshub.DataExchangeIamPolicy`: Authoritative. Sets the IAM policy for the dataexchange and replaces any existing policy already attached.
-   * * `gcp.bigqueryanalyticshub.DataExchangeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataexchange are preserved.
-   * * `gcp.bigqueryanalyticshub.DataExchangeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataexchange are preserved.
+   * * `gcp.bigqueryanalyticshub.DataExchangeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataexchange are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigqueryanalyticshub.DataExchangeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataexchange are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -253,9 +253,9 @@ object bigqueryanalyticshub:
    *             .build());
    * 
    *         var policy = new DataExchangeIamPolicy("policy", DataExchangeIamPolicyArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -289,9 +289,9 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataExchangeIamBinding("binding", DataExchangeIamBindingArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -326,9 +326,9 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataExchangeIamMember("member", DataExchangeIamMemberArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -386,8 +386,8 @@ object bigqueryanalyticshub:
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub DataExchange. Each of these resources serves a different use case:
    * 
    * * `gcp.bigqueryanalyticshub.DataExchangeIamPolicy`: Authoritative. Sets the IAM policy for the dataexchange and replaces any existing policy already attached.
-   * * `gcp.bigqueryanalyticshub.DataExchangeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataexchange are preserved.
-   * * `gcp.bigqueryanalyticshub.DataExchangeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataexchange are preserved.
+   * * `gcp.bigqueryanalyticshub.DataExchangeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataexchange are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigqueryanalyticshub.DataExchangeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataexchange are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -432,9 +432,9 @@ object bigqueryanalyticshub:
    *             .build());
    * 
    *         var policy = new DataExchangeIamPolicy("policy", DataExchangeIamPolicyArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -468,9 +468,9 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataExchangeIamBinding("binding", DataExchangeIamBindingArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -505,9 +505,9 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataExchangeIamMember("member", DataExchangeIamMemberArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -526,8 +526,8 @@ object bigqueryanalyticshub:
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub DataExchange. Each of these resources serves a different use case:
    * 
    * * `gcp.bigqueryanalyticshub.DataExchangeIamPolicy`: Authoritative. Sets the IAM policy for the dataexchange and replaces any existing policy already attached.
-   * * `gcp.bigqueryanalyticshub.DataExchangeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataexchange are preserved.
-   * * `gcp.bigqueryanalyticshub.DataExchangeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataexchange are preserved.
+   * * `gcp.bigqueryanalyticshub.DataExchangeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataexchange are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigqueryanalyticshub.DataExchangeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataexchange are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -572,9 +572,9 @@ object bigqueryanalyticshub:
    *             .build());
    * 
    *         var policy = new DataExchangeIamPolicy("policy", DataExchangeIamPolicyArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -608,9 +608,9 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataExchangeIamBinding("binding", DataExchangeIamBindingArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -645,9 +645,9 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataExchangeIamMember("member", DataExchangeIamMemberArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -705,8 +705,8 @@ object bigqueryanalyticshub:
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub DataExchange. Each of these resources serves a different use case:
    * 
    * * `gcp.bigqueryanalyticshub.DataExchangeIamPolicy`: Authoritative. Sets the IAM policy for the dataexchange and replaces any existing policy already attached.
-   * * `gcp.bigqueryanalyticshub.DataExchangeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataexchange are preserved.
-   * * `gcp.bigqueryanalyticshub.DataExchangeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataexchange are preserved.
+   * * `gcp.bigqueryanalyticshub.DataExchangeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataexchange are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigqueryanalyticshub.DataExchangeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataexchange are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -751,9 +751,9 @@ object bigqueryanalyticshub:
    *             .build());
    * 
    *         var policy = new DataExchangeIamPolicy("policy", DataExchangeIamPolicyArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -787,9 +787,9 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataExchangeIamBinding("binding", DataExchangeIamBindingArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -824,9 +824,9 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataExchangeIamMember("member", DataExchangeIamMemberArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -845,8 +845,8 @@ object bigqueryanalyticshub:
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub DataExchange. Each of these resources serves a different use case:
    * 
    * * `gcp.bigqueryanalyticshub.DataExchangeIamPolicy`: Authoritative. Sets the IAM policy for the dataexchange and replaces any existing policy already attached.
-   * * `gcp.bigqueryanalyticshub.DataExchangeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataexchange are preserved.
-   * * `gcp.bigqueryanalyticshub.DataExchangeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataexchange are preserved.
+   * * `gcp.bigqueryanalyticshub.DataExchangeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataexchange are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigqueryanalyticshub.DataExchangeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataexchange are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -891,9 +891,9 @@ object bigqueryanalyticshub:
    *             .build());
    * 
    *         var policy = new DataExchangeIamPolicy("policy", DataExchangeIamPolicyArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -927,9 +927,9 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataExchangeIamBinding("binding", DataExchangeIamBindingArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -964,9 +964,9 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataExchangeIamMember("member", DataExchangeIamMemberArgs.builder()
-   *             .project(dataExchange.project())
-   *             .location(dataExchange.location())
-   *             .dataExchangeId(dataExchange.dataExchangeId())
+   *             .project(dataExchange.get("project"))
+   *             .location(dataExchange.get("location"))
+   *             .dataExchangeId(dataExchange.get("dataExchangeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1118,8 +1118,8 @@ object bigqueryanalyticshub:
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub Listing. Each of these resources serves a different use case:
    * 
    * * `gcp.bigqueryanalyticshub.ListingIamPolicy`: Authoritative. Sets the IAM policy for the listing and replaces any existing policy already attached.
-   * * `gcp.bigqueryanalyticshub.ListingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the listing are preserved.
-   * * `gcp.bigqueryanalyticshub.ListingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the listing are preserved.
+   * * `gcp.bigqueryanalyticshub.ListingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the listing are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigqueryanalyticshub.ListingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the listing are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1164,10 +1164,10 @@ object bigqueryanalyticshub:
    *             .build());
    * 
    *         var policy = new ListingIamPolicy("policy", ListingIamPolicyArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1201,10 +1201,10 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ListingIamBinding("binding", ListingIamBindingArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1239,10 +1239,10 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ListingIamMember("member", ListingIamMemberArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1261,8 +1261,8 @@ object bigqueryanalyticshub:
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub Listing. Each of these resources serves a different use case:
    * 
    * * `gcp.bigqueryanalyticshub.ListingIamPolicy`: Authoritative. Sets the IAM policy for the listing and replaces any existing policy already attached.
-   * * `gcp.bigqueryanalyticshub.ListingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the listing are preserved.
-   * * `gcp.bigqueryanalyticshub.ListingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the listing are preserved.
+   * * `gcp.bigqueryanalyticshub.ListingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the listing are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigqueryanalyticshub.ListingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the listing are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1307,10 +1307,10 @@ object bigqueryanalyticshub:
    *             .build());
    * 
    *         var policy = new ListingIamPolicy("policy", ListingIamPolicyArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1344,10 +1344,10 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ListingIamBinding("binding", ListingIamBindingArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1382,10 +1382,10 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ListingIamMember("member", ListingIamMemberArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1443,8 +1443,8 @@ object bigqueryanalyticshub:
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub Listing. Each of these resources serves a different use case:
    * 
    * * `gcp.bigqueryanalyticshub.ListingIamPolicy`: Authoritative. Sets the IAM policy for the listing and replaces any existing policy already attached.
-   * * `gcp.bigqueryanalyticshub.ListingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the listing are preserved.
-   * * `gcp.bigqueryanalyticshub.ListingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the listing are preserved.
+   * * `gcp.bigqueryanalyticshub.ListingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the listing are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigqueryanalyticshub.ListingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the listing are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1489,10 +1489,10 @@ object bigqueryanalyticshub:
    *             .build());
    * 
    *         var policy = new ListingIamPolicy("policy", ListingIamPolicyArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1526,10 +1526,10 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ListingIamBinding("binding", ListingIamBindingArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1564,10 +1564,10 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ListingIamMember("member", ListingIamMemberArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1586,8 +1586,8 @@ object bigqueryanalyticshub:
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub Listing. Each of these resources serves a different use case:
    * 
    * * `gcp.bigqueryanalyticshub.ListingIamPolicy`: Authoritative. Sets the IAM policy for the listing and replaces any existing policy already attached.
-   * * `gcp.bigqueryanalyticshub.ListingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the listing are preserved.
-   * * `gcp.bigqueryanalyticshub.ListingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the listing are preserved.
+   * * `gcp.bigqueryanalyticshub.ListingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the listing are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigqueryanalyticshub.ListingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the listing are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1632,10 +1632,10 @@ object bigqueryanalyticshub:
    *             .build());
    * 
    *         var policy = new ListingIamPolicy("policy", ListingIamPolicyArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1669,10 +1669,10 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ListingIamBinding("binding", ListingIamBindingArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1707,10 +1707,10 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ListingIamMember("member", ListingIamMemberArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1768,8 +1768,8 @@ object bigqueryanalyticshub:
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub Listing. Each of these resources serves a different use case:
    * 
    * * `gcp.bigqueryanalyticshub.ListingIamPolicy`: Authoritative. Sets the IAM policy for the listing and replaces any existing policy already attached.
-   * * `gcp.bigqueryanalyticshub.ListingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the listing are preserved.
-   * * `gcp.bigqueryanalyticshub.ListingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the listing are preserved.
+   * * `gcp.bigqueryanalyticshub.ListingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the listing are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigqueryanalyticshub.ListingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the listing are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1814,10 +1814,10 @@ object bigqueryanalyticshub:
    *             .build());
    * 
    *         var policy = new ListingIamPolicy("policy", ListingIamPolicyArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1851,10 +1851,10 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ListingIamBinding("binding", ListingIamBindingArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1889,10 +1889,10 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ListingIamMember("member", ListingIamMemberArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1911,8 +1911,8 @@ object bigqueryanalyticshub:
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub Listing. Each of these resources serves a different use case:
    * 
    * * `gcp.bigqueryanalyticshub.ListingIamPolicy`: Authoritative. Sets the IAM policy for the listing and replaces any existing policy already attached.
-   * * `gcp.bigqueryanalyticshub.ListingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the listing are preserved.
-   * * `gcp.bigqueryanalyticshub.ListingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the listing are preserved.
+   * * `gcp.bigqueryanalyticshub.ListingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the listing are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigqueryanalyticshub.ListingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the listing are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1957,10 +1957,10 @@ object bigqueryanalyticshub:
    *             .build());
    * 
    *         var policy = new ListingIamPolicy("policy", ListingIamPolicyArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1994,10 +1994,10 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ListingIamBinding("binding", ListingIamBindingArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2032,10 +2032,10 @@ object bigqueryanalyticshub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ListingIamMember("member", ListingIamMemberArgs.builder()
-   *             .project(listing.project())
-   *             .location(listing.location())
-   *             .dataExchangeId(listing.dataExchangeId())
-   *             .listingId(listing.listingId())
+   *             .project(listing.get("project"))
+   *             .location(listing.get("location"))
+   *             .dataExchangeId(listing.get("dataExchangeId"))
+   *             .listingId(listing.get("listingId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2117,9 +2117,6 @@ object bigqueryanalyticshub:
    * Represents a BigQuery Query Template within a Data Exchange.
    * This resource defines a reusable SQL routine (e.g., a TVF) that can be
    * shared or executed via the Data Exchange.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * To get more information about QueryTemplate, see:
    * 

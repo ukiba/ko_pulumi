@@ -76,7 +76,7 @@ object chronicle:
    * 
    * To get more information about CustomList, see:
    * 
-   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1beta/projects.locations.instances.customLists)
+   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1/projects.locations.instances.customLists)
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
@@ -623,6 +623,18 @@ object chronicle:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  extension (builder: com.pulumi.gcp.chronicle.RuleDeploymentArgs.Builder)
+    /**
+     * @param scheduleCustomizations The schedule customizations of the rule deployment. Only valid for
+     * customizable run frequencies.
+     * Structure is documented below.
+     * @return builder
+     */
+    def scheduleCustomizations(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RuleDeploymentScheduleCustomizationsArgs.Builder]):
+        com.pulumi.gcp.chronicle.RuleDeploymentArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.RuleDeploymentScheduleCustomizationsArgs.builder
+      builder.scheduleCustomizations(args(argsBuilder).build)
+
   /**
    * A SOAR domain designate a domain as internal, ensuring that entities associated with it are treated as organizational assets rather than external threats during ingestion.
    * 
@@ -645,12 +657,9 @@ object chronicle:
   /**
    * Manage networks in the platform using the Classless Inter-Domain Routing (CIDR) format. The system identifies network subnets to help Google Security Operations recognize internal assets and consider network sensitivity during playbook execution.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about SoarNetwork, see:
    * 
-   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1beta/projects.locations.instances.soarNetworks)
+   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1/projects.locations.instances.soarNetworks)
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
@@ -3701,6 +3710,18 @@ object chronicle:
         com.pulumi.gcp.chronicle.inputs.RuleCompilationDiagnosticArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.RuleCompilationDiagnosticPositionArgs.builder
       builder.position(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.chronicle.inputs.RuleDeploymentState.Builder)
+    /**
+     * @param scheduleCustomizations The schedule customizations of the rule deployment. Only valid for
+     * customizable run frequencies.
+     * Structure is documented below.
+     * @return builder
+     */
+    def scheduleCustomizations(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RuleDeploymentScheduleCustomizationsArgs.Builder]):
+        com.pulumi.gcp.chronicle.inputs.RuleDeploymentState.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.RuleDeploymentScheduleCustomizationsArgs.builder
+      builder.scheduleCustomizations(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.chronicle.inputs.RuleState.Builder)
     /**

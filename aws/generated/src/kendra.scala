@@ -223,7 +223,7 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.GetThesaurusPlainArgs.builder
       com.pulumi.aws.kendra.KendraFunctions.getThesaurusPlain(args(argsBuilder).build)
 
-  /** Use the `awsKendraIndexBlockList` resource to manage an AWS Kendra block list used for query suggestions for an index. */
+  /** Use the `aws.kendra.QuerySuggestionsBlockList` resource to manage an AWS Kendra block list used for query suggestions for an index. */
   def QuerySuggestionsBlockList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.kendra.QuerySuggestionsBlockListArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kendra.QuerySuggestionsBlockListArgs.builder

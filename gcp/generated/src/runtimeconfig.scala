@@ -30,8 +30,8 @@ object runtimeconfig:
    * Three different resources help you manage your IAM policy for Runtime Configurator Config. Each of these resources serves a different use case:
    * 
    * * `gcp.runtimeconfig.ConfigIamPolicy`: Authoritative. Sets the IAM policy for the config and replaces any existing policy already attached.
-   * * `gcp.runtimeconfig.ConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the config are preserved.
-   * * `gcp.runtimeconfig.ConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the config are preserved.
+   * * `gcp.runtimeconfig.ConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the config are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.runtimeconfig.ConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the config are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -79,8 +79,8 @@ object runtimeconfig:
    *             .build());
    * 
    *         var policy = new ConfigIamPolicy("policy", ConfigIamPolicyArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -114,8 +114,8 @@ object runtimeconfig:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ConfigIamBinding("binding", ConfigIamBindingArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -150,8 +150,8 @@ object runtimeconfig:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ConfigIamMember("member", ConfigIamMemberArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -170,8 +170,8 @@ object runtimeconfig:
    * Three different resources help you manage your IAM policy for Runtime Configurator Config. Each of these resources serves a different use case:
    * 
    * * `gcp.runtimeconfig.ConfigIamPolicy`: Authoritative. Sets the IAM policy for the config and replaces any existing policy already attached.
-   * * `gcp.runtimeconfig.ConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the config are preserved.
-   * * `gcp.runtimeconfig.ConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the config are preserved.
+   * * `gcp.runtimeconfig.ConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the config are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.runtimeconfig.ConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the config are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -219,8 +219,8 @@ object runtimeconfig:
    *             .build());
    * 
    *         var policy = new ConfigIamPolicy("policy", ConfigIamPolicyArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -254,8 +254,8 @@ object runtimeconfig:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ConfigIamBinding("binding", ConfigIamBindingArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -290,8 +290,8 @@ object runtimeconfig:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ConfigIamMember("member", ConfigIamMemberArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -348,8 +348,8 @@ object runtimeconfig:
    * Three different resources help you manage your IAM policy for Runtime Configurator Config. Each of these resources serves a different use case:
    * 
    * * `gcp.runtimeconfig.ConfigIamPolicy`: Authoritative. Sets the IAM policy for the config and replaces any existing policy already attached.
-   * * `gcp.runtimeconfig.ConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the config are preserved.
-   * * `gcp.runtimeconfig.ConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the config are preserved.
+   * * `gcp.runtimeconfig.ConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the config are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.runtimeconfig.ConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the config are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -397,8 +397,8 @@ object runtimeconfig:
    *             .build());
    * 
    *         var policy = new ConfigIamPolicy("policy", ConfigIamPolicyArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -432,8 +432,8 @@ object runtimeconfig:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ConfigIamBinding("binding", ConfigIamBindingArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -468,8 +468,8 @@ object runtimeconfig:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ConfigIamMember("member", ConfigIamMemberArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -488,8 +488,8 @@ object runtimeconfig:
    * Three different resources help you manage your IAM policy for Runtime Configurator Config. Each of these resources serves a different use case:
    * 
    * * `gcp.runtimeconfig.ConfigIamPolicy`: Authoritative. Sets the IAM policy for the config and replaces any existing policy already attached.
-   * * `gcp.runtimeconfig.ConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the config are preserved.
-   * * `gcp.runtimeconfig.ConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the config are preserved.
+   * * `gcp.runtimeconfig.ConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the config are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.runtimeconfig.ConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the config are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -537,8 +537,8 @@ object runtimeconfig:
    *             .build());
    * 
    *         var policy = new ConfigIamPolicy("policy", ConfigIamPolicyArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -572,8 +572,8 @@ object runtimeconfig:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ConfigIamBinding("binding", ConfigIamBindingArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -608,8 +608,8 @@ object runtimeconfig:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ConfigIamMember("member", ConfigIamMemberArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -666,8 +666,8 @@ object runtimeconfig:
    * Three different resources help you manage your IAM policy for Runtime Configurator Config. Each of these resources serves a different use case:
    * 
    * * `gcp.runtimeconfig.ConfigIamPolicy`: Authoritative. Sets the IAM policy for the config and replaces any existing policy already attached.
-   * * `gcp.runtimeconfig.ConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the config are preserved.
-   * * `gcp.runtimeconfig.ConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the config are preserved.
+   * * `gcp.runtimeconfig.ConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the config are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.runtimeconfig.ConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the config are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -715,8 +715,8 @@ object runtimeconfig:
    *             .build());
    * 
    *         var policy = new ConfigIamPolicy("policy", ConfigIamPolicyArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -750,8 +750,8 @@ object runtimeconfig:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ConfigIamBinding("binding", ConfigIamBindingArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -786,8 +786,8 @@ object runtimeconfig:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ConfigIamMember("member", ConfigIamMemberArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -806,8 +806,8 @@ object runtimeconfig:
    * Three different resources help you manage your IAM policy for Runtime Configurator Config. Each of these resources serves a different use case:
    * 
    * * `gcp.runtimeconfig.ConfigIamPolicy`: Authoritative. Sets the IAM policy for the config and replaces any existing policy already attached.
-   * * `gcp.runtimeconfig.ConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the config are preserved.
-   * * `gcp.runtimeconfig.ConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the config are preserved.
+   * * `gcp.runtimeconfig.ConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the config are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.runtimeconfig.ConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the config are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -855,8 +855,8 @@ object runtimeconfig:
    *             .build());
    * 
    *         var policy = new ConfigIamPolicy("policy", ConfigIamPolicyArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -890,8 +890,8 @@ object runtimeconfig:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ConfigIamBinding("binding", ConfigIamBindingArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -926,8 +926,8 @@ object runtimeconfig:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ConfigIamMember("member", ConfigIamMemberArgs.builder()
-   *             .project(config.project())
-   *             .config(config.name())
+   *             .project(config.get("project"))
+   *             .config(config.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

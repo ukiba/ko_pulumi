@@ -582,8 +582,8 @@ object apigee:
    * Three different resources help you manage your IAM policy for Apigee Environment. Each of these resources serves a different use case:
    * 
    * * `gcp.apigee.EnvironmentIamPolicy`: Authoritative. Sets the IAM policy for the environment and replaces any existing policy already attached.
-   * * `gcp.apigee.EnvironmentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the environment are preserved.
-   * * `gcp.apigee.EnvironmentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the environment are preserved.
+   * * `gcp.apigee.EnvironmentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the environment are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigee.EnvironmentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the environment are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -628,8 +628,8 @@ object apigee:
    *             .build());
    * 
    *         var policy = new EnvironmentIamPolicy("policy", EnvironmentIamPolicyArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -663,8 +663,8 @@ object apigee:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EnvironmentIamBinding("binding", EnvironmentIamBindingArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -699,8 +699,8 @@ object apigee:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EnvironmentIamMember("member", EnvironmentIamMemberArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -720,8 +720,8 @@ object apigee:
    * Three different resources help you manage your IAM policy for Apigee Environment. Each of these resources serves a different use case:
    * 
    * * `gcp.apigee.EnvironmentIamPolicy`: Authoritative. Sets the IAM policy for the environment and replaces any existing policy already attached.
-   * * `gcp.apigee.EnvironmentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the environment are preserved.
-   * * `gcp.apigee.EnvironmentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the environment are preserved.
+   * * `gcp.apigee.EnvironmentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the environment are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigee.EnvironmentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the environment are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -766,8 +766,8 @@ object apigee:
    *             .build());
    * 
    *         var policy = new EnvironmentIamPolicy("policy", EnvironmentIamPolicyArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -801,8 +801,8 @@ object apigee:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EnvironmentIamBinding("binding", EnvironmentIamBindingArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -837,8 +837,8 @@ object apigee:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EnvironmentIamMember("member", EnvironmentIamMemberArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -894,8 +894,8 @@ object apigee:
    * Three different resources help you manage your IAM policy for Apigee Environment. Each of these resources serves a different use case:
    * 
    * * `gcp.apigee.EnvironmentIamPolicy`: Authoritative. Sets the IAM policy for the environment and replaces any existing policy already attached.
-   * * `gcp.apigee.EnvironmentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the environment are preserved.
-   * * `gcp.apigee.EnvironmentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the environment are preserved.
+   * * `gcp.apigee.EnvironmentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the environment are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigee.EnvironmentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the environment are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -940,8 +940,8 @@ object apigee:
    *             .build());
    * 
    *         var policy = new EnvironmentIamPolicy("policy", EnvironmentIamPolicyArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -975,8 +975,8 @@ object apigee:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EnvironmentIamBinding("binding", EnvironmentIamBindingArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1011,8 +1011,8 @@ object apigee:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EnvironmentIamMember("member", EnvironmentIamMemberArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1032,8 +1032,8 @@ object apigee:
    * Three different resources help you manage your IAM policy for Apigee Environment. Each of these resources serves a different use case:
    * 
    * * `gcp.apigee.EnvironmentIamPolicy`: Authoritative. Sets the IAM policy for the environment and replaces any existing policy already attached.
-   * * `gcp.apigee.EnvironmentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the environment are preserved.
-   * * `gcp.apigee.EnvironmentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the environment are preserved.
+   * * `gcp.apigee.EnvironmentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the environment are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigee.EnvironmentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the environment are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1078,8 +1078,8 @@ object apigee:
    *             .build());
    * 
    *         var policy = new EnvironmentIamPolicy("policy", EnvironmentIamPolicyArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1113,8 +1113,8 @@ object apigee:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EnvironmentIamBinding("binding", EnvironmentIamBindingArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1149,8 +1149,8 @@ object apigee:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EnvironmentIamMember("member", EnvironmentIamMemberArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1206,8 +1206,8 @@ object apigee:
    * Three different resources help you manage your IAM policy for Apigee Environment. Each of these resources serves a different use case:
    * 
    * * `gcp.apigee.EnvironmentIamPolicy`: Authoritative. Sets the IAM policy for the environment and replaces any existing policy already attached.
-   * * `gcp.apigee.EnvironmentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the environment are preserved.
-   * * `gcp.apigee.EnvironmentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the environment are preserved.
+   * * `gcp.apigee.EnvironmentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the environment are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigee.EnvironmentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the environment are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1252,8 +1252,8 @@ object apigee:
    *             .build());
    * 
    *         var policy = new EnvironmentIamPolicy("policy", EnvironmentIamPolicyArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1287,8 +1287,8 @@ object apigee:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EnvironmentIamBinding("binding", EnvironmentIamBindingArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1323,8 +1323,8 @@ object apigee:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EnvironmentIamMember("member", EnvironmentIamMemberArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1344,8 +1344,8 @@ object apigee:
    * Three different resources help you manage your IAM policy for Apigee Environment. Each of these resources serves a different use case:
    * 
    * * `gcp.apigee.EnvironmentIamPolicy`: Authoritative. Sets the IAM policy for the environment and replaces any existing policy already attached.
-   * * `gcp.apigee.EnvironmentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the environment are preserved.
-   * * `gcp.apigee.EnvironmentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the environment are preserved.
+   * * `gcp.apigee.EnvironmentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the environment are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigee.EnvironmentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the environment are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1390,8 +1390,8 @@ object apigee:
    *             .build());
    * 
    *         var policy = new EnvironmentIamPolicy("policy", EnvironmentIamPolicyArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1425,8 +1425,8 @@ object apigee:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new EnvironmentIamBinding("binding", EnvironmentIamBindingArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1461,8 +1461,8 @@ object apigee:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new EnvironmentIamMember("member", EnvironmentIamMemberArgs.builder()
-   *             .orgId(apigeeEnvironment.orgId())
-   *             .envId(apigeeEnvironment.name())
+   *             .orgId(apigeeEnvironment.get("orgId"))
+   *             .envId(apigeeEnvironment.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

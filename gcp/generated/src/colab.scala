@@ -80,6 +80,16 @@ object colab:
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionGcsNotebookSourceArgs.builder
       builder.gcsNotebookSource(args(argsBuilder).build)
 
+    /**
+     * @param workbenchRuntime Configuration for a Workbench Instances-based environment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def workbenchRuntime(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeArgs.Builder]):
+        com.pulumi.gcp.colab.NotebookExecutionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeArgs.builder
+      builder.workbenchRuntime(args(argsBuilder).build)
+
   /**
    * &#39;A runtime is a Google-provisioned virtual machine (VM) that can run the code in your notebook (IPYNB file).&#39;
    * 
@@ -216,8 +226,8 @@ object colab:
    * Three different resources help you manage your IAM policy for Colab Enterprise RuntimeTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.colab.RuntimeTemplateIamPolicy`: Authoritative. Sets the IAM policy for the runtimetemplate and replaces any existing policy already attached.
-   * * `gcp.colab.RuntimeTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtimetemplate are preserved.
-   * * `gcp.colab.RuntimeTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtimetemplate are preserved.
+   * * `gcp.colab.RuntimeTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtimetemplate are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.colab.RuntimeTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtimetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -262,9 +272,9 @@ object colab:
    *             .build());
    * 
    *         var policy = new RuntimeTemplateIamPolicy("policy", RuntimeTemplateIamPolicyArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -298,9 +308,9 @@ object colab:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RuntimeTemplateIamBinding("binding", RuntimeTemplateIamBindingArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -335,9 +345,9 @@ object colab:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RuntimeTemplateIamMember("member", RuntimeTemplateIamMemberArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -356,8 +366,8 @@ object colab:
    * Three different resources help you manage your IAM policy for Colab Enterprise RuntimeTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.colab.RuntimeTemplateIamPolicy`: Authoritative. Sets the IAM policy for the runtimetemplate and replaces any existing policy already attached.
-   * * `gcp.colab.RuntimeTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtimetemplate are preserved.
-   * * `gcp.colab.RuntimeTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtimetemplate are preserved.
+   * * `gcp.colab.RuntimeTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtimetemplate are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.colab.RuntimeTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtimetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -402,9 +412,9 @@ object colab:
    *             .build());
    * 
    *         var policy = new RuntimeTemplateIamPolicy("policy", RuntimeTemplateIamPolicyArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -438,9 +448,9 @@ object colab:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RuntimeTemplateIamBinding("binding", RuntimeTemplateIamBindingArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -475,9 +485,9 @@ object colab:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RuntimeTemplateIamMember("member", RuntimeTemplateIamMemberArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -535,8 +545,8 @@ object colab:
    * Three different resources help you manage your IAM policy for Colab Enterprise RuntimeTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.colab.RuntimeTemplateIamPolicy`: Authoritative. Sets the IAM policy for the runtimetemplate and replaces any existing policy already attached.
-   * * `gcp.colab.RuntimeTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtimetemplate are preserved.
-   * * `gcp.colab.RuntimeTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtimetemplate are preserved.
+   * * `gcp.colab.RuntimeTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtimetemplate are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.colab.RuntimeTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtimetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -581,9 +591,9 @@ object colab:
    *             .build());
    * 
    *         var policy = new RuntimeTemplateIamPolicy("policy", RuntimeTemplateIamPolicyArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -617,9 +627,9 @@ object colab:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RuntimeTemplateIamBinding("binding", RuntimeTemplateIamBindingArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -654,9 +664,9 @@ object colab:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RuntimeTemplateIamMember("member", RuntimeTemplateIamMemberArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -675,8 +685,8 @@ object colab:
    * Three different resources help you manage your IAM policy for Colab Enterprise RuntimeTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.colab.RuntimeTemplateIamPolicy`: Authoritative. Sets the IAM policy for the runtimetemplate and replaces any existing policy already attached.
-   * * `gcp.colab.RuntimeTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtimetemplate are preserved.
-   * * `gcp.colab.RuntimeTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtimetemplate are preserved.
+   * * `gcp.colab.RuntimeTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtimetemplate are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.colab.RuntimeTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtimetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -721,9 +731,9 @@ object colab:
    *             .build());
    * 
    *         var policy = new RuntimeTemplateIamPolicy("policy", RuntimeTemplateIamPolicyArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -757,9 +767,9 @@ object colab:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RuntimeTemplateIamBinding("binding", RuntimeTemplateIamBindingArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -794,9 +804,9 @@ object colab:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RuntimeTemplateIamMember("member", RuntimeTemplateIamMemberArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -854,8 +864,8 @@ object colab:
    * Three different resources help you manage your IAM policy for Colab Enterprise RuntimeTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.colab.RuntimeTemplateIamPolicy`: Authoritative. Sets the IAM policy for the runtimetemplate and replaces any existing policy already attached.
-   * * `gcp.colab.RuntimeTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtimetemplate are preserved.
-   * * `gcp.colab.RuntimeTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtimetemplate are preserved.
+   * * `gcp.colab.RuntimeTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtimetemplate are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.colab.RuntimeTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtimetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -900,9 +910,9 @@ object colab:
    *             .build());
    * 
    *         var policy = new RuntimeTemplateIamPolicy("policy", RuntimeTemplateIamPolicyArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -936,9 +946,9 @@ object colab:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RuntimeTemplateIamBinding("binding", RuntimeTemplateIamBindingArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -973,9 +983,9 @@ object colab:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RuntimeTemplateIamMember("member", RuntimeTemplateIamMemberArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -994,8 +1004,8 @@ object colab:
    * Three different resources help you manage your IAM policy for Colab Enterprise RuntimeTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.colab.RuntimeTemplateIamPolicy`: Authoritative. Sets the IAM policy for the runtimetemplate and replaces any existing policy already attached.
-   * * `gcp.colab.RuntimeTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtimetemplate are preserved.
-   * * `gcp.colab.RuntimeTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtimetemplate are preserved.
+   * * `gcp.colab.RuntimeTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtimetemplate are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.colab.RuntimeTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtimetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1040,9 +1050,9 @@ object colab:
    *             .build());
    * 
    *         var policy = new RuntimeTemplateIamPolicy("policy", RuntimeTemplateIamPolicyArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1076,9 +1086,9 @@ object colab:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RuntimeTemplateIamBinding("binding", RuntimeTemplateIamBindingArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1113,9 +1123,9 @@ object colab:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RuntimeTemplateIamMember("member", RuntimeTemplateIamMemberArgs.builder()
-   *             .project(runtime_template.project())
-   *             .location(runtime_template.location())
-   *             .runtimeTemplate(runtime_template.name())
+   *             .project(runtime_template.get("project"))
+   *             .location(runtime_template.get("location"))
+   *             .runtimeTemplate(runtime_template.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1231,6 +1241,16 @@ object colab:
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecPersistentDiskSpecArgs.builder
       builder.persistentDiskSpec(args(argsBuilder).build)
 
+    /**
+     * @param shieldedInstanceConfig Shielded VM configuration.
+     * Structure is documented below.
+     * @return builder
+     */
+    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecShieldedInstanceConfigArgs.Builder]):
+        com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecShieldedInstanceConfigArgs.builder
+      builder.shieldedInstanceConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.colab.inputs.NotebookExecutionState.Builder)
     /**
      * @param customEnvironmentSpec Compute configuration to use for an execution job
@@ -1271,6 +1291,27 @@ object colab:
         com.pulumi.gcp.colab.inputs.NotebookExecutionState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionGcsNotebookSourceArgs.builder
       builder.gcsNotebookSource(args(argsBuilder).build)
+
+    /**
+     * @param workbenchRuntime Configuration for a Workbench Instances-based environment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def workbenchRuntime(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeArgs.Builder]):
+        com.pulumi.gcp.colab.inputs.NotebookExecutionState.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeArgs.builder
+      builder.workbenchRuntime(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeArgs.Builder)
+    /**
+     * @param vmImage Custom Compute Engine VM image for the Workbench instance.
+     * Structure is documented below.
+     * @return builder
+     */
+    def vmImage(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeVmImageArgs.Builder]):
+        com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeVmImageArgs.builder
+      builder.vmImage(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.colab.inputs.RuntimeState.Builder)
     /**

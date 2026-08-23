@@ -47,8 +47,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc AutoscalingPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.AutoscalingPolicyIamPolicy`: Authoritative. Sets the IAM policy for the autoscalingpolicy and replaces any existing policy already attached.
-   * * `gcp.dataproc.AutoscalingPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the autoscalingpolicy are preserved.
-   * * `gcp.dataproc.AutoscalingPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the autoscalingpolicy are preserved.
+   * * `gcp.dataproc.AutoscalingPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the autoscalingpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.AutoscalingPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the autoscalingpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -93,9 +93,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new AutoscalingPolicyIamPolicy("policy", AutoscalingPolicyIamPolicyArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -129,9 +129,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AutoscalingPolicyIamBinding("binding", AutoscalingPolicyIamBindingArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -166,9 +166,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AutoscalingPolicyIamMember("member", AutoscalingPolicyIamMemberArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -187,8 +187,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc AutoscalingPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.AutoscalingPolicyIamPolicy`: Authoritative. Sets the IAM policy for the autoscalingpolicy and replaces any existing policy already attached.
-   * * `gcp.dataproc.AutoscalingPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the autoscalingpolicy are preserved.
-   * * `gcp.dataproc.AutoscalingPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the autoscalingpolicy are preserved.
+   * * `gcp.dataproc.AutoscalingPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the autoscalingpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.AutoscalingPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the autoscalingpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -233,9 +233,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new AutoscalingPolicyIamPolicy("policy", AutoscalingPolicyIamPolicyArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -269,9 +269,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AutoscalingPolicyIamBinding("binding", AutoscalingPolicyIamBindingArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -306,9 +306,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AutoscalingPolicyIamMember("member", AutoscalingPolicyIamMemberArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -366,8 +366,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc AutoscalingPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.AutoscalingPolicyIamPolicy`: Authoritative. Sets the IAM policy for the autoscalingpolicy and replaces any existing policy already attached.
-   * * `gcp.dataproc.AutoscalingPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the autoscalingpolicy are preserved.
-   * * `gcp.dataproc.AutoscalingPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the autoscalingpolicy are preserved.
+   * * `gcp.dataproc.AutoscalingPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the autoscalingpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.AutoscalingPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the autoscalingpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -412,9 +412,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new AutoscalingPolicyIamPolicy("policy", AutoscalingPolicyIamPolicyArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -448,9 +448,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AutoscalingPolicyIamBinding("binding", AutoscalingPolicyIamBindingArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -485,9 +485,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AutoscalingPolicyIamMember("member", AutoscalingPolicyIamMemberArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -506,8 +506,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc AutoscalingPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.AutoscalingPolicyIamPolicy`: Authoritative. Sets the IAM policy for the autoscalingpolicy and replaces any existing policy already attached.
-   * * `gcp.dataproc.AutoscalingPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the autoscalingpolicy are preserved.
-   * * `gcp.dataproc.AutoscalingPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the autoscalingpolicy are preserved.
+   * * `gcp.dataproc.AutoscalingPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the autoscalingpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.AutoscalingPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the autoscalingpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -552,9 +552,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new AutoscalingPolicyIamPolicy("policy", AutoscalingPolicyIamPolicyArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -588,9 +588,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AutoscalingPolicyIamBinding("binding", AutoscalingPolicyIamBindingArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -625,9 +625,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AutoscalingPolicyIamMember("member", AutoscalingPolicyIamMemberArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -685,8 +685,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc AutoscalingPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.AutoscalingPolicyIamPolicy`: Authoritative. Sets the IAM policy for the autoscalingpolicy and replaces any existing policy already attached.
-   * * `gcp.dataproc.AutoscalingPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the autoscalingpolicy are preserved.
-   * * `gcp.dataproc.AutoscalingPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the autoscalingpolicy are preserved.
+   * * `gcp.dataproc.AutoscalingPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the autoscalingpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.AutoscalingPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the autoscalingpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -731,9 +731,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new AutoscalingPolicyIamPolicy("policy", AutoscalingPolicyIamPolicyArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -767,9 +767,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AutoscalingPolicyIamBinding("binding", AutoscalingPolicyIamBindingArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -804,9 +804,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AutoscalingPolicyIamMember("member", AutoscalingPolicyIamMemberArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -825,8 +825,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc AutoscalingPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.AutoscalingPolicyIamPolicy`: Authoritative. Sets the IAM policy for the autoscalingpolicy and replaces any existing policy already attached.
-   * * `gcp.dataproc.AutoscalingPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the autoscalingpolicy are preserved.
-   * * `gcp.dataproc.AutoscalingPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the autoscalingpolicy are preserved.
+   * * `gcp.dataproc.AutoscalingPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the autoscalingpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.AutoscalingPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the autoscalingpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -871,9 +871,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new AutoscalingPolicyIamPolicy("policy", AutoscalingPolicyIamPolicyArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -907,9 +907,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AutoscalingPolicyIamBinding("binding", AutoscalingPolicyIamBindingArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -944,9 +944,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AutoscalingPolicyIamMember("member", AutoscalingPolicyIamMemberArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .policyId(basic.policyId())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .policyId(basic.get("policyId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1938,7 +1938,7 @@ object dataproc:
      * 
      *     public static void stack(Context ctx) {
      *         final var policy = DataprocFunctions.getClusterIamPolicy(GetClusterIamPolicyArgs.builder()
-     *             .cluster(cluster.name())
+     *             .cluster(cluster.get("name"))
      *             .region("us-central1")
      *             .build());
      * 
@@ -1980,7 +1980,7 @@ object dataproc:
      * 
      *     public static void stack(Context ctx) {
      *         final var policy = DataprocFunctions.getClusterIamPolicy(GetClusterIamPolicyArgs.builder()
-     *             .cluster(cluster.name())
+     *             .cluster(cluster.get("name"))
      *             .region("us-central1")
      *             .build());
      * 
@@ -2022,7 +2022,7 @@ object dataproc:
      * 
      *     public static void stack(Context ctx) {
      *         final var policy = DataprocFunctions.getJobIamPolicy(GetJobIamPolicyArgs.builder()
-     *             .jobId(pyspark.reference()[0].jobId())
+     *             .jobId(pyspark.get("reference")[0].get("jobId"))
      *             .region("us-central1")
      *             .build());
      * 
@@ -2064,7 +2064,7 @@ object dataproc:
      * 
      *     public static void stack(Context ctx) {
      *         final var policy = DataprocFunctions.getJobIamPolicy(GetJobIamPolicyArgs.builder()
-     *             .jobId(pyspark.reference()[0].jobId())
+     *             .jobId(pyspark.get("reference")[0].get("jobId"))
      *             .region("us-central1")
      *             .build());
      * 
@@ -3143,8 +3143,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Database. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the database and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the database are preserved.
-   * * `gcp.dataproc.MetastoreDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the database are preserved.
+   * * `gcp.dataproc.MetastoreDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the database are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the database are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3189,10 +3189,10 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreDatabaseIamPolicy("policy", MetastoreDatabaseIamPolicyArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3226,10 +3226,10 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreDatabaseIamBinding("binding", MetastoreDatabaseIamBindingArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3264,10 +3264,10 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreDatabaseIamMember("member", MetastoreDatabaseIamMemberArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3286,8 +3286,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Database. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the database and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the database are preserved.
-   * * `gcp.dataproc.MetastoreDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the database are preserved.
+   * * `gcp.dataproc.MetastoreDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the database are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the database are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3332,10 +3332,10 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreDatabaseIamPolicy("policy", MetastoreDatabaseIamPolicyArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3369,10 +3369,10 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreDatabaseIamBinding("binding", MetastoreDatabaseIamBindingArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3407,10 +3407,10 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreDatabaseIamMember("member", MetastoreDatabaseIamMemberArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3468,8 +3468,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Database. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the database and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the database are preserved.
-   * * `gcp.dataproc.MetastoreDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the database are preserved.
+   * * `gcp.dataproc.MetastoreDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the database are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the database are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3514,10 +3514,10 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreDatabaseIamPolicy("policy", MetastoreDatabaseIamPolicyArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3551,10 +3551,10 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreDatabaseIamBinding("binding", MetastoreDatabaseIamBindingArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3589,10 +3589,10 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreDatabaseIamMember("member", MetastoreDatabaseIamMemberArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3611,8 +3611,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Database. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the database and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the database are preserved.
-   * * `gcp.dataproc.MetastoreDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the database are preserved.
+   * * `gcp.dataproc.MetastoreDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the database are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the database are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3657,10 +3657,10 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreDatabaseIamPolicy("policy", MetastoreDatabaseIamPolicyArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3694,10 +3694,10 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreDatabaseIamBinding("binding", MetastoreDatabaseIamBindingArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3732,10 +3732,10 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreDatabaseIamMember("member", MetastoreDatabaseIamMemberArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3793,8 +3793,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Database. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the database and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the database are preserved.
-   * * `gcp.dataproc.MetastoreDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the database are preserved.
+   * * `gcp.dataproc.MetastoreDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the database are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the database are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3839,10 +3839,10 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreDatabaseIamPolicy("policy", MetastoreDatabaseIamPolicyArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3876,10 +3876,10 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreDatabaseIamBinding("binding", MetastoreDatabaseIamBindingArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3914,10 +3914,10 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreDatabaseIamMember("member", MetastoreDatabaseIamMemberArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3936,8 +3936,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Database. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the database and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the database are preserved.
-   * * `gcp.dataproc.MetastoreDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the database are preserved.
+   * * `gcp.dataproc.MetastoreDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the database are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the database are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3982,10 +3982,10 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreDatabaseIamPolicy("policy", MetastoreDatabaseIamPolicyArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4019,10 +4019,10 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreDatabaseIamBinding("binding", MetastoreDatabaseIamBindingArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4057,10 +4057,10 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreDatabaseIamMember("member", MetastoreDatabaseIamMemberArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .database(hive.hiveConfig()[0].properties().database())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .database(hive.get("hiveConfig")[0].get("properties").get("database"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4138,8 +4138,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Federation. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreFederationIamPolicy`: Authoritative. Sets the IAM policy for the federation and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreFederationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the federation are preserved.
-   * * `gcp.dataproc.MetastoreFederationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the federation are preserved.
+   * * `gcp.dataproc.MetastoreFederationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the federation are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreFederationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the federation are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4184,9 +4184,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreFederationIamPolicy("policy", MetastoreFederationIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4220,9 +4220,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreFederationIamBinding("binding", MetastoreFederationIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4257,9 +4257,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreFederationIamMember("member", MetastoreFederationIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4278,8 +4278,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Federation. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreFederationIamPolicy`: Authoritative. Sets the IAM policy for the federation and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreFederationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the federation are preserved.
-   * * `gcp.dataproc.MetastoreFederationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the federation are preserved.
+   * * `gcp.dataproc.MetastoreFederationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the federation are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreFederationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the federation are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4324,9 +4324,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreFederationIamPolicy("policy", MetastoreFederationIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4360,9 +4360,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreFederationIamBinding("binding", MetastoreFederationIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4397,9 +4397,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreFederationIamMember("member", MetastoreFederationIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4457,8 +4457,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Federation. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreFederationIamPolicy`: Authoritative. Sets the IAM policy for the federation and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreFederationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the federation are preserved.
-   * * `gcp.dataproc.MetastoreFederationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the federation are preserved.
+   * * `gcp.dataproc.MetastoreFederationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the federation are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreFederationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the federation are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4503,9 +4503,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreFederationIamPolicy("policy", MetastoreFederationIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4539,9 +4539,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreFederationIamBinding("binding", MetastoreFederationIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4576,9 +4576,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreFederationIamMember("member", MetastoreFederationIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4597,8 +4597,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Federation. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreFederationIamPolicy`: Authoritative. Sets the IAM policy for the federation and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreFederationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the federation are preserved.
-   * * `gcp.dataproc.MetastoreFederationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the federation are preserved.
+   * * `gcp.dataproc.MetastoreFederationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the federation are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreFederationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the federation are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4643,9 +4643,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreFederationIamPolicy("policy", MetastoreFederationIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4679,9 +4679,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreFederationIamBinding("binding", MetastoreFederationIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4716,9 +4716,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreFederationIamMember("member", MetastoreFederationIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4776,8 +4776,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Federation. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreFederationIamPolicy`: Authoritative. Sets the IAM policy for the federation and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreFederationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the federation are preserved.
-   * * `gcp.dataproc.MetastoreFederationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the federation are preserved.
+   * * `gcp.dataproc.MetastoreFederationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the federation are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreFederationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the federation are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4822,9 +4822,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreFederationIamPolicy("policy", MetastoreFederationIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4858,9 +4858,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreFederationIamBinding("binding", MetastoreFederationIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4895,9 +4895,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreFederationIamMember("member", MetastoreFederationIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4916,8 +4916,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Federation. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreFederationIamPolicy`: Authoritative. Sets the IAM policy for the federation and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreFederationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the federation are preserved.
-   * * `gcp.dataproc.MetastoreFederationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the federation are preserved.
+   * * `gcp.dataproc.MetastoreFederationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the federation are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreFederationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the federation are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4962,9 +4962,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreFederationIamPolicy("policy", MetastoreFederationIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4998,9 +4998,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreFederationIamBinding("binding", MetastoreFederationIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5035,9 +5035,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreFederationIamMember("member", MetastoreFederationIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .federationId(default_.federationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .federationId(default_.get("federationId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5196,8 +5196,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Service. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.dataproc.MetastoreServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.dataproc.MetastoreServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5242,9 +5242,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreServiceIamPolicy("policy", MetastoreServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5278,9 +5278,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreServiceIamBinding("binding", MetastoreServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5315,9 +5315,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreServiceIamMember("member", MetastoreServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5336,8 +5336,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Service. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.dataproc.MetastoreServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.dataproc.MetastoreServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5382,9 +5382,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreServiceIamPolicy("policy", MetastoreServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5418,9 +5418,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreServiceIamBinding("binding", MetastoreServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5455,9 +5455,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreServiceIamMember("member", MetastoreServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5515,8 +5515,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Service. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.dataproc.MetastoreServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.dataproc.MetastoreServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5561,9 +5561,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreServiceIamPolicy("policy", MetastoreServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5597,9 +5597,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreServiceIamBinding("binding", MetastoreServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5634,9 +5634,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreServiceIamMember("member", MetastoreServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5655,8 +5655,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Service. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.dataproc.MetastoreServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.dataproc.MetastoreServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5701,9 +5701,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreServiceIamPolicy("policy", MetastoreServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5737,9 +5737,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreServiceIamBinding("binding", MetastoreServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5774,9 +5774,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreServiceIamMember("member", MetastoreServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5834,8 +5834,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Service. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.dataproc.MetastoreServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.dataproc.MetastoreServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5880,9 +5880,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreServiceIamPolicy("policy", MetastoreServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5916,9 +5916,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreServiceIamBinding("binding", MetastoreServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5953,9 +5953,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreServiceIamMember("member", MetastoreServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5974,8 +5974,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Service. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.dataproc.MetastoreServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.dataproc.MetastoreServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6020,9 +6020,9 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreServiceIamPolicy("policy", MetastoreServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6056,9 +6056,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreServiceIamBinding("binding", MetastoreServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6093,9 +6093,9 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreServiceIamMember("member", MetastoreServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .serviceId(default_.serviceId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .serviceId(default_.get("serviceId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6147,8 +6147,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Table. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreTableIamPolicy`: Authoritative. Sets the IAM policy for the table and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the table are preserved.
-   * * `gcp.dataproc.MetastoreTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the table are preserved.
+   * * `gcp.dataproc.MetastoreTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the table are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the table are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6193,11 +6193,11 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreTableIamPolicy("policy", MetastoreTableIamPolicyArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6231,11 +6231,11 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreTableIamBinding("binding", MetastoreTableIamBindingArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6270,11 +6270,11 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreTableIamMember("member", MetastoreTableIamMemberArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6293,8 +6293,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Table. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreTableIamPolicy`: Authoritative. Sets the IAM policy for the table and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the table are preserved.
-   * * `gcp.dataproc.MetastoreTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the table are preserved.
+   * * `gcp.dataproc.MetastoreTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the table are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the table are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6339,11 +6339,11 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreTableIamPolicy("policy", MetastoreTableIamPolicyArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6377,11 +6377,11 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreTableIamBinding("binding", MetastoreTableIamBindingArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6416,11 +6416,11 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreTableIamMember("member", MetastoreTableIamMemberArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6478,8 +6478,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Table. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreTableIamPolicy`: Authoritative. Sets the IAM policy for the table and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the table are preserved.
-   * * `gcp.dataproc.MetastoreTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the table are preserved.
+   * * `gcp.dataproc.MetastoreTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the table are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the table are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6524,11 +6524,11 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreTableIamPolicy("policy", MetastoreTableIamPolicyArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6562,11 +6562,11 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreTableIamBinding("binding", MetastoreTableIamBindingArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6601,11 +6601,11 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreTableIamMember("member", MetastoreTableIamMemberArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6624,8 +6624,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Table. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreTableIamPolicy`: Authoritative. Sets the IAM policy for the table and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the table are preserved.
-   * * `gcp.dataproc.MetastoreTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the table are preserved.
+   * * `gcp.dataproc.MetastoreTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the table are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the table are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6670,11 +6670,11 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreTableIamPolicy("policy", MetastoreTableIamPolicyArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6708,11 +6708,11 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreTableIamBinding("binding", MetastoreTableIamBindingArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6747,11 +6747,11 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreTableIamMember("member", MetastoreTableIamMemberArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6809,8 +6809,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Table. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreTableIamPolicy`: Authoritative. Sets the IAM policy for the table and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the table are preserved.
-   * * `gcp.dataproc.MetastoreTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the table are preserved.
+   * * `gcp.dataproc.MetastoreTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the table are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the table are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6855,11 +6855,11 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreTableIamPolicy("policy", MetastoreTableIamPolicyArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6893,11 +6893,11 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreTableIamBinding("binding", MetastoreTableIamBindingArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6932,11 +6932,11 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreTableIamMember("member", MetastoreTableIamMemberArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6955,8 +6955,8 @@ object dataproc:
    * Three different resources help you manage your IAM policy for Dataproc Metastore Table. Each of these resources serves a different use case:
    * 
    * * `gcp.dataproc.MetastoreTableIamPolicy`: Authoritative. Sets the IAM policy for the table and replaces any existing policy already attached.
-   * * `gcp.dataproc.MetastoreTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the table are preserved.
-   * * `gcp.dataproc.MetastoreTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the table are preserved.
+   * * `gcp.dataproc.MetastoreTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the table are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.dataproc.MetastoreTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the table are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -7001,11 +7001,11 @@ object dataproc:
    *             .build());
    * 
    *         var policy = new MetastoreTableIamPolicy("policy", MetastoreTableIamPolicyArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -7039,11 +7039,11 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MetastoreTableIamBinding("binding", MetastoreTableIamBindingArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7078,11 +7078,11 @@ object dataproc:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MetastoreTableIamMember("member", MetastoreTableIamMemberArgs.builder()
-   *             .project(dpmsService.project())
-   *             .location(dpmsService.location())
-   *             .serviceId(dpmsService.serviceId())
-   *             .databaseId(hive.hiveConfig()[0].properties().database())
-   *             .table(hive.hiveConfig()[0].properties().table())
+   *             .project(dpmsService.get("project"))
+   *             .location(dpmsService.get("location"))
+   *             .serviceId(dpmsService.get("serviceId"))
+   *             .databaseId(hive.get("hiveConfig")[0].get("properties").get("database"))
+   *             .table(hive.get("hiveConfig")[0].get("properties").get("table"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7713,6 +7713,16 @@ object dataproc:
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigMasterConfigInstanceFlexibilityPolicyArgs.builder
       builder.instanceFlexibilityPolicy(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigMasterConfigDiskConfigArgs.Builder)
+    /**
+     * @param attachedDiskConfigs Optional. Attached disk configuration.
+     * @return builder
+     */
+    def attachedDiskConfigs(args: Endofunction[com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigMasterConfigDiskConfigAttachedDiskConfigArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigMasterConfigDiskConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigMasterConfigDiskConfigAttachedDiskConfigArgs.builder
+      builder.attachedDiskConfigs(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigMasterConfigInstanceFlexibilityPolicyArgs.Builder)
     /**
      * @param instanceSelectionLists List of instance selection options that the group will use when creating new VMs.
@@ -7742,6 +7752,16 @@ object dataproc:
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.builder
       builder.diskConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder)
+    /**
+     * @param attachedDiskConfigs Attached disk configuration.
+     * @return builder
+     */
+    def attachedDiskConfigs(args: Endofunction[com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigAttachedDiskConfigArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigAttachedDiskConfigArgs.builder
+      builder.attachedDiskConfigs(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigArgs.Builder)
     /**
      * @param diskConfig Disk Config
@@ -7760,6 +7780,16 @@ object dataproc:
         com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyArgs.builder
       builder.instanceFlexibilityPolicy(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigDiskConfigArgs.Builder)
+    /**
+     * @param attachedDiskConfigs Optional. Attached disk configuration.
+     * @return builder
+     */
+    def attachedDiskConfigs(args: Endofunction[com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigDiskConfigAttachedDiskConfigArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigDiskConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigDiskConfigAttachedDiskConfigArgs.builder
+      builder.attachedDiskConfigs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyArgs.Builder)
     /**
@@ -7798,6 +7828,16 @@ object dataproc:
         com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.builder
       builder.diskConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder)
+    /**
+     * @param attachedDiskConfigs Optional. Attached disk configuration.
+     * @return builder
+     */
+    def attachedDiskConfigs(args: Endofunction[com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigAttachedDiskConfigArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigAttachedDiskConfigArgs.builder
+      builder.attachedDiskConfigs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigSecurityConfigArgs.Builder)
     /**
@@ -7848,6 +7888,16 @@ object dataproc:
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigInstanceFlexibilityPolicyArgs.builder
       builder.instanceFlexibilityPolicy(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigDiskConfigArgs.Builder)
+    /**
+     * @param attachedDiskConfigs Attached disk configuration.
+     * @return builder
+     */
+    def attachedDiskConfigs(args: Endofunction[com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigDiskConfigAttachedDiskConfigArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigDiskConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigDiskConfigAttachedDiskConfigArgs.builder
+      builder.attachedDiskConfigs(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigInstanceFlexibilityPolicyArgs.Builder)
     /**
      * @param instanceSelectionLists List of instance selection options that the group will use when creating new VMs.
@@ -7876,6 +7926,16 @@ object dataproc:
         com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.builder
       builder.diskConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder)
+    /**
+     * @param attachedDiskConfigs Attached disk configuration.
+     * @return builder
+     */
+    def attachedDiskConfigs(args: Endofunction[com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigAttachedDiskConfigArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigAttachedDiskConfigArgs.builder
+      builder.attachedDiskConfigs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterIAMBindingState.Builder)
     def condition(args: Endofunction[com.pulumi.gcp.dataproc.inputs.ClusterIAMBindingConditionArgs.Builder]):

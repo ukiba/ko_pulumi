@@ -131,8 +131,8 @@ object notebooks:
    * Three different resources help you manage your IAM policy for Cloud AI Notebooks Instance. Each of these resources serves a different use case:
    * 
    * * `gcp.notebooks.InstanceIamPolicy`: Authoritative. Sets the IAM policy for the instance and replaces any existing policy already attached.
-   * * `gcp.notebooks.InstanceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved.
-   * * `gcp.notebooks.InstanceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved.
+   * * `gcp.notebooks.InstanceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.notebooks.InstanceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -177,9 +177,9 @@ object notebooks:
    *             .build());
    * 
    *         var policy = new InstanceIamPolicy("policy", InstanceIamPolicyArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -213,9 +213,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIamBinding("binding", InstanceIamBindingArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -250,9 +250,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIamMember("member", InstanceIamMemberArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -272,8 +272,8 @@ object notebooks:
    * Three different resources help you manage your IAM policy for Cloud AI Notebooks Instance. Each of these resources serves a different use case:
    * 
    * * `gcp.notebooks.InstanceIamPolicy`: Authoritative. Sets the IAM policy for the instance and replaces any existing policy already attached.
-   * * `gcp.notebooks.InstanceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved.
-   * * `gcp.notebooks.InstanceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved.
+   * * `gcp.notebooks.InstanceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.notebooks.InstanceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -318,9 +318,9 @@ object notebooks:
    *             .build());
    * 
    *         var policy = new InstanceIamPolicy("policy", InstanceIamPolicyArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -354,9 +354,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIamBinding("binding", InstanceIamBindingArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -391,9 +391,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIamMember("member", InstanceIamMemberArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -453,8 +453,8 @@ object notebooks:
    * Three different resources help you manage your IAM policy for Cloud AI Notebooks Instance. Each of these resources serves a different use case:
    * 
    * * `gcp.notebooks.InstanceIamPolicy`: Authoritative. Sets the IAM policy for the instance and replaces any existing policy already attached.
-   * * `gcp.notebooks.InstanceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved.
-   * * `gcp.notebooks.InstanceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved.
+   * * `gcp.notebooks.InstanceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.notebooks.InstanceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -499,9 +499,9 @@ object notebooks:
    *             .build());
    * 
    *         var policy = new InstanceIamPolicy("policy", InstanceIamPolicyArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -535,9 +535,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIamBinding("binding", InstanceIamBindingArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -572,9 +572,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIamMember("member", InstanceIamMemberArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -594,8 +594,8 @@ object notebooks:
    * Three different resources help you manage your IAM policy for Cloud AI Notebooks Instance. Each of these resources serves a different use case:
    * 
    * * `gcp.notebooks.InstanceIamPolicy`: Authoritative. Sets the IAM policy for the instance and replaces any existing policy already attached.
-   * * `gcp.notebooks.InstanceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved.
-   * * `gcp.notebooks.InstanceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved.
+   * * `gcp.notebooks.InstanceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.notebooks.InstanceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -640,9 +640,9 @@ object notebooks:
    *             .build());
    * 
    *         var policy = new InstanceIamPolicy("policy", InstanceIamPolicyArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -676,9 +676,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIamBinding("binding", InstanceIamBindingArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -713,9 +713,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIamMember("member", InstanceIamMemberArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -775,8 +775,8 @@ object notebooks:
    * Three different resources help you manage your IAM policy for Cloud AI Notebooks Instance. Each of these resources serves a different use case:
    * 
    * * `gcp.notebooks.InstanceIamPolicy`: Authoritative. Sets the IAM policy for the instance and replaces any existing policy already attached.
-   * * `gcp.notebooks.InstanceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved.
-   * * `gcp.notebooks.InstanceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved.
+   * * `gcp.notebooks.InstanceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.notebooks.InstanceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -821,9 +821,9 @@ object notebooks:
    *             .build());
    * 
    *         var policy = new InstanceIamPolicy("policy", InstanceIamPolicyArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -857,9 +857,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIamBinding("binding", InstanceIamBindingArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -894,9 +894,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIamMember("member", InstanceIamMemberArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -916,8 +916,8 @@ object notebooks:
    * Three different resources help you manage your IAM policy for Cloud AI Notebooks Instance. Each of these resources serves a different use case:
    * 
    * * `gcp.notebooks.InstanceIamPolicy`: Authoritative. Sets the IAM policy for the instance and replaces any existing policy already attached.
-   * * `gcp.notebooks.InstanceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved.
-   * * `gcp.notebooks.InstanceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved.
+   * * `gcp.notebooks.InstanceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.notebooks.InstanceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -962,9 +962,9 @@ object notebooks:
    *             .build());
    * 
    *         var policy = new InstanceIamPolicy("policy", InstanceIamPolicyArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -998,9 +998,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIamBinding("binding", InstanceIamBindingArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1035,9 +1035,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIamMember("member", InstanceIamMemberArgs.builder()
-   *             .project(instance.project())
-   *             .location(instance.location())
-   *             .instanceName(instance.name())
+   *             .project(instance.get("project"))
+   *             .location(instance.get("location"))
+   *             .instanceName(instance.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1194,8 +1194,8 @@ object notebooks:
    * Three different resources help you manage your IAM policy for Cloud AI Notebooks Runtime. Each of these resources serves a different use case:
    * 
    * * `gcp.notebooks.RuntimeIamPolicy`: Authoritative. Sets the IAM policy for the runtime and replaces any existing policy already attached.
-   * * `gcp.notebooks.RuntimeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtime are preserved.
-   * * `gcp.notebooks.RuntimeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtime are preserved.
+   * * `gcp.notebooks.RuntimeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtime are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.notebooks.RuntimeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtime are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1240,9 +1240,9 @@ object notebooks:
    *             .build());
    * 
    *         var policy = new RuntimeIamPolicy("policy", RuntimeIamPolicyArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1276,9 +1276,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RuntimeIamBinding("binding", RuntimeIamBindingArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1313,9 +1313,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RuntimeIamMember("member", RuntimeIamMemberArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1335,8 +1335,8 @@ object notebooks:
    * Three different resources help you manage your IAM policy for Cloud AI Notebooks Runtime. Each of these resources serves a different use case:
    * 
    * * `gcp.notebooks.RuntimeIamPolicy`: Authoritative. Sets the IAM policy for the runtime and replaces any existing policy already attached.
-   * * `gcp.notebooks.RuntimeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtime are preserved.
-   * * `gcp.notebooks.RuntimeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtime are preserved.
+   * * `gcp.notebooks.RuntimeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtime are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.notebooks.RuntimeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtime are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1381,9 +1381,9 @@ object notebooks:
    *             .build());
    * 
    *         var policy = new RuntimeIamPolicy("policy", RuntimeIamPolicyArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1417,9 +1417,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RuntimeIamBinding("binding", RuntimeIamBindingArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1454,9 +1454,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RuntimeIamMember("member", RuntimeIamMemberArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1516,8 +1516,8 @@ object notebooks:
    * Three different resources help you manage your IAM policy for Cloud AI Notebooks Runtime. Each of these resources serves a different use case:
    * 
    * * `gcp.notebooks.RuntimeIamPolicy`: Authoritative. Sets the IAM policy for the runtime and replaces any existing policy already attached.
-   * * `gcp.notebooks.RuntimeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtime are preserved.
-   * * `gcp.notebooks.RuntimeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtime are preserved.
+   * * `gcp.notebooks.RuntimeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtime are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.notebooks.RuntimeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtime are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1562,9 +1562,9 @@ object notebooks:
    *             .build());
    * 
    *         var policy = new RuntimeIamPolicy("policy", RuntimeIamPolicyArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1598,9 +1598,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RuntimeIamBinding("binding", RuntimeIamBindingArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1635,9 +1635,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RuntimeIamMember("member", RuntimeIamMemberArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1657,8 +1657,8 @@ object notebooks:
    * Three different resources help you manage your IAM policy for Cloud AI Notebooks Runtime. Each of these resources serves a different use case:
    * 
    * * `gcp.notebooks.RuntimeIamPolicy`: Authoritative. Sets the IAM policy for the runtime and replaces any existing policy already attached.
-   * * `gcp.notebooks.RuntimeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtime are preserved.
-   * * `gcp.notebooks.RuntimeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtime are preserved.
+   * * `gcp.notebooks.RuntimeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtime are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.notebooks.RuntimeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtime are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1703,9 +1703,9 @@ object notebooks:
    *             .build());
    * 
    *         var policy = new RuntimeIamPolicy("policy", RuntimeIamPolicyArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1739,9 +1739,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RuntimeIamBinding("binding", RuntimeIamBindingArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1776,9 +1776,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RuntimeIamMember("member", RuntimeIamMemberArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1838,8 +1838,8 @@ object notebooks:
    * Three different resources help you manage your IAM policy for Cloud AI Notebooks Runtime. Each of these resources serves a different use case:
    * 
    * * `gcp.notebooks.RuntimeIamPolicy`: Authoritative. Sets the IAM policy for the runtime and replaces any existing policy already attached.
-   * * `gcp.notebooks.RuntimeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtime are preserved.
-   * * `gcp.notebooks.RuntimeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtime are preserved.
+   * * `gcp.notebooks.RuntimeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtime are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.notebooks.RuntimeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtime are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1884,9 +1884,9 @@ object notebooks:
    *             .build());
    * 
    *         var policy = new RuntimeIamPolicy("policy", RuntimeIamPolicyArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1920,9 +1920,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RuntimeIamBinding("binding", RuntimeIamBindingArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1957,9 +1957,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RuntimeIamMember("member", RuntimeIamMemberArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1979,8 +1979,8 @@ object notebooks:
    * Three different resources help you manage your IAM policy for Cloud AI Notebooks Runtime. Each of these resources serves a different use case:
    * 
    * * `gcp.notebooks.RuntimeIamPolicy`: Authoritative. Sets the IAM policy for the runtime and replaces any existing policy already attached.
-   * * `gcp.notebooks.RuntimeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtime are preserved.
-   * * `gcp.notebooks.RuntimeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtime are preserved.
+   * * `gcp.notebooks.RuntimeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the runtime are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.notebooks.RuntimeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the runtime are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2025,9 +2025,9 @@ object notebooks:
    *             .build());
    * 
    *         var policy = new RuntimeIamPolicy("policy", RuntimeIamPolicyArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2061,9 +2061,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RuntimeIamBinding("binding", RuntimeIamBindingArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2098,9 +2098,9 @@ object notebooks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RuntimeIamMember("member", RuntimeIamMemberArgs.builder()
-   *             .project(runtime.project())
-   *             .location(runtime.location())
-   *             .runtimeName(runtime.name())
+   *             .project(runtime.get("project"))
+   *             .location(runtime.get("location"))
+   *             .runtimeName(runtime.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

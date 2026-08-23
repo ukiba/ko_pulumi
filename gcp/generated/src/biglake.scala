@@ -180,8 +180,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveCatalog. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveCatalogIamPolicy`: Authoritative. Sets the IAM policy for the hivecatalog and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivecatalog are preserved.
-   * * `gcp.biglake.HiveCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivecatalog are preserved.
+   * * `gcp.biglake.HiveCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivecatalog are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivecatalog are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -229,8 +229,8 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveCatalogIamPolicy("policy", HiveCatalogIamPolicyArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -264,8 +264,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveCatalogIamBinding("binding", HiveCatalogIamBindingArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -300,8 +300,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveCatalogIamMember("member", HiveCatalogIamMemberArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -320,8 +320,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveCatalog. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveCatalogIamPolicy`: Authoritative. Sets the IAM policy for the hivecatalog and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivecatalog are preserved.
-   * * `gcp.biglake.HiveCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivecatalog are preserved.
+   * * `gcp.biglake.HiveCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivecatalog are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivecatalog are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -369,8 +369,8 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveCatalogIamPolicy("policy", HiveCatalogIamPolicyArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -404,8 +404,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveCatalogIamBinding("binding", HiveCatalogIamBindingArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -440,8 +440,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveCatalogIamMember("member", HiveCatalogIamMemberArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -501,8 +501,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveCatalog. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveCatalogIamPolicy`: Authoritative. Sets the IAM policy for the hivecatalog and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivecatalog are preserved.
-   * * `gcp.biglake.HiveCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivecatalog are preserved.
+   * * `gcp.biglake.HiveCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivecatalog are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivecatalog are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -550,8 +550,8 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveCatalogIamPolicy("policy", HiveCatalogIamPolicyArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -585,8 +585,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveCatalogIamBinding("binding", HiveCatalogIamBindingArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -621,8 +621,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveCatalogIamMember("member", HiveCatalogIamMemberArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -641,8 +641,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveCatalog. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveCatalogIamPolicy`: Authoritative. Sets the IAM policy for the hivecatalog and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivecatalog are preserved.
-   * * `gcp.biglake.HiveCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivecatalog are preserved.
+   * * `gcp.biglake.HiveCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivecatalog are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivecatalog are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -690,8 +690,8 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveCatalogIamPolicy("policy", HiveCatalogIamPolicyArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -725,8 +725,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveCatalogIamBinding("binding", HiveCatalogIamBindingArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -761,8 +761,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveCatalogIamMember("member", HiveCatalogIamMemberArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -822,8 +822,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveCatalog. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveCatalogIamPolicy`: Authoritative. Sets the IAM policy for the hivecatalog and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivecatalog are preserved.
-   * * `gcp.biglake.HiveCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivecatalog are preserved.
+   * * `gcp.biglake.HiveCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivecatalog are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivecatalog are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -871,8 +871,8 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveCatalogIamPolicy("policy", HiveCatalogIamPolicyArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -906,8 +906,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveCatalogIamBinding("binding", HiveCatalogIamBindingArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -942,8 +942,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveCatalogIamMember("member", HiveCatalogIamMemberArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -962,8 +962,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveCatalog. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveCatalogIamPolicy`: Authoritative. Sets the IAM policy for the hivecatalog and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivecatalog are preserved.
-   * * `gcp.biglake.HiveCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivecatalog are preserved.
+   * * `gcp.biglake.HiveCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivecatalog are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivecatalog are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1011,8 +1011,8 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveCatalogIamPolicy("policy", HiveCatalogIamPolicyArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1046,8 +1046,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveCatalogIamBinding("binding", HiveCatalogIamBindingArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1082,8 +1082,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveCatalogIamMember("member", HiveCatalogIamMemberArgs.builder()
-   *             .project(myHiveCatalog.project())
-   *             .name(myHiveCatalog.name())
+   *             .project(myHiveCatalog.get("project"))
+   *             .name(myHiveCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1157,8 +1157,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveDatabase. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the hivedatabase and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved.
-   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved.
+   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1206,9 +1206,9 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveDatabaseIamPolicy("policy", HiveDatabaseIamPolicyArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1242,9 +1242,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveDatabaseIamBinding("binding", HiveDatabaseIamBindingArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1279,9 +1279,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveDatabaseIamMember("member", HiveDatabaseIamMemberArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1300,8 +1300,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveDatabase. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the hivedatabase and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved.
-   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved.
+   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1349,9 +1349,9 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveDatabaseIamPolicy("policy", HiveDatabaseIamPolicyArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1385,9 +1385,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveDatabaseIamBinding("binding", HiveDatabaseIamBindingArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1422,9 +1422,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveDatabaseIamMember("member", HiveDatabaseIamMemberArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1485,8 +1485,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveDatabase. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the hivedatabase and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved.
-   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved.
+   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1534,9 +1534,9 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveDatabaseIamPolicy("policy", HiveDatabaseIamPolicyArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1570,9 +1570,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveDatabaseIamBinding("binding", HiveDatabaseIamBindingArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1607,9 +1607,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveDatabaseIamMember("member", HiveDatabaseIamMemberArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1628,8 +1628,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveDatabase. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the hivedatabase and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved.
-   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved.
+   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1677,9 +1677,9 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveDatabaseIamPolicy("policy", HiveDatabaseIamPolicyArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1713,9 +1713,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveDatabaseIamBinding("binding", HiveDatabaseIamBindingArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1750,9 +1750,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveDatabaseIamMember("member", HiveDatabaseIamMemberArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1813,8 +1813,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveDatabase. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the hivedatabase and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved.
-   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved.
+   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1862,9 +1862,9 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveDatabaseIamPolicy("policy", HiveDatabaseIamPolicyArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1898,9 +1898,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveDatabaseIamBinding("binding", HiveDatabaseIamBindingArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1935,9 +1935,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveDatabaseIamMember("member", HiveDatabaseIamMemberArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1956,8 +1956,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveDatabase. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the hivedatabase and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved.
-   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved.
+   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2005,9 +2005,9 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveDatabaseIamPolicy("policy", HiveDatabaseIamPolicyArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2041,9 +2041,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveDatabaseIamBinding("binding", HiveDatabaseIamBindingArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2078,9 +2078,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveDatabaseIamMember("member", HiveDatabaseIamMemberArgs.builder()
-   *             .project(myHiveDatabase.project())
-   *             .catalog(myHiveDatabase.catalog())
-   *             .name(myHiveDatabase.name())
+   *             .project(myHiveDatabase.get("project"))
+   *             .catalog(myHiveDatabase.get("catalog"))
+   *             .name(myHiveDatabase.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2172,8 +2172,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveTable. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveTableIamPolicy`: Authoritative. Sets the IAM policy for the hivetable and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivetable are preserved.
-   * * `gcp.biglake.HiveTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivetable are preserved.
+   * * `gcp.biglake.HiveTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivetable are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivetable are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2221,10 +2221,10 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveTableIamPolicy("policy", HiveTableIamPolicyArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2258,10 +2258,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveTableIamBinding("binding", HiveTableIamBindingArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2296,10 +2296,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveTableIamMember("member", HiveTableIamMemberArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2318,8 +2318,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveTable. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveTableIamPolicy`: Authoritative. Sets the IAM policy for the hivetable and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivetable are preserved.
-   * * `gcp.biglake.HiveTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivetable are preserved.
+   * * `gcp.biglake.HiveTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivetable are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivetable are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2367,10 +2367,10 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveTableIamPolicy("policy", HiveTableIamPolicyArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2404,10 +2404,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveTableIamBinding("binding", HiveTableIamBindingArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2442,10 +2442,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveTableIamMember("member", HiveTableIamMemberArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2506,8 +2506,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveTable. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveTableIamPolicy`: Authoritative. Sets the IAM policy for the hivetable and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivetable are preserved.
-   * * `gcp.biglake.HiveTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivetable are preserved.
+   * * `gcp.biglake.HiveTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivetable are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivetable are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2555,10 +2555,10 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveTableIamPolicy("policy", HiveTableIamPolicyArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2592,10 +2592,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveTableIamBinding("binding", HiveTableIamBindingArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2630,10 +2630,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveTableIamMember("member", HiveTableIamMemberArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2652,8 +2652,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveTable. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveTableIamPolicy`: Authoritative. Sets the IAM policy for the hivetable and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivetable are preserved.
-   * * `gcp.biglake.HiveTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivetable are preserved.
+   * * `gcp.biglake.HiveTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivetable are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivetable are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2701,10 +2701,10 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveTableIamPolicy("policy", HiveTableIamPolicyArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2738,10 +2738,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveTableIamBinding("binding", HiveTableIamBindingArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2776,10 +2776,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveTableIamMember("member", HiveTableIamMemberArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2840,8 +2840,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveTable. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveTableIamPolicy`: Authoritative. Sets the IAM policy for the hivetable and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivetable are preserved.
-   * * `gcp.biglake.HiveTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivetable are preserved.
+   * * `gcp.biglake.HiveTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivetable are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivetable are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2889,10 +2889,10 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveTableIamPolicy("policy", HiveTableIamPolicyArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2926,10 +2926,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveTableIamBinding("binding", HiveTableIamBindingArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2964,10 +2964,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveTableIamMember("member", HiveTableIamMemberArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2986,8 +2986,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveTable. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.HiveTableIamPolicy`: Authoritative. Sets the IAM policy for the hivetable and replaces any existing policy already attached.
-   * * `gcp.biglake.HiveTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivetable are preserved.
-   * * `gcp.biglake.HiveTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivetable are preserved.
+   * * `gcp.biglake.HiveTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivetable are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.HiveTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivetable are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3035,10 +3035,10 @@ object biglake:
    *             .build());
    * 
    *         var policy = new HiveTableIamPolicy("policy", HiveTableIamPolicyArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3072,10 +3072,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HiveTableIamBinding("binding", HiveTableIamBindingArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3110,10 +3110,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HiveTableIamMember("member", HiveTableIamMemberArgs.builder()
-   *             .project(myHiveTable.project())
-   *             .catalog(myHiveTable.catalog())
-   *             .database(myHiveTable.database())
-   *             .name(myHiveTable.name())
+   *             .project(myHiveTable.get("project"))
+   *             .catalog(myHiveTable.get("catalog"))
+   *             .database(myHiveTable.get("database"))
+   *             .name(myHiveTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3214,8 +3214,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergCatalog. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergCatalogIamPolicy`: Authoritative. Sets the IAM policy for the icebergcatalog and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergcatalog are preserved.
-   * * `gcp.biglake.IcebergCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergcatalog are preserved.
+   * * `gcp.biglake.IcebergCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergcatalog are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergcatalog are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3260,8 +3260,8 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergCatalogIamPolicy("policy", IcebergCatalogIamPolicyArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3295,8 +3295,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergCatalogIamBinding("binding", IcebergCatalogIamBindingArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3331,8 +3331,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergCatalogIamMember("member", IcebergCatalogIamMemberArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3351,8 +3351,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergCatalog. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergCatalogIamPolicy`: Authoritative. Sets the IAM policy for the icebergcatalog and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergcatalog are preserved.
-   * * `gcp.biglake.IcebergCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergcatalog are preserved.
+   * * `gcp.biglake.IcebergCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergcatalog are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergcatalog are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3397,8 +3397,8 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergCatalogIamPolicy("policy", IcebergCatalogIamPolicyArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3432,8 +3432,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergCatalogIamBinding("binding", IcebergCatalogIamBindingArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3468,8 +3468,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergCatalogIamMember("member", IcebergCatalogIamMemberArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3529,8 +3529,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergCatalog. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergCatalogIamPolicy`: Authoritative. Sets the IAM policy for the icebergcatalog and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergcatalog are preserved.
-   * * `gcp.biglake.IcebergCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergcatalog are preserved.
+   * * `gcp.biglake.IcebergCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergcatalog are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergcatalog are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3575,8 +3575,8 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergCatalogIamPolicy("policy", IcebergCatalogIamPolicyArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3610,8 +3610,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergCatalogIamBinding("binding", IcebergCatalogIamBindingArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3646,8 +3646,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergCatalogIamMember("member", IcebergCatalogIamMemberArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3666,8 +3666,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergCatalog. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergCatalogIamPolicy`: Authoritative. Sets the IAM policy for the icebergcatalog and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergcatalog are preserved.
-   * * `gcp.biglake.IcebergCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergcatalog are preserved.
+   * * `gcp.biglake.IcebergCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergcatalog are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergcatalog are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3712,8 +3712,8 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergCatalogIamPolicy("policy", IcebergCatalogIamPolicyArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3747,8 +3747,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergCatalogIamBinding("binding", IcebergCatalogIamBindingArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3783,8 +3783,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergCatalogIamMember("member", IcebergCatalogIamMemberArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3844,8 +3844,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergCatalog. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergCatalogIamPolicy`: Authoritative. Sets the IAM policy for the icebergcatalog and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergcatalog are preserved.
-   * * `gcp.biglake.IcebergCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergcatalog are preserved.
+   * * `gcp.biglake.IcebergCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergcatalog are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergcatalog are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3890,8 +3890,8 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergCatalogIamPolicy("policy", IcebergCatalogIamPolicyArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3925,8 +3925,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergCatalogIamBinding("binding", IcebergCatalogIamBindingArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3961,8 +3961,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergCatalogIamMember("member", IcebergCatalogIamMemberArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3981,8 +3981,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergCatalog. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergCatalogIamPolicy`: Authoritative. Sets the IAM policy for the icebergcatalog and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergcatalog are preserved.
-   * * `gcp.biglake.IcebergCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergcatalog are preserved.
+   * * `gcp.biglake.IcebergCatalogIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergcatalog are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergCatalogIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergcatalog are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4027,8 +4027,8 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergCatalogIamPolicy("policy", IcebergCatalogIamPolicyArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4062,8 +4062,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergCatalogIamBinding("binding", IcebergCatalogIamBindingArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4098,8 +4098,8 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergCatalogIamMember("member", IcebergCatalogIamMemberArgs.builder()
-   *             .project(myIcebergCatalog.project())
-   *             .name(myIcebergCatalog.name())
+   *             .project(myIcebergCatalog.get("project"))
+   *             .name(myIcebergCatalog.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4161,8 +4161,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergNamespace. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergNamespaceIamPolicy`: Authoritative. Sets the IAM policy for the icebergnamespace and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergNamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergnamespace are preserved.
-   * * `gcp.biglake.IcebergNamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergnamespace are preserved.
+   * * `gcp.biglake.IcebergNamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergnamespace are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergNamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergnamespace are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4207,9 +4207,9 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergNamespaceIamPolicy("policy", IcebergNamespaceIamPolicyArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4243,9 +4243,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergNamespaceIamBinding("binding", IcebergNamespaceIamBindingArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4280,9 +4280,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergNamespaceIamMember("member", IcebergNamespaceIamMemberArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4301,8 +4301,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergNamespace. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergNamespaceIamPolicy`: Authoritative. Sets the IAM policy for the icebergnamespace and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergNamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergnamespace are preserved.
-   * * `gcp.biglake.IcebergNamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergnamespace are preserved.
+   * * `gcp.biglake.IcebergNamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergnamespace are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergNamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergnamespace are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4347,9 +4347,9 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergNamespaceIamPolicy("policy", IcebergNamespaceIamPolicyArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4383,9 +4383,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergNamespaceIamBinding("binding", IcebergNamespaceIamBindingArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4420,9 +4420,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergNamespaceIamMember("member", IcebergNamespaceIamMemberArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4480,8 +4480,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergNamespace. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergNamespaceIamPolicy`: Authoritative. Sets the IAM policy for the icebergnamespace and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergNamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergnamespace are preserved.
-   * * `gcp.biglake.IcebergNamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergnamespace are preserved.
+   * * `gcp.biglake.IcebergNamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergnamespace are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergNamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergnamespace are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4526,9 +4526,9 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergNamespaceIamPolicy("policy", IcebergNamespaceIamPolicyArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4562,9 +4562,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergNamespaceIamBinding("binding", IcebergNamespaceIamBindingArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4599,9 +4599,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergNamespaceIamMember("member", IcebergNamespaceIamMemberArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4620,8 +4620,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergNamespace. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergNamespaceIamPolicy`: Authoritative. Sets the IAM policy for the icebergnamespace and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergNamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergnamespace are preserved.
-   * * `gcp.biglake.IcebergNamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergnamespace are preserved.
+   * * `gcp.biglake.IcebergNamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergnamespace are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergNamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergnamespace are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4666,9 +4666,9 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergNamespaceIamPolicy("policy", IcebergNamespaceIamPolicyArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4702,9 +4702,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergNamespaceIamBinding("binding", IcebergNamespaceIamBindingArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4739,9 +4739,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergNamespaceIamMember("member", IcebergNamespaceIamMemberArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4799,8 +4799,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergNamespace. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergNamespaceIamPolicy`: Authoritative. Sets the IAM policy for the icebergnamespace and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergNamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergnamespace are preserved.
-   * * `gcp.biglake.IcebergNamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergnamespace are preserved.
+   * * `gcp.biglake.IcebergNamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergnamespace are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergNamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergnamespace are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4845,9 +4845,9 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergNamespaceIamPolicy("policy", IcebergNamespaceIamPolicyArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -4881,9 +4881,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergNamespaceIamBinding("binding", IcebergNamespaceIamBindingArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4918,9 +4918,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergNamespaceIamMember("member", IcebergNamespaceIamMemberArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -4939,8 +4939,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergNamespace. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergNamespaceIamPolicy`: Authoritative. Sets the IAM policy for the icebergnamespace and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergNamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergnamespace are preserved.
-   * * `gcp.biglake.IcebergNamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergnamespace are preserved.
+   * * `gcp.biglake.IcebergNamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergnamespace are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergNamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergnamespace are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4985,9 +4985,9 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergNamespaceIamPolicy("policy", IcebergNamespaceIamPolicyArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5021,9 +5021,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergNamespaceIamBinding("binding", IcebergNamespaceIamBindingArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5058,9 +5058,9 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergNamespaceIamMember("member", IcebergNamespaceIamMemberArgs.builder()
-   *             .project(myIcebergNamespace.project())
-   *             .catalog(myIcebergNamespace.catalog())
-   *             .namespaceId(myIcebergNamespace.id())
+   *             .project(myIcebergNamespace.get("project"))
+   *             .catalog(myIcebergNamespace.get("catalog"))
+   *             .namespaceId(myIcebergNamespace.get("id"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5154,8 +5154,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergTable. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergTableIamPolicy`: Authoritative. Sets the IAM policy for the icebergtable and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergtable are preserved.
-   * * `gcp.biglake.IcebergTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergtable are preserved.
+   * * `gcp.biglake.IcebergTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergtable are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergtable are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5200,10 +5200,10 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergTableIamPolicy("policy", IcebergTableIamPolicyArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5237,10 +5237,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergTableIamBinding("binding", IcebergTableIamBindingArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5275,10 +5275,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergTableIamMember("member", IcebergTableIamMemberArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5297,8 +5297,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergTable. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergTableIamPolicy`: Authoritative. Sets the IAM policy for the icebergtable and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergtable are preserved.
-   * * `gcp.biglake.IcebergTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergtable are preserved.
+   * * `gcp.biglake.IcebergTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergtable are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergtable are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5343,10 +5343,10 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergTableIamPolicy("policy", IcebergTableIamPolicyArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5380,10 +5380,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergTableIamBinding("binding", IcebergTableIamBindingArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5418,10 +5418,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergTableIamMember("member", IcebergTableIamMemberArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5482,8 +5482,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergTable. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergTableIamPolicy`: Authoritative. Sets the IAM policy for the icebergtable and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergtable are preserved.
-   * * `gcp.biglake.IcebergTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergtable are preserved.
+   * * `gcp.biglake.IcebergTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergtable are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergtable are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5528,10 +5528,10 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergTableIamPolicy("policy", IcebergTableIamPolicyArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5565,10 +5565,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergTableIamBinding("binding", IcebergTableIamBindingArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5603,10 +5603,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergTableIamMember("member", IcebergTableIamMemberArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5625,8 +5625,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergTable. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergTableIamPolicy`: Authoritative. Sets the IAM policy for the icebergtable and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergtable are preserved.
-   * * `gcp.biglake.IcebergTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergtable are preserved.
+   * * `gcp.biglake.IcebergTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergtable are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergtable are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5671,10 +5671,10 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergTableIamPolicy("policy", IcebergTableIamPolicyArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5708,10 +5708,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergTableIamBinding("binding", IcebergTableIamBindingArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5746,10 +5746,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergTableIamMember("member", IcebergTableIamMemberArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5810,8 +5810,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergTable. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergTableIamPolicy`: Authoritative. Sets the IAM policy for the icebergtable and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergtable are preserved.
-   * * `gcp.biglake.IcebergTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergtable are preserved.
+   * * `gcp.biglake.IcebergTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergtable are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergtable are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5856,10 +5856,10 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergTableIamPolicy("policy", IcebergTableIamPolicyArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5893,10 +5893,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergTableIamBinding("binding", IcebergTableIamBindingArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5931,10 +5931,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergTableIamMember("member", IcebergTableIamMemberArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5953,8 +5953,8 @@ object biglake:
    * Three different resources help you manage your IAM policy for Biglake IcebergTable. Each of these resources serves a different use case:
    * 
    * * `gcp.biglake.IcebergTableIamPolicy`: Authoritative. Sets the IAM policy for the icebergtable and replaces any existing policy already attached.
-   * * `gcp.biglake.IcebergTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergtable are preserved.
-   * * `gcp.biglake.IcebergTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergtable are preserved.
+   * * `gcp.biglake.IcebergTableIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the icebergtable are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.biglake.IcebergTableIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the icebergtable are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5999,10 +5999,10 @@ object biglake:
    *             .build());
    * 
    *         var policy = new IcebergTableIamPolicy("policy", IcebergTableIamPolicyArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6036,10 +6036,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new IcebergTableIamBinding("binding", IcebergTableIamBindingArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6074,10 +6074,10 @@ object biglake:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new IcebergTableIamMember("member", IcebergTableIamMemberArgs.builder()
-   *             .project(myIcebergTable.project())
-   *             .catalog(myIcebergTable.catalog())
-   *             .namespace(myIcebergTable.namespace())
-   *             .name(myIcebergTable.name())
+   *             .project(myIcebergTable.get("project"))
+   *             .catalog(myIcebergTable.get("catalog"))
+   *             .namespace(myIcebergTable.get("namespace"))
+   *             .name(myIcebergTable.get("name"))
    *             .role("roles/biglake.editor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

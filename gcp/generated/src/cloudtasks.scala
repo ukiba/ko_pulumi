@@ -96,8 +96,8 @@ object cloudtasks:
    * Three different resources help you manage your IAM policy for Cloud Tasks Queue. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudtasks.QueueIamPolicy`: Authoritative. Sets the IAM policy for the queue and replaces any existing policy already attached.
-   * * `gcp.cloudtasks.QueueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the queue are preserved.
-   * * `gcp.cloudtasks.QueueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the queue are preserved.
+   * * `gcp.cloudtasks.QueueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the queue are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudtasks.QueueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the queue are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -142,9 +142,9 @@ object cloudtasks:
    *             .build());
    * 
    *         var policy = new QueueIamPolicy("policy", QueueIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -178,9 +178,9 @@ object cloudtasks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new QueueIamBinding("binding", QueueIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -215,9 +215,9 @@ object cloudtasks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new QueueIamMember("member", QueueIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -236,8 +236,8 @@ object cloudtasks:
    * Three different resources help you manage your IAM policy for Cloud Tasks Queue. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudtasks.QueueIamPolicy`: Authoritative. Sets the IAM policy for the queue and replaces any existing policy already attached.
-   * * `gcp.cloudtasks.QueueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the queue are preserved.
-   * * `gcp.cloudtasks.QueueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the queue are preserved.
+   * * `gcp.cloudtasks.QueueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the queue are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudtasks.QueueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the queue are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -282,9 +282,9 @@ object cloudtasks:
    *             .build());
    * 
    *         var policy = new QueueIamPolicy("policy", QueueIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -318,9 +318,9 @@ object cloudtasks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new QueueIamBinding("binding", QueueIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -355,9 +355,9 @@ object cloudtasks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new QueueIamMember("member", QueueIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -418,8 +418,8 @@ object cloudtasks:
    * Three different resources help you manage your IAM policy for Cloud Tasks Queue. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudtasks.QueueIamPolicy`: Authoritative. Sets the IAM policy for the queue and replaces any existing policy already attached.
-   * * `gcp.cloudtasks.QueueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the queue are preserved.
-   * * `gcp.cloudtasks.QueueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the queue are preserved.
+   * * `gcp.cloudtasks.QueueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the queue are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudtasks.QueueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the queue are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -464,9 +464,9 @@ object cloudtasks:
    *             .build());
    * 
    *         var policy = new QueueIamPolicy("policy", QueueIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -500,9 +500,9 @@ object cloudtasks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new QueueIamBinding("binding", QueueIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -537,9 +537,9 @@ object cloudtasks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new QueueIamMember("member", QueueIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -558,8 +558,8 @@ object cloudtasks:
    * Three different resources help you manage your IAM policy for Cloud Tasks Queue. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudtasks.QueueIamPolicy`: Authoritative. Sets the IAM policy for the queue and replaces any existing policy already attached.
-   * * `gcp.cloudtasks.QueueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the queue are preserved.
-   * * `gcp.cloudtasks.QueueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the queue are preserved.
+   * * `gcp.cloudtasks.QueueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the queue are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudtasks.QueueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the queue are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -604,9 +604,9 @@ object cloudtasks:
    *             .build());
    * 
    *         var policy = new QueueIamPolicy("policy", QueueIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -640,9 +640,9 @@ object cloudtasks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new QueueIamBinding("binding", QueueIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -677,9 +677,9 @@ object cloudtasks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new QueueIamMember("member", QueueIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -740,8 +740,8 @@ object cloudtasks:
    * Three different resources help you manage your IAM policy for Cloud Tasks Queue. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudtasks.QueueIamPolicy`: Authoritative. Sets the IAM policy for the queue and replaces any existing policy already attached.
-   * * `gcp.cloudtasks.QueueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the queue are preserved.
-   * * `gcp.cloudtasks.QueueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the queue are preserved.
+   * * `gcp.cloudtasks.QueueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the queue are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudtasks.QueueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the queue are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -786,9 +786,9 @@ object cloudtasks:
    *             .build());
    * 
    *         var policy = new QueueIamPolicy("policy", QueueIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -822,9 +822,9 @@ object cloudtasks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new QueueIamBinding("binding", QueueIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -859,9 +859,9 @@ object cloudtasks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new QueueIamMember("member", QueueIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -880,8 +880,8 @@ object cloudtasks:
    * Three different resources help you manage your IAM policy for Cloud Tasks Queue. Each of these resources serves a different use case:
    * 
    * * `gcp.cloudtasks.QueueIamPolicy`: Authoritative. Sets the IAM policy for the queue and replaces any existing policy already attached.
-   * * `gcp.cloudtasks.QueueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the queue are preserved.
-   * * `gcp.cloudtasks.QueueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the queue are preserved.
+   * * `gcp.cloudtasks.QueueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the queue are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.cloudtasks.QueueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the queue are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -926,9 +926,9 @@ object cloudtasks:
    *             .build());
    * 
    *         var policy = new QueueIamPolicy("policy", QueueIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -962,9 +962,9 @@ object cloudtasks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new QueueIamBinding("binding", QueueIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -999,9 +999,9 @@ object cloudtasks:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new QueueIamMember("member", QueueIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

@@ -50,7 +50,7 @@ object s3tables:
       builder.maintenanceConfiguration(args(argsBuilder).build)
 
     /**
-     * @param metadata Contains details about the table metadata. This configuration specifies the metadata format and schema for the table. Currently only supports Iceberg format. See `metadata` below.
+     * @param metadata Details about the table metadata. This configuration specifies the metadata format and schema for the table. Currently only supports Iceberg format. See `metadata` below.
      * @return builder
      */
     def metadata(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMetadataArgs.Builder]):
@@ -250,7 +250,7 @@ object s3tables:
 
   extension (builder: com.pulumi.aws.s3tables.inputs.TableMetadataArgs.Builder)
     /**
-     * @param iceberg Contains details about the metadata for an Iceberg table. This block defines the schema structure for the Apache Iceberg table format. See `iceberg` below.
+     * @param iceberg Details about the metadata for an Iceberg table. This block defines the schema structure for the Apache Iceberg table format. See `iceberg` below.
      * @return builder
      */
     def iceberg(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMetadataIcebergArgs.Builder]):
@@ -318,7 +318,7 @@ object s3tables:
       builder.maintenanceConfiguration(args(argsBuilder).build)
 
     /**
-     * @param metadata Contains details about the table metadata. This configuration specifies the metadata format and schema for the table. Currently only supports Iceberg format. See `metadata` below.
+     * @param metadata Details about the table metadata. This configuration specifies the metadata format and schema for the table. Currently only supports Iceberg format. See `metadata` below.
      * @return builder
      */
     def metadata(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMetadataArgs.Builder]):

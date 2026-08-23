@@ -967,6 +967,17 @@ object oracledatabase:
 
   extension (builder: com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterState.Builder)
     /**
+     * @param identityConnectors The identity connector details which will allow OCI to securely access
+     * the resources in the customer project.
+     * Structure is documented below.
+     * @return builder
+     */
+    def identityConnectors(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterIdentityConnectorArgs.Builder]*):
+        com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterState.Builder =
+      def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterIdentityConnectorArgs.builder
+      builder.identityConnectors(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param properties The properties of an ExadbVmCluster.
      * Structure is documented below.
      * @return builder

@@ -54,8 +54,8 @@ object bigquerydatapolicy:
    * Three different resources help you manage your IAM policy for BigQuery Data Policy DataPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.bigquerydatapolicy.DataPolicyIamPolicy`: Authoritative. Sets the IAM policy for the datapolicy and replaces any existing policy already attached.
-   * * `gcp.bigquerydatapolicy.DataPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datapolicy are preserved.
-   * * `gcp.bigquerydatapolicy.DataPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datapolicy are preserved.
+   * * `gcp.bigquerydatapolicy.DataPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datapolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigquerydatapolicy.DataPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datapolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -100,9 +100,9 @@ object bigquerydatapolicy:
    *             .build());
    * 
    *         var policy = new DataPolicyIamPolicy("policy", DataPolicyIamPolicyArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -136,9 +136,9 @@ object bigquerydatapolicy:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataPolicyIamBinding("binding", DataPolicyIamBindingArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -173,9 +173,9 @@ object bigquerydatapolicy:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataPolicyIamMember("member", DataPolicyIamMemberArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -194,8 +194,8 @@ object bigquerydatapolicy:
    * Three different resources help you manage your IAM policy for BigQuery Data Policy DataPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.bigquerydatapolicy.DataPolicyIamPolicy`: Authoritative. Sets the IAM policy for the datapolicy and replaces any existing policy already attached.
-   * * `gcp.bigquerydatapolicy.DataPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datapolicy are preserved.
-   * * `gcp.bigquerydatapolicy.DataPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datapolicy are preserved.
+   * * `gcp.bigquerydatapolicy.DataPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datapolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigquerydatapolicy.DataPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datapolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -240,9 +240,9 @@ object bigquerydatapolicy:
    *             .build());
    * 
    *         var policy = new DataPolicyIamPolicy("policy", DataPolicyIamPolicyArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -276,9 +276,9 @@ object bigquerydatapolicy:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataPolicyIamBinding("binding", DataPolicyIamBindingArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -313,9 +313,9 @@ object bigquerydatapolicy:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataPolicyIamMember("member", DataPolicyIamMemberArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -373,8 +373,8 @@ object bigquerydatapolicy:
    * Three different resources help you manage your IAM policy for BigQuery Data Policy DataPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.bigquerydatapolicy.DataPolicyIamPolicy`: Authoritative. Sets the IAM policy for the datapolicy and replaces any existing policy already attached.
-   * * `gcp.bigquerydatapolicy.DataPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datapolicy are preserved.
-   * * `gcp.bigquerydatapolicy.DataPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datapolicy are preserved.
+   * * `gcp.bigquerydatapolicy.DataPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datapolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigquerydatapolicy.DataPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datapolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -419,9 +419,9 @@ object bigquerydatapolicy:
    *             .build());
    * 
    *         var policy = new DataPolicyIamPolicy("policy", DataPolicyIamPolicyArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -455,9 +455,9 @@ object bigquerydatapolicy:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataPolicyIamBinding("binding", DataPolicyIamBindingArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -492,9 +492,9 @@ object bigquerydatapolicy:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataPolicyIamMember("member", DataPolicyIamMemberArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -513,8 +513,8 @@ object bigquerydatapolicy:
    * Three different resources help you manage your IAM policy for BigQuery Data Policy DataPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.bigquerydatapolicy.DataPolicyIamPolicy`: Authoritative. Sets the IAM policy for the datapolicy and replaces any existing policy already attached.
-   * * `gcp.bigquerydatapolicy.DataPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datapolicy are preserved.
-   * * `gcp.bigquerydatapolicy.DataPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datapolicy are preserved.
+   * * `gcp.bigquerydatapolicy.DataPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datapolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigquerydatapolicy.DataPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datapolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -559,9 +559,9 @@ object bigquerydatapolicy:
    *             .build());
    * 
    *         var policy = new DataPolicyIamPolicy("policy", DataPolicyIamPolicyArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -595,9 +595,9 @@ object bigquerydatapolicy:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataPolicyIamBinding("binding", DataPolicyIamBindingArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -632,9 +632,9 @@ object bigquerydatapolicy:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataPolicyIamMember("member", DataPolicyIamMemberArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -692,8 +692,8 @@ object bigquerydatapolicy:
    * Three different resources help you manage your IAM policy for BigQuery Data Policy DataPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.bigquerydatapolicy.DataPolicyIamPolicy`: Authoritative. Sets the IAM policy for the datapolicy and replaces any existing policy already attached.
-   * * `gcp.bigquerydatapolicy.DataPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datapolicy are preserved.
-   * * `gcp.bigquerydatapolicy.DataPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datapolicy are preserved.
+   * * `gcp.bigquerydatapolicy.DataPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datapolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigquerydatapolicy.DataPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datapolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -738,9 +738,9 @@ object bigquerydatapolicy:
    *             .build());
    * 
    *         var policy = new DataPolicyIamPolicy("policy", DataPolicyIamPolicyArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -774,9 +774,9 @@ object bigquerydatapolicy:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataPolicyIamBinding("binding", DataPolicyIamBindingArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -811,9 +811,9 @@ object bigquerydatapolicy:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataPolicyIamMember("member", DataPolicyIamMemberArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -832,8 +832,8 @@ object bigquerydatapolicy:
    * Three different resources help you manage your IAM policy for BigQuery Data Policy DataPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.bigquerydatapolicy.DataPolicyIamPolicy`: Authoritative. Sets the IAM policy for the datapolicy and replaces any existing policy already attached.
-   * * `gcp.bigquerydatapolicy.DataPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datapolicy are preserved.
-   * * `gcp.bigquerydatapolicy.DataPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datapolicy are preserved.
+   * * `gcp.bigquerydatapolicy.DataPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the datapolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.bigquerydatapolicy.DataPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the datapolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -878,9 +878,9 @@ object bigquerydatapolicy:
    *             .build());
    * 
    *         var policy = new DataPolicyIamPolicy("policy", DataPolicyIamPolicyArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -914,9 +914,9 @@ object bigquerydatapolicy:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DataPolicyIamBinding("binding", DataPolicyIamBindingArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -951,9 +951,9 @@ object bigquerydatapolicy:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DataPolicyIamMember("member", DataPolicyIamMemberArgs.builder()
-   *             .project(dataPolicy.project())
-   *             .location(dataPolicy.location())
-   *             .dataPolicyId(dataPolicy.dataPolicyId())
+   *             .project(dataPolicy.get("project"))
+   *             .location(dataPolicy.get("location"))
+   *             .dataPolicyId(dataPolicy.get("dataPolicyId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

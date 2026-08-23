@@ -65,12 +65,9 @@ object iam:
    * that allow or deny access to resources within the specified folder based on principals and conditions.
    * See the Cloud IAM documentation for more details on Access Policies.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about FolderAccessPolicy, see:
    * 
-   * * [API documentation](https://cloud.google.com/iam/docs/reference/rest/v3beta/folders.locations.accessPolicies)
+   * * [API documentation](https://cloud.google.com/iam/docs/reference/rest/v3/folders.locations.accessPolicies)
    */
   def FolderAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.iam.FolderAccessPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -298,6 +295,18 @@ object iam:
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolIamPolicyPlainArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolIamPolicyPlain(args(argsBuilder).build)
 
+    /** Get the OpenID provider configuration (`/.well-known/openid-configuration`) for an Agent Workload Identity Pool from Google Cloud. */
+    inline def getWorkloadIdentityPoolOpenidConfig(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolOpenidConfigResult] =
+      val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigArgs.builder
+      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolOpenidConfig(args(argsBuilder).build)
+
+    /** Get the OpenID provider configuration (`/.well-known/openid-configuration`) for an Agent Workload Identity Pool from Google Cloud. */
+    inline def getWorkloadIdentityPoolOpenidConfigPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolOpenidConfigResult] =
+      val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigPlainArgs.builder
+      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolOpenidConfigPlain(args(argsBuilder).build)
+
     /**
      * Get a IAM workload identity provider from Google Cloud by its id.
      * 
@@ -361,12 +370,9 @@ object iam:
    * defines rules that allow or deny access to resources within the specified organization based on principals and conditions.
    * See the Cloud IAM documentation for more details on Access Policies.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about OrganizationAccessPolicy, see:
    * 
-   * * [API documentation](https://cloud.google.com/iam/docs/reference/rest/v3beta/organizations.locations.accessPolicies)
+   * * [API documentation](https://cloud.google.com/iam/docs/reference/rest/v3/organizations.locations.accessPolicies)
    */
   def OrganizationAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.iam.OrganizationAccessPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -481,12 +487,9 @@ object iam:
    * that allow or deny access to resources within the specified project based on principals and conditions.
    * See the Cloud IAM documentation for more details on Access Policies.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about ProjectAccessPolicy, see:
    * 
-   * * [API documentation](https://cloud.google.com/iam/docs/reference/rest/v3beta/projects.locations.accessPolicies)
+   * * [API documentation](https://cloud.google.com/iam/docs/reference/rest/v3/projects.locations.accessPolicies)
    */
   def ProjectAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.iam.ProjectAccessPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -601,8 +604,8 @@ object iam:
    * Three different resources help you manage your IAM policy for Cloud IAM WorkforcePool. Each of these resources serves a different use case:
    * 
    * * `gcp.iam.WorkforcePoolIamPolicy`: Authoritative. Sets the IAM policy for the workforcepool and replaces any existing policy already attached.
-   * * `gcp.iam.WorkforcePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workforcepool are preserved.
-   * * `gcp.iam.WorkforcePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workforcepool are preserved.
+   * * `gcp.iam.WorkforcePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workforcepool are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iam.WorkforcePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workforcepool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -647,8 +650,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkforcePoolIamPolicy("policy", WorkforcePoolIamPolicyArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -682,8 +685,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkforcePoolIamBinding("binding", WorkforcePoolIamBindingArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .role("roles/iam.workforcePoolAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -718,8 +721,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkforcePoolIamMember("member", WorkforcePoolIamMemberArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .role("roles/iam.workforcePoolAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -739,8 +742,8 @@ object iam:
    * Three different resources help you manage your IAM policy for Cloud IAM WorkforcePool. Each of these resources serves a different use case:
    * 
    * * `gcp.iam.WorkforcePoolIamPolicy`: Authoritative. Sets the IAM policy for the workforcepool and replaces any existing policy already attached.
-   * * `gcp.iam.WorkforcePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workforcepool are preserved.
-   * * `gcp.iam.WorkforcePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workforcepool are preserved.
+   * * `gcp.iam.WorkforcePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workforcepool are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iam.WorkforcePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workforcepool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -785,8 +788,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkforcePoolIamPolicy("policy", WorkforcePoolIamPolicyArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -820,8 +823,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkforcePoolIamBinding("binding", WorkforcePoolIamBindingArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .role("roles/iam.workforcePoolAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -856,8 +859,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkforcePoolIamMember("member", WorkforcePoolIamMemberArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .role("roles/iam.workforcePoolAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -914,8 +917,8 @@ object iam:
    * Three different resources help you manage your IAM policy for Cloud IAM WorkforcePool. Each of these resources serves a different use case:
    * 
    * * `gcp.iam.WorkforcePoolIamPolicy`: Authoritative. Sets the IAM policy for the workforcepool and replaces any existing policy already attached.
-   * * `gcp.iam.WorkforcePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workforcepool are preserved.
-   * * `gcp.iam.WorkforcePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workforcepool are preserved.
+   * * `gcp.iam.WorkforcePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workforcepool are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iam.WorkforcePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workforcepool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -960,8 +963,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkforcePoolIamPolicy("policy", WorkforcePoolIamPolicyArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -995,8 +998,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkforcePoolIamBinding("binding", WorkforcePoolIamBindingArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .role("roles/iam.workforcePoolAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1031,8 +1034,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkforcePoolIamMember("member", WorkforcePoolIamMemberArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .role("roles/iam.workforcePoolAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1052,8 +1055,8 @@ object iam:
    * Three different resources help you manage your IAM policy for Cloud IAM WorkforcePool. Each of these resources serves a different use case:
    * 
    * * `gcp.iam.WorkforcePoolIamPolicy`: Authoritative. Sets the IAM policy for the workforcepool and replaces any existing policy already attached.
-   * * `gcp.iam.WorkforcePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workforcepool are preserved.
-   * * `gcp.iam.WorkforcePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workforcepool are preserved.
+   * * `gcp.iam.WorkforcePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workforcepool are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iam.WorkforcePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workforcepool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1098,8 +1101,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkforcePoolIamPolicy("policy", WorkforcePoolIamPolicyArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1133,8 +1136,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkforcePoolIamBinding("binding", WorkforcePoolIamBindingArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .role("roles/iam.workforcePoolAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1169,8 +1172,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkforcePoolIamMember("member", WorkforcePoolIamMemberArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .role("roles/iam.workforcePoolAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1227,8 +1230,8 @@ object iam:
    * Three different resources help you manage your IAM policy for Cloud IAM WorkforcePool. Each of these resources serves a different use case:
    * 
    * * `gcp.iam.WorkforcePoolIamPolicy`: Authoritative. Sets the IAM policy for the workforcepool and replaces any existing policy already attached.
-   * * `gcp.iam.WorkforcePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workforcepool are preserved.
-   * * `gcp.iam.WorkforcePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workforcepool are preserved.
+   * * `gcp.iam.WorkforcePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workforcepool are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iam.WorkforcePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workforcepool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1273,8 +1276,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkforcePoolIamPolicy("policy", WorkforcePoolIamPolicyArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1308,8 +1311,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkforcePoolIamBinding("binding", WorkforcePoolIamBindingArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .role("roles/iam.workforcePoolAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1344,8 +1347,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkforcePoolIamMember("member", WorkforcePoolIamMemberArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .role("roles/iam.workforcePoolAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1365,8 +1368,8 @@ object iam:
    * Three different resources help you manage your IAM policy for Cloud IAM WorkforcePool. Each of these resources serves a different use case:
    * 
    * * `gcp.iam.WorkforcePoolIamPolicy`: Authoritative. Sets the IAM policy for the workforcepool and replaces any existing policy already attached.
-   * * `gcp.iam.WorkforcePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workforcepool are preserved.
-   * * `gcp.iam.WorkforcePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workforcepool are preserved.
+   * * `gcp.iam.WorkforcePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workforcepool are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iam.WorkforcePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workforcepool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1411,8 +1414,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkforcePoolIamPolicy("policy", WorkforcePoolIamPolicyArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1446,8 +1449,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkforcePoolIamBinding("binding", WorkforcePoolIamBindingArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .role("roles/iam.workforcePoolAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1482,8 +1485,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkforcePoolIamMember("member", WorkforcePoolIamMemberArgs.builder()
-   *             .location(example.location())
-   *             .workforcePoolId(example.workforcePoolId())
+   *             .location(example.get("location"))
+   *             .workforcePoolId(example.get("workforcePoolId"))
    *             .role("roles/iam.workforcePoolAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1734,8 +1737,8 @@ object iam:
    * Three different resources help you manage your IAM policy for Cloud IAM WorkloadIdentityPool. Each of these resources serves a different use case:
    * 
    * * `gcp.iam.WorkloadIdentityPoolIamPolicy`: Authoritative. Sets the IAM policy for the workloadidentitypool and replaces any existing policy already attached.
-   * * `gcp.iam.WorkloadIdentityPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workloadidentitypool are preserved.
-   * * `gcp.iam.WorkloadIdentityPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workloadidentitypool are preserved.
+   * * `gcp.iam.WorkloadIdentityPoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the workloadidentitypool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iam.WorkloadIdentityPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the workloadidentitypool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1743,7 +1746,7 @@ object iam:
    * 
    * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamPolicy` **cannot** be used in conjunction with `gcp.iam.WorkloadIdentityPoolIamBinding` and `gcp.iam.WorkloadIdentityPoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamBinding` resources **can be** used in conjunction with `gcp.iam.WorkloadIdentityPoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamBinding` resources **can be** used in conjunction with `gcp.iam.WorkloadIdentityPoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1782,8 +1785,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkloadIdentityPoolIamPolicy("policy", WorkloadIdentityPoolIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1833,8 +1836,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkloadIdentityPoolIamPolicy("policy", WorkloadIdentityPoolIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1867,8 +1870,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkloadIdentityPoolIamBinding("binding", WorkloadIdentityPoolIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1904,8 +1907,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkloadIdentityPoolIamBinding("binding", WorkloadIdentityPoolIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WorkloadIdentityPoolIamBindingConditionArgs.builder()
@@ -1944,8 +1947,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkloadIdentityPoolIamMember("member", WorkloadIdentityPoolIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1981,8 +1984,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkloadIdentityPoolIamMember("member", WorkloadIdentityPoolIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WorkloadIdentityPoolIamMemberConditionArgs.builder()
@@ -2006,8 +2009,8 @@ object iam:
    * Three different resources help you manage your IAM policy for Cloud IAM WorkloadIdentityPool. Each of these resources serves a different use case:
    * 
    * * `gcp.iam.WorkloadIdentityPoolIamPolicy`: Authoritative. Sets the IAM policy for the workloadidentitypool and replaces any existing policy already attached.
-   * * `gcp.iam.WorkloadIdentityPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workloadidentitypool are preserved.
-   * * `gcp.iam.WorkloadIdentityPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workloadidentitypool are preserved.
+   * * `gcp.iam.WorkloadIdentityPoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the workloadidentitypool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iam.WorkloadIdentityPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the workloadidentitypool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2015,7 +2018,7 @@ object iam:
    * 
    * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamPolicy` **cannot** be used in conjunction with `gcp.iam.WorkloadIdentityPoolIamBinding` and `gcp.iam.WorkloadIdentityPoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamBinding` resources **can be** used in conjunction with `gcp.iam.WorkloadIdentityPoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamBinding` resources **can be** used in conjunction with `gcp.iam.WorkloadIdentityPoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2054,8 +2057,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkloadIdentityPoolIamPolicy("policy", WorkloadIdentityPoolIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2105,8 +2108,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkloadIdentityPoolIamPolicy("policy", WorkloadIdentityPoolIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2139,8 +2142,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkloadIdentityPoolIamBinding("binding", WorkloadIdentityPoolIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2176,8 +2179,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkloadIdentityPoolIamBinding("binding", WorkloadIdentityPoolIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WorkloadIdentityPoolIamBindingConditionArgs.builder()
@@ -2216,8 +2219,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkloadIdentityPoolIamMember("member", WorkloadIdentityPoolIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2253,8 +2256,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkloadIdentityPoolIamMember("member", WorkloadIdentityPoolIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WorkloadIdentityPoolIamMemberConditionArgs.builder()
@@ -2321,8 +2324,8 @@ object iam:
    * Three different resources help you manage your IAM policy for Cloud IAM WorkloadIdentityPool. Each of these resources serves a different use case:
    * 
    * * `gcp.iam.WorkloadIdentityPoolIamPolicy`: Authoritative. Sets the IAM policy for the workloadidentitypool and replaces any existing policy already attached.
-   * * `gcp.iam.WorkloadIdentityPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workloadidentitypool are preserved.
-   * * `gcp.iam.WorkloadIdentityPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workloadidentitypool are preserved.
+   * * `gcp.iam.WorkloadIdentityPoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the workloadidentitypool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iam.WorkloadIdentityPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the workloadidentitypool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2330,7 +2333,7 @@ object iam:
    * 
    * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamPolicy` **cannot** be used in conjunction with `gcp.iam.WorkloadIdentityPoolIamBinding` and `gcp.iam.WorkloadIdentityPoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamBinding` resources **can be** used in conjunction with `gcp.iam.WorkloadIdentityPoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamBinding` resources **can be** used in conjunction with `gcp.iam.WorkloadIdentityPoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2369,8 +2372,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkloadIdentityPoolIamPolicy("policy", WorkloadIdentityPoolIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2420,8 +2423,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkloadIdentityPoolIamPolicy("policy", WorkloadIdentityPoolIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2454,8 +2457,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkloadIdentityPoolIamBinding("binding", WorkloadIdentityPoolIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2491,8 +2494,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkloadIdentityPoolIamBinding("binding", WorkloadIdentityPoolIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WorkloadIdentityPoolIamBindingConditionArgs.builder()
@@ -2531,8 +2534,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkloadIdentityPoolIamMember("member", WorkloadIdentityPoolIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2568,8 +2571,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkloadIdentityPoolIamMember("member", WorkloadIdentityPoolIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WorkloadIdentityPoolIamMemberConditionArgs.builder()
@@ -2593,8 +2596,8 @@ object iam:
    * Three different resources help you manage your IAM policy for Cloud IAM WorkloadIdentityPool. Each of these resources serves a different use case:
    * 
    * * `gcp.iam.WorkloadIdentityPoolIamPolicy`: Authoritative. Sets the IAM policy for the workloadidentitypool and replaces any existing policy already attached.
-   * * `gcp.iam.WorkloadIdentityPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workloadidentitypool are preserved.
-   * * `gcp.iam.WorkloadIdentityPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workloadidentitypool are preserved.
+   * * `gcp.iam.WorkloadIdentityPoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the workloadidentitypool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iam.WorkloadIdentityPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the workloadidentitypool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2602,7 +2605,7 @@ object iam:
    * 
    * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamPolicy` **cannot** be used in conjunction with `gcp.iam.WorkloadIdentityPoolIamBinding` and `gcp.iam.WorkloadIdentityPoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamBinding` resources **can be** used in conjunction with `gcp.iam.WorkloadIdentityPoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamBinding` resources **can be** used in conjunction with `gcp.iam.WorkloadIdentityPoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2641,8 +2644,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkloadIdentityPoolIamPolicy("policy", WorkloadIdentityPoolIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2692,8 +2695,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkloadIdentityPoolIamPolicy("policy", WorkloadIdentityPoolIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2726,8 +2729,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkloadIdentityPoolIamBinding("binding", WorkloadIdentityPoolIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2763,8 +2766,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkloadIdentityPoolIamBinding("binding", WorkloadIdentityPoolIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WorkloadIdentityPoolIamBindingConditionArgs.builder()
@@ -2803,8 +2806,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkloadIdentityPoolIamMember("member", WorkloadIdentityPoolIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2840,8 +2843,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkloadIdentityPoolIamMember("member", WorkloadIdentityPoolIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WorkloadIdentityPoolIamMemberConditionArgs.builder()
@@ -2908,8 +2911,8 @@ object iam:
    * Three different resources help you manage your IAM policy for Cloud IAM WorkloadIdentityPool. Each of these resources serves a different use case:
    * 
    * * `gcp.iam.WorkloadIdentityPoolIamPolicy`: Authoritative. Sets the IAM policy for the workloadidentitypool and replaces any existing policy already attached.
-   * * `gcp.iam.WorkloadIdentityPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workloadidentitypool are preserved.
-   * * `gcp.iam.WorkloadIdentityPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workloadidentitypool are preserved.
+   * * `gcp.iam.WorkloadIdentityPoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the workloadidentitypool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iam.WorkloadIdentityPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the workloadidentitypool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2917,7 +2920,7 @@ object iam:
    * 
    * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamPolicy` **cannot** be used in conjunction with `gcp.iam.WorkloadIdentityPoolIamBinding` and `gcp.iam.WorkloadIdentityPoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamBinding` resources **can be** used in conjunction with `gcp.iam.WorkloadIdentityPoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamBinding` resources **can be** used in conjunction with `gcp.iam.WorkloadIdentityPoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2956,8 +2959,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkloadIdentityPoolIamPolicy("policy", WorkloadIdentityPoolIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3007,8 +3010,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkloadIdentityPoolIamPolicy("policy", WorkloadIdentityPoolIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3041,8 +3044,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkloadIdentityPoolIamBinding("binding", WorkloadIdentityPoolIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3078,8 +3081,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkloadIdentityPoolIamBinding("binding", WorkloadIdentityPoolIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WorkloadIdentityPoolIamBindingConditionArgs.builder()
@@ -3118,8 +3121,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkloadIdentityPoolIamMember("member", WorkloadIdentityPoolIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3155,8 +3158,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkloadIdentityPoolIamMember("member", WorkloadIdentityPoolIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WorkloadIdentityPoolIamMemberConditionArgs.builder()
@@ -3180,8 +3183,8 @@ object iam:
    * Three different resources help you manage your IAM policy for Cloud IAM WorkloadIdentityPool. Each of these resources serves a different use case:
    * 
    * * `gcp.iam.WorkloadIdentityPoolIamPolicy`: Authoritative. Sets the IAM policy for the workloadidentitypool and replaces any existing policy already attached.
-   * * `gcp.iam.WorkloadIdentityPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workloadidentitypool are preserved.
-   * * `gcp.iam.WorkloadIdentityPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workloadidentitypool are preserved.
+   * * `gcp.iam.WorkloadIdentityPoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the workloadidentitypool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iam.WorkloadIdentityPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the workloadidentitypool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3189,7 +3192,7 @@ object iam:
    * 
    * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamPolicy` **cannot** be used in conjunction with `gcp.iam.WorkloadIdentityPoolIamBinding` and `gcp.iam.WorkloadIdentityPoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamBinding` resources **can be** used in conjunction with `gcp.iam.WorkloadIdentityPoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iam.WorkloadIdentityPoolIamBinding` resources **can be** used in conjunction with `gcp.iam.WorkloadIdentityPoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -3228,8 +3231,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkloadIdentityPoolIamPolicy("policy", WorkloadIdentityPoolIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3279,8 +3282,8 @@ object iam:
    *             .build());
    * 
    *         var policy = new WorkloadIdentityPoolIamPolicy("policy", WorkloadIdentityPoolIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3313,8 +3316,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkloadIdentityPoolIamBinding("binding", WorkloadIdentityPoolIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3350,8 +3353,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkloadIdentityPoolIamBinding("binding", WorkloadIdentityPoolIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WorkloadIdentityPoolIamBindingConditionArgs.builder()
@@ -3390,8 +3393,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkloadIdentityPoolIamMember("member", WorkloadIdentityPoolIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3427,8 +3430,8 @@ object iam:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkloadIdentityPoolIamMember("member", WorkloadIdentityPoolIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .workloadIdentityPoolId(example.workloadIdentityPoolId())
+   *             .project(example.get("project"))
+   *             .workloadIdentityPoolId(example.get("workloadIdentityPoolId"))
    *             .role("roles/iam.workloadIdentityPoolViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WorkloadIdentityPoolIamMemberConditionArgs.builder()

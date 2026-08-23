@@ -189,8 +189,8 @@ object gemini:
    * Three different resources help you manage your IAM policy for Gemini for Google Cloud RepositoryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.gemini.RepositoryGroupIamPolicy`: Authoritative. Sets the IAM policy for the repositorygroup and replaces any existing policy already attached.
-   * * `gcp.gemini.RepositoryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repositorygroup are preserved.
-   * * `gcp.gemini.RepositoryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repositorygroup are preserved.
+   * * `gcp.gemini.RepositoryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repositorygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gemini.RepositoryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repositorygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -235,10 +235,10 @@ object gemini:
    *             .build());
    * 
    *         var policy = new RepositoryGroupIamPolicy("policy", RepositoryGroupIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -272,10 +272,10 @@ object gemini:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RepositoryGroupIamBinding("binding", RepositoryGroupIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .role("roles/cloudaicompanion.repositoryGroupsUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -310,10 +310,10 @@ object gemini:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RepositoryGroupIamMember("member", RepositoryGroupIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .role("roles/cloudaicompanion.repositoryGroupsUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -332,8 +332,8 @@ object gemini:
    * Three different resources help you manage your IAM policy for Gemini for Google Cloud RepositoryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.gemini.RepositoryGroupIamPolicy`: Authoritative. Sets the IAM policy for the repositorygroup and replaces any existing policy already attached.
-   * * `gcp.gemini.RepositoryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repositorygroup are preserved.
-   * * `gcp.gemini.RepositoryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repositorygroup are preserved.
+   * * `gcp.gemini.RepositoryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repositorygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gemini.RepositoryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repositorygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -378,10 +378,10 @@ object gemini:
    *             .build());
    * 
    *         var policy = new RepositoryGroupIamPolicy("policy", RepositoryGroupIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -415,10 +415,10 @@ object gemini:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RepositoryGroupIamBinding("binding", RepositoryGroupIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .role("roles/cloudaicompanion.repositoryGroupsUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -453,10 +453,10 @@ object gemini:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RepositoryGroupIamMember("member", RepositoryGroupIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .role("roles/cloudaicompanion.repositoryGroupsUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -514,8 +514,8 @@ object gemini:
    * Three different resources help you manage your IAM policy for Gemini for Google Cloud RepositoryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.gemini.RepositoryGroupIamPolicy`: Authoritative. Sets the IAM policy for the repositorygroup and replaces any existing policy already attached.
-   * * `gcp.gemini.RepositoryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repositorygroup are preserved.
-   * * `gcp.gemini.RepositoryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repositorygroup are preserved.
+   * * `gcp.gemini.RepositoryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repositorygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gemini.RepositoryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repositorygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -560,10 +560,10 @@ object gemini:
    *             .build());
    * 
    *         var policy = new RepositoryGroupIamPolicy("policy", RepositoryGroupIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -597,10 +597,10 @@ object gemini:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RepositoryGroupIamBinding("binding", RepositoryGroupIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .role("roles/cloudaicompanion.repositoryGroupsUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -635,10 +635,10 @@ object gemini:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RepositoryGroupIamMember("member", RepositoryGroupIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .role("roles/cloudaicompanion.repositoryGroupsUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -657,8 +657,8 @@ object gemini:
    * Three different resources help you manage your IAM policy for Gemini for Google Cloud RepositoryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.gemini.RepositoryGroupIamPolicy`: Authoritative. Sets the IAM policy for the repositorygroup and replaces any existing policy already attached.
-   * * `gcp.gemini.RepositoryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repositorygroup are preserved.
-   * * `gcp.gemini.RepositoryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repositorygroup are preserved.
+   * * `gcp.gemini.RepositoryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repositorygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gemini.RepositoryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repositorygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -703,10 +703,10 @@ object gemini:
    *             .build());
    * 
    *         var policy = new RepositoryGroupIamPolicy("policy", RepositoryGroupIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -740,10 +740,10 @@ object gemini:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RepositoryGroupIamBinding("binding", RepositoryGroupIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .role("roles/cloudaicompanion.repositoryGroupsUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -778,10 +778,10 @@ object gemini:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RepositoryGroupIamMember("member", RepositoryGroupIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .role("roles/cloudaicompanion.repositoryGroupsUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -839,8 +839,8 @@ object gemini:
    * Three different resources help you manage your IAM policy for Gemini for Google Cloud RepositoryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.gemini.RepositoryGroupIamPolicy`: Authoritative. Sets the IAM policy for the repositorygroup and replaces any existing policy already attached.
-   * * `gcp.gemini.RepositoryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repositorygroup are preserved.
-   * * `gcp.gemini.RepositoryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repositorygroup are preserved.
+   * * `gcp.gemini.RepositoryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repositorygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gemini.RepositoryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repositorygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -885,10 +885,10 @@ object gemini:
    *             .build());
    * 
    *         var policy = new RepositoryGroupIamPolicy("policy", RepositoryGroupIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -922,10 +922,10 @@ object gemini:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RepositoryGroupIamBinding("binding", RepositoryGroupIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .role("roles/cloudaicompanion.repositoryGroupsUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -960,10 +960,10 @@ object gemini:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RepositoryGroupIamMember("member", RepositoryGroupIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .role("roles/cloudaicompanion.repositoryGroupsUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -982,8 +982,8 @@ object gemini:
    * Three different resources help you manage your IAM policy for Gemini for Google Cloud RepositoryGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.gemini.RepositoryGroupIamPolicy`: Authoritative. Sets the IAM policy for the repositorygroup and replaces any existing policy already attached.
-   * * `gcp.gemini.RepositoryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repositorygroup are preserved.
-   * * `gcp.gemini.RepositoryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repositorygroup are preserved.
+   * * `gcp.gemini.RepositoryGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repositorygroup are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gemini.RepositoryGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repositorygroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1028,10 +1028,10 @@ object gemini:
    *             .build());
    * 
    *         var policy = new RepositoryGroupIamPolicy("policy", RepositoryGroupIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1065,10 +1065,10 @@ object gemini:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RepositoryGroupIamBinding("binding", RepositoryGroupIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .role("roles/cloudaicompanion.repositoryGroupsUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1103,10 +1103,10 @@ object gemini:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RepositoryGroupIamMember("member", RepositoryGroupIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .codeRepositoryIndex(example.codeRepositoryIndex())
-   *             .repositoryGroupId(example.repositoryGroupId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .codeRepositoryIndex(example.get("codeRepositoryIndex"))
+   *             .repositoryGroupId(example.get("repositoryGroupId"))
    *             .role("roles/cloudaicompanion.repositoryGroupsUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

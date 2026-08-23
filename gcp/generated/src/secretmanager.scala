@@ -65,8 +65,8 @@ object secretmanager:
    * Three different resources help you manage your IAM policy for Secret Manager RegionalSecret. Each of these resources serves a different use case:
    * 
    * * `gcp.secretmanager.RegionalSecretIamPolicy`: Authoritative. Sets the IAM policy for the regionalsecret and replaces any existing policy already attached.
-   * * `gcp.secretmanager.RegionalSecretIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionalsecret are preserved.
-   * * `gcp.secretmanager.RegionalSecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionalsecret are preserved.
+   * * `gcp.secretmanager.RegionalSecretIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionalsecret are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.secretmanager.RegionalSecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionalsecret are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -74,7 +74,7 @@ object secretmanager:
    * 
    * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamPolicy` **cannot** be used in conjunction with `gcp.secretmanager.RegionalSecretIamBinding` and `gcp.secretmanager.RegionalSecretIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.RegionalSecretIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.RegionalSecretIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -113,9 +113,9 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new RegionalSecretIamPolicy("policy", RegionalSecretIamPolicyArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -165,9 +165,9 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new RegionalSecretIamPolicy("policy", RegionalSecretIamPolicyArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -200,9 +200,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionalSecretIamBinding("binding", RegionalSecretIamBindingArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -238,9 +238,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionalSecretIamBinding("binding", RegionalSecretIamBindingArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionalSecretIamBindingConditionArgs.builder()
@@ -279,9 +279,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionalSecretIamMember("member", RegionalSecretIamMemberArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -317,9 +317,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionalSecretIamMember("member", RegionalSecretIamMemberArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionalSecretIamMemberConditionArgs.builder()
@@ -343,8 +343,8 @@ object secretmanager:
    * Three different resources help you manage your IAM policy for Secret Manager RegionalSecret. Each of these resources serves a different use case:
    * 
    * * `gcp.secretmanager.RegionalSecretIamPolicy`: Authoritative. Sets the IAM policy for the regionalsecret and replaces any existing policy already attached.
-   * * `gcp.secretmanager.RegionalSecretIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionalsecret are preserved.
-   * * `gcp.secretmanager.RegionalSecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionalsecret are preserved.
+   * * `gcp.secretmanager.RegionalSecretIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionalsecret are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.secretmanager.RegionalSecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionalsecret are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -352,7 +352,7 @@ object secretmanager:
    * 
    * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamPolicy` **cannot** be used in conjunction with `gcp.secretmanager.RegionalSecretIamBinding` and `gcp.secretmanager.RegionalSecretIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.RegionalSecretIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.RegionalSecretIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -391,9 +391,9 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new RegionalSecretIamPolicy("policy", RegionalSecretIamPolicyArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -443,9 +443,9 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new RegionalSecretIamPolicy("policy", RegionalSecretIamPolicyArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -478,9 +478,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionalSecretIamBinding("binding", RegionalSecretIamBindingArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -516,9 +516,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionalSecretIamBinding("binding", RegionalSecretIamBindingArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionalSecretIamBindingConditionArgs.builder()
@@ -557,9 +557,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionalSecretIamMember("member", RegionalSecretIamMemberArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -595,9 +595,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionalSecretIamMember("member", RegionalSecretIamMemberArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionalSecretIamMemberConditionArgs.builder()
@@ -665,8 +665,8 @@ object secretmanager:
    * Three different resources help you manage your IAM policy for Secret Manager RegionalSecret. Each of these resources serves a different use case:
    * 
    * * `gcp.secretmanager.RegionalSecretIamPolicy`: Authoritative. Sets the IAM policy for the regionalsecret and replaces any existing policy already attached.
-   * * `gcp.secretmanager.RegionalSecretIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionalsecret are preserved.
-   * * `gcp.secretmanager.RegionalSecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionalsecret are preserved.
+   * * `gcp.secretmanager.RegionalSecretIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionalsecret are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.secretmanager.RegionalSecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionalsecret are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -674,7 +674,7 @@ object secretmanager:
    * 
    * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamPolicy` **cannot** be used in conjunction with `gcp.secretmanager.RegionalSecretIamBinding` and `gcp.secretmanager.RegionalSecretIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.RegionalSecretIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.RegionalSecretIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -713,9 +713,9 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new RegionalSecretIamPolicy("policy", RegionalSecretIamPolicyArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -765,9 +765,9 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new RegionalSecretIamPolicy("policy", RegionalSecretIamPolicyArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -800,9 +800,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionalSecretIamBinding("binding", RegionalSecretIamBindingArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -838,9 +838,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionalSecretIamBinding("binding", RegionalSecretIamBindingArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionalSecretIamBindingConditionArgs.builder()
@@ -879,9 +879,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionalSecretIamMember("member", RegionalSecretIamMemberArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -917,9 +917,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionalSecretIamMember("member", RegionalSecretIamMemberArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionalSecretIamMemberConditionArgs.builder()
@@ -943,8 +943,8 @@ object secretmanager:
    * Three different resources help you manage your IAM policy for Secret Manager RegionalSecret. Each of these resources serves a different use case:
    * 
    * * `gcp.secretmanager.RegionalSecretIamPolicy`: Authoritative. Sets the IAM policy for the regionalsecret and replaces any existing policy already attached.
-   * * `gcp.secretmanager.RegionalSecretIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionalsecret are preserved.
-   * * `gcp.secretmanager.RegionalSecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionalsecret are preserved.
+   * * `gcp.secretmanager.RegionalSecretIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionalsecret are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.secretmanager.RegionalSecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionalsecret are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -952,7 +952,7 @@ object secretmanager:
    * 
    * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamPolicy` **cannot** be used in conjunction with `gcp.secretmanager.RegionalSecretIamBinding` and `gcp.secretmanager.RegionalSecretIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.RegionalSecretIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.RegionalSecretIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -991,9 +991,9 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new RegionalSecretIamPolicy("policy", RegionalSecretIamPolicyArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1043,9 +1043,9 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new RegionalSecretIamPolicy("policy", RegionalSecretIamPolicyArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1078,9 +1078,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionalSecretIamBinding("binding", RegionalSecretIamBindingArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1116,9 +1116,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionalSecretIamBinding("binding", RegionalSecretIamBindingArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionalSecretIamBindingConditionArgs.builder()
@@ -1157,9 +1157,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionalSecretIamMember("member", RegionalSecretIamMemberArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1195,9 +1195,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionalSecretIamMember("member", RegionalSecretIamMemberArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionalSecretIamMemberConditionArgs.builder()
@@ -1265,8 +1265,8 @@ object secretmanager:
    * Three different resources help you manage your IAM policy for Secret Manager RegionalSecret. Each of these resources serves a different use case:
    * 
    * * `gcp.secretmanager.RegionalSecretIamPolicy`: Authoritative. Sets the IAM policy for the regionalsecret and replaces any existing policy already attached.
-   * * `gcp.secretmanager.RegionalSecretIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionalsecret are preserved.
-   * * `gcp.secretmanager.RegionalSecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionalsecret are preserved.
+   * * `gcp.secretmanager.RegionalSecretIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionalsecret are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.secretmanager.RegionalSecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionalsecret are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1274,7 +1274,7 @@ object secretmanager:
    * 
    * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamPolicy` **cannot** be used in conjunction with `gcp.secretmanager.RegionalSecretIamBinding` and `gcp.secretmanager.RegionalSecretIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.RegionalSecretIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.RegionalSecretIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1313,9 +1313,9 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new RegionalSecretIamPolicy("policy", RegionalSecretIamPolicyArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1365,9 +1365,9 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new RegionalSecretIamPolicy("policy", RegionalSecretIamPolicyArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1400,9 +1400,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionalSecretIamBinding("binding", RegionalSecretIamBindingArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1438,9 +1438,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionalSecretIamBinding("binding", RegionalSecretIamBindingArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionalSecretIamBindingConditionArgs.builder()
@@ -1479,9 +1479,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionalSecretIamMember("member", RegionalSecretIamMemberArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1517,9 +1517,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionalSecretIamMember("member", RegionalSecretIamMemberArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionalSecretIamMemberConditionArgs.builder()
@@ -1543,8 +1543,8 @@ object secretmanager:
    * Three different resources help you manage your IAM policy for Secret Manager RegionalSecret. Each of these resources serves a different use case:
    * 
    * * `gcp.secretmanager.RegionalSecretIamPolicy`: Authoritative. Sets the IAM policy for the regionalsecret and replaces any existing policy already attached.
-   * * `gcp.secretmanager.RegionalSecretIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionalsecret are preserved.
-   * * `gcp.secretmanager.RegionalSecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionalsecret are preserved.
+   * * `gcp.secretmanager.RegionalSecretIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionalsecret are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.secretmanager.RegionalSecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionalsecret are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1552,7 +1552,7 @@ object secretmanager:
    * 
    * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamPolicy` **cannot** be used in conjunction with `gcp.secretmanager.RegionalSecretIamBinding` and `gcp.secretmanager.RegionalSecretIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.RegionalSecretIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.secretmanager.RegionalSecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.RegionalSecretIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1591,9 +1591,9 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new RegionalSecretIamPolicy("policy", RegionalSecretIamPolicyArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1643,9 +1643,9 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new RegionalSecretIamPolicy("policy", RegionalSecretIamPolicyArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1678,9 +1678,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionalSecretIamBinding("binding", RegionalSecretIamBindingArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1716,9 +1716,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionalSecretIamBinding("binding", RegionalSecretIamBindingArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionalSecretIamBindingConditionArgs.builder()
@@ -1757,9 +1757,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionalSecretIamMember("member", RegionalSecretIamMemberArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1795,9 +1795,9 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionalSecretIamMember("member", RegionalSecretIamMemberArgs.builder()
-   *             .project(regional_secret_basic.project())
-   *             .location(regional_secret_basic.location())
-   *             .secretId(regional_secret_basic.secretId())
+   *             .project(regional_secret_basic.get("project"))
+   *             .location(regional_secret_basic.get("location"))
+   *             .secretId(regional_secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionalSecretIamMemberConditionArgs.builder()
@@ -1931,8 +1931,8 @@ object secretmanager:
    * Three different resources help you manage your IAM policy for Secret Manager Secret. Each of these resources serves a different use case:
    * 
    * * `gcp.secretmanager.SecretIamPolicy`: Authoritative. Sets the IAM policy for the secret and replaces any existing policy already attached.
-   * * `gcp.secretmanager.SecretIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the secret are preserved.
-   * * `gcp.secretmanager.SecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the secret are preserved.
+   * * `gcp.secretmanager.SecretIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the secret are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.secretmanager.SecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the secret are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1940,7 +1940,7 @@ object secretmanager:
    * 
    * &gt; **Note:** `gcp.secretmanager.SecretIamPolicy` **cannot** be used in conjunction with `gcp.secretmanager.SecretIamBinding` and `gcp.secretmanager.SecretIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.secretmanager.SecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.SecretIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.secretmanager.SecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.SecretIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1979,8 +1979,8 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new SecretIamPolicy("policy", SecretIamPolicyArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2030,8 +2030,8 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new SecretIamPolicy("policy", SecretIamPolicyArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2064,8 +2064,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecretIamBinding("binding", SecretIamBindingArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2101,8 +2101,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecretIamBinding("binding", SecretIamBindingArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecretIamBindingConditionArgs.builder()
@@ -2141,8 +2141,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecretIamMember("member", SecretIamMemberArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2178,8 +2178,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecretIamMember("member", SecretIamMemberArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecretIamMemberConditionArgs.builder()
@@ -2203,8 +2203,8 @@ object secretmanager:
    * Three different resources help you manage your IAM policy for Secret Manager Secret. Each of these resources serves a different use case:
    * 
    * * `gcp.secretmanager.SecretIamPolicy`: Authoritative. Sets the IAM policy for the secret and replaces any existing policy already attached.
-   * * `gcp.secretmanager.SecretIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the secret are preserved.
-   * * `gcp.secretmanager.SecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the secret are preserved.
+   * * `gcp.secretmanager.SecretIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the secret are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.secretmanager.SecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the secret are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2212,7 +2212,7 @@ object secretmanager:
    * 
    * &gt; **Note:** `gcp.secretmanager.SecretIamPolicy` **cannot** be used in conjunction with `gcp.secretmanager.SecretIamBinding` and `gcp.secretmanager.SecretIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.secretmanager.SecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.SecretIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.secretmanager.SecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.SecretIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2251,8 +2251,8 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new SecretIamPolicy("policy", SecretIamPolicyArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2302,8 +2302,8 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new SecretIamPolicy("policy", SecretIamPolicyArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2336,8 +2336,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecretIamBinding("binding", SecretIamBindingArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2373,8 +2373,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecretIamBinding("binding", SecretIamBindingArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecretIamBindingConditionArgs.builder()
@@ -2413,8 +2413,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecretIamMember("member", SecretIamMemberArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2450,8 +2450,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecretIamMember("member", SecretIamMemberArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecretIamMemberConditionArgs.builder()
@@ -2518,8 +2518,8 @@ object secretmanager:
    * Three different resources help you manage your IAM policy for Secret Manager Secret. Each of these resources serves a different use case:
    * 
    * * `gcp.secretmanager.SecretIamPolicy`: Authoritative. Sets the IAM policy for the secret and replaces any existing policy already attached.
-   * * `gcp.secretmanager.SecretIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the secret are preserved.
-   * * `gcp.secretmanager.SecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the secret are preserved.
+   * * `gcp.secretmanager.SecretIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the secret are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.secretmanager.SecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the secret are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2527,7 +2527,7 @@ object secretmanager:
    * 
    * &gt; **Note:** `gcp.secretmanager.SecretIamPolicy` **cannot** be used in conjunction with `gcp.secretmanager.SecretIamBinding` and `gcp.secretmanager.SecretIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.secretmanager.SecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.SecretIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.secretmanager.SecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.SecretIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2566,8 +2566,8 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new SecretIamPolicy("policy", SecretIamPolicyArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2617,8 +2617,8 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new SecretIamPolicy("policy", SecretIamPolicyArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2651,8 +2651,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecretIamBinding("binding", SecretIamBindingArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2688,8 +2688,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecretIamBinding("binding", SecretIamBindingArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecretIamBindingConditionArgs.builder()
@@ -2728,8 +2728,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecretIamMember("member", SecretIamMemberArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2765,8 +2765,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecretIamMember("member", SecretIamMemberArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecretIamMemberConditionArgs.builder()
@@ -2790,8 +2790,8 @@ object secretmanager:
    * Three different resources help you manage your IAM policy for Secret Manager Secret. Each of these resources serves a different use case:
    * 
    * * `gcp.secretmanager.SecretIamPolicy`: Authoritative. Sets the IAM policy for the secret and replaces any existing policy already attached.
-   * * `gcp.secretmanager.SecretIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the secret are preserved.
-   * * `gcp.secretmanager.SecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the secret are preserved.
+   * * `gcp.secretmanager.SecretIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the secret are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.secretmanager.SecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the secret are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2799,7 +2799,7 @@ object secretmanager:
    * 
    * &gt; **Note:** `gcp.secretmanager.SecretIamPolicy` **cannot** be used in conjunction with `gcp.secretmanager.SecretIamBinding` and `gcp.secretmanager.SecretIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.secretmanager.SecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.SecretIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.secretmanager.SecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.SecretIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2838,8 +2838,8 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new SecretIamPolicy("policy", SecretIamPolicyArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2889,8 +2889,8 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new SecretIamPolicy("policy", SecretIamPolicyArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2923,8 +2923,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecretIamBinding("binding", SecretIamBindingArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2960,8 +2960,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecretIamBinding("binding", SecretIamBindingArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecretIamBindingConditionArgs.builder()
@@ -3000,8 +3000,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecretIamMember("member", SecretIamMemberArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3037,8 +3037,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecretIamMember("member", SecretIamMemberArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecretIamMemberConditionArgs.builder()
@@ -3105,8 +3105,8 @@ object secretmanager:
    * Three different resources help you manage your IAM policy for Secret Manager Secret. Each of these resources serves a different use case:
    * 
    * * `gcp.secretmanager.SecretIamPolicy`: Authoritative. Sets the IAM policy for the secret and replaces any existing policy already attached.
-   * * `gcp.secretmanager.SecretIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the secret are preserved.
-   * * `gcp.secretmanager.SecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the secret are preserved.
+   * * `gcp.secretmanager.SecretIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the secret are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.secretmanager.SecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the secret are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3114,7 +3114,7 @@ object secretmanager:
    * 
    * &gt; **Note:** `gcp.secretmanager.SecretIamPolicy` **cannot** be used in conjunction with `gcp.secretmanager.SecretIamBinding` and `gcp.secretmanager.SecretIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.secretmanager.SecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.SecretIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.secretmanager.SecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.SecretIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -3153,8 +3153,8 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new SecretIamPolicy("policy", SecretIamPolicyArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3204,8 +3204,8 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new SecretIamPolicy("policy", SecretIamPolicyArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3238,8 +3238,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecretIamBinding("binding", SecretIamBindingArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3275,8 +3275,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecretIamBinding("binding", SecretIamBindingArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecretIamBindingConditionArgs.builder()
@@ -3315,8 +3315,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecretIamMember("member", SecretIamMemberArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3352,8 +3352,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecretIamMember("member", SecretIamMemberArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecretIamMemberConditionArgs.builder()
@@ -3377,8 +3377,8 @@ object secretmanager:
    * Three different resources help you manage your IAM policy for Secret Manager Secret. Each of these resources serves a different use case:
    * 
    * * `gcp.secretmanager.SecretIamPolicy`: Authoritative. Sets the IAM policy for the secret and replaces any existing policy already attached.
-   * * `gcp.secretmanager.SecretIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the secret are preserved.
-   * * `gcp.secretmanager.SecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the secret are preserved.
+   * * `gcp.secretmanager.SecretIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the secret are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.secretmanager.SecretIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the secret are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3386,7 +3386,7 @@ object secretmanager:
    * 
    * &gt; **Note:** `gcp.secretmanager.SecretIamPolicy` **cannot** be used in conjunction with `gcp.secretmanager.SecretIamBinding` and `gcp.secretmanager.SecretIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.secretmanager.SecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.SecretIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.secretmanager.SecretIamBinding` resources **can be** used in conjunction with `gcp.secretmanager.SecretIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -3425,8 +3425,8 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new SecretIamPolicy("policy", SecretIamPolicyArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3476,8 +3476,8 @@ object secretmanager:
    *             .build());
    * 
    *         var policy = new SecretIamPolicy("policy", SecretIamPolicyArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3510,8 +3510,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecretIamBinding("binding", SecretIamBindingArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3547,8 +3547,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecretIamBinding("binding", SecretIamBindingArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecretIamBindingConditionArgs.builder()
@@ -3587,8 +3587,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecretIamMember("member", SecretIamMemberArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3624,8 +3624,8 @@ object secretmanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecretIamMember("member", SecretIamMemberArgs.builder()
-   *             .project(secret_basic.project())
-   *             .secretId(secret_basic.secretId())
+   *             .project(secret_basic.get("project"))
+   *             .secretId(secret_basic.get("secretId"))
    *             .role("roles/secretmanager.secretAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecretIamMemberConditionArgs.builder()

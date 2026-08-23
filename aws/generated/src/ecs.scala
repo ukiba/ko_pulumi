@@ -1131,7 +1131,7 @@ object ecs:
 
   extension (builder: com.pulumi.aws.ecs.inputs.ExpressGatewayServiceState.Builder)
     /**
-     * @param ingressPaths List of ingress paths with access type and endpoint information.
+     * @param ingressPaths List of ingress paths for the service. See `ingressPaths` Block below.
      * @return builder
      */
     def ingressPaths(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServiceIngressPathArgs.Builder]*):

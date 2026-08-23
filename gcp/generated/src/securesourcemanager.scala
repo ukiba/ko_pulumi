@@ -143,12 +143,22 @@ object securesourcemanager:
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryInitialConfigArgs.builder
       builder.initialConfig(args(argsBuilder).build)
 
+    /**
+     * @param scanConfig Provides configuration for scanning.
+     * Structure is documented below.
+     * @return builder
+     */
+    def scanConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.Builder]):
+        com.pulumi.gcp.securesourcemanager.RepositoryArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.builder
+      builder.scanConfig(args(argsBuilder).build)
+
   /**
    * Three different resources help you manage your IAM policy for Secure Source Manager Repository. Each of these resources serves a different use case:
    * 
    * * `gcp.securesourcemanager.RepositoryIamPolicy`: Authoritative. Sets the IAM policy for the repository and replaces any existing policy already attached.
-   * * `gcp.securesourcemanager.RepositoryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repository are preserved.
-   * * `gcp.securesourcemanager.RepositoryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repository are preserved.
+   * * `gcp.securesourcemanager.RepositoryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repository are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.securesourcemanager.RepositoryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repository are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -193,9 +203,9 @@ object securesourcemanager:
    *             .build());
    * 
    *         var policy = new RepositoryIamPolicy("policy", RepositoryIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -229,9 +239,9 @@ object securesourcemanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RepositoryIamBinding("binding", RepositoryIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .role("roles/securesourcemanager.repoAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -266,9 +276,9 @@ object securesourcemanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RepositoryIamMember("member", RepositoryIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .role("roles/securesourcemanager.repoAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -287,8 +297,8 @@ object securesourcemanager:
    * Three different resources help you manage your IAM policy for Secure Source Manager Repository. Each of these resources serves a different use case:
    * 
    * * `gcp.securesourcemanager.RepositoryIamPolicy`: Authoritative. Sets the IAM policy for the repository and replaces any existing policy already attached.
-   * * `gcp.securesourcemanager.RepositoryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repository are preserved.
-   * * `gcp.securesourcemanager.RepositoryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repository are preserved.
+   * * `gcp.securesourcemanager.RepositoryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repository are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.securesourcemanager.RepositoryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repository are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -333,9 +343,9 @@ object securesourcemanager:
    *             .build());
    * 
    *         var policy = new RepositoryIamPolicy("policy", RepositoryIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -369,9 +379,9 @@ object securesourcemanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RepositoryIamBinding("binding", RepositoryIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .role("roles/securesourcemanager.repoAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -406,9 +416,9 @@ object securesourcemanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RepositoryIamMember("member", RepositoryIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .role("roles/securesourcemanager.repoAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -466,8 +476,8 @@ object securesourcemanager:
    * Three different resources help you manage your IAM policy for Secure Source Manager Repository. Each of these resources serves a different use case:
    * 
    * * `gcp.securesourcemanager.RepositoryIamPolicy`: Authoritative. Sets the IAM policy for the repository and replaces any existing policy already attached.
-   * * `gcp.securesourcemanager.RepositoryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repository are preserved.
-   * * `gcp.securesourcemanager.RepositoryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repository are preserved.
+   * * `gcp.securesourcemanager.RepositoryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repository are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.securesourcemanager.RepositoryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repository are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -512,9 +522,9 @@ object securesourcemanager:
    *             .build());
    * 
    *         var policy = new RepositoryIamPolicy("policy", RepositoryIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -548,9 +558,9 @@ object securesourcemanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RepositoryIamBinding("binding", RepositoryIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .role("roles/securesourcemanager.repoAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -585,9 +595,9 @@ object securesourcemanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RepositoryIamMember("member", RepositoryIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .role("roles/securesourcemanager.repoAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -606,8 +616,8 @@ object securesourcemanager:
    * Three different resources help you manage your IAM policy for Secure Source Manager Repository. Each of these resources serves a different use case:
    * 
    * * `gcp.securesourcemanager.RepositoryIamPolicy`: Authoritative. Sets the IAM policy for the repository and replaces any existing policy already attached.
-   * * `gcp.securesourcemanager.RepositoryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repository are preserved.
-   * * `gcp.securesourcemanager.RepositoryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repository are preserved.
+   * * `gcp.securesourcemanager.RepositoryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repository are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.securesourcemanager.RepositoryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repository are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -652,9 +662,9 @@ object securesourcemanager:
    *             .build());
    * 
    *         var policy = new RepositoryIamPolicy("policy", RepositoryIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -688,9 +698,9 @@ object securesourcemanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RepositoryIamBinding("binding", RepositoryIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .role("roles/securesourcemanager.repoAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -725,9 +735,9 @@ object securesourcemanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RepositoryIamMember("member", RepositoryIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .role("roles/securesourcemanager.repoAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -785,8 +795,8 @@ object securesourcemanager:
    * Three different resources help you manage your IAM policy for Secure Source Manager Repository. Each of these resources serves a different use case:
    * 
    * * `gcp.securesourcemanager.RepositoryIamPolicy`: Authoritative. Sets the IAM policy for the repository and replaces any existing policy already attached.
-   * * `gcp.securesourcemanager.RepositoryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repository are preserved.
-   * * `gcp.securesourcemanager.RepositoryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repository are preserved.
+   * * `gcp.securesourcemanager.RepositoryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repository are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.securesourcemanager.RepositoryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repository are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -831,9 +841,9 @@ object securesourcemanager:
    *             .build());
    * 
    *         var policy = new RepositoryIamPolicy("policy", RepositoryIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -867,9 +877,9 @@ object securesourcemanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RepositoryIamBinding("binding", RepositoryIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .role("roles/securesourcemanager.repoAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -904,9 +914,9 @@ object securesourcemanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RepositoryIamMember("member", RepositoryIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .role("roles/securesourcemanager.repoAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -925,8 +935,8 @@ object securesourcemanager:
    * Three different resources help you manage your IAM policy for Secure Source Manager Repository. Each of these resources serves a different use case:
    * 
    * * `gcp.securesourcemanager.RepositoryIamPolicy`: Authoritative. Sets the IAM policy for the repository and replaces any existing policy already attached.
-   * * `gcp.securesourcemanager.RepositoryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repository are preserved.
-   * * `gcp.securesourcemanager.RepositoryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repository are preserved.
+   * * `gcp.securesourcemanager.RepositoryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the repository are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.securesourcemanager.RepositoryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the repository are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -971,9 +981,9 @@ object securesourcemanager:
    *             .build());
    * 
    *         var policy = new RepositoryIamPolicy("policy", RepositoryIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1007,9 +1017,9 @@ object securesourcemanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RepositoryIamBinding("binding", RepositoryIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .role("roles/securesourcemanager.repoAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1044,9 +1054,9 @@ object securesourcemanager:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RepositoryIamMember("member", RepositoryIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .repositoryId(default_.repositoryId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .repositoryId(default_.get("repositoryId"))
    *             .role("roles/securesourcemanager.repoAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1203,6 +1213,17 @@ object securesourcemanager:
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.Builder)
+    /**
+     * @param secretScanConfig Configuration for secret scanning.
+     * Structure is documented below.
+     * @return builder
+     */
+    def secretScanConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigSecretScanConfigArgs.Builder]):
+        com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigSecretScanConfigArgs.builder
+      builder.secretScanConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.securesourcemanager.inputs.RepositoryState.Builder)
     /**
      * @param initialConfig Initial configurations for the repository.
@@ -1213,6 +1234,16 @@ object securesourcemanager:
         com.pulumi.gcp.securesourcemanager.inputs.RepositoryState.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryInitialConfigArgs.builder
       builder.initialConfig(args(argsBuilder).build)
+
+    /**
+     * @param scanConfig Provides configuration for scanning.
+     * Structure is documented below.
+     * @return builder
+     */
+    def scanConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.Builder]):
+        com.pulumi.gcp.securesourcemanager.inputs.RepositoryState.Builder =
+      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.builder
+      builder.scanConfig(args(argsBuilder).build)
 
     /**
      * @param uris URIs for the repository.

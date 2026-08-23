@@ -89,8 +89,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway ApiConfig. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.ApiConfigIamPolicy`: Authoritative. Sets the IAM policy for the apiconfig and replaces any existing policy already attached.
-   * * `gcp.apigateway.ApiConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the apiconfig are preserved.
-   * * `gcp.apigateway.ApiConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the apiconfig are preserved.
+   * * `gcp.apigateway.ApiConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the apiconfig are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.ApiConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the apiconfig are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -138,8 +138,8 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new ApiConfigIamPolicy("policy", ApiConfigIamPolicyArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -173,8 +173,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ApiConfigIamBinding("binding", ApiConfigIamBindingArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -209,8 +209,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ApiConfigIamMember("member", ApiConfigIamMemberArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -229,8 +229,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway ApiConfig. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.ApiConfigIamPolicy`: Authoritative. Sets the IAM policy for the apiconfig and replaces any existing policy already attached.
-   * * `gcp.apigateway.ApiConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the apiconfig are preserved.
-   * * `gcp.apigateway.ApiConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the apiconfig are preserved.
+   * * `gcp.apigateway.ApiConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the apiconfig are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.ApiConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the apiconfig are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -278,8 +278,8 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new ApiConfigIamPolicy("policy", ApiConfigIamPolicyArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -313,8 +313,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ApiConfigIamBinding("binding", ApiConfigIamBindingArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -349,8 +349,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ApiConfigIamMember("member", ApiConfigIamMemberArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -408,8 +408,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway ApiConfig. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.ApiConfigIamPolicy`: Authoritative. Sets the IAM policy for the apiconfig and replaces any existing policy already attached.
-   * * `gcp.apigateway.ApiConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the apiconfig are preserved.
-   * * `gcp.apigateway.ApiConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the apiconfig are preserved.
+   * * `gcp.apigateway.ApiConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the apiconfig are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.ApiConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the apiconfig are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -457,8 +457,8 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new ApiConfigIamPolicy("policy", ApiConfigIamPolicyArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -492,8 +492,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ApiConfigIamBinding("binding", ApiConfigIamBindingArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -528,8 +528,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ApiConfigIamMember("member", ApiConfigIamMemberArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -548,8 +548,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway ApiConfig. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.ApiConfigIamPolicy`: Authoritative. Sets the IAM policy for the apiconfig and replaces any existing policy already attached.
-   * * `gcp.apigateway.ApiConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the apiconfig are preserved.
-   * * `gcp.apigateway.ApiConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the apiconfig are preserved.
+   * * `gcp.apigateway.ApiConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the apiconfig are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.ApiConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the apiconfig are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -597,8 +597,8 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new ApiConfigIamPolicy("policy", ApiConfigIamPolicyArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -632,8 +632,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ApiConfigIamBinding("binding", ApiConfigIamBindingArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -668,8 +668,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ApiConfigIamMember("member", ApiConfigIamMemberArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -727,8 +727,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway ApiConfig. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.ApiConfigIamPolicy`: Authoritative. Sets the IAM policy for the apiconfig and replaces any existing policy already attached.
-   * * `gcp.apigateway.ApiConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the apiconfig are preserved.
-   * * `gcp.apigateway.ApiConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the apiconfig are preserved.
+   * * `gcp.apigateway.ApiConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the apiconfig are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.ApiConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the apiconfig are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -776,8 +776,8 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new ApiConfigIamPolicy("policy", ApiConfigIamPolicyArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -811,8 +811,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ApiConfigIamBinding("binding", ApiConfigIamBindingArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -847,8 +847,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ApiConfigIamMember("member", ApiConfigIamMemberArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -867,8 +867,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway ApiConfig. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.ApiConfigIamPolicy`: Authoritative. Sets the IAM policy for the apiconfig and replaces any existing policy already attached.
-   * * `gcp.apigateway.ApiConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the apiconfig are preserved.
-   * * `gcp.apigateway.ApiConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the apiconfig are preserved.
+   * * `gcp.apigateway.ApiConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the apiconfig are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.ApiConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the apiconfig are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -916,8 +916,8 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new ApiConfigIamPolicy("policy", ApiConfigIamPolicyArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -951,8 +951,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ApiConfigIamBinding("binding", ApiConfigIamBindingArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -987,8 +987,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ApiConfigIamMember("member", ApiConfigIamMemberArgs.builder()
-   *             .api(apiCfg.api())
-   *             .apiConfig(apiCfg.apiConfigId())
+   *             .api(apiCfg.get("api"))
+   *             .apiConfig(apiCfg.get("apiConfigId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1040,8 +1040,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway Api. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.ApiIamPolicy`: Authoritative. Sets the IAM policy for the api and replaces any existing policy already attached.
-   * * `gcp.apigateway.ApiIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the api are preserved.
-   * * `gcp.apigateway.ApiIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the api are preserved.
+   * * `gcp.apigateway.ApiIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the api are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.ApiIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the api are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1089,8 +1089,8 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new ApiIamPolicy("policy", ApiIamPolicyArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1124,8 +1124,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ApiIamBinding("binding", ApiIamBindingArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1160,8 +1160,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ApiIamMember("member", ApiIamMemberArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1180,8 +1180,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway Api. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.ApiIamPolicy`: Authoritative. Sets the IAM policy for the api and replaces any existing policy already attached.
-   * * `gcp.apigateway.ApiIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the api are preserved.
-   * * `gcp.apigateway.ApiIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the api are preserved.
+   * * `gcp.apigateway.ApiIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the api are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.ApiIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the api are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1229,8 +1229,8 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new ApiIamPolicy("policy", ApiIamPolicyArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1264,8 +1264,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ApiIamBinding("binding", ApiIamBindingArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1300,8 +1300,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ApiIamMember("member", ApiIamMemberArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1358,8 +1358,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway Api. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.ApiIamPolicy`: Authoritative. Sets the IAM policy for the api and replaces any existing policy already attached.
-   * * `gcp.apigateway.ApiIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the api are preserved.
-   * * `gcp.apigateway.ApiIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the api are preserved.
+   * * `gcp.apigateway.ApiIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the api are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.ApiIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the api are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1407,8 +1407,8 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new ApiIamPolicy("policy", ApiIamPolicyArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1442,8 +1442,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ApiIamBinding("binding", ApiIamBindingArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1478,8 +1478,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ApiIamMember("member", ApiIamMemberArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1498,8 +1498,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway Api. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.ApiIamPolicy`: Authoritative. Sets the IAM policy for the api and replaces any existing policy already attached.
-   * * `gcp.apigateway.ApiIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the api are preserved.
-   * * `gcp.apigateway.ApiIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the api are preserved.
+   * * `gcp.apigateway.ApiIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the api are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.ApiIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the api are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1547,8 +1547,8 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new ApiIamPolicy("policy", ApiIamPolicyArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1582,8 +1582,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ApiIamBinding("binding", ApiIamBindingArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1618,8 +1618,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ApiIamMember("member", ApiIamMemberArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1676,8 +1676,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway Api. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.ApiIamPolicy`: Authoritative. Sets the IAM policy for the api and replaces any existing policy already attached.
-   * * `gcp.apigateway.ApiIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the api are preserved.
-   * * `gcp.apigateway.ApiIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the api are preserved.
+   * * `gcp.apigateway.ApiIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the api are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.ApiIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the api are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1725,8 +1725,8 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new ApiIamPolicy("policy", ApiIamPolicyArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1760,8 +1760,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ApiIamBinding("binding", ApiIamBindingArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1796,8 +1796,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ApiIamMember("member", ApiIamMemberArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1816,8 +1816,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway Api. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.ApiIamPolicy`: Authoritative. Sets the IAM policy for the api and replaces any existing policy already attached.
-   * * `gcp.apigateway.ApiIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the api are preserved.
-   * * `gcp.apigateway.ApiIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the api are preserved.
+   * * `gcp.apigateway.ApiIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the api are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.ApiIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the api are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1865,8 +1865,8 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new ApiIamPolicy("policy", ApiIamPolicyArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1900,8 +1900,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ApiIamBinding("binding", ApiIamBindingArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1936,8 +1936,8 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ApiIamMember("member", ApiIamMemberArgs.builder()
-   *             .project(api.project())
-   *             .api(api.apiId())
+   *             .project(api.get("project"))
+   *             .api(api.get("apiId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2074,8 +2074,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway Gateway. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.GatewayIamPolicy`: Authoritative. Sets the IAM policy for the gateway and replaces any existing policy already attached.
-   * * `gcp.apigateway.GatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the gateway are preserved.
-   * * `gcp.apigateway.GatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the gateway are preserved.
+   * * `gcp.apigateway.GatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the gateway are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.GatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the gateway are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2123,9 +2123,9 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new GatewayIamPolicy("policy", GatewayIamPolicyArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2159,9 +2159,9 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new GatewayIamBinding("binding", GatewayIamBindingArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2196,9 +2196,9 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new GatewayIamMember("member", GatewayIamMemberArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2217,8 +2217,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway Gateway. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.GatewayIamPolicy`: Authoritative. Sets the IAM policy for the gateway and replaces any existing policy already attached.
-   * * `gcp.apigateway.GatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the gateway are preserved.
-   * * `gcp.apigateway.GatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the gateway are preserved.
+   * * `gcp.apigateway.GatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the gateway are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.GatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the gateway are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2266,9 +2266,9 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new GatewayIamPolicy("policy", GatewayIamPolicyArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2302,9 +2302,9 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new GatewayIamBinding("binding", GatewayIamBindingArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2339,9 +2339,9 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new GatewayIamMember("member", GatewayIamMemberArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2399,8 +2399,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway Gateway. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.GatewayIamPolicy`: Authoritative. Sets the IAM policy for the gateway and replaces any existing policy already attached.
-   * * `gcp.apigateway.GatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the gateway are preserved.
-   * * `gcp.apigateway.GatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the gateway are preserved.
+   * * `gcp.apigateway.GatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the gateway are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.GatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the gateway are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2448,9 +2448,9 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new GatewayIamPolicy("policy", GatewayIamPolicyArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2484,9 +2484,9 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new GatewayIamBinding("binding", GatewayIamBindingArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2521,9 +2521,9 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new GatewayIamMember("member", GatewayIamMemberArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2542,8 +2542,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway Gateway. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.GatewayIamPolicy`: Authoritative. Sets the IAM policy for the gateway and replaces any existing policy already attached.
-   * * `gcp.apigateway.GatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the gateway are preserved.
-   * * `gcp.apigateway.GatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the gateway are preserved.
+   * * `gcp.apigateway.GatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the gateway are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.GatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the gateway are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2591,9 +2591,9 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new GatewayIamPolicy("policy", GatewayIamPolicyArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2627,9 +2627,9 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new GatewayIamBinding("binding", GatewayIamBindingArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2664,9 +2664,9 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new GatewayIamMember("member", GatewayIamMemberArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2724,8 +2724,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway Gateway. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.GatewayIamPolicy`: Authoritative. Sets the IAM policy for the gateway and replaces any existing policy already attached.
-   * * `gcp.apigateway.GatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the gateway are preserved.
-   * * `gcp.apigateway.GatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the gateway are preserved.
+   * * `gcp.apigateway.GatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the gateway are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.GatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the gateway are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2773,9 +2773,9 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new GatewayIamPolicy("policy", GatewayIamPolicyArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2809,9 +2809,9 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new GatewayIamBinding("binding", GatewayIamBindingArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2846,9 +2846,9 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new GatewayIamMember("member", GatewayIamMemberArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2867,8 +2867,8 @@ object apigateway:
    * Three different resources help you manage your IAM policy for API Gateway Gateway. Each of these resources serves a different use case:
    * 
    * * `gcp.apigateway.GatewayIamPolicy`: Authoritative. Sets the IAM policy for the gateway and replaces any existing policy already attached.
-   * * `gcp.apigateway.GatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the gateway are preserved.
-   * * `gcp.apigateway.GatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the gateway are preserved.
+   * * `gcp.apigateway.GatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the gateway are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.apigateway.GatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the gateway are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2916,9 +2916,9 @@ object apigateway:
    *             .build());
    * 
    *         var policy = new GatewayIamPolicy("policy", GatewayIamPolicyArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2952,9 +2952,9 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new GatewayIamBinding("binding", GatewayIamBindingArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .role("roles/apigateway.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2989,9 +2989,9 @@ object apigateway:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new GatewayIamMember("member", GatewayIamMemberArgs.builder()
-   *             .project(apiGw.project())
-   *             .region(apiGw.region())
-   *             .gateway(apiGw.gatewayId())
+   *             .project(apiGw.get("project"))
+   *             .region(apiGw.get("region"))
+   *             .gateway(apiGw.get("gatewayId"))
    *             .role("roles/apigateway.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

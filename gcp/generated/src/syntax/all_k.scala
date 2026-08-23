@@ -7,6 +7,7 @@ export ko_pulumi.gcp.accesscontextmanager.methodSelectors
 export ko_pulumi.gcp.accesscontextmanager.modifiers
 export ko_pulumi.gcp.accesscontextmanager.operations
 export ko_pulumi.gcp.accesscontextmanager.osConstraints
+export ko_pulumi.gcp.agenticapplications.mcpDataSources
 export ko_pulumi.gcp.agentregistry.mcpServerSpec
 export ko_pulumi.gcp.alloydb.machineConfig
 export ko_pulumi.gcp.alloydb.maintenanceUpdatePolicy
@@ -40,6 +41,7 @@ export ko_pulumi.gcp.applicationintegration.oidcToken
 export ko_pulumi.gcp.artifactregistry.mavenConfig
 export ko_pulumi.gcp.artifactregistry.mavenRepository
 export ko_pulumi.gcp.artifactregistry.mostRecentVersions
+export ko_pulumi.gcp.artifactregistry.noCache
 export ko_pulumi.gcp.artifactregistry.npmRepository
 export ko_pulumi.gcp.assuredworkloads.kmsSettings
 export ko_pulumi.gcp.backupdisasterrecovery.labels

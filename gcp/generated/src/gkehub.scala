@@ -48,8 +48,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Feature. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.FeatureIamPolicy`: Authoritative. Sets the IAM policy for the feature and replaces any existing policy already attached.
-   * * `gcp.gkehub.FeatureIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the feature are preserved.
-   * * `gcp.gkehub.FeatureIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the feature are preserved.
+   * * `gcp.gkehub.FeatureIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the feature are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.FeatureIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the feature are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -94,9 +94,9 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new FeatureIamPolicy("policy", FeatureIamPolicyArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -130,9 +130,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FeatureIamBinding("binding", FeatureIamBindingArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -167,9 +167,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FeatureIamMember("member", FeatureIamMemberArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -188,8 +188,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Feature. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.FeatureIamPolicy`: Authoritative. Sets the IAM policy for the feature and replaces any existing policy already attached.
-   * * `gcp.gkehub.FeatureIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the feature are preserved.
-   * * `gcp.gkehub.FeatureIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the feature are preserved.
+   * * `gcp.gkehub.FeatureIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the feature are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.FeatureIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the feature are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -234,9 +234,9 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new FeatureIamPolicy("policy", FeatureIamPolicyArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -270,9 +270,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FeatureIamBinding("binding", FeatureIamBindingArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -307,9 +307,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FeatureIamMember("member", FeatureIamMemberArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -370,8 +370,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Feature. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.FeatureIamPolicy`: Authoritative. Sets the IAM policy for the feature and replaces any existing policy already attached.
-   * * `gcp.gkehub.FeatureIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the feature are preserved.
-   * * `gcp.gkehub.FeatureIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the feature are preserved.
+   * * `gcp.gkehub.FeatureIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the feature are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.FeatureIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the feature are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -416,9 +416,9 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new FeatureIamPolicy("policy", FeatureIamPolicyArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -452,9 +452,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FeatureIamBinding("binding", FeatureIamBindingArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -489,9 +489,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FeatureIamMember("member", FeatureIamMemberArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -510,8 +510,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Feature. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.FeatureIamPolicy`: Authoritative. Sets the IAM policy for the feature and replaces any existing policy already attached.
-   * * `gcp.gkehub.FeatureIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the feature are preserved.
-   * * `gcp.gkehub.FeatureIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the feature are preserved.
+   * * `gcp.gkehub.FeatureIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the feature are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.FeatureIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the feature are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -556,9 +556,9 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new FeatureIamPolicy("policy", FeatureIamPolicyArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -592,9 +592,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FeatureIamBinding("binding", FeatureIamBindingArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -629,9 +629,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FeatureIamMember("member", FeatureIamMemberArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -692,8 +692,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Feature. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.FeatureIamPolicy`: Authoritative. Sets the IAM policy for the feature and replaces any existing policy already attached.
-   * * `gcp.gkehub.FeatureIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the feature are preserved.
-   * * `gcp.gkehub.FeatureIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the feature are preserved.
+   * * `gcp.gkehub.FeatureIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the feature are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.FeatureIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the feature are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -738,9 +738,9 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new FeatureIamPolicy("policy", FeatureIamPolicyArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -774,9 +774,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FeatureIamBinding("binding", FeatureIamBindingArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -811,9 +811,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FeatureIamMember("member", FeatureIamMemberArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -832,8 +832,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Feature. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.FeatureIamPolicy`: Authoritative. Sets the IAM policy for the feature and replaces any existing policy already attached.
-   * * `gcp.gkehub.FeatureIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the feature are preserved.
-   * * `gcp.gkehub.FeatureIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the feature are preserved.
+   * * `gcp.gkehub.FeatureIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the feature are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.FeatureIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the feature are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -878,9 +878,9 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new FeatureIamPolicy("policy", FeatureIamPolicyArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -914,9 +914,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FeatureIamBinding("binding", FeatureIamBindingArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -951,9 +951,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FeatureIamMember("member", FeatureIamMemberArgs.builder()
-   *             .project(feature.project())
-   *             .location(feature.location())
-   *             .name(feature.name())
+   *             .project(feature.get("project"))
+   *             .location(feature.get("location"))
+   *             .name(feature.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1213,8 +1213,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Membership. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.MembershipIamPolicy`: Authoritative. Sets the IAM policy for the membership and replaces any existing policy already attached.
-   * * `gcp.gkehub.MembershipIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the membership are preserved.
-   * * `gcp.gkehub.MembershipIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the membership are preserved.
+   * * `gcp.gkehub.MembershipIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the membership are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.MembershipIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the membership are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1259,9 +1259,9 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new MembershipIamPolicy("policy", MembershipIamPolicyArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1295,9 +1295,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MembershipIamBinding("binding", MembershipIamBindingArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1332,9 +1332,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MembershipIamMember("member", MembershipIamMemberArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1353,8 +1353,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Membership. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.MembershipIamPolicy`: Authoritative. Sets the IAM policy for the membership and replaces any existing policy already attached.
-   * * `gcp.gkehub.MembershipIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the membership are preserved.
-   * * `gcp.gkehub.MembershipIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the membership are preserved.
+   * * `gcp.gkehub.MembershipIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the membership are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.MembershipIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the membership are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1399,9 +1399,9 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new MembershipIamPolicy("policy", MembershipIamPolicyArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1435,9 +1435,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MembershipIamBinding("binding", MembershipIamBindingArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1472,9 +1472,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MembershipIamMember("member", MembershipIamMemberArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1532,8 +1532,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Membership. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.MembershipIamPolicy`: Authoritative. Sets the IAM policy for the membership and replaces any existing policy already attached.
-   * * `gcp.gkehub.MembershipIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the membership are preserved.
-   * * `gcp.gkehub.MembershipIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the membership are preserved.
+   * * `gcp.gkehub.MembershipIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the membership are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.MembershipIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the membership are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1578,9 +1578,9 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new MembershipIamPolicy("policy", MembershipIamPolicyArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1614,9 +1614,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MembershipIamBinding("binding", MembershipIamBindingArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1651,9 +1651,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MembershipIamMember("member", MembershipIamMemberArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1672,8 +1672,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Membership. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.MembershipIamPolicy`: Authoritative. Sets the IAM policy for the membership and replaces any existing policy already attached.
-   * * `gcp.gkehub.MembershipIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the membership are preserved.
-   * * `gcp.gkehub.MembershipIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the membership are preserved.
+   * * `gcp.gkehub.MembershipIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the membership are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.MembershipIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the membership are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1718,9 +1718,9 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new MembershipIamPolicy("policy", MembershipIamPolicyArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1754,9 +1754,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MembershipIamBinding("binding", MembershipIamBindingArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1791,9 +1791,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MembershipIamMember("member", MembershipIamMemberArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1851,8 +1851,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Membership. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.MembershipIamPolicy`: Authoritative. Sets the IAM policy for the membership and replaces any existing policy already attached.
-   * * `gcp.gkehub.MembershipIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the membership are preserved.
-   * * `gcp.gkehub.MembershipIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the membership are preserved.
+   * * `gcp.gkehub.MembershipIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the membership are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.MembershipIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the membership are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1897,9 +1897,9 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new MembershipIamPolicy("policy", MembershipIamPolicyArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1933,9 +1933,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MembershipIamBinding("binding", MembershipIamBindingArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1970,9 +1970,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MembershipIamMember("member", MembershipIamMemberArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1991,8 +1991,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Membership. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.MembershipIamPolicy`: Authoritative. Sets the IAM policy for the membership and replaces any existing policy already attached.
-   * * `gcp.gkehub.MembershipIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the membership are preserved.
-   * * `gcp.gkehub.MembershipIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the membership are preserved.
+   * * `gcp.gkehub.MembershipIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the membership are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.MembershipIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the membership are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2037,9 +2037,9 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new MembershipIamPolicy("policy", MembershipIamPolicyArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2073,9 +2073,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MembershipIamBinding("binding", MembershipIamBindingArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2110,9 +2110,9 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MembershipIamMember("member", MembershipIamMemberArgs.builder()
-   *             .project(membership.project())
-   *             .location(membership.location())
-   *             .membershipId(membership.membershipId())
+   *             .project(membership.get("project"))
+   *             .location(membership.get("location"))
+   *             .membershipId(membership.get("membershipId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2274,8 +2274,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Scope. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.ScopeIamPolicy`: Authoritative. Sets the IAM policy for the scope and replaces any existing policy already attached.
-   * * `gcp.gkehub.ScopeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the scope are preserved.
-   * * `gcp.gkehub.ScopeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the scope are preserved.
+   * * `gcp.gkehub.ScopeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the scope are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.ScopeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the scope are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2320,8 +2320,8 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new ScopeIamPolicy("policy", ScopeIamPolicyArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2355,8 +2355,8 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ScopeIamBinding("binding", ScopeIamBindingArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2391,8 +2391,8 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ScopeIamMember("member", ScopeIamMemberArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2411,8 +2411,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Scope. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.ScopeIamPolicy`: Authoritative. Sets the IAM policy for the scope and replaces any existing policy already attached.
-   * * `gcp.gkehub.ScopeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the scope are preserved.
-   * * `gcp.gkehub.ScopeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the scope are preserved.
+   * * `gcp.gkehub.ScopeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the scope are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.ScopeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the scope are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2457,8 +2457,8 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new ScopeIamPolicy("policy", ScopeIamPolicyArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2492,8 +2492,8 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ScopeIamBinding("binding", ScopeIamBindingArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2528,8 +2528,8 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ScopeIamMember("member", ScopeIamMemberArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2586,8 +2586,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Scope. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.ScopeIamPolicy`: Authoritative. Sets the IAM policy for the scope and replaces any existing policy already attached.
-   * * `gcp.gkehub.ScopeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the scope are preserved.
-   * * `gcp.gkehub.ScopeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the scope are preserved.
+   * * `gcp.gkehub.ScopeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the scope are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.ScopeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the scope are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2632,8 +2632,8 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new ScopeIamPolicy("policy", ScopeIamPolicyArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2667,8 +2667,8 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ScopeIamBinding("binding", ScopeIamBindingArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2703,8 +2703,8 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ScopeIamMember("member", ScopeIamMemberArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2723,8 +2723,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Scope. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.ScopeIamPolicy`: Authoritative. Sets the IAM policy for the scope and replaces any existing policy already attached.
-   * * `gcp.gkehub.ScopeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the scope are preserved.
-   * * `gcp.gkehub.ScopeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the scope are preserved.
+   * * `gcp.gkehub.ScopeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the scope are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.ScopeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the scope are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2769,8 +2769,8 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new ScopeIamPolicy("policy", ScopeIamPolicyArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2804,8 +2804,8 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ScopeIamBinding("binding", ScopeIamBindingArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2840,8 +2840,8 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ScopeIamMember("member", ScopeIamMemberArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2898,8 +2898,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Scope. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.ScopeIamPolicy`: Authoritative. Sets the IAM policy for the scope and replaces any existing policy already attached.
-   * * `gcp.gkehub.ScopeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the scope are preserved.
-   * * `gcp.gkehub.ScopeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the scope are preserved.
+   * * `gcp.gkehub.ScopeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the scope are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.ScopeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the scope are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2944,8 +2944,8 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new ScopeIamPolicy("policy", ScopeIamPolicyArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2979,8 +2979,8 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ScopeIamBinding("binding", ScopeIamBindingArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3015,8 +3015,8 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ScopeIamMember("member", ScopeIamMemberArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3035,8 +3035,8 @@ object gkehub:
    * Three different resources help you manage your IAM policy for GKEHub Scope. Each of these resources serves a different use case:
    * 
    * * `gcp.gkehub.ScopeIamPolicy`: Authoritative. Sets the IAM policy for the scope and replaces any existing policy already attached.
-   * * `gcp.gkehub.ScopeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the scope are preserved.
-   * * `gcp.gkehub.ScopeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the scope are preserved.
+   * * `gcp.gkehub.ScopeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the scope are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkehub.ScopeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the scope are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3081,8 +3081,8 @@ object gkehub:
    *             .build());
    * 
    *         var policy = new ScopeIamPolicy("policy", ScopeIamPolicyArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3116,8 +3116,8 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ScopeIamBinding("binding", ScopeIamBindingArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3152,8 +3152,8 @@ object gkehub:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ScopeIamMember("member", ScopeIamMemberArgs.builder()
-   *             .project(scope.project())
-   *             .scopeId(scope.scopeId())
+   *             .project(scope.get("project"))
+   *             .scopeId(scope.get("scopeId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

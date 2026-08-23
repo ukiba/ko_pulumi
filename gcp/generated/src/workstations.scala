@@ -158,8 +158,8 @@ object workstations:
    * Three different resources help you manage your IAM policy for Cloud Workstations WorkstationConfig. Each of these resources serves a different use case:
    * 
    * * `gcp.workstations.WorkstationConfigIamPolicy`: Authoritative. Sets the IAM policy for the workstationconfig and replaces any existing policy already attached.
-   * * `gcp.workstations.WorkstationConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstationconfig are preserved.
-   * * `gcp.workstations.WorkstationConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstationconfig are preserved.
+   * * `gcp.workstations.WorkstationConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstationconfig are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.workstations.WorkstationConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstationconfig are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -204,10 +204,10 @@ object workstations:
    *             .build());
    * 
    *         var policy = new WorkstationConfigIamPolicy("policy", WorkstationConfigIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -241,10 +241,10 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkstationConfigIamBinding("binding", WorkstationConfigIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -279,10 +279,10 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkstationConfigIamMember("member", WorkstationConfigIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -301,8 +301,8 @@ object workstations:
    * Three different resources help you manage your IAM policy for Cloud Workstations WorkstationConfig. Each of these resources serves a different use case:
    * 
    * * `gcp.workstations.WorkstationConfigIamPolicy`: Authoritative. Sets the IAM policy for the workstationconfig and replaces any existing policy already attached.
-   * * `gcp.workstations.WorkstationConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstationconfig are preserved.
-   * * `gcp.workstations.WorkstationConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstationconfig are preserved.
+   * * `gcp.workstations.WorkstationConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstationconfig are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.workstations.WorkstationConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstationconfig are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -347,10 +347,10 @@ object workstations:
    *             .build());
    * 
    *         var policy = new WorkstationConfigIamPolicy("policy", WorkstationConfigIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -384,10 +384,10 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkstationConfigIamBinding("binding", WorkstationConfigIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -422,10 +422,10 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkstationConfigIamMember("member", WorkstationConfigIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -483,8 +483,8 @@ object workstations:
    * Three different resources help you manage your IAM policy for Cloud Workstations WorkstationConfig. Each of these resources serves a different use case:
    * 
    * * `gcp.workstations.WorkstationConfigIamPolicy`: Authoritative. Sets the IAM policy for the workstationconfig and replaces any existing policy already attached.
-   * * `gcp.workstations.WorkstationConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstationconfig are preserved.
-   * * `gcp.workstations.WorkstationConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstationconfig are preserved.
+   * * `gcp.workstations.WorkstationConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstationconfig are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.workstations.WorkstationConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstationconfig are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -529,10 +529,10 @@ object workstations:
    *             .build());
    * 
    *         var policy = new WorkstationConfigIamPolicy("policy", WorkstationConfigIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -566,10 +566,10 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkstationConfigIamBinding("binding", WorkstationConfigIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -604,10 +604,10 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkstationConfigIamMember("member", WorkstationConfigIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -626,8 +626,8 @@ object workstations:
    * Three different resources help you manage your IAM policy for Cloud Workstations WorkstationConfig. Each of these resources serves a different use case:
    * 
    * * `gcp.workstations.WorkstationConfigIamPolicy`: Authoritative. Sets the IAM policy for the workstationconfig and replaces any existing policy already attached.
-   * * `gcp.workstations.WorkstationConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstationconfig are preserved.
-   * * `gcp.workstations.WorkstationConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstationconfig are preserved.
+   * * `gcp.workstations.WorkstationConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstationconfig are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.workstations.WorkstationConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstationconfig are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -672,10 +672,10 @@ object workstations:
    *             .build());
    * 
    *         var policy = new WorkstationConfigIamPolicy("policy", WorkstationConfigIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -709,10 +709,10 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkstationConfigIamBinding("binding", WorkstationConfigIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -747,10 +747,10 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkstationConfigIamMember("member", WorkstationConfigIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -808,8 +808,8 @@ object workstations:
    * Three different resources help you manage your IAM policy for Cloud Workstations WorkstationConfig. Each of these resources serves a different use case:
    * 
    * * `gcp.workstations.WorkstationConfigIamPolicy`: Authoritative. Sets the IAM policy for the workstationconfig and replaces any existing policy already attached.
-   * * `gcp.workstations.WorkstationConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstationconfig are preserved.
-   * * `gcp.workstations.WorkstationConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstationconfig are preserved.
+   * * `gcp.workstations.WorkstationConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstationconfig are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.workstations.WorkstationConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstationconfig are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -854,10 +854,10 @@ object workstations:
    *             .build());
    * 
    *         var policy = new WorkstationConfigIamPolicy("policy", WorkstationConfigIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -891,10 +891,10 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkstationConfigIamBinding("binding", WorkstationConfigIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -929,10 +929,10 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkstationConfigIamMember("member", WorkstationConfigIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -951,8 +951,8 @@ object workstations:
    * Three different resources help you manage your IAM policy for Cloud Workstations WorkstationConfig. Each of these resources serves a different use case:
    * 
    * * `gcp.workstations.WorkstationConfigIamPolicy`: Authoritative. Sets the IAM policy for the workstationconfig and replaces any existing policy already attached.
-   * * `gcp.workstations.WorkstationConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstationconfig are preserved.
-   * * `gcp.workstations.WorkstationConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstationconfig are preserved.
+   * * `gcp.workstations.WorkstationConfigIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstationconfig are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.workstations.WorkstationConfigIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstationconfig are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -997,10 +997,10 @@ object workstations:
    *             .build());
    * 
    *         var policy = new WorkstationConfigIamPolicy("policy", WorkstationConfigIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1034,10 +1034,10 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkstationConfigIamBinding("binding", WorkstationConfigIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1072,10 +1072,10 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkstationConfigIamMember("member", WorkstationConfigIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1127,8 +1127,8 @@ object workstations:
    * Three different resources help you manage your IAM policy for Cloud Workstations Workstation. Each of these resources serves a different use case:
    * 
    * * `gcp.workstations.WorkstationIamPolicy`: Authoritative. Sets the IAM policy for the workstation and replaces any existing policy already attached.
-   * * `gcp.workstations.WorkstationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstation are preserved.
-   * * `gcp.workstations.WorkstationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstation are preserved.
+   * * `gcp.workstations.WorkstationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstation are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.workstations.WorkstationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstation are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1173,11 +1173,11 @@ object workstations:
    *             .build());
    * 
    *         var policy = new WorkstationIamPolicy("policy", WorkstationIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1211,11 +1211,11 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkstationIamBinding("binding", WorkstationIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1250,11 +1250,11 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkstationIamMember("member", WorkstationIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1273,8 +1273,8 @@ object workstations:
    * Three different resources help you manage your IAM policy for Cloud Workstations Workstation. Each of these resources serves a different use case:
    * 
    * * `gcp.workstations.WorkstationIamPolicy`: Authoritative. Sets the IAM policy for the workstation and replaces any existing policy already attached.
-   * * `gcp.workstations.WorkstationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstation are preserved.
-   * * `gcp.workstations.WorkstationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstation are preserved.
+   * * `gcp.workstations.WorkstationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstation are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.workstations.WorkstationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstation are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1319,11 +1319,11 @@ object workstations:
    *             .build());
    * 
    *         var policy = new WorkstationIamPolicy("policy", WorkstationIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1357,11 +1357,11 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkstationIamBinding("binding", WorkstationIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1396,11 +1396,11 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkstationIamMember("member", WorkstationIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1458,8 +1458,8 @@ object workstations:
    * Three different resources help you manage your IAM policy for Cloud Workstations Workstation. Each of these resources serves a different use case:
    * 
    * * `gcp.workstations.WorkstationIamPolicy`: Authoritative. Sets the IAM policy for the workstation and replaces any existing policy already attached.
-   * * `gcp.workstations.WorkstationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstation are preserved.
-   * * `gcp.workstations.WorkstationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstation are preserved.
+   * * `gcp.workstations.WorkstationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstation are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.workstations.WorkstationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstation are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1504,11 +1504,11 @@ object workstations:
    *             .build());
    * 
    *         var policy = new WorkstationIamPolicy("policy", WorkstationIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1542,11 +1542,11 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkstationIamBinding("binding", WorkstationIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1581,11 +1581,11 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkstationIamMember("member", WorkstationIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1604,8 +1604,8 @@ object workstations:
    * Three different resources help you manage your IAM policy for Cloud Workstations Workstation. Each of these resources serves a different use case:
    * 
    * * `gcp.workstations.WorkstationIamPolicy`: Authoritative. Sets the IAM policy for the workstation and replaces any existing policy already attached.
-   * * `gcp.workstations.WorkstationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstation are preserved.
-   * * `gcp.workstations.WorkstationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstation are preserved.
+   * * `gcp.workstations.WorkstationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstation are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.workstations.WorkstationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstation are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1650,11 +1650,11 @@ object workstations:
    *             .build());
    * 
    *         var policy = new WorkstationIamPolicy("policy", WorkstationIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1688,11 +1688,11 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkstationIamBinding("binding", WorkstationIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1727,11 +1727,11 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkstationIamMember("member", WorkstationIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1789,8 +1789,8 @@ object workstations:
    * Three different resources help you manage your IAM policy for Cloud Workstations Workstation. Each of these resources serves a different use case:
    * 
    * * `gcp.workstations.WorkstationIamPolicy`: Authoritative. Sets the IAM policy for the workstation and replaces any existing policy already attached.
-   * * `gcp.workstations.WorkstationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstation are preserved.
-   * * `gcp.workstations.WorkstationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstation are preserved.
+   * * `gcp.workstations.WorkstationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstation are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.workstations.WorkstationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstation are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1835,11 +1835,11 @@ object workstations:
    *             .build());
    * 
    *         var policy = new WorkstationIamPolicy("policy", WorkstationIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1873,11 +1873,11 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkstationIamBinding("binding", WorkstationIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1912,11 +1912,11 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkstationIamMember("member", WorkstationIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1935,8 +1935,8 @@ object workstations:
    * Three different resources help you manage your IAM policy for Cloud Workstations Workstation. Each of these resources serves a different use case:
    * 
    * * `gcp.workstations.WorkstationIamPolicy`: Authoritative. Sets the IAM policy for the workstation and replaces any existing policy already attached.
-   * * `gcp.workstations.WorkstationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstation are preserved.
-   * * `gcp.workstations.WorkstationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstation are preserved.
+   * * `gcp.workstations.WorkstationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the workstation are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.workstations.WorkstationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the workstation are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1981,11 +1981,11 @@ object workstations:
    *             .build());
    * 
    *         var policy = new WorkstationIamPolicy("policy", WorkstationIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2019,11 +2019,11 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WorkstationIamBinding("binding", WorkstationIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2058,11 +2058,11 @@ object workstations:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WorkstationIamMember("member", WorkstationIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .workstationClusterId(default_.workstationClusterId())
-   *             .workstationConfigId(default_.workstationConfigId())
-   *             .workstationId(default_.workstationId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .workstationClusterId(default_.get("workstationClusterId"))
+   *             .workstationConfigId(default_.get("workstationConfigId"))
+   *             .workstationId(default_.get("workstationId"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

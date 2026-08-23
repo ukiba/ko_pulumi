@@ -6,6 +6,11 @@ import jp.ukiba.ko_pulumi
 export ko_pulumi.gcp.accesscontextmanager.ingressFrom
 export ko_pulumi.gcp.accesscontextmanager.ingressPolicies
 export ko_pulumi.gcp.accesscontextmanager.ingressTo
+export ko_pulumi.gcp.agenticapplications.f1Resource
+export ko_pulumi.gcp.agenticapplications.finnhub
+export ko_pulumi.gcp.agenticapplications.fred
+export ko_pulumi.gcp.agenticapplications.googleCloudStorageResource
+export ko_pulumi.gcp.agenticapplications.googleDriveResource
 export ko_pulumi.gcp.agentidentity.geAuthProviders
 export ko_pulumi.gcp.agentregistry.interfaces
 export ko_pulumi.gcp.alloydb.initialUser
@@ -205,6 +210,7 @@ export ko_pulumi.gcp.container.gpuSharingConfig
 export ko_pulumi.gcp.container.guestAccelerators
 export ko_pulumi.gcp.container.gvnic
 export ko_pulumi.gcp.container.headers
+export ko_pulumi.gcp.container.highScaleCheckpointingConfig
 export ko_pulumi.gcp.container.horizontalPodAutoscaling
 export ko_pulumi.gcp.container.hostMaintenancePolicy
 export ko_pulumi.gcp.container.hosts
@@ -505,6 +511,8 @@ export ko_pulumi.gcp.vertex.featureGroups
 export ko_pulumi.gcp.vertex.featureRegistrySource
 export ko_pulumi.gcp.vertex.gcsNotebookSource
 export ko_pulumi.gcp.vertex.generationConfig
+export ko_pulumi.gcp.vertex.generationRule
+export ko_pulumi.gcp.vertex.generationTriggerConfig
 export ko_pulumi.gcp.vertex.granularTtlConfig
 export ko_pulumi.gcp.vertex.grpc
 export ko_pulumi.gcp.vertex.grpcPorts

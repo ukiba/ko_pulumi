@@ -70,8 +70,8 @@ object tags:
    * Three different resources help you manage your IAM policy for Tags TagKey. Each of these resources serves a different use case:
    * 
    * * `gcp.tags.TagKeyIamPolicy`: Authoritative. Sets the IAM policy for the tagkey and replaces any existing policy already attached.
-   * * `gcp.tags.TagKeyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagkey are preserved.
-   * * `gcp.tags.TagKeyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagkey are preserved.
+   * * `gcp.tags.TagKeyIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tagkey are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.tags.TagKeyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tagkey are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -79,7 +79,7 @@ object tags:
    * 
    * &gt; **Note:** `gcp.tags.TagKeyIamPolicy` **cannot** be used in conjunction with `gcp.tags.TagKeyIamBinding` and `gcp.tags.TagKeyIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.tags.TagKeyIamBinding` resources **can be** used in conjunction with `gcp.tags.TagKeyIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.tags.TagKeyIamBinding` resources **can be** used in conjunction with `gcp.tags.TagKeyIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -118,7 +118,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagKeyIamPolicy("policy", TagKeyIamPolicyArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -168,7 +168,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagKeyIamPolicy("policy", TagKeyIamPolicyArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -201,7 +201,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagKeyIamBinding("binding", TagKeyIamBindingArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -237,7 +237,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagKeyIamBinding("binding", TagKeyIamBindingArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TagKeyIamBindingConditionArgs.builder()
@@ -276,7 +276,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagKeyIamMember("member", TagKeyIamMemberArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -312,7 +312,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagKeyIamMember("member", TagKeyIamMemberArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TagKeyIamMemberConditionArgs.builder()
@@ -337,8 +337,8 @@ object tags:
    * Three different resources help you manage your IAM policy for Tags TagKey. Each of these resources serves a different use case:
    * 
    * * `gcp.tags.TagKeyIamPolicy`: Authoritative. Sets the IAM policy for the tagkey and replaces any existing policy already attached.
-   * * `gcp.tags.TagKeyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagkey are preserved.
-   * * `gcp.tags.TagKeyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagkey are preserved.
+   * * `gcp.tags.TagKeyIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tagkey are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.tags.TagKeyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tagkey are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -346,7 +346,7 @@ object tags:
    * 
    * &gt; **Note:** `gcp.tags.TagKeyIamPolicy` **cannot** be used in conjunction with `gcp.tags.TagKeyIamBinding` and `gcp.tags.TagKeyIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.tags.TagKeyIamBinding` resources **can be** used in conjunction with `gcp.tags.TagKeyIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.tags.TagKeyIamBinding` resources **can be** used in conjunction with `gcp.tags.TagKeyIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -385,7 +385,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagKeyIamPolicy("policy", TagKeyIamPolicyArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -435,7 +435,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagKeyIamPolicy("policy", TagKeyIamPolicyArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -468,7 +468,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagKeyIamBinding("binding", TagKeyIamBindingArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -504,7 +504,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagKeyIamBinding("binding", TagKeyIamBindingArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TagKeyIamBindingConditionArgs.builder()
@@ -543,7 +543,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagKeyIamMember("member", TagKeyIamMemberArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -579,7 +579,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagKeyIamMember("member", TagKeyIamMemberArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TagKeyIamMemberConditionArgs.builder()
@@ -645,8 +645,8 @@ object tags:
    * Three different resources help you manage your IAM policy for Tags TagKey. Each of these resources serves a different use case:
    * 
    * * `gcp.tags.TagKeyIamPolicy`: Authoritative. Sets the IAM policy for the tagkey and replaces any existing policy already attached.
-   * * `gcp.tags.TagKeyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagkey are preserved.
-   * * `gcp.tags.TagKeyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagkey are preserved.
+   * * `gcp.tags.TagKeyIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tagkey are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.tags.TagKeyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tagkey are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -654,7 +654,7 @@ object tags:
    * 
    * &gt; **Note:** `gcp.tags.TagKeyIamPolicy` **cannot** be used in conjunction with `gcp.tags.TagKeyIamBinding` and `gcp.tags.TagKeyIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.tags.TagKeyIamBinding` resources **can be** used in conjunction with `gcp.tags.TagKeyIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.tags.TagKeyIamBinding` resources **can be** used in conjunction with `gcp.tags.TagKeyIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -693,7 +693,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagKeyIamPolicy("policy", TagKeyIamPolicyArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -743,7 +743,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagKeyIamPolicy("policy", TagKeyIamPolicyArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -776,7 +776,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagKeyIamBinding("binding", TagKeyIamBindingArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -812,7 +812,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagKeyIamBinding("binding", TagKeyIamBindingArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TagKeyIamBindingConditionArgs.builder()
@@ -851,7 +851,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagKeyIamMember("member", TagKeyIamMemberArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -887,7 +887,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagKeyIamMember("member", TagKeyIamMemberArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TagKeyIamMemberConditionArgs.builder()
@@ -912,8 +912,8 @@ object tags:
    * Three different resources help you manage your IAM policy for Tags TagKey. Each of these resources serves a different use case:
    * 
    * * `gcp.tags.TagKeyIamPolicy`: Authoritative. Sets the IAM policy for the tagkey and replaces any existing policy already attached.
-   * * `gcp.tags.TagKeyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagkey are preserved.
-   * * `gcp.tags.TagKeyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagkey are preserved.
+   * * `gcp.tags.TagKeyIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tagkey are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.tags.TagKeyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tagkey are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -921,7 +921,7 @@ object tags:
    * 
    * &gt; **Note:** `gcp.tags.TagKeyIamPolicy` **cannot** be used in conjunction with `gcp.tags.TagKeyIamBinding` and `gcp.tags.TagKeyIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.tags.TagKeyIamBinding` resources **can be** used in conjunction with `gcp.tags.TagKeyIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.tags.TagKeyIamBinding` resources **can be** used in conjunction with `gcp.tags.TagKeyIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -960,7 +960,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagKeyIamPolicy("policy", TagKeyIamPolicyArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1010,7 +1010,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagKeyIamPolicy("policy", TagKeyIamPolicyArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1043,7 +1043,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagKeyIamBinding("binding", TagKeyIamBindingArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1079,7 +1079,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagKeyIamBinding("binding", TagKeyIamBindingArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TagKeyIamBindingConditionArgs.builder()
@@ -1118,7 +1118,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagKeyIamMember("member", TagKeyIamMemberArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1154,7 +1154,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagKeyIamMember("member", TagKeyIamMemberArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TagKeyIamMemberConditionArgs.builder()
@@ -1220,8 +1220,8 @@ object tags:
    * Three different resources help you manage your IAM policy for Tags TagKey. Each of these resources serves a different use case:
    * 
    * * `gcp.tags.TagKeyIamPolicy`: Authoritative. Sets the IAM policy for the tagkey and replaces any existing policy already attached.
-   * * `gcp.tags.TagKeyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagkey are preserved.
-   * * `gcp.tags.TagKeyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagkey are preserved.
+   * * `gcp.tags.TagKeyIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tagkey are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.tags.TagKeyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tagkey are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1229,7 +1229,7 @@ object tags:
    * 
    * &gt; **Note:** `gcp.tags.TagKeyIamPolicy` **cannot** be used in conjunction with `gcp.tags.TagKeyIamBinding` and `gcp.tags.TagKeyIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.tags.TagKeyIamBinding` resources **can be** used in conjunction with `gcp.tags.TagKeyIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.tags.TagKeyIamBinding` resources **can be** used in conjunction with `gcp.tags.TagKeyIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1268,7 +1268,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagKeyIamPolicy("policy", TagKeyIamPolicyArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1318,7 +1318,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagKeyIamPolicy("policy", TagKeyIamPolicyArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1351,7 +1351,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagKeyIamBinding("binding", TagKeyIamBindingArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1387,7 +1387,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagKeyIamBinding("binding", TagKeyIamBindingArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TagKeyIamBindingConditionArgs.builder()
@@ -1426,7 +1426,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagKeyIamMember("member", TagKeyIamMemberArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1462,7 +1462,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagKeyIamMember("member", TagKeyIamMemberArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TagKeyIamMemberConditionArgs.builder()
@@ -1487,8 +1487,8 @@ object tags:
    * Three different resources help you manage your IAM policy for Tags TagKey. Each of these resources serves a different use case:
    * 
    * * `gcp.tags.TagKeyIamPolicy`: Authoritative. Sets the IAM policy for the tagkey and replaces any existing policy already attached.
-   * * `gcp.tags.TagKeyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagkey are preserved.
-   * * `gcp.tags.TagKeyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagkey are preserved.
+   * * `gcp.tags.TagKeyIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tagkey are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.tags.TagKeyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tagkey are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1496,7 +1496,7 @@ object tags:
    * 
    * &gt; **Note:** `gcp.tags.TagKeyIamPolicy` **cannot** be used in conjunction with `gcp.tags.TagKeyIamBinding` and `gcp.tags.TagKeyIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.tags.TagKeyIamBinding` resources **can be** used in conjunction with `gcp.tags.TagKeyIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.tags.TagKeyIamBinding` resources **can be** used in conjunction with `gcp.tags.TagKeyIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1535,7 +1535,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagKeyIamPolicy("policy", TagKeyIamPolicyArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1585,7 +1585,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagKeyIamPolicy("policy", TagKeyIamPolicyArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1618,7 +1618,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagKeyIamBinding("binding", TagKeyIamBindingArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1654,7 +1654,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagKeyIamBinding("binding", TagKeyIamBindingArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TagKeyIamBindingConditionArgs.builder()
@@ -1693,7 +1693,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagKeyIamMember("member", TagKeyIamMemberArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1729,7 +1729,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagKeyIamMember("member", TagKeyIamMemberArgs.builder()
-   *             .tagKey(key.name())
+   *             .tagKey(key.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TagKeyIamMemberConditionArgs.builder()
@@ -1800,8 +1800,8 @@ object tags:
    * Three different resources help you manage your IAM policy for Tags TagValue. Each of these resources serves a different use case:
    * 
    * * `gcp.tags.TagValueIamPolicy`: Authoritative. Sets the IAM policy for the tagvalue and replaces any existing policy already attached.
-   * * `gcp.tags.TagValueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagvalue are preserved.
-   * * `gcp.tags.TagValueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagvalue are preserved.
+   * * `gcp.tags.TagValueIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tagvalue are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.tags.TagValueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tagvalue are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1809,7 +1809,7 @@ object tags:
    * 
    * &gt; **Note:** `gcp.tags.TagValueIamPolicy` **cannot** be used in conjunction with `gcp.tags.TagValueIamBinding` and `gcp.tags.TagValueIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.tags.TagValueIamBinding` resources **can be** used in conjunction with `gcp.tags.TagValueIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.tags.TagValueIamBinding` resources **can be** used in conjunction with `gcp.tags.TagValueIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1848,7 +1848,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagValueIamPolicy("policy", TagValueIamPolicyArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1898,7 +1898,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagValueIamPolicy("policy", TagValueIamPolicyArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1931,7 +1931,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagValueIamBinding("binding", TagValueIamBindingArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1967,7 +1967,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagValueIamBinding("binding", TagValueIamBindingArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TagValueIamBindingConditionArgs.builder()
@@ -2006,7 +2006,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagValueIamMember("member", TagValueIamMemberArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2042,7 +2042,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagValueIamMember("member", TagValueIamMemberArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TagValueIamMemberConditionArgs.builder()
@@ -2067,8 +2067,8 @@ object tags:
    * Three different resources help you manage your IAM policy for Tags TagValue. Each of these resources serves a different use case:
    * 
    * * `gcp.tags.TagValueIamPolicy`: Authoritative. Sets the IAM policy for the tagvalue and replaces any existing policy already attached.
-   * * `gcp.tags.TagValueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagvalue are preserved.
-   * * `gcp.tags.TagValueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagvalue are preserved.
+   * * `gcp.tags.TagValueIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tagvalue are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.tags.TagValueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tagvalue are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2076,7 +2076,7 @@ object tags:
    * 
    * &gt; **Note:** `gcp.tags.TagValueIamPolicy` **cannot** be used in conjunction with `gcp.tags.TagValueIamBinding` and `gcp.tags.TagValueIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.tags.TagValueIamBinding` resources **can be** used in conjunction with `gcp.tags.TagValueIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.tags.TagValueIamBinding` resources **can be** used in conjunction with `gcp.tags.TagValueIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2115,7 +2115,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagValueIamPolicy("policy", TagValueIamPolicyArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2165,7 +2165,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagValueIamPolicy("policy", TagValueIamPolicyArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2198,7 +2198,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagValueIamBinding("binding", TagValueIamBindingArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2234,7 +2234,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagValueIamBinding("binding", TagValueIamBindingArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TagValueIamBindingConditionArgs.builder()
@@ -2273,7 +2273,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagValueIamMember("member", TagValueIamMemberArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2309,7 +2309,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagValueIamMember("member", TagValueIamMemberArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TagValueIamMemberConditionArgs.builder()
@@ -2375,8 +2375,8 @@ object tags:
    * Three different resources help you manage your IAM policy for Tags TagValue. Each of these resources serves a different use case:
    * 
    * * `gcp.tags.TagValueIamPolicy`: Authoritative. Sets the IAM policy for the tagvalue and replaces any existing policy already attached.
-   * * `gcp.tags.TagValueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagvalue are preserved.
-   * * `gcp.tags.TagValueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagvalue are preserved.
+   * * `gcp.tags.TagValueIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tagvalue are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.tags.TagValueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tagvalue are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2384,7 +2384,7 @@ object tags:
    * 
    * &gt; **Note:** `gcp.tags.TagValueIamPolicy` **cannot** be used in conjunction with `gcp.tags.TagValueIamBinding` and `gcp.tags.TagValueIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.tags.TagValueIamBinding` resources **can be** used in conjunction with `gcp.tags.TagValueIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.tags.TagValueIamBinding` resources **can be** used in conjunction with `gcp.tags.TagValueIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2423,7 +2423,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagValueIamPolicy("policy", TagValueIamPolicyArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2473,7 +2473,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagValueIamPolicy("policy", TagValueIamPolicyArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2506,7 +2506,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagValueIamBinding("binding", TagValueIamBindingArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2542,7 +2542,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagValueIamBinding("binding", TagValueIamBindingArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TagValueIamBindingConditionArgs.builder()
@@ -2581,7 +2581,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagValueIamMember("member", TagValueIamMemberArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2617,7 +2617,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagValueIamMember("member", TagValueIamMemberArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TagValueIamMemberConditionArgs.builder()
@@ -2642,8 +2642,8 @@ object tags:
    * Three different resources help you manage your IAM policy for Tags TagValue. Each of these resources serves a different use case:
    * 
    * * `gcp.tags.TagValueIamPolicy`: Authoritative. Sets the IAM policy for the tagvalue and replaces any existing policy already attached.
-   * * `gcp.tags.TagValueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagvalue are preserved.
-   * * `gcp.tags.TagValueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagvalue are preserved.
+   * * `gcp.tags.TagValueIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tagvalue are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.tags.TagValueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tagvalue are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2651,7 +2651,7 @@ object tags:
    * 
    * &gt; **Note:** `gcp.tags.TagValueIamPolicy` **cannot** be used in conjunction with `gcp.tags.TagValueIamBinding` and `gcp.tags.TagValueIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.tags.TagValueIamBinding` resources **can be** used in conjunction with `gcp.tags.TagValueIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.tags.TagValueIamBinding` resources **can be** used in conjunction with `gcp.tags.TagValueIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2690,7 +2690,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagValueIamPolicy("policy", TagValueIamPolicyArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2740,7 +2740,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagValueIamPolicy("policy", TagValueIamPolicyArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2773,7 +2773,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagValueIamBinding("binding", TagValueIamBindingArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2809,7 +2809,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagValueIamBinding("binding", TagValueIamBindingArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TagValueIamBindingConditionArgs.builder()
@@ -2848,7 +2848,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagValueIamMember("member", TagValueIamMemberArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2884,7 +2884,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagValueIamMember("member", TagValueIamMemberArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TagValueIamMemberConditionArgs.builder()
@@ -2950,8 +2950,8 @@ object tags:
    * Three different resources help you manage your IAM policy for Tags TagValue. Each of these resources serves a different use case:
    * 
    * * `gcp.tags.TagValueIamPolicy`: Authoritative. Sets the IAM policy for the tagvalue and replaces any existing policy already attached.
-   * * `gcp.tags.TagValueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagvalue are preserved.
-   * * `gcp.tags.TagValueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagvalue are preserved.
+   * * `gcp.tags.TagValueIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tagvalue are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.tags.TagValueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tagvalue are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2959,7 +2959,7 @@ object tags:
    * 
    * &gt; **Note:** `gcp.tags.TagValueIamPolicy` **cannot** be used in conjunction with `gcp.tags.TagValueIamBinding` and `gcp.tags.TagValueIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.tags.TagValueIamBinding` resources **can be** used in conjunction with `gcp.tags.TagValueIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.tags.TagValueIamBinding` resources **can be** used in conjunction with `gcp.tags.TagValueIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2998,7 +2998,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagValueIamPolicy("policy", TagValueIamPolicyArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3048,7 +3048,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagValueIamPolicy("policy", TagValueIamPolicyArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3081,7 +3081,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagValueIamBinding("binding", TagValueIamBindingArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3117,7 +3117,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagValueIamBinding("binding", TagValueIamBindingArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TagValueIamBindingConditionArgs.builder()
@@ -3156,7 +3156,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagValueIamMember("member", TagValueIamMemberArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3192,7 +3192,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagValueIamMember("member", TagValueIamMemberArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TagValueIamMemberConditionArgs.builder()
@@ -3217,8 +3217,8 @@ object tags:
    * Three different resources help you manage your IAM policy for Tags TagValue. Each of these resources serves a different use case:
    * 
    * * `gcp.tags.TagValueIamPolicy`: Authoritative. Sets the IAM policy for the tagvalue and replaces any existing policy already attached.
-   * * `gcp.tags.TagValueIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tagvalue are preserved.
-   * * `gcp.tags.TagValueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tagvalue are preserved.
+   * * `gcp.tags.TagValueIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tagvalue are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.tags.TagValueIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tagvalue are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3226,7 +3226,7 @@ object tags:
    * 
    * &gt; **Note:** `gcp.tags.TagValueIamPolicy` **cannot** be used in conjunction with `gcp.tags.TagValueIamBinding` and `gcp.tags.TagValueIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.tags.TagValueIamBinding` resources **can be** used in conjunction with `gcp.tags.TagValueIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.tags.TagValueIamBinding` resources **can be** used in conjunction with `gcp.tags.TagValueIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -3265,7 +3265,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagValueIamPolicy("policy", TagValueIamPolicyArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3315,7 +3315,7 @@ object tags:
    *             .build());
    * 
    *         var policy = new TagValueIamPolicy("policy", TagValueIamPolicyArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3348,7 +3348,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagValueIamBinding("binding", TagValueIamBindingArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3384,7 +3384,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TagValueIamBinding("binding", TagValueIamBindingArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TagValueIamBindingConditionArgs.builder()
@@ -3423,7 +3423,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagValueIamMember("member", TagValueIamMemberArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3459,7 +3459,7 @@ object tags:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TagValueIamMember("member", TagValueIamMemberArgs.builder()
-   *             .tagValue(value.name())
+   *             .tagValue(value.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TagValueIamMemberConditionArgs.builder()

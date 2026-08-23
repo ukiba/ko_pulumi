@@ -128,8 +128,8 @@ object certificateauthority:
    * Three different resources help you manage your IAM policy for Certificate Authority Service CaPool. Each of these resources serves a different use case:
    * 
    * * `gcp.certificateauthority.CaPoolIamPolicy`: Authoritative. Sets the IAM policy for the capool and replaces any existing policy already attached.
-   * * `gcp.certificateauthority.CaPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the capool are preserved.
-   * * `gcp.certificateauthority.CaPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the capool are preserved.
+   * * `gcp.certificateauthority.CaPoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the capool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.certificateauthority.CaPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the capool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -137,7 +137,7 @@ object certificateauthority:
    * 
    * &gt; **Note:** `gcp.certificateauthority.CaPoolIamPolicy` **cannot** be used in conjunction with `gcp.certificateauthority.CaPoolIamBinding` and `gcp.certificateauthority.CaPoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.certificateauthority.CaPoolIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CaPoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.certificateauthority.CaPoolIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CaPoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -176,7 +176,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CaPoolIamPolicy("policy", CaPoolIamPolicyArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -226,7 +226,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CaPoolIamPolicy("policy", CaPoolIamPolicyArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -259,7 +259,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CaPoolIamBinding("binding", CaPoolIamBindingArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -295,7 +295,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CaPoolIamBinding("binding", CaPoolIamBindingArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(CaPoolIamBindingConditionArgs.builder()
@@ -334,7 +334,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CaPoolIamMember("member", CaPoolIamMemberArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -370,7 +370,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CaPoolIamMember("member", CaPoolIamMemberArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(CaPoolIamMemberConditionArgs.builder()
@@ -394,8 +394,8 @@ object certificateauthority:
    * Three different resources help you manage your IAM policy for Certificate Authority Service CaPool. Each of these resources serves a different use case:
    * 
    * * `gcp.certificateauthority.CaPoolIamPolicy`: Authoritative. Sets the IAM policy for the capool and replaces any existing policy already attached.
-   * * `gcp.certificateauthority.CaPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the capool are preserved.
-   * * `gcp.certificateauthority.CaPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the capool are preserved.
+   * * `gcp.certificateauthority.CaPoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the capool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.certificateauthority.CaPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the capool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -403,7 +403,7 @@ object certificateauthority:
    * 
    * &gt; **Note:** `gcp.certificateauthority.CaPoolIamPolicy` **cannot** be used in conjunction with `gcp.certificateauthority.CaPoolIamBinding` and `gcp.certificateauthority.CaPoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.certificateauthority.CaPoolIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CaPoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.certificateauthority.CaPoolIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CaPoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -442,7 +442,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CaPoolIamPolicy("policy", CaPoolIamPolicyArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -492,7 +492,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CaPoolIamPolicy("policy", CaPoolIamPolicyArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -525,7 +525,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CaPoolIamBinding("binding", CaPoolIamBindingArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -561,7 +561,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CaPoolIamBinding("binding", CaPoolIamBindingArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(CaPoolIamBindingConditionArgs.builder()
@@ -600,7 +600,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CaPoolIamMember("member", CaPoolIamMemberArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -636,7 +636,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CaPoolIamMember("member", CaPoolIamMemberArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(CaPoolIamMemberConditionArgs.builder()
@@ -703,8 +703,8 @@ object certificateauthority:
    * Three different resources help you manage your IAM policy for Certificate Authority Service CaPool. Each of these resources serves a different use case:
    * 
    * * `gcp.certificateauthority.CaPoolIamPolicy`: Authoritative. Sets the IAM policy for the capool and replaces any existing policy already attached.
-   * * `gcp.certificateauthority.CaPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the capool are preserved.
-   * * `gcp.certificateauthority.CaPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the capool are preserved.
+   * * `gcp.certificateauthority.CaPoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the capool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.certificateauthority.CaPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the capool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -712,7 +712,7 @@ object certificateauthority:
    * 
    * &gt; **Note:** `gcp.certificateauthority.CaPoolIamPolicy` **cannot** be used in conjunction with `gcp.certificateauthority.CaPoolIamBinding` and `gcp.certificateauthority.CaPoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.certificateauthority.CaPoolIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CaPoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.certificateauthority.CaPoolIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CaPoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -751,7 +751,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CaPoolIamPolicy("policy", CaPoolIamPolicyArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -801,7 +801,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CaPoolIamPolicy("policy", CaPoolIamPolicyArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -834,7 +834,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CaPoolIamBinding("binding", CaPoolIamBindingArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -870,7 +870,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CaPoolIamBinding("binding", CaPoolIamBindingArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(CaPoolIamBindingConditionArgs.builder()
@@ -909,7 +909,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CaPoolIamMember("member", CaPoolIamMemberArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -945,7 +945,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CaPoolIamMember("member", CaPoolIamMemberArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(CaPoolIamMemberConditionArgs.builder()
@@ -969,8 +969,8 @@ object certificateauthority:
    * Three different resources help you manage your IAM policy for Certificate Authority Service CaPool. Each of these resources serves a different use case:
    * 
    * * `gcp.certificateauthority.CaPoolIamPolicy`: Authoritative. Sets the IAM policy for the capool and replaces any existing policy already attached.
-   * * `gcp.certificateauthority.CaPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the capool are preserved.
-   * * `gcp.certificateauthority.CaPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the capool are preserved.
+   * * `gcp.certificateauthority.CaPoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the capool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.certificateauthority.CaPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the capool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -978,7 +978,7 @@ object certificateauthority:
    * 
    * &gt; **Note:** `gcp.certificateauthority.CaPoolIamPolicy` **cannot** be used in conjunction with `gcp.certificateauthority.CaPoolIamBinding` and `gcp.certificateauthority.CaPoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.certificateauthority.CaPoolIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CaPoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.certificateauthority.CaPoolIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CaPoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1017,7 +1017,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CaPoolIamPolicy("policy", CaPoolIamPolicyArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1067,7 +1067,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CaPoolIamPolicy("policy", CaPoolIamPolicyArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1100,7 +1100,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CaPoolIamBinding("binding", CaPoolIamBindingArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1136,7 +1136,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CaPoolIamBinding("binding", CaPoolIamBindingArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(CaPoolIamBindingConditionArgs.builder()
@@ -1175,7 +1175,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CaPoolIamMember("member", CaPoolIamMemberArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1211,7 +1211,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CaPoolIamMember("member", CaPoolIamMemberArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(CaPoolIamMemberConditionArgs.builder()
@@ -1278,8 +1278,8 @@ object certificateauthority:
    * Three different resources help you manage your IAM policy for Certificate Authority Service CaPool. Each of these resources serves a different use case:
    * 
    * * `gcp.certificateauthority.CaPoolIamPolicy`: Authoritative. Sets the IAM policy for the capool and replaces any existing policy already attached.
-   * * `gcp.certificateauthority.CaPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the capool are preserved.
-   * * `gcp.certificateauthority.CaPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the capool are preserved.
+   * * `gcp.certificateauthority.CaPoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the capool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.certificateauthority.CaPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the capool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1287,7 +1287,7 @@ object certificateauthority:
    * 
    * &gt; **Note:** `gcp.certificateauthority.CaPoolIamPolicy` **cannot** be used in conjunction with `gcp.certificateauthority.CaPoolIamBinding` and `gcp.certificateauthority.CaPoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.certificateauthority.CaPoolIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CaPoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.certificateauthority.CaPoolIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CaPoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1326,7 +1326,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CaPoolIamPolicy("policy", CaPoolIamPolicyArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1376,7 +1376,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CaPoolIamPolicy("policy", CaPoolIamPolicyArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1409,7 +1409,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CaPoolIamBinding("binding", CaPoolIamBindingArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1445,7 +1445,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CaPoolIamBinding("binding", CaPoolIamBindingArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(CaPoolIamBindingConditionArgs.builder()
@@ -1484,7 +1484,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CaPoolIamMember("member", CaPoolIamMemberArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1520,7 +1520,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CaPoolIamMember("member", CaPoolIamMemberArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(CaPoolIamMemberConditionArgs.builder()
@@ -1544,8 +1544,8 @@ object certificateauthority:
    * Three different resources help you manage your IAM policy for Certificate Authority Service CaPool. Each of these resources serves a different use case:
    * 
    * * `gcp.certificateauthority.CaPoolIamPolicy`: Authoritative. Sets the IAM policy for the capool and replaces any existing policy already attached.
-   * * `gcp.certificateauthority.CaPoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the capool are preserved.
-   * * `gcp.certificateauthority.CaPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the capool are preserved.
+   * * `gcp.certificateauthority.CaPoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the capool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.certificateauthority.CaPoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the capool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1553,7 +1553,7 @@ object certificateauthority:
    * 
    * &gt; **Note:** `gcp.certificateauthority.CaPoolIamPolicy` **cannot** be used in conjunction with `gcp.certificateauthority.CaPoolIamBinding` and `gcp.certificateauthority.CaPoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.certificateauthority.CaPoolIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CaPoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.certificateauthority.CaPoolIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CaPoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1592,7 +1592,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CaPoolIamPolicy("policy", CaPoolIamPolicyArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1642,7 +1642,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CaPoolIamPolicy("policy", CaPoolIamPolicyArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1675,7 +1675,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CaPoolIamBinding("binding", CaPoolIamBindingArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1711,7 +1711,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CaPoolIamBinding("binding", CaPoolIamBindingArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(CaPoolIamBindingConditionArgs.builder()
@@ -1750,7 +1750,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CaPoolIamMember("member", CaPoolIamMemberArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1786,7 +1786,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CaPoolIamMember("member", CaPoolIamMemberArgs.builder()
-   *             .caPool(default_.id())
+   *             .caPool(default_.get("id"))
    *             .role("roles/privateca.certificateManager")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(CaPoolIamMemberConditionArgs.builder()
@@ -1921,8 +1921,8 @@ object certificateauthority:
    * Three different resources help you manage your IAM policy for Certificate Authority Service CertificateTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.certificateauthority.CertificateTemplateIamPolicy`: Authoritative. Sets the IAM policy for the certificatetemplate and replaces any existing policy already attached.
-   * * `gcp.certificateauthority.CertificateTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the certificatetemplate are preserved.
-   * * `gcp.certificateauthority.CertificateTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the certificatetemplate are preserved.
+   * * `gcp.certificateauthority.CertificateTemplateIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the certificatetemplate are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.certificateauthority.CertificateTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the certificatetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1930,7 +1930,7 @@ object certificateauthority:
    * 
    * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamPolicy` **cannot** be used in conjunction with `gcp.certificateauthority.CertificateTemplateIamBinding` and `gcp.certificateauthority.CertificateTemplateIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CertificateTemplateIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CertificateTemplateIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1969,7 +1969,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CertificateTemplateIamPolicy("policy", CertificateTemplateIamPolicyArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2019,7 +2019,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CertificateTemplateIamPolicy("policy", CertificateTemplateIamPolicyArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2052,7 +2052,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CertificateTemplateIamBinding("binding", CertificateTemplateIamBindingArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2088,7 +2088,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CertificateTemplateIamBinding("binding", CertificateTemplateIamBindingArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(CertificateTemplateIamBindingConditionArgs.builder()
@@ -2127,7 +2127,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CertificateTemplateIamMember("member", CertificateTemplateIamMemberArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2163,7 +2163,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CertificateTemplateIamMember("member", CertificateTemplateIamMemberArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(CertificateTemplateIamMemberConditionArgs.builder()
@@ -2187,8 +2187,8 @@ object certificateauthority:
    * Three different resources help you manage your IAM policy for Certificate Authority Service CertificateTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.certificateauthority.CertificateTemplateIamPolicy`: Authoritative. Sets the IAM policy for the certificatetemplate and replaces any existing policy already attached.
-   * * `gcp.certificateauthority.CertificateTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the certificatetemplate are preserved.
-   * * `gcp.certificateauthority.CertificateTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the certificatetemplate are preserved.
+   * * `gcp.certificateauthority.CertificateTemplateIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the certificatetemplate are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.certificateauthority.CertificateTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the certificatetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2196,7 +2196,7 @@ object certificateauthority:
    * 
    * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamPolicy` **cannot** be used in conjunction with `gcp.certificateauthority.CertificateTemplateIamBinding` and `gcp.certificateauthority.CertificateTemplateIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CertificateTemplateIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CertificateTemplateIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2235,7 +2235,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CertificateTemplateIamPolicy("policy", CertificateTemplateIamPolicyArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2285,7 +2285,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CertificateTemplateIamPolicy("policy", CertificateTemplateIamPolicyArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2318,7 +2318,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CertificateTemplateIamBinding("binding", CertificateTemplateIamBindingArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2354,7 +2354,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CertificateTemplateIamBinding("binding", CertificateTemplateIamBindingArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(CertificateTemplateIamBindingConditionArgs.builder()
@@ -2393,7 +2393,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CertificateTemplateIamMember("member", CertificateTemplateIamMemberArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2429,7 +2429,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CertificateTemplateIamMember("member", CertificateTemplateIamMemberArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(CertificateTemplateIamMemberConditionArgs.builder()
@@ -2496,8 +2496,8 @@ object certificateauthority:
    * Three different resources help you manage your IAM policy for Certificate Authority Service CertificateTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.certificateauthority.CertificateTemplateIamPolicy`: Authoritative. Sets the IAM policy for the certificatetemplate and replaces any existing policy already attached.
-   * * `gcp.certificateauthority.CertificateTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the certificatetemplate are preserved.
-   * * `gcp.certificateauthority.CertificateTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the certificatetemplate are preserved.
+   * * `gcp.certificateauthority.CertificateTemplateIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the certificatetemplate are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.certificateauthority.CertificateTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the certificatetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2505,7 +2505,7 @@ object certificateauthority:
    * 
    * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamPolicy` **cannot** be used in conjunction with `gcp.certificateauthority.CertificateTemplateIamBinding` and `gcp.certificateauthority.CertificateTemplateIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CertificateTemplateIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CertificateTemplateIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2544,7 +2544,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CertificateTemplateIamPolicy("policy", CertificateTemplateIamPolicyArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2594,7 +2594,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CertificateTemplateIamPolicy("policy", CertificateTemplateIamPolicyArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2627,7 +2627,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CertificateTemplateIamBinding("binding", CertificateTemplateIamBindingArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2663,7 +2663,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CertificateTemplateIamBinding("binding", CertificateTemplateIamBindingArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(CertificateTemplateIamBindingConditionArgs.builder()
@@ -2702,7 +2702,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CertificateTemplateIamMember("member", CertificateTemplateIamMemberArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2738,7 +2738,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CertificateTemplateIamMember("member", CertificateTemplateIamMemberArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(CertificateTemplateIamMemberConditionArgs.builder()
@@ -2762,8 +2762,8 @@ object certificateauthority:
    * Three different resources help you manage your IAM policy for Certificate Authority Service CertificateTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.certificateauthority.CertificateTemplateIamPolicy`: Authoritative. Sets the IAM policy for the certificatetemplate and replaces any existing policy already attached.
-   * * `gcp.certificateauthority.CertificateTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the certificatetemplate are preserved.
-   * * `gcp.certificateauthority.CertificateTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the certificatetemplate are preserved.
+   * * `gcp.certificateauthority.CertificateTemplateIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the certificatetemplate are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.certificateauthority.CertificateTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the certificatetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2771,7 +2771,7 @@ object certificateauthority:
    * 
    * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamPolicy` **cannot** be used in conjunction with `gcp.certificateauthority.CertificateTemplateIamBinding` and `gcp.certificateauthority.CertificateTemplateIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CertificateTemplateIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CertificateTemplateIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2810,7 +2810,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CertificateTemplateIamPolicy("policy", CertificateTemplateIamPolicyArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2860,7 +2860,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CertificateTemplateIamPolicy("policy", CertificateTemplateIamPolicyArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2893,7 +2893,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CertificateTemplateIamBinding("binding", CertificateTemplateIamBindingArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2929,7 +2929,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CertificateTemplateIamBinding("binding", CertificateTemplateIamBindingArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(CertificateTemplateIamBindingConditionArgs.builder()
@@ -2968,7 +2968,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CertificateTemplateIamMember("member", CertificateTemplateIamMemberArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3004,7 +3004,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CertificateTemplateIamMember("member", CertificateTemplateIamMemberArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(CertificateTemplateIamMemberConditionArgs.builder()
@@ -3071,8 +3071,8 @@ object certificateauthority:
    * Three different resources help you manage your IAM policy for Certificate Authority Service CertificateTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.certificateauthority.CertificateTemplateIamPolicy`: Authoritative. Sets the IAM policy for the certificatetemplate and replaces any existing policy already attached.
-   * * `gcp.certificateauthority.CertificateTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the certificatetemplate are preserved.
-   * * `gcp.certificateauthority.CertificateTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the certificatetemplate are preserved.
+   * * `gcp.certificateauthority.CertificateTemplateIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the certificatetemplate are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.certificateauthority.CertificateTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the certificatetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3080,7 +3080,7 @@ object certificateauthority:
    * 
    * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamPolicy` **cannot** be used in conjunction with `gcp.certificateauthority.CertificateTemplateIamBinding` and `gcp.certificateauthority.CertificateTemplateIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CertificateTemplateIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CertificateTemplateIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -3119,7 +3119,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CertificateTemplateIamPolicy("policy", CertificateTemplateIamPolicyArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3169,7 +3169,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CertificateTemplateIamPolicy("policy", CertificateTemplateIamPolicyArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3202,7 +3202,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CertificateTemplateIamBinding("binding", CertificateTemplateIamBindingArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3238,7 +3238,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CertificateTemplateIamBinding("binding", CertificateTemplateIamBindingArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(CertificateTemplateIamBindingConditionArgs.builder()
@@ -3277,7 +3277,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CertificateTemplateIamMember("member", CertificateTemplateIamMemberArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3313,7 +3313,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CertificateTemplateIamMember("member", CertificateTemplateIamMemberArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(CertificateTemplateIamMemberConditionArgs.builder()
@@ -3337,8 +3337,8 @@ object certificateauthority:
    * Three different resources help you manage your IAM policy for Certificate Authority Service CertificateTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.certificateauthority.CertificateTemplateIamPolicy`: Authoritative. Sets the IAM policy for the certificatetemplate and replaces any existing policy already attached.
-   * * `gcp.certificateauthority.CertificateTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the certificatetemplate are preserved.
-   * * `gcp.certificateauthority.CertificateTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the certificatetemplate are preserved.
+   * * `gcp.certificateauthority.CertificateTemplateIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the certificatetemplate are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.certificateauthority.CertificateTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the certificatetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3346,7 +3346,7 @@ object certificateauthority:
    * 
    * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamPolicy` **cannot** be used in conjunction with `gcp.certificateauthority.CertificateTemplateIamBinding` and `gcp.certificateauthority.CertificateTemplateIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CertificateTemplateIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.certificateauthority.CertificateTemplateIamBinding` resources **can be** used in conjunction with `gcp.certificateauthority.CertificateTemplateIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -3385,7 +3385,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CertificateTemplateIamPolicy("policy", CertificateTemplateIamPolicyArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3435,7 +3435,7 @@ object certificateauthority:
    *             .build());
    * 
    *         var policy = new CertificateTemplateIamPolicy("policy", CertificateTemplateIamPolicyArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3468,7 +3468,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CertificateTemplateIamBinding("binding", CertificateTemplateIamBindingArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3504,7 +3504,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new CertificateTemplateIamBinding("binding", CertificateTemplateIamBindingArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(CertificateTemplateIamBindingConditionArgs.builder()
@@ -3543,7 +3543,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CertificateTemplateIamMember("member", CertificateTemplateIamMemberArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3579,7 +3579,7 @@ object certificateauthority:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new CertificateTemplateIamMember("member", CertificateTemplateIamMemberArgs.builder()
-   *             .certificateTemplate(default_.id())
+   *             .certificateTemplate(default_.get("id"))
    *             .role("roles/privateca.templateUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(CertificateTemplateIamMemberConditionArgs.builder()

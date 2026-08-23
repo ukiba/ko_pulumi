@@ -146,8 +146,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine BackendBucket. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.BackendBucketIamPolicy`: Authoritative. Sets the IAM policy for the backendbucket and replaces any existing policy already attached.
-   * * `gcp.compute.BackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendbucket are preserved.
-   * * `gcp.compute.BackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendbucket are preserved.
+   * * `gcp.compute.BackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendbucket are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.BackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendbucket are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -195,8 +195,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendBucketIamPolicy("policy", BackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -230,8 +230,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendBucketIamBinding("binding", BackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -266,8 +266,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendBucketIamMember("member", BackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -286,8 +286,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine BackendBucket. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.BackendBucketIamPolicy`: Authoritative. Sets the IAM policy for the backendbucket and replaces any existing policy already attached.
-   * * `gcp.compute.BackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendbucket are preserved.
-   * * `gcp.compute.BackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendbucket are preserved.
+   * * `gcp.compute.BackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendbucket are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.BackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendbucket are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -335,8 +335,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendBucketIamPolicy("policy", BackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -370,8 +370,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendBucketIamBinding("binding", BackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -406,8 +406,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendBucketIamMember("member", BackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -467,8 +467,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine BackendBucket. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.BackendBucketIamPolicy`: Authoritative. Sets the IAM policy for the backendbucket and replaces any existing policy already attached.
-   * * `gcp.compute.BackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendbucket are preserved.
-   * * `gcp.compute.BackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendbucket are preserved.
+   * * `gcp.compute.BackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendbucket are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.BackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendbucket are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -516,8 +516,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendBucketIamPolicy("policy", BackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -551,8 +551,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendBucketIamBinding("binding", BackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -587,8 +587,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendBucketIamMember("member", BackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -607,8 +607,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine BackendBucket. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.BackendBucketIamPolicy`: Authoritative. Sets the IAM policy for the backendbucket and replaces any existing policy already attached.
-   * * `gcp.compute.BackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendbucket are preserved.
-   * * `gcp.compute.BackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendbucket are preserved.
+   * * `gcp.compute.BackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendbucket are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.BackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendbucket are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -656,8 +656,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendBucketIamPolicy("policy", BackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -691,8 +691,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendBucketIamBinding("binding", BackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -727,8 +727,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendBucketIamMember("member", BackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -788,8 +788,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine BackendBucket. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.BackendBucketIamPolicy`: Authoritative. Sets the IAM policy for the backendbucket and replaces any existing policy already attached.
-   * * `gcp.compute.BackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendbucket are preserved.
-   * * `gcp.compute.BackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendbucket are preserved.
+   * * `gcp.compute.BackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendbucket are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.BackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendbucket are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -837,8 +837,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendBucketIamPolicy("policy", BackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -872,8 +872,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendBucketIamBinding("binding", BackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -908,8 +908,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendBucketIamMember("member", BackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -928,8 +928,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine BackendBucket. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.BackendBucketIamPolicy`: Authoritative. Sets the IAM policy for the backendbucket and replaces any existing policy already attached.
-   * * `gcp.compute.BackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendbucket are preserved.
-   * * `gcp.compute.BackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendbucket are preserved.
+   * * `gcp.compute.BackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendbucket are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.BackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendbucket are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -977,8 +977,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendBucketIamPolicy("policy", BackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1012,8 +1012,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendBucketIamBinding("binding", BackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1048,8 +1048,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendBucketIamMember("member", BackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1338,8 +1338,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine BackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.BackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the backendservice and replaces any existing policy already attached.
-   * * `gcp.compute.BackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendservice are preserved.
-   * * `gcp.compute.BackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendservice are preserved.
+   * * `gcp.compute.BackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the backendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.BackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the backendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1347,7 +1347,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.BackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.compute.BackendServiceIamBinding` and `gcp.compute.BackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.BackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.BackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.BackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.BackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1389,8 +1389,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendServiceIamPolicy("policy", BackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1440,8 +1440,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendServiceIamPolicy("policy", BackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1474,8 +1474,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendServiceIamBinding("binding", BackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1511,8 +1511,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendServiceIamBinding("binding", BackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(BackendServiceIamBindingConditionArgs.builder()
@@ -1551,8 +1551,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendServiceIamMember("member", BackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1588,8 +1588,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendServiceIamMember("member", BackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(BackendServiceIamMemberConditionArgs.builder()
@@ -1613,8 +1613,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine BackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.BackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the backendservice and replaces any existing policy already attached.
-   * * `gcp.compute.BackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendservice are preserved.
-   * * `gcp.compute.BackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendservice are preserved.
+   * * `gcp.compute.BackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the backendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.BackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the backendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1622,7 +1622,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.BackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.compute.BackendServiceIamBinding` and `gcp.compute.BackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.BackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.BackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.BackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.BackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1664,8 +1664,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendServiceIamPolicy("policy", BackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1715,8 +1715,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendServiceIamPolicy("policy", BackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1749,8 +1749,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendServiceIamBinding("binding", BackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1786,8 +1786,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendServiceIamBinding("binding", BackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(BackendServiceIamBindingConditionArgs.builder()
@@ -1826,8 +1826,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendServiceIamMember("member", BackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1863,8 +1863,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendServiceIamMember("member", BackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(BackendServiceIamMemberConditionArgs.builder()
@@ -1934,8 +1934,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine BackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.BackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the backendservice and replaces any existing policy already attached.
-   * * `gcp.compute.BackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendservice are preserved.
-   * * `gcp.compute.BackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendservice are preserved.
+   * * `gcp.compute.BackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the backendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.BackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the backendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1943,7 +1943,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.BackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.compute.BackendServiceIamBinding` and `gcp.compute.BackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.BackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.BackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.BackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.BackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1985,8 +1985,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendServiceIamPolicy("policy", BackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2036,8 +2036,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendServiceIamPolicy("policy", BackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2070,8 +2070,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendServiceIamBinding("binding", BackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2107,8 +2107,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendServiceIamBinding("binding", BackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(BackendServiceIamBindingConditionArgs.builder()
@@ -2147,8 +2147,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendServiceIamMember("member", BackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2184,8 +2184,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendServiceIamMember("member", BackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(BackendServiceIamMemberConditionArgs.builder()
@@ -2209,8 +2209,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine BackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.BackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the backendservice and replaces any existing policy already attached.
-   * * `gcp.compute.BackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendservice are preserved.
-   * * `gcp.compute.BackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendservice are preserved.
+   * * `gcp.compute.BackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the backendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.BackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the backendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2218,7 +2218,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.BackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.compute.BackendServiceIamBinding` and `gcp.compute.BackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.BackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.BackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.BackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.BackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2260,8 +2260,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendServiceIamPolicy("policy", BackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2311,8 +2311,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendServiceIamPolicy("policy", BackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2345,8 +2345,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendServiceIamBinding("binding", BackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2382,8 +2382,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendServiceIamBinding("binding", BackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(BackendServiceIamBindingConditionArgs.builder()
@@ -2422,8 +2422,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendServiceIamMember("member", BackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2459,8 +2459,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendServiceIamMember("member", BackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(BackendServiceIamMemberConditionArgs.builder()
@@ -2530,8 +2530,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine BackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.BackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the backendservice and replaces any existing policy already attached.
-   * * `gcp.compute.BackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendservice are preserved.
-   * * `gcp.compute.BackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendservice are preserved.
+   * * `gcp.compute.BackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the backendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.BackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the backendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2539,7 +2539,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.BackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.compute.BackendServiceIamBinding` and `gcp.compute.BackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.BackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.BackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.BackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.BackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2581,8 +2581,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendServiceIamPolicy("policy", BackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2632,8 +2632,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendServiceIamPolicy("policy", BackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2666,8 +2666,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendServiceIamBinding("binding", BackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2703,8 +2703,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendServiceIamBinding("binding", BackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(BackendServiceIamBindingConditionArgs.builder()
@@ -2743,8 +2743,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendServiceIamMember("member", BackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2780,8 +2780,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendServiceIamMember("member", BackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(BackendServiceIamMemberConditionArgs.builder()
@@ -2805,8 +2805,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine BackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.BackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the backendservice and replaces any existing policy already attached.
-   * * `gcp.compute.BackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backendservice are preserved.
-   * * `gcp.compute.BackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backendservice are preserved.
+   * * `gcp.compute.BackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the backendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.BackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the backendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2814,7 +2814,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.BackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.compute.BackendServiceIamBinding` and `gcp.compute.BackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.BackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.BackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.BackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.BackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2856,8 +2856,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendServiceIamPolicy("policy", BackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2907,8 +2907,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new BackendServiceIamPolicy("policy", BackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2941,8 +2941,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendServiceIamBinding("binding", BackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2978,8 +2978,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackendServiceIamBinding("binding", BackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(BackendServiceIamBindingConditionArgs.builder()
@@ -3018,8 +3018,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendServiceIamMember("member", BackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3055,8 +3055,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackendServiceIamMember("member", BackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(BackendServiceIamMemberConditionArgs.builder()
@@ -4993,7 +4993,7 @@ object compute:
      *         for (var i = 0; i < available.names().size(); i++) {
      *             new InstanceGroupManager("foo-" + i, InstanceGroupManagerArgs.builder()
      *                 .name(String.format("test-%s", range.value()))
-     *                 .instanceTemplate(foobar.selfLink())
+     *                 .instanceTemplate(foobar.get("selfLink"))
      *                 .baseInstanceName(String.format("foobar-%s", range.value()))
      *                 .zone(available.names()[range.value()])
      *                 .targetSize(1)
@@ -5046,7 +5046,7 @@ object compute:
      *         for (var i = 0; i < available.names().size(); i++) {
      *             new InstanceGroupManager("foo-" + i, InstanceGroupManagerArgs.builder()
      *                 .name(String.format("test-%s", range.value()))
-     *                 .instanceTemplate(foobar.selfLink())
+     *                 .instanceTemplate(foobar.get("selfLink"))
      *                 .baseInstanceName(String.format("foobar-%s", range.value()))
      *                 .zone(available.names()[range.value()])
      *                 .targetSize(1)
@@ -5241,8 +5241,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Disk. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.DiskIamPolicy`: Authoritative. Sets the IAM policy for the disk and replaces any existing policy already attached.
-   * * `gcp.compute.DiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the disk are preserved.
-   * * `gcp.compute.DiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the disk are preserved.
+   * * `gcp.compute.DiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the disk are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.DiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the disk are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5287,9 +5287,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new DiskIamPolicy("policy", DiskIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5323,9 +5323,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DiskIamBinding("binding", DiskIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5360,9 +5360,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DiskIamMember("member", DiskIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5381,8 +5381,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Disk. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.DiskIamPolicy`: Authoritative. Sets the IAM policy for the disk and replaces any existing policy already attached.
-   * * `gcp.compute.DiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the disk are preserved.
-   * * `gcp.compute.DiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the disk are preserved.
+   * * `gcp.compute.DiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the disk are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.DiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the disk are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5427,9 +5427,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new DiskIamPolicy("policy", DiskIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5463,9 +5463,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DiskIamBinding("binding", DiskIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5500,9 +5500,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DiskIamMember("member", DiskIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5563,8 +5563,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Disk. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.DiskIamPolicy`: Authoritative. Sets the IAM policy for the disk and replaces any existing policy already attached.
-   * * `gcp.compute.DiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the disk are preserved.
-   * * `gcp.compute.DiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the disk are preserved.
+   * * `gcp.compute.DiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the disk are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.DiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the disk are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5609,9 +5609,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new DiskIamPolicy("policy", DiskIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5645,9 +5645,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DiskIamBinding("binding", DiskIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5682,9 +5682,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DiskIamMember("member", DiskIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5703,8 +5703,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Disk. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.DiskIamPolicy`: Authoritative. Sets the IAM policy for the disk and replaces any existing policy already attached.
-   * * `gcp.compute.DiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the disk are preserved.
-   * * `gcp.compute.DiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the disk are preserved.
+   * * `gcp.compute.DiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the disk are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.DiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the disk are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5749,9 +5749,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new DiskIamPolicy("policy", DiskIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5785,9 +5785,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DiskIamBinding("binding", DiskIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5822,9 +5822,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DiskIamMember("member", DiskIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5885,8 +5885,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Disk. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.DiskIamPolicy`: Authoritative. Sets the IAM policy for the disk and replaces any existing policy already attached.
-   * * `gcp.compute.DiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the disk are preserved.
-   * * `gcp.compute.DiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the disk are preserved.
+   * * `gcp.compute.DiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the disk are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.DiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the disk are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5931,9 +5931,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new DiskIamPolicy("policy", DiskIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5967,9 +5967,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DiskIamBinding("binding", DiskIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6004,9 +6004,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DiskIamMember("member", DiskIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6025,8 +6025,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Disk. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.DiskIamPolicy`: Authoritative. Sets the IAM policy for the disk and replaces any existing policy already attached.
-   * * `gcp.compute.DiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the disk are preserved.
-   * * `gcp.compute.DiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the disk are preserved.
+   * * `gcp.compute.DiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the disk are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.DiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the disk are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6071,9 +6071,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new DiskIamPolicy("policy", DiskIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6107,9 +6107,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new DiskIamBinding("binding", DiskIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6144,9 +6144,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new DiskIamMember("member", DiskIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6366,8 +6366,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine FirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.FirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the firewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved.
-   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved.
+   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6412,7 +6412,7 @@ object compute:
    *             .build());
    * 
    *         var policy = new FirewallPolicyIamPolicy("policy", FirewallPolicyIamPolicyArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6446,7 +6446,7 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FirewallPolicyIamBinding("binding", FirewallPolicyIamBindingArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6481,7 +6481,7 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FirewallPolicyIamMember("member", FirewallPolicyIamMemberArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6501,8 +6501,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine FirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.FirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the firewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved.
-   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved.
+   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6547,7 +6547,7 @@ object compute:
    *             .build());
    * 
    *         var policy = new FirewallPolicyIamPolicy("policy", FirewallPolicyIamPolicyArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6581,7 +6581,7 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FirewallPolicyIamBinding("binding", FirewallPolicyIamBindingArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6616,7 +6616,7 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FirewallPolicyIamMember("member", FirewallPolicyIamMemberArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6675,8 +6675,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine FirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.FirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the firewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved.
-   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved.
+   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6721,7 +6721,7 @@ object compute:
    *             .build());
    * 
    *         var policy = new FirewallPolicyIamPolicy("policy", FirewallPolicyIamPolicyArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6755,7 +6755,7 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FirewallPolicyIamBinding("binding", FirewallPolicyIamBindingArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6790,7 +6790,7 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FirewallPolicyIamMember("member", FirewallPolicyIamMemberArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6810,8 +6810,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine FirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.FirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the firewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved.
-   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved.
+   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6856,7 +6856,7 @@ object compute:
    *             .build());
    * 
    *         var policy = new FirewallPolicyIamPolicy("policy", FirewallPolicyIamPolicyArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6890,7 +6890,7 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FirewallPolicyIamBinding("binding", FirewallPolicyIamBindingArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6925,7 +6925,7 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FirewallPolicyIamMember("member", FirewallPolicyIamMemberArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6984,8 +6984,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine FirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.FirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the firewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved.
-   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved.
+   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -7030,7 +7030,7 @@ object compute:
    *             .build());
    * 
    *         var policy = new FirewallPolicyIamPolicy("policy", FirewallPolicyIamPolicyArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -7064,7 +7064,7 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FirewallPolicyIamBinding("binding", FirewallPolicyIamBindingArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7099,7 +7099,7 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FirewallPolicyIamMember("member", FirewallPolicyIamMemberArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7119,8 +7119,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine FirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.FirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the firewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved.
-   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved.
+   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -7165,7 +7165,7 @@ object compute:
    *             .build());
    * 
    *         var policy = new FirewallPolicyIamPolicy("policy", FirewallPolicyIamPolicyArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -7199,7 +7199,7 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new FirewallPolicyIamBinding("binding", FirewallPolicyIamBindingArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7234,7 +7234,7 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new FirewallPolicyIamMember("member", FirewallPolicyIamMemberArgs.builder()
-   *             .name(default_.name())
+   *             .name(default_.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7968,8 +7968,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Image. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.ImageIamPolicy`: Authoritative. Sets the IAM policy for the image and replaces any existing policy already attached.
-   * * `gcp.compute.ImageIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the image are preserved.
-   * * `gcp.compute.ImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the image are preserved.
+   * * `gcp.compute.ImageIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the image are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.ImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the image are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -7977,7 +7977,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.ImageIamPolicy` **cannot** be used in conjunction with `gcp.compute.ImageIamBinding` and `gcp.compute.ImageIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.ImageIamBinding` resources **can be** used in conjunction with `gcp.compute.ImageIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.ImageIamBinding` resources **can be** used in conjunction with `gcp.compute.ImageIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -8016,8 +8016,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new ImageIamPolicy("policy", ImageIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8067,8 +8067,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new ImageIamPolicy("policy", ImageIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8101,8 +8101,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ImageIamBinding("binding", ImageIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8138,8 +8138,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ImageIamBinding("binding", ImageIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(ImageIamBindingConditionArgs.builder()
@@ -8178,8 +8178,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ImageIamMember("member", ImageIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8215,8 +8215,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ImageIamMember("member", ImageIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(ImageIamMemberConditionArgs.builder()
@@ -8240,8 +8240,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Image. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.ImageIamPolicy`: Authoritative. Sets the IAM policy for the image and replaces any existing policy already attached.
-   * * `gcp.compute.ImageIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the image are preserved.
-   * * `gcp.compute.ImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the image are preserved.
+   * * `gcp.compute.ImageIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the image are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.ImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the image are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -8249,7 +8249,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.ImageIamPolicy` **cannot** be used in conjunction with `gcp.compute.ImageIamBinding` and `gcp.compute.ImageIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.ImageIamBinding` resources **can be** used in conjunction with `gcp.compute.ImageIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.ImageIamBinding` resources **can be** used in conjunction with `gcp.compute.ImageIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -8288,8 +8288,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new ImageIamPolicy("policy", ImageIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8339,8 +8339,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new ImageIamPolicy("policy", ImageIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8373,8 +8373,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ImageIamBinding("binding", ImageIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8410,8 +8410,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ImageIamBinding("binding", ImageIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(ImageIamBindingConditionArgs.builder()
@@ -8450,8 +8450,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ImageIamMember("member", ImageIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8487,8 +8487,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ImageIamMember("member", ImageIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(ImageIamMemberConditionArgs.builder()
@@ -8555,8 +8555,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Image. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.ImageIamPolicy`: Authoritative. Sets the IAM policy for the image and replaces any existing policy already attached.
-   * * `gcp.compute.ImageIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the image are preserved.
-   * * `gcp.compute.ImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the image are preserved.
+   * * `gcp.compute.ImageIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the image are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.ImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the image are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -8564,7 +8564,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.ImageIamPolicy` **cannot** be used in conjunction with `gcp.compute.ImageIamBinding` and `gcp.compute.ImageIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.ImageIamBinding` resources **can be** used in conjunction with `gcp.compute.ImageIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.ImageIamBinding` resources **can be** used in conjunction with `gcp.compute.ImageIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -8603,8 +8603,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new ImageIamPolicy("policy", ImageIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8654,8 +8654,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new ImageIamPolicy("policy", ImageIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8688,8 +8688,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ImageIamBinding("binding", ImageIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8725,8 +8725,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ImageIamBinding("binding", ImageIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(ImageIamBindingConditionArgs.builder()
@@ -8765,8 +8765,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ImageIamMember("member", ImageIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8802,8 +8802,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ImageIamMember("member", ImageIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(ImageIamMemberConditionArgs.builder()
@@ -8827,8 +8827,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Image. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.ImageIamPolicy`: Authoritative. Sets the IAM policy for the image and replaces any existing policy already attached.
-   * * `gcp.compute.ImageIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the image are preserved.
-   * * `gcp.compute.ImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the image are preserved.
+   * * `gcp.compute.ImageIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the image are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.ImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the image are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -8836,7 +8836,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.ImageIamPolicy` **cannot** be used in conjunction with `gcp.compute.ImageIamBinding` and `gcp.compute.ImageIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.ImageIamBinding` resources **can be** used in conjunction with `gcp.compute.ImageIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.ImageIamBinding` resources **can be** used in conjunction with `gcp.compute.ImageIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -8875,8 +8875,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new ImageIamPolicy("policy", ImageIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8926,8 +8926,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new ImageIamPolicy("policy", ImageIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8960,8 +8960,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ImageIamBinding("binding", ImageIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8997,8 +8997,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ImageIamBinding("binding", ImageIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(ImageIamBindingConditionArgs.builder()
@@ -9037,8 +9037,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ImageIamMember("member", ImageIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9074,8 +9074,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ImageIamMember("member", ImageIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(ImageIamMemberConditionArgs.builder()
@@ -9142,8 +9142,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Image. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.ImageIamPolicy`: Authoritative. Sets the IAM policy for the image and replaces any existing policy already attached.
-   * * `gcp.compute.ImageIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the image are preserved.
-   * * `gcp.compute.ImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the image are preserved.
+   * * `gcp.compute.ImageIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the image are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.ImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the image are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -9151,7 +9151,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.ImageIamPolicy` **cannot** be used in conjunction with `gcp.compute.ImageIamBinding` and `gcp.compute.ImageIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.ImageIamBinding` resources **can be** used in conjunction with `gcp.compute.ImageIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.ImageIamBinding` resources **can be** used in conjunction with `gcp.compute.ImageIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -9190,8 +9190,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new ImageIamPolicy("policy", ImageIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9241,8 +9241,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new ImageIamPolicy("policy", ImageIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9275,8 +9275,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ImageIamBinding("binding", ImageIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9312,8 +9312,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ImageIamBinding("binding", ImageIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(ImageIamBindingConditionArgs.builder()
@@ -9352,8 +9352,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ImageIamMember("member", ImageIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9389,8 +9389,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ImageIamMember("member", ImageIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(ImageIamMemberConditionArgs.builder()
@@ -9414,8 +9414,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Image. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.ImageIamPolicy`: Authoritative. Sets the IAM policy for the image and replaces any existing policy already attached.
-   * * `gcp.compute.ImageIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the image are preserved.
-   * * `gcp.compute.ImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the image are preserved.
+   * * `gcp.compute.ImageIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the image are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.ImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the image are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -9423,7 +9423,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.ImageIamPolicy` **cannot** be used in conjunction with `gcp.compute.ImageIamBinding` and `gcp.compute.ImageIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.ImageIamBinding` resources **can be** used in conjunction with `gcp.compute.ImageIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.ImageIamBinding` resources **can be** used in conjunction with `gcp.compute.ImageIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -9462,8 +9462,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new ImageIamPolicy("policy", ImageIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9513,8 +9513,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new ImageIamPolicy("policy", ImageIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9547,8 +9547,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ImageIamBinding("binding", ImageIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9584,8 +9584,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ImageIamBinding("binding", ImageIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(ImageIamBindingConditionArgs.builder()
@@ -9624,8 +9624,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ImageIamMember("member", ImageIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9661,8 +9661,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ImageIamMember("member", ImageIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .image(example.name())
+   *             .project(example.get("project"))
+   *             .image(example.get("name"))
    *             .role("roles/compute.imageUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(ImageIamMemberConditionArgs.builder()
@@ -10404,8 +10404,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Instance. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstanceIAMPolicy`: Authoritative. Sets the IAM policy for the instance and replaces any existing policy already attached.
-   * * `gcp.compute.InstanceIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved.
-   * * `gcp.compute.InstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved.
+   * * `gcp.compute.InstanceIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instance are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -10413,7 +10413,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstanceIAMPolicy` **cannot** be used in conjunction with `gcp.compute.InstanceIAMBinding` and `gcp.compute.InstanceIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstanceIAMBinding` resources **can be** used in conjunction with `gcp.compute.InstanceIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstanceIAMBinding` resources **can be** used in conjunction with `gcp.compute.InstanceIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -10452,9 +10452,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceIAMPolicy("policy", InstanceIAMPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -10504,9 +10504,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceIAMPolicy("policy", InstanceIAMPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -10539,9 +10539,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIAMBinding("binding", InstanceIAMBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -10577,9 +10577,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIAMBinding("binding", InstanceIAMBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceIAMBindingConditionArgs.builder()
@@ -10618,9 +10618,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIAMMember("member", InstanceIAMMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -10656,9 +10656,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIAMMember("member", InstanceIAMMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceIAMMemberConditionArgs.builder()
@@ -10682,8 +10682,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Instance. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstanceIAMPolicy`: Authoritative. Sets the IAM policy for the instance and replaces any existing policy already attached.
-   * * `gcp.compute.InstanceIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved.
-   * * `gcp.compute.InstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved.
+   * * `gcp.compute.InstanceIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instance are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -10691,7 +10691,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstanceIAMPolicy` **cannot** be used in conjunction with `gcp.compute.InstanceIAMBinding` and `gcp.compute.InstanceIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstanceIAMBinding` resources **can be** used in conjunction with `gcp.compute.InstanceIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstanceIAMBinding` resources **can be** used in conjunction with `gcp.compute.InstanceIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -10730,9 +10730,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceIAMPolicy("policy", InstanceIAMPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -10782,9 +10782,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceIAMPolicy("policy", InstanceIAMPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -10817,9 +10817,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIAMBinding("binding", InstanceIAMBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -10855,9 +10855,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIAMBinding("binding", InstanceIAMBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceIAMBindingConditionArgs.builder()
@@ -10896,9 +10896,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIAMMember("member", InstanceIAMMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -10934,9 +10934,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIAMMember("member", InstanceIAMMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceIAMMemberConditionArgs.builder()
@@ -11004,8 +11004,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Instance. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstanceIAMPolicy`: Authoritative. Sets the IAM policy for the instance and replaces any existing policy already attached.
-   * * `gcp.compute.InstanceIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved.
-   * * `gcp.compute.InstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved.
+   * * `gcp.compute.InstanceIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instance are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -11013,7 +11013,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstanceIAMPolicy` **cannot** be used in conjunction with `gcp.compute.InstanceIAMBinding` and `gcp.compute.InstanceIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstanceIAMBinding` resources **can be** used in conjunction with `gcp.compute.InstanceIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstanceIAMBinding` resources **can be** used in conjunction with `gcp.compute.InstanceIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -11052,9 +11052,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceIAMPolicy("policy", InstanceIAMPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -11104,9 +11104,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceIAMPolicy("policy", InstanceIAMPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -11139,9 +11139,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIAMBinding("binding", InstanceIAMBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -11177,9 +11177,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIAMBinding("binding", InstanceIAMBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceIAMBindingConditionArgs.builder()
@@ -11218,9 +11218,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIAMMember("member", InstanceIAMMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -11256,9 +11256,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIAMMember("member", InstanceIAMMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceIAMMemberConditionArgs.builder()
@@ -11282,8 +11282,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Instance. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstanceIAMPolicy`: Authoritative. Sets the IAM policy for the instance and replaces any existing policy already attached.
-   * * `gcp.compute.InstanceIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved.
-   * * `gcp.compute.InstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved.
+   * * `gcp.compute.InstanceIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instance are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -11291,7 +11291,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstanceIAMPolicy` **cannot** be used in conjunction with `gcp.compute.InstanceIAMBinding` and `gcp.compute.InstanceIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstanceIAMBinding` resources **can be** used in conjunction with `gcp.compute.InstanceIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstanceIAMBinding` resources **can be** used in conjunction with `gcp.compute.InstanceIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -11330,9 +11330,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceIAMPolicy("policy", InstanceIAMPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -11382,9 +11382,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceIAMPolicy("policy", InstanceIAMPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -11417,9 +11417,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIAMBinding("binding", InstanceIAMBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -11455,9 +11455,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIAMBinding("binding", InstanceIAMBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceIAMBindingConditionArgs.builder()
@@ -11496,9 +11496,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIAMMember("member", InstanceIAMMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -11534,9 +11534,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIAMMember("member", InstanceIAMMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceIAMMemberConditionArgs.builder()
@@ -11604,8 +11604,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Instance. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstanceIAMPolicy`: Authoritative. Sets the IAM policy for the instance and replaces any existing policy already attached.
-   * * `gcp.compute.InstanceIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved.
-   * * `gcp.compute.InstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved.
+   * * `gcp.compute.InstanceIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instance are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -11613,7 +11613,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstanceIAMPolicy` **cannot** be used in conjunction with `gcp.compute.InstanceIAMBinding` and `gcp.compute.InstanceIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstanceIAMBinding` resources **can be** used in conjunction with `gcp.compute.InstanceIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstanceIAMBinding` resources **can be** used in conjunction with `gcp.compute.InstanceIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -11652,9 +11652,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceIAMPolicy("policy", InstanceIAMPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -11704,9 +11704,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceIAMPolicy("policy", InstanceIAMPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -11739,9 +11739,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIAMBinding("binding", InstanceIAMBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -11777,9 +11777,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIAMBinding("binding", InstanceIAMBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceIAMBindingConditionArgs.builder()
@@ -11818,9 +11818,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIAMMember("member", InstanceIAMMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -11856,9 +11856,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIAMMember("member", InstanceIAMMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceIAMMemberConditionArgs.builder()
@@ -11882,8 +11882,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Instance. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstanceIAMPolicy`: Authoritative. Sets the IAM policy for the instance and replaces any existing policy already attached.
-   * * `gcp.compute.InstanceIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instance are preserved.
-   * * `gcp.compute.InstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instance are preserved.
+   * * `gcp.compute.InstanceIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instance are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -11891,7 +11891,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstanceIAMPolicy` **cannot** be used in conjunction with `gcp.compute.InstanceIAMBinding` and `gcp.compute.InstanceIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstanceIAMBinding` resources **can be** used in conjunction with `gcp.compute.InstanceIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstanceIAMBinding` resources **can be** used in conjunction with `gcp.compute.InstanceIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -11930,9 +11930,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceIAMPolicy("policy", InstanceIAMPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -11982,9 +11982,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceIAMPolicy("policy", InstanceIAMPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -12017,9 +12017,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIAMBinding("binding", InstanceIAMBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -12055,9 +12055,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceIAMBinding("binding", InstanceIAMBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceIAMBindingConditionArgs.builder()
@@ -12096,9 +12096,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIAMMember("member", InstanceIAMMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -12134,9 +12134,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceIAMMember("member", InstanceIAMMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .instanceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .instanceName(default_.get("name"))
    *             .role("roles/compute.osLogin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceIAMMemberConditionArgs.builder()
@@ -12351,8 +12351,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine InstanceTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstanceTemplateIamPolicy`: Authoritative. Sets the IAM policy for the instancetemplate and replaces any existing policy already attached.
-   * * `gcp.compute.InstanceTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instancetemplate are preserved.
-   * * `gcp.compute.InstanceTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instancetemplate are preserved.
+   * * `gcp.compute.InstanceTemplateIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instancetemplate are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstanceTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instancetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -12360,7 +12360,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstanceTemplateIamPolicy` **cannot** be used in conjunction with `gcp.compute.InstanceTemplateIamBinding` and `gcp.compute.InstanceTemplateIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstanceTemplateIamBinding` resources **can be** used in conjunction with `gcp.compute.InstanceTemplateIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstanceTemplateIamBinding` resources **can be** used in conjunction with `gcp.compute.InstanceTemplateIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -12399,8 +12399,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceTemplateIamPolicy("policy", InstanceTemplateIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -12450,8 +12450,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceTemplateIamPolicy("policy", InstanceTemplateIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -12484,8 +12484,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceTemplateIamBinding("binding", InstanceTemplateIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -12521,8 +12521,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceTemplateIamBinding("binding", InstanceTemplateIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceTemplateIamBindingConditionArgs.builder()
@@ -12561,8 +12561,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceTemplateIamMember("member", InstanceTemplateIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -12598,8 +12598,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceTemplateIamMember("member", InstanceTemplateIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceTemplateIamMemberConditionArgs.builder()
@@ -12623,8 +12623,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine InstanceTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstanceTemplateIamPolicy`: Authoritative. Sets the IAM policy for the instancetemplate and replaces any existing policy already attached.
-   * * `gcp.compute.InstanceTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instancetemplate are preserved.
-   * * `gcp.compute.InstanceTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instancetemplate are preserved.
+   * * `gcp.compute.InstanceTemplateIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instancetemplate are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstanceTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instancetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -12632,7 +12632,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstanceTemplateIamPolicy` **cannot** be used in conjunction with `gcp.compute.InstanceTemplateIamBinding` and `gcp.compute.InstanceTemplateIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstanceTemplateIamBinding` resources **can be** used in conjunction with `gcp.compute.InstanceTemplateIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstanceTemplateIamBinding` resources **can be** used in conjunction with `gcp.compute.InstanceTemplateIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -12671,8 +12671,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceTemplateIamPolicy("policy", InstanceTemplateIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -12722,8 +12722,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceTemplateIamPolicy("policy", InstanceTemplateIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -12756,8 +12756,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceTemplateIamBinding("binding", InstanceTemplateIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -12793,8 +12793,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceTemplateIamBinding("binding", InstanceTemplateIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceTemplateIamBindingConditionArgs.builder()
@@ -12833,8 +12833,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceTemplateIamMember("member", InstanceTemplateIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -12870,8 +12870,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceTemplateIamMember("member", InstanceTemplateIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceTemplateIamMemberConditionArgs.builder()
@@ -12941,8 +12941,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine InstanceTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstanceTemplateIamPolicy`: Authoritative. Sets the IAM policy for the instancetemplate and replaces any existing policy already attached.
-   * * `gcp.compute.InstanceTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instancetemplate are preserved.
-   * * `gcp.compute.InstanceTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instancetemplate are preserved.
+   * * `gcp.compute.InstanceTemplateIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instancetemplate are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstanceTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instancetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -12950,7 +12950,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstanceTemplateIamPolicy` **cannot** be used in conjunction with `gcp.compute.InstanceTemplateIamBinding` and `gcp.compute.InstanceTemplateIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstanceTemplateIamBinding` resources **can be** used in conjunction with `gcp.compute.InstanceTemplateIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstanceTemplateIamBinding` resources **can be** used in conjunction with `gcp.compute.InstanceTemplateIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -12989,8 +12989,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceTemplateIamPolicy("policy", InstanceTemplateIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -13040,8 +13040,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceTemplateIamPolicy("policy", InstanceTemplateIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -13074,8 +13074,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceTemplateIamBinding("binding", InstanceTemplateIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -13111,8 +13111,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceTemplateIamBinding("binding", InstanceTemplateIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceTemplateIamBindingConditionArgs.builder()
@@ -13151,8 +13151,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceTemplateIamMember("member", InstanceTemplateIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -13188,8 +13188,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceTemplateIamMember("member", InstanceTemplateIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceTemplateIamMemberConditionArgs.builder()
@@ -13213,8 +13213,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine InstanceTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstanceTemplateIamPolicy`: Authoritative. Sets the IAM policy for the instancetemplate and replaces any existing policy already attached.
-   * * `gcp.compute.InstanceTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instancetemplate are preserved.
-   * * `gcp.compute.InstanceTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instancetemplate are preserved.
+   * * `gcp.compute.InstanceTemplateIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instancetemplate are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstanceTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instancetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -13222,7 +13222,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstanceTemplateIamPolicy` **cannot** be used in conjunction with `gcp.compute.InstanceTemplateIamBinding` and `gcp.compute.InstanceTemplateIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstanceTemplateIamBinding` resources **can be** used in conjunction with `gcp.compute.InstanceTemplateIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstanceTemplateIamBinding` resources **can be** used in conjunction with `gcp.compute.InstanceTemplateIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -13261,8 +13261,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceTemplateIamPolicy("policy", InstanceTemplateIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -13312,8 +13312,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceTemplateIamPolicy("policy", InstanceTemplateIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -13346,8 +13346,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceTemplateIamBinding("binding", InstanceTemplateIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -13383,8 +13383,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceTemplateIamBinding("binding", InstanceTemplateIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceTemplateIamBindingConditionArgs.builder()
@@ -13423,8 +13423,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceTemplateIamMember("member", InstanceTemplateIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -13460,8 +13460,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceTemplateIamMember("member", InstanceTemplateIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceTemplateIamMemberConditionArgs.builder()
@@ -13531,8 +13531,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine InstanceTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstanceTemplateIamPolicy`: Authoritative. Sets the IAM policy for the instancetemplate and replaces any existing policy already attached.
-   * * `gcp.compute.InstanceTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instancetemplate are preserved.
-   * * `gcp.compute.InstanceTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instancetemplate are preserved.
+   * * `gcp.compute.InstanceTemplateIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instancetemplate are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstanceTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instancetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -13540,7 +13540,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstanceTemplateIamPolicy` **cannot** be used in conjunction with `gcp.compute.InstanceTemplateIamBinding` and `gcp.compute.InstanceTemplateIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstanceTemplateIamBinding` resources **can be** used in conjunction with `gcp.compute.InstanceTemplateIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstanceTemplateIamBinding` resources **can be** used in conjunction with `gcp.compute.InstanceTemplateIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -13579,8 +13579,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceTemplateIamPolicy("policy", InstanceTemplateIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -13630,8 +13630,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceTemplateIamPolicy("policy", InstanceTemplateIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -13664,8 +13664,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceTemplateIamBinding("binding", InstanceTemplateIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -13701,8 +13701,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceTemplateIamBinding("binding", InstanceTemplateIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceTemplateIamBindingConditionArgs.builder()
@@ -13741,8 +13741,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceTemplateIamMember("member", InstanceTemplateIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -13778,8 +13778,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceTemplateIamMember("member", InstanceTemplateIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceTemplateIamMemberConditionArgs.builder()
@@ -13803,8 +13803,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine InstanceTemplate. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstanceTemplateIamPolicy`: Authoritative. Sets the IAM policy for the instancetemplate and replaces any existing policy already attached.
-   * * `gcp.compute.InstanceTemplateIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instancetemplate are preserved.
-   * * `gcp.compute.InstanceTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instancetemplate are preserved.
+   * * `gcp.compute.InstanceTemplateIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instancetemplate are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstanceTemplateIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instancetemplate are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -13812,7 +13812,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstanceTemplateIamPolicy` **cannot** be used in conjunction with `gcp.compute.InstanceTemplateIamBinding` and `gcp.compute.InstanceTemplateIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstanceTemplateIamBinding` resources **can be** used in conjunction with `gcp.compute.InstanceTemplateIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstanceTemplateIamBinding` resources **can be** used in conjunction with `gcp.compute.InstanceTemplateIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -13851,8 +13851,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceTemplateIamPolicy("policy", InstanceTemplateIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -13902,8 +13902,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstanceTemplateIamPolicy("policy", InstanceTemplateIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -13936,8 +13936,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceTemplateIamBinding("binding", InstanceTemplateIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -13973,8 +13973,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstanceTemplateIamBinding("binding", InstanceTemplateIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceTemplateIamBindingConditionArgs.builder()
@@ -14013,8 +14013,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceTemplateIamMember("member", InstanceTemplateIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -14050,8 +14050,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstanceTemplateIamMember("member", InstanceTemplateIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.instanceAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstanceTemplateIamMemberConditionArgs.builder()
@@ -14146,8 +14146,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine InstantSnapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstantSnapshotIamPolicy`: Authoritative. Sets the IAM policy for the instantsnapshot and replaces any existing policy already attached.
-   * * `gcp.compute.InstantSnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instantsnapshot are preserved.
-   * * `gcp.compute.InstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instantsnapshot are preserved.
+   * * `gcp.compute.InstantSnapshotIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instantsnapshot are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instantsnapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -14155,7 +14155,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstantSnapshotIamPolicy` **cannot** be used in conjunction with `gcp.compute.InstantSnapshotIamBinding` and `gcp.compute.InstantSnapshotIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.InstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.InstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -14194,9 +14194,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstantSnapshotIamPolicy("policy", InstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -14246,9 +14246,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstantSnapshotIamPolicy("policy", InstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -14281,9 +14281,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstantSnapshotIamBinding("binding", InstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -14319,9 +14319,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstantSnapshotIamBinding("binding", InstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstantSnapshotIamBindingConditionArgs.builder()
@@ -14360,9 +14360,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstantSnapshotIamMember("member", InstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -14398,9 +14398,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstantSnapshotIamMember("member", InstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstantSnapshotIamMemberConditionArgs.builder()
@@ -14424,8 +14424,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine InstantSnapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstantSnapshotIamPolicy`: Authoritative. Sets the IAM policy for the instantsnapshot and replaces any existing policy already attached.
-   * * `gcp.compute.InstantSnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instantsnapshot are preserved.
-   * * `gcp.compute.InstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instantsnapshot are preserved.
+   * * `gcp.compute.InstantSnapshotIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instantsnapshot are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instantsnapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -14433,7 +14433,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstantSnapshotIamPolicy` **cannot** be used in conjunction with `gcp.compute.InstantSnapshotIamBinding` and `gcp.compute.InstantSnapshotIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.InstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.InstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -14472,9 +14472,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstantSnapshotIamPolicy("policy", InstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -14524,9 +14524,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstantSnapshotIamPolicy("policy", InstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -14559,9 +14559,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstantSnapshotIamBinding("binding", InstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -14597,9 +14597,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstantSnapshotIamBinding("binding", InstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstantSnapshotIamBindingConditionArgs.builder()
@@ -14638,9 +14638,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstantSnapshotIamMember("member", InstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -14676,9 +14676,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstantSnapshotIamMember("member", InstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstantSnapshotIamMemberConditionArgs.builder()
@@ -14749,8 +14749,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine InstantSnapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstantSnapshotIamPolicy`: Authoritative. Sets the IAM policy for the instantsnapshot and replaces any existing policy already attached.
-   * * `gcp.compute.InstantSnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instantsnapshot are preserved.
-   * * `gcp.compute.InstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instantsnapshot are preserved.
+   * * `gcp.compute.InstantSnapshotIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instantsnapshot are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instantsnapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -14758,7 +14758,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstantSnapshotIamPolicy` **cannot** be used in conjunction with `gcp.compute.InstantSnapshotIamBinding` and `gcp.compute.InstantSnapshotIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.InstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.InstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -14797,9 +14797,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstantSnapshotIamPolicy("policy", InstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -14849,9 +14849,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstantSnapshotIamPolicy("policy", InstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -14884,9 +14884,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstantSnapshotIamBinding("binding", InstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -14922,9 +14922,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstantSnapshotIamBinding("binding", InstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstantSnapshotIamBindingConditionArgs.builder()
@@ -14963,9 +14963,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstantSnapshotIamMember("member", InstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -15001,9 +15001,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstantSnapshotIamMember("member", InstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstantSnapshotIamMemberConditionArgs.builder()
@@ -15027,8 +15027,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine InstantSnapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstantSnapshotIamPolicy`: Authoritative. Sets the IAM policy for the instantsnapshot and replaces any existing policy already attached.
-   * * `gcp.compute.InstantSnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instantsnapshot are preserved.
-   * * `gcp.compute.InstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instantsnapshot are preserved.
+   * * `gcp.compute.InstantSnapshotIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instantsnapshot are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instantsnapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -15036,7 +15036,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstantSnapshotIamPolicy` **cannot** be used in conjunction with `gcp.compute.InstantSnapshotIamBinding` and `gcp.compute.InstantSnapshotIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.InstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.InstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -15075,9 +15075,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstantSnapshotIamPolicy("policy", InstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -15127,9 +15127,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstantSnapshotIamPolicy("policy", InstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -15162,9 +15162,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstantSnapshotIamBinding("binding", InstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -15200,9 +15200,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstantSnapshotIamBinding("binding", InstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstantSnapshotIamBindingConditionArgs.builder()
@@ -15241,9 +15241,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstantSnapshotIamMember("member", InstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -15279,9 +15279,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstantSnapshotIamMember("member", InstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstantSnapshotIamMemberConditionArgs.builder()
@@ -15352,8 +15352,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine InstantSnapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstantSnapshotIamPolicy`: Authoritative. Sets the IAM policy for the instantsnapshot and replaces any existing policy already attached.
-   * * `gcp.compute.InstantSnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instantsnapshot are preserved.
-   * * `gcp.compute.InstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instantsnapshot are preserved.
+   * * `gcp.compute.InstantSnapshotIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instantsnapshot are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instantsnapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -15361,7 +15361,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstantSnapshotIamPolicy` **cannot** be used in conjunction with `gcp.compute.InstantSnapshotIamBinding` and `gcp.compute.InstantSnapshotIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.InstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.InstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -15400,9 +15400,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstantSnapshotIamPolicy("policy", InstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -15452,9 +15452,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstantSnapshotIamPolicy("policy", InstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -15487,9 +15487,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstantSnapshotIamBinding("binding", InstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -15525,9 +15525,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstantSnapshotIamBinding("binding", InstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstantSnapshotIamBindingConditionArgs.builder()
@@ -15566,9 +15566,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstantSnapshotIamMember("member", InstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -15604,9 +15604,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstantSnapshotIamMember("member", InstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstantSnapshotIamMemberConditionArgs.builder()
@@ -15630,8 +15630,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine InstantSnapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.InstantSnapshotIamPolicy`: Authoritative. Sets the IAM policy for the instantsnapshot and replaces any existing policy already attached.
-   * * `gcp.compute.InstantSnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the instantsnapshot are preserved.
-   * * `gcp.compute.InstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the instantsnapshot are preserved.
+   * * `gcp.compute.InstantSnapshotIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the instantsnapshot are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.InstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the instantsnapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -15639,7 +15639,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.InstantSnapshotIamPolicy` **cannot** be used in conjunction with `gcp.compute.InstantSnapshotIamBinding` and `gcp.compute.InstantSnapshotIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.InstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.InstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.InstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.InstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -15678,9 +15678,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstantSnapshotIamPolicy("policy", InstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -15730,9 +15730,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new InstantSnapshotIamPolicy("policy", InstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -15765,9 +15765,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstantSnapshotIamBinding("binding", InstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -15803,9 +15803,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new InstantSnapshotIamBinding("binding", InstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(InstantSnapshotIamBindingConditionArgs.builder()
@@ -15844,9 +15844,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstantSnapshotIamMember("member", InstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -15882,9 +15882,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new InstantSnapshotIamMember("member", InstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .zone(default_.zone())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .zone(default_.get("zone"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(InstantSnapshotIamMemberConditionArgs.builder()
@@ -16179,8 +16179,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine MachineImage. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.MachineImageIamPolicy`: Authoritative. Sets the IAM policy for the machineimage and replaces any existing policy already attached.
-   * * `gcp.compute.MachineImageIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the machineimage are preserved.
-   * * `gcp.compute.MachineImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the machineimage are preserved.
+   * * `gcp.compute.MachineImageIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the machineimage are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.MachineImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the machineimage are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -16188,7 +16188,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.MachineImageIamPolicy` **cannot** be used in conjunction with `gcp.compute.MachineImageIamBinding` and `gcp.compute.MachineImageIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.MachineImageIamBinding` resources **can be** used in conjunction with `gcp.compute.MachineImageIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.MachineImageIamBinding` resources **can be** used in conjunction with `gcp.compute.MachineImageIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -16230,8 +16230,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new MachineImageIamPolicy("policy", MachineImageIamPolicyArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -16281,8 +16281,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new MachineImageIamPolicy("policy", MachineImageIamPolicyArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -16315,8 +16315,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MachineImageIamBinding("binding", MachineImageIamBindingArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -16352,8 +16352,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MachineImageIamBinding("binding", MachineImageIamBindingArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(MachineImageIamBindingConditionArgs.builder()
@@ -16392,8 +16392,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MachineImageIamMember("member", MachineImageIamMemberArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -16429,8 +16429,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MachineImageIamMember("member", MachineImageIamMemberArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(MachineImageIamMemberConditionArgs.builder()
@@ -16454,8 +16454,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine MachineImage. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.MachineImageIamPolicy`: Authoritative. Sets the IAM policy for the machineimage and replaces any existing policy already attached.
-   * * `gcp.compute.MachineImageIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the machineimage are preserved.
-   * * `gcp.compute.MachineImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the machineimage are preserved.
+   * * `gcp.compute.MachineImageIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the machineimage are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.MachineImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the machineimage are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -16463,7 +16463,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.MachineImageIamPolicy` **cannot** be used in conjunction with `gcp.compute.MachineImageIamBinding` and `gcp.compute.MachineImageIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.MachineImageIamBinding` resources **can be** used in conjunction with `gcp.compute.MachineImageIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.MachineImageIamBinding` resources **can be** used in conjunction with `gcp.compute.MachineImageIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -16505,8 +16505,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new MachineImageIamPolicy("policy", MachineImageIamPolicyArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -16556,8 +16556,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new MachineImageIamPolicy("policy", MachineImageIamPolicyArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -16590,8 +16590,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MachineImageIamBinding("binding", MachineImageIamBindingArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -16627,8 +16627,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MachineImageIamBinding("binding", MachineImageIamBindingArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(MachineImageIamBindingConditionArgs.builder()
@@ -16667,8 +16667,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MachineImageIamMember("member", MachineImageIamMemberArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -16704,8 +16704,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MachineImageIamMember("member", MachineImageIamMemberArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(MachineImageIamMemberConditionArgs.builder()
@@ -16772,8 +16772,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine MachineImage. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.MachineImageIamPolicy`: Authoritative. Sets the IAM policy for the machineimage and replaces any existing policy already attached.
-   * * `gcp.compute.MachineImageIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the machineimage are preserved.
-   * * `gcp.compute.MachineImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the machineimage are preserved.
+   * * `gcp.compute.MachineImageIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the machineimage are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.MachineImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the machineimage are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -16781,7 +16781,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.MachineImageIamPolicy` **cannot** be used in conjunction with `gcp.compute.MachineImageIamBinding` and `gcp.compute.MachineImageIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.MachineImageIamBinding` resources **can be** used in conjunction with `gcp.compute.MachineImageIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.MachineImageIamBinding` resources **can be** used in conjunction with `gcp.compute.MachineImageIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -16823,8 +16823,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new MachineImageIamPolicy("policy", MachineImageIamPolicyArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -16874,8 +16874,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new MachineImageIamPolicy("policy", MachineImageIamPolicyArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -16908,8 +16908,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MachineImageIamBinding("binding", MachineImageIamBindingArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -16945,8 +16945,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MachineImageIamBinding("binding", MachineImageIamBindingArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(MachineImageIamBindingConditionArgs.builder()
@@ -16985,8 +16985,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MachineImageIamMember("member", MachineImageIamMemberArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -17022,8 +17022,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MachineImageIamMember("member", MachineImageIamMemberArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(MachineImageIamMemberConditionArgs.builder()
@@ -17047,8 +17047,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine MachineImage. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.MachineImageIamPolicy`: Authoritative. Sets the IAM policy for the machineimage and replaces any existing policy already attached.
-   * * `gcp.compute.MachineImageIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the machineimage are preserved.
-   * * `gcp.compute.MachineImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the machineimage are preserved.
+   * * `gcp.compute.MachineImageIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the machineimage are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.MachineImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the machineimage are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -17056,7 +17056,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.MachineImageIamPolicy` **cannot** be used in conjunction with `gcp.compute.MachineImageIamBinding` and `gcp.compute.MachineImageIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.MachineImageIamBinding` resources **can be** used in conjunction with `gcp.compute.MachineImageIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.MachineImageIamBinding` resources **can be** used in conjunction with `gcp.compute.MachineImageIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -17098,8 +17098,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new MachineImageIamPolicy("policy", MachineImageIamPolicyArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -17149,8 +17149,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new MachineImageIamPolicy("policy", MachineImageIamPolicyArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -17183,8 +17183,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MachineImageIamBinding("binding", MachineImageIamBindingArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -17220,8 +17220,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MachineImageIamBinding("binding", MachineImageIamBindingArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(MachineImageIamBindingConditionArgs.builder()
@@ -17260,8 +17260,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MachineImageIamMember("member", MachineImageIamMemberArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -17297,8 +17297,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MachineImageIamMember("member", MachineImageIamMemberArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(MachineImageIamMemberConditionArgs.builder()
@@ -17365,8 +17365,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine MachineImage. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.MachineImageIamPolicy`: Authoritative. Sets the IAM policy for the machineimage and replaces any existing policy already attached.
-   * * `gcp.compute.MachineImageIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the machineimage are preserved.
-   * * `gcp.compute.MachineImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the machineimage are preserved.
+   * * `gcp.compute.MachineImageIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the machineimage are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.MachineImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the machineimage are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -17374,7 +17374,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.MachineImageIamPolicy` **cannot** be used in conjunction with `gcp.compute.MachineImageIamBinding` and `gcp.compute.MachineImageIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.MachineImageIamBinding` resources **can be** used in conjunction with `gcp.compute.MachineImageIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.MachineImageIamBinding` resources **can be** used in conjunction with `gcp.compute.MachineImageIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -17416,8 +17416,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new MachineImageIamPolicy("policy", MachineImageIamPolicyArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -17467,8 +17467,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new MachineImageIamPolicy("policy", MachineImageIamPolicyArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -17501,8 +17501,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MachineImageIamBinding("binding", MachineImageIamBindingArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -17538,8 +17538,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MachineImageIamBinding("binding", MachineImageIamBindingArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(MachineImageIamBindingConditionArgs.builder()
@@ -17578,8 +17578,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MachineImageIamMember("member", MachineImageIamMemberArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -17615,8 +17615,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MachineImageIamMember("member", MachineImageIamMemberArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(MachineImageIamMemberConditionArgs.builder()
@@ -17640,8 +17640,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine MachineImage. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.MachineImageIamPolicy`: Authoritative. Sets the IAM policy for the machineimage and replaces any existing policy already attached.
-   * * `gcp.compute.MachineImageIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the machineimage are preserved.
-   * * `gcp.compute.MachineImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the machineimage are preserved.
+   * * `gcp.compute.MachineImageIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the machineimage are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.MachineImageIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the machineimage are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -17649,7 +17649,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.MachineImageIamPolicy` **cannot** be used in conjunction with `gcp.compute.MachineImageIamBinding` and `gcp.compute.MachineImageIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.MachineImageIamBinding` resources **can be** used in conjunction with `gcp.compute.MachineImageIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.MachineImageIamBinding` resources **can be** used in conjunction with `gcp.compute.MachineImageIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -17691,8 +17691,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new MachineImageIamPolicy("policy", MachineImageIamPolicyArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -17742,8 +17742,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new MachineImageIamPolicy("policy", MachineImageIamPolicyArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -17776,8 +17776,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MachineImageIamBinding("binding", MachineImageIamBindingArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -17813,8 +17813,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new MachineImageIamBinding("binding", MachineImageIamBindingArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(MachineImageIamBindingConditionArgs.builder()
@@ -17853,8 +17853,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MachineImageIamMember("member", MachineImageIamMemberArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -17890,8 +17890,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new MachineImageIamMember("member", MachineImageIamMemberArgs.builder()
-   *             .project(image.project())
-   *             .machineImage(image.name())
+   *             .project(image.get("project"))
+   *             .machineImage(image.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(MachineImageIamMemberConditionArgs.builder()
@@ -18240,8 +18240,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine NetworkFirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the networkfirewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved.
-   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved.
+   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -18286,8 +18286,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new NetworkFirewallPolicyIamPolicy("policy", NetworkFirewallPolicyIamPolicyArgs.builder()
-   *             .project(policyGoogleComputeNetworkFirewallPolicy.project())
-   *             .name(policyGoogleComputeNetworkFirewallPolicy.name())
+   *             .project(policyGoogleComputeNetworkFirewallPolicy.get("project"))
+   *             .name(policyGoogleComputeNetworkFirewallPolicy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -18321,8 +18321,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NetworkFirewallPolicyIamBinding("binding", NetworkFirewallPolicyIamBindingArgs.builder()
-   *             .project(policy.project())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -18357,8 +18357,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NetworkFirewallPolicyIamMember("member", NetworkFirewallPolicyIamMemberArgs.builder()
-   *             .project(policy.project())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -18377,8 +18377,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine NetworkFirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the networkfirewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved.
-   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved.
+   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -18423,8 +18423,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new NetworkFirewallPolicyIamPolicy("policy", NetworkFirewallPolicyIamPolicyArgs.builder()
-   *             .project(policyGoogleComputeNetworkFirewallPolicy.project())
-   *             .name(policyGoogleComputeNetworkFirewallPolicy.name())
+   *             .project(policyGoogleComputeNetworkFirewallPolicy.get("project"))
+   *             .name(policyGoogleComputeNetworkFirewallPolicy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -18458,8 +18458,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NetworkFirewallPolicyIamBinding("binding", NetworkFirewallPolicyIamBindingArgs.builder()
-   *             .project(policy.project())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -18494,8 +18494,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NetworkFirewallPolicyIamMember("member", NetworkFirewallPolicyIamMemberArgs.builder()
-   *             .project(policy.project())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -18555,8 +18555,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine NetworkFirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the networkfirewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved.
-   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved.
+   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -18601,8 +18601,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new NetworkFirewallPolicyIamPolicy("policy", NetworkFirewallPolicyIamPolicyArgs.builder()
-   *             .project(policyGoogleComputeNetworkFirewallPolicy.project())
-   *             .name(policyGoogleComputeNetworkFirewallPolicy.name())
+   *             .project(policyGoogleComputeNetworkFirewallPolicy.get("project"))
+   *             .name(policyGoogleComputeNetworkFirewallPolicy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -18636,8 +18636,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NetworkFirewallPolicyIamBinding("binding", NetworkFirewallPolicyIamBindingArgs.builder()
-   *             .project(policy.project())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -18672,8 +18672,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NetworkFirewallPolicyIamMember("member", NetworkFirewallPolicyIamMemberArgs.builder()
-   *             .project(policy.project())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -18692,8 +18692,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine NetworkFirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the networkfirewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved.
-   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved.
+   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -18738,8 +18738,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new NetworkFirewallPolicyIamPolicy("policy", NetworkFirewallPolicyIamPolicyArgs.builder()
-   *             .project(policyGoogleComputeNetworkFirewallPolicy.project())
-   *             .name(policyGoogleComputeNetworkFirewallPolicy.name())
+   *             .project(policyGoogleComputeNetworkFirewallPolicy.get("project"))
+   *             .name(policyGoogleComputeNetworkFirewallPolicy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -18773,8 +18773,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NetworkFirewallPolicyIamBinding("binding", NetworkFirewallPolicyIamBindingArgs.builder()
-   *             .project(policy.project())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -18809,8 +18809,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NetworkFirewallPolicyIamMember("member", NetworkFirewallPolicyIamMemberArgs.builder()
-   *             .project(policy.project())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -18870,8 +18870,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine NetworkFirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the networkfirewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved.
-   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved.
+   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -18916,8 +18916,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new NetworkFirewallPolicyIamPolicy("policy", NetworkFirewallPolicyIamPolicyArgs.builder()
-   *             .project(policyGoogleComputeNetworkFirewallPolicy.project())
-   *             .name(policyGoogleComputeNetworkFirewallPolicy.name())
+   *             .project(policyGoogleComputeNetworkFirewallPolicy.get("project"))
+   *             .name(policyGoogleComputeNetworkFirewallPolicy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -18951,8 +18951,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NetworkFirewallPolicyIamBinding("binding", NetworkFirewallPolicyIamBindingArgs.builder()
-   *             .project(policy.project())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -18987,8 +18987,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NetworkFirewallPolicyIamMember("member", NetworkFirewallPolicyIamMemberArgs.builder()
-   *             .project(policy.project())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -19007,8 +19007,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine NetworkFirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the networkfirewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved.
-   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved.
+   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -19053,8 +19053,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new NetworkFirewallPolicyIamPolicy("policy", NetworkFirewallPolicyIamPolicyArgs.builder()
-   *             .project(policyGoogleComputeNetworkFirewallPolicy.project())
-   *             .name(policyGoogleComputeNetworkFirewallPolicy.name())
+   *             .project(policyGoogleComputeNetworkFirewallPolicy.get("project"))
+   *             .name(policyGoogleComputeNetworkFirewallPolicy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -19088,8 +19088,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NetworkFirewallPolicyIamBinding("binding", NetworkFirewallPolicyIamBindingArgs.builder()
-   *             .project(policy.project())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -19124,8 +19124,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NetworkFirewallPolicyIamMember("member", NetworkFirewallPolicyIamMemberArgs.builder()
-   *             .project(policy.project())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -19853,8 +19853,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendBucket. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionBackendBucketIamPolicy`: Authoritative. Sets the IAM policy for the regionbackendbucket and replaces any existing policy already attached.
-   * * `gcp.compute.RegionBackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionbackendbucket are preserved.
-   * * `gcp.compute.RegionBackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionbackendbucket are preserved.
+   * * `gcp.compute.RegionBackendBucketIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionbackendbucket are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionBackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionbackendbucket are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -19862,7 +19862,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionBackendBucketIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionBackendBucketIamBinding` and `gcp.compute.RegionBackendBucketIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionBackendBucketIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendBucketIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionBackendBucketIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendBucketIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -19904,9 +19904,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendBucketIamPolicy("policy", RegionBackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -19956,9 +19956,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendBucketIamPolicy("policy", RegionBackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -19991,9 +19991,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendBucketIamBinding("binding", RegionBackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -20029,9 +20029,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendBucketIamBinding("binding", RegionBackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendBucketIamBindingConditionArgs.builder()
@@ -20070,9 +20070,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendBucketIamMember("member", RegionBackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -20108,9 +20108,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendBucketIamMember("member", RegionBackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendBucketIamMemberConditionArgs.builder()
@@ -20134,8 +20134,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendBucket. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionBackendBucketIamPolicy`: Authoritative. Sets the IAM policy for the regionbackendbucket and replaces any existing policy already attached.
-   * * `gcp.compute.RegionBackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionbackendbucket are preserved.
-   * * `gcp.compute.RegionBackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionbackendbucket are preserved.
+   * * `gcp.compute.RegionBackendBucketIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionbackendbucket are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionBackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionbackendbucket are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -20143,7 +20143,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionBackendBucketIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionBackendBucketIamBinding` and `gcp.compute.RegionBackendBucketIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionBackendBucketIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendBucketIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionBackendBucketIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendBucketIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -20185,9 +20185,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendBucketIamPolicy("policy", RegionBackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -20237,9 +20237,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendBucketIamPolicy("policy", RegionBackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -20272,9 +20272,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendBucketIamBinding("binding", RegionBackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -20310,9 +20310,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendBucketIamBinding("binding", RegionBackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendBucketIamBindingConditionArgs.builder()
@@ -20351,9 +20351,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendBucketIamMember("member", RegionBackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -20389,9 +20389,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendBucketIamMember("member", RegionBackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendBucketIamMemberConditionArgs.builder()
@@ -20462,8 +20462,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendBucket. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionBackendBucketIamPolicy`: Authoritative. Sets the IAM policy for the regionbackendbucket and replaces any existing policy already attached.
-   * * `gcp.compute.RegionBackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionbackendbucket are preserved.
-   * * `gcp.compute.RegionBackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionbackendbucket are preserved.
+   * * `gcp.compute.RegionBackendBucketIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionbackendbucket are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionBackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionbackendbucket are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -20471,7 +20471,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionBackendBucketIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionBackendBucketIamBinding` and `gcp.compute.RegionBackendBucketIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionBackendBucketIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendBucketIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionBackendBucketIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendBucketIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -20513,9 +20513,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendBucketIamPolicy("policy", RegionBackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -20565,9 +20565,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendBucketIamPolicy("policy", RegionBackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -20600,9 +20600,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendBucketIamBinding("binding", RegionBackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -20638,9 +20638,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendBucketIamBinding("binding", RegionBackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendBucketIamBindingConditionArgs.builder()
@@ -20679,9 +20679,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendBucketIamMember("member", RegionBackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -20717,9 +20717,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendBucketIamMember("member", RegionBackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendBucketIamMemberConditionArgs.builder()
@@ -20743,8 +20743,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendBucket. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionBackendBucketIamPolicy`: Authoritative. Sets the IAM policy for the regionbackendbucket and replaces any existing policy already attached.
-   * * `gcp.compute.RegionBackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionbackendbucket are preserved.
-   * * `gcp.compute.RegionBackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionbackendbucket are preserved.
+   * * `gcp.compute.RegionBackendBucketIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionbackendbucket are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionBackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionbackendbucket are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -20752,7 +20752,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionBackendBucketIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionBackendBucketIamBinding` and `gcp.compute.RegionBackendBucketIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionBackendBucketIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendBucketIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionBackendBucketIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendBucketIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -20794,9 +20794,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendBucketIamPolicy("policy", RegionBackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -20846,9 +20846,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendBucketIamPolicy("policy", RegionBackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -20881,9 +20881,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendBucketIamBinding("binding", RegionBackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -20919,9 +20919,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendBucketIamBinding("binding", RegionBackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendBucketIamBindingConditionArgs.builder()
@@ -20960,9 +20960,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendBucketIamMember("member", RegionBackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -20998,9 +20998,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendBucketIamMember("member", RegionBackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendBucketIamMemberConditionArgs.builder()
@@ -21071,8 +21071,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendBucket. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionBackendBucketIamPolicy`: Authoritative. Sets the IAM policy for the regionbackendbucket and replaces any existing policy already attached.
-   * * `gcp.compute.RegionBackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionbackendbucket are preserved.
-   * * `gcp.compute.RegionBackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionbackendbucket are preserved.
+   * * `gcp.compute.RegionBackendBucketIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionbackendbucket are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionBackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionbackendbucket are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -21080,7 +21080,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionBackendBucketIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionBackendBucketIamBinding` and `gcp.compute.RegionBackendBucketIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionBackendBucketIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendBucketIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionBackendBucketIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendBucketIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -21122,9 +21122,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendBucketIamPolicy("policy", RegionBackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -21174,9 +21174,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendBucketIamPolicy("policy", RegionBackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -21209,9 +21209,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendBucketIamBinding("binding", RegionBackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -21247,9 +21247,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendBucketIamBinding("binding", RegionBackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendBucketIamBindingConditionArgs.builder()
@@ -21288,9 +21288,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendBucketIamMember("member", RegionBackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -21326,9 +21326,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendBucketIamMember("member", RegionBackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendBucketIamMemberConditionArgs.builder()
@@ -21352,8 +21352,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendBucket. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionBackendBucketIamPolicy`: Authoritative. Sets the IAM policy for the regionbackendbucket and replaces any existing policy already attached.
-   * * `gcp.compute.RegionBackendBucketIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionbackendbucket are preserved.
-   * * `gcp.compute.RegionBackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionbackendbucket are preserved.
+   * * `gcp.compute.RegionBackendBucketIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionbackendbucket are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionBackendBucketIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionbackendbucket are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -21361,7 +21361,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionBackendBucketIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionBackendBucketIamBinding` and `gcp.compute.RegionBackendBucketIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionBackendBucketIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendBucketIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionBackendBucketIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendBucketIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -21403,9 +21403,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendBucketIamPolicy("policy", RegionBackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -21455,9 +21455,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendBucketIamPolicy("policy", RegionBackendBucketIamPolicyArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -21490,9 +21490,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendBucketIamBinding("binding", RegionBackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -21528,9 +21528,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendBucketIamBinding("binding", RegionBackendBucketIamBindingArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendBucketIamBindingConditionArgs.builder()
@@ -21569,9 +21569,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendBucketIamMember("member", RegionBackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -21607,9 +21607,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendBucketIamMember("member", RegionBackendBucketIamMemberArgs.builder()
-   *             .project(imageBackend.project())
-   *             .region(imageBackend.region())
-   *             .name(imageBackend.name())
+   *             .project(imageBackend.get("project"))
+   *             .region(imageBackend.get("region"))
+   *             .name(imageBackend.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendBucketIamMemberConditionArgs.builder()
@@ -21886,8 +21886,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the regionbackendservice and replaces any existing policy already attached.
-   * * `gcp.compute.RegionBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionbackendservice are preserved.
-   * * `gcp.compute.RegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionbackendservice are preserved.
+   * * `gcp.compute.RegionBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -21895,7 +21895,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionBackendServiceIamBinding` and `gcp.compute.RegionBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -21937,9 +21937,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendServiceIamPolicy("policy", RegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -21989,9 +21989,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendServiceIamPolicy("policy", RegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -22024,9 +22024,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendServiceIamBinding("binding", RegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -22062,9 +22062,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendServiceIamBinding("binding", RegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendServiceIamBindingConditionArgs.builder()
@@ -22103,9 +22103,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendServiceIamMember("member", RegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -22141,9 +22141,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendServiceIamMember("member", RegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendServiceIamMemberConditionArgs.builder()
@@ -22167,8 +22167,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the regionbackendservice and replaces any existing policy already attached.
-   * * `gcp.compute.RegionBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionbackendservice are preserved.
-   * * `gcp.compute.RegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionbackendservice are preserved.
+   * * `gcp.compute.RegionBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -22176,7 +22176,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionBackendServiceIamBinding` and `gcp.compute.RegionBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -22218,9 +22218,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendServiceIamPolicy("policy", RegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -22270,9 +22270,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendServiceIamPolicy("policy", RegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -22305,9 +22305,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendServiceIamBinding("binding", RegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -22343,9 +22343,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendServiceIamBinding("binding", RegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendServiceIamBindingConditionArgs.builder()
@@ -22384,9 +22384,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendServiceIamMember("member", RegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -22422,9 +22422,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendServiceIamMember("member", RegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendServiceIamMemberConditionArgs.builder()
@@ -22495,8 +22495,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the regionbackendservice and replaces any existing policy already attached.
-   * * `gcp.compute.RegionBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionbackendservice are preserved.
-   * * `gcp.compute.RegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionbackendservice are preserved.
+   * * `gcp.compute.RegionBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -22504,7 +22504,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionBackendServiceIamBinding` and `gcp.compute.RegionBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -22546,9 +22546,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendServiceIamPolicy("policy", RegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -22598,9 +22598,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendServiceIamPolicy("policy", RegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -22633,9 +22633,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendServiceIamBinding("binding", RegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -22671,9 +22671,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendServiceIamBinding("binding", RegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendServiceIamBindingConditionArgs.builder()
@@ -22712,9 +22712,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendServiceIamMember("member", RegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -22750,9 +22750,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendServiceIamMember("member", RegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendServiceIamMemberConditionArgs.builder()
@@ -22776,8 +22776,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the regionbackendservice and replaces any existing policy already attached.
-   * * `gcp.compute.RegionBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionbackendservice are preserved.
-   * * `gcp.compute.RegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionbackendservice are preserved.
+   * * `gcp.compute.RegionBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -22785,7 +22785,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionBackendServiceIamBinding` and `gcp.compute.RegionBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -22827,9 +22827,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendServiceIamPolicy("policy", RegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -22879,9 +22879,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendServiceIamPolicy("policy", RegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -22914,9 +22914,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendServiceIamBinding("binding", RegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -22952,9 +22952,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendServiceIamBinding("binding", RegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendServiceIamBindingConditionArgs.builder()
@@ -22993,9 +22993,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendServiceIamMember("member", RegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -23031,9 +23031,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendServiceIamMember("member", RegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendServiceIamMemberConditionArgs.builder()
@@ -23104,8 +23104,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the regionbackendservice and replaces any existing policy already attached.
-   * * `gcp.compute.RegionBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionbackendservice are preserved.
-   * * `gcp.compute.RegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionbackendservice are preserved.
+   * * `gcp.compute.RegionBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -23113,7 +23113,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionBackendServiceIamBinding` and `gcp.compute.RegionBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -23155,9 +23155,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendServiceIamPolicy("policy", RegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -23207,9 +23207,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendServiceIamPolicy("policy", RegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -23242,9 +23242,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendServiceIamBinding("binding", RegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -23280,9 +23280,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendServiceIamBinding("binding", RegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendServiceIamBindingConditionArgs.builder()
@@ -23321,9 +23321,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendServiceIamMember("member", RegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -23359,9 +23359,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendServiceIamMember("member", RegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendServiceIamMemberConditionArgs.builder()
@@ -23385,8 +23385,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the regionbackendservice and replaces any existing policy already attached.
-   * * `gcp.compute.RegionBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionbackendservice are preserved.
-   * * `gcp.compute.RegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionbackendservice are preserved.
+   * * `gcp.compute.RegionBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regionbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regionbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -23394,7 +23394,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionBackendServiceIamBinding` and `gcp.compute.RegionBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -23436,9 +23436,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendServiceIamPolicy("policy", RegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -23488,9 +23488,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionBackendServiceIamPolicy("policy", RegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -23523,9 +23523,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendServiceIamBinding("binding", RegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -23561,9 +23561,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionBackendServiceIamBinding("binding", RegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendServiceIamBindingConditionArgs.builder()
@@ -23602,9 +23602,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendServiceIamMember("member", RegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -23640,9 +23640,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionBackendServiceIamMember("member", RegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.admin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionBackendServiceIamMemberConditionArgs.builder()
@@ -23874,8 +23874,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionDisk. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionDiskIamPolicy`: Authoritative. Sets the IAM policy for the regiondisk and replaces any existing policy already attached.
-   * * `gcp.compute.RegionDiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regiondisk are preserved.
-   * * `gcp.compute.RegionDiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regiondisk are preserved.
+   * * `gcp.compute.RegionDiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regiondisk are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionDiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regiondisk are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -23920,9 +23920,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionDiskIamPolicy("policy", RegionDiskIamPolicyArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -23956,9 +23956,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionDiskIamBinding("binding", RegionDiskIamBindingArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -23993,9 +23993,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionDiskIamMember("member", RegionDiskIamMemberArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24014,8 +24014,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionDisk. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionDiskIamPolicy`: Authoritative. Sets the IAM policy for the regiondisk and replaces any existing policy already attached.
-   * * `gcp.compute.RegionDiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regiondisk are preserved.
-   * * `gcp.compute.RegionDiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regiondisk are preserved.
+   * * `gcp.compute.RegionDiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regiondisk are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionDiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regiondisk are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -24060,9 +24060,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionDiskIamPolicy("policy", RegionDiskIamPolicyArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -24096,9 +24096,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionDiskIamBinding("binding", RegionDiskIamBindingArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24133,9 +24133,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionDiskIamMember("member", RegionDiskIamMemberArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24196,8 +24196,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionDisk. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionDiskIamPolicy`: Authoritative. Sets the IAM policy for the regiondisk and replaces any existing policy already attached.
-   * * `gcp.compute.RegionDiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regiondisk are preserved.
-   * * `gcp.compute.RegionDiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regiondisk are preserved.
+   * * `gcp.compute.RegionDiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regiondisk are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionDiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regiondisk are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -24242,9 +24242,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionDiskIamPolicy("policy", RegionDiskIamPolicyArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -24278,9 +24278,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionDiskIamBinding("binding", RegionDiskIamBindingArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24315,9 +24315,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionDiskIamMember("member", RegionDiskIamMemberArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24336,8 +24336,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionDisk. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionDiskIamPolicy`: Authoritative. Sets the IAM policy for the regiondisk and replaces any existing policy already attached.
-   * * `gcp.compute.RegionDiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regiondisk are preserved.
-   * * `gcp.compute.RegionDiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regiondisk are preserved.
+   * * `gcp.compute.RegionDiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regiondisk are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionDiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regiondisk are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -24382,9 +24382,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionDiskIamPolicy("policy", RegionDiskIamPolicyArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -24418,9 +24418,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionDiskIamBinding("binding", RegionDiskIamBindingArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24455,9 +24455,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionDiskIamMember("member", RegionDiskIamMemberArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24518,8 +24518,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionDisk. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionDiskIamPolicy`: Authoritative. Sets the IAM policy for the regiondisk and replaces any existing policy already attached.
-   * * `gcp.compute.RegionDiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regiondisk are preserved.
-   * * `gcp.compute.RegionDiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regiondisk are preserved.
+   * * `gcp.compute.RegionDiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regiondisk are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionDiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regiondisk are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -24564,9 +24564,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionDiskIamPolicy("policy", RegionDiskIamPolicyArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -24600,9 +24600,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionDiskIamBinding("binding", RegionDiskIamBindingArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24637,9 +24637,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionDiskIamMember("member", RegionDiskIamMemberArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24658,8 +24658,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionDisk. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionDiskIamPolicy`: Authoritative. Sets the IAM policy for the regiondisk and replaces any existing policy already attached.
-   * * `gcp.compute.RegionDiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regiondisk are preserved.
-   * * `gcp.compute.RegionDiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regiondisk are preserved.
+   * * `gcp.compute.RegionDiskIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regiondisk are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionDiskIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regiondisk are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -24704,9 +24704,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionDiskIamPolicy("policy", RegionDiskIamPolicyArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -24740,9 +24740,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionDiskIamBinding("binding", RegionDiskIamBindingArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24777,9 +24777,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionDiskIamMember("member", RegionDiskIamMemberArgs.builder()
-   *             .project(regiondisk.project())
-   *             .region(regiondisk.region())
-   *             .name(regiondisk.name())
+   *             .project(regiondisk.get("project"))
+   *             .region(regiondisk.get("region"))
+   *             .name(regiondisk.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -25323,8 +25323,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionInstantSnapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionInstantSnapshotIamPolicy`: Authoritative. Sets the IAM policy for the regioninstantsnapshot and replaces any existing policy already attached.
-   * * `gcp.compute.RegionInstantSnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regioninstantsnapshot are preserved.
-   * * `gcp.compute.RegionInstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regioninstantsnapshot are preserved.
+   * * `gcp.compute.RegionInstantSnapshotIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regioninstantsnapshot are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionInstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regioninstantsnapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -25332,7 +25332,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionInstantSnapshotIamBinding` and `gcp.compute.RegionInstantSnapshotIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionInstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionInstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -25371,9 +25371,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionInstantSnapshotIamPolicy("policy", RegionInstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -25423,9 +25423,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionInstantSnapshotIamPolicy("policy", RegionInstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -25458,9 +25458,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionInstantSnapshotIamBinding("binding", RegionInstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -25496,9 +25496,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionInstantSnapshotIamBinding("binding", RegionInstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionInstantSnapshotIamBindingConditionArgs.builder()
@@ -25537,9 +25537,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionInstantSnapshotIamMember("member", RegionInstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -25575,9 +25575,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionInstantSnapshotIamMember("member", RegionInstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionInstantSnapshotIamMemberConditionArgs.builder()
@@ -25601,8 +25601,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionInstantSnapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionInstantSnapshotIamPolicy`: Authoritative. Sets the IAM policy for the regioninstantsnapshot and replaces any existing policy already attached.
-   * * `gcp.compute.RegionInstantSnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regioninstantsnapshot are preserved.
-   * * `gcp.compute.RegionInstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regioninstantsnapshot are preserved.
+   * * `gcp.compute.RegionInstantSnapshotIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regioninstantsnapshot are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionInstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regioninstantsnapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -25610,7 +25610,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionInstantSnapshotIamBinding` and `gcp.compute.RegionInstantSnapshotIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionInstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionInstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -25649,9 +25649,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionInstantSnapshotIamPolicy("policy", RegionInstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -25701,9 +25701,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionInstantSnapshotIamPolicy("policy", RegionInstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -25736,9 +25736,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionInstantSnapshotIamBinding("binding", RegionInstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -25774,9 +25774,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionInstantSnapshotIamBinding("binding", RegionInstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionInstantSnapshotIamBindingConditionArgs.builder()
@@ -25815,9 +25815,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionInstantSnapshotIamMember("member", RegionInstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -25853,9 +25853,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionInstantSnapshotIamMember("member", RegionInstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionInstantSnapshotIamMemberConditionArgs.builder()
@@ -25926,8 +25926,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionInstantSnapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionInstantSnapshotIamPolicy`: Authoritative. Sets the IAM policy for the regioninstantsnapshot and replaces any existing policy already attached.
-   * * `gcp.compute.RegionInstantSnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regioninstantsnapshot are preserved.
-   * * `gcp.compute.RegionInstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regioninstantsnapshot are preserved.
+   * * `gcp.compute.RegionInstantSnapshotIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regioninstantsnapshot are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionInstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regioninstantsnapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -25935,7 +25935,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionInstantSnapshotIamBinding` and `gcp.compute.RegionInstantSnapshotIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionInstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionInstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -25974,9 +25974,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionInstantSnapshotIamPolicy("policy", RegionInstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -26026,9 +26026,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionInstantSnapshotIamPolicy("policy", RegionInstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -26061,9 +26061,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionInstantSnapshotIamBinding("binding", RegionInstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -26099,9 +26099,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionInstantSnapshotIamBinding("binding", RegionInstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionInstantSnapshotIamBindingConditionArgs.builder()
@@ -26140,9 +26140,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionInstantSnapshotIamMember("member", RegionInstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -26178,9 +26178,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionInstantSnapshotIamMember("member", RegionInstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionInstantSnapshotIamMemberConditionArgs.builder()
@@ -26204,8 +26204,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionInstantSnapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionInstantSnapshotIamPolicy`: Authoritative. Sets the IAM policy for the regioninstantsnapshot and replaces any existing policy already attached.
-   * * `gcp.compute.RegionInstantSnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regioninstantsnapshot are preserved.
-   * * `gcp.compute.RegionInstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regioninstantsnapshot are preserved.
+   * * `gcp.compute.RegionInstantSnapshotIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regioninstantsnapshot are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionInstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regioninstantsnapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -26213,7 +26213,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionInstantSnapshotIamBinding` and `gcp.compute.RegionInstantSnapshotIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionInstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionInstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -26252,9 +26252,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionInstantSnapshotIamPolicy("policy", RegionInstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -26304,9 +26304,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionInstantSnapshotIamPolicy("policy", RegionInstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -26339,9 +26339,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionInstantSnapshotIamBinding("binding", RegionInstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -26377,9 +26377,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionInstantSnapshotIamBinding("binding", RegionInstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionInstantSnapshotIamBindingConditionArgs.builder()
@@ -26418,9 +26418,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionInstantSnapshotIamMember("member", RegionInstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -26456,9 +26456,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionInstantSnapshotIamMember("member", RegionInstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionInstantSnapshotIamMemberConditionArgs.builder()
@@ -26529,8 +26529,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionInstantSnapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionInstantSnapshotIamPolicy`: Authoritative. Sets the IAM policy for the regioninstantsnapshot and replaces any existing policy already attached.
-   * * `gcp.compute.RegionInstantSnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regioninstantsnapshot are preserved.
-   * * `gcp.compute.RegionInstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regioninstantsnapshot are preserved.
+   * * `gcp.compute.RegionInstantSnapshotIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regioninstantsnapshot are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionInstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regioninstantsnapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -26538,7 +26538,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionInstantSnapshotIamBinding` and `gcp.compute.RegionInstantSnapshotIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionInstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionInstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -26577,9 +26577,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionInstantSnapshotIamPolicy("policy", RegionInstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -26629,9 +26629,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionInstantSnapshotIamPolicy("policy", RegionInstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -26664,9 +26664,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionInstantSnapshotIamBinding("binding", RegionInstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -26702,9 +26702,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionInstantSnapshotIamBinding("binding", RegionInstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionInstantSnapshotIamBindingConditionArgs.builder()
@@ -26743,9 +26743,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionInstantSnapshotIamMember("member", RegionInstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -26781,9 +26781,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionInstantSnapshotIamMember("member", RegionInstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionInstantSnapshotIamMemberConditionArgs.builder()
@@ -26807,8 +26807,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionInstantSnapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionInstantSnapshotIamPolicy`: Authoritative. Sets the IAM policy for the regioninstantsnapshot and replaces any existing policy already attached.
-   * * `gcp.compute.RegionInstantSnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regioninstantsnapshot are preserved.
-   * * `gcp.compute.RegionInstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regioninstantsnapshot are preserved.
+   * * `gcp.compute.RegionInstantSnapshotIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the regioninstantsnapshot are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionInstantSnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the regioninstantsnapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -26816,7 +26816,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionInstantSnapshotIamBinding` and `gcp.compute.RegionInstantSnapshotIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionInstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.RegionInstantSnapshotIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionInstantSnapshotIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -26855,9 +26855,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionInstantSnapshotIamPolicy("policy", RegionInstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -26907,9 +26907,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionInstantSnapshotIamPolicy("policy", RegionInstantSnapshotIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -26942,9 +26942,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionInstantSnapshotIamBinding("binding", RegionInstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -26980,9 +26980,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionInstantSnapshotIamBinding("binding", RegionInstantSnapshotIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionInstantSnapshotIamBindingConditionArgs.builder()
@@ -27021,9 +27021,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionInstantSnapshotIamMember("member", RegionInstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -27059,9 +27059,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionInstantSnapshotIamMember("member", RegionInstantSnapshotIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .name(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .name(default_.get("name"))
    *             .role("roles/compute.storageAdmin")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(RegionInstantSnapshotIamMemberConditionArgs.builder()
@@ -27246,8 +27246,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionNetworkFirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the regionnetworkfirewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved.
-   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -27292,9 +27292,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionNetworkFirewallPolicyIamPolicy("policy", RegionNetworkFirewallPolicyIamPolicyArgs.builder()
-   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.project())
-   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.region())
-   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.name())
+   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.get("project"))
+   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.get("region"))
+   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -27328,9 +27328,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionNetworkFirewallPolicyIamBinding("binding", RegionNetworkFirewallPolicyIamBindingArgs.builder()
-   *             .project(policy.project())
-   *             .region(policy.region())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .region(policy.get("region"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -27365,9 +27365,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionNetworkFirewallPolicyIamMember("member", RegionNetworkFirewallPolicyIamMemberArgs.builder()
-   *             .project(policy.project())
-   *             .region(policy.region())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .region(policy.get("region"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -27386,8 +27386,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionNetworkFirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the regionnetworkfirewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved.
-   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -27432,9 +27432,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionNetworkFirewallPolicyIamPolicy("policy", RegionNetworkFirewallPolicyIamPolicyArgs.builder()
-   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.project())
-   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.region())
-   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.name())
+   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.get("project"))
+   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.get("region"))
+   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -27468,9 +27468,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionNetworkFirewallPolicyIamBinding("binding", RegionNetworkFirewallPolicyIamBindingArgs.builder()
-   *             .project(policy.project())
-   *             .region(policy.region())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .region(policy.get("region"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -27505,9 +27505,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionNetworkFirewallPolicyIamMember("member", RegionNetworkFirewallPolicyIamMemberArgs.builder()
-   *             .project(policy.project())
-   *             .region(policy.region())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .region(policy.get("region"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -27568,8 +27568,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionNetworkFirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the regionnetworkfirewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved.
-   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -27614,9 +27614,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionNetworkFirewallPolicyIamPolicy("policy", RegionNetworkFirewallPolicyIamPolicyArgs.builder()
-   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.project())
-   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.region())
-   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.name())
+   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.get("project"))
+   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.get("region"))
+   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -27650,9 +27650,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionNetworkFirewallPolicyIamBinding("binding", RegionNetworkFirewallPolicyIamBindingArgs.builder()
-   *             .project(policy.project())
-   *             .region(policy.region())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .region(policy.get("region"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -27687,9 +27687,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionNetworkFirewallPolicyIamMember("member", RegionNetworkFirewallPolicyIamMemberArgs.builder()
-   *             .project(policy.project())
-   *             .region(policy.region())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .region(policy.get("region"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -27708,8 +27708,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionNetworkFirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the regionnetworkfirewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved.
-   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -27754,9 +27754,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionNetworkFirewallPolicyIamPolicy("policy", RegionNetworkFirewallPolicyIamPolicyArgs.builder()
-   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.project())
-   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.region())
-   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.name())
+   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.get("project"))
+   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.get("region"))
+   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -27790,9 +27790,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionNetworkFirewallPolicyIamBinding("binding", RegionNetworkFirewallPolicyIamBindingArgs.builder()
-   *             .project(policy.project())
-   *             .region(policy.region())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .region(policy.get("region"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -27827,9 +27827,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionNetworkFirewallPolicyIamMember("member", RegionNetworkFirewallPolicyIamMemberArgs.builder()
-   *             .project(policy.project())
-   *             .region(policy.region())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .region(policy.get("region"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -27890,8 +27890,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionNetworkFirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the regionnetworkfirewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved.
-   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -27936,9 +27936,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionNetworkFirewallPolicyIamPolicy("policy", RegionNetworkFirewallPolicyIamPolicyArgs.builder()
-   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.project())
-   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.region())
-   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.name())
+   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.get("project"))
+   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.get("region"))
+   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -27972,9 +27972,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionNetworkFirewallPolicyIamBinding("binding", RegionNetworkFirewallPolicyIamBindingArgs.builder()
-   *             .project(policy.project())
-   *             .region(policy.region())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .region(policy.get("region"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -28009,9 +28009,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionNetworkFirewallPolicyIamMember("member", RegionNetworkFirewallPolicyIamMemberArgs.builder()
-   *             .project(policy.project())
-   *             .region(policy.region())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .region(policy.get("region"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -28030,8 +28030,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine RegionNetworkFirewallPolicy. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the regionnetworkfirewallpolicy and replaces any existing policy already attached.
-   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved.
-   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -28076,9 +28076,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new RegionNetworkFirewallPolicyIamPolicy("policy", RegionNetworkFirewallPolicyIamPolicyArgs.builder()
-   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.project())
-   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.region())
-   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.name())
+   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.get("project"))
+   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.get("region"))
+   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -28112,9 +28112,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RegionNetworkFirewallPolicyIamBinding("binding", RegionNetworkFirewallPolicyIamBindingArgs.builder()
-   *             .project(policy.project())
-   *             .region(policy.region())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .region(policy.get("region"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -28149,9 +28149,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RegionNetworkFirewallPolicyIamMember("member", RegionNetworkFirewallPolicyIamMemberArgs.builder()
-   *             .project(policy.project())
-   *             .region(policy.region())
-   *             .name(policy.name())
+   *             .project(policy.get("project"))
+   *             .region(policy.get("region"))
+   *             .name(policy.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -28276,6 +28276,56 @@ object compute:
     com.pulumi.gcp.compute.RegionNetworkPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * Represents a traffic classification rule that describes one or more match conditions along with the action to be taken when traffic matches this condition.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about RegionNetworkPolicyTrafficClassificationRule, see:
+   * 
+   * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/beta/networkPolicies/addTrafficClassificationRule)
+   */
+  def RegionNetworkPolicyTrafficClassificationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.compute.RegionNetworkPolicyTrafficClassificationRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.compute.RegionNetworkPolicyTrafficClassificationRuleArgs.builder
+    com.pulumi.gcp.compute.RegionNetworkPolicyTrafficClassificationRule(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.compute.RegionNetworkPolicyTrafficClassificationRuleArgs.Builder)
+    /**
+     * @param action The Action to perform when the client connection triggers the rule.
+     * Structure is documented below.
+     * @return builder
+     */
+    def action(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleActionArgs.Builder]):
+        com.pulumi.gcp.compute.RegionNetworkPolicyTrafficClassificationRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleActionArgs.builder
+      builder.action(args(argsBuilder).build)
+
+    /**
+     * @param match A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding &#39;action&#39; is enforced.
+     * Structure is documented below.
+     * @return builder
+     */
+    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchArgs.Builder]):
+        com.pulumi.gcp.compute.RegionNetworkPolicyTrafficClassificationRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchArgs.builder
+      builder.`match`(args(argsBuilder).build)
+
+    /**
+     * @param targetSecureTags A list of secure tags that controls which instances the traffic classification rule applies to.
+     * If targetSecureTag are specified, then the traffic classification rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the targetSecureTag are in INEFFECTIVE state, then this rule will be ignored.
+     * targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * Structure is documented below.
+     * @return builder
+     */
+    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleTargetSecureTagArgs.Builder]*):
+        com.pulumi.gcp.compute.RegionNetworkPolicyTrafficClassificationRuleArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleTargetSecureTagArgs.builder
+      builder.targetSecureTags(args.map(_(argsBuilder).build)*)
 
   /**
    * A config defined for a single managed instance that belongs to an instance group manager. It preserves the instance name
@@ -29582,8 +29632,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Snapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.SnapshotIamPolicy`: Authoritative. Sets the IAM policy for the snapshot and replaces any existing policy already attached.
-   * * `gcp.compute.SnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the snapshot are preserved.
-   * * `gcp.compute.SnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the snapshot are preserved.
+   * * `gcp.compute.SnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the snapshot are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.SnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the snapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -29628,8 +29678,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new SnapshotIamPolicy("policy", SnapshotIamPolicyArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -29663,8 +29713,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SnapshotIamBinding("binding", SnapshotIamBindingArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -29699,8 +29749,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SnapshotIamMember("member", SnapshotIamMemberArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -29719,8 +29769,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Snapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.SnapshotIamPolicy`: Authoritative. Sets the IAM policy for the snapshot and replaces any existing policy already attached.
-   * * `gcp.compute.SnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the snapshot are preserved.
-   * * `gcp.compute.SnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the snapshot are preserved.
+   * * `gcp.compute.SnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the snapshot are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.SnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the snapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -29765,8 +29815,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new SnapshotIamPolicy("policy", SnapshotIamPolicyArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -29800,8 +29850,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SnapshotIamBinding("binding", SnapshotIamBindingArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -29836,8 +29886,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SnapshotIamMember("member", SnapshotIamMemberArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -29897,8 +29947,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Snapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.SnapshotIamPolicy`: Authoritative. Sets the IAM policy for the snapshot and replaces any existing policy already attached.
-   * * `gcp.compute.SnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the snapshot are preserved.
-   * * `gcp.compute.SnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the snapshot are preserved.
+   * * `gcp.compute.SnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the snapshot are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.SnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the snapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -29943,8 +29993,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new SnapshotIamPolicy("policy", SnapshotIamPolicyArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -29978,8 +30028,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SnapshotIamBinding("binding", SnapshotIamBindingArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30014,8 +30064,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SnapshotIamMember("member", SnapshotIamMemberArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30034,8 +30084,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Snapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.SnapshotIamPolicy`: Authoritative. Sets the IAM policy for the snapshot and replaces any existing policy already attached.
-   * * `gcp.compute.SnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the snapshot are preserved.
-   * * `gcp.compute.SnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the snapshot are preserved.
+   * * `gcp.compute.SnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the snapshot are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.SnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the snapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -30080,8 +30130,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new SnapshotIamPolicy("policy", SnapshotIamPolicyArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -30115,8 +30165,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SnapshotIamBinding("binding", SnapshotIamBindingArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30151,8 +30201,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SnapshotIamMember("member", SnapshotIamMemberArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30212,8 +30262,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Snapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.SnapshotIamPolicy`: Authoritative. Sets the IAM policy for the snapshot and replaces any existing policy already attached.
-   * * `gcp.compute.SnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the snapshot are preserved.
-   * * `gcp.compute.SnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the snapshot are preserved.
+   * * `gcp.compute.SnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the snapshot are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.SnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the snapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -30258,8 +30308,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new SnapshotIamPolicy("policy", SnapshotIamPolicyArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -30293,8 +30343,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SnapshotIamBinding("binding", SnapshotIamBindingArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30329,8 +30379,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SnapshotIamMember("member", SnapshotIamMemberArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30349,8 +30399,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Snapshot. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.SnapshotIamPolicy`: Authoritative. Sets the IAM policy for the snapshot and replaces any existing policy already attached.
-   * * `gcp.compute.SnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the snapshot are preserved.
-   * * `gcp.compute.SnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the snapshot are preserved.
+   * * `gcp.compute.SnapshotIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the snapshot are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.SnapshotIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the snapshot are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -30395,8 +30445,8 @@ object compute:
    *             .build());
    * 
    *         var policy = new SnapshotIamPolicy("policy", SnapshotIamPolicyArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -30430,8 +30480,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SnapshotIamBinding("binding", SnapshotIamBindingArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30466,8 +30516,8 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SnapshotIamMember("member", SnapshotIamMemberArgs.builder()
-   *             .project(snapshot.project())
-   *             .name(snapshot.name())
+   *             .project(snapshot.get("project"))
+   *             .name(snapshot.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30581,8 +30631,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine StoragePool. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.StoragePoolIamPolicy`: Authoritative. Sets the IAM policy for the storagepool and replaces any existing policy already attached.
-   * * `gcp.compute.StoragePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the storagepool are preserved.
-   * * `gcp.compute.StoragePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the storagepool are preserved.
+   * * `gcp.compute.StoragePoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the storagepool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.StoragePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the storagepool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -30590,7 +30640,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.StoragePoolIamPolicy` **cannot** be used in conjunction with `gcp.compute.StoragePoolIamBinding` and `gcp.compute.StoragePoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.StoragePoolIamBinding` resources **can be** used in conjunction with `gcp.compute.StoragePoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.StoragePoolIamBinding` resources **can be** used in conjunction with `gcp.compute.StoragePoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -30629,9 +30679,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new StoragePoolIamPolicy("policy", StoragePoolIamPolicyArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -30681,9 +30731,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new StoragePoolIamPolicy("policy", StoragePoolIamPolicyArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -30716,9 +30766,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new StoragePoolIamBinding("binding", StoragePoolIamBindingArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30754,9 +30804,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new StoragePoolIamBinding("binding", StoragePoolIamBindingArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(StoragePoolIamBindingConditionArgs.builder()
@@ -30795,9 +30845,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new StoragePoolIamMember("member", StoragePoolIamMemberArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30833,9 +30883,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new StoragePoolIamMember("member", StoragePoolIamMemberArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(StoragePoolIamMemberConditionArgs.builder()
@@ -30859,8 +30909,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine StoragePool. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.StoragePoolIamPolicy`: Authoritative. Sets the IAM policy for the storagepool and replaces any existing policy already attached.
-   * * `gcp.compute.StoragePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the storagepool are preserved.
-   * * `gcp.compute.StoragePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the storagepool are preserved.
+   * * `gcp.compute.StoragePoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the storagepool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.StoragePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the storagepool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -30868,7 +30918,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.StoragePoolIamPolicy` **cannot** be used in conjunction with `gcp.compute.StoragePoolIamBinding` and `gcp.compute.StoragePoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.StoragePoolIamBinding` resources **can be** used in conjunction with `gcp.compute.StoragePoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.StoragePoolIamBinding` resources **can be** used in conjunction with `gcp.compute.StoragePoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -30907,9 +30957,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new StoragePoolIamPolicy("policy", StoragePoolIamPolicyArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -30959,9 +31009,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new StoragePoolIamPolicy("policy", StoragePoolIamPolicyArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -30994,9 +31044,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new StoragePoolIamBinding("binding", StoragePoolIamBindingArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -31032,9 +31082,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new StoragePoolIamBinding("binding", StoragePoolIamBindingArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(StoragePoolIamBindingConditionArgs.builder()
@@ -31073,9 +31123,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new StoragePoolIamMember("member", StoragePoolIamMemberArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -31111,9 +31161,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new StoragePoolIamMember("member", StoragePoolIamMemberArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(StoragePoolIamMemberConditionArgs.builder()
@@ -31184,8 +31234,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine StoragePool. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.StoragePoolIamPolicy`: Authoritative. Sets the IAM policy for the storagepool and replaces any existing policy already attached.
-   * * `gcp.compute.StoragePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the storagepool are preserved.
-   * * `gcp.compute.StoragePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the storagepool are preserved.
+   * * `gcp.compute.StoragePoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the storagepool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.StoragePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the storagepool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -31193,7 +31243,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.StoragePoolIamPolicy` **cannot** be used in conjunction with `gcp.compute.StoragePoolIamBinding` and `gcp.compute.StoragePoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.StoragePoolIamBinding` resources **can be** used in conjunction with `gcp.compute.StoragePoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.StoragePoolIamBinding` resources **can be** used in conjunction with `gcp.compute.StoragePoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -31232,9 +31282,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new StoragePoolIamPolicy("policy", StoragePoolIamPolicyArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -31284,9 +31334,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new StoragePoolIamPolicy("policy", StoragePoolIamPolicyArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -31319,9 +31369,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new StoragePoolIamBinding("binding", StoragePoolIamBindingArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -31357,9 +31407,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new StoragePoolIamBinding("binding", StoragePoolIamBindingArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(StoragePoolIamBindingConditionArgs.builder()
@@ -31398,9 +31448,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new StoragePoolIamMember("member", StoragePoolIamMemberArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -31436,9 +31486,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new StoragePoolIamMember("member", StoragePoolIamMemberArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(StoragePoolIamMemberConditionArgs.builder()
@@ -31462,8 +31512,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine StoragePool. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.StoragePoolIamPolicy`: Authoritative. Sets the IAM policy for the storagepool and replaces any existing policy already attached.
-   * * `gcp.compute.StoragePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the storagepool are preserved.
-   * * `gcp.compute.StoragePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the storagepool are preserved.
+   * * `gcp.compute.StoragePoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the storagepool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.StoragePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the storagepool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -31471,7 +31521,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.StoragePoolIamPolicy` **cannot** be used in conjunction with `gcp.compute.StoragePoolIamBinding` and `gcp.compute.StoragePoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.StoragePoolIamBinding` resources **can be** used in conjunction with `gcp.compute.StoragePoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.StoragePoolIamBinding` resources **can be** used in conjunction with `gcp.compute.StoragePoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -31510,9 +31560,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new StoragePoolIamPolicy("policy", StoragePoolIamPolicyArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -31562,9 +31612,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new StoragePoolIamPolicy("policy", StoragePoolIamPolicyArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -31597,9 +31647,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new StoragePoolIamBinding("binding", StoragePoolIamBindingArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -31635,9 +31685,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new StoragePoolIamBinding("binding", StoragePoolIamBindingArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(StoragePoolIamBindingConditionArgs.builder()
@@ -31676,9 +31726,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new StoragePoolIamMember("member", StoragePoolIamMemberArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -31714,9 +31764,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new StoragePoolIamMember("member", StoragePoolIamMemberArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(StoragePoolIamMemberConditionArgs.builder()
@@ -31787,8 +31837,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine StoragePool. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.StoragePoolIamPolicy`: Authoritative. Sets the IAM policy for the storagepool and replaces any existing policy already attached.
-   * * `gcp.compute.StoragePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the storagepool are preserved.
-   * * `gcp.compute.StoragePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the storagepool are preserved.
+   * * `gcp.compute.StoragePoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the storagepool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.StoragePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the storagepool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -31796,7 +31846,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.StoragePoolIamPolicy` **cannot** be used in conjunction with `gcp.compute.StoragePoolIamBinding` and `gcp.compute.StoragePoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.StoragePoolIamBinding` resources **can be** used in conjunction with `gcp.compute.StoragePoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.StoragePoolIamBinding` resources **can be** used in conjunction with `gcp.compute.StoragePoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -31835,9 +31885,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new StoragePoolIamPolicy("policy", StoragePoolIamPolicyArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -31887,9 +31937,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new StoragePoolIamPolicy("policy", StoragePoolIamPolicyArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -31922,9 +31972,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new StoragePoolIamBinding("binding", StoragePoolIamBindingArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -31960,9 +32010,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new StoragePoolIamBinding("binding", StoragePoolIamBindingArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(StoragePoolIamBindingConditionArgs.builder()
@@ -32001,9 +32051,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new StoragePoolIamMember("member", StoragePoolIamMemberArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -32039,9 +32089,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new StoragePoolIamMember("member", StoragePoolIamMemberArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(StoragePoolIamMemberConditionArgs.builder()
@@ -32065,8 +32115,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine StoragePool. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.StoragePoolIamPolicy`: Authoritative. Sets the IAM policy for the storagepool and replaces any existing policy already attached.
-   * * `gcp.compute.StoragePoolIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the storagepool are preserved.
-   * * `gcp.compute.StoragePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the storagepool are preserved.
+   * * `gcp.compute.StoragePoolIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the storagepool are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.StoragePoolIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the storagepool are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -32074,7 +32124,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.StoragePoolIamPolicy` **cannot** be used in conjunction with `gcp.compute.StoragePoolIamBinding` and `gcp.compute.StoragePoolIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.StoragePoolIamBinding` resources **can be** used in conjunction with `gcp.compute.StoragePoolIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.StoragePoolIamBinding` resources **can be** used in conjunction with `gcp.compute.StoragePoolIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -32113,9 +32163,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new StoragePoolIamPolicy("policy", StoragePoolIamPolicyArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -32165,9 +32215,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new StoragePoolIamPolicy("policy", StoragePoolIamPolicyArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -32200,9 +32250,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new StoragePoolIamBinding("binding", StoragePoolIamBindingArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -32238,9 +32288,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new StoragePoolIamBinding("binding", StoragePoolIamBindingArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(StoragePoolIamBindingConditionArgs.builder()
@@ -32279,9 +32329,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new StoragePoolIamMember("member", StoragePoolIamMemberArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -32317,9 +32367,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new StoragePoolIamMember("member", StoragePoolIamMemberArgs.builder()
-   *             .project(test_storage_pool_basic.project())
-   *             .zone(test_storage_pool_basic.zone())
-   *             .name(test_storage_pool_basic.name())
+   *             .project(test_storage_pool_basic.get("project"))
+   *             .zone(test_storage_pool_basic.get("zone"))
+   *             .name(test_storage_pool_basic.get("name"))
    *             .role("roles/compute.viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(StoragePoolIamMemberConditionArgs.builder()
@@ -32457,8 +32507,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Subnetwork. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.SubnetworkIAMPolicy`: Authoritative. Sets the IAM policy for the subnetwork and replaces any existing policy already attached.
-   * * `gcp.compute.SubnetworkIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the subnetwork are preserved.
-   * * `gcp.compute.SubnetworkIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the subnetwork are preserved.
+   * * `gcp.compute.SubnetworkIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the subnetwork are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.SubnetworkIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the subnetwork are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -32466,7 +32516,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.SubnetworkIAMPolicy` **cannot** be used in conjunction with `gcp.compute.SubnetworkIAMBinding` and `gcp.compute.SubnetworkIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.SubnetworkIAMBinding` resources **can be** used in conjunction with `gcp.compute.SubnetworkIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.SubnetworkIAMBinding` resources **can be** used in conjunction with `gcp.compute.SubnetworkIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -32505,9 +32555,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new SubnetworkIAMPolicy("policy", SubnetworkIAMPolicyArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -32557,9 +32607,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new SubnetworkIAMPolicy("policy", SubnetworkIAMPolicyArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -32592,9 +32642,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SubnetworkIAMBinding("binding", SubnetworkIAMBindingArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -32630,9 +32680,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SubnetworkIAMBinding("binding", SubnetworkIAMBindingArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SubnetworkIAMBindingConditionArgs.builder()
@@ -32671,9 +32721,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SubnetworkIAMMember("member", SubnetworkIAMMemberArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -32709,9 +32759,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SubnetworkIAMMember("member", SubnetworkIAMMemberArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SubnetworkIAMMemberConditionArgs.builder()
@@ -32735,8 +32785,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Subnetwork. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.SubnetworkIAMPolicy`: Authoritative. Sets the IAM policy for the subnetwork and replaces any existing policy already attached.
-   * * `gcp.compute.SubnetworkIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the subnetwork are preserved.
-   * * `gcp.compute.SubnetworkIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the subnetwork are preserved.
+   * * `gcp.compute.SubnetworkIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the subnetwork are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.SubnetworkIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the subnetwork are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -32744,7 +32794,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.SubnetworkIAMPolicy` **cannot** be used in conjunction with `gcp.compute.SubnetworkIAMBinding` and `gcp.compute.SubnetworkIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.SubnetworkIAMBinding` resources **can be** used in conjunction with `gcp.compute.SubnetworkIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.SubnetworkIAMBinding` resources **can be** used in conjunction with `gcp.compute.SubnetworkIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -32783,9 +32833,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new SubnetworkIAMPolicy("policy", SubnetworkIAMPolicyArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -32835,9 +32885,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new SubnetworkIAMPolicy("policy", SubnetworkIAMPolicyArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -32870,9 +32920,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SubnetworkIAMBinding("binding", SubnetworkIAMBindingArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -32908,9 +32958,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SubnetworkIAMBinding("binding", SubnetworkIAMBindingArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SubnetworkIAMBindingConditionArgs.builder()
@@ -32949,9 +32999,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SubnetworkIAMMember("member", SubnetworkIAMMemberArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -32987,9 +33037,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SubnetworkIAMMember("member", SubnetworkIAMMemberArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SubnetworkIAMMemberConditionArgs.builder()
@@ -33057,8 +33107,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Subnetwork. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.SubnetworkIAMPolicy`: Authoritative. Sets the IAM policy for the subnetwork and replaces any existing policy already attached.
-   * * `gcp.compute.SubnetworkIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the subnetwork are preserved.
-   * * `gcp.compute.SubnetworkIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the subnetwork are preserved.
+   * * `gcp.compute.SubnetworkIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the subnetwork are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.SubnetworkIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the subnetwork are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -33066,7 +33116,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.SubnetworkIAMPolicy` **cannot** be used in conjunction with `gcp.compute.SubnetworkIAMBinding` and `gcp.compute.SubnetworkIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.SubnetworkIAMBinding` resources **can be** used in conjunction with `gcp.compute.SubnetworkIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.SubnetworkIAMBinding` resources **can be** used in conjunction with `gcp.compute.SubnetworkIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -33105,9 +33155,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new SubnetworkIAMPolicy("policy", SubnetworkIAMPolicyArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -33157,9 +33207,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new SubnetworkIAMPolicy("policy", SubnetworkIAMPolicyArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -33192,9 +33242,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SubnetworkIAMBinding("binding", SubnetworkIAMBindingArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -33230,9 +33280,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SubnetworkIAMBinding("binding", SubnetworkIAMBindingArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SubnetworkIAMBindingConditionArgs.builder()
@@ -33271,9 +33321,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SubnetworkIAMMember("member", SubnetworkIAMMemberArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -33309,9 +33359,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SubnetworkIAMMember("member", SubnetworkIAMMemberArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SubnetworkIAMMemberConditionArgs.builder()
@@ -33335,8 +33385,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Subnetwork. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.SubnetworkIAMPolicy`: Authoritative. Sets the IAM policy for the subnetwork and replaces any existing policy already attached.
-   * * `gcp.compute.SubnetworkIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the subnetwork are preserved.
-   * * `gcp.compute.SubnetworkIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the subnetwork are preserved.
+   * * `gcp.compute.SubnetworkIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the subnetwork are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.SubnetworkIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the subnetwork are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -33344,7 +33394,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.SubnetworkIAMPolicy` **cannot** be used in conjunction with `gcp.compute.SubnetworkIAMBinding` and `gcp.compute.SubnetworkIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.SubnetworkIAMBinding` resources **can be** used in conjunction with `gcp.compute.SubnetworkIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.SubnetworkIAMBinding` resources **can be** used in conjunction with `gcp.compute.SubnetworkIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -33383,9 +33433,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new SubnetworkIAMPolicy("policy", SubnetworkIAMPolicyArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -33435,9 +33485,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new SubnetworkIAMPolicy("policy", SubnetworkIAMPolicyArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -33470,9 +33520,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SubnetworkIAMBinding("binding", SubnetworkIAMBindingArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -33508,9 +33558,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SubnetworkIAMBinding("binding", SubnetworkIAMBindingArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SubnetworkIAMBindingConditionArgs.builder()
@@ -33549,9 +33599,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SubnetworkIAMMember("member", SubnetworkIAMMemberArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -33587,9 +33637,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SubnetworkIAMMember("member", SubnetworkIAMMemberArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SubnetworkIAMMemberConditionArgs.builder()
@@ -33657,8 +33707,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Subnetwork. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.SubnetworkIAMPolicy`: Authoritative. Sets the IAM policy for the subnetwork and replaces any existing policy already attached.
-   * * `gcp.compute.SubnetworkIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the subnetwork are preserved.
-   * * `gcp.compute.SubnetworkIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the subnetwork are preserved.
+   * * `gcp.compute.SubnetworkIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the subnetwork are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.SubnetworkIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the subnetwork are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -33666,7 +33716,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.SubnetworkIAMPolicy` **cannot** be used in conjunction with `gcp.compute.SubnetworkIAMBinding` and `gcp.compute.SubnetworkIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.SubnetworkIAMBinding` resources **can be** used in conjunction with `gcp.compute.SubnetworkIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.SubnetworkIAMBinding` resources **can be** used in conjunction with `gcp.compute.SubnetworkIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -33705,9 +33755,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new SubnetworkIAMPolicy("policy", SubnetworkIAMPolicyArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -33757,9 +33807,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new SubnetworkIAMPolicy("policy", SubnetworkIAMPolicyArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -33792,9 +33842,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SubnetworkIAMBinding("binding", SubnetworkIAMBindingArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -33830,9 +33880,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SubnetworkIAMBinding("binding", SubnetworkIAMBindingArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SubnetworkIAMBindingConditionArgs.builder()
@@ -33871,9 +33921,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SubnetworkIAMMember("member", SubnetworkIAMMemberArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -33909,9 +33959,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SubnetworkIAMMember("member", SubnetworkIAMMemberArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SubnetworkIAMMemberConditionArgs.builder()
@@ -33935,8 +33985,8 @@ object compute:
    * Three different resources help you manage your IAM policy for Compute Engine Subnetwork. Each of these resources serves a different use case:
    * 
    * * `gcp.compute.SubnetworkIAMPolicy`: Authoritative. Sets the IAM policy for the subnetwork and replaces any existing policy already attached.
-   * * `gcp.compute.SubnetworkIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the subnetwork are preserved.
-   * * `gcp.compute.SubnetworkIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the subnetwork are preserved.
+   * * `gcp.compute.SubnetworkIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the subnetwork are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.compute.SubnetworkIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the subnetwork are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -33944,7 +33994,7 @@ object compute:
    * 
    * &gt; **Note:** `gcp.compute.SubnetworkIAMPolicy` **cannot** be used in conjunction with `gcp.compute.SubnetworkIAMBinding` and `gcp.compute.SubnetworkIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.compute.SubnetworkIAMBinding` resources **can be** used in conjunction with `gcp.compute.SubnetworkIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.compute.SubnetworkIAMBinding` resources **can be** used in conjunction with `gcp.compute.SubnetworkIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -33983,9 +34033,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new SubnetworkIAMPolicy("policy", SubnetworkIAMPolicyArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -34035,9 +34085,9 @@ object compute:
    *             .build());
    * 
    *         var policy = new SubnetworkIAMPolicy("policy", SubnetworkIAMPolicyArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -34070,9 +34120,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SubnetworkIAMBinding("binding", SubnetworkIAMBindingArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -34108,9 +34158,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SubnetworkIAMBinding("binding", SubnetworkIAMBindingArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SubnetworkIAMBindingConditionArgs.builder()
@@ -34149,9 +34199,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SubnetworkIAMMember("member", SubnetworkIAMMemberArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -34187,9 +34237,9 @@ object compute:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SubnetworkIAMMember("member", SubnetworkIAMMemberArgs.builder()
-   *             .project(network_with_private_secondary_ip_ranges.project())
-   *             .region(network_with_private_secondary_ip_ranges.region())
-   *             .subnetwork(network_with_private_secondary_ip_ranges.name())
+   *             .project(network_with_private_secondary_ip_ranges.get("project"))
+   *             .region(network_with_private_secondary_ip_ranges.get("region"))
+   *             .subnetwork(network_with_private_secondary_ip_ranges.get("name"))
    *             .role("roles/compute.networkUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SubnetworkIAMMemberConditionArgs.builder()
@@ -40563,6 +40613,52 @@ object compute:
         com.pulumi.gcp.compute.inputs.RegionNetworkPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyAssociationArgs.builder
       builder.associations(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchArgs.Builder)
+    /**
+     * @param layer4Configs Pairs of IP protocols and ports that the rule should match.
+     * Structure is documented below.
+     * 
+     * &lt;a name=&#34;nestedMatchLayer4Configs&#34;&gt;&lt;/a&gt;The `layer4Configs` block supports:
+     * @return builder
+     */
+    def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchLayer4ConfigArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchLayer4ConfigArgs.builder
+      builder.layer4Configs(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleState.Builder)
+    /**
+     * @param action The Action to perform when the client connection triggers the rule.
+     * Structure is documented below.
+     * @return builder
+     */
+    def action(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleActionArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleActionArgs.builder
+      builder.action(args(argsBuilder).build)
+
+    /**
+     * @param match A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding &#39;action&#39; is enforced.
+     * Structure is documented below.
+     * @return builder
+     */
+    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchArgs.builder
+      builder.`match`(args(argsBuilder).build)
+
+    /**
+     * @param targetSecureTags A list of secure tags that controls which instances the traffic classification rule applies to.
+     * If targetSecureTag are specified, then the traffic classification rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the targetSecureTag are in INEFFECTIVE state, then this rule will be ignored.
+     * targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * Structure is documented below.
+     * @return builder
+     */
+    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleTargetSecureTagArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleState.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleTargetSecureTagArgs.builder
+      builder.targetSecureTags(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateArgs.Builder)
     /**

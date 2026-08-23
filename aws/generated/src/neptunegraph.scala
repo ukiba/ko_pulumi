@@ -34,6 +34,20 @@ object neptunegraph:
       val argsBuilder = com.pulumi.aws.neptunegraph.inputs.GraphVectorSearchConfigurationArgs.builder
       builder.vectorSearchConfiguration(args(argsBuilder).build)
 
+  /** Manages an Amazon Neptune Analytics Private Graph Endpoint. */
+  def PrivateGraphEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.neptunegraph.PrivateGraphEndpointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.neptunegraph.PrivateGraphEndpointArgs.builder
+    com.pulumi.aws.neptunegraph.PrivateGraphEndpoint(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.neptunegraph.PrivateGraphEndpointArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.neptunegraph.inputs.PrivateGraphEndpointTimeoutsArgs.Builder]):
+        com.pulumi.aws.neptunegraph.PrivateGraphEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.neptunegraph.inputs.PrivateGraphEndpointTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.neptunegraph.inputs.GraphState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.neptunegraph.inputs.GraphTimeoutsArgs.Builder]):
         com.pulumi.aws.neptunegraph.inputs.GraphState.Builder =
@@ -48,3 +62,9 @@ object neptunegraph:
         com.pulumi.aws.neptunegraph.inputs.GraphState.Builder =
       val argsBuilder = com.pulumi.aws.neptunegraph.inputs.GraphVectorSearchConfigurationArgs.builder
       builder.vectorSearchConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.neptunegraph.inputs.PrivateGraphEndpointState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.neptunegraph.inputs.PrivateGraphEndpointTimeoutsArgs.Builder]):
+        com.pulumi.aws.neptunegraph.inputs.PrivateGraphEndpointState.Builder =
+      val argsBuilder = com.pulumi.aws.neptunegraph.inputs.PrivateGraphEndpointTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)

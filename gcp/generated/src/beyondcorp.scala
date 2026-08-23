@@ -14,6 +14,24 @@ object beyondcorp:
    * * [API documentation](https://cloud.google.com/beyondcorp/docs/reference/rest#rest-resource:-v1.projects.locations.appconnections)
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/beyondcorp-enterprise/docs/enable-app-connector)
+   * 
+   * ## Import
+   * 
+   * AppConnection can be imported using any of these accepted formats:
+   * 
+   * * `projects/{{project}}/locations/{{region}}/appConnections/{{name}}`
+   * * `{{project}}/{{region}}/{{name}}`
+   * * `{{region}}/{{name}}`
+   * * `{{name}}`
+   * 
+   * When using the `pulumi import` command, AppConnection can be imported using one of the formats above. For example:
+   * 
+   * ```sh
+   * $ pulumi import gcp:beyondcorp/appConnection:AppConnection default projects/{{project}}/locations/{{region}}/appConnections/{{name}}
+   * $ pulumi import gcp:beyondcorp/appConnection:AppConnection default {{project}}/{{region}}/{{name}}
+   * $ pulumi import gcp:beyondcorp/appConnection:AppConnection default {{region}}/{{name}}
+   * $ pulumi import gcp:beyondcorp/appConnection:AppConnection default {{name}}
+   * ```
    */
   def AppConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.beyondcorp.AppConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -57,6 +75,24 @@ object beyondcorp:
    * * [API documentation](https://cloud.google.com/beyondcorp/docs/reference/rest#rest-resource:-v1.projects.locations.appconnectors)
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/beyondcorp-enterprise/docs/enable-app-connector)
+   * 
+   * ## Import
+   * 
+   * AppConnector can be imported using any of these accepted formats:
+   * 
+   * * `projects/{{project}}/locations/{{region}}/appConnectors/{{name}}`
+   * * `{{project}}/{{region}}/{{name}}`
+   * * `{{region}}/{{name}}`
+   * * `{{name}}`
+   * 
+   * When using the `pulumi import` command, AppConnector can be imported using one of the formats above. For example:
+   * 
+   * ```sh
+   * $ pulumi import gcp:beyondcorp/appConnector:AppConnector default projects/{{project}}/locations/{{region}}/appConnectors/{{name}}
+   * $ pulumi import gcp:beyondcorp/appConnector:AppConnector default {{project}}/{{region}}/{{name}}
+   * $ pulumi import gcp:beyondcorp/appConnector:AppConnector default {{region}}/{{name}}
+   * $ pulumi import gcp:beyondcorp/appConnector:AppConnector default {{name}}
+   * ```
    */
   def AppConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.beyondcorp.AppConnectorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -230,8 +266,8 @@ object beyondcorp:
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGatewayApplication. Each of these resources serves a different use case:
    * 
    * * `gcp.beyondcorp.SecurityGatewayApplicationIamPolicy`: Authoritative. Sets the IAM policy for the securitygatewayapplication and replaces any existing policy already attached.
-   * * `gcp.beyondcorp.SecurityGatewayApplicationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the securitygatewayapplication are preserved.
-   * * `gcp.beyondcorp.SecurityGatewayApplicationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the securitygatewayapplication are preserved.
+   * * `gcp.beyondcorp.SecurityGatewayApplicationIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the securitygatewayapplication are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.beyondcorp.SecurityGatewayApplicationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the securitygatewayapplication are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -239,7 +275,7 @@ object beyondcorp:
    * 
    * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamPolicy` **cannot** be used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` and `gcp.beyondcorp.SecurityGatewayApplicationIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -278,9 +314,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayApplicationIamPolicy("policy", SecurityGatewayApplicationIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -330,9 +366,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayApplicationIamPolicy("policy", SecurityGatewayApplicationIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -365,9 +401,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayApplicationIamBinding("binding", SecurityGatewayApplicationIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -403,9 +439,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayApplicationIamBinding("binding", SecurityGatewayApplicationIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayApplicationIamBindingConditionArgs.builder()
@@ -444,9 +480,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayApplicationIamMember("member", SecurityGatewayApplicationIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -482,9 +518,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayApplicationIamMember("member", SecurityGatewayApplicationIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayApplicationIamMemberConditionArgs.builder()
@@ -508,8 +544,8 @@ object beyondcorp:
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGatewayApplication. Each of these resources serves a different use case:
    * 
    * * `gcp.beyondcorp.SecurityGatewayApplicationIamPolicy`: Authoritative. Sets the IAM policy for the securitygatewayapplication and replaces any existing policy already attached.
-   * * `gcp.beyondcorp.SecurityGatewayApplicationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the securitygatewayapplication are preserved.
-   * * `gcp.beyondcorp.SecurityGatewayApplicationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the securitygatewayapplication are preserved.
+   * * `gcp.beyondcorp.SecurityGatewayApplicationIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the securitygatewayapplication are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.beyondcorp.SecurityGatewayApplicationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the securitygatewayapplication are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -517,7 +553,7 @@ object beyondcorp:
    * 
    * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamPolicy` **cannot** be used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` and `gcp.beyondcorp.SecurityGatewayApplicationIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -556,9 +592,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayApplicationIamPolicy("policy", SecurityGatewayApplicationIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -608,9 +644,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayApplicationIamPolicy("policy", SecurityGatewayApplicationIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -643,9 +679,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayApplicationIamBinding("binding", SecurityGatewayApplicationIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -681,9 +717,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayApplicationIamBinding("binding", SecurityGatewayApplicationIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayApplicationIamBindingConditionArgs.builder()
@@ -722,9 +758,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayApplicationIamMember("member", SecurityGatewayApplicationIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -760,9 +796,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayApplicationIamMember("member", SecurityGatewayApplicationIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayApplicationIamMemberConditionArgs.builder()
@@ -830,8 +866,8 @@ object beyondcorp:
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGatewayApplication. Each of these resources serves a different use case:
    * 
    * * `gcp.beyondcorp.SecurityGatewayApplicationIamPolicy`: Authoritative. Sets the IAM policy for the securitygatewayapplication and replaces any existing policy already attached.
-   * * `gcp.beyondcorp.SecurityGatewayApplicationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the securitygatewayapplication are preserved.
-   * * `gcp.beyondcorp.SecurityGatewayApplicationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the securitygatewayapplication are preserved.
+   * * `gcp.beyondcorp.SecurityGatewayApplicationIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the securitygatewayapplication are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.beyondcorp.SecurityGatewayApplicationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the securitygatewayapplication are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -839,7 +875,7 @@ object beyondcorp:
    * 
    * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamPolicy` **cannot** be used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` and `gcp.beyondcorp.SecurityGatewayApplicationIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -878,9 +914,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayApplicationIamPolicy("policy", SecurityGatewayApplicationIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -930,9 +966,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayApplicationIamPolicy("policy", SecurityGatewayApplicationIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -965,9 +1001,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayApplicationIamBinding("binding", SecurityGatewayApplicationIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1003,9 +1039,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayApplicationIamBinding("binding", SecurityGatewayApplicationIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayApplicationIamBindingConditionArgs.builder()
@@ -1044,9 +1080,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayApplicationIamMember("member", SecurityGatewayApplicationIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1082,9 +1118,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayApplicationIamMember("member", SecurityGatewayApplicationIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayApplicationIamMemberConditionArgs.builder()
@@ -1108,8 +1144,8 @@ object beyondcorp:
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGatewayApplication. Each of these resources serves a different use case:
    * 
    * * `gcp.beyondcorp.SecurityGatewayApplicationIamPolicy`: Authoritative. Sets the IAM policy for the securitygatewayapplication and replaces any existing policy already attached.
-   * * `gcp.beyondcorp.SecurityGatewayApplicationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the securitygatewayapplication are preserved.
-   * * `gcp.beyondcorp.SecurityGatewayApplicationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the securitygatewayapplication are preserved.
+   * * `gcp.beyondcorp.SecurityGatewayApplicationIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the securitygatewayapplication are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.beyondcorp.SecurityGatewayApplicationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the securitygatewayapplication are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1117,7 +1153,7 @@ object beyondcorp:
    * 
    * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamPolicy` **cannot** be used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` and `gcp.beyondcorp.SecurityGatewayApplicationIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1156,9 +1192,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayApplicationIamPolicy("policy", SecurityGatewayApplicationIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1208,9 +1244,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayApplicationIamPolicy("policy", SecurityGatewayApplicationIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1243,9 +1279,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayApplicationIamBinding("binding", SecurityGatewayApplicationIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1281,9 +1317,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayApplicationIamBinding("binding", SecurityGatewayApplicationIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayApplicationIamBindingConditionArgs.builder()
@@ -1322,9 +1358,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayApplicationIamMember("member", SecurityGatewayApplicationIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1360,9 +1396,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayApplicationIamMember("member", SecurityGatewayApplicationIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayApplicationIamMemberConditionArgs.builder()
@@ -1430,8 +1466,8 @@ object beyondcorp:
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGatewayApplication. Each of these resources serves a different use case:
    * 
    * * `gcp.beyondcorp.SecurityGatewayApplicationIamPolicy`: Authoritative. Sets the IAM policy for the securitygatewayapplication and replaces any existing policy already attached.
-   * * `gcp.beyondcorp.SecurityGatewayApplicationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the securitygatewayapplication are preserved.
-   * * `gcp.beyondcorp.SecurityGatewayApplicationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the securitygatewayapplication are preserved.
+   * * `gcp.beyondcorp.SecurityGatewayApplicationIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the securitygatewayapplication are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.beyondcorp.SecurityGatewayApplicationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the securitygatewayapplication are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1439,7 +1475,7 @@ object beyondcorp:
    * 
    * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamPolicy` **cannot** be used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` and `gcp.beyondcorp.SecurityGatewayApplicationIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1478,9 +1514,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayApplicationIamPolicy("policy", SecurityGatewayApplicationIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1530,9 +1566,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayApplicationIamPolicy("policy", SecurityGatewayApplicationIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1565,9 +1601,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayApplicationIamBinding("binding", SecurityGatewayApplicationIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1603,9 +1639,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayApplicationIamBinding("binding", SecurityGatewayApplicationIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayApplicationIamBindingConditionArgs.builder()
@@ -1644,9 +1680,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayApplicationIamMember("member", SecurityGatewayApplicationIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1682,9 +1718,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayApplicationIamMember("member", SecurityGatewayApplicationIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayApplicationIamMemberConditionArgs.builder()
@@ -1708,8 +1744,8 @@ object beyondcorp:
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGatewayApplication. Each of these resources serves a different use case:
    * 
    * * `gcp.beyondcorp.SecurityGatewayApplicationIamPolicy`: Authoritative. Sets the IAM policy for the securitygatewayapplication and replaces any existing policy already attached.
-   * * `gcp.beyondcorp.SecurityGatewayApplicationIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the securitygatewayapplication are preserved.
-   * * `gcp.beyondcorp.SecurityGatewayApplicationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the securitygatewayapplication are preserved.
+   * * `gcp.beyondcorp.SecurityGatewayApplicationIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the securitygatewayapplication are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.beyondcorp.SecurityGatewayApplicationIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the securitygatewayapplication are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1717,7 +1753,7 @@ object beyondcorp:
    * 
    * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamPolicy` **cannot** be used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` and `gcp.beyondcorp.SecurityGatewayApplicationIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayApplicationIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayApplicationIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1756,9 +1792,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayApplicationIamPolicy("policy", SecurityGatewayApplicationIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1808,9 +1844,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayApplicationIamPolicy("policy", SecurityGatewayApplicationIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1843,9 +1879,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayApplicationIamBinding("binding", SecurityGatewayApplicationIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1881,9 +1917,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayApplicationIamBinding("binding", SecurityGatewayApplicationIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayApplicationIamBindingConditionArgs.builder()
@@ -1922,9 +1958,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayApplicationIamMember("member", SecurityGatewayApplicationIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1960,9 +1996,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayApplicationIamMember("member", SecurityGatewayApplicationIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .securityGatewayId(example.securityGatewayId())
-   *             .applicationId(example.applicationId())
+   *             .project(example.get("project"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
+   *             .applicationId(example.get("applicationId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayApplicationIamMemberConditionArgs.builder()
@@ -2060,8 +2096,8 @@ object beyondcorp:
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGateway. Each of these resources serves a different use case:
    * 
    * * `gcp.beyondcorp.SecurityGatewayIamPolicy`: Authoritative. Sets the IAM policy for the securitygateway and replaces any existing policy already attached.
-   * * `gcp.beyondcorp.SecurityGatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the securitygateway are preserved.
-   * * `gcp.beyondcorp.SecurityGatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the securitygateway are preserved.
+   * * `gcp.beyondcorp.SecurityGatewayIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the securitygateway are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.beyondcorp.SecurityGatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the securitygateway are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2069,7 +2105,7 @@ object beyondcorp:
    * 
    * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamPolicy` **cannot** be used in conjunction with `gcp.beyondcorp.SecurityGatewayIamBinding` and `gcp.beyondcorp.SecurityGatewayIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2108,9 +2144,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayIamPolicy("policy", SecurityGatewayIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2160,9 +2196,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayIamPolicy("policy", SecurityGatewayIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2195,9 +2231,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayIamBinding("binding", SecurityGatewayIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2233,9 +2269,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayIamBinding("binding", SecurityGatewayIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayIamBindingConditionArgs.builder()
@@ -2274,9 +2310,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayIamMember("member", SecurityGatewayIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2312,9 +2348,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayIamMember("member", SecurityGatewayIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayIamMemberConditionArgs.builder()
@@ -2338,8 +2374,8 @@ object beyondcorp:
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGateway. Each of these resources serves a different use case:
    * 
    * * `gcp.beyondcorp.SecurityGatewayIamPolicy`: Authoritative. Sets the IAM policy for the securitygateway and replaces any existing policy already attached.
-   * * `gcp.beyondcorp.SecurityGatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the securitygateway are preserved.
-   * * `gcp.beyondcorp.SecurityGatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the securitygateway are preserved.
+   * * `gcp.beyondcorp.SecurityGatewayIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the securitygateway are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.beyondcorp.SecurityGatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the securitygateway are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2347,7 +2383,7 @@ object beyondcorp:
    * 
    * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamPolicy` **cannot** be used in conjunction with `gcp.beyondcorp.SecurityGatewayIamBinding` and `gcp.beyondcorp.SecurityGatewayIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2386,9 +2422,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayIamPolicy("policy", SecurityGatewayIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2438,9 +2474,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayIamPolicy("policy", SecurityGatewayIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2473,9 +2509,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayIamBinding("binding", SecurityGatewayIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2511,9 +2547,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayIamBinding("binding", SecurityGatewayIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayIamBindingConditionArgs.builder()
@@ -2552,9 +2588,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayIamMember("member", SecurityGatewayIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2590,9 +2626,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayIamMember("member", SecurityGatewayIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayIamMemberConditionArgs.builder()
@@ -2660,8 +2696,8 @@ object beyondcorp:
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGateway. Each of these resources serves a different use case:
    * 
    * * `gcp.beyondcorp.SecurityGatewayIamPolicy`: Authoritative. Sets the IAM policy for the securitygateway and replaces any existing policy already attached.
-   * * `gcp.beyondcorp.SecurityGatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the securitygateway are preserved.
-   * * `gcp.beyondcorp.SecurityGatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the securitygateway are preserved.
+   * * `gcp.beyondcorp.SecurityGatewayIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the securitygateway are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.beyondcorp.SecurityGatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the securitygateway are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2669,7 +2705,7 @@ object beyondcorp:
    * 
    * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamPolicy` **cannot** be used in conjunction with `gcp.beyondcorp.SecurityGatewayIamBinding` and `gcp.beyondcorp.SecurityGatewayIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2708,9 +2744,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayIamPolicy("policy", SecurityGatewayIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2760,9 +2796,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayIamPolicy("policy", SecurityGatewayIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2795,9 +2831,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayIamBinding("binding", SecurityGatewayIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2833,9 +2869,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayIamBinding("binding", SecurityGatewayIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayIamBindingConditionArgs.builder()
@@ -2874,9 +2910,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayIamMember("member", SecurityGatewayIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2912,9 +2948,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayIamMember("member", SecurityGatewayIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayIamMemberConditionArgs.builder()
@@ -2938,8 +2974,8 @@ object beyondcorp:
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGateway. Each of these resources serves a different use case:
    * 
    * * `gcp.beyondcorp.SecurityGatewayIamPolicy`: Authoritative. Sets the IAM policy for the securitygateway and replaces any existing policy already attached.
-   * * `gcp.beyondcorp.SecurityGatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the securitygateway are preserved.
-   * * `gcp.beyondcorp.SecurityGatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the securitygateway are preserved.
+   * * `gcp.beyondcorp.SecurityGatewayIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the securitygateway are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.beyondcorp.SecurityGatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the securitygateway are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2947,7 +2983,7 @@ object beyondcorp:
    * 
    * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamPolicy` **cannot** be used in conjunction with `gcp.beyondcorp.SecurityGatewayIamBinding` and `gcp.beyondcorp.SecurityGatewayIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2986,9 +3022,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayIamPolicy("policy", SecurityGatewayIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3038,9 +3074,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayIamPolicy("policy", SecurityGatewayIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3073,9 +3109,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayIamBinding("binding", SecurityGatewayIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3111,9 +3147,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayIamBinding("binding", SecurityGatewayIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayIamBindingConditionArgs.builder()
@@ -3152,9 +3188,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayIamMember("member", SecurityGatewayIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3190,9 +3226,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayIamMember("member", SecurityGatewayIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayIamMemberConditionArgs.builder()
@@ -3260,8 +3296,8 @@ object beyondcorp:
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGateway. Each of these resources serves a different use case:
    * 
    * * `gcp.beyondcorp.SecurityGatewayIamPolicy`: Authoritative. Sets the IAM policy for the securitygateway and replaces any existing policy already attached.
-   * * `gcp.beyondcorp.SecurityGatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the securitygateway are preserved.
-   * * `gcp.beyondcorp.SecurityGatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the securitygateway are preserved.
+   * * `gcp.beyondcorp.SecurityGatewayIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the securitygateway are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.beyondcorp.SecurityGatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the securitygateway are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3269,7 +3305,7 @@ object beyondcorp:
    * 
    * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamPolicy` **cannot** be used in conjunction with `gcp.beyondcorp.SecurityGatewayIamBinding` and `gcp.beyondcorp.SecurityGatewayIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -3308,9 +3344,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayIamPolicy("policy", SecurityGatewayIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3360,9 +3396,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayIamPolicy("policy", SecurityGatewayIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3395,9 +3431,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayIamBinding("binding", SecurityGatewayIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3433,9 +3469,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayIamBinding("binding", SecurityGatewayIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayIamBindingConditionArgs.builder()
@@ -3474,9 +3510,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayIamMember("member", SecurityGatewayIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3512,9 +3548,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayIamMember("member", SecurityGatewayIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayIamMemberConditionArgs.builder()
@@ -3538,8 +3574,8 @@ object beyondcorp:
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGateway. Each of these resources serves a different use case:
    * 
    * * `gcp.beyondcorp.SecurityGatewayIamPolicy`: Authoritative. Sets the IAM policy for the securitygateway and replaces any existing policy already attached.
-   * * `gcp.beyondcorp.SecurityGatewayIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the securitygateway are preserved.
-   * * `gcp.beyondcorp.SecurityGatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the securitygateway are preserved.
+   * * `gcp.beyondcorp.SecurityGatewayIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the securitygateway are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.beyondcorp.SecurityGatewayIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the securitygateway are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3547,7 +3583,7 @@ object beyondcorp:
    * 
    * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamPolicy` **cannot** be used in conjunction with `gcp.beyondcorp.SecurityGatewayIamBinding` and `gcp.beyondcorp.SecurityGatewayIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.beyondcorp.SecurityGatewayIamBinding` resources **can be** used in conjunction with `gcp.beyondcorp.SecurityGatewayIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -3586,9 +3622,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayIamPolicy("policy", SecurityGatewayIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3638,9 +3674,9 @@ object beyondcorp:
    *             .build());
    * 
    *         var policy = new SecurityGatewayIamPolicy("policy", SecurityGatewayIamPolicyArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3673,9 +3709,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayIamBinding("binding", SecurityGatewayIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3711,9 +3747,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new SecurityGatewayIamBinding("binding", SecurityGatewayIamBindingArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayIamBindingConditionArgs.builder()
@@ -3752,9 +3788,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayIamMember("member", SecurityGatewayIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3790,9 +3826,9 @@ object beyondcorp:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new SecurityGatewayIamMember("member", SecurityGatewayIamMemberArgs.builder()
-   *             .project(example.project())
-   *             .location(example.location())
-   *             .securityGatewayId(example.securityGatewayId())
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .securityGatewayId(example.get("securityGatewayId"))
    *             .role("roles/beyondcorp.securityGatewayUser")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(SecurityGatewayIamMemberConditionArgs.builder()

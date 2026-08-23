@@ -48,10 +48,36 @@ object dsql:
       val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+  /**
+   * Resource for managing an Amazon Aurora DSQL Cluster resource-based policy.
+   * 
+   * &gt; Aurora DSQL resource-based policies can grant access to principals within the same AWS account as the cluster. Cross-account access is not currently supported by Aurora DSQL resource-based policies.
+   * 
+   * &gt; Aurora DSQL resource-based policy changes are eventually consistent and typically take effect within one minute.
+   */
+  def ClusterPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.dsql.ClusterPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.dsql.ClusterPolicyArgs.builder
+    com.pulumi.aws.dsql.ClusterPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.dsql.ClusterPolicyArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterPolicyTimeoutsArgs.Builder]):
+        com.pulumi.aws.dsql.ClusterPolicyArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterPolicyTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.dsql.inputs.ClusterPeeringState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.Builder]):
         com.pulumi.aws.dsql.inputs.ClusterPeeringState.Builder =
       val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.dsql.inputs.ClusterPolicyState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterPolicyTimeoutsArgs.Builder]):
+        com.pulumi.aws.dsql.inputs.ClusterPolicyState.Builder =
+      val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterPolicyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.dsql.inputs.ClusterState.Builder)

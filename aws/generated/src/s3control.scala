@@ -165,7 +165,7 @@ object s3control:
    * 
    * &gt; For all the services in AWS Local Zones, including Amazon S3, your accountID must be enabled before you can create or access any resource in the Local Zone. You can use the `DescribeAvailabilityZones` API operation to confirm your accountID access to a Local Zone. For more information, see [AWS Documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html)
    * 
-   * &gt; Terraform provides two ways to manage access point scopes. You can use a standalone resource `awsS3controlDirectoryAccessPointScope` or, an in-line scope with the  `awsS3DirectoryAccessPoint` resource. You cannot use a standalone resource at the same time as in-line, which will cause an overwrite of each other. You must use one or the other.
+   * &gt; Terraform manages access point scopes for directory buckets with the standalone `aws.s3control.DirectoryBucketAccessPointScope` resource. The `aws.s3.AccessPoint` resource does not support an in-line scope.
    */
   def DirectoryBucketAccessPointScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3control.DirectoryBucketAccessPointScopeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

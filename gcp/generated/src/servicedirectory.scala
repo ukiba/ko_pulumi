@@ -41,8 +41,8 @@ object servicedirectory:
    * Three different resources help you manage your IAM policy for Service Directory Namespace. Each of these resources serves a different use case:
    * 
    * * `gcp.servicedirectory.NamespaceIamPolicy`: Authoritative. Sets the IAM policy for the namespace and replaces any existing policy already attached.
-   * * `gcp.servicedirectory.NamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the namespace are preserved.
-   * * `gcp.servicedirectory.NamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the namespace are preserved.
+   * * `gcp.servicedirectory.NamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the namespace are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.servicedirectory.NamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the namespace are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -87,7 +87,7 @@ object servicedirectory:
    *             .build());
    * 
    *         var policy = new NamespaceIamPolicy("policy", NamespaceIamPolicyArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -121,7 +121,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NamespaceIamBinding("binding", NamespaceIamBindingArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -156,7 +156,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NamespaceIamMember("member", NamespaceIamMemberArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -176,8 +176,8 @@ object servicedirectory:
    * Three different resources help you manage your IAM policy for Service Directory Namespace. Each of these resources serves a different use case:
    * 
    * * `gcp.servicedirectory.NamespaceIamPolicy`: Authoritative. Sets the IAM policy for the namespace and replaces any existing policy already attached.
-   * * `gcp.servicedirectory.NamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the namespace are preserved.
-   * * `gcp.servicedirectory.NamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the namespace are preserved.
+   * * `gcp.servicedirectory.NamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the namespace are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.servicedirectory.NamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the namespace are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -222,7 +222,7 @@ object servicedirectory:
    *             .build());
    * 
    *         var policy = new NamespaceIamPolicy("policy", NamespaceIamPolicyArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -256,7 +256,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NamespaceIamBinding("binding", NamespaceIamBindingArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -291,7 +291,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NamespaceIamMember("member", NamespaceIamMemberArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -351,8 +351,8 @@ object servicedirectory:
    * Three different resources help you manage your IAM policy for Service Directory Namespace. Each of these resources serves a different use case:
    * 
    * * `gcp.servicedirectory.NamespaceIamPolicy`: Authoritative. Sets the IAM policy for the namespace and replaces any existing policy already attached.
-   * * `gcp.servicedirectory.NamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the namespace are preserved.
-   * * `gcp.servicedirectory.NamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the namespace are preserved.
+   * * `gcp.servicedirectory.NamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the namespace are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.servicedirectory.NamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the namespace are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -397,7 +397,7 @@ object servicedirectory:
    *             .build());
    * 
    *         var policy = new NamespaceIamPolicy("policy", NamespaceIamPolicyArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -431,7 +431,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NamespaceIamBinding("binding", NamespaceIamBindingArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -466,7 +466,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NamespaceIamMember("member", NamespaceIamMemberArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -486,8 +486,8 @@ object servicedirectory:
    * Three different resources help you manage your IAM policy for Service Directory Namespace. Each of these resources serves a different use case:
    * 
    * * `gcp.servicedirectory.NamespaceIamPolicy`: Authoritative. Sets the IAM policy for the namespace and replaces any existing policy already attached.
-   * * `gcp.servicedirectory.NamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the namespace are preserved.
-   * * `gcp.servicedirectory.NamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the namespace are preserved.
+   * * `gcp.servicedirectory.NamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the namespace are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.servicedirectory.NamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the namespace are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -532,7 +532,7 @@ object servicedirectory:
    *             .build());
    * 
    *         var policy = new NamespaceIamPolicy("policy", NamespaceIamPolicyArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -566,7 +566,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NamespaceIamBinding("binding", NamespaceIamBindingArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -601,7 +601,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NamespaceIamMember("member", NamespaceIamMemberArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -661,8 +661,8 @@ object servicedirectory:
    * Three different resources help you manage your IAM policy for Service Directory Namespace. Each of these resources serves a different use case:
    * 
    * * `gcp.servicedirectory.NamespaceIamPolicy`: Authoritative. Sets the IAM policy for the namespace and replaces any existing policy already attached.
-   * * `gcp.servicedirectory.NamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the namespace are preserved.
-   * * `gcp.servicedirectory.NamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the namespace are preserved.
+   * * `gcp.servicedirectory.NamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the namespace are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.servicedirectory.NamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the namespace are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -707,7 +707,7 @@ object servicedirectory:
    *             .build());
    * 
    *         var policy = new NamespaceIamPolicy("policy", NamespaceIamPolicyArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -741,7 +741,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NamespaceIamBinding("binding", NamespaceIamBindingArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -776,7 +776,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NamespaceIamMember("member", NamespaceIamMemberArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -796,8 +796,8 @@ object servicedirectory:
    * Three different resources help you manage your IAM policy for Service Directory Namespace. Each of these resources serves a different use case:
    * 
    * * `gcp.servicedirectory.NamespaceIamPolicy`: Authoritative. Sets the IAM policy for the namespace and replaces any existing policy already attached.
-   * * `gcp.servicedirectory.NamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the namespace are preserved.
-   * * `gcp.servicedirectory.NamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the namespace are preserved.
+   * * `gcp.servicedirectory.NamespaceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the namespace are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.servicedirectory.NamespaceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the namespace are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -842,7 +842,7 @@ object servicedirectory:
    *             .build());
    * 
    *         var policy = new NamespaceIamPolicy("policy", NamespaceIamPolicyArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -876,7 +876,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new NamespaceIamBinding("binding", NamespaceIamBindingArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -911,7 +911,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new NamespaceIamMember("member", NamespaceIamMemberArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -981,8 +981,8 @@ object servicedirectory:
    * Three different resources help you manage your IAM policy for Service Directory Service. Each of these resources serves a different use case:
    * 
    * * `gcp.servicedirectory.ServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.servicedirectory.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.servicedirectory.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.servicedirectory.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.servicedirectory.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1027,7 +1027,7 @@ object servicedirectory:
    *             .build());
    * 
    *         var policy = new ServiceIamPolicy("policy", ServiceIamPolicyArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1061,7 +1061,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ServiceIamBinding("binding", ServiceIamBindingArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1096,7 +1096,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ServiceIamMember("member", ServiceIamMemberArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1116,8 +1116,8 @@ object servicedirectory:
    * Three different resources help you manage your IAM policy for Service Directory Service. Each of these resources serves a different use case:
    * 
    * * `gcp.servicedirectory.ServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.servicedirectory.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.servicedirectory.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.servicedirectory.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.servicedirectory.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1162,7 +1162,7 @@ object servicedirectory:
    *             .build());
    * 
    *         var policy = new ServiceIamPolicy("policy", ServiceIamPolicyArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1196,7 +1196,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ServiceIamBinding("binding", ServiceIamBindingArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1231,7 +1231,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ServiceIamMember("member", ServiceIamMemberArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1291,8 +1291,8 @@ object servicedirectory:
    * Three different resources help you manage your IAM policy for Service Directory Service. Each of these resources serves a different use case:
    * 
    * * `gcp.servicedirectory.ServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.servicedirectory.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.servicedirectory.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.servicedirectory.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.servicedirectory.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1337,7 +1337,7 @@ object servicedirectory:
    *             .build());
    * 
    *         var policy = new ServiceIamPolicy("policy", ServiceIamPolicyArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1371,7 +1371,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ServiceIamBinding("binding", ServiceIamBindingArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1406,7 +1406,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ServiceIamMember("member", ServiceIamMemberArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1426,8 +1426,8 @@ object servicedirectory:
    * Three different resources help you manage your IAM policy for Service Directory Service. Each of these resources serves a different use case:
    * 
    * * `gcp.servicedirectory.ServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.servicedirectory.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.servicedirectory.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.servicedirectory.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.servicedirectory.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1472,7 +1472,7 @@ object servicedirectory:
    *             .build());
    * 
    *         var policy = new ServiceIamPolicy("policy", ServiceIamPolicyArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1506,7 +1506,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ServiceIamBinding("binding", ServiceIamBindingArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1541,7 +1541,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ServiceIamMember("member", ServiceIamMemberArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1601,8 +1601,8 @@ object servicedirectory:
    * Three different resources help you manage your IAM policy for Service Directory Service. Each of these resources serves a different use case:
    * 
    * * `gcp.servicedirectory.ServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.servicedirectory.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.servicedirectory.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.servicedirectory.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.servicedirectory.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1647,7 +1647,7 @@ object servicedirectory:
    *             .build());
    * 
    *         var policy = new ServiceIamPolicy("policy", ServiceIamPolicyArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1681,7 +1681,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ServiceIamBinding("binding", ServiceIamBindingArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1716,7 +1716,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ServiceIamMember("member", ServiceIamMemberArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1736,8 +1736,8 @@ object servicedirectory:
    * Three different resources help you manage your IAM policy for Service Directory Service. Each of these resources serves a different use case:
    * 
    * * `gcp.servicedirectory.ServiceIamPolicy`: Authoritative. Sets the IAM policy for the service and replaces any existing policy already attached.
-   * * `gcp.servicedirectory.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved.
-   * * `gcp.servicedirectory.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved.
+   * * `gcp.servicedirectory.ServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the service are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.servicedirectory.ServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the service are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1782,7 +1782,7 @@ object servicedirectory:
    *             .build());
    * 
    *         var policy = new ServiceIamPolicy("policy", ServiceIamPolicyArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1816,7 +1816,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new ServiceIamBinding("binding", ServiceIamBindingArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1851,7 +1851,7 @@ object servicedirectory:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new ServiceIamMember("member", ServiceIamMemberArgs.builder()
-   *             .name(example.name())
+   *             .name(example.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

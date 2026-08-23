@@ -48,6 +48,50 @@ object firestore:
       builder.weeklyRecurrence(args(argsBuilder).build)
 
   /**
+   * A change stream resource for a Cloud Firestore Database.
+   * Change streams enable real-time tracking of document changes (creates, updates, deletes)
+   * across collections within a Cloud Firestore database.
+   * 
+   * To get more information about ChangeStream, see:
+   * 
+   * * API documentation
+   * * How-to Guides
+   *     * [Official Documentation](https://cloud.google.com/firestore/docs/)
+   * 
+   * &gt; **Warning:** This resource creates a Firestore Change Stream on a project that already has
+   * a Firestore database.
+   */
+  def ChangeStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.firestore.ChangeStreamArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.firestore.ChangeStreamArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.firestore.ChangeStream(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.firestore.ChangeStreamArgs.Builder)
+    /**
+     * @param collectionGroupScope Tracks changes for a specific collection group.
+     * Structure is documented below.
+     * @return builder
+     */
+    def collectionGroupScope(args: Endofunction[com.pulumi.gcp.firestore.inputs.ChangeStreamCollectionGroupScopeArgs.Builder]):
+        com.pulumi.gcp.firestore.ChangeStreamArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.firestore.inputs.ChangeStreamCollectionGroupScopeArgs.builder
+      builder.collectionGroupScope(args(argsBuilder).build)
+
+    /**
+     * @param databaseScope Tracks changes across all collections in the database.
+     * @return builder
+     */
+    def databaseScope(args: Endofunction[com.pulumi.gcp.firestore.inputs.ChangeStreamDatabaseScopeArgs.Builder]):
+        com.pulumi.gcp.firestore.ChangeStreamArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.firestore.inputs.ChangeStreamDatabaseScopeArgs.builder
+      builder.databaseScope(args(argsBuilder).build)
+
+  /**
    * A Cloud Firestore Database.
    * 
    * If you wish to use Firestore with App Engine, use the
@@ -123,6 +167,8 @@ object firestore:
    * Fields are grouped by their &#34;Collection Group&#34;, which represent all collections
    * in the database with the same id.
    * 
+   * In Standard edition databases, single field indexes are managed using the `gcp.firestore.Field` resource. In Enterprise edition databases, they are managed using the `gcp.firestore.Index` resource.
+   * 
    * To get more information about Field, see:
    * 
    * * [API documentation](https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.collectionGroups.fields)
@@ -197,8 +243,8 @@ object firestore:
   /**
    * Cloud Firestore indexes enable simple and complex queries against documents in a database.
    *  Firestore Native, Firestore with MongoDB compatibility and Datastore Mode indexes are all supported.
-   *  This resource manages composite indexes and not single field indexes.
-   *  To manage single field indexes, use the `gcp.firestore.Field` resource instead.
+   *  In Enterprise edition databases, this resource manages both single field and composite indexes.
+   *  In Standard edition databases, single field indexes are managed using the `gcp.firestore.Field` resource instead.
    * 
    * To get more information about Index, see:
    * 
@@ -222,12 +268,13 @@ object firestore:
 
   extension (builder: com.pulumi.gcp.firestore.IndexArgs.Builder)
     /**
-     * @param fields The fields supported by this index. The last non-stored field entry is
-     * always for the field path `__name__`. If, on creation, `__name__` was not
-     * specified as the last field, it will be added automatically with the same
-     * direction as that of the last field defined. If the final field in a
-     * composite index is not directional, the `__name__` will be ordered
-     * `&#34;ASCENDING&#34;` (unless explicitly specified otherwise).
+     * @param fields The field(s) supported by this index. Indexes with the `ANY_API` `apiScope` in Standard
+     * edition databases have special behavior with respect to the `__name__` field. In these
+     * indexes, the last non-stored field entry is always for the field path `__name__`. If, on
+     * creation, `__name__` was not specified as the last field, it will be added automatically
+     * with the same direction as that of the last field defined. If the final field in an
+     * index is not directional, the `__name__` will be ordered `&#34;ASCENDING&#34;` (unless explicitly
+     * specified otherwise).
      * Structure is documented below.
      * @return builder
      */
@@ -275,6 +322,26 @@ object firestore:
         com.pulumi.gcp.firestore.inputs.BackupScheduleState.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.BackupScheduleWeeklyRecurrenceArgs.builder
       builder.weeklyRecurrence(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.firestore.inputs.ChangeStreamState.Builder)
+    /**
+     * @param collectionGroupScope Tracks changes for a specific collection group.
+     * Structure is documented below.
+     * @return builder
+     */
+    def collectionGroupScope(args: Endofunction[com.pulumi.gcp.firestore.inputs.ChangeStreamCollectionGroupScopeArgs.Builder]):
+        com.pulumi.gcp.firestore.inputs.ChangeStreamState.Builder =
+      val argsBuilder = com.pulumi.gcp.firestore.inputs.ChangeStreamCollectionGroupScopeArgs.builder
+      builder.collectionGroupScope(args(argsBuilder).build)
+
+    /**
+     * @param databaseScope Tracks changes across all collections in the database.
+     * @return builder
+     */
+    def databaseScope(args: Endofunction[com.pulumi.gcp.firestore.inputs.ChangeStreamDatabaseScopeArgs.Builder]):
+        com.pulumi.gcp.firestore.inputs.ChangeStreamState.Builder =
+      val argsBuilder = com.pulumi.gcp.firestore.inputs.ChangeStreamDatabaseScopeArgs.builder
+      builder.databaseScope(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.firestore.inputs.DatabaseState.Builder)
     /**
@@ -391,12 +458,13 @@ object firestore:
 
   extension (builder: com.pulumi.gcp.firestore.inputs.IndexState.Builder)
     /**
-     * @param fields The fields supported by this index. The last non-stored field entry is
-     * always for the field path `__name__`. If, on creation, `__name__` was not
-     * specified as the last field, it will be added automatically with the same
-     * direction as that of the last field defined. If the final field in a
-     * composite index is not directional, the `__name__` will be ordered
-     * `&#34;ASCENDING&#34;` (unless explicitly specified otherwise).
+     * @param fields The field(s) supported by this index. Indexes with the `ANY_API` `apiScope` in Standard
+     * edition databases have special behavior with respect to the `__name__` field. In these
+     * indexes, the last non-stored field entry is always for the field path `__name__`. If, on
+     * creation, `__name__` was not specified as the last field, it will be added automatically
+     * with the same direction as that of the last field defined. If the final field in an
+     * index is not directional, the `__name__` will be ordered `&#34;ASCENDING&#34;` (unless explicitly
+     * specified otherwise).
      * Structure is documented below.
      * @return builder
      */

@@ -242,7 +242,7 @@ object apprunner:
 
   extension (builder: com.pulumi.aws.apprunner.inputs.CustomDomainAssociationState.Builder)
     /**
-     * @param certificateValidationRecords Set of certificate CNAME records used for this domain name. See Certificate Validation Records below for more details.
+     * @param certificateValidationRecords Set of certificate CNAME records used for this domain name. See `certificateValidationRecords` Block below for more details.
      * @return builder
      */
     def certificateValidationRecords(args: Endofunction[com.pulumi.aws.apprunner.inputs.CustomDomainAssociationCertificateValidationRecordArgs.Builder]*):

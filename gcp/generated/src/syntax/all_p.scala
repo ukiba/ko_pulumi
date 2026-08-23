@@ -3,6 +3,7 @@ package jp.ukiba.ko_pulumi.gcp.syntax.all
 
 import jp.ukiba.ko_pulumi
 
+export ko_pulumi.gcp.accesscontextmanager.principal
 export ko_pulumi.gcp.accesscontextmanager.pscEndpoint
 export ko_pulumi.gcp.accesscontextmanager.restrictedClientApplication
 export ko_pulumi.gcp.accesscontextmanager.scope
@@ -12,6 +13,16 @@ export ko_pulumi.gcp.accesscontextmanager.sessionSettings
 export ko_pulumi.gcp.accesscontextmanager.sources
 export ko_pulumi.gcp.accesscontextmanager.spec
 export ko_pulumi.gcp.accesscontextmanager.status
+export ko_pulumi.gcp.agenticapplications.rawFileResource
+export ko_pulumi.gcp.agenticapplications.references
+export ko_pulumi.gcp.agenticapplications.resource
+export ko_pulumi.gcp.agenticapplications.resources
+export ko_pulumi.gcp.agenticapplications.secEdgar
+export ko_pulumi.gcp.agenticapplications.skills
+export ko_pulumi.gcp.agenticapplications.slideExamples
+export ko_pulumi.gcp.agenticapplications.slideGenerationOptions
+export ko_pulumi.gcp.agenticapplications.tables
+export ko_pulumi.gcp.agenticapplications.treasurySecuritiesAuctions
 export ko_pulumi.gcp.agentidentity.threeLeggedOauth
 export ko_pulumi.gcp.agentidentity.twoLeggedOauth
 export ko_pulumi.gcp.agentregistry.source
@@ -202,6 +213,7 @@ export ko_pulumi.gcp.ces.serviceDirectoryConfig
 export ko_pulumi.gcp.ces.serviceDirectoryConfigs
 export ko_pulumi.gcp.ces.skills
 export ko_pulumi.gcp.ces.snapshots
+export ko_pulumi.gcp.ces.snippetsConfig
 export ko_pulumi.gcp.ces.specs
 export ko_pulumi.gcp.ces.steps
 export ko_pulumi.gcp.ces.summarizationConfig
@@ -250,6 +262,7 @@ export ko_pulumi.gcp.chronicle.rightDrillDowns
 export ko_pulumi.gcp.chronicle.rsCredentials
 export ko_pulumi.gcp.chronicle.ruleDetectionsSettings
 export ko_pulumi.gcp.chronicle.salesforceSettings
+export ko_pulumi.gcp.chronicle.scheduleCustomizations
 export ko_pulumi.gcp.chronicle.scopeInfo
 export ko_pulumi.gcp.chronicle.scopeInfos
 export ko_pulumi.gcp.chronicle.sentineloneAlertSettings
@@ -356,6 +369,7 @@ export ko_pulumi.gcp.cloudrun.traffics
 export ko_pulumi.gcp.cloudrunv2.ports
 export ko_pulumi.gcp.cloudrunv2.readinessProbe
 export ko_pulumi.gcp.cloudrunv2.resources
+export ko_pulumi.gcp.cloudrunv2.sandboxes
 export ko_pulumi.gcp.cloudrunv2.scaling
 export ko_pulumi.gcp.cloudrunv2.secret
 export ko_pulumi.gcp.cloudrunv2.secretKeyRef
@@ -364,6 +378,7 @@ export ko_pulumi.gcp.cloudrunv2.sourceCode
 export ko_pulumi.gcp.cloudrunv2.startupProbe
 export ko_pulumi.gcp.cloudrunv2.tcpSocket
 export ko_pulumi.gcp.cloudrunv2.template
+export ko_pulumi.gcp.cloudrunv2.templates
 export ko_pulumi.gcp.cloudrunv2.terminalConditions
 export ko_pulumi.gcp.cloudrunv2.trafficStatuses
 export ko_pulumi.gcp.cloudrunv2.traffics
@@ -393,6 +408,7 @@ export ko_pulumi.gcp.colab.postStartupScriptConfig
 export ko_pulumi.gcp.colab.pscInterfaceConfig
 export ko_pulumi.gcp.colab.reservationAffinity
 export ko_pulumi.gcp.colab.runtimeConfig
+export ko_pulumi.gcp.colab.shieldedInstanceConfig
 export ko_pulumi.gcp.colab.shieldedVmConfig
 export ko_pulumi.gcp.colab.softwareConfig
 export ko_pulumi.gcp.colab.templateMetadatas
@@ -1172,6 +1188,8 @@ export ko_pulumi.gcp.secretmanager.rotation
 export ko_pulumi.gcp.secretmanager.topics
 export ko_pulumi.gcp.securesourcemanager.privateConfig
 export ko_pulumi.gcp.securesourcemanager.pushOption
+export ko_pulumi.gcp.securesourcemanager.scanConfig
+export ko_pulumi.gcp.securesourcemanager.secretScanConfig
 export ko_pulumi.gcp.securitycenter.predicate
 export ko_pulumi.gcp.securitycenter.properties
 export ko_pulumi.gcp.securitycenter.resourceSelector

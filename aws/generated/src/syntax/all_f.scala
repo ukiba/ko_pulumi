@@ -93,6 +93,7 @@ export ko_pulumi.aws.bedrock.hostingEnvironments
 export ko_pulumi.aws.bedrock.http
 export ko_pulumi.aws.bedrock.human
 export ko_pulumi.aws.bedrock.humanWorkflowConfig
+export ko_pulumi.aws.bedrock.iamPrincipal
 export ko_pulumi.aws.bedrock.imageExtractionConfiguration
 export ko_pulumi.aws.bedrock.indexedKeys
 export ko_pulumi.aws.bedrock.inferenceConfig
@@ -216,6 +217,7 @@ export ko_pulumi.aws.ecs.ingressPaths
 export ko_pulumi.aws.ecs.instanceLaunchTemplate
 export ko_pulumi.aws.ecs.instanceRequirements
 export ko_pulumi.aws.ecs.issuerCertAuthority
+export ko_pulumi.aws.eks.horizontalPodAutoscalerControllerConfig
 export ko_pulumi.aws.eks.identities
 export ko_pulumi.aws.elasticache.globalNodeGroups
 export ko_pulumi.aws.elasticsearch.idp
@@ -354,6 +356,7 @@ export ko_pulumi.aws.m2.fsx
 export ko_pulumi.aws.m2.highAvailabilityConfig
 export ko_pulumi.aws.macie.findingCriteria
 export ko_pulumi.aws.macie2.includes
+export ko_pulumi.aws.mailmanager.ingressPointConfiguration
 export ko_pulumi.aws.mailmanager.invokeLambda
 export ko_pulumi.aws.mailmanager.ipExpression
 export ko_pulumi.aws.mailmanager.ipv6Expression

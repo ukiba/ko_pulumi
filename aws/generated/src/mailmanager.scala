@@ -4,6 +4,76 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object mailmanager:
+  /** Manages an AWS SES Mail Manager Ingress Point. */
+  def IngressPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.mailmanager.IngressPointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.mailmanager.IngressPointArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.mailmanager.IngressPoint(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.mailmanager.IngressPointArgs.Builder)
+    /**
+     * @param ingressPointConfiguration Configuration used to authenticate with the ingress point. See `ingressPointConfiguration` Block for details.
+     * @return builder
+     */
+    def ingressPointConfiguration(args: Endofunction[com.pulumi.aws.mailmanager.inputs.IngressPointIngressPointConfigurationArgs.Builder]):
+        com.pulumi.aws.mailmanager.IngressPointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.mailmanager.inputs.IngressPointIngressPointConfigurationArgs.builder
+      builder.ingressPointConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param networkConfiguration Network configuration for the ingress point. See `networkConfiguration` Block for details. Changing this value forces a new resource.
+     * @return builder
+     */
+    def networkConfiguration(args: Endofunction[com.pulumi.aws.mailmanager.inputs.IngressPointNetworkConfigurationArgs.Builder]):
+        com.pulumi.aws.mailmanager.IngressPointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.mailmanager.inputs.IngressPointNetworkConfigurationArgs.builder
+      builder.networkConfiguration(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.mailmanager.inputs.IngressPointTimeoutsArgs.Builder]):
+        com.pulumi.aws.mailmanager.IngressPointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.mailmanager.inputs.IngressPointTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  /** Manages an AWS SES Mail Manager Relay. */
+  def Relay(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.mailmanager.RelayArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.mailmanager.RelayArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.mailmanager.Relay(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.mailmanager.RelayArgs.Builder)
+    /**
+     * @param authentication Authentication configuration for the relay. See `authentication` Block.
+     * @return builder
+     */
+    def authentication(args: Endofunction[com.pulumi.aws.mailmanager.inputs.RelayAuthenticationArgs.Builder]):
+        com.pulumi.aws.mailmanager.RelayArgs.Builder =
+      val argsBuilder = com.pulumi.aws.mailmanager.inputs.RelayAuthenticationArgs.builder
+      builder.authentication(args(argsBuilder).build)
+
   /** Manages an AWS SES Mail Manager Rule Set. */
   def RuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.mailmanager.RuleSetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -63,6 +133,89 @@ object mailmanager:
         com.pulumi.aws.mailmanager.TrafficPolicyArgs.Builder =
       def argsBuilder = com.pulumi.aws.mailmanager.inputs.TrafficPolicyPolicyStatementArgs.builder
       builder.policyStatements(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.mailmanager.inputs.IngressPointIngressPointConfigurationArgs.Builder)
+    /**
+     * @param tlsAuthConfiguration Configuration used to authenticate with `MTLS` ingress points. See `tlsAuthConfiguration` Block for details.
+     * @return builder
+     */
+    def tlsAuthConfiguration(args: Endofunction[com.pulumi.aws.mailmanager.inputs.IngressPointIngressPointConfigurationTlsAuthConfigurationArgs.Builder]):
+        com.pulumi.aws.mailmanager.inputs.IngressPointIngressPointConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.mailmanager.inputs.IngressPointIngressPointConfigurationTlsAuthConfigurationArgs.builder
+      builder.tlsAuthConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.mailmanager.inputs.IngressPointIngressPointConfigurationTlsAuthConfigurationArgs.Builder)
+    /**
+     * @param trustStore Trust store used to validate client certificates. See `trustStore` Block for details.
+     * @return builder
+     */
+    def trustStore(args: Endofunction[com.pulumi.aws.mailmanager.inputs.IngressPointIngressPointConfigurationTlsAuthConfigurationTrustStoreArgs.Builder]):
+        com.pulumi.aws.mailmanager.inputs.IngressPointIngressPointConfigurationTlsAuthConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.mailmanager.inputs.IngressPointIngressPointConfigurationTlsAuthConfigurationTrustStoreArgs.builder
+      builder.trustStore(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.mailmanager.inputs.IngressPointNetworkConfigurationArgs.Builder)
+    /**
+     * @param privateNetworkConfiguration Configuration for a private ingress point that uses a VPC endpoint. See `privateNetworkConfiguration` Block for details.
+     * @return builder
+     */
+    def privateNetworkConfiguration(args: Endofunction[com.pulumi.aws.mailmanager.inputs.IngressPointNetworkConfigurationPrivateNetworkConfigurationArgs.Builder]):
+        com.pulumi.aws.mailmanager.inputs.IngressPointNetworkConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.mailmanager.inputs.IngressPointNetworkConfigurationPrivateNetworkConfigurationArgs.builder
+      builder.privateNetworkConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param publicNetworkConfiguration Configuration for a public ingress point. See `publicNetworkConfiguration` Block for details.
+     * @return builder
+     */
+    def publicNetworkConfiguration(args: Endofunction[com.pulumi.aws.mailmanager.inputs.IngressPointNetworkConfigurationPublicNetworkConfigurationArgs.Builder]):
+        com.pulumi.aws.mailmanager.inputs.IngressPointNetworkConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.mailmanager.inputs.IngressPointNetworkConfigurationPublicNetworkConfigurationArgs.builder
+      builder.publicNetworkConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.mailmanager.inputs.IngressPointState.Builder)
+    /**
+     * @param ingressPointConfiguration Configuration used to authenticate with the ingress point. See `ingressPointConfiguration` Block for details.
+     * @return builder
+     */
+    def ingressPointConfiguration(args: Endofunction[com.pulumi.aws.mailmanager.inputs.IngressPointIngressPointConfigurationArgs.Builder]):
+        com.pulumi.aws.mailmanager.inputs.IngressPointState.Builder =
+      val argsBuilder = com.pulumi.aws.mailmanager.inputs.IngressPointIngressPointConfigurationArgs.builder
+      builder.ingressPointConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param networkConfiguration Network configuration for the ingress point. See `networkConfiguration` Block for details. Changing this value forces a new resource.
+     * @return builder
+     */
+    def networkConfiguration(args: Endofunction[com.pulumi.aws.mailmanager.inputs.IngressPointNetworkConfigurationArgs.Builder]):
+        com.pulumi.aws.mailmanager.inputs.IngressPointState.Builder =
+      val argsBuilder = com.pulumi.aws.mailmanager.inputs.IngressPointNetworkConfigurationArgs.builder
+      builder.networkConfiguration(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.mailmanager.inputs.IngressPointTimeoutsArgs.Builder]):
+        com.pulumi.aws.mailmanager.inputs.IngressPointState.Builder =
+      val argsBuilder = com.pulumi.aws.mailmanager.inputs.IngressPointTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.mailmanager.inputs.RelayAuthenticationArgs.Builder)
+    /**
+     * @param noAuthentication No authentication is required to connect to the SMTP server.
+     * @return builder
+     */
+    def noAuthentication(args: Endofunction[com.pulumi.aws.mailmanager.inputs.RelayAuthenticationNoAuthenticationArgs.Builder]):
+        com.pulumi.aws.mailmanager.inputs.RelayAuthenticationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.mailmanager.inputs.RelayAuthenticationNoAuthenticationArgs.builder
+      builder.noAuthentication(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.mailmanager.inputs.RelayState.Builder)
+    /**
+     * @param authentication Authentication configuration for the relay. See `authentication` Block.
+     * @return builder
+     */
+    def authentication(args: Endofunction[com.pulumi.aws.mailmanager.inputs.RelayAuthenticationArgs.Builder]):
+        com.pulumi.aws.mailmanager.inputs.RelayState.Builder =
+      val argsBuilder = com.pulumi.aws.mailmanager.inputs.RelayAuthenticationArgs.builder
+      builder.authentication(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.mailmanager.inputs.RuleSetRuleActionArgs.Builder)
     /**

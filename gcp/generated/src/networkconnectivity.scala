@@ -37,12 +37,9 @@ object networkconnectivity:
   /**
    * A gateway advertised route is a route that a gateway spoke advertises somewhere.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about GatewayAdvertisedRoute, see:
    * 
-   * * [API documentation](https://docs.cloud.google.com/network-connectivity/docs/reference/networkconnectivity/rest/v1beta/projects.locations.spokes.gatewayAdvertisedRoutes)
+   * * [API documentation](https://docs.cloud.google.com/network-connectivity/docs/reference/networkconnectivity/rest/v1/projects.locations.spokes.gatewayAdvertisedRoutes)
    * * How-to Guides
    *     * [QUICKSTART_TITLE](https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview)
    */
@@ -109,8 +106,8 @@ object networkconnectivity:
    * Three different resources help you manage your IAM policy for Network Connectivity Hub. Each of these resources serves a different use case:
    * 
    * * `gcp.networkconnectivity.HubIamPolicy`: Authoritative. Sets the IAM policy for the hub and replaces any existing policy already attached.
-   * * `gcp.networkconnectivity.HubIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hub are preserved.
-   * * `gcp.networkconnectivity.HubIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hub are preserved.
+   * * `gcp.networkconnectivity.HubIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hub are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.networkconnectivity.HubIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hub are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -155,8 +152,8 @@ object networkconnectivity:
    *             .build());
    * 
    *         var policy = new HubIamPolicy("policy", HubIamPolicyArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -190,8 +187,8 @@ object networkconnectivity:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HubIamBinding("binding", HubIamBindingArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .role("roles/networkconnectivity.hubViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -226,8 +223,8 @@ object networkconnectivity:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HubIamMember("member", HubIamMemberArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .role("roles/networkconnectivity.hubViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -246,8 +243,8 @@ object networkconnectivity:
    * Three different resources help you manage your IAM policy for Network Connectivity Hub. Each of these resources serves a different use case:
    * 
    * * `gcp.networkconnectivity.HubIamPolicy`: Authoritative. Sets the IAM policy for the hub and replaces any existing policy already attached.
-   * * `gcp.networkconnectivity.HubIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hub are preserved.
-   * * `gcp.networkconnectivity.HubIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hub are preserved.
+   * * `gcp.networkconnectivity.HubIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hub are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.networkconnectivity.HubIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hub are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -292,8 +289,8 @@ object networkconnectivity:
    *             .build());
    * 
    *         var policy = new HubIamPolicy("policy", HubIamPolicyArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -327,8 +324,8 @@ object networkconnectivity:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HubIamBinding("binding", HubIamBindingArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .role("roles/networkconnectivity.hubViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -363,8 +360,8 @@ object networkconnectivity:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HubIamMember("member", HubIamMemberArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .role("roles/networkconnectivity.hubViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -421,8 +418,8 @@ object networkconnectivity:
    * Three different resources help you manage your IAM policy for Network Connectivity Hub. Each of these resources serves a different use case:
    * 
    * * `gcp.networkconnectivity.HubIamPolicy`: Authoritative. Sets the IAM policy for the hub and replaces any existing policy already attached.
-   * * `gcp.networkconnectivity.HubIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hub are preserved.
-   * * `gcp.networkconnectivity.HubIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hub are preserved.
+   * * `gcp.networkconnectivity.HubIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hub are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.networkconnectivity.HubIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hub are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -467,8 +464,8 @@ object networkconnectivity:
    *             .build());
    * 
    *         var policy = new HubIamPolicy("policy", HubIamPolicyArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -502,8 +499,8 @@ object networkconnectivity:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HubIamBinding("binding", HubIamBindingArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .role("roles/networkconnectivity.hubViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -538,8 +535,8 @@ object networkconnectivity:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HubIamMember("member", HubIamMemberArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .role("roles/networkconnectivity.hubViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -558,8 +555,8 @@ object networkconnectivity:
    * Three different resources help you manage your IAM policy for Network Connectivity Hub. Each of these resources serves a different use case:
    * 
    * * `gcp.networkconnectivity.HubIamPolicy`: Authoritative. Sets the IAM policy for the hub and replaces any existing policy already attached.
-   * * `gcp.networkconnectivity.HubIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hub are preserved.
-   * * `gcp.networkconnectivity.HubIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hub are preserved.
+   * * `gcp.networkconnectivity.HubIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hub are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.networkconnectivity.HubIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hub are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -604,8 +601,8 @@ object networkconnectivity:
    *             .build());
    * 
    *         var policy = new HubIamPolicy("policy", HubIamPolicyArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -639,8 +636,8 @@ object networkconnectivity:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HubIamBinding("binding", HubIamBindingArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .role("roles/networkconnectivity.hubViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -675,8 +672,8 @@ object networkconnectivity:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HubIamMember("member", HubIamMemberArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .role("roles/networkconnectivity.hubViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -733,8 +730,8 @@ object networkconnectivity:
    * Three different resources help you manage your IAM policy for Network Connectivity Hub. Each of these resources serves a different use case:
    * 
    * * `gcp.networkconnectivity.HubIamPolicy`: Authoritative. Sets the IAM policy for the hub and replaces any existing policy already attached.
-   * * `gcp.networkconnectivity.HubIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hub are preserved.
-   * * `gcp.networkconnectivity.HubIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hub are preserved.
+   * * `gcp.networkconnectivity.HubIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hub are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.networkconnectivity.HubIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hub are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -779,8 +776,8 @@ object networkconnectivity:
    *             .build());
    * 
    *         var policy = new HubIamPolicy("policy", HubIamPolicyArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -814,8 +811,8 @@ object networkconnectivity:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HubIamBinding("binding", HubIamBindingArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .role("roles/networkconnectivity.hubViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -850,8 +847,8 @@ object networkconnectivity:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HubIamMember("member", HubIamMemberArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .role("roles/networkconnectivity.hubViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -870,8 +867,8 @@ object networkconnectivity:
    * Three different resources help you manage your IAM policy for Network Connectivity Hub. Each of these resources serves a different use case:
    * 
    * * `gcp.networkconnectivity.HubIamPolicy`: Authoritative. Sets the IAM policy for the hub and replaces any existing policy already attached.
-   * * `gcp.networkconnectivity.HubIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hub are preserved.
-   * * `gcp.networkconnectivity.HubIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hub are preserved.
+   * * `gcp.networkconnectivity.HubIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hub are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.networkconnectivity.HubIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hub are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -916,8 +913,8 @@ object networkconnectivity:
    *             .build());
    * 
    *         var policy = new HubIamPolicy("policy", HubIamPolicyArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -951,8 +948,8 @@ object networkconnectivity:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new HubIamBinding("binding", HubIamBindingArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .role("roles/networkconnectivity.hubViewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -987,8 +984,8 @@ object networkconnectivity:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new HubIamMember("member", HubIamMemberArgs.builder()
-   *             .project(primary.project())
-   *             .hub(primary.name())
+   *             .project(primary.get("project"))
+   *             .hub(primary.get("name"))
    *             .role("roles/networkconnectivity.hubViewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1246,8 +1243,7 @@ object networkconnectivity:
 
   extension (builder: com.pulumi.gcp.networkconnectivity.SpokeArgs.Builder)
     /**
-     * @param gateway (Optional, Beta)
-     * This is a gateway that can apply specialized processing to traffic going through it.
+     * @param gateway This is a gateway that can apply specialized processing to traffic going through it.
      * Structure is documented below.
      * @return builder
      */
@@ -1548,8 +1544,7 @@ object networkconnectivity:
 
   extension (builder: com.pulumi.gcp.networkconnectivity.inputs.SpokeState.Builder)
     /**
-     * @param gateway (Optional, Beta)
-     * This is a gateway that can apply specialized processing to traffic going through it.
+     * @param gateway This is a gateway that can apply specialized processing to traffic going through it.
      * Structure is documented below.
      * @return builder
      */

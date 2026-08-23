@@ -388,6 +388,18 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.GetServiceNetworkPlainArgs.builder
       com.pulumi.aws.vpclattice.VpclatticeFunctions.getServiceNetworkPlain(args(argsBuilder).build)
 
+    /** Data source for listing AWS VPC Lattice Service Network Service Associations. */
+    inline def getServiceNetworkServiceAssociations(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetServiceNetworkServiceAssociationsArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.vpclattice.outputs.GetServiceNetworkServiceAssociationsResult] =
+      val argsBuilder = com.pulumi.aws.vpclattice.inputs.GetServiceNetworkServiceAssociationsArgs.builder
+      com.pulumi.aws.vpclattice.VpclatticeFunctions.getServiceNetworkServiceAssociations(args(argsBuilder).build)
+
+    /** Data source for listing AWS VPC Lattice Service Network Service Associations. */
+    inline def getServiceNetworkServiceAssociationsPlain(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetServiceNetworkServiceAssociationsPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.vpclattice.outputs.GetServiceNetworkServiceAssociationsResult] =
+      val argsBuilder = com.pulumi.aws.vpclattice.inputs.GetServiceNetworkServiceAssociationsPlainArgs.builder
+      com.pulumi.aws.vpclattice.VpclatticeFunctions.getServiceNetworkServiceAssociationsPlain(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerDefaultActionArgs.Builder)
     /**
      * @param fixedResponse Configuration block for returning a fixed response. See `fixedResponse` Block below.

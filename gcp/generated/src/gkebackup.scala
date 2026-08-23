@@ -80,8 +80,8 @@ object gkebackup:
    * Three different resources help you manage your IAM policy for Backup for GKE BackupPlan. Each of these resources serves a different use case:
    * 
    * * `gcp.gkebackup.BackupPlanIamPolicy`: Authoritative. Sets the IAM policy for the backupplan and replaces any existing policy already attached.
-   * * `gcp.gkebackup.BackupPlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backupplan are preserved.
-   * * `gcp.gkebackup.BackupPlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backupplan are preserved.
+   * * `gcp.gkebackup.BackupPlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backupplan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkebackup.BackupPlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backupplan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -126,9 +126,9 @@ object gkebackup:
    *             .build());
    * 
    *         var policy = new BackupPlanIamPolicy("policy", BackupPlanIamPolicyArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -162,9 +162,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackupPlanIamBinding("binding", BackupPlanIamBindingArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -199,9 +199,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackupPlanIamMember("member", BackupPlanIamMemberArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -220,8 +220,8 @@ object gkebackup:
    * Three different resources help you manage your IAM policy for Backup for GKE BackupPlan. Each of these resources serves a different use case:
    * 
    * * `gcp.gkebackup.BackupPlanIamPolicy`: Authoritative. Sets the IAM policy for the backupplan and replaces any existing policy already attached.
-   * * `gcp.gkebackup.BackupPlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backupplan are preserved.
-   * * `gcp.gkebackup.BackupPlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backupplan are preserved.
+   * * `gcp.gkebackup.BackupPlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backupplan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkebackup.BackupPlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backupplan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -266,9 +266,9 @@ object gkebackup:
    *             .build());
    * 
    *         var policy = new BackupPlanIamPolicy("policy", BackupPlanIamPolicyArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -302,9 +302,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackupPlanIamBinding("binding", BackupPlanIamBindingArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -339,9 +339,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackupPlanIamMember("member", BackupPlanIamMemberArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -402,8 +402,8 @@ object gkebackup:
    * Three different resources help you manage your IAM policy for Backup for GKE BackupPlan. Each of these resources serves a different use case:
    * 
    * * `gcp.gkebackup.BackupPlanIamPolicy`: Authoritative. Sets the IAM policy for the backupplan and replaces any existing policy already attached.
-   * * `gcp.gkebackup.BackupPlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backupplan are preserved.
-   * * `gcp.gkebackup.BackupPlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backupplan are preserved.
+   * * `gcp.gkebackup.BackupPlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backupplan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkebackup.BackupPlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backupplan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -448,9 +448,9 @@ object gkebackup:
    *             .build());
    * 
    *         var policy = new BackupPlanIamPolicy("policy", BackupPlanIamPolicyArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -484,9 +484,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackupPlanIamBinding("binding", BackupPlanIamBindingArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -521,9 +521,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackupPlanIamMember("member", BackupPlanIamMemberArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -542,8 +542,8 @@ object gkebackup:
    * Three different resources help you manage your IAM policy for Backup for GKE BackupPlan. Each of these resources serves a different use case:
    * 
    * * `gcp.gkebackup.BackupPlanIamPolicy`: Authoritative. Sets the IAM policy for the backupplan and replaces any existing policy already attached.
-   * * `gcp.gkebackup.BackupPlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backupplan are preserved.
-   * * `gcp.gkebackup.BackupPlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backupplan are preserved.
+   * * `gcp.gkebackup.BackupPlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backupplan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkebackup.BackupPlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backupplan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -588,9 +588,9 @@ object gkebackup:
    *             .build());
    * 
    *         var policy = new BackupPlanIamPolicy("policy", BackupPlanIamPolicyArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -624,9 +624,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackupPlanIamBinding("binding", BackupPlanIamBindingArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -661,9 +661,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackupPlanIamMember("member", BackupPlanIamMemberArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -724,8 +724,8 @@ object gkebackup:
    * Three different resources help you manage your IAM policy for Backup for GKE BackupPlan. Each of these resources serves a different use case:
    * 
    * * `gcp.gkebackup.BackupPlanIamPolicy`: Authoritative. Sets the IAM policy for the backupplan and replaces any existing policy already attached.
-   * * `gcp.gkebackup.BackupPlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backupplan are preserved.
-   * * `gcp.gkebackup.BackupPlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backupplan are preserved.
+   * * `gcp.gkebackup.BackupPlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backupplan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkebackup.BackupPlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backupplan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -770,9 +770,9 @@ object gkebackup:
    *             .build());
    * 
    *         var policy = new BackupPlanIamPolicy("policy", BackupPlanIamPolicyArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -806,9 +806,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackupPlanIamBinding("binding", BackupPlanIamBindingArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -843,9 +843,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackupPlanIamMember("member", BackupPlanIamMemberArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -864,8 +864,8 @@ object gkebackup:
    * Three different resources help you manage your IAM policy for Backup for GKE BackupPlan. Each of these resources serves a different use case:
    * 
    * * `gcp.gkebackup.BackupPlanIamPolicy`: Authoritative. Sets the IAM policy for the backupplan and replaces any existing policy already attached.
-   * * `gcp.gkebackup.BackupPlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backupplan are preserved.
-   * * `gcp.gkebackup.BackupPlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backupplan are preserved.
+   * * `gcp.gkebackup.BackupPlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the backupplan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkebackup.BackupPlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the backupplan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -910,9 +910,9 @@ object gkebackup:
    *             .build());
    * 
    *         var policy = new BackupPlanIamPolicy("policy", BackupPlanIamPolicyArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -946,9 +946,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new BackupPlanIamBinding("binding", BackupPlanIamBindingArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -983,9 +983,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new BackupPlanIamMember("member", BackupPlanIamMemberArgs.builder()
-   *             .project(basic.project())
-   *             .location(basic.location())
-   *             .name(basic.name())
+   *             .project(basic.get("project"))
+   *             .location(basic.get("location"))
+   *             .name(basic.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1123,8 +1123,8 @@ object gkebackup:
    * Three different resources help you manage your IAM policy for Backup for GKE RestorePlan. Each of these resources serves a different use case:
    * 
    * * `gcp.gkebackup.RestorePlanIamPolicy`: Authoritative. Sets the IAM policy for the restoreplan and replaces any existing policy already attached.
-   * * `gcp.gkebackup.RestorePlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the restoreplan are preserved.
-   * * `gcp.gkebackup.RestorePlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the restoreplan are preserved.
+   * * `gcp.gkebackup.RestorePlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the restoreplan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkebackup.RestorePlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the restoreplan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1169,9 +1169,9 @@ object gkebackup:
    *             .build());
    * 
    *         var policy = new RestorePlanIamPolicy("policy", RestorePlanIamPolicyArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1205,9 +1205,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RestorePlanIamBinding("binding", RestorePlanIamBindingArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1242,9 +1242,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RestorePlanIamMember("member", RestorePlanIamMemberArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1263,8 +1263,8 @@ object gkebackup:
    * Three different resources help you manage your IAM policy for Backup for GKE RestorePlan. Each of these resources serves a different use case:
    * 
    * * `gcp.gkebackup.RestorePlanIamPolicy`: Authoritative. Sets the IAM policy for the restoreplan and replaces any existing policy already attached.
-   * * `gcp.gkebackup.RestorePlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the restoreplan are preserved.
-   * * `gcp.gkebackup.RestorePlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the restoreplan are preserved.
+   * * `gcp.gkebackup.RestorePlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the restoreplan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkebackup.RestorePlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the restoreplan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1309,9 +1309,9 @@ object gkebackup:
    *             .build());
    * 
    *         var policy = new RestorePlanIamPolicy("policy", RestorePlanIamPolicyArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1345,9 +1345,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RestorePlanIamBinding("binding", RestorePlanIamBindingArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1382,9 +1382,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RestorePlanIamMember("member", RestorePlanIamMemberArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1445,8 +1445,8 @@ object gkebackup:
    * Three different resources help you manage your IAM policy for Backup for GKE RestorePlan. Each of these resources serves a different use case:
    * 
    * * `gcp.gkebackup.RestorePlanIamPolicy`: Authoritative. Sets the IAM policy for the restoreplan and replaces any existing policy already attached.
-   * * `gcp.gkebackup.RestorePlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the restoreplan are preserved.
-   * * `gcp.gkebackup.RestorePlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the restoreplan are preserved.
+   * * `gcp.gkebackup.RestorePlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the restoreplan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkebackup.RestorePlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the restoreplan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1491,9 +1491,9 @@ object gkebackup:
    *             .build());
    * 
    *         var policy = new RestorePlanIamPolicy("policy", RestorePlanIamPolicyArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1527,9 +1527,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RestorePlanIamBinding("binding", RestorePlanIamBindingArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1564,9 +1564,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RestorePlanIamMember("member", RestorePlanIamMemberArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1585,8 +1585,8 @@ object gkebackup:
    * Three different resources help you manage your IAM policy for Backup for GKE RestorePlan. Each of these resources serves a different use case:
    * 
    * * `gcp.gkebackup.RestorePlanIamPolicy`: Authoritative. Sets the IAM policy for the restoreplan and replaces any existing policy already attached.
-   * * `gcp.gkebackup.RestorePlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the restoreplan are preserved.
-   * * `gcp.gkebackup.RestorePlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the restoreplan are preserved.
+   * * `gcp.gkebackup.RestorePlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the restoreplan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkebackup.RestorePlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the restoreplan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1631,9 +1631,9 @@ object gkebackup:
    *             .build());
    * 
    *         var policy = new RestorePlanIamPolicy("policy", RestorePlanIamPolicyArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1667,9 +1667,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RestorePlanIamBinding("binding", RestorePlanIamBindingArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1704,9 +1704,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RestorePlanIamMember("member", RestorePlanIamMemberArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1767,8 +1767,8 @@ object gkebackup:
    * Three different resources help you manage your IAM policy for Backup for GKE RestorePlan. Each of these resources serves a different use case:
    * 
    * * `gcp.gkebackup.RestorePlanIamPolicy`: Authoritative. Sets the IAM policy for the restoreplan and replaces any existing policy already attached.
-   * * `gcp.gkebackup.RestorePlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the restoreplan are preserved.
-   * * `gcp.gkebackup.RestorePlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the restoreplan are preserved.
+   * * `gcp.gkebackup.RestorePlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the restoreplan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkebackup.RestorePlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the restoreplan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1813,9 +1813,9 @@ object gkebackup:
    *             .build());
    * 
    *         var policy = new RestorePlanIamPolicy("policy", RestorePlanIamPolicyArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1849,9 +1849,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RestorePlanIamBinding("binding", RestorePlanIamBindingArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1886,9 +1886,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RestorePlanIamMember("member", RestorePlanIamMemberArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1907,8 +1907,8 @@ object gkebackup:
    * Three different resources help you manage your IAM policy for Backup for GKE RestorePlan. Each of these resources serves a different use case:
    * 
    * * `gcp.gkebackup.RestorePlanIamPolicy`: Authoritative. Sets the IAM policy for the restoreplan and replaces any existing policy already attached.
-   * * `gcp.gkebackup.RestorePlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the restoreplan are preserved.
-   * * `gcp.gkebackup.RestorePlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the restoreplan are preserved.
+   * * `gcp.gkebackup.RestorePlanIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the restoreplan are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gkebackup.RestorePlanIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the restoreplan are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1953,9 +1953,9 @@ object gkebackup:
    *             .build());
    * 
    *         var policy = new RestorePlanIamPolicy("policy", RestorePlanIamPolicyArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1989,9 +1989,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new RestorePlanIamBinding("binding", RestorePlanIamBindingArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .role("roles/viewer")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2026,9 +2026,9 @@ object gkebackup:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new RestorePlanIamMember("member", RestorePlanIamMemberArgs.builder()
-   *             .project(allNs.project())
-   *             .location(allNs.location())
-   *             .name(allNs.name())
+   *             .project(allNs.get("project"))
+   *             .location(allNs.get("location"))
+   *             .name(allNs.get("name"))
    *             .role("roles/viewer")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());

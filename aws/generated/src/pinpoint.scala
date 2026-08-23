@@ -332,6 +332,35 @@ object pinpoint:
       val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2PoolTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+  /** Manages an AWS End User Messaging SMS Resource Policy. */
+  def Smsvoicev2ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.pinpoint.Smsvoicev2ResourcePolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.pinpoint.Smsvoicev2ResourcePolicyArgs.builder
+    com.pulumi.aws.pinpoint.Smsvoicev2ResourcePolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /** Manages an End User Messaging SMS Sender ID. */
+  def Smsvoicev2SenderId(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.pinpoint.Smsvoicev2SenderIdArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.pinpoint.Smsvoicev2SenderIdArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.pinpoint.Smsvoicev2SenderId(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.pinpoint.Smsvoicev2SenderIdArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.pinpoint.inputs.Smsvoicev2SenderIdTimeoutsArgs.Builder]):
+        com.pulumi.aws.pinpoint.Smsvoicev2SenderIdArgs.Builder =
+      val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2SenderIdTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.pinpoint.inputs.AppState.Builder)
     /**
      * @param campaignHook Settings for invoking an AWS Lambda function that customizes a segment for a campaign. See below.
@@ -422,4 +451,10 @@ object pinpoint:
     def timeouts(args: Endofunction[com.pulumi.aws.pinpoint.inputs.Smsvoicev2PoolTimeoutsArgs.Builder]):
         com.pulumi.aws.pinpoint.inputs.Smsvoicev2PoolState.Builder =
       val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2PoolTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.pinpoint.inputs.Smsvoicev2SenderIdState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.pinpoint.inputs.Smsvoicev2SenderIdTimeoutsArgs.Builder]):
+        com.pulumi.aws.pinpoint.inputs.Smsvoicev2SenderIdState.Builder =
+      val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2SenderIdTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)

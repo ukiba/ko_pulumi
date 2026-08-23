@@ -633,7 +633,7 @@ object lightsail:
 
   extension (builder: com.pulumi.aws.lightsail.inputs.LbCertificateState.Builder)
     /**
-     * @param domainValidationRecords Set of domain validation objects which can be used to complete certificate validation. Can have more than one element, e.g., if SANs are defined.
+     * @param domainValidationRecords Set of domain validation objects which can be used to complete certificate validation. Can have more than one element, e.g., if SANs are defined. Each element contains the following attributes:
      * @return builder
      */
     def domainValidationRecords(args: Endofunction[com.pulumi.aws.lightsail.inputs.LbCertificateDomainValidationRecordArgs.Builder]*):

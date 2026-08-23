@@ -213,7 +213,7 @@ object backup:
 
   extension (builder: com.pulumi.aws.backup.ReportPlanArgs.Builder)
     /**
-     * @param reportDeliveryChannel An object that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports. Detailed below.
+     * @param reportDeliveryChannel Object that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports. Detailed below.
      * @return builder
      */
     def reportDeliveryChannel(args: Endofunction[com.pulumi.aws.backup.inputs.ReportPlanReportDeliveryChannelArgs.Builder]):
@@ -222,7 +222,7 @@ object backup:
       builder.reportDeliveryChannel(args(argsBuilder).build)
 
     /**
-     * @param reportSetting An object that identifies the report template for the report. Reports are built using a report template. Detailed below.
+     * @param reportSetting Object that identifies the report template for the report. Reports are built using a report template. Detailed below.
      * @return builder
      */
     def reportSetting(args: Endofunction[com.pulumi.aws.backup.inputs.ReportPlanReportSettingArgs.Builder]):
@@ -454,7 +454,7 @@ object backup:
 
   extension (builder: com.pulumi.aws.backup.inputs.ReportPlanState.Builder)
     /**
-     * @param reportDeliveryChannel An object that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports. Detailed below.
+     * @param reportDeliveryChannel Object that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports. Detailed below.
      * @return builder
      */
     def reportDeliveryChannel(args: Endofunction[com.pulumi.aws.backup.inputs.ReportPlanReportDeliveryChannelArgs.Builder]):
@@ -463,7 +463,7 @@ object backup:
       builder.reportDeliveryChannel(args(argsBuilder).build)
 
     /**
-     * @param reportSetting An object that identifies the report template for the report. Reports are built using a report template. Detailed below.
+     * @param reportSetting Object that identifies the report template for the report. Reports are built using a report template. Detailed below.
      * @return builder
      */
     def reportSetting(args: Endofunction[com.pulumi.aws.backup.inputs.ReportPlanReportSettingArgs.Builder]):

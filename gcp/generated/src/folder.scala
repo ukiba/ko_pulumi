@@ -67,7 +67,7 @@ object folder:
      * 
      *     public static void stack(Context ctx) {
      *         final var test = FolderFunctions.getIamPolicy(GetIamPolicyArgs.builder()
-     *             .folder(permissiontest.name())
+     *             .folder(permissiontest.get("name"))
      *             .build());
      * 
      *     }
@@ -108,7 +108,7 @@ object folder:
      * 
      *     public static void stack(Context ctx) {
      *         final var test = FolderFunctions.getIamPolicy(GetIamPolicyArgs.builder()
-     *             .folder(permissiontest.name())
+     *             .folder(permissiontest.get("name"))
      *             .build());
      * 
      *     }

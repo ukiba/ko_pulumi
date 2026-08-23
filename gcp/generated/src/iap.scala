@@ -8,8 +8,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryAgent. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryAgentIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryagent and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryagent are preserved.
-   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryagent are preserved.
+   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistryagent are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistryagent are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -17,7 +17,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryAgentIamBinding` and `gcp.iap.AgentRegistryAgentIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -56,9 +56,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -108,9 +108,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -143,9 +143,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -181,9 +181,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryAgentIamBindingConditionArgs.builder()
@@ -222,9 +222,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -260,9 +260,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryAgentIamMemberConditionArgs.builder()
@@ -286,8 +286,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryAgent. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryAgentIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryagent and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryagent are preserved.
-   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryagent are preserved.
+   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistryagent are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistryagent are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -295,7 +295,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryAgentIamBinding` and `gcp.iap.AgentRegistryAgentIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -334,9 +334,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -386,9 +386,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -421,9 +421,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -459,9 +459,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryAgentIamBindingConditionArgs.builder()
@@ -500,9 +500,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -538,9 +538,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryAgentIamMemberConditionArgs.builder()
@@ -608,8 +608,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryAgent. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryAgentIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryagent and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryagent are preserved.
-   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryagent are preserved.
+   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistryagent are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistryagent are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -617,7 +617,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryAgentIamBinding` and `gcp.iap.AgentRegistryAgentIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -656,9 +656,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -708,9 +708,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -743,9 +743,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -781,9 +781,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryAgentIamBindingConditionArgs.builder()
@@ -822,9 +822,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -860,9 +860,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryAgentIamMemberConditionArgs.builder()
@@ -886,8 +886,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryAgent. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryAgentIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryagent and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryagent are preserved.
-   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryagent are preserved.
+   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistryagent are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistryagent are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -895,7 +895,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryAgentIamBinding` and `gcp.iap.AgentRegistryAgentIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -934,9 +934,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -986,9 +986,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1021,9 +1021,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1059,9 +1059,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryAgentIamBindingConditionArgs.builder()
@@ -1100,9 +1100,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1138,9 +1138,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryAgentIamMemberConditionArgs.builder()
@@ -1208,8 +1208,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryAgent. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryAgentIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryagent and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryagent are preserved.
-   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryagent are preserved.
+   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistryagent are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistryagent are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1217,7 +1217,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryAgentIamBinding` and `gcp.iap.AgentRegistryAgentIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1256,9 +1256,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1308,9 +1308,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1343,9 +1343,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1381,9 +1381,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryAgentIamBindingConditionArgs.builder()
@@ -1422,9 +1422,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1460,9 +1460,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryAgentIamMemberConditionArgs.builder()
@@ -1486,8 +1486,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryAgent. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryAgentIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryagent and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryagent are preserved.
-   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryagent are preserved.
+   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistryagent are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistryagent are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1495,7 +1495,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryAgentIamBinding` and `gcp.iap.AgentRegistryAgentIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1534,9 +1534,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1586,9 +1586,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1621,9 +1621,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1659,9 +1659,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryAgentIamBindingConditionArgs.builder()
@@ -1700,9 +1700,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1738,9 +1738,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .agentId(default_.agentId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .agentId(default_.get("agentId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryAgentIamMemberConditionArgs.builder()
@@ -1797,8 +1797,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryEndpoint. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryendpoint and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryendpoint are preserved.
-   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryendpoint are preserved.
+   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistryendpoint are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistryendpoint are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -1806,7 +1806,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryEndpointIamBinding` and `gcp.iap.AgentRegistryEndpointIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -1845,9 +1845,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1897,9 +1897,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -1932,9 +1932,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -1970,9 +1970,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryEndpointIamBindingConditionArgs.builder()
@@ -2011,9 +2011,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2049,9 +2049,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryEndpointIamMemberConditionArgs.builder()
@@ -2075,8 +2075,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryEndpoint. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryendpoint and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryendpoint are preserved.
-   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryendpoint are preserved.
+   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistryendpoint are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistryendpoint are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2084,7 +2084,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryEndpointIamBinding` and `gcp.iap.AgentRegistryEndpointIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2123,9 +2123,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2175,9 +2175,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2210,9 +2210,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2248,9 +2248,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryEndpointIamBindingConditionArgs.builder()
@@ -2289,9 +2289,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2327,9 +2327,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryEndpointIamMemberConditionArgs.builder()
@@ -2397,8 +2397,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryEndpoint. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryendpoint and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryendpoint are preserved.
-   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryendpoint are preserved.
+   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistryendpoint are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistryendpoint are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2406,7 +2406,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryEndpointIamBinding` and `gcp.iap.AgentRegistryEndpointIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2445,9 +2445,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2497,9 +2497,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2532,9 +2532,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2570,9 +2570,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryEndpointIamBindingConditionArgs.builder()
@@ -2611,9 +2611,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2649,9 +2649,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryEndpointIamMemberConditionArgs.builder()
@@ -2675,8 +2675,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryEndpoint. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryendpoint and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryendpoint are preserved.
-   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryendpoint are preserved.
+   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistryendpoint are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistryendpoint are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -2684,7 +2684,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryEndpointIamBinding` and `gcp.iap.AgentRegistryEndpointIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -2723,9 +2723,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2775,9 +2775,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -2810,9 +2810,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2848,9 +2848,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryEndpointIamBindingConditionArgs.builder()
@@ -2889,9 +2889,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -2927,9 +2927,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryEndpointIamMemberConditionArgs.builder()
@@ -2997,8 +2997,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryEndpoint. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryendpoint and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryendpoint are preserved.
-   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryendpoint are preserved.
+   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistryendpoint are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistryendpoint are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3006,7 +3006,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryEndpointIamBinding` and `gcp.iap.AgentRegistryEndpointIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -3045,9 +3045,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3097,9 +3097,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3132,9 +3132,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3170,9 +3170,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryEndpointIamBindingConditionArgs.builder()
@@ -3211,9 +3211,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3249,9 +3249,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryEndpointIamMemberConditionArgs.builder()
@@ -3275,8 +3275,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryEndpoint. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryendpoint and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryendpoint are preserved.
-   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryendpoint are preserved.
+   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistryendpoint are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistryendpoint are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3284,7 +3284,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryEndpointIamBinding` and `gcp.iap.AgentRegistryEndpointIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -3323,9 +3323,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3375,9 +3375,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -3410,9 +3410,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3448,9 +3448,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryEndpointIamBindingConditionArgs.builder()
@@ -3489,9 +3489,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -3527,9 +3527,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .endpointId(default_.endpointId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .endpointId(default_.get("endpointId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryEndpointIamMemberConditionArgs.builder()
@@ -3586,8 +3586,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistry. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryIamPolicy`: Authoritative. Sets the IAM policy for the agentregistry and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistry are preserved.
-   * * `gcp.iap.AgentRegistryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistry are preserved.
+   * * `gcp.iap.AgentRegistryIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistry are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistry are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3595,7 +3595,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryIamBinding` and `gcp.iap.AgentRegistryIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -3634,7 +3634,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryIamPolicy("policy", AgentRegistryIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -3685,7 +3685,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryIamPolicy("policy", AgentRegistryIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -3719,7 +3719,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryIamBinding("binding", AgentRegistryIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -3756,7 +3756,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryIamBinding("binding", AgentRegistryIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -3796,7 +3796,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryIamMember("member", AgentRegistryIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -3833,7 +3833,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryIamMember("member", AgentRegistryIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -3858,8 +3858,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistry. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryIamPolicy`: Authoritative. Sets the IAM policy for the agentregistry and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistry are preserved.
-   * * `gcp.iap.AgentRegistryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistry are preserved.
+   * * `gcp.iap.AgentRegistryIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistry are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistry are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -3867,7 +3867,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryIamBinding` and `gcp.iap.AgentRegistryIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -3906,7 +3906,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryIamPolicy("policy", AgentRegistryIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -3957,7 +3957,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryIamPolicy("policy", AgentRegistryIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -3991,7 +3991,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryIamBinding("binding", AgentRegistryIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -4028,7 +4028,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryIamBinding("binding", AgentRegistryIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -4068,7 +4068,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryIamMember("member", AgentRegistryIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -4105,7 +4105,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryIamMember("member", AgentRegistryIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -4174,8 +4174,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistry. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryIamPolicy`: Authoritative. Sets the IAM policy for the agentregistry and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistry are preserved.
-   * * `gcp.iap.AgentRegistryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistry are preserved.
+   * * `gcp.iap.AgentRegistryIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistry are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistry are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4183,7 +4183,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryIamBinding` and `gcp.iap.AgentRegistryIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -4222,7 +4222,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryIamPolicy("policy", AgentRegistryIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -4273,7 +4273,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryIamPolicy("policy", AgentRegistryIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -4307,7 +4307,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryIamBinding("binding", AgentRegistryIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -4344,7 +4344,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryIamBinding("binding", AgentRegistryIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -4384,7 +4384,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryIamMember("member", AgentRegistryIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -4421,7 +4421,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryIamMember("member", AgentRegistryIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -4446,8 +4446,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistry. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryIamPolicy`: Authoritative. Sets the IAM policy for the agentregistry and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistry are preserved.
-   * * `gcp.iap.AgentRegistryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistry are preserved.
+   * * `gcp.iap.AgentRegistryIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistry are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistry are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4455,7 +4455,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryIamBinding` and `gcp.iap.AgentRegistryIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -4494,7 +4494,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryIamPolicy("policy", AgentRegistryIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -4545,7 +4545,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryIamPolicy("policy", AgentRegistryIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -4579,7 +4579,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryIamBinding("binding", AgentRegistryIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -4616,7 +4616,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryIamBinding("binding", AgentRegistryIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -4656,7 +4656,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryIamMember("member", AgentRegistryIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -4693,7 +4693,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryIamMember("member", AgentRegistryIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -4762,8 +4762,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistry. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryIamPolicy`: Authoritative. Sets the IAM policy for the agentregistry and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistry are preserved.
-   * * `gcp.iap.AgentRegistryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistry are preserved.
+   * * `gcp.iap.AgentRegistryIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistry are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistry are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -4771,7 +4771,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryIamBinding` and `gcp.iap.AgentRegistryIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -4810,7 +4810,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryIamPolicy("policy", AgentRegistryIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -4861,7 +4861,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryIamPolicy("policy", AgentRegistryIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -4895,7 +4895,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryIamBinding("binding", AgentRegistryIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -4932,7 +4932,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryIamBinding("binding", AgentRegistryIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -4972,7 +4972,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryIamMember("member", AgentRegistryIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -5009,7 +5009,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryIamMember("member", AgentRegistryIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -5034,8 +5034,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistry. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryIamPolicy`: Authoritative. Sets the IAM policy for the agentregistry and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistry are preserved.
-   * * `gcp.iap.AgentRegistryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistry are preserved.
+   * * `gcp.iap.AgentRegistryIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistry are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistry are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5043,7 +5043,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryIamBinding` and `gcp.iap.AgentRegistryIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -5082,7 +5082,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryIamPolicy("policy", AgentRegistryIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -5133,7 +5133,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryIamPolicy("policy", AgentRegistryIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -5167,7 +5167,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryIamBinding("binding", AgentRegistryIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -5204,7 +5204,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryIamBinding("binding", AgentRegistryIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -5244,7 +5244,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryIamMember("member", AgentRegistryIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -5281,7 +5281,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryIamMember("member", AgentRegistryIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -5339,8 +5339,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryMcpServer. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Authoritative. Sets the IAM policy for the agentregistrymcpserver and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistrymcpserver are preserved.
-   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistrymcpserver are preserved.
+   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistrymcpserver are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistrymcpserver are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5348,7 +5348,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryMcpServerIamBinding` and `gcp.iap.AgentRegistryMcpServerIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -5387,9 +5387,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5439,9 +5439,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5474,9 +5474,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5512,9 +5512,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryMcpServerIamBindingConditionArgs.builder()
@@ -5553,9 +5553,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5591,9 +5591,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryMcpServerIamMemberConditionArgs.builder()
@@ -5617,8 +5617,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryMcpServer. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Authoritative. Sets the IAM policy for the agentregistrymcpserver and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistrymcpserver are preserved.
-   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistrymcpserver are preserved.
+   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistrymcpserver are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistrymcpserver are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5626,7 +5626,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryMcpServerIamBinding` and `gcp.iap.AgentRegistryMcpServerIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -5665,9 +5665,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5717,9 +5717,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -5752,9 +5752,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5790,9 +5790,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryMcpServerIamBindingConditionArgs.builder()
@@ -5831,9 +5831,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -5869,9 +5869,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryMcpServerIamMemberConditionArgs.builder()
@@ -5939,8 +5939,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryMcpServer. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Authoritative. Sets the IAM policy for the agentregistrymcpserver and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistrymcpserver are preserved.
-   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistrymcpserver are preserved.
+   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistrymcpserver are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistrymcpserver are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -5948,7 +5948,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryMcpServerIamBinding` and `gcp.iap.AgentRegistryMcpServerIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -5987,9 +5987,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6039,9 +6039,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6074,9 +6074,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6112,9 +6112,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryMcpServerIamBindingConditionArgs.builder()
@@ -6153,9 +6153,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6191,9 +6191,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryMcpServerIamMemberConditionArgs.builder()
@@ -6217,8 +6217,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryMcpServer. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Authoritative. Sets the IAM policy for the agentregistrymcpserver and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistrymcpserver are preserved.
-   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistrymcpserver are preserved.
+   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistrymcpserver are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistrymcpserver are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6226,7 +6226,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryMcpServerIamBinding` and `gcp.iap.AgentRegistryMcpServerIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -6265,9 +6265,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6317,9 +6317,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6352,9 +6352,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6390,9 +6390,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryMcpServerIamBindingConditionArgs.builder()
@@ -6431,9 +6431,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6469,9 +6469,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryMcpServerIamMemberConditionArgs.builder()
@@ -6539,8 +6539,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryMcpServer. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Authoritative. Sets the IAM policy for the agentregistrymcpserver and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistrymcpserver are preserved.
-   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistrymcpserver are preserved.
+   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistrymcpserver are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistrymcpserver are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6548,7 +6548,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryMcpServerIamBinding` and `gcp.iap.AgentRegistryMcpServerIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -6587,9 +6587,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6639,9 +6639,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6674,9 +6674,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6712,9 +6712,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryMcpServerIamBindingConditionArgs.builder()
@@ -6753,9 +6753,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6791,9 +6791,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryMcpServerIamMemberConditionArgs.builder()
@@ -6817,8 +6817,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryMcpServer. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Authoritative. Sets the IAM policy for the agentregistrymcpserver and replaces any existing policy already attached.
-   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistrymcpserver are preserved.
-   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistrymcpserver are preserved.
+   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the agentregistrymcpserver are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the agentregistrymcpserver are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -6826,7 +6826,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryMcpServerIamBinding` and `gcp.iap.AgentRegistryMcpServerIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -6865,9 +6865,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6917,9 +6917,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -6952,9 +6952,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -6990,9 +6990,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryMcpServerIamBindingConditionArgs.builder()
@@ -7031,9 +7031,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7069,9 +7069,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .mcpServerId(default_.mcpServerId())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .mcpServerId(default_.get("mcpServerId"))
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AgentRegistryMcpServerIamMemberConditionArgs.builder()
@@ -7128,8 +7128,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AppEngineServiceIamPolicy`: Authoritative. Sets the IAM policy for the appengineservice and replaces any existing policy already attached.
-   * * `gcp.iap.AppEngineServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the appengineservice are preserved.
-   * * `gcp.iap.AppEngineServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the appengineservice are preserved.
+   * * `gcp.iap.AppEngineServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the appengineservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AppEngineServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the appengineservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -7137,7 +7137,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AppEngineServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.AppEngineServiceIamBinding` and `gcp.iap.AppEngineServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AppEngineServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AppEngineServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -7176,9 +7176,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineServiceIamPolicy("policy", AppEngineServiceIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -7228,9 +7228,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineServiceIamPolicy("policy", AppEngineServiceIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -7263,9 +7263,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineServiceIamBinding("binding", AppEngineServiceIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7301,9 +7301,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineServiceIamBinding("binding", AppEngineServiceIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineServiceIamBindingConditionArgs.builder()
@@ -7342,9 +7342,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineServiceIamMember("member", AppEngineServiceIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7380,9 +7380,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineServiceIamMember("member", AppEngineServiceIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineServiceIamMemberConditionArgs.builder()
@@ -7406,8 +7406,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AppEngineServiceIamPolicy`: Authoritative. Sets the IAM policy for the appengineservice and replaces any existing policy already attached.
-   * * `gcp.iap.AppEngineServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the appengineservice are preserved.
-   * * `gcp.iap.AppEngineServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the appengineservice are preserved.
+   * * `gcp.iap.AppEngineServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the appengineservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AppEngineServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the appengineservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -7415,7 +7415,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AppEngineServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.AppEngineServiceIamBinding` and `gcp.iap.AppEngineServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AppEngineServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AppEngineServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -7454,9 +7454,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineServiceIamPolicy("policy", AppEngineServiceIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -7506,9 +7506,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineServiceIamPolicy("policy", AppEngineServiceIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -7541,9 +7541,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineServiceIamBinding("binding", AppEngineServiceIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7579,9 +7579,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineServiceIamBinding("binding", AppEngineServiceIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineServiceIamBindingConditionArgs.builder()
@@ -7620,9 +7620,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineServiceIamMember("member", AppEngineServiceIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7658,9 +7658,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineServiceIamMember("member", AppEngineServiceIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineServiceIamMemberConditionArgs.builder()
@@ -7728,8 +7728,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AppEngineServiceIamPolicy`: Authoritative. Sets the IAM policy for the appengineservice and replaces any existing policy already attached.
-   * * `gcp.iap.AppEngineServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the appengineservice are preserved.
-   * * `gcp.iap.AppEngineServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the appengineservice are preserved.
+   * * `gcp.iap.AppEngineServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the appengineservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AppEngineServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the appengineservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -7737,7 +7737,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AppEngineServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.AppEngineServiceIamBinding` and `gcp.iap.AppEngineServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AppEngineServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AppEngineServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -7776,9 +7776,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineServiceIamPolicy("policy", AppEngineServiceIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -7828,9 +7828,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineServiceIamPolicy("policy", AppEngineServiceIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -7863,9 +7863,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineServiceIamBinding("binding", AppEngineServiceIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7901,9 +7901,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineServiceIamBinding("binding", AppEngineServiceIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineServiceIamBindingConditionArgs.builder()
@@ -7942,9 +7942,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineServiceIamMember("member", AppEngineServiceIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -7980,9 +7980,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineServiceIamMember("member", AppEngineServiceIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineServiceIamMemberConditionArgs.builder()
@@ -8006,8 +8006,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AppEngineServiceIamPolicy`: Authoritative. Sets the IAM policy for the appengineservice and replaces any existing policy already attached.
-   * * `gcp.iap.AppEngineServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the appengineservice are preserved.
-   * * `gcp.iap.AppEngineServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the appengineservice are preserved.
+   * * `gcp.iap.AppEngineServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the appengineservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AppEngineServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the appengineservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -8015,7 +8015,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AppEngineServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.AppEngineServiceIamBinding` and `gcp.iap.AppEngineServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AppEngineServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AppEngineServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -8054,9 +8054,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineServiceIamPolicy("policy", AppEngineServiceIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8106,9 +8106,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineServiceIamPolicy("policy", AppEngineServiceIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8141,9 +8141,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineServiceIamBinding("binding", AppEngineServiceIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8179,9 +8179,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineServiceIamBinding("binding", AppEngineServiceIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineServiceIamBindingConditionArgs.builder()
@@ -8220,9 +8220,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineServiceIamMember("member", AppEngineServiceIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8258,9 +8258,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineServiceIamMember("member", AppEngineServiceIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineServiceIamMemberConditionArgs.builder()
@@ -8328,8 +8328,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AppEngineServiceIamPolicy`: Authoritative. Sets the IAM policy for the appengineservice and replaces any existing policy already attached.
-   * * `gcp.iap.AppEngineServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the appengineservice are preserved.
-   * * `gcp.iap.AppEngineServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the appengineservice are preserved.
+   * * `gcp.iap.AppEngineServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the appengineservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AppEngineServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the appengineservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -8337,7 +8337,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AppEngineServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.AppEngineServiceIamBinding` and `gcp.iap.AppEngineServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AppEngineServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AppEngineServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -8376,9 +8376,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineServiceIamPolicy("policy", AppEngineServiceIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8428,9 +8428,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineServiceIamPolicy("policy", AppEngineServiceIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8463,9 +8463,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineServiceIamBinding("binding", AppEngineServiceIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8501,9 +8501,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineServiceIamBinding("binding", AppEngineServiceIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineServiceIamBindingConditionArgs.builder()
@@ -8542,9 +8542,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineServiceIamMember("member", AppEngineServiceIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8580,9 +8580,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineServiceIamMember("member", AppEngineServiceIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineServiceIamMemberConditionArgs.builder()
@@ -8606,8 +8606,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AppEngineServiceIamPolicy`: Authoritative. Sets the IAM policy for the appengineservice and replaces any existing policy already attached.
-   * * `gcp.iap.AppEngineServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the appengineservice are preserved.
-   * * `gcp.iap.AppEngineServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the appengineservice are preserved.
+   * * `gcp.iap.AppEngineServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the appengineservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AppEngineServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the appengineservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -8615,7 +8615,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AppEngineServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.AppEngineServiceIamBinding` and `gcp.iap.AppEngineServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AppEngineServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AppEngineServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -8654,9 +8654,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineServiceIamPolicy("policy", AppEngineServiceIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8706,9 +8706,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineServiceIamPolicy("policy", AppEngineServiceIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -8741,9 +8741,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineServiceIamBinding("binding", AppEngineServiceIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8779,9 +8779,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineServiceIamBinding("binding", AppEngineServiceIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineServiceIamBindingConditionArgs.builder()
@@ -8820,9 +8820,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineServiceIamMember("member", AppEngineServiceIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -8858,9 +8858,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineServiceIamMember("member", AppEngineServiceIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineServiceIamMemberConditionArgs.builder()
@@ -8917,8 +8917,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineVersion. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AppEngineVersionIamPolicy`: Authoritative. Sets the IAM policy for the appengineversion and replaces any existing policy already attached.
-   * * `gcp.iap.AppEngineVersionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the appengineversion are preserved.
-   * * `gcp.iap.AppEngineVersionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the appengineversion are preserved.
+   * * `gcp.iap.AppEngineVersionIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the appengineversion are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AppEngineVersionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the appengineversion are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -8926,7 +8926,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AppEngineVersionIamPolicy` **cannot** be used in conjunction with `gcp.iap.AppEngineVersionIamBinding` and `gcp.iap.AppEngineVersionIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AppEngineVersionIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineVersionIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AppEngineVersionIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineVersionIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -8965,10 +8965,10 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineVersionIamPolicy("policy", AppEngineVersionIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9018,10 +9018,10 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineVersionIamPolicy("policy", AppEngineVersionIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9054,10 +9054,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineVersionIamBinding("binding", AppEngineVersionIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9093,10 +9093,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineVersionIamBinding("binding", AppEngineVersionIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineVersionIamBindingConditionArgs.builder()
@@ -9135,10 +9135,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineVersionIamMember("member", AppEngineVersionIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9174,10 +9174,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineVersionIamMember("member", AppEngineVersionIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineVersionIamMemberConditionArgs.builder()
@@ -9201,8 +9201,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineVersion. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AppEngineVersionIamPolicy`: Authoritative. Sets the IAM policy for the appengineversion and replaces any existing policy already attached.
-   * * `gcp.iap.AppEngineVersionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the appengineversion are preserved.
-   * * `gcp.iap.AppEngineVersionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the appengineversion are preserved.
+   * * `gcp.iap.AppEngineVersionIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the appengineversion are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AppEngineVersionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the appengineversion are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -9210,7 +9210,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AppEngineVersionIamPolicy` **cannot** be used in conjunction with `gcp.iap.AppEngineVersionIamBinding` and `gcp.iap.AppEngineVersionIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AppEngineVersionIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineVersionIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AppEngineVersionIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineVersionIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -9249,10 +9249,10 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineVersionIamPolicy("policy", AppEngineVersionIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9302,10 +9302,10 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineVersionIamPolicy("policy", AppEngineVersionIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9338,10 +9338,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineVersionIamBinding("binding", AppEngineVersionIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9377,10 +9377,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineVersionIamBinding("binding", AppEngineVersionIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineVersionIamBindingConditionArgs.builder()
@@ -9419,10 +9419,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineVersionIamMember("member", AppEngineVersionIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9458,10 +9458,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineVersionIamMember("member", AppEngineVersionIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineVersionIamMemberConditionArgs.builder()
@@ -9529,8 +9529,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineVersion. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AppEngineVersionIamPolicy`: Authoritative. Sets the IAM policy for the appengineversion and replaces any existing policy already attached.
-   * * `gcp.iap.AppEngineVersionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the appengineversion are preserved.
-   * * `gcp.iap.AppEngineVersionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the appengineversion are preserved.
+   * * `gcp.iap.AppEngineVersionIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the appengineversion are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AppEngineVersionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the appengineversion are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -9538,7 +9538,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AppEngineVersionIamPolicy` **cannot** be used in conjunction with `gcp.iap.AppEngineVersionIamBinding` and `gcp.iap.AppEngineVersionIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AppEngineVersionIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineVersionIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AppEngineVersionIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineVersionIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -9577,10 +9577,10 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineVersionIamPolicy("policy", AppEngineVersionIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9630,10 +9630,10 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineVersionIamPolicy("policy", AppEngineVersionIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9666,10 +9666,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineVersionIamBinding("binding", AppEngineVersionIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9705,10 +9705,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineVersionIamBinding("binding", AppEngineVersionIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineVersionIamBindingConditionArgs.builder()
@@ -9747,10 +9747,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineVersionIamMember("member", AppEngineVersionIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9786,10 +9786,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineVersionIamMember("member", AppEngineVersionIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineVersionIamMemberConditionArgs.builder()
@@ -9813,8 +9813,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineVersion. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AppEngineVersionIamPolicy`: Authoritative. Sets the IAM policy for the appengineversion and replaces any existing policy already attached.
-   * * `gcp.iap.AppEngineVersionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the appengineversion are preserved.
-   * * `gcp.iap.AppEngineVersionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the appengineversion are preserved.
+   * * `gcp.iap.AppEngineVersionIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the appengineversion are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AppEngineVersionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the appengineversion are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -9822,7 +9822,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AppEngineVersionIamPolicy` **cannot** be used in conjunction with `gcp.iap.AppEngineVersionIamBinding` and `gcp.iap.AppEngineVersionIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AppEngineVersionIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineVersionIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AppEngineVersionIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineVersionIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -9861,10 +9861,10 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineVersionIamPolicy("policy", AppEngineVersionIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9914,10 +9914,10 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineVersionIamPolicy("policy", AppEngineVersionIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -9950,10 +9950,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineVersionIamBinding("binding", AppEngineVersionIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -9989,10 +9989,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineVersionIamBinding("binding", AppEngineVersionIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineVersionIamBindingConditionArgs.builder()
@@ -10031,10 +10031,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineVersionIamMember("member", AppEngineVersionIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -10070,10 +10070,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineVersionIamMember("member", AppEngineVersionIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineVersionIamMemberConditionArgs.builder()
@@ -10141,8 +10141,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineVersion. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AppEngineVersionIamPolicy`: Authoritative. Sets the IAM policy for the appengineversion and replaces any existing policy already attached.
-   * * `gcp.iap.AppEngineVersionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the appengineversion are preserved.
-   * * `gcp.iap.AppEngineVersionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the appengineversion are preserved.
+   * * `gcp.iap.AppEngineVersionIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the appengineversion are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AppEngineVersionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the appengineversion are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -10150,7 +10150,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AppEngineVersionIamPolicy` **cannot** be used in conjunction with `gcp.iap.AppEngineVersionIamBinding` and `gcp.iap.AppEngineVersionIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AppEngineVersionIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineVersionIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AppEngineVersionIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineVersionIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -10189,10 +10189,10 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineVersionIamPolicy("policy", AppEngineVersionIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -10242,10 +10242,10 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineVersionIamPolicy("policy", AppEngineVersionIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -10278,10 +10278,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineVersionIamBinding("binding", AppEngineVersionIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -10317,10 +10317,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineVersionIamBinding("binding", AppEngineVersionIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineVersionIamBindingConditionArgs.builder()
@@ -10359,10 +10359,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineVersionIamMember("member", AppEngineVersionIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -10398,10 +10398,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineVersionIamMember("member", AppEngineVersionIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineVersionIamMemberConditionArgs.builder()
@@ -10425,8 +10425,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineVersion. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AppEngineVersionIamPolicy`: Authoritative. Sets the IAM policy for the appengineversion and replaces any existing policy already attached.
-   * * `gcp.iap.AppEngineVersionIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the appengineversion are preserved.
-   * * `gcp.iap.AppEngineVersionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the appengineversion are preserved.
+   * * `gcp.iap.AppEngineVersionIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the appengineversion are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.AppEngineVersionIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the appengineversion are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -10434,7 +10434,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.AppEngineVersionIamPolicy` **cannot** be used in conjunction with `gcp.iap.AppEngineVersionIamBinding` and `gcp.iap.AppEngineVersionIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.AppEngineVersionIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineVersionIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.AppEngineVersionIamBinding` resources **can be** used in conjunction with `gcp.iap.AppEngineVersionIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -10473,10 +10473,10 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineVersionIamPolicy("policy", AppEngineVersionIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -10526,10 +10526,10 @@ object iap:
    *             .build());
    * 
    *         var policy = new AppEngineVersionIamPolicy("policy", AppEngineVersionIamPolicyArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -10562,10 +10562,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineVersionIamBinding("binding", AppEngineVersionIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -10601,10 +10601,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new AppEngineVersionIamBinding("binding", AppEngineVersionIamBindingArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineVersionIamBindingConditionArgs.builder()
@@ -10643,10 +10643,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineVersionIamMember("member", AppEngineVersionIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -10682,10 +10682,10 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new AppEngineVersionIamMember("member", AppEngineVersionIamMemberArgs.builder()
-   *             .project(version.project())
-   *             .appId(version.project())
-   *             .service(version.service())
-   *             .versionId(version.versionId())
+   *             .project(version.get("project"))
+   *             .appId(version.get("project"))
+   *             .service(version.get("service"))
+   *             .versionId(version.get("versionId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(AppEngineVersionIamMemberConditionArgs.builder()
@@ -11024,8 +11024,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy LocationWeb. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.LocationWebIamPolicy`: Authoritative. Sets the IAM policy for the locationweb and replaces any existing policy already attached.
-   * * `gcp.iap.LocationWebIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the locationweb are preserved.
-   * * `gcp.iap.LocationWebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the locationweb are preserved.
+   * * `gcp.iap.LocationWebIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the locationweb are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.LocationWebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the locationweb are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -11033,7 +11033,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.LocationWebIamPolicy` **cannot** be used in conjunction with `gcp.iap.LocationWebIamBinding` and `gcp.iap.LocationWebIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.LocationWebIamBinding` resources **can be** used in conjunction with `gcp.iap.LocationWebIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.LocationWebIamBinding` resources **can be** used in conjunction with `gcp.iap.LocationWebIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -11072,7 +11072,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new LocationWebIamPolicy("policy", LocationWebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -11123,7 +11123,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new LocationWebIamPolicy("policy", LocationWebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -11157,7 +11157,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LocationWebIamBinding("binding", LocationWebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -11194,7 +11194,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LocationWebIamBinding("binding", LocationWebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -11234,7 +11234,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LocationWebIamMember("member", LocationWebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -11271,7 +11271,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LocationWebIamMember("member", LocationWebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -11296,8 +11296,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy LocationWeb. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.LocationWebIamPolicy`: Authoritative. Sets the IAM policy for the locationweb and replaces any existing policy already attached.
-   * * `gcp.iap.LocationWebIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the locationweb are preserved.
-   * * `gcp.iap.LocationWebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the locationweb are preserved.
+   * * `gcp.iap.LocationWebIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the locationweb are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.LocationWebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the locationweb are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -11305,7 +11305,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.LocationWebIamPolicy` **cannot** be used in conjunction with `gcp.iap.LocationWebIamBinding` and `gcp.iap.LocationWebIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.LocationWebIamBinding` resources **can be** used in conjunction with `gcp.iap.LocationWebIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.LocationWebIamBinding` resources **can be** used in conjunction with `gcp.iap.LocationWebIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -11344,7 +11344,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new LocationWebIamPolicy("policy", LocationWebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -11395,7 +11395,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new LocationWebIamPolicy("policy", LocationWebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -11429,7 +11429,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LocationWebIamBinding("binding", LocationWebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -11466,7 +11466,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LocationWebIamBinding("binding", LocationWebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -11506,7 +11506,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LocationWebIamMember("member", LocationWebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -11543,7 +11543,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LocationWebIamMember("member", LocationWebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -11612,8 +11612,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy LocationWeb. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.LocationWebIamPolicy`: Authoritative. Sets the IAM policy for the locationweb and replaces any existing policy already attached.
-   * * `gcp.iap.LocationWebIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the locationweb are preserved.
-   * * `gcp.iap.LocationWebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the locationweb are preserved.
+   * * `gcp.iap.LocationWebIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the locationweb are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.LocationWebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the locationweb are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -11621,7 +11621,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.LocationWebIamPolicy` **cannot** be used in conjunction with `gcp.iap.LocationWebIamBinding` and `gcp.iap.LocationWebIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.LocationWebIamBinding` resources **can be** used in conjunction with `gcp.iap.LocationWebIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.LocationWebIamBinding` resources **can be** used in conjunction with `gcp.iap.LocationWebIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -11660,7 +11660,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new LocationWebIamPolicy("policy", LocationWebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -11711,7 +11711,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new LocationWebIamPolicy("policy", LocationWebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -11745,7 +11745,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LocationWebIamBinding("binding", LocationWebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -11782,7 +11782,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LocationWebIamBinding("binding", LocationWebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -11822,7 +11822,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LocationWebIamMember("member", LocationWebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -11859,7 +11859,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LocationWebIamMember("member", LocationWebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -11884,8 +11884,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy LocationWeb. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.LocationWebIamPolicy`: Authoritative. Sets the IAM policy for the locationweb and replaces any existing policy already attached.
-   * * `gcp.iap.LocationWebIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the locationweb are preserved.
-   * * `gcp.iap.LocationWebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the locationweb are preserved.
+   * * `gcp.iap.LocationWebIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the locationweb are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.LocationWebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the locationweb are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -11893,7 +11893,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.LocationWebIamPolicy` **cannot** be used in conjunction with `gcp.iap.LocationWebIamBinding` and `gcp.iap.LocationWebIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.LocationWebIamBinding` resources **can be** used in conjunction with `gcp.iap.LocationWebIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.LocationWebIamBinding` resources **can be** used in conjunction with `gcp.iap.LocationWebIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -11932,7 +11932,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new LocationWebIamPolicy("policy", LocationWebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -11983,7 +11983,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new LocationWebIamPolicy("policy", LocationWebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -12017,7 +12017,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LocationWebIamBinding("binding", LocationWebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -12054,7 +12054,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LocationWebIamBinding("binding", LocationWebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -12094,7 +12094,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LocationWebIamMember("member", LocationWebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -12131,7 +12131,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LocationWebIamMember("member", LocationWebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -12200,8 +12200,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy LocationWeb. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.LocationWebIamPolicy`: Authoritative. Sets the IAM policy for the locationweb and replaces any existing policy already attached.
-   * * `gcp.iap.LocationWebIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the locationweb are preserved.
-   * * `gcp.iap.LocationWebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the locationweb are preserved.
+   * * `gcp.iap.LocationWebIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the locationweb are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.LocationWebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the locationweb are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -12209,7 +12209,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.LocationWebIamPolicy` **cannot** be used in conjunction with `gcp.iap.LocationWebIamBinding` and `gcp.iap.LocationWebIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.LocationWebIamBinding` resources **can be** used in conjunction with `gcp.iap.LocationWebIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.LocationWebIamBinding` resources **can be** used in conjunction with `gcp.iap.LocationWebIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -12248,7 +12248,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new LocationWebIamPolicy("policy", LocationWebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -12299,7 +12299,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new LocationWebIamPolicy("policy", LocationWebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -12333,7 +12333,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LocationWebIamBinding("binding", LocationWebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -12370,7 +12370,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LocationWebIamBinding("binding", LocationWebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -12410,7 +12410,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LocationWebIamMember("member", LocationWebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -12447,7 +12447,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LocationWebIamMember("member", LocationWebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -12472,8 +12472,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy LocationWeb. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.LocationWebIamPolicy`: Authoritative. Sets the IAM policy for the locationweb and replaces any existing policy already attached.
-   * * `gcp.iap.LocationWebIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the locationweb are preserved.
-   * * `gcp.iap.LocationWebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the locationweb are preserved.
+   * * `gcp.iap.LocationWebIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the locationweb are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.LocationWebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the locationweb are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -12481,7 +12481,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.LocationWebIamPolicy` **cannot** be used in conjunction with `gcp.iap.LocationWebIamBinding` and `gcp.iap.LocationWebIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.LocationWebIamBinding` resources **can be** used in conjunction with `gcp.iap.LocationWebIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.LocationWebIamBinding` resources **can be** used in conjunction with `gcp.iap.LocationWebIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -12520,7 +12520,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new LocationWebIamPolicy("policy", LocationWebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -12571,7 +12571,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new LocationWebIamPolicy("policy", LocationWebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .policyData(admin.policyData())
    *             .build());
@@ -12605,7 +12605,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LocationWebIamBinding("binding", LocationWebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -12642,7 +12642,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new LocationWebIamBinding("binding", LocationWebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .members("user:jane}{@literal @}{@code example.com")
@@ -12682,7 +12682,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LocationWebIamMember("member", LocationWebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -12719,7 +12719,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new LocationWebIamMember("member", LocationWebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .location("us-central1")
    *             .role("roles/iap.egressor")
    *             .member("user:jane}{@literal @}{@code example.com")
@@ -12833,8 +12833,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelDestGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelDestGroupIamPolicy`: Authoritative. Sets the IAM policy for the tunneldestgroup and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelDestGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunneldestgroup are preserved.
-   * * `gcp.iap.TunnelDestGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunneldestgroup are preserved.
+   * * `gcp.iap.TunnelDestGroupIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunneldestgroup are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelDestGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunneldestgroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -12842,7 +12842,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelDestGroupIamPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelDestGroupIamBinding` and `gcp.iap.TunnelDestGroupIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelDestGroupIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelDestGroupIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelDestGroupIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelDestGroupIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -12881,9 +12881,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelDestGroupIamPolicy("policy", TunnelDestGroupIamPolicyArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -12933,9 +12933,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelDestGroupIamPolicy("policy", TunnelDestGroupIamPolicyArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -12968,9 +12968,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelDestGroupIamBinding("binding", TunnelDestGroupIamBindingArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -13006,9 +13006,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelDestGroupIamBinding("binding", TunnelDestGroupIamBindingArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelDestGroupIamBindingConditionArgs.builder()
@@ -13047,9 +13047,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelDestGroupIamMember("member", TunnelDestGroupIamMemberArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -13085,9 +13085,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelDestGroupIamMember("member", TunnelDestGroupIamMemberArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelDestGroupIamMemberConditionArgs.builder()
@@ -13111,8 +13111,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelDestGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelDestGroupIamPolicy`: Authoritative. Sets the IAM policy for the tunneldestgroup and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelDestGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunneldestgroup are preserved.
-   * * `gcp.iap.TunnelDestGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunneldestgroup are preserved.
+   * * `gcp.iap.TunnelDestGroupIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunneldestgroup are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelDestGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunneldestgroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -13120,7 +13120,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelDestGroupIamPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelDestGroupIamBinding` and `gcp.iap.TunnelDestGroupIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelDestGroupIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelDestGroupIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelDestGroupIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelDestGroupIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -13159,9 +13159,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelDestGroupIamPolicy("policy", TunnelDestGroupIamPolicyArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -13211,9 +13211,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelDestGroupIamPolicy("policy", TunnelDestGroupIamPolicyArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -13246,9 +13246,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelDestGroupIamBinding("binding", TunnelDestGroupIamBindingArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -13284,9 +13284,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelDestGroupIamBinding("binding", TunnelDestGroupIamBindingArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelDestGroupIamBindingConditionArgs.builder()
@@ -13325,9 +13325,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelDestGroupIamMember("member", TunnelDestGroupIamMemberArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -13363,9 +13363,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelDestGroupIamMember("member", TunnelDestGroupIamMemberArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelDestGroupIamMemberConditionArgs.builder()
@@ -13434,8 +13434,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelDestGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelDestGroupIamPolicy`: Authoritative. Sets the IAM policy for the tunneldestgroup and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelDestGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunneldestgroup are preserved.
-   * * `gcp.iap.TunnelDestGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunneldestgroup are preserved.
+   * * `gcp.iap.TunnelDestGroupIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunneldestgroup are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelDestGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunneldestgroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -13443,7 +13443,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelDestGroupIamPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelDestGroupIamBinding` and `gcp.iap.TunnelDestGroupIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelDestGroupIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelDestGroupIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelDestGroupIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelDestGroupIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -13482,9 +13482,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelDestGroupIamPolicy("policy", TunnelDestGroupIamPolicyArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -13534,9 +13534,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelDestGroupIamPolicy("policy", TunnelDestGroupIamPolicyArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -13569,9 +13569,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelDestGroupIamBinding("binding", TunnelDestGroupIamBindingArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -13607,9 +13607,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelDestGroupIamBinding("binding", TunnelDestGroupIamBindingArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelDestGroupIamBindingConditionArgs.builder()
@@ -13648,9 +13648,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelDestGroupIamMember("member", TunnelDestGroupIamMemberArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -13686,9 +13686,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelDestGroupIamMember("member", TunnelDestGroupIamMemberArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelDestGroupIamMemberConditionArgs.builder()
@@ -13712,8 +13712,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelDestGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelDestGroupIamPolicy`: Authoritative. Sets the IAM policy for the tunneldestgroup and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelDestGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunneldestgroup are preserved.
-   * * `gcp.iap.TunnelDestGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunneldestgroup are preserved.
+   * * `gcp.iap.TunnelDestGroupIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunneldestgroup are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelDestGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunneldestgroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -13721,7 +13721,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelDestGroupIamPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelDestGroupIamBinding` and `gcp.iap.TunnelDestGroupIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelDestGroupIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelDestGroupIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelDestGroupIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelDestGroupIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -13760,9 +13760,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelDestGroupIamPolicy("policy", TunnelDestGroupIamPolicyArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -13812,9 +13812,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelDestGroupIamPolicy("policy", TunnelDestGroupIamPolicyArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -13847,9 +13847,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelDestGroupIamBinding("binding", TunnelDestGroupIamBindingArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -13885,9 +13885,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelDestGroupIamBinding("binding", TunnelDestGroupIamBindingArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelDestGroupIamBindingConditionArgs.builder()
@@ -13926,9 +13926,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelDestGroupIamMember("member", TunnelDestGroupIamMemberArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -13964,9 +13964,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelDestGroupIamMember("member", TunnelDestGroupIamMemberArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelDestGroupIamMemberConditionArgs.builder()
@@ -14035,8 +14035,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelDestGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelDestGroupIamPolicy`: Authoritative. Sets the IAM policy for the tunneldestgroup and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelDestGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunneldestgroup are preserved.
-   * * `gcp.iap.TunnelDestGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunneldestgroup are preserved.
+   * * `gcp.iap.TunnelDestGroupIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunneldestgroup are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelDestGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunneldestgroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -14044,7 +14044,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelDestGroupIamPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelDestGroupIamBinding` and `gcp.iap.TunnelDestGroupIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelDestGroupIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelDestGroupIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelDestGroupIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelDestGroupIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -14083,9 +14083,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelDestGroupIamPolicy("policy", TunnelDestGroupIamPolicyArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -14135,9 +14135,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelDestGroupIamPolicy("policy", TunnelDestGroupIamPolicyArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -14170,9 +14170,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelDestGroupIamBinding("binding", TunnelDestGroupIamBindingArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -14208,9 +14208,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelDestGroupIamBinding("binding", TunnelDestGroupIamBindingArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelDestGroupIamBindingConditionArgs.builder()
@@ -14249,9 +14249,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelDestGroupIamMember("member", TunnelDestGroupIamMemberArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -14287,9 +14287,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelDestGroupIamMember("member", TunnelDestGroupIamMemberArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelDestGroupIamMemberConditionArgs.builder()
@@ -14313,8 +14313,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelDestGroup. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelDestGroupIamPolicy`: Authoritative. Sets the IAM policy for the tunneldestgroup and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelDestGroupIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunneldestgroup are preserved.
-   * * `gcp.iap.TunnelDestGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunneldestgroup are preserved.
+   * * `gcp.iap.TunnelDestGroupIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunneldestgroup are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelDestGroupIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunneldestgroup are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -14322,7 +14322,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelDestGroupIamPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelDestGroupIamBinding` and `gcp.iap.TunnelDestGroupIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelDestGroupIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelDestGroupIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelDestGroupIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelDestGroupIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -14361,9 +14361,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelDestGroupIamPolicy("policy", TunnelDestGroupIamPolicyArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -14413,9 +14413,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelDestGroupIamPolicy("policy", TunnelDestGroupIamPolicyArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -14448,9 +14448,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelDestGroupIamBinding("binding", TunnelDestGroupIamBindingArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -14486,9 +14486,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelDestGroupIamBinding("binding", TunnelDestGroupIamBindingArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelDestGroupIamBindingConditionArgs.builder()
@@ -14527,9 +14527,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelDestGroupIamMember("member", TunnelDestGroupIamMemberArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -14565,9 +14565,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelDestGroupIamMember("member", TunnelDestGroupIamMemberArgs.builder()
-   *             .project(destGroup.project())
-   *             .region(destGroup.region())
-   *             .destGroup(destGroup.groupName())
+   *             .project(destGroup.get("project"))
+   *             .region(destGroup.get("region"))
+   *             .destGroup(destGroup.get("groupName"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelDestGroupIamMemberConditionArgs.builder()
@@ -14625,8 +14625,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Tunnel. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelIamPolicy`: Authoritative. Sets the IAM policy for the tunnel and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunnel are preserved.
-   * * `gcp.iap.TunnelIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunnel are preserved.
+   * * `gcp.iap.TunnelIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunnel are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunnel are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -14634,7 +14634,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelIamPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelIamBinding` and `gcp.iap.TunnelIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -14673,7 +14673,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelIamPolicy("policy", TunnelIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -14723,7 +14723,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelIamPolicy("policy", TunnelIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -14756,7 +14756,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelIamBinding("binding", TunnelIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -14792,7 +14792,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelIamBinding("binding", TunnelIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelIamBindingConditionArgs.builder()
@@ -14831,7 +14831,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelIamMember("member", TunnelIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -14867,7 +14867,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelIamMember("member", TunnelIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelIamMemberConditionArgs.builder()
@@ -14891,8 +14891,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Tunnel. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelIamPolicy`: Authoritative. Sets the IAM policy for the tunnel and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunnel are preserved.
-   * * `gcp.iap.TunnelIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunnel are preserved.
+   * * `gcp.iap.TunnelIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunnel are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunnel are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -14900,7 +14900,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelIamPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelIamBinding` and `gcp.iap.TunnelIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -14939,7 +14939,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelIamPolicy("policy", TunnelIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -14989,7 +14989,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelIamPolicy("policy", TunnelIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -15022,7 +15022,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelIamBinding("binding", TunnelIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -15058,7 +15058,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelIamBinding("binding", TunnelIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelIamBindingConditionArgs.builder()
@@ -15097,7 +15097,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelIamMember("member", TunnelIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -15133,7 +15133,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelIamMember("member", TunnelIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelIamMemberConditionArgs.builder()
@@ -15199,8 +15199,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Tunnel. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelIamPolicy`: Authoritative. Sets the IAM policy for the tunnel and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunnel are preserved.
-   * * `gcp.iap.TunnelIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunnel are preserved.
+   * * `gcp.iap.TunnelIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunnel are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunnel are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -15208,7 +15208,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelIamPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelIamBinding` and `gcp.iap.TunnelIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -15247,7 +15247,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelIamPolicy("policy", TunnelIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -15297,7 +15297,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelIamPolicy("policy", TunnelIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -15330,7 +15330,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelIamBinding("binding", TunnelIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -15366,7 +15366,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelIamBinding("binding", TunnelIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelIamBindingConditionArgs.builder()
@@ -15405,7 +15405,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelIamMember("member", TunnelIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -15441,7 +15441,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelIamMember("member", TunnelIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelIamMemberConditionArgs.builder()
@@ -15465,8 +15465,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Tunnel. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelIamPolicy`: Authoritative. Sets the IAM policy for the tunnel and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunnel are preserved.
-   * * `gcp.iap.TunnelIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunnel are preserved.
+   * * `gcp.iap.TunnelIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunnel are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunnel are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -15474,7 +15474,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelIamPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelIamBinding` and `gcp.iap.TunnelIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -15513,7 +15513,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelIamPolicy("policy", TunnelIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -15563,7 +15563,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelIamPolicy("policy", TunnelIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -15596,7 +15596,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelIamBinding("binding", TunnelIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -15632,7 +15632,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelIamBinding("binding", TunnelIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelIamBindingConditionArgs.builder()
@@ -15671,7 +15671,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelIamMember("member", TunnelIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -15707,7 +15707,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelIamMember("member", TunnelIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelIamMemberConditionArgs.builder()
@@ -15773,8 +15773,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Tunnel. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelIamPolicy`: Authoritative. Sets the IAM policy for the tunnel and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunnel are preserved.
-   * * `gcp.iap.TunnelIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunnel are preserved.
+   * * `gcp.iap.TunnelIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunnel are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunnel are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -15782,7 +15782,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelIamPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelIamBinding` and `gcp.iap.TunnelIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -15821,7 +15821,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelIamPolicy("policy", TunnelIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -15871,7 +15871,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelIamPolicy("policy", TunnelIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -15904,7 +15904,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelIamBinding("binding", TunnelIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -15940,7 +15940,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelIamBinding("binding", TunnelIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelIamBindingConditionArgs.builder()
@@ -15979,7 +15979,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelIamMember("member", TunnelIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -16015,7 +16015,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelIamMember("member", TunnelIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelIamMemberConditionArgs.builder()
@@ -16039,8 +16039,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Tunnel. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelIamPolicy`: Authoritative. Sets the IAM policy for the tunnel and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunnel are preserved.
-   * * `gcp.iap.TunnelIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunnel are preserved.
+   * * `gcp.iap.TunnelIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunnel are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunnel are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -16048,7 +16048,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelIamPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelIamBinding` and `gcp.iap.TunnelIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelIamBinding` resources **can be** used in conjunction with `gcp.iap.TunnelIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -16087,7 +16087,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelIamPolicy("policy", TunnelIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -16137,7 +16137,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelIamPolicy("policy", TunnelIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -16170,7 +16170,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelIamBinding("binding", TunnelIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -16206,7 +16206,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelIamBinding("binding", TunnelIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelIamBindingConditionArgs.builder()
@@ -16245,7 +16245,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelIamMember("member", TunnelIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -16281,7 +16281,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelIamMember("member", TunnelIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelIamMemberConditionArgs.builder()
@@ -16336,8 +16336,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelInstance. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelInstanceIAMPolicy`: Authoritative. Sets the IAM policy for the tunnelinstance and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelInstanceIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunnelinstance are preserved.
-   * * `gcp.iap.TunnelInstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunnelinstance are preserved.
+   * * `gcp.iap.TunnelInstanceIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunnelinstance are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelInstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunnelinstance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -16345,7 +16345,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelInstanceIAMPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelInstanceIAMBinding` and `gcp.iap.TunnelInstanceIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelInstanceIAMBinding` resources **can be** used in conjunction with `gcp.iap.TunnelInstanceIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelInstanceIAMBinding` resources **can be** used in conjunction with `gcp.iap.TunnelInstanceIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -16384,9 +16384,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelInstanceIAMPolicy("policy", TunnelInstanceIAMPolicyArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -16436,9 +16436,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelInstanceIAMPolicy("policy", TunnelInstanceIAMPolicyArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -16471,9 +16471,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelInstanceIAMBinding("binding", TunnelInstanceIAMBindingArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -16509,9 +16509,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelInstanceIAMBinding("binding", TunnelInstanceIAMBindingArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelInstanceIAMBindingConditionArgs.builder()
@@ -16550,9 +16550,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelInstanceIAMMember("member", TunnelInstanceIAMMemberArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -16588,9 +16588,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelInstanceIAMMember("member", TunnelInstanceIAMMemberArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelInstanceIAMMemberConditionArgs.builder()
@@ -16614,8 +16614,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelInstance. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelInstanceIAMPolicy`: Authoritative. Sets the IAM policy for the tunnelinstance and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelInstanceIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunnelinstance are preserved.
-   * * `gcp.iap.TunnelInstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunnelinstance are preserved.
+   * * `gcp.iap.TunnelInstanceIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunnelinstance are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelInstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunnelinstance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -16623,7 +16623,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelInstanceIAMPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelInstanceIAMBinding` and `gcp.iap.TunnelInstanceIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelInstanceIAMBinding` resources **can be** used in conjunction with `gcp.iap.TunnelInstanceIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelInstanceIAMBinding` resources **can be** used in conjunction with `gcp.iap.TunnelInstanceIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -16662,9 +16662,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelInstanceIAMPolicy("policy", TunnelInstanceIAMPolicyArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -16714,9 +16714,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelInstanceIAMPolicy("policy", TunnelInstanceIAMPolicyArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -16749,9 +16749,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelInstanceIAMBinding("binding", TunnelInstanceIAMBindingArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -16787,9 +16787,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelInstanceIAMBinding("binding", TunnelInstanceIAMBindingArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelInstanceIAMBindingConditionArgs.builder()
@@ -16828,9 +16828,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelInstanceIAMMember("member", TunnelInstanceIAMMemberArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -16866,9 +16866,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelInstanceIAMMember("member", TunnelInstanceIAMMemberArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelInstanceIAMMemberConditionArgs.builder()
@@ -16937,8 +16937,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelInstance. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelInstanceIAMPolicy`: Authoritative. Sets the IAM policy for the tunnelinstance and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelInstanceIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunnelinstance are preserved.
-   * * `gcp.iap.TunnelInstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunnelinstance are preserved.
+   * * `gcp.iap.TunnelInstanceIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunnelinstance are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelInstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunnelinstance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -16946,7 +16946,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelInstanceIAMPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelInstanceIAMBinding` and `gcp.iap.TunnelInstanceIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelInstanceIAMBinding` resources **can be** used in conjunction with `gcp.iap.TunnelInstanceIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelInstanceIAMBinding` resources **can be** used in conjunction with `gcp.iap.TunnelInstanceIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -16985,9 +16985,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelInstanceIAMPolicy("policy", TunnelInstanceIAMPolicyArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -17037,9 +17037,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelInstanceIAMPolicy("policy", TunnelInstanceIAMPolicyArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -17072,9 +17072,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelInstanceIAMBinding("binding", TunnelInstanceIAMBindingArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -17110,9 +17110,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelInstanceIAMBinding("binding", TunnelInstanceIAMBindingArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelInstanceIAMBindingConditionArgs.builder()
@@ -17151,9 +17151,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelInstanceIAMMember("member", TunnelInstanceIAMMemberArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -17189,9 +17189,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelInstanceIAMMember("member", TunnelInstanceIAMMemberArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelInstanceIAMMemberConditionArgs.builder()
@@ -17215,8 +17215,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelInstance. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelInstanceIAMPolicy`: Authoritative. Sets the IAM policy for the tunnelinstance and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelInstanceIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunnelinstance are preserved.
-   * * `gcp.iap.TunnelInstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunnelinstance are preserved.
+   * * `gcp.iap.TunnelInstanceIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunnelinstance are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelInstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunnelinstance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -17224,7 +17224,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelInstanceIAMPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelInstanceIAMBinding` and `gcp.iap.TunnelInstanceIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelInstanceIAMBinding` resources **can be** used in conjunction with `gcp.iap.TunnelInstanceIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelInstanceIAMBinding` resources **can be** used in conjunction with `gcp.iap.TunnelInstanceIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -17263,9 +17263,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelInstanceIAMPolicy("policy", TunnelInstanceIAMPolicyArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -17315,9 +17315,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelInstanceIAMPolicy("policy", TunnelInstanceIAMPolicyArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -17350,9 +17350,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelInstanceIAMBinding("binding", TunnelInstanceIAMBindingArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -17388,9 +17388,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelInstanceIAMBinding("binding", TunnelInstanceIAMBindingArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelInstanceIAMBindingConditionArgs.builder()
@@ -17429,9 +17429,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelInstanceIAMMember("member", TunnelInstanceIAMMemberArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -17467,9 +17467,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelInstanceIAMMember("member", TunnelInstanceIAMMemberArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelInstanceIAMMemberConditionArgs.builder()
@@ -17538,8 +17538,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelInstance. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelInstanceIAMPolicy`: Authoritative. Sets the IAM policy for the tunnelinstance and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelInstanceIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunnelinstance are preserved.
-   * * `gcp.iap.TunnelInstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunnelinstance are preserved.
+   * * `gcp.iap.TunnelInstanceIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunnelinstance are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelInstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunnelinstance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -17547,7 +17547,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelInstanceIAMPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelInstanceIAMBinding` and `gcp.iap.TunnelInstanceIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelInstanceIAMBinding` resources **can be** used in conjunction with `gcp.iap.TunnelInstanceIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelInstanceIAMBinding` resources **can be** used in conjunction with `gcp.iap.TunnelInstanceIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -17586,9 +17586,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelInstanceIAMPolicy("policy", TunnelInstanceIAMPolicyArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -17638,9 +17638,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelInstanceIAMPolicy("policy", TunnelInstanceIAMPolicyArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -17673,9 +17673,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelInstanceIAMBinding("binding", TunnelInstanceIAMBindingArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -17711,9 +17711,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelInstanceIAMBinding("binding", TunnelInstanceIAMBindingArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelInstanceIAMBindingConditionArgs.builder()
@@ -17752,9 +17752,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelInstanceIAMMember("member", TunnelInstanceIAMMemberArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -17790,9 +17790,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelInstanceIAMMember("member", TunnelInstanceIAMMemberArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelInstanceIAMMemberConditionArgs.builder()
@@ -17816,8 +17816,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelInstance. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.TunnelInstanceIAMPolicy`: Authoritative. Sets the IAM policy for the tunnelinstance and replaces any existing policy already attached.
-   * * `gcp.iap.TunnelInstanceIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the tunnelinstance are preserved.
-   * * `gcp.iap.TunnelInstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the tunnelinstance are preserved.
+   * * `gcp.iap.TunnelInstanceIAMBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the tunnelinstance are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.TunnelInstanceIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the tunnelinstance are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -17825,7 +17825,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.TunnelInstanceIAMPolicy` **cannot** be used in conjunction with `gcp.iap.TunnelInstanceIAMBinding` and `gcp.iap.TunnelInstanceIAMMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.TunnelInstanceIAMBinding` resources **can be** used in conjunction with `gcp.iap.TunnelInstanceIAMMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.TunnelInstanceIAMBinding` resources **can be** used in conjunction with `gcp.iap.TunnelInstanceIAMMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -17864,9 +17864,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelInstanceIAMPolicy("policy", TunnelInstanceIAMPolicyArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -17916,9 +17916,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new TunnelInstanceIAMPolicy("policy", TunnelInstanceIAMPolicyArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -17951,9 +17951,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelInstanceIAMBinding("binding", TunnelInstanceIAMBindingArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -17989,9 +17989,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new TunnelInstanceIAMBinding("binding", TunnelInstanceIAMBindingArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelInstanceIAMBindingConditionArgs.builder()
@@ -18030,9 +18030,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelInstanceIAMMember("member", TunnelInstanceIAMMemberArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -18068,9 +18068,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new TunnelInstanceIAMMember("member", TunnelInstanceIAMMemberArgs.builder()
-   *             .project(tunnelvm.project())
-   *             .zone(tunnelvm.zone())
-   *             .instance(tunnelvm.name())
+   *             .project(tunnelvm.get("project"))
+   *             .zone(tunnelvm.get("zone"))
+   *             .instance(tunnelvm.get("name"))
    *             .role("roles/iap.tunnelResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(TunnelInstanceIAMMemberConditionArgs.builder()
@@ -18128,8 +18128,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the webbackendservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webbackendservice are preserved.
-   * * `gcp.iap.WebBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webbackendservice are preserved.
+   * * `gcp.iap.WebBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -18137,7 +18137,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebBackendServiceIamBinding` and `gcp.iap.WebBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -18176,8 +18176,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebBackendServiceIamPolicy("policy", WebBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -18227,8 +18227,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebBackendServiceIamPolicy("policy", WebBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -18261,8 +18261,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebBackendServiceIamBinding("binding", WebBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -18298,8 +18298,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebBackendServiceIamBinding("binding", WebBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebBackendServiceIamBindingConditionArgs.builder()
@@ -18338,8 +18338,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebBackendServiceIamMember("member", WebBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -18375,8 +18375,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebBackendServiceIamMember("member", WebBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebBackendServiceIamMemberConditionArgs.builder()
@@ -18400,8 +18400,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the webbackendservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webbackendservice are preserved.
-   * * `gcp.iap.WebBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webbackendservice are preserved.
+   * * `gcp.iap.WebBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -18409,7 +18409,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebBackendServiceIamBinding` and `gcp.iap.WebBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -18448,8 +18448,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebBackendServiceIamPolicy("policy", WebBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -18499,8 +18499,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebBackendServiceIamPolicy("policy", WebBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -18533,8 +18533,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebBackendServiceIamBinding("binding", WebBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -18570,8 +18570,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebBackendServiceIamBinding("binding", WebBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebBackendServiceIamBindingConditionArgs.builder()
@@ -18610,8 +18610,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebBackendServiceIamMember("member", WebBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -18647,8 +18647,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebBackendServiceIamMember("member", WebBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebBackendServiceIamMemberConditionArgs.builder()
@@ -18715,8 +18715,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the webbackendservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webbackendservice are preserved.
-   * * `gcp.iap.WebBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webbackendservice are preserved.
+   * * `gcp.iap.WebBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -18724,7 +18724,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebBackendServiceIamBinding` and `gcp.iap.WebBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -18763,8 +18763,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebBackendServiceIamPolicy("policy", WebBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -18814,8 +18814,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebBackendServiceIamPolicy("policy", WebBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -18848,8 +18848,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebBackendServiceIamBinding("binding", WebBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -18885,8 +18885,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebBackendServiceIamBinding("binding", WebBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebBackendServiceIamBindingConditionArgs.builder()
@@ -18925,8 +18925,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebBackendServiceIamMember("member", WebBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -18962,8 +18962,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebBackendServiceIamMember("member", WebBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebBackendServiceIamMemberConditionArgs.builder()
@@ -18987,8 +18987,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the webbackendservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webbackendservice are preserved.
-   * * `gcp.iap.WebBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webbackendservice are preserved.
+   * * `gcp.iap.WebBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -18996,7 +18996,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebBackendServiceIamBinding` and `gcp.iap.WebBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -19035,8 +19035,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebBackendServiceIamPolicy("policy", WebBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -19086,8 +19086,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebBackendServiceIamPolicy("policy", WebBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -19120,8 +19120,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebBackendServiceIamBinding("binding", WebBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -19157,8 +19157,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebBackendServiceIamBinding("binding", WebBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebBackendServiceIamBindingConditionArgs.builder()
@@ -19197,8 +19197,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebBackendServiceIamMember("member", WebBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -19234,8 +19234,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebBackendServiceIamMember("member", WebBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebBackendServiceIamMemberConditionArgs.builder()
@@ -19302,8 +19302,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the webbackendservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webbackendservice are preserved.
-   * * `gcp.iap.WebBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webbackendservice are preserved.
+   * * `gcp.iap.WebBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -19311,7 +19311,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebBackendServiceIamBinding` and `gcp.iap.WebBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -19350,8 +19350,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebBackendServiceIamPolicy("policy", WebBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -19401,8 +19401,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebBackendServiceIamPolicy("policy", WebBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -19435,8 +19435,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebBackendServiceIamBinding("binding", WebBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -19472,8 +19472,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebBackendServiceIamBinding("binding", WebBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebBackendServiceIamBindingConditionArgs.builder()
@@ -19512,8 +19512,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebBackendServiceIamMember("member", WebBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -19549,8 +19549,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebBackendServiceIamMember("member", WebBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebBackendServiceIamMemberConditionArgs.builder()
@@ -19574,8 +19574,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the webbackendservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webbackendservice are preserved.
-   * * `gcp.iap.WebBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webbackendservice are preserved.
+   * * `gcp.iap.WebBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -19583,7 +19583,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebBackendServiceIamBinding` and `gcp.iap.WebBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -19622,8 +19622,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebBackendServiceIamPolicy("policy", WebBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -19673,8 +19673,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebBackendServiceIamPolicy("policy", WebBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -19707,8 +19707,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebBackendServiceIamBinding("binding", WebBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -19744,8 +19744,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebBackendServiceIamBinding("binding", WebBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebBackendServiceIamBindingConditionArgs.builder()
@@ -19784,8 +19784,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebBackendServiceIamMember("member", WebBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -19821,8 +19821,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebBackendServiceIamMember("member", WebBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .webBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .webBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebBackendServiceIamMemberConditionArgs.builder()
@@ -19878,8 +19878,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebCloudRunService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebCloudRunServiceIamPolicy`: Authoritative. Sets the IAM policy for the webcloudrunservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebCloudRunServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webcloudrunservice are preserved.
-   * * `gcp.iap.WebCloudRunServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webcloudrunservice are preserved.
+   * * `gcp.iap.WebCloudRunServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webcloudrunservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebCloudRunServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webcloudrunservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -19887,7 +19887,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebCloudRunServiceIamBinding` and `gcp.iap.WebCloudRunServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebCloudRunServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebCloudRunServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -19926,9 +19926,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebCloudRunServiceIamPolicy("policy", WebCloudRunServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -19978,9 +19978,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebCloudRunServiceIamPolicy("policy", WebCloudRunServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -20013,9 +20013,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebCloudRunServiceIamBinding("binding", WebCloudRunServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -20051,9 +20051,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebCloudRunServiceIamBinding("binding", WebCloudRunServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebCloudRunServiceIamBindingConditionArgs.builder()
@@ -20092,9 +20092,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebCloudRunServiceIamMember("member", WebCloudRunServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -20130,9 +20130,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebCloudRunServiceIamMember("member", WebCloudRunServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebCloudRunServiceIamMemberConditionArgs.builder()
@@ -20156,8 +20156,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebCloudRunService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebCloudRunServiceIamPolicy`: Authoritative. Sets the IAM policy for the webcloudrunservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebCloudRunServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webcloudrunservice are preserved.
-   * * `gcp.iap.WebCloudRunServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webcloudrunservice are preserved.
+   * * `gcp.iap.WebCloudRunServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webcloudrunservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebCloudRunServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webcloudrunservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -20165,7 +20165,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebCloudRunServiceIamBinding` and `gcp.iap.WebCloudRunServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebCloudRunServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebCloudRunServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -20204,9 +20204,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebCloudRunServiceIamPolicy("policy", WebCloudRunServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -20256,9 +20256,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebCloudRunServiceIamPolicy("policy", WebCloudRunServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -20291,9 +20291,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebCloudRunServiceIamBinding("binding", WebCloudRunServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -20329,9 +20329,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebCloudRunServiceIamBinding("binding", WebCloudRunServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebCloudRunServiceIamBindingConditionArgs.builder()
@@ -20370,9 +20370,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebCloudRunServiceIamMember("member", WebCloudRunServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -20408,9 +20408,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebCloudRunServiceIamMember("member", WebCloudRunServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebCloudRunServiceIamMemberConditionArgs.builder()
@@ -20478,8 +20478,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebCloudRunService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebCloudRunServiceIamPolicy`: Authoritative. Sets the IAM policy for the webcloudrunservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebCloudRunServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webcloudrunservice are preserved.
-   * * `gcp.iap.WebCloudRunServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webcloudrunservice are preserved.
+   * * `gcp.iap.WebCloudRunServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webcloudrunservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebCloudRunServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webcloudrunservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -20487,7 +20487,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebCloudRunServiceIamBinding` and `gcp.iap.WebCloudRunServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebCloudRunServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebCloudRunServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -20526,9 +20526,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebCloudRunServiceIamPolicy("policy", WebCloudRunServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -20578,9 +20578,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebCloudRunServiceIamPolicy("policy", WebCloudRunServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -20613,9 +20613,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebCloudRunServiceIamBinding("binding", WebCloudRunServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -20651,9 +20651,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebCloudRunServiceIamBinding("binding", WebCloudRunServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebCloudRunServiceIamBindingConditionArgs.builder()
@@ -20692,9 +20692,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebCloudRunServiceIamMember("member", WebCloudRunServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -20730,9 +20730,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebCloudRunServiceIamMember("member", WebCloudRunServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebCloudRunServiceIamMemberConditionArgs.builder()
@@ -20756,8 +20756,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebCloudRunService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebCloudRunServiceIamPolicy`: Authoritative. Sets the IAM policy for the webcloudrunservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebCloudRunServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webcloudrunservice are preserved.
-   * * `gcp.iap.WebCloudRunServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webcloudrunservice are preserved.
+   * * `gcp.iap.WebCloudRunServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webcloudrunservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebCloudRunServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webcloudrunservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -20765,7 +20765,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebCloudRunServiceIamBinding` and `gcp.iap.WebCloudRunServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebCloudRunServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebCloudRunServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -20804,9 +20804,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebCloudRunServiceIamPolicy("policy", WebCloudRunServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -20856,9 +20856,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebCloudRunServiceIamPolicy("policy", WebCloudRunServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -20891,9 +20891,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebCloudRunServiceIamBinding("binding", WebCloudRunServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -20929,9 +20929,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebCloudRunServiceIamBinding("binding", WebCloudRunServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebCloudRunServiceIamBindingConditionArgs.builder()
@@ -20970,9 +20970,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebCloudRunServiceIamMember("member", WebCloudRunServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -21008,9 +21008,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebCloudRunServiceIamMember("member", WebCloudRunServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebCloudRunServiceIamMemberConditionArgs.builder()
@@ -21078,8 +21078,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebCloudRunService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebCloudRunServiceIamPolicy`: Authoritative. Sets the IAM policy for the webcloudrunservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebCloudRunServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webcloudrunservice are preserved.
-   * * `gcp.iap.WebCloudRunServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webcloudrunservice are preserved.
+   * * `gcp.iap.WebCloudRunServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webcloudrunservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebCloudRunServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webcloudrunservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -21087,7 +21087,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebCloudRunServiceIamBinding` and `gcp.iap.WebCloudRunServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebCloudRunServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebCloudRunServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -21126,9 +21126,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebCloudRunServiceIamPolicy("policy", WebCloudRunServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -21178,9 +21178,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebCloudRunServiceIamPolicy("policy", WebCloudRunServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -21213,9 +21213,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebCloudRunServiceIamBinding("binding", WebCloudRunServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -21251,9 +21251,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebCloudRunServiceIamBinding("binding", WebCloudRunServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebCloudRunServiceIamBindingConditionArgs.builder()
@@ -21292,9 +21292,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebCloudRunServiceIamMember("member", WebCloudRunServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -21330,9 +21330,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebCloudRunServiceIamMember("member", WebCloudRunServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebCloudRunServiceIamMemberConditionArgs.builder()
@@ -21356,8 +21356,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebCloudRunService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebCloudRunServiceIamPolicy`: Authoritative. Sets the IAM policy for the webcloudrunservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebCloudRunServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webcloudrunservice are preserved.
-   * * `gcp.iap.WebCloudRunServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webcloudrunservice are preserved.
+   * * `gcp.iap.WebCloudRunServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webcloudrunservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebCloudRunServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webcloudrunservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -21365,7 +21365,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebCloudRunServiceIamBinding` and `gcp.iap.WebCloudRunServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebCloudRunServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebCloudRunServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebCloudRunServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -21404,9 +21404,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebCloudRunServiceIamPolicy("policy", WebCloudRunServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -21456,9 +21456,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebCloudRunServiceIamPolicy("policy", WebCloudRunServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -21491,9 +21491,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebCloudRunServiceIamBinding("binding", WebCloudRunServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -21529,9 +21529,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebCloudRunServiceIamBinding("binding", WebCloudRunServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebCloudRunServiceIamBindingConditionArgs.builder()
@@ -21570,9 +21570,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebCloudRunServiceIamMember("member", WebCloudRunServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -21608,9 +21608,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebCloudRunServiceIamMember("member", WebCloudRunServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .location(default_.location())
-   *             .cloudRunServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .location(default_.get("location"))
+   *             .cloudRunServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebCloudRunServiceIamMemberConditionArgs.builder()
@@ -21667,8 +21667,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebForwardingRuleService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebForwardingRuleServiceIamPolicy`: Authoritative. Sets the IAM policy for the webforwardingruleservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebForwardingRuleServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webforwardingruleservice are preserved.
-   * * `gcp.iap.WebForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webforwardingruleservice are preserved.
+   * * `gcp.iap.WebForwardingRuleServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webforwardingruleservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webforwardingruleservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -21676,7 +21676,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebForwardingRuleServiceIamBinding` and `gcp.iap.WebForwardingRuleServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -21715,8 +21715,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebForwardingRuleServiceIamPolicy("policy", WebForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -21766,8 +21766,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebForwardingRuleServiceIamPolicy("policy", WebForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -21800,8 +21800,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebForwardingRuleServiceIamBinding("binding", WebForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -21837,8 +21837,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebForwardingRuleServiceIamBinding("binding", WebForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebForwardingRuleServiceIamBindingConditionArgs.builder()
@@ -21877,8 +21877,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebForwardingRuleServiceIamMember("member", WebForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -21914,8 +21914,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebForwardingRuleServiceIamMember("member", WebForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebForwardingRuleServiceIamMemberConditionArgs.builder()
@@ -21939,8 +21939,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebForwardingRuleService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebForwardingRuleServiceIamPolicy`: Authoritative. Sets the IAM policy for the webforwardingruleservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebForwardingRuleServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webforwardingruleservice are preserved.
-   * * `gcp.iap.WebForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webforwardingruleservice are preserved.
+   * * `gcp.iap.WebForwardingRuleServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webforwardingruleservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webforwardingruleservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -21948,7 +21948,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebForwardingRuleServiceIamBinding` and `gcp.iap.WebForwardingRuleServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -21987,8 +21987,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebForwardingRuleServiceIamPolicy("policy", WebForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -22038,8 +22038,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebForwardingRuleServiceIamPolicy("policy", WebForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -22072,8 +22072,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebForwardingRuleServiceIamBinding("binding", WebForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -22109,8 +22109,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebForwardingRuleServiceIamBinding("binding", WebForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebForwardingRuleServiceIamBindingConditionArgs.builder()
@@ -22149,8 +22149,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebForwardingRuleServiceIamMember("member", WebForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -22186,8 +22186,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebForwardingRuleServiceIamMember("member", WebForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebForwardingRuleServiceIamMemberConditionArgs.builder()
@@ -22254,8 +22254,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebForwardingRuleService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebForwardingRuleServiceIamPolicy`: Authoritative. Sets the IAM policy for the webforwardingruleservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebForwardingRuleServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webforwardingruleservice are preserved.
-   * * `gcp.iap.WebForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webforwardingruleservice are preserved.
+   * * `gcp.iap.WebForwardingRuleServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webforwardingruleservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webforwardingruleservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -22263,7 +22263,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebForwardingRuleServiceIamBinding` and `gcp.iap.WebForwardingRuleServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -22302,8 +22302,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebForwardingRuleServiceIamPolicy("policy", WebForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -22353,8 +22353,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebForwardingRuleServiceIamPolicy("policy", WebForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -22387,8 +22387,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebForwardingRuleServiceIamBinding("binding", WebForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -22424,8 +22424,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebForwardingRuleServiceIamBinding("binding", WebForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebForwardingRuleServiceIamBindingConditionArgs.builder()
@@ -22464,8 +22464,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebForwardingRuleServiceIamMember("member", WebForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -22501,8 +22501,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebForwardingRuleServiceIamMember("member", WebForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebForwardingRuleServiceIamMemberConditionArgs.builder()
@@ -22526,8 +22526,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebForwardingRuleService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebForwardingRuleServiceIamPolicy`: Authoritative. Sets the IAM policy for the webforwardingruleservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebForwardingRuleServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webforwardingruleservice are preserved.
-   * * `gcp.iap.WebForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webforwardingruleservice are preserved.
+   * * `gcp.iap.WebForwardingRuleServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webforwardingruleservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webforwardingruleservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -22535,7 +22535,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebForwardingRuleServiceIamBinding` and `gcp.iap.WebForwardingRuleServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -22574,8 +22574,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebForwardingRuleServiceIamPolicy("policy", WebForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -22625,8 +22625,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebForwardingRuleServiceIamPolicy("policy", WebForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -22659,8 +22659,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebForwardingRuleServiceIamBinding("binding", WebForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -22696,8 +22696,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebForwardingRuleServiceIamBinding("binding", WebForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebForwardingRuleServiceIamBindingConditionArgs.builder()
@@ -22736,8 +22736,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebForwardingRuleServiceIamMember("member", WebForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -22773,8 +22773,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebForwardingRuleServiceIamMember("member", WebForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebForwardingRuleServiceIamMemberConditionArgs.builder()
@@ -22841,8 +22841,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebForwardingRuleService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebForwardingRuleServiceIamPolicy`: Authoritative. Sets the IAM policy for the webforwardingruleservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebForwardingRuleServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webforwardingruleservice are preserved.
-   * * `gcp.iap.WebForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webforwardingruleservice are preserved.
+   * * `gcp.iap.WebForwardingRuleServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webforwardingruleservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webforwardingruleservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -22850,7 +22850,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebForwardingRuleServiceIamBinding` and `gcp.iap.WebForwardingRuleServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -22889,8 +22889,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebForwardingRuleServiceIamPolicy("policy", WebForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -22940,8 +22940,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebForwardingRuleServiceIamPolicy("policy", WebForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -22974,8 +22974,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebForwardingRuleServiceIamBinding("binding", WebForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -23011,8 +23011,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebForwardingRuleServiceIamBinding("binding", WebForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebForwardingRuleServiceIamBindingConditionArgs.builder()
@@ -23051,8 +23051,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebForwardingRuleServiceIamMember("member", WebForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -23088,8 +23088,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebForwardingRuleServiceIamMember("member", WebForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebForwardingRuleServiceIamMemberConditionArgs.builder()
@@ -23113,8 +23113,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebForwardingRuleService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebForwardingRuleServiceIamPolicy`: Authoritative. Sets the IAM policy for the webforwardingruleservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebForwardingRuleServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webforwardingruleservice are preserved.
-   * * `gcp.iap.WebForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webforwardingruleservice are preserved.
+   * * `gcp.iap.WebForwardingRuleServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webforwardingruleservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webforwardingruleservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -23122,7 +23122,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebForwardingRuleServiceIamBinding` and `gcp.iap.WebForwardingRuleServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -23161,8 +23161,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebForwardingRuleServiceIamPolicy("policy", WebForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -23212,8 +23212,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebForwardingRuleServiceIamPolicy("policy", WebForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -23246,8 +23246,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebForwardingRuleServiceIamBinding("binding", WebForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -23283,8 +23283,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebForwardingRuleServiceIamBinding("binding", WebForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebForwardingRuleServiceIamBindingConditionArgs.builder()
@@ -23323,8 +23323,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebForwardingRuleServiceIamMember("member", WebForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -23360,8 +23360,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebForwardingRuleServiceIamMember("member", WebForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .forwardingRuleServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .forwardingRuleServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebForwardingRuleServiceIamMemberConditionArgs.builder()
@@ -23417,8 +23417,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Web. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebIamPolicy`: Authoritative. Sets the IAM policy for the web and replaces any existing policy already attached.
-   * * `gcp.iap.WebIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the web are preserved.
-   * * `gcp.iap.WebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the web are preserved.
+   * * `gcp.iap.WebIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the web are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the web are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -23426,7 +23426,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebIamBinding` and `gcp.iap.WebIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebIamBinding` resources **can be** used in conjunction with `gcp.iap.WebIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebIamBinding` resources **can be** used in conjunction with `gcp.iap.WebIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -23465,7 +23465,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebIamPolicy("policy", WebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -23515,7 +23515,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebIamPolicy("policy", WebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -23548,7 +23548,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebIamBinding("binding", WebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -23584,7 +23584,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebIamBinding("binding", WebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebIamBindingConditionArgs.builder()
@@ -23623,7 +23623,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebIamMember("member", WebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -23659,7 +23659,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebIamMember("member", WebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebIamMemberConditionArgs.builder()
@@ -23683,8 +23683,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Web. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebIamPolicy`: Authoritative. Sets the IAM policy for the web and replaces any existing policy already attached.
-   * * `gcp.iap.WebIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the web are preserved.
-   * * `gcp.iap.WebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the web are preserved.
+   * * `gcp.iap.WebIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the web are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the web are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -23692,7 +23692,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebIamBinding` and `gcp.iap.WebIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebIamBinding` resources **can be** used in conjunction with `gcp.iap.WebIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebIamBinding` resources **can be** used in conjunction with `gcp.iap.WebIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -23731,7 +23731,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebIamPolicy("policy", WebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -23781,7 +23781,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebIamPolicy("policy", WebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -23814,7 +23814,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebIamBinding("binding", WebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -23850,7 +23850,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebIamBinding("binding", WebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebIamBindingConditionArgs.builder()
@@ -23889,7 +23889,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebIamMember("member", WebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -23925,7 +23925,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebIamMember("member", WebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebIamMemberConditionArgs.builder()
@@ -23991,8 +23991,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Web. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebIamPolicy`: Authoritative. Sets the IAM policy for the web and replaces any existing policy already attached.
-   * * `gcp.iap.WebIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the web are preserved.
-   * * `gcp.iap.WebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the web are preserved.
+   * * `gcp.iap.WebIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the web are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the web are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -24000,7 +24000,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebIamBinding` and `gcp.iap.WebIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebIamBinding` resources **can be** used in conjunction with `gcp.iap.WebIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebIamBinding` resources **can be** used in conjunction with `gcp.iap.WebIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -24039,7 +24039,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebIamPolicy("policy", WebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -24089,7 +24089,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebIamPolicy("policy", WebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -24122,7 +24122,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebIamBinding("binding", WebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24158,7 +24158,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebIamBinding("binding", WebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebIamBindingConditionArgs.builder()
@@ -24197,7 +24197,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebIamMember("member", WebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24233,7 +24233,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebIamMember("member", WebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebIamMemberConditionArgs.builder()
@@ -24257,8 +24257,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Web. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebIamPolicy`: Authoritative. Sets the IAM policy for the web and replaces any existing policy already attached.
-   * * `gcp.iap.WebIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the web are preserved.
-   * * `gcp.iap.WebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the web are preserved.
+   * * `gcp.iap.WebIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the web are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the web are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -24266,7 +24266,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebIamBinding` and `gcp.iap.WebIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebIamBinding` resources **can be** used in conjunction with `gcp.iap.WebIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebIamBinding` resources **can be** used in conjunction with `gcp.iap.WebIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -24305,7 +24305,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebIamPolicy("policy", WebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -24355,7 +24355,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebIamPolicy("policy", WebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -24388,7 +24388,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebIamBinding("binding", WebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24424,7 +24424,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebIamBinding("binding", WebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebIamBindingConditionArgs.builder()
@@ -24463,7 +24463,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebIamMember("member", WebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24499,7 +24499,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebIamMember("member", WebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebIamMemberConditionArgs.builder()
@@ -24565,8 +24565,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Web. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebIamPolicy`: Authoritative. Sets the IAM policy for the web and replaces any existing policy already attached.
-   * * `gcp.iap.WebIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the web are preserved.
-   * * `gcp.iap.WebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the web are preserved.
+   * * `gcp.iap.WebIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the web are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the web are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -24574,7 +24574,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebIamBinding` and `gcp.iap.WebIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebIamBinding` resources **can be** used in conjunction with `gcp.iap.WebIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebIamBinding` resources **can be** used in conjunction with `gcp.iap.WebIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -24613,7 +24613,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebIamPolicy("policy", WebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -24663,7 +24663,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebIamPolicy("policy", WebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -24696,7 +24696,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebIamBinding("binding", WebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24732,7 +24732,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebIamBinding("binding", WebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebIamBindingConditionArgs.builder()
@@ -24771,7 +24771,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebIamMember("member", WebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24807,7 +24807,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebIamMember("member", WebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebIamMemberConditionArgs.builder()
@@ -24831,8 +24831,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Web. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebIamPolicy`: Authoritative. Sets the IAM policy for the web and replaces any existing policy already attached.
-   * * `gcp.iap.WebIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the web are preserved.
-   * * `gcp.iap.WebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the web are preserved.
+   * * `gcp.iap.WebIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the web are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the web are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -24840,7 +24840,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebIamBinding` and `gcp.iap.WebIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebIamBinding` resources **can be** used in conjunction with `gcp.iap.WebIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebIamBinding` resources **can be** used in conjunction with `gcp.iap.WebIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -24879,7 +24879,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebIamPolicy("policy", WebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -24929,7 +24929,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebIamPolicy("policy", WebIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -24962,7 +24962,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebIamBinding("binding", WebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -24998,7 +24998,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebIamBinding("binding", WebIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebIamBindingConditionArgs.builder()
@@ -25037,7 +25037,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebIamMember("member", WebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -25073,7 +25073,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebIamMember("member", WebIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebIamMemberConditionArgs.builder()
@@ -25128,8 +25128,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebRegionBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the webregionbackendservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebRegionBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webregionbackendservice are preserved.
-   * * `gcp.iap.WebRegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webregionbackendservice are preserved.
+   * * `gcp.iap.WebRegionBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webregionbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebRegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webregionbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -25137,7 +25137,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebRegionBackendServiceIamBinding` and `gcp.iap.WebRegionBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -25176,9 +25176,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionBackendServiceIamPolicy("policy", WebRegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -25228,9 +25228,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionBackendServiceIamPolicy("policy", WebRegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -25263,9 +25263,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionBackendServiceIamBinding("binding", WebRegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -25301,9 +25301,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionBackendServiceIamBinding("binding", WebRegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionBackendServiceIamBindingConditionArgs.builder()
@@ -25342,9 +25342,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionBackendServiceIamMember("member", WebRegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -25380,9 +25380,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionBackendServiceIamMember("member", WebRegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionBackendServiceIamMemberConditionArgs.builder()
@@ -25406,8 +25406,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebRegionBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the webregionbackendservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebRegionBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webregionbackendservice are preserved.
-   * * `gcp.iap.WebRegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webregionbackendservice are preserved.
+   * * `gcp.iap.WebRegionBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webregionbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebRegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webregionbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -25415,7 +25415,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebRegionBackendServiceIamBinding` and `gcp.iap.WebRegionBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -25454,9 +25454,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionBackendServiceIamPolicy("policy", WebRegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -25506,9 +25506,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionBackendServiceIamPolicy("policy", WebRegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -25541,9 +25541,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionBackendServiceIamBinding("binding", WebRegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -25579,9 +25579,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionBackendServiceIamBinding("binding", WebRegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionBackendServiceIamBindingConditionArgs.builder()
@@ -25620,9 +25620,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionBackendServiceIamMember("member", WebRegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -25658,9 +25658,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionBackendServiceIamMember("member", WebRegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionBackendServiceIamMemberConditionArgs.builder()
@@ -25728,8 +25728,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebRegionBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the webregionbackendservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebRegionBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webregionbackendservice are preserved.
-   * * `gcp.iap.WebRegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webregionbackendservice are preserved.
+   * * `gcp.iap.WebRegionBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webregionbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebRegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webregionbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -25737,7 +25737,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebRegionBackendServiceIamBinding` and `gcp.iap.WebRegionBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -25776,9 +25776,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionBackendServiceIamPolicy("policy", WebRegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -25828,9 +25828,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionBackendServiceIamPolicy("policy", WebRegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -25863,9 +25863,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionBackendServiceIamBinding("binding", WebRegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -25901,9 +25901,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionBackendServiceIamBinding("binding", WebRegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionBackendServiceIamBindingConditionArgs.builder()
@@ -25942,9 +25942,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionBackendServiceIamMember("member", WebRegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -25980,9 +25980,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionBackendServiceIamMember("member", WebRegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionBackendServiceIamMemberConditionArgs.builder()
@@ -26006,8 +26006,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebRegionBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the webregionbackendservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebRegionBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webregionbackendservice are preserved.
-   * * `gcp.iap.WebRegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webregionbackendservice are preserved.
+   * * `gcp.iap.WebRegionBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webregionbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebRegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webregionbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -26015,7 +26015,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebRegionBackendServiceIamBinding` and `gcp.iap.WebRegionBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -26054,9 +26054,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionBackendServiceIamPolicy("policy", WebRegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -26106,9 +26106,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionBackendServiceIamPolicy("policy", WebRegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -26141,9 +26141,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionBackendServiceIamBinding("binding", WebRegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -26179,9 +26179,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionBackendServiceIamBinding("binding", WebRegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionBackendServiceIamBindingConditionArgs.builder()
@@ -26220,9 +26220,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionBackendServiceIamMember("member", WebRegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -26258,9 +26258,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionBackendServiceIamMember("member", WebRegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionBackendServiceIamMemberConditionArgs.builder()
@@ -26328,8 +26328,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebRegionBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the webregionbackendservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebRegionBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webregionbackendservice are preserved.
-   * * `gcp.iap.WebRegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webregionbackendservice are preserved.
+   * * `gcp.iap.WebRegionBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webregionbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebRegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webregionbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -26337,7 +26337,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebRegionBackendServiceIamBinding` and `gcp.iap.WebRegionBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -26376,9 +26376,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionBackendServiceIamPolicy("policy", WebRegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -26428,9 +26428,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionBackendServiceIamPolicy("policy", WebRegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -26463,9 +26463,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionBackendServiceIamBinding("binding", WebRegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -26501,9 +26501,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionBackendServiceIamBinding("binding", WebRegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionBackendServiceIamBindingConditionArgs.builder()
@@ -26542,9 +26542,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionBackendServiceIamMember("member", WebRegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -26580,9 +26580,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionBackendServiceIamMember("member", WebRegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionBackendServiceIamMemberConditionArgs.builder()
@@ -26606,8 +26606,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionBackendService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebRegionBackendServiceIamPolicy`: Authoritative. Sets the IAM policy for the webregionbackendservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebRegionBackendServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webregionbackendservice are preserved.
-   * * `gcp.iap.WebRegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webregionbackendservice are preserved.
+   * * `gcp.iap.WebRegionBackendServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webregionbackendservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebRegionBackendServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webregionbackendservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -26615,7 +26615,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebRegionBackendServiceIamBinding` and `gcp.iap.WebRegionBackendServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebRegionBackendServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionBackendServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -26654,9 +26654,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionBackendServiceIamPolicy("policy", WebRegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -26706,9 +26706,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionBackendServiceIamPolicy("policy", WebRegionBackendServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -26741,9 +26741,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionBackendServiceIamBinding("binding", WebRegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -26779,9 +26779,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionBackendServiceIamBinding("binding", WebRegionBackendServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionBackendServiceIamBindingConditionArgs.builder()
@@ -26820,9 +26820,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionBackendServiceIamMember("member", WebRegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -26858,9 +26858,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionBackendServiceIamMember("member", WebRegionBackendServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .webRegionBackendService(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .webRegionBackendService(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionBackendServiceIamMemberConditionArgs.builder()
@@ -26917,8 +26917,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionForwardingRuleService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebRegionForwardingRuleServiceIamPolicy`: Authoritative. Sets the IAM policy for the webregionforwardingruleservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebRegionForwardingRuleServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webregionforwardingruleservice are preserved.
-   * * `gcp.iap.WebRegionForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webregionforwardingruleservice are preserved.
+   * * `gcp.iap.WebRegionForwardingRuleServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webregionforwardingruleservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebRegionForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webregionforwardingruleservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -26926,7 +26926,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamBinding` and `gcp.iap.WebRegionForwardingRuleServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -26965,9 +26965,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionForwardingRuleServiceIamPolicy("policy", WebRegionForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -27017,9 +27017,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionForwardingRuleServiceIamPolicy("policy", WebRegionForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -27052,9 +27052,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionForwardingRuleServiceIamBinding("binding", WebRegionForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -27090,9 +27090,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionForwardingRuleServiceIamBinding("binding", WebRegionForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionForwardingRuleServiceIamBindingConditionArgs.builder()
@@ -27131,9 +27131,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionForwardingRuleServiceIamMember("member", WebRegionForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -27169,9 +27169,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionForwardingRuleServiceIamMember("member", WebRegionForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionForwardingRuleServiceIamMemberConditionArgs.builder()
@@ -27195,8 +27195,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionForwardingRuleService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebRegionForwardingRuleServiceIamPolicy`: Authoritative. Sets the IAM policy for the webregionforwardingruleservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebRegionForwardingRuleServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webregionforwardingruleservice are preserved.
-   * * `gcp.iap.WebRegionForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webregionforwardingruleservice are preserved.
+   * * `gcp.iap.WebRegionForwardingRuleServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webregionforwardingruleservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebRegionForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webregionforwardingruleservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -27204,7 +27204,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamBinding` and `gcp.iap.WebRegionForwardingRuleServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -27243,9 +27243,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionForwardingRuleServiceIamPolicy("policy", WebRegionForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -27295,9 +27295,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionForwardingRuleServiceIamPolicy("policy", WebRegionForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -27330,9 +27330,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionForwardingRuleServiceIamBinding("binding", WebRegionForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -27368,9 +27368,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionForwardingRuleServiceIamBinding("binding", WebRegionForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionForwardingRuleServiceIamBindingConditionArgs.builder()
@@ -27409,9 +27409,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionForwardingRuleServiceIamMember("member", WebRegionForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -27447,9 +27447,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionForwardingRuleServiceIamMember("member", WebRegionForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionForwardingRuleServiceIamMemberConditionArgs.builder()
@@ -27517,8 +27517,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionForwardingRuleService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebRegionForwardingRuleServiceIamPolicy`: Authoritative. Sets the IAM policy for the webregionforwardingruleservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebRegionForwardingRuleServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webregionforwardingruleservice are preserved.
-   * * `gcp.iap.WebRegionForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webregionforwardingruleservice are preserved.
+   * * `gcp.iap.WebRegionForwardingRuleServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webregionforwardingruleservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebRegionForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webregionforwardingruleservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -27526,7 +27526,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamBinding` and `gcp.iap.WebRegionForwardingRuleServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -27565,9 +27565,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionForwardingRuleServiceIamPolicy("policy", WebRegionForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -27617,9 +27617,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionForwardingRuleServiceIamPolicy("policy", WebRegionForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -27652,9 +27652,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionForwardingRuleServiceIamBinding("binding", WebRegionForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -27690,9 +27690,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionForwardingRuleServiceIamBinding("binding", WebRegionForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionForwardingRuleServiceIamBindingConditionArgs.builder()
@@ -27731,9 +27731,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionForwardingRuleServiceIamMember("member", WebRegionForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -27769,9 +27769,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionForwardingRuleServiceIamMember("member", WebRegionForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionForwardingRuleServiceIamMemberConditionArgs.builder()
@@ -27795,8 +27795,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionForwardingRuleService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebRegionForwardingRuleServiceIamPolicy`: Authoritative. Sets the IAM policy for the webregionforwardingruleservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebRegionForwardingRuleServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webregionforwardingruleservice are preserved.
-   * * `gcp.iap.WebRegionForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webregionforwardingruleservice are preserved.
+   * * `gcp.iap.WebRegionForwardingRuleServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webregionforwardingruleservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebRegionForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webregionforwardingruleservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -27804,7 +27804,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamBinding` and `gcp.iap.WebRegionForwardingRuleServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -27843,9 +27843,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionForwardingRuleServiceIamPolicy("policy", WebRegionForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -27895,9 +27895,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionForwardingRuleServiceIamPolicy("policy", WebRegionForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -27930,9 +27930,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionForwardingRuleServiceIamBinding("binding", WebRegionForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -27968,9 +27968,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionForwardingRuleServiceIamBinding("binding", WebRegionForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionForwardingRuleServiceIamBindingConditionArgs.builder()
@@ -28009,9 +28009,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionForwardingRuleServiceIamMember("member", WebRegionForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -28047,9 +28047,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionForwardingRuleServiceIamMember("member", WebRegionForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionForwardingRuleServiceIamMemberConditionArgs.builder()
@@ -28117,8 +28117,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionForwardingRuleService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebRegionForwardingRuleServiceIamPolicy`: Authoritative. Sets the IAM policy for the webregionforwardingruleservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebRegionForwardingRuleServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webregionforwardingruleservice are preserved.
-   * * `gcp.iap.WebRegionForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webregionforwardingruleservice are preserved.
+   * * `gcp.iap.WebRegionForwardingRuleServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webregionforwardingruleservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebRegionForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webregionforwardingruleservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -28126,7 +28126,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamBinding` and `gcp.iap.WebRegionForwardingRuleServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -28165,9 +28165,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionForwardingRuleServiceIamPolicy("policy", WebRegionForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -28217,9 +28217,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionForwardingRuleServiceIamPolicy("policy", WebRegionForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -28252,9 +28252,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionForwardingRuleServiceIamBinding("binding", WebRegionForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -28290,9 +28290,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionForwardingRuleServiceIamBinding("binding", WebRegionForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionForwardingRuleServiceIamBindingConditionArgs.builder()
@@ -28331,9 +28331,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionForwardingRuleServiceIamMember("member", WebRegionForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -28369,9 +28369,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionForwardingRuleServiceIamMember("member", WebRegionForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionForwardingRuleServiceIamMemberConditionArgs.builder()
@@ -28395,8 +28395,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionForwardingRuleService. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebRegionForwardingRuleServiceIamPolicy`: Authoritative. Sets the IAM policy for the webregionforwardingruleservice and replaces any existing policy already attached.
-   * * `gcp.iap.WebRegionForwardingRuleServiceIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webregionforwardingruleservice are preserved.
-   * * `gcp.iap.WebRegionForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webregionforwardingruleservice are preserved.
+   * * `gcp.iap.WebRegionForwardingRuleServiceIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webregionforwardingruleservice are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebRegionForwardingRuleServiceIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webregionforwardingruleservice are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -28404,7 +28404,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamBinding` and `gcp.iap.WebRegionForwardingRuleServiceIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebRegionForwardingRuleServiceIamBinding` resources **can be** used in conjunction with `gcp.iap.WebRegionForwardingRuleServiceIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -28443,9 +28443,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionForwardingRuleServiceIamPolicy("policy", WebRegionForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -28495,9 +28495,9 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebRegionForwardingRuleServiceIamPolicy("policy", WebRegionForwardingRuleServiceIamPolicyArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -28530,9 +28530,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionForwardingRuleServiceIamBinding("binding", WebRegionForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -28568,9 +28568,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebRegionForwardingRuleServiceIamBinding("binding", WebRegionForwardingRuleServiceIamBindingArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionForwardingRuleServiceIamBindingConditionArgs.builder()
@@ -28609,9 +28609,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionForwardingRuleServiceIamMember("member", WebRegionForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -28647,9 +28647,9 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebRegionForwardingRuleServiceIamMember("member", WebRegionForwardingRuleServiceIamMemberArgs.builder()
-   *             .project(default_.project())
-   *             .region(default_.region())
-   *             .forwardingRuleRegionServiceName(default_.name())
+   *             .project(default_.get("project"))
+   *             .region(default_.get("region"))
+   *             .forwardingRuleRegionServiceName(default_.get("name"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebRegionForwardingRuleServiceIamMemberConditionArgs.builder()
@@ -28706,8 +28706,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeAppEngine. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebTypeAppEngingIamPolicy`: Authoritative. Sets the IAM policy for the webtypeappengine and replaces any existing policy already attached.
-   * * `gcp.iap.WebTypeAppEngingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webtypeappengine are preserved.
-   * * `gcp.iap.WebTypeAppEngingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webtypeappengine are preserved.
+   * * `gcp.iap.WebTypeAppEngingIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webtypeappengine are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebTypeAppEngingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webtypeappengine are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -28715,7 +28715,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebTypeAppEngingIamBinding` and `gcp.iap.WebTypeAppEngingIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeAppEngingIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeAppEngingIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -28754,8 +28754,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeAppEngingIamPolicy("policy", WebTypeAppEngingIamPolicyArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -28805,8 +28805,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeAppEngingIamPolicy("policy", WebTypeAppEngingIamPolicyArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -28839,8 +28839,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeAppEngingIamBinding("binding", WebTypeAppEngingIamBindingArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -28876,8 +28876,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeAppEngingIamBinding("binding", WebTypeAppEngingIamBindingArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeAppEngingIamBindingConditionArgs.builder()
@@ -28916,8 +28916,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeAppEngingIamMember("member", WebTypeAppEngingIamMemberArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -28953,8 +28953,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeAppEngingIamMember("member", WebTypeAppEngingIamMemberArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeAppEngingIamMemberConditionArgs.builder()
@@ -28978,8 +28978,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeAppEngine. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebTypeAppEngingIamPolicy`: Authoritative. Sets the IAM policy for the webtypeappengine and replaces any existing policy already attached.
-   * * `gcp.iap.WebTypeAppEngingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webtypeappengine are preserved.
-   * * `gcp.iap.WebTypeAppEngingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webtypeappengine are preserved.
+   * * `gcp.iap.WebTypeAppEngingIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webtypeappengine are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebTypeAppEngingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webtypeappengine are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -28987,7 +28987,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebTypeAppEngingIamBinding` and `gcp.iap.WebTypeAppEngingIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeAppEngingIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeAppEngingIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -29026,8 +29026,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeAppEngingIamPolicy("policy", WebTypeAppEngingIamPolicyArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -29077,8 +29077,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeAppEngingIamPolicy("policy", WebTypeAppEngingIamPolicyArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -29111,8 +29111,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeAppEngingIamBinding("binding", WebTypeAppEngingIamBindingArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -29148,8 +29148,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeAppEngingIamBinding("binding", WebTypeAppEngingIamBindingArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeAppEngingIamBindingConditionArgs.builder()
@@ -29188,8 +29188,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeAppEngingIamMember("member", WebTypeAppEngingIamMemberArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -29225,8 +29225,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeAppEngingIamMember("member", WebTypeAppEngingIamMemberArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeAppEngingIamMemberConditionArgs.builder()
@@ -29293,8 +29293,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeAppEngine. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebTypeAppEngingIamPolicy`: Authoritative. Sets the IAM policy for the webtypeappengine and replaces any existing policy already attached.
-   * * `gcp.iap.WebTypeAppEngingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webtypeappengine are preserved.
-   * * `gcp.iap.WebTypeAppEngingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webtypeappengine are preserved.
+   * * `gcp.iap.WebTypeAppEngingIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webtypeappengine are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebTypeAppEngingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webtypeappengine are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -29302,7 +29302,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebTypeAppEngingIamBinding` and `gcp.iap.WebTypeAppEngingIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeAppEngingIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeAppEngingIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -29341,8 +29341,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeAppEngingIamPolicy("policy", WebTypeAppEngingIamPolicyArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -29392,8 +29392,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeAppEngingIamPolicy("policy", WebTypeAppEngingIamPolicyArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -29426,8 +29426,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeAppEngingIamBinding("binding", WebTypeAppEngingIamBindingArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -29463,8 +29463,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeAppEngingIamBinding("binding", WebTypeAppEngingIamBindingArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeAppEngingIamBindingConditionArgs.builder()
@@ -29503,8 +29503,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeAppEngingIamMember("member", WebTypeAppEngingIamMemberArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -29540,8 +29540,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeAppEngingIamMember("member", WebTypeAppEngingIamMemberArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeAppEngingIamMemberConditionArgs.builder()
@@ -29565,8 +29565,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeAppEngine. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebTypeAppEngingIamPolicy`: Authoritative. Sets the IAM policy for the webtypeappengine and replaces any existing policy already attached.
-   * * `gcp.iap.WebTypeAppEngingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webtypeappengine are preserved.
-   * * `gcp.iap.WebTypeAppEngingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webtypeappengine are preserved.
+   * * `gcp.iap.WebTypeAppEngingIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webtypeappengine are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebTypeAppEngingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webtypeappengine are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -29574,7 +29574,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebTypeAppEngingIamBinding` and `gcp.iap.WebTypeAppEngingIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeAppEngingIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeAppEngingIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -29613,8 +29613,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeAppEngingIamPolicy("policy", WebTypeAppEngingIamPolicyArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -29664,8 +29664,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeAppEngingIamPolicy("policy", WebTypeAppEngingIamPolicyArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -29698,8 +29698,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeAppEngingIamBinding("binding", WebTypeAppEngingIamBindingArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -29735,8 +29735,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeAppEngingIamBinding("binding", WebTypeAppEngingIamBindingArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeAppEngingIamBindingConditionArgs.builder()
@@ -29775,8 +29775,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeAppEngingIamMember("member", WebTypeAppEngingIamMemberArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -29812,8 +29812,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeAppEngingIamMember("member", WebTypeAppEngingIamMemberArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeAppEngingIamMemberConditionArgs.builder()
@@ -29880,8 +29880,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeAppEngine. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebTypeAppEngingIamPolicy`: Authoritative. Sets the IAM policy for the webtypeappengine and replaces any existing policy already attached.
-   * * `gcp.iap.WebTypeAppEngingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webtypeappengine are preserved.
-   * * `gcp.iap.WebTypeAppEngingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webtypeappengine are preserved.
+   * * `gcp.iap.WebTypeAppEngingIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webtypeappengine are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebTypeAppEngingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webtypeappengine are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -29889,7 +29889,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebTypeAppEngingIamBinding` and `gcp.iap.WebTypeAppEngingIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeAppEngingIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeAppEngingIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -29928,8 +29928,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeAppEngingIamPolicy("policy", WebTypeAppEngingIamPolicyArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -29979,8 +29979,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeAppEngingIamPolicy("policy", WebTypeAppEngingIamPolicyArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -30013,8 +30013,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeAppEngingIamBinding("binding", WebTypeAppEngingIamBindingArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30050,8 +30050,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeAppEngingIamBinding("binding", WebTypeAppEngingIamBindingArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeAppEngingIamBindingConditionArgs.builder()
@@ -30090,8 +30090,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeAppEngingIamMember("member", WebTypeAppEngingIamMemberArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30127,8 +30127,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeAppEngingIamMember("member", WebTypeAppEngingIamMemberArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeAppEngingIamMemberConditionArgs.builder()
@@ -30152,8 +30152,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeAppEngine. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebTypeAppEngingIamPolicy`: Authoritative. Sets the IAM policy for the webtypeappengine and replaces any existing policy already attached.
-   * * `gcp.iap.WebTypeAppEngingIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webtypeappengine are preserved.
-   * * `gcp.iap.WebTypeAppEngingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webtypeappengine are preserved.
+   * * `gcp.iap.WebTypeAppEngingIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webtypeappengine are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebTypeAppEngingIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webtypeappengine are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -30161,7 +30161,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebTypeAppEngingIamBinding` and `gcp.iap.WebTypeAppEngingIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeAppEngingIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebTypeAppEngingIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeAppEngingIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -30200,8 +30200,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeAppEngingIamPolicy("policy", WebTypeAppEngingIamPolicyArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -30251,8 +30251,8 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeAppEngingIamPolicy("policy", WebTypeAppEngingIamPolicyArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -30285,8 +30285,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeAppEngingIamBinding("binding", WebTypeAppEngingIamBindingArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30322,8 +30322,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeAppEngingIamBinding("binding", WebTypeAppEngingIamBindingArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeAppEngingIamBindingConditionArgs.builder()
@@ -30362,8 +30362,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeAppEngingIamMember("member", WebTypeAppEngingIamMemberArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30399,8 +30399,8 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeAppEngingIamMember("member", WebTypeAppEngingIamMemberArgs.builder()
-   *             .project(app.project())
-   *             .appId(app.appId())
+   *             .project(app.get("project"))
+   *             .appId(app.get("appId"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeAppEngingIamMemberConditionArgs.builder()
@@ -30456,8 +30456,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeCompute. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebTypeComputeIamPolicy`: Authoritative. Sets the IAM policy for the webtypecompute and replaces any existing policy already attached.
-   * * `gcp.iap.WebTypeComputeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webtypecompute are preserved.
-   * * `gcp.iap.WebTypeComputeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webtypecompute are preserved.
+   * * `gcp.iap.WebTypeComputeIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webtypecompute are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebTypeComputeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webtypecompute are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -30465,7 +30465,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebTypeComputeIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebTypeComputeIamBinding` and `gcp.iap.WebTypeComputeIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebTypeComputeIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeComputeIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebTypeComputeIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeComputeIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -30504,7 +30504,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeComputeIamPolicy("policy", WebTypeComputeIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -30554,7 +30554,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeComputeIamPolicy("policy", WebTypeComputeIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -30587,7 +30587,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeComputeIamBinding("binding", WebTypeComputeIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30623,7 +30623,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeComputeIamBinding("binding", WebTypeComputeIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeComputeIamBindingConditionArgs.builder()
@@ -30662,7 +30662,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeComputeIamMember("member", WebTypeComputeIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30698,7 +30698,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeComputeIamMember("member", WebTypeComputeIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeComputeIamMemberConditionArgs.builder()
@@ -30722,8 +30722,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeCompute. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebTypeComputeIamPolicy`: Authoritative. Sets the IAM policy for the webtypecompute and replaces any existing policy already attached.
-   * * `gcp.iap.WebTypeComputeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webtypecompute are preserved.
-   * * `gcp.iap.WebTypeComputeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webtypecompute are preserved.
+   * * `gcp.iap.WebTypeComputeIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webtypecompute are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebTypeComputeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webtypecompute are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -30731,7 +30731,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebTypeComputeIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebTypeComputeIamBinding` and `gcp.iap.WebTypeComputeIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebTypeComputeIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeComputeIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebTypeComputeIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeComputeIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -30770,7 +30770,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeComputeIamPolicy("policy", WebTypeComputeIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -30820,7 +30820,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeComputeIamPolicy("policy", WebTypeComputeIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -30853,7 +30853,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeComputeIamBinding("binding", WebTypeComputeIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30889,7 +30889,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeComputeIamBinding("binding", WebTypeComputeIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeComputeIamBindingConditionArgs.builder()
@@ -30928,7 +30928,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeComputeIamMember("member", WebTypeComputeIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -30964,7 +30964,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeComputeIamMember("member", WebTypeComputeIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeComputeIamMemberConditionArgs.builder()
@@ -31030,8 +31030,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeCompute. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebTypeComputeIamPolicy`: Authoritative. Sets the IAM policy for the webtypecompute and replaces any existing policy already attached.
-   * * `gcp.iap.WebTypeComputeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webtypecompute are preserved.
-   * * `gcp.iap.WebTypeComputeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webtypecompute are preserved.
+   * * `gcp.iap.WebTypeComputeIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webtypecompute are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebTypeComputeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webtypecompute are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -31039,7 +31039,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebTypeComputeIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebTypeComputeIamBinding` and `gcp.iap.WebTypeComputeIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebTypeComputeIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeComputeIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebTypeComputeIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeComputeIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -31078,7 +31078,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeComputeIamPolicy("policy", WebTypeComputeIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -31128,7 +31128,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeComputeIamPolicy("policy", WebTypeComputeIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -31161,7 +31161,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeComputeIamBinding("binding", WebTypeComputeIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -31197,7 +31197,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeComputeIamBinding("binding", WebTypeComputeIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeComputeIamBindingConditionArgs.builder()
@@ -31236,7 +31236,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeComputeIamMember("member", WebTypeComputeIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -31272,7 +31272,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeComputeIamMember("member", WebTypeComputeIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeComputeIamMemberConditionArgs.builder()
@@ -31296,8 +31296,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeCompute. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebTypeComputeIamPolicy`: Authoritative. Sets the IAM policy for the webtypecompute and replaces any existing policy already attached.
-   * * `gcp.iap.WebTypeComputeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webtypecompute are preserved.
-   * * `gcp.iap.WebTypeComputeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webtypecompute are preserved.
+   * * `gcp.iap.WebTypeComputeIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webtypecompute are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebTypeComputeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webtypecompute are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -31305,7 +31305,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebTypeComputeIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebTypeComputeIamBinding` and `gcp.iap.WebTypeComputeIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebTypeComputeIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeComputeIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebTypeComputeIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeComputeIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -31344,7 +31344,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeComputeIamPolicy("policy", WebTypeComputeIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -31394,7 +31394,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeComputeIamPolicy("policy", WebTypeComputeIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -31427,7 +31427,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeComputeIamBinding("binding", WebTypeComputeIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -31463,7 +31463,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeComputeIamBinding("binding", WebTypeComputeIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeComputeIamBindingConditionArgs.builder()
@@ -31502,7 +31502,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeComputeIamMember("member", WebTypeComputeIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -31538,7 +31538,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeComputeIamMember("member", WebTypeComputeIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeComputeIamMemberConditionArgs.builder()
@@ -31604,8 +31604,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeCompute. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebTypeComputeIamPolicy`: Authoritative. Sets the IAM policy for the webtypecompute and replaces any existing policy already attached.
-   * * `gcp.iap.WebTypeComputeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webtypecompute are preserved.
-   * * `gcp.iap.WebTypeComputeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webtypecompute are preserved.
+   * * `gcp.iap.WebTypeComputeIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webtypecompute are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebTypeComputeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webtypecompute are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -31613,7 +31613,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebTypeComputeIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebTypeComputeIamBinding` and `gcp.iap.WebTypeComputeIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebTypeComputeIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeComputeIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebTypeComputeIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeComputeIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -31652,7 +31652,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeComputeIamPolicy("policy", WebTypeComputeIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -31702,7 +31702,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeComputeIamPolicy("policy", WebTypeComputeIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -31735,7 +31735,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeComputeIamBinding("binding", WebTypeComputeIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -31771,7 +31771,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeComputeIamBinding("binding", WebTypeComputeIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeComputeIamBindingConditionArgs.builder()
@@ -31810,7 +31810,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeComputeIamMember("member", WebTypeComputeIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -31846,7 +31846,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeComputeIamMember("member", WebTypeComputeIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeComputeIamMemberConditionArgs.builder()
@@ -31870,8 +31870,8 @@ object iap:
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeCompute. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.WebTypeComputeIamPolicy`: Authoritative. Sets the IAM policy for the webtypecompute and replaces any existing policy already attached.
-   * * `gcp.iap.WebTypeComputeIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the webtypecompute are preserved.
-   * * `gcp.iap.WebTypeComputeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the webtypecompute are preserved.
+   * * `gcp.iap.WebTypeComputeIamBinding`: Authoritative for a given role and condition combination (the condition can be omitted). Updates the IAM policy to grant a role to a list of members. Other role and condition combinations within the IAM policy for the webtypecompute are preserved. Members added outside of Terraform for the same role and condition combination will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.iap.WebTypeComputeIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the same role and condition combination for the webtypecompute are preserved. Members added outside of Terraform will **not** be detected as drift.
    * 
    * A data source can be used to retrieve policy data in advent you do not need creation
    * 
@@ -31879,7 +31879,7 @@ object iap:
    * 
    * &gt; **Note:** `gcp.iap.WebTypeComputeIamPolicy` **cannot** be used in conjunction with `gcp.iap.WebTypeComputeIamBinding` and `gcp.iap.WebTypeComputeIamMember` or they will fight over what your policy should be.
    * 
-   * &gt; **Note:** `gcp.iap.WebTypeComputeIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeComputeIamMember` resources **only if** they do not grant privilege to the same role.
+   * &gt; **Note:** `gcp.iap.WebTypeComputeIamBinding` resources **can be** used in conjunction with `gcp.iap.WebTypeComputeIamMember` resources **only if** they do not grant privilege to the same role and condition combination.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
@@ -31918,7 +31918,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeComputeIamPolicy("policy", WebTypeComputeIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -31968,7 +31968,7 @@ object iap:
    *             .build());
    * 
    *         var policy = new WebTypeComputeIamPolicy("policy", WebTypeComputeIamPolicyArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .policyData(admin.policyData())
    *             .build());
    * 
@@ -32001,7 +32001,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeComputeIamBinding("binding", WebTypeComputeIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -32037,7 +32037,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var binding = new WebTypeComputeIamBinding("binding", WebTypeComputeIamBindingArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .members("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeComputeIamBindingConditionArgs.builder()
@@ -32076,7 +32076,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeComputeIamMember("member", WebTypeComputeIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .build());
@@ -32112,7 +32112,7 @@ object iap:
    * 
    *     public static void stack(Context ctx) }{{@code
    *         var member = new WebTypeComputeIamMember("member", WebTypeComputeIamMemberArgs.builder()
-   *             .project(projectService.project())
+   *             .project(projectService.get("project"))
    *             .role("roles/iap.httpsResourceAccessor")
    *             .member("user:jane}{@literal @}{@code example.com")
    *             .condition(WebTypeComputeIamMemberConditionArgs.builder()

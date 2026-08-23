@@ -74,7 +74,7 @@ object workmail:
 
   extension (builder: com.pulumi.aws.workmail.inputs.DomainState.Builder)
     /**
-     * @param records List of DNS records required for domain verification. See `records` below.
+     * @param records List of DNS records required for domain verification. See `records` Block below.
      * @return builder
      */
     def records(args: Endofunction[com.pulumi.aws.workmail.inputs.DomainRecordArgs.Builder]*):
