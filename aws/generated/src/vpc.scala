@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object vpc:
   /**
-   * Resource for enabling private DNS on an AWS VPC (Virtual Private Cloud) Endpoint.
+   * Resource for enabling private DNS on an AWS VPC Endpoint.
    * 
    * &gt; When using this resource, the `privateDnsEnabled` argument should be omitted on the parent `aws.ec2.VpcEndpoint` resource.
    * Setting the value both places can lead to unintended behavior and persistent differences.
@@ -18,7 +18,7 @@ object vpc:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
-   * Resource for managing an AWS VPC (Virtual Private Cloud) Endpoint Service Private DNS Verification.
+   * Resource for managing an AWS VPC Endpoint Service Private DNS Verification.
    * This resource begins the verification process by calling the [`StartVpcEndpointServicePrivateDnsVerification`](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartVpcEndpointServicePrivateDnsVerification.html) API.
    * The service provider should add a record to the DNS server _before_ creating this resource.
    * 
@@ -39,7 +39,7 @@ object vpc:
       val argsBuilder = com.pulumi.aws.vpc.inputs.EndpointServicePrivateDnsVerificationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Provides a resource for managing a VPC (Virtual Private Cloud) Route Server. */
+  /** Provides a resource for managing a VPC Route Server. */
   def RouteServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.vpc.RouteServerArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpc.RouteServerArgs.builder
@@ -60,7 +60,7 @@ object vpc:
       val argsBuilder = com.pulumi.aws.vpc.inputs.RouteServerTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Provides a resource for managing a VPC (Virtual Private Cloud) Route Server Endpoint. */
+  /** Provides a resource for managing a VPC Route Server Endpoint. */
   def RouteServerEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.vpc.RouteServerEndpointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpc.RouteServerEndpointArgs.builder
@@ -81,7 +81,7 @@ object vpc:
       val argsBuilder = com.pulumi.aws.vpc.inputs.RouteServerEndpointTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Provides a resource for managing a VPC (Virtual Private Cloud) Route Server Peer. */
+  /** Provides a resource for managing a VPC Route Server Peer. */
   def RouteServerPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.vpc.RouteServerPeerArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpc.RouteServerPeerArgs.builder
@@ -111,7 +111,7 @@ object vpc:
       val argsBuilder = com.pulumi.aws.vpc.inputs.RouteServerPeerTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Provides a resource for managing propagation between VPC (Virtual Private Cloud) route server and a route table. */
+  /** Provides a resource for managing propagation between VPC route server and a route table. */
   def RouteServerPropagation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.vpc.RouteServerPropagationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.vpc.RouteServerPropagationArgs.builder
@@ -125,7 +125,7 @@ object vpc:
       val argsBuilder = com.pulumi.aws.vpc.inputs.RouteServerPropagationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Provides a resource for managing association between VPC (Virtual Private Cloud) route server and a VPC. */
+  /** Provides a resource for managing association between VPC route server and a VPC. */
   def RouteServerVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.vpc.RouteServerVpcAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.vpc.RouteServerVpcAssociationArgs.builder
@@ -206,13 +206,13 @@ object vpc:
     //
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
-    /** Data source for managing an AWS EC2 (Elastic Compute Cloud) Vpc Endpoint Associations. */
+    /** Data source for managing an AWS EC2 Vpc Endpoint Associations. */
     inline def getEndpointAssociations(args: Endofunction[com.pulumi.aws.vpc.inputs.GetEndpointAssociationsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpc.outputs.GetEndpointAssociationsResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetEndpointAssociationsArgs.builder
       com.pulumi.aws.vpc.VpcFunctions.getEndpointAssociations(args(argsBuilder).build)
 
-    /** Data source for managing an AWS EC2 (Elastic Compute Cloud) Vpc Endpoint Associations. */
+    /** Data source for managing an AWS EC2 Vpc Endpoint Associations. */
     inline def getEndpointAssociationsPlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetEndpointAssociationsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpc.outputs.GetEndpointAssociationsResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetEndpointAssociationsPlainArgs.builder

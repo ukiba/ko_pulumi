@@ -157,9 +157,9 @@ object imagebuilder:
    * 
    * #### Required
    * 
-   * - `arn` (String) Amazon Resource Name (ARN) of the Image Builder image pipeline.
+   * - `arn` (String) ARN of the Image Builder image pipeline.
    * 
-   * Using `pulumi import`, import `aws.imagebuilder.ImagePipeline` resources using the Amazon Resource Name (ARN). For example:
+   * Using `pulumi import`, import `aws.imagebuilder.ImagePipeline` resources using the ARN. For example:
    * 
    * ```sh
    * $ pulumi import aws:imagebuilder/imagePipeline:ImagePipeline example arn:aws:imagebuilder:us-east-1:123456789012:image-pipeline/example
@@ -614,7 +614,7 @@ object imagebuilder:
 
   extension (builder: com.pulumi.aws.imagebuilder.inputs.DistributionConfigurationDistributionArgs.Builder)
     /**
-     * @param amiDistributionConfiguration Configuration block with Amazon Machine Image (AMI) distribution settings. Detailed below.
+     * @param amiDistributionConfiguration Configuration block with AMI distribution settings. Detailed below.
      * @return builder
      */
     def amiDistributionConfiguration(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.DistributionConfigurationDistributionAmiDistributionConfigurationArgs.Builder]):
@@ -780,7 +780,7 @@ object imagebuilder:
 
   extension (builder: com.pulumi.aws.imagebuilder.inputs.ImageOutputResourceArgs.Builder)
     /**
-     * @param amis Set of objects with each Amazon Machine Image (AMI) created.
+     * @param amis Set of objects with each AMI created.
      * @return builder
      */
     def amis(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.ImageOutputResourceAmiArgs.Builder]*):

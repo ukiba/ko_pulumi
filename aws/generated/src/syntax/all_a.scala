@@ -278,6 +278,7 @@ export ko_pulumi.aws.bedrock.evaluatorConfig
 export ko_pulumi.aws.bedrock.evaluatorModelConfig
 export ko_pulumi.aws.bedrock.evaluators
 export ko_pulumi.aws.bedrock.extraction
+export ko_pulumi.aws.bedrock.extractionConfig
 export ko_pulumi.aws.bedrockmodel.cloudwatchConfig
 export ko_pulumi.aws.billing.dataFilterExpression
 export ko_pulumi.aws.billing.dimensions
@@ -1297,6 +1298,7 @@ export ko_pulumi.aws.sesv2.cloudWatchDestination
 export ko_pulumi.aws.sesv2.dashboardAttributes
 export ko_pulumi.aws.sesv2.dashboardOptions
 export ko_pulumi.aws.sesv2.deliveryOptions
+export ko_pulumi.aws.sesv2.details
 export ko_pulumi.aws.sesv2.dimensionConfigurations
 export ko_pulumi.aws.sesv2.dkimSigningAttributes
 export ko_pulumi.aws.sesv2.eventBridgeDestination
@@ -1403,6 +1405,8 @@ export ko_pulumi.aws.wafv2.defaultAction
 export ko_pulumi.aws.wafv2.emailField
 export ko_pulumi.aws.wafv2.excludedRules
 export ko_pulumi.aws.wafv2.exemptUriRegularExpressions
+export ko_pulumi.aws.workspaces.accessEndpointConfig
+export ko_pulumi.aws.workspaces.accessEndpoints
 export ko_pulumi.aws.workspaces.activeDirectoryConfig
 export ko_pulumi.aws.workspaces.applicationSettings
 export ko_pulumi.aws.workspaces.capacity

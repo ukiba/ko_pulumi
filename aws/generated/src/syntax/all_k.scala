@@ -88,6 +88,7 @@ export ko_pulumi.aws.bedrock.levelConfigurations
 export ko_pulumi.aws.bedrock.lex
 export ko_pulumi.aws.bedrock.lifecycleConfigurations
 export ko_pulumi.aws.bedrock.llmAsAJudge
+export ko_pulumi.aws.bedrock.llmExtractionConfig
 export ko_pulumi.aws.bedrock.location
 export ko_pulumi.aws.bedrock.managedKnowledgeBaseConfiguration
 export ko_pulumi.aws.bedrock.managedKnowledgeBaseConnectorConfiguration
@@ -105,8 +106,12 @@ export ko_pulumi.aws.bedrock.memberFunctions
 export ko_pulumi.aws.bedrock.memory
 export ko_pulumi.aws.bedrock.memoryActuals
 export ko_pulumi.aws.bedrock.memoryConfigurations
+export ko_pulumi.aws.bedrock.memoryRecordSchema
+export ko_pulumi.aws.bedrock.messageBasedTrigger
+export ko_pulumi.aws.bedrock.messageBasedTriggers
 export ko_pulumi.aws.bedrock.messages
 export ko_pulumi.aws.bedrock.metadataConfiguration
+export ko_pulumi.aws.bedrock.metadataSchemas
 export ko_pulumi.aws.bedrock.metadatas
 export ko_pulumi.aws.bedrock.microsoftOauth2ProviderConfig
 export ko_pulumi.aws.bedrock.model
@@ -120,6 +125,7 @@ export ko_pulumi.aws.bedrock.networkConfigurations
 export ko_pulumi.aws.bedrock.networkModeConfig
 export ko_pulumi.aws.bedrock.networkModeConfigs
 export ko_pulumi.aws.bedrock.nodes
+export ko_pulumi.aws.bedrock.numberValidation
 export ko_pulumi.aws.bedrock.numericals
 export ko_pulumi.aws.bedrock.oauth
 export ko_pulumi.aws.bedrock.oauth2ProviderConfig

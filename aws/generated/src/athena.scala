@@ -97,7 +97,7 @@ object athena:
       builder.aclConfiguration(args(argsBuilder).build)
 
     /**
-     * @param encryptionConfiguration Encryption key block AWS Athena uses to decrypt the data in S3, such as an AWS Key Management Service (AWS KMS) key. See Encryption Configuration below.
+     * @param encryptionConfiguration Encryption key block AWS Athena uses to decrypt the data in S3, such as a KMS key. See Encryption Configuration below.
      * @return builder
      */
     def encryptionConfiguration(args: Endofunction[com.pulumi.aws.athena.inputs.DatabaseEncryptionConfigurationArgs.Builder]):
@@ -172,7 +172,7 @@ object athena:
       builder.aclConfiguration(args(argsBuilder).build)
 
     /**
-     * @param encryptionConfiguration Encryption key block AWS Athena uses to decrypt the data in S3, such as an AWS Key Management Service (AWS KMS) key. See Encryption Configuration below.
+     * @param encryptionConfiguration Encryption key block AWS Athena uses to decrypt the data in S3, such as a KMS key. See Encryption Configuration below.
      * @return builder
      */
     def encryptionConfiguration(args: Endofunction[com.pulumi.aws.athena.inputs.DatabaseEncryptionConfigurationArgs.Builder]):

@@ -112,6 +112,7 @@ export ko_pulumi.aws.bedrock.inputs
 export ko_pulumi.aws.bedrock.interceptor
 export ko_pulumi.aws.bedrock.interceptorConfigurations
 export ko_pulumi.aws.bedrock.intermediateStorage
+export ko_pulumi.aws.bedrock.invocationConfiguration
 export ko_pulumi.aws.bedrock.items
 export ko_pulumi.aws.bedrock.iterator
 export ko_pulumi.aws.bedrock.jwtPassthrough

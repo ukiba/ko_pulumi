@@ -1184,7 +1184,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyArgs.Builder)
     /**
-     * @param tls Transport Layer Security (TLS) client policy. See `spec.backend_defaults.client_policy.tls` Block for details.
+     * @param tls TLS client policy. See `spec.backend_defaults.client_policy.tls` Block for details.
      * @return builder
      */
     def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsArgs.Builder]):
@@ -1203,7 +1203,7 @@ object appmesh:
       builder.certificate(args(argsBuilder).build)
 
     /**
-     * @param validation Listener&#39;s Transport Layer Security (TLS) validation context.
+     * @param validation Listener&#39;s TLS validation context.
      * @return builder
      */
     def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationArgs.Builder]):
@@ -1228,7 +1228,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationArgs.Builder)
     /**
-     * @param subjectAlternativeNames SANs for a virtual gateway&#39;s listener&#39;s Transport Layer Security (TLS) validation context.
+     * @param subjectAlternativeNames SANs for a virtual gateway&#39;s listener&#39;s TLS validation context.
      * @return builder
      */
     def subjectAlternativeNames(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder]):
@@ -1308,7 +1308,7 @@ object appmesh:
       builder.portMapping(args(argsBuilder).build)
 
     /**
-     * @param tls Transport Layer Security (TLS) properties for the listener. See `spec.listener.tls` Block for details.
+     * @param tls TLS properties for the listener. See `spec.listener.tls` Block for details.
      * @return builder
      */
     def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsArgs.Builder]):
@@ -1355,7 +1355,7 @@ object appmesh:
       builder.certificate(args(argsBuilder).build)
 
     /**
-     * @param validation Listener&#39;s Transport Layer Security (TLS) validation context.
+     * @param validation Listener&#39;s TLS validation context.
      * @return builder
      */
     def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationArgs.Builder]):
@@ -1389,7 +1389,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationArgs.Builder)
     /**
-     * @param subjectAlternativeNames SANs for a virtual gateway&#39;s listener&#39;s Transport Layer Security (TLS) validation context.
+     * @param subjectAlternativeNames SANs for a virtual gateway&#39;s listener&#39;s TLS validation context.
      * @return builder
      */
     def subjectAlternativeNames(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesArgs.Builder]):
@@ -1549,7 +1549,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyArgs.Builder)
     /**
-     * @param tls Transport Layer Security (TLS) properties for the listener. See `spec.listener.tls` Block for details.
+     * @param tls TLS properties for the listener. See `spec.listener.tls` Block for details.
      * @return builder
      */
     def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsArgs.Builder]):
@@ -1568,7 +1568,7 @@ object appmesh:
       builder.certificate(args(argsBuilder).build)
 
     /**
-     * @param validation Listener&#39;s Transport Layer Security (TLS) validation context. See `spec.listener.tls.validation` Block for details.
+     * @param validation Listener&#39;s TLS validation context. See `spec.listener.tls.validation` Block for details.
      * @return builder
      */
     def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationArgs.Builder]):
@@ -1664,7 +1664,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyArgs.Builder)
     /**
-     * @param tls Transport Layer Security (TLS) properties for the listener. See `spec.listener.tls` Block for details.
+     * @param tls TLS properties for the listener. See `spec.listener.tls` Block for details.
      * @return builder
      */
     def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsArgs.Builder]):
@@ -1683,7 +1683,7 @@ object appmesh:
       builder.certificate(args(argsBuilder).build)
 
     /**
-     * @param validation Listener&#39;s Transport Layer Security (TLS) validation context. See `spec.listener.tls.validation` Block for details.
+     * @param validation Listener&#39;s TLS validation context. See `spec.listener.tls.validation` Block for details.
      * @return builder
      */
     def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationArgs.Builder]):
@@ -1814,7 +1814,7 @@ object appmesh:
       builder.timeout(args(argsBuilder).build)
 
     /**
-     * @param tls Transport Layer Security (TLS) properties for the listener. See `spec.listener.tls` Block for details.
+     * @param tls TLS properties for the listener. See `spec.listener.tls` Block for details.
      * @return builder
      */
     def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsArgs.Builder]):
@@ -1993,7 +1993,7 @@ object appmesh:
       builder.certificate(args(argsBuilder).build)
 
     /**
-     * @param validation Listener&#39;s Transport Layer Security (TLS) validation context. See `spec.listener.tls.validation` Block for details.
+     * @param validation Listener&#39;s TLS validation context. See `spec.listener.tls.validation` Block for details.
      * @return builder
      */
     def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationArgs.Builder]):

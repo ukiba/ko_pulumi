@@ -272,6 +272,18 @@ object pinpoint:
       val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationSnsDestinationArgs.builder
       builder.snsDestination(args(argsBuilder).build)
 
+  /**
+   * Manages an AWS End User Messaging SMS Keyword.
+   * 
+   * &gt; **Note:** The mandatory keywords `HELP` and `STOP` exist on every origination identity and cannot be created or deleted independently of it. For these mandatory keywords only, this resource adopts and manages the `keywordMessage` in place, while `keywordAction` is managed by AWS and cannot be set. Destroying a resource that manages a mandatory keyword does not delete or reset it in AWS; the keyword remains on the origination identity with its last-applied message. Non-mandatory keywords are created and deleted normally.
+   */
+  def Smsvoicev2Keyword(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.pinpoint.Smsvoicev2KeywordArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.pinpoint.Smsvoicev2KeywordArgs.builder
+    com.pulumi.aws.pinpoint.Smsvoicev2Keyword(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
   /** Manages an AWS End User Messaging SMS opt-out list. */
   def Smsvoicev2OptOutList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.Smsvoicev2OptOutListArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

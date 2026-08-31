@@ -150,7 +150,7 @@ object alb:
    * 
    * #### Required
    * 
-   * - `arn` (String) Amazon Resource Name (ARN) of the load balancer listener rule.
+   * - `arn` (String) ARN of the load balancer listener rule.
    * 
    * Using `pulumi import`, import rules using their ARN. For example:
    * 

@@ -604,7 +604,7 @@ object securityhub:
       builder.noteUpdatedBies(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param productArns The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub. Documented below.
+     * @param productArns ARN for a third-party product that generated a finding in Security Hub. Documented below.
      * @return builder
      */
     def productArns(args: Endofunction[com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaProductArnArgs.Builder]*):
@@ -649,7 +649,7 @@ object securityhub:
       builder.relatedFindingsProductArns(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param resourceApplicationArns The Amazon Resource Name (ARN) of the application that is related to a finding. Documented below.
+     * @param resourceApplicationArns ARN of the application that is related to a finding. Documented below.
      * @return builder
      */
     def resourceApplicationArns(args: Endofunction[com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaResourceApplicationArnArgs.Builder]*):
@@ -676,7 +676,7 @@ object securityhub:
       builder.resourceDetailsOthers(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param resourceIds The identifier for the given resource type. For AWS resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For AWS resources that lack ARNs, this is the identifier as defined by the AWS service that created the resource. For non-AWS resources, this is a unique identifier that is associated with the resource. Documented below.
+     * @param resourceIds Identifier for the given resource type. For AWS resources that are identified by ARNs, this is the ARN. For AWS resources that lack ARNs, this is the identifier as defined by the AWS service that created the resource. For non-AWS resources, this is a unique identifier that is associated with the resource. Documented below.
      * @return builder
      */
     def resourceIds(args: Endofunction[com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaResourceIdArgs.Builder]*):
@@ -1556,7 +1556,7 @@ object securityhub:
       builder.resourceAwsEc2InstanceIamInstanceProfileArns(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param resourceAwsEc2InstanceImageIds The Amazon Machine Image (AMI) ID of the instance. See String Filter below for more details.
+     * @param resourceAwsEc2InstanceImageIds AMI ID of the instance. See String Filter below for more details.
      * @return builder
      */
     def resourceAwsEc2InstanceImageIds(args: Endofunction[com.pulumi.aws.securityhub.inputs.InsightFiltersResourceAwsEc2InstanceImageIdArgs.Builder]*):

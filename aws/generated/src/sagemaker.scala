@@ -69,7 +69,7 @@ object sagemaker:
 
   extension (builder: com.pulumi.aws.sagemaker.AppArgs.Builder)
     /**
-     * @param resourceSpec The instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.See Resource Spec below.
+     * @param resourceSpec Instance type and the ARN of the SageMaker AI image created on the instance. See Resource Spec below.
      * @return builder
      */
     def resourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AppResourceSpecArgs.Builder]):
@@ -1936,7 +1936,7 @@ object sagemaker:
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.AppState.Builder)
     /**
-     * @param resourceSpec The instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.See Resource Spec below.
+     * @param resourceSpec Instance type and the ARN of the SageMaker AI image created on the instance. See Resource Spec below.
      * @return builder
      */
     def resourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AppResourceSpecArgs.Builder]):
@@ -2249,7 +2249,7 @@ object sagemaker:
       builder.customImages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsJupyterLabAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -2277,7 +2277,7 @@ object sagemaker:
       builder.codeRepositories(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsJupyterServerAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -2296,7 +2296,7 @@ object sagemaker:
       builder.customImages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsKernelGatewayAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -2531,7 +2531,7 @@ object sagemaker:
       builder.customImages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsCodeEditorAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -2588,7 +2588,7 @@ object sagemaker:
       builder.customImages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsJupyterLabAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -2616,7 +2616,7 @@ object sagemaker:
       builder.codeRepositories(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -2635,7 +2635,7 @@ object sagemaker:
       builder.customImages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -2654,7 +2654,7 @@ object sagemaker:
       builder.customImages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block above.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block above.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsRSessionAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -2674,7 +2674,7 @@ object sagemaker:
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsTensorBoardAppSettingsArgs.Builder)
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -2712,7 +2712,7 @@ object sagemaker:
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDomainSettingsRStudioServerProDomainSettingsArgs.Builder)
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block above.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block above.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.DomainDomainSettingsRStudioServerProDomainSettingsDefaultResourceSpecArgs.Builder]):
@@ -3849,7 +3849,7 @@ object sagemaker:
       builder.additionalModelDataSources(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param imageConfig Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon Virtual Private Cloud (VPC). For more information see [Using a Private Docker Registry for Real-Time Inference Containers](https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html). see Image Config.
+     * @param imageConfig Whether the model container is in Amazon ECR or a private Docker registry accessible from your VPC. For more information see [Using a Private Docker Registry for Real-Time Inference Containers](https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html). see Image Config.
      * @return builder
      */
     def imageConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.ModelContainerImageConfigArgs.Builder]):
@@ -3936,7 +3936,7 @@ object sagemaker:
       builder.additionalModelDataSources(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param imageConfig Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon Virtual Private Cloud (VPC). For more information see [Using a Private Docker Registry for Real-Time Inference Containers](https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html). see Image Config.
+     * @param imageConfig Whether the model container is in Amazon ECR or a private Docker registry accessible from your VPC. For more information see [Using a Private Docker Registry for Real-Time Inference Containers](https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html). see Image Config.
      * @return builder
      */
     def imageConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerImageConfigArgs.Builder]):
@@ -4346,7 +4346,7 @@ object sagemaker:
       builder.appLifecycleManagement(args(argsBuilder).build)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. See `defaultResourceSpec` Block below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. See `defaultResourceSpec` Block below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsCodeEditorAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -4394,7 +4394,7 @@ object sagemaker:
       builder.codeRepositories(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. See `defaultResourceSpec` Block below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. See `defaultResourceSpec` Block below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsJupyterLabAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -4413,7 +4413,7 @@ object sagemaker:
       builder.codeRepositories(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. See `defaultResourceSpec` Block below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. See `defaultResourceSpec` Block below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsJupyterServerAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -4432,7 +4432,7 @@ object sagemaker:
       builder.customImages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. See `defaultResourceSpec` Block below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. See `defaultResourceSpec` Block below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsKernelGatewayAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -5014,7 +5014,7 @@ object sagemaker:
       builder.customImages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see Default Resource Spec below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. see Default Resource Spec below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsCodeEditorAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -5067,7 +5067,7 @@ object sagemaker:
       builder.customImages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see Default Resource Spec below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. see Default Resource Spec below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsJupyterLabAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -5095,7 +5095,7 @@ object sagemaker:
       builder.codeRepositories(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see Default Resource Spec below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. see Default Resource Spec below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -5114,7 +5114,7 @@ object sagemaker:
       builder.customImages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see Default Resource Spec below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. see Default Resource Spec below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -5133,7 +5133,7 @@ object sagemaker:
       builder.customImages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see Default Resource Spec below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. see Default Resource Spec below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsRSessionAppSettingsDefaultResourceSpecArgs.Builder]):
@@ -5153,7 +5153,7 @@ object sagemaker:
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsTensorBoardAppSettingsArgs.Builder)
     /**
-     * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see Default Resource Spec below.
+     * @param defaultResourceSpec Default instance type and the ARN of the SageMaker AI image created on the instance. see Default Resource Spec below.
      * @return builder
      */
     def defaultResourceSpec(args: Endofunction[com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecArgs.Builder]):

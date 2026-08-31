@@ -320,6 +320,26 @@ object workspaces:
       val argsBuilder = com.pulumi.aws.workspaces.inputs.DirectoryWorkspaceCreationPropertiesArgs.builder
       builder.workspaceCreationProperties(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.workspaces.inputs.DirectoryWorkspaceAccessPropertiesAccessEndpointConfigArgs.Builder)
+    /**
+     * @param accessEndpoints Set of access endpoints used to control the network paths that users use to access their WorkSpaces. Defined below.
+     * @return builder
+     */
+    def accessEndpoints(args: Endofunction[com.pulumi.aws.workspaces.inputs.DirectoryWorkspaceAccessPropertiesAccessEndpointConfigAccessEndpointArgs.Builder]*):
+        com.pulumi.aws.workspaces.inputs.DirectoryWorkspaceAccessPropertiesAccessEndpointConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.workspaces.inputs.DirectoryWorkspaceAccessPropertiesAccessEndpointConfigAccessEndpointArgs.builder
+      builder.accessEndpoints(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.workspaces.inputs.DirectoryWorkspaceAccessPropertiesArgs.Builder)
+    /**
+     * @param accessEndpointConfig Configuration for accessing WorkSpaces through VPC endpoints instead of the public internet. Defined below.
+     * @return builder
+     */
+    def accessEndpointConfig(args: Endofunction[com.pulumi.aws.workspaces.inputs.DirectoryWorkspaceAccessPropertiesAccessEndpointConfigArgs.Builder]):
+        com.pulumi.aws.workspaces.inputs.DirectoryWorkspaceAccessPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.aws.workspaces.inputs.DirectoryWorkspaceAccessPropertiesAccessEndpointConfigArgs.builder
+      builder.accessEndpointConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.workspaces.inputs.IpGroupState.Builder)
     /**
      * @param rules One or more pairs specifying the IP group rule (in CIDR format) from which web requests originate.

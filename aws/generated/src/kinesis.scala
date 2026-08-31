@@ -152,7 +152,7 @@ object kinesis:
       builder.icebergConfiguration(args(argsBuilder).build)
 
     /**
-     * @param kinesisSourceConfiguration The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream. See `kinesisSourceConfiguration` block below for details.
+     * @param kinesisSourceConfiguration Stream and role ARNs for a Kinesis data stream used as the source for a delivery stream. See `kinesisSourceConfiguration` block below for details.
      * @return builder
      */
     def kinesisSourceConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamKinesisSourceConfigurationArgs.Builder]):
@@ -1459,7 +1459,7 @@ object kinesis:
       builder.icebergConfiguration(args(argsBuilder).build)
 
     /**
-     * @param kinesisSourceConfiguration The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream. See `kinesisSourceConfiguration` block below for details.
+     * @param kinesisSourceConfiguration Stream and role ARNs for a Kinesis data stream used as the source for a delivery stream. See `kinesisSourceConfiguration` block below for details.
      * @return builder
      */
     def kinesisSourceConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamKinesisSourceConfigurationArgs.Builder]):

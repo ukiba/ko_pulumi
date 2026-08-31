@@ -1338,7 +1338,7 @@ object ecs:
       builder.timeout(args(argsBuilder).build)
 
     /**
-     * @param tls Configuration for enabling Transport Layer Security (TLS)
+     * @param tls Configuration for enabling TLS
      * @return builder
      */
     def tls(args: Endofunction[com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationServiceTlsArgs.Builder]):

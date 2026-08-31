@@ -160,7 +160,7 @@ object inspector2:
       builder.componentTypes(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param ec2InstanceImageIds (Optional) The ID of the Amazon Machine Image (AMI). Documented below.
+     * @param ec2InstanceImageIds (Optional) ID of the AMI. Documented below.
      * @return builder
      */
     def ec2InstanceImageIds(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEc2InstanceImageIdArgs.Builder]*):

@@ -32,7 +32,7 @@ object ec2:
 
   /**
    * The AMI resource allows the creation and management of a completely-custom
-   * *Amazon Machine Image* (AMI).
+   * AMI.
    * 
    * If you just want to duplicate an existing AMI, possibly copying it to another
    * region, it&#39;s better to use `aws.ec2.AmiCopy` instead.
@@ -79,7 +79,7 @@ object ec2:
       builder.ephemeralBlockDevices(args.map(_(argsBuilder).build)*)
 
   /**
-   * The &#34;AMI copy&#34; resource allows duplication of an Amazon Machine Image (AMI),
+   * The &#34;AMI copy&#34; resource allows duplication of an AMI,
    * including cross-region copies.
    * 
    * If the source AMI has associated EBS snapshots, those will also be duplicated
@@ -186,7 +186,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.AmiFromInstanceEphemeralBlockDeviceArgs.builder
       builder.ephemeralBlockDevices(args.map(_(argsBuilder).build)*)
 
-  /** Adds a launch permission to an Amazon Machine Image (AMI). */
+  /** Adds a launch permission to an AMI. */
   def AmiLaunchPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2.AmiLaunchPermissionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.AmiLaunchPermissionArgs.builder
@@ -293,7 +293,7 @@ object ec2:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  /** Resource for managing an AWS EC2 (Elastic Compute Cloud) Default Credit Specification. */
+  /** Resource for managing an AWS EC2 Default Credit Specification. */
   def DefaultCreditSpecification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2.DefaultCreditSpecificationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.DefaultCreditSpecificationArgs.builder
@@ -1229,7 +1229,7 @@ object ec2:
     /**
      * &gt; There is only a single spot data feed subscription per account.
      * 
-     * Data source for accessing an AWS EC2 (Elastic Compute Cloud) spot data feed subscription.
+     * Data source for accessing an AWS EC2 spot data feed subscription.
      */
     inline def getSpotDatafeedSubscription(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSpotDatafeedSubscriptionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetSpotDatafeedSubscriptionResult] =
@@ -1239,7 +1239,7 @@ object ec2:
     /**
      * &gt; There is only a single spot data feed subscription per account.
      * 
-     * Data source for accessing an AWS EC2 (Elastic Compute Cloud) spot data feed subscription.
+     * Data source for accessing an AWS EC2 spot data feed subscription.
      */
     inline def getSpotDatafeedSubscriptionPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSpotDatafeedSubscriptionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetSpotDatafeedSubscriptionResult] =
@@ -1528,13 +1528,13 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcsPlain(args(argsBuilder).build)
 
-    /** Fetches details of a Site-to-Site VPN connection. A Site-to-Site VPN connection is an Internet Protocol security (IPsec) VPN connection between a VPC and an on-premises network. */
+    /** Fetches details of a Site-to-Site VPN connection. A Site-to-Site VPN connection is an IP security (IPsec) VPN connection between a VPC and an on-premises network. */
     inline def getVpnConnection(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpnConnectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpnConnectionResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpnConnectionArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpnConnection(args(argsBuilder).build)
 
-    /** Fetches details of a Site-to-Site VPN connection. A Site-to-Site VPN connection is an Internet Protocol security (IPsec) VPN connection between a VPC and an on-premises network. */
+    /** Fetches details of a Site-to-Site VPN connection. A Site-to-Site VPN connection is an IP security (IPsec) VPN connection between a VPC and an on-premises network. */
     inline def getVpnConnectionPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpnConnectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpnConnectionResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpnConnectionPlainArgs.builder
@@ -3323,7 +3323,7 @@ object ec2:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  /** Resource for managing an AWS EC2 (Elastic Compute Cloud) VPC Block Public Access Exclusion. */
+  /** Resource for managing an AWS EC2 VPC Block Public Access Exclusion. */
   def VpcBlockPublicAccessExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcBlockPublicAccessExclusionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcBlockPublicAccessExclusionArgs.builder
@@ -3851,7 +3851,7 @@ object ec2:
       builder.requester(args(argsBuilder).build)
 
   /**
-   * Resource for managing an exclusive set of AWS VPC (Virtual Private Cloud) Security Group Rules.
+   * Resource for managing an exclusive set of AWS VPC Security Group Rules.
    * 
    * This resource manages the complete set of ingress and egress rules assigned to a security group. It provides exclusive control by removing any rules not explicitly defined in the configuration.
    * 
@@ -3884,7 +3884,7 @@ object ec2:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
-   * Manages a Site-to-Site VPN connection. A Site-to-Site VPN connection is an Internet Protocol security (IPsec) VPN connection between a VPC and an on-premises network.
+   * Manages a Site-to-Site VPN connection. A Site-to-Site VPN connection is an IP security (IPsec) VPN connection between a VPC and an on-premises network.
    * Any new Site-to-Site VPN connection that you create is an [AWS VPN connection](https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-categories.html).
    * 
    * &gt; **Note:** The CIDR blocks in the arguments `tunnel1InsideCidr` and `tunnel2InsideCidr` must have a prefix of /30 and be a part of a specific range.
@@ -4925,7 +4925,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcArgs.Builder)
     /**
-     * @param filters Custom filter block as described below.
+     * @param filters Custom filter block as described below. See `filter` Block below.
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcFilterArgs.Builder]*):

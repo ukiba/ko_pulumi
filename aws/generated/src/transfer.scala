@@ -161,7 +161,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.ServerArgs.Builder)
     /**
-     * @param endpointDetails Virtual private cloud (VPC) endpoint settings that you want to configure for your SFTP server. See `endpointDetails` Block below for details.
+     * @param endpointDetails VPC endpoint settings that you want to configure for your SFTP server. See `endpointDetails` Block below for details.
      * @return builder
      */
     def endpointDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.ServerEndpointDetailsArgs.Builder]):
@@ -439,7 +439,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.ServerState.Builder)
     /**
-     * @param endpointDetails Virtual private cloud (VPC) endpoint settings that you want to configure for your SFTP server. See `endpointDetails` Block below for details.
+     * @param endpointDetails VPC endpoint settings that you want to configure for your SFTP server. See `endpointDetails` Block below for details.
      * @return builder
      */
     def endpointDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.ServerEndpointDetailsArgs.Builder]):

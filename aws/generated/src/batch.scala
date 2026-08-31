@@ -239,7 +239,7 @@ object batch:
 
   extension (builder: com.pulumi.aws.batch.inputs.ComputeEnvironmentComputeResourcesArgs.Builder)
     /**
-     * @param ec2Configurations Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If Ec2Configuration isn&#39;t specified, the default is ECS_AL2. This parameter isn&#39;t applicable to jobs that are running on Fargate resources, and shouldn&#39;t be specified.
+     * @param ec2Configurations Provides information used to select AMIs for EC2 instances in the compute environment. If Ec2Configuration isn&#39;t specified, the default is ECS_AL2. This parameter isn&#39;t applicable to jobs that are running on Fargate resources, and shouldn&#39;t be specified.
      * @return builder
      */
     def ec2Configurations(args: Endofunction[com.pulumi.aws.batch.inputs.ComputeEnvironmentComputeResourcesEc2ConfigurationArgs.Builder]*):

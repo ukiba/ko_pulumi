@@ -22,7 +22,7 @@ object sesv2:
 
   extension (builder: com.pulumi.aws.sesv2.AccountVdmAttributesArgs.Builder)
     /**
-     * @param dashboardAttributes Specifies additional settings for your VDM configuration as applicable to the Dashboard.
+     * @param dashboardAttributes Additional settings for your VDM configuration as applicable to the Dashboard.
      * @return builder
      */
     def dashboardAttributes(args: Endofunction[com.pulumi.aws.sesv2.inputs.AccountVdmAttributesDashboardAttributesArgs.Builder]):
@@ -31,7 +31,7 @@ object sesv2:
       builder.dashboardAttributes(args(argsBuilder).build)
 
     /**
-     * @param guardianAttributes Specifies additional settings for your VDM configuration as applicable to the Guardian.
+     * @param guardianAttributes Additional settings for your VDM configuration as applicable to the Guardian.
      * @return builder
      */
     def guardianAttributes(args: Endofunction[com.pulumi.aws.sesv2.inputs.AccountVdmAttributesGuardianAttributesArgs.Builder]):
@@ -56,7 +56,7 @@ object sesv2:
 
   extension (builder: com.pulumi.aws.sesv2.ConfigurationSetArgs.Builder)
     /**
-     * @param deliveryOptions An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set. See `deliveryOptions` Block for details.
+     * @param deliveryOptions Object that defines the dedicated IP pool that is used to send emails that you send using the configuration set. See `deliveryOptions` Block for details.
      * @return builder
      */
     def deliveryOptions(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetDeliveryOptionsArgs.Builder]):
@@ -65,7 +65,7 @@ object sesv2:
       builder.deliveryOptions(args(argsBuilder).build)
 
     /**
-     * @param reputationOptions An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set. See `reputationOptions` Block for details.
+     * @param reputationOptions Object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set. See `reputationOptions` Block for details.
      * @return builder
      */
     def reputationOptions(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetReputationOptionsArgs.Builder]):
@@ -74,7 +74,7 @@ object sesv2:
       builder.reputationOptions(args(argsBuilder).build)
 
     /**
-     * @param sendingOptions An object that defines whether or not Amazon SES can send email that you send using the configuration set. See `sendingOptions` Block for details.
+     * @param sendingOptions Object that defines whether or not Amazon SES can send email that you send using the configuration set. See `sendingOptions` Block for details.
      * @return builder
      */
     def sendingOptions(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetSendingOptionsArgs.Builder]):
@@ -83,7 +83,7 @@ object sesv2:
       builder.sendingOptions(args(argsBuilder).build)
 
     /**
-     * @param suppressionOptions An object that contains information about the suppression list preferences for your account. See `suppressionOptions` Block for details.
+     * @param suppressionOptions Object that contains information about the suppression list preferences for your account. See `suppressionOptions` Block for details.
      * @return builder
      */
     def suppressionOptions(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetSuppressionOptionsArgs.Builder]):
@@ -92,7 +92,7 @@ object sesv2:
       builder.suppressionOptions(args(argsBuilder).build)
 
     /**
-     * @param trackingOptions An object that defines the open and click tracking options for emails that you send using the configuration set. See `trackingOptions` Block for details.
+     * @param trackingOptions Object that defines the open and click tracking options for emails that you send using the configuration set. See `trackingOptions` Block for details.
      * @return builder
      */
     def trackingOptions(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetTrackingOptionsArgs.Builder]):
@@ -101,7 +101,7 @@ object sesv2:
       builder.trackingOptions(args(argsBuilder).build)
 
     /**
-     * @param vdmOptions An object that defines the VDM settings that apply to emails that you send using the configuration set. See `vdmOptions` Block for details.
+     * @param vdmOptions Object that defines the VDM settings that apply to emails that you send using the configuration set. See `vdmOptions` Block for details.
      * @return builder
      */
     def vdmOptions(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetVdmOptionsArgs.Builder]):
@@ -119,7 +119,7 @@ object sesv2:
 
   extension (builder: com.pulumi.aws.sesv2.ConfigurationSetEventDestinationArgs.Builder)
     /**
-     * @param eventDestination An object that defines the event destination. See `eventDestination` Block for details.
+     * @param eventDestination Object that defines the event destination. See `eventDestination` Block for details.
      * @return builder
      */
     def eventDestination(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationArgs.Builder]):
@@ -196,7 +196,7 @@ object sesv2:
 
   extension (builder: com.pulumi.aws.sesv2.EmailIdentityArgs.Builder)
     /**
-     * @param dkimSigningAttributes The configuration of the DKIM authentication settings for an email domain identity.
+     * @param dkimSigningAttributes Configuration block for the DKIM authentication settings for an email domain identity. See `dkimSigningAttributes` Block below.
      * @return builder
      */
     def dkimSigningAttributes(args: Endofunction[com.pulumi.aws.sesv2.inputs.EmailIdentityDkimSigningAttributesArgs.Builder]):
@@ -227,6 +227,36 @@ object sesv2:
     com.pulumi.aws.sesv2.EmailIdentityPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /** Manages an AWS SESv2 (Simple Email V2) Multi Region Endpoint (global endpoint). Traffic is split equally between the primary region (where the resource is created) and the secondary region specified in the `details` block. */
+  def MultiRegionEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.sesv2.MultiRegionEndpointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.sesv2.MultiRegionEndpointArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.sesv2.MultiRegionEndpoint(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.sesv2.MultiRegionEndpointArgs.Builder)
+    /**
+     * @param details Configuration details for the endpoint. See `details` Block below.
+     * @return builder
+     */
+    def details(args: Endofunction[com.pulumi.aws.sesv2.inputs.MultiRegionEndpointDetailsArgs.Builder]):
+        com.pulumi.aws.sesv2.MultiRegionEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sesv2.inputs.MultiRegionEndpointDetailsArgs.builder
+      builder.details(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.sesv2.inputs.MultiRegionEndpointTimeoutsArgs.Builder]):
+        com.pulumi.aws.sesv2.MultiRegionEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sesv2.inputs.MultiRegionEndpointTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   object Sesv2Functions:
     // Pulumi methods are reproduced as Scala methods.
@@ -308,7 +338,7 @@ object sesv2:
 
   extension (builder: com.pulumi.aws.sesv2.inputs.AccountVdmAttributesState.Builder)
     /**
-     * @param dashboardAttributes Specifies additional settings for your VDM configuration as applicable to the Dashboard.
+     * @param dashboardAttributes Additional settings for your VDM configuration as applicable to the Dashboard.
      * @return builder
      */
     def dashboardAttributes(args: Endofunction[com.pulumi.aws.sesv2.inputs.AccountVdmAttributesDashboardAttributesArgs.Builder]):
@@ -317,7 +347,7 @@ object sesv2:
       builder.dashboardAttributes(args(argsBuilder).build)
 
     /**
-     * @param guardianAttributes Specifies additional settings for your VDM configuration as applicable to the Guardian.
+     * @param guardianAttributes Additional settings for your VDM configuration as applicable to the Guardian.
      * @return builder
      */
     def guardianAttributes(args: Endofunction[com.pulumi.aws.sesv2.inputs.AccountVdmAttributesGuardianAttributesArgs.Builder]):
@@ -327,7 +357,7 @@ object sesv2:
 
   extension (builder: com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationArgs.Builder)
     /**
-     * @param cloudWatchDestination An object that defines an Amazon CloudWatch destination for email events. See `cloudWatchDestination` Block for details.
+     * @param cloudWatchDestination Object that defines an Amazon CloudWatch destination for email events. See `cloudWatchDestination` Block for details.
      * @return builder
      */
     def cloudWatchDestination(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationCloudWatchDestinationArgs.Builder]):
@@ -336,7 +366,7 @@ object sesv2:
       builder.cloudWatchDestination(args(argsBuilder).build)
 
     /**
-     * @param eventBridgeDestination An object that defines an Amazon EventBridge destination for email events. You can use Amazon EventBridge to send notifications when certain email events occur. See `eventBridgeDestination` Block for details.
+     * @param eventBridgeDestination Object that defines an Amazon EventBridge destination for email events. You can use Amazon EventBridge to send notifications when certain email events occur. See `eventBridgeDestination` Block for details.
      * @return builder
      */
     def eventBridgeDestination(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationEventBridgeDestinationArgs.Builder]):
@@ -345,7 +375,7 @@ object sesv2:
       builder.eventBridgeDestination(args(argsBuilder).build)
 
     /**
-     * @param kinesisFirehoseDestination An object that defines an Amazon Kinesis Data Firehose destination for email events. See `kinesisFirehoseDestination` Block for details.
+     * @param kinesisFirehoseDestination Object that defines an Amazon Kinesis Data Firehose destination for email events. See `kinesisFirehoseDestination` Block for details.
      * @return builder
      */
     def kinesisFirehoseDestination(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationKinesisFirehoseDestinationArgs.Builder]):
@@ -354,7 +384,7 @@ object sesv2:
       builder.kinesisFirehoseDestination(args(argsBuilder).build)
 
     /**
-     * @param pinpointDestination An object that defines an AWS End User Messaging project destination for email events. See `pinpointDestination` Block for details.
+     * @param pinpointDestination Object that defines an AWS End User Messaging project destination for email events. See `pinpointDestination` Block for details.
      * @return builder
      */
     def pinpointDestination(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationPinpointDestinationArgs.Builder]):
@@ -363,7 +393,7 @@ object sesv2:
       builder.pinpointDestination(args(argsBuilder).build)
 
     /**
-     * @param snsDestination An object that defines an Amazon SNS destination for email events. See `snsDestination` Block for details.
+     * @param snsDestination Object that defines an Amazon SNS destination for email events. See `snsDestination` Block for details.
      * @return builder
      */
     def snsDestination(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationSnsDestinationArgs.Builder]):
@@ -373,7 +403,7 @@ object sesv2:
 
   extension (builder: com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationCloudWatchDestinationArgs.Builder)
     /**
-     * @param dimensionConfigurations An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch. See `dimensionConfiguration` Block for details.
+     * @param dimensionConfigurations Array of objects that define the dimensions to use when you send email events to Amazon CloudWatch. See `dimensionConfiguration` Block for details.
      * @return builder
      */
     def dimensionConfigurations(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationCloudWatchDestinationDimensionConfigurationArgs.Builder]*):
@@ -383,7 +413,7 @@ object sesv2:
 
   extension (builder: com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationState.Builder)
     /**
-     * @param eventDestination An object that defines the event destination. See `eventDestination` Block for details.
+     * @param eventDestination Object that defines the event destination. See `eventDestination` Block for details.
      * @return builder
      */
     def eventDestination(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationArgs.Builder]):
@@ -393,7 +423,7 @@ object sesv2:
 
   extension (builder: com.pulumi.aws.sesv2.inputs.ConfigurationSetState.Builder)
     /**
-     * @param deliveryOptions An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set. See `deliveryOptions` Block for details.
+     * @param deliveryOptions Object that defines the dedicated IP pool that is used to send emails that you send using the configuration set. See `deliveryOptions` Block for details.
      * @return builder
      */
     def deliveryOptions(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetDeliveryOptionsArgs.Builder]):
@@ -402,7 +432,7 @@ object sesv2:
       builder.deliveryOptions(args(argsBuilder).build)
 
     /**
-     * @param reputationOptions An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set. See `reputationOptions` Block for details.
+     * @param reputationOptions Object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set. See `reputationOptions` Block for details.
      * @return builder
      */
     def reputationOptions(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetReputationOptionsArgs.Builder]):
@@ -411,7 +441,7 @@ object sesv2:
       builder.reputationOptions(args(argsBuilder).build)
 
     /**
-     * @param sendingOptions An object that defines whether or not Amazon SES can send email that you send using the configuration set. See `sendingOptions` Block for details.
+     * @param sendingOptions Object that defines whether or not Amazon SES can send email that you send using the configuration set. See `sendingOptions` Block for details.
      * @return builder
      */
     def sendingOptions(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetSendingOptionsArgs.Builder]):
@@ -420,7 +450,7 @@ object sesv2:
       builder.sendingOptions(args(argsBuilder).build)
 
     /**
-     * @param suppressionOptions An object that contains information about the suppression list preferences for your account. See `suppressionOptions` Block for details.
+     * @param suppressionOptions Object that contains information about the suppression list preferences for your account. See `suppressionOptions` Block for details.
      * @return builder
      */
     def suppressionOptions(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetSuppressionOptionsArgs.Builder]):
@@ -429,7 +459,7 @@ object sesv2:
       builder.suppressionOptions(args(argsBuilder).build)
 
     /**
-     * @param trackingOptions An object that defines the open and click tracking options for emails that you send using the configuration set. See `trackingOptions` Block for details.
+     * @param trackingOptions Object that defines the open and click tracking options for emails that you send using the configuration set. See `trackingOptions` Block for details.
      * @return builder
      */
     def trackingOptions(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetTrackingOptionsArgs.Builder]):
@@ -438,7 +468,7 @@ object sesv2:
       builder.trackingOptions(args(argsBuilder).build)
 
     /**
-     * @param vdmOptions An object that defines the VDM settings that apply to emails that you send using the configuration set. See `vdmOptions` Block for details.
+     * @param vdmOptions Object that defines the VDM settings that apply to emails that you send using the configuration set. See `vdmOptions` Block for details.
      * @return builder
      */
     def vdmOptions(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetVdmOptionsArgs.Builder]):
@@ -448,7 +478,7 @@ object sesv2:
 
   extension (builder: com.pulumi.aws.sesv2.inputs.ConfigurationSetVdmOptionsArgs.Builder)
     /**
-     * @param dashboardOptions Specifies additional settings for your VDM configuration as applicable to the Dashboard. See `dashboardOptions` Block for details.
+     * @param dashboardOptions Additional settings for your VDM configuration as applicable to the Dashboard. See `dashboardOptions` Block for details.
      * @return builder
      */
     def dashboardOptions(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetVdmOptionsDashboardOptionsArgs.Builder]):
@@ -457,7 +487,7 @@ object sesv2:
       builder.dashboardOptions(args(argsBuilder).build)
 
     /**
-     * @param guardianOptions Specifies additional settings for your VDM configuration as applicable to the Guardian. See `guardianOptions` Block for details.
+     * @param guardianOptions Additional settings for your VDM configuration as applicable to the Guardian. See `guardianOptions` Block for details.
      * @return builder
      */
     def guardianOptions(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetVdmOptionsGuardianOptionsArgs.Builder]):
@@ -477,10 +507,44 @@ object sesv2:
 
   extension (builder: com.pulumi.aws.sesv2.inputs.EmailIdentityState.Builder)
     /**
-     * @param dkimSigningAttributes The configuration of the DKIM authentication settings for an email domain identity.
+     * @param dkimSigningAttributes Configuration block for the DKIM authentication settings for an email domain identity. See `dkimSigningAttributes` Block below.
      * @return builder
      */
     def dkimSigningAttributes(args: Endofunction[com.pulumi.aws.sesv2.inputs.EmailIdentityDkimSigningAttributesArgs.Builder]):
         com.pulumi.aws.sesv2.inputs.EmailIdentityState.Builder =
       val argsBuilder = com.pulumi.aws.sesv2.inputs.EmailIdentityDkimSigningAttributesArgs.builder
       builder.dkimSigningAttributes(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sesv2.inputs.MultiRegionEndpointDetailsArgs.Builder)
+    /**
+     * @param routesDetails Secondary region route configuration. See `routesDetails` Block below.
+     * @return builder
+     */
+    def routesDetails(args: Endofunction[com.pulumi.aws.sesv2.inputs.MultiRegionEndpointDetailsRoutesDetailsArgs.Builder]):
+        com.pulumi.aws.sesv2.inputs.MultiRegionEndpointDetailsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sesv2.inputs.MultiRegionEndpointDetailsRoutesDetailsArgs.builder
+      builder.routesDetails(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sesv2.inputs.MultiRegionEndpointState.Builder)
+    /**
+     * @param details Configuration details for the endpoint. See `details` Block below.
+     * @return builder
+     */
+    def details(args: Endofunction[com.pulumi.aws.sesv2.inputs.MultiRegionEndpointDetailsArgs.Builder]):
+        com.pulumi.aws.sesv2.inputs.MultiRegionEndpointState.Builder =
+      val argsBuilder = com.pulumi.aws.sesv2.inputs.MultiRegionEndpointDetailsArgs.builder
+      builder.details(args(argsBuilder).build)
+
+    /**
+     * @param routes List of active routes. See `routes` below.
+     * @return builder
+     */
+    def routes(args: Endofunction[com.pulumi.aws.sesv2.inputs.MultiRegionEndpointRouteArgs.Builder]*):
+        com.pulumi.aws.sesv2.inputs.MultiRegionEndpointState.Builder =
+      def argsBuilder = com.pulumi.aws.sesv2.inputs.MultiRegionEndpointRouteArgs.builder
+      builder.routes(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.sesv2.inputs.MultiRegionEndpointTimeoutsArgs.Builder]):
+        com.pulumi.aws.sesv2.inputs.MultiRegionEndpointState.Builder =
+      val argsBuilder = com.pulumi.aws.sesv2.inputs.MultiRegionEndpointTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)

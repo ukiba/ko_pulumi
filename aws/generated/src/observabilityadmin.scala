@@ -327,6 +327,15 @@ object observabilityadmin:
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationLogsEncryptionConfigurationArgs.builder
       builder.logsEncryptionConfiguration(args(argsBuilder).build)
 
+    /**
+     * @param tagPropagationConfiguration Configuration block for propagating source resource tags to centralized destination log groups. See `tagPropagationConfiguration` below.
+     * @return builder
+     */
+    def tagPropagationConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationTagPropagationConfigurationArgs.Builder]):
+        com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationTagPropagationConfigurationArgs.builder
+      builder.tagPropagationConfiguration(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationMetricsConfigurationArgs.Builder)
     /**
      * @param backupConfiguration Configuration block for metrics backup settings. See `destinationMetricsBackupConfiguration` below.

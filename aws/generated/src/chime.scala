@@ -42,7 +42,7 @@ object chime:
 
   extension (builder: com.pulumi.aws.chime.SdkvoiceSipMediaApplicationArgs.Builder)
     /**
-     * @param endpoints List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported. See `endpoints`.
+     * @param endpoints List of endpoints (Lambda ARNs) specified for the SIP media application. Currently, only one endpoint is supported. See `endpoints`.
      * @return builder
      */
     def endpoints(args: Endofunction[com.pulumi.aws.chime.inputs.SdkvoiceSipMediaApplicationEndpointsArgs.Builder]):
@@ -231,7 +231,7 @@ object chime:
 
   extension (builder: com.pulumi.aws.chime.inputs.SdkvoiceSipMediaApplicationState.Builder)
     /**
-     * @param endpoints List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported. See `endpoints`.
+     * @param endpoints List of endpoints (Lambda ARNs) specified for the SIP media application. Currently, only one endpoint is supported. See `endpoints`.
      * @return builder
      */
     def endpoints(args: Endofunction[com.pulumi.aws.chime.inputs.SdkvoiceSipMediaApplicationEndpointsArgs.Builder]):

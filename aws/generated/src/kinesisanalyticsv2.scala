@@ -283,7 +283,7 @@ object kinesisanalyticsv2:
       builder.kinesisFirehoseInput(args(argsBuilder).build)
 
     /**
-     * @param kinesisStreamsInput If the streaming source is a Kinesis data stream, identifies the stream&#39;s Amazon Resource Name (ARN).
+     * @param kinesisStreamsInput If the streaming source is a Kinesis data stream, identifies the stream&#39;s ARN.
      * @return builder
      */
     def kinesisStreamsInput(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInputArgs.Builder]):

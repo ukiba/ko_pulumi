@@ -234,6 +234,7 @@ export ko_pulumi.aws.bedrock.samplingConfig
 export ko_pulumi.aws.bedrock.secretsManager
 export ko_pulumi.aws.bedrock.seedUrls
 export ko_pulumi.aws.bedrock.segmentationConfiguration
+export ko_pulumi.aws.bedrock.selfManagedConfiguration
 export ko_pulumi.aws.bedrock.selfManagedLatticeResource
 export ko_pulumi.aws.bedrock.semanticChunkingConfiguration
 export ko_pulumi.aws.bedrock.sensitiveInformationPolicyConfig
@@ -259,6 +260,8 @@ export ko_pulumi.aws.bedrock.storageConfiguration
 export ko_pulumi.aws.bedrock.storageLocations
 export ko_pulumi.aws.bedrock.streamDeliveryResources
 export ko_pulumi.aws.bedrock.streamingConfiguration
+export ko_pulumi.aws.bedrock.stringListValidation
+export ko_pulumi.aws.bedrock.stringValidation
 export ko_pulumi.aws.bedrock.summarizations
 export ko_pulumi.aws.bedrock.supplementalDataStorageConfiguration
 export ko_pulumi.aws.bedrock.systemPrompts
@@ -268,7 +271,11 @@ export ko_pulumi.aws.bedrock.targetConfiguration
 export ko_pulumi.aws.bedrock.templateConfiguration
 export ko_pulumi.aws.bedrock.text
 export ko_pulumi.aws.bedrock.tierConfigs
+export ko_pulumi.aws.bedrock.timeBasedTrigger
+export ko_pulumi.aws.bedrock.timeBasedTriggers
 export ko_pulumi.aws.bedrock.timeouts
+export ko_pulumi.aws.bedrock.tokenBasedTrigger
+export ko_pulumi.aws.bedrock.tokenBasedTriggers
 export ko_pulumi.aws.bedrock.tool
 export ko_pulumi.aws.bedrock.toolChoice
 export ko_pulumi.aws.bedrock.toolConfiguration
@@ -285,6 +292,8 @@ export ko_pulumi.aws.bedrock.trainingMetrics
 export ko_pulumi.aws.bedrock.transformation
 export ko_pulumi.aws.bedrock.transformationFunction
 export ko_pulumi.aws.bedrock.transformationLambdaConfiguration
+export ko_pulumi.aws.bedrock.triggerConditions
+export ko_pulumi.aws.bedrock.triggerConditionsActuals
 export ko_pulumi.aws.bedrock.truncations
 export ko_pulumi.aws.bedrockfoundation.timeouts
 export ko_pulumi.aws.bedrockmodel.s3Config
@@ -1027,6 +1036,7 @@ export ko_pulumi.aws.observabilityadmin.singleHeader
 export ko_pulumi.aws.observabilityadmin.source
 export ko_pulumi.aws.observabilityadmin.sourceLogsConfiguration
 export ko_pulumi.aws.observabilityadmin.sourceMetricsConfiguration
+export ko_pulumi.aws.observabilityadmin.tagPropagationConfiguration
 export ko_pulumi.aws.observabilityadmin.timeouts
 export ko_pulumi.aws.odb.s3Accesses
 export ko_pulumi.aws.odb.serviceNetworkEndpoints
@@ -1374,9 +1384,12 @@ export ko_pulumi.aws.ses.stopActions
 export ko_pulumi.aws.ses.trackingOptions
 export ko_pulumi.aws.sesv2.pinpointDestination
 export ko_pulumi.aws.sesv2.reputationOptions
+export ko_pulumi.aws.sesv2.routes
+export ko_pulumi.aws.sesv2.routesDetails
 export ko_pulumi.aws.sesv2.sendingOptions
 export ko_pulumi.aws.sesv2.snsDestination
 export ko_pulumi.aws.sesv2.suppressionOptions
+export ko_pulumi.aws.sesv2.timeouts
 export ko_pulumi.aws.sesv2.topics
 export ko_pulumi.aws.sesv2.trackingOptions
 export ko_pulumi.aws.sfn.routingConfigurations

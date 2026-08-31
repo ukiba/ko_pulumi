@@ -4,7 +4,7 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object verifiedaccess:
-  /** Resource for managing an AWS EC2 (Elastic Compute Cloud) Verified Access Endpoint. */
+  /** Resource for managing an AWS EC2 Verified Access Endpoint. */
   def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.verifiedaccess.EndpointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.verifiedaccess.EndpointArgs.builder

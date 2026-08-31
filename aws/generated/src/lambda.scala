@@ -68,8 +68,6 @@ object lambda:
 
     /**
      * @param permissionsConfig Configuration block for permissions settings. See Permissions Config below.
-     * 
-     * The following arguments are optional:
      * @return builder
      */
     def permissionsConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderPermissionsConfigArgs.Builder]):
@@ -84,6 +82,8 @@ object lambda:
 
     /**
      * @param vpcConfig Configuration block for VPC settings. See VPC Config below.
+     * 
+     * The following arguments are optional:
      * @return builder
      */
     def vpcConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderVpcConfigArgs.Builder]):
@@ -771,8 +771,6 @@ object lambda:
 
     /**
      * @param permissionsConfig Configuration block for permissions settings. See Permissions Config below.
-     * 
-     * The following arguments are optional:
      * @return builder
      */
     def permissionsConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderPermissionsConfigArgs.Builder]):
@@ -787,6 +785,8 @@ object lambda:
 
     /**
      * @param vpcConfig Configuration block for VPC settings. See VPC Config below.
+     * 
+     * The following arguments are optional:
      * @return builder
      */
     def vpcConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderVpcConfigArgs.Builder]):
@@ -852,7 +852,7 @@ object lambda:
 
   extension (builder: com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.Builder)
     /**
-     * @param accessConfigs Configuration block for authentication Lambda uses to access the schema registry.
+     * @param accessConfigs Configuration block for authentication Lambda uses to access the schema registry. See below.
      * @return builder
      */
     def accessConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigAccessConfigArgs.Builder]*):
@@ -861,7 +861,7 @@ object lambda:
       builder.accessConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param schemaValidationConfigs Repeatable block that defines schema validation settings. These specify the message attributes that Lambda should validate and filter using the schema registry.
+     * @param schemaValidationConfigs Repeatable block that defines schema validation settings. These specify the message attributes that Lambda should validate and filter using the schema registry. See below.
      * @return builder
      */
     def schemaValidationConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigSchemaValidationConfigArgs.Builder]*):
@@ -901,7 +901,7 @@ object lambda:
 
   extension (builder: com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.Builder)
     /**
-     * @param accessConfigs Configuration block for authentication Lambda uses to access the schema registry.
+     * @param accessConfigs Configuration block for authentication Lambda uses to access the schema registry. See below.
      * @return builder
      */
     def accessConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigAccessConfigArgs.Builder]*):
@@ -910,7 +910,7 @@ object lambda:
       builder.accessConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param schemaValidationConfigs Repeatable block that defines schema validation settings. These specify the message attributes that Lambda should validate and filter using the schema registry.
+     * @param schemaValidationConfigs Repeatable block that defines schema validation settings. These specify the message attributes that Lambda should validate and filter using the schema registry. See below.
      * @return builder
      */
     def schemaValidationConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigSchemaValidationConfigArgs.Builder]*):

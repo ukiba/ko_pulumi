@@ -30,6 +30,7 @@ export ko_pulumi.aws.batch.updatePolicy
 export ko_pulumi.aws.batch.volumeMounts
 export ko_pulumi.aws.batch.volumes
 export ko_pulumi.aws.bedrock.urlConfiguration
+export ko_pulumi.aws.bedrock.validation
 export ko_pulumi.aws.bedrock.validationDataConfig
 export ko_pulumi.aws.bedrock.validationMetrics
 export ko_pulumi.aws.bedrock.validators

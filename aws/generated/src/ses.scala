@@ -182,7 +182,7 @@ object ses:
 
   extension (builder: com.pulumi.aws.ses.ReceiptRuleArgs.Builder)
     /**
-     * @param addHeaderActions A list of Add Header Action blocks. Documented below.
+     * @param addHeaderActions Configuration block for adding a header to received emails. Detailed below.
      * @return builder
      */
     def addHeaderActions(args: Endofunction[com.pulumi.aws.ses.inputs.ReceiptRuleAddHeaderActionArgs.Builder]*):
@@ -191,7 +191,7 @@ object ses:
       builder.addHeaderActions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param bounceActions A list of Bounce Action blocks. Documented below.
+     * @param bounceActions Configuration block for rejecting received emails. Detailed below.
      * @return builder
      */
     def bounceActions(args: Endofunction[com.pulumi.aws.ses.inputs.ReceiptRuleBounceActionArgs.Builder]*):
@@ -200,7 +200,7 @@ object ses:
       builder.bounceActions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param lambdaActions A list of Lambda Action blocks. Documented below.
+     * @param lambdaActions Configuration block for calling an AWS Lambda function. Detailed below.
      * @return builder
      */
     def lambdaActions(args: Endofunction[com.pulumi.aws.ses.inputs.ReceiptRuleLambdaActionArgs.Builder]*):
@@ -209,7 +209,7 @@ object ses:
       builder.lambdaActions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param s3Actions A list of S3 Action blocks. Documented below.
+     * @param s3Actions Configuration block for storing received emails in an S3 bucket. Detailed below.
      * @return builder
      */
     def s3Actions(args: Endofunction[com.pulumi.aws.ses.inputs.ReceiptRuleS3ActionArgs.Builder]*):
@@ -218,7 +218,7 @@ object ses:
       builder.s3Actions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param snsActions A list of SNS Action blocks. Documented below.
+     * @param snsActions Configuration block for publishing to an SNS topic. Detailed below.
      * @return builder
      */
     def snsActions(args: Endofunction[com.pulumi.aws.ses.inputs.ReceiptRuleSnsActionArgs.Builder]*):
@@ -227,7 +227,7 @@ object ses:
       builder.snsActions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param stopActions A list of Stop Action blocks. Documented below.
+     * @param stopActions Configuration block for terminating the evaluation of the receipt rule set. Detailed below.
      * @return builder
      */
     def stopActions(args: Endofunction[com.pulumi.aws.ses.inputs.ReceiptRuleStopActionArgs.Builder]*):
@@ -236,7 +236,7 @@ object ses:
       builder.stopActions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param workmailActions A list of WorkMail Action blocks. Documented below.
+     * @param workmailActions Configuration block for calling Amazon WorkMail. Detailed below.
      * @return builder
      */
     def workmailActions(args: Endofunction[com.pulumi.aws.ses.inputs.ReceiptRuleWorkmailActionArgs.Builder]*):
@@ -357,7 +357,7 @@ object ses:
 
   extension (builder: com.pulumi.aws.ses.inputs.ReceiptRuleState.Builder)
     /**
-     * @param addHeaderActions A list of Add Header Action blocks. Documented below.
+     * @param addHeaderActions Configuration block for adding a header to received emails. Detailed below.
      * @return builder
      */
     def addHeaderActions(args: Endofunction[com.pulumi.aws.ses.inputs.ReceiptRuleAddHeaderActionArgs.Builder]*):
@@ -366,7 +366,7 @@ object ses:
       builder.addHeaderActions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param bounceActions A list of Bounce Action blocks. Documented below.
+     * @param bounceActions Configuration block for rejecting received emails. Detailed below.
      * @return builder
      */
     def bounceActions(args: Endofunction[com.pulumi.aws.ses.inputs.ReceiptRuleBounceActionArgs.Builder]*):
@@ -375,7 +375,7 @@ object ses:
       builder.bounceActions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param lambdaActions A list of Lambda Action blocks. Documented below.
+     * @param lambdaActions Configuration block for calling an AWS Lambda function. Detailed below.
      * @return builder
      */
     def lambdaActions(args: Endofunction[com.pulumi.aws.ses.inputs.ReceiptRuleLambdaActionArgs.Builder]*):
@@ -384,7 +384,7 @@ object ses:
       builder.lambdaActions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param s3Actions A list of S3 Action blocks. Documented below.
+     * @param s3Actions Configuration block for storing received emails in an S3 bucket. Detailed below.
      * @return builder
      */
     def s3Actions(args: Endofunction[com.pulumi.aws.ses.inputs.ReceiptRuleS3ActionArgs.Builder]*):
@@ -393,7 +393,7 @@ object ses:
       builder.s3Actions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param snsActions A list of SNS Action blocks. Documented below.
+     * @param snsActions Configuration block for publishing to an SNS topic. Detailed below.
      * @return builder
      */
     def snsActions(args: Endofunction[com.pulumi.aws.ses.inputs.ReceiptRuleSnsActionArgs.Builder]*):
@@ -402,7 +402,7 @@ object ses:
       builder.snsActions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param stopActions A list of Stop Action blocks. Documented below.
+     * @param stopActions Configuration block for terminating the evaluation of the receipt rule set. Detailed below.
      * @return builder
      */
     def stopActions(args: Endofunction[com.pulumi.aws.ses.inputs.ReceiptRuleStopActionArgs.Builder]*):
@@ -411,7 +411,7 @@ object ses:
       builder.stopActions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param workmailActions A list of WorkMail Action blocks. Documented below.
+     * @param workmailActions Configuration block for calling Amazon WorkMail. Detailed below.
      * @return builder
      */
     def workmailActions(args: Endofunction[com.pulumi.aws.ses.inputs.ReceiptRuleWorkmailActionArgs.Builder]*):

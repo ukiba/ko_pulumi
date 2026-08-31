@@ -41,7 +41,7 @@ object s3:
       builder.publicAccessBlockConfiguration(args(argsBuilder).build)
 
     /**
-     * @param vpcConfiguration Configuration block to restrict access to this access point to requests from the specified Virtual Private Cloud (VPC). Required for S3 on Outposts. Detailed below.
+     * @param vpcConfiguration Configuration block to restrict access to this access point to requests from the specified VPC. Required for S3 on Outposts. Detailed below.
      * @return builder
      */
     def vpcConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.AccessPointVpcConfigurationArgs.Builder]):
@@ -1760,7 +1760,7 @@ object s3:
       builder.publicAccessBlockConfiguration(args(argsBuilder).build)
 
     /**
-     * @param vpcConfiguration Configuration block to restrict access to this access point to requests from the specified Virtual Private Cloud (VPC). Required for S3 on Outposts. Detailed below.
+     * @param vpcConfiguration Configuration block to restrict access to this access point to requests from the specified VPC. Required for S3 on Outposts. Detailed below.
      * @return builder
      */
     def vpcConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.AccessPointVpcConfigurationArgs.Builder]):

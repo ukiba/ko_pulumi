@@ -165,7 +165,7 @@ object codepipeline:
 
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineArtifactStoreArgs.Builder)
     /**
-     * @param encryptionKey The encryption key block AWS CodePipeline uses to encrypt the data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. If you don&#39;t specify a key, AWS CodePipeline uses the default key for Amazon Simple Storage Service (Amazon S3). An `encryptionKey` block is documented below.
+     * @param encryptionKey Encryption key block AWS CodePipeline uses to encrypt the data in the artifact store, such as a KMS key. If you don&#39;t specify a key, AWS CodePipeline uses the default key for S3. An `encryptionKey` block is documented below.
      * @return builder
      */
     def encryptionKey(args: Endofunction[com.pulumi.aws.codepipeline.inputs.PipelineArtifactStoreEncryptionKeyArgs.Builder]):

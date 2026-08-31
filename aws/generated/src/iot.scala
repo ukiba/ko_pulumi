@@ -489,7 +489,7 @@ object iot:
 
   extension (builder: com.pulumi.aws.iot.TopicRuleDestinationArgs.Builder)
     /**
-     * @param vpcConfiguration Configuration of the virtual private cloud (VPC) connection. For more info, see the [AWS documentation](https://docs.aws.amazon.com/iot/latest/developerguide/vpc-rule-action.html).
+     * @param vpcConfiguration Configuration of the VPC connection. For more info, see the [AWS documentation](https://docs.aws.amazon.com/iot/latest/developerguide/vpc-rule-action.html).
      * @return builder
      */
     def vpcConfiguration(args: Endofunction[com.pulumi.aws.iot.inputs.TopicRuleDestinationVpcConfigurationArgs.Builder]):
@@ -669,7 +669,7 @@ object iot:
 
   extension (builder: com.pulumi.aws.iot.inputs.TopicRuleDestinationState.Builder)
     /**
-     * @param vpcConfiguration Configuration of the virtual private cloud (VPC) connection. For more info, see the [AWS documentation](https://docs.aws.amazon.com/iot/latest/developerguide/vpc-rule-action.html).
+     * @param vpcConfiguration Configuration of the VPC connection. For more info, see the [AWS documentation](https://docs.aws.amazon.com/iot/latest/developerguide/vpc-rule-action.html).
      * @return builder
      */
     def vpcConfiguration(args: Endofunction[com.pulumi.aws.iot.inputs.TopicRuleDestinationVpcConfigurationArgs.Builder]):

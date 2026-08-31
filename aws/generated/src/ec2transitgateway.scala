@@ -34,7 +34,7 @@ object ec2transitgateway:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  /** Resource for managing an AWS EC2 (Elastic Compute Cloud) Transit Gateway Default Route Table Association. */
+  /** Resource for managing an AWS EC2 Transit Gateway Default Route Table Association. */
   def DefaultRouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.DefaultRouteTableAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2transitgateway.DefaultRouteTableAssociationArgs.builder
@@ -48,7 +48,7 @@ object ec2transitgateway:
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.DefaultRouteTableAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Resource for managing an AWS EC2 (Elastic Compute Cloud) Transit Gateway Default Route Table Propagation. */
+  /** Resource for managing an AWS EC2 Transit Gateway Default Route Table Propagation. */
   def DefaultRouteTablePropagation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.DefaultRouteTablePropagationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2transitgateway.DefaultRouteTablePropagationArgs.builder

@@ -415,7 +415,7 @@ object redshift:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  /** Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group. */
+  /** Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing VPC when creating Amazon Redshift subnet group. */
   def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.SubnetGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshift.SubnetGroupArgs.builder
