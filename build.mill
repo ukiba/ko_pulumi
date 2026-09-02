@@ -11,7 +11,7 @@ val pulumiAzureVersion      = "6.39.0"
 
 val pulumiPostgresqlVersion = "3.18.0"
 
-val pulumiJavaVersion       = "1.36.2"
+val pulumiJavaVersion       = "1.36.3"
 
 val repoName = "ko_pulumi"
 
@@ -127,17 +127,3 @@ object core extends ScalaModuleEx with PublishModule:
         .distinct.sorted
       os.write.over(Task.dest / "resources.index", entries.map(_ + "\n").mkString)
       Seq(PathRef(Task.dest))
-
-// Avoid `com.google.protobuf.InvalidProtocolBufferException: Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit` for wafv2.WebAcl rules.
-object pulumifix extends ScalaModuleEx with ScalaModule:
-  def mvnDeps = Seq(
-    mvn"net.bytebuddy:byte-buddy:1.18.12",
-    mvn"net.bytebuddy:byte-buddy-agent:1.18.12",
-  )
-
-  override def manifest = Task:
-    super.manifest().add(
-      "Premain-Class"           -> "pulumifix.ProtobufRecursionLimitAgent",
-      "Can-Retransform-Classes" -> "true",
-      "Can-Redefine-Classes"    -> "true",
-    )
