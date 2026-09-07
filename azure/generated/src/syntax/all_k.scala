@@ -46,7 +46,10 @@ export ko_pulumi.azure.cdn.logScrubbingRules
 export ko_pulumi.azure.cdn.managedRules
 export ko_pulumi.azure.cdn.matchConditions
 export ko_pulumi.azure.cdn.modifyRequestHeaderActions
+export ko_pulumi.azure.cdn.modifyRequestHeaders
 export ko_pulumi.azure.cdn.modifyResponseHeaderActions
+export ko_pulumi.azure.cdn.modifyResponseHeaders
+export ko_pulumi.azure.cdn.originGroup
 export ko_pulumi.azure.cdn.origins
 export ko_pulumi.azure.cdn.overrides
 export ko_pulumi.azure.cognitive.model

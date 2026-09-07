@@ -5,6 +5,28 @@ import com.pulumi.resources.CustomResourceOptions
 
 object vertex:
   /**
+   * An Agent Anomaly Detection (AAD) scope defines the Cloud Logging and
+   * Observability buckets that AAD monitors for anomalous agent behavior within
+   * a location. Creating a scope provisions a dedicated tenant project for
+   * detection. Only one scope may exist per location.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about AgentAnomalyDetectionScope, see:
+   * 
+   * * [API documentation](https://cloud.google.com/vertex-ai/docs/reference/rest/v1beta1/projects.locations.agentAnomalyDetectionScopes)
+   * * How-to Guides
+   *     * [Agent Anomaly Detection](https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/)
+   */
+  def AiAgentAnomalyDetectionScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.vertex.AiAgentAnomalyDetectionScopeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.vertex.AiAgentAnomalyDetectionScopeArgs.builder
+    com.pulumi.gcp.vertex.AiAgentAnomalyDetectionScope(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
    * Config of GenAI caching features. This is a singleton resource.
    * 
    * To get more information about CacheConfig, see:
@@ -8225,6 +8247,16 @@ object vertex:
       builder.consolidationConfig(args(argsBuilder).build)
 
     /**
+     * @param generateMemoriesExamples Provides examples of how to generate memories for a particular scope.
+     * Structure is documented below.
+     * @return builder
+     */
+    def generateMemoriesExamples(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleArgs.builder
+      builder.generateMemoriesExamples(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param memoryTopics Optional. List of topics that the memory should be associated with.
      * Structure is documented below.
      * @return builder
@@ -8233,6 +8265,142 @@ object vertex:
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicArgs.builder
       builder.memoryTopics(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleArgs.Builder)
+    /**
+     * @param conversationSource A conversation source for the example.
+     * Structure is documented below.
+     * @return builder
+     */
+    def conversationSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceArgs.builder
+      builder.conversationSource(args(argsBuilder).build)
+
+    /**
+     * @param generatedMemories Represents the memories that are expected to be generated from the input conversation.
+     * Structure is documented below.
+     * @return builder
+     */
+    def generatedMemories(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleGeneratedMemoryArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleGeneratedMemoryArgs.builder
+      builder.generatedMemories(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceArgs.Builder)
+    /**
+     * @param events Represents the input conversation events for the example.
+     * Structure is documented below.
+     * @return builder
+     */
+    def events(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventArgs.builder
+      builder.events(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventArgs.Builder)
+    /**
+     * @param content Represents the content of the event.
+     * Structure is documented below.
+     * @return builder
+     */
+    def content(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentArgs.builder
+      builder.content(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentArgs.Builder)
+    /**
+     * @param parts A list of Part objects that make up a single message.
+     * Structure is documented below.
+     * @return builder
+     */
+    def parts(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.builder
+      builder.parts(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder)
+    /**
+     * @param codeExecutionResult Result of executing the ExecutableCode.
+     * Structure is documented below.
+     * @return builder
+     */
+    def codeExecutionResult(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartCodeExecutionResultArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartCodeExecutionResultArgs.builder
+      builder.codeExecutionResult(args(argsBuilder).build)
+
+    /**
+     * @param executableCode Code generated by the model that is intended to be executed.
+     * Structure is documented below.
+     * @return builder
+     */
+    def executableCode(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartExecutableCodeArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartExecutableCodeArgs.builder
+      builder.executableCode(args(argsBuilder).build)
+
+    /**
+     * @param fileData URI based data.
+     * Structure is documented below.
+     * @return builder
+     */
+    def fileData(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartFileDataArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartFileDataArgs.builder
+      builder.fileData(args(argsBuilder).build)
+
+    /**
+     * @param functionCall A predicted function call returned from the model.
+     * Structure is documented below.
+     * @return builder
+     */
+    def functionCall(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartFunctionCallArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartFunctionCallArgs.builder
+      builder.functionCall(args(argsBuilder).build)
+
+    /**
+     * @param functionResponse The result of a function call.
+     * Structure is documented below.
+     * @return builder
+     */
+    def functionResponse(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartFunctionResponseArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartFunctionResponseArgs.builder
+      builder.functionResponse(args(argsBuilder).build)
+
+    /**
+     * @param inlineData The inline data content of the part.
+     * Structure is documented below.
+     * @return builder
+     */
+    def inlineData(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartInlineDataArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartInlineDataArgs.builder
+      builder.inlineData(args(argsBuilder).build)
+
+    /**
+     * @param videoMetadata Video metadata.
+     * Structure is documented below.
+     * @return builder
+     */
+    def videoMetadata(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartVideoMetadataArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartVideoMetadataArgs.builder
+      builder.videoMetadata(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleGeneratedMemoryArgs.Builder)
+    /**
+     * @param topics Represents the list of topics that the memory should be associated with.
+     * Structure is documented below.
+     * @return builder
+     */
+    def topics(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleGeneratedMemoryTopicArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleGeneratedMemoryArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleGeneratedMemoryTopicArgs.builder
+      builder.topics(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicArgs.Builder)
     /**

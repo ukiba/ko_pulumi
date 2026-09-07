@@ -224,6 +224,53 @@ object storage:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  /** Manages the Table Properties of an Azure Storage Account. */
+  def AccountTableProperties(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.azure.storage.AccountTablePropertiesArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.azure.storage.AccountTablePropertiesArgs.builder
+    com.pulumi.azure.storage.AccountTableProperties(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.azure.storage.AccountTablePropertiesArgs.Builder)
+    /**
+     * @param corsRules A `corsRule` block as defined below.
+     * @return builder
+     */
+    def corsRules(args: Endofunction[com.pulumi.azure.storage.inputs.AccountTablePropertiesCorsRuleArgs.Builder]*):
+        com.pulumi.azure.storage.AccountTablePropertiesArgs.Builder =
+      def argsBuilder = com.pulumi.azure.storage.inputs.AccountTablePropertiesCorsRuleArgs.builder
+      builder.corsRules(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param hourMetrics A `hourMetrics` block as defined below.
+     * 
+     * &gt; **Note:** At least one of `corsRule`, `logging`, `minuteMetrics`, or `hourMetrics` must be specified.
+     * @return builder
+     */
+    def hourMetrics(args: Endofunction[com.pulumi.azure.storage.inputs.AccountTablePropertiesHourMetricsArgs.Builder]):
+        com.pulumi.azure.storage.AccountTablePropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.azure.storage.inputs.AccountTablePropertiesHourMetricsArgs.builder
+      builder.hourMetrics(args(argsBuilder).build)
+
+    /**
+     * @param logging A `logging` block as defined below.
+     * @return builder
+     */
+    def logging(args: Endofunction[com.pulumi.azure.storage.inputs.AccountTablePropertiesLoggingArgs.Builder]):
+        com.pulumi.azure.storage.AccountTablePropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.azure.storage.inputs.AccountTablePropertiesLoggingArgs.builder
+      builder.logging(args(argsBuilder).build)
+
+    /**
+     * @param minuteMetrics A `minuteMetrics` block as defined below.
+     * @return builder
+     */
+    def minuteMetrics(args: Endofunction[com.pulumi.azure.storage.inputs.AccountTablePropertiesMinuteMetricsArgs.Builder]):
+        com.pulumi.azure.storage.AccountTablePropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.azure.storage.inputs.AccountTablePropertiesMinuteMetricsArgs.builder
+      builder.minuteMetrics(args(argsBuilder).build)
+
   /** Manages a Blob within a Storage Container. */
   def Blob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.storage.BlobArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1174,6 +1221,45 @@ object storage:
         com.pulumi.azure.storage.inputs.AccountState.Builder =
       val argsBuilder = com.pulumi.azure.storage.inputs.AccountStaticWebsiteArgs.builder
       builder.staticWebsite(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.azure.storage.inputs.AccountTablePropertiesState.Builder)
+    /**
+     * @param corsRules A `corsRule` block as defined below.
+     * @return builder
+     */
+    def corsRules(args: Endofunction[com.pulumi.azure.storage.inputs.AccountTablePropertiesCorsRuleArgs.Builder]*):
+        com.pulumi.azure.storage.inputs.AccountTablePropertiesState.Builder =
+      def argsBuilder = com.pulumi.azure.storage.inputs.AccountTablePropertiesCorsRuleArgs.builder
+      builder.corsRules(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param hourMetrics A `hourMetrics` block as defined below.
+     * 
+     * &gt; **Note:** At least one of `corsRule`, `logging`, `minuteMetrics`, or `hourMetrics` must be specified.
+     * @return builder
+     */
+    def hourMetrics(args: Endofunction[com.pulumi.azure.storage.inputs.AccountTablePropertiesHourMetricsArgs.Builder]):
+        com.pulumi.azure.storage.inputs.AccountTablePropertiesState.Builder =
+      val argsBuilder = com.pulumi.azure.storage.inputs.AccountTablePropertiesHourMetricsArgs.builder
+      builder.hourMetrics(args(argsBuilder).build)
+
+    /**
+     * @param logging A `logging` block as defined below.
+     * @return builder
+     */
+    def logging(args: Endofunction[com.pulumi.azure.storage.inputs.AccountTablePropertiesLoggingArgs.Builder]):
+        com.pulumi.azure.storage.inputs.AccountTablePropertiesState.Builder =
+      val argsBuilder = com.pulumi.azure.storage.inputs.AccountTablePropertiesLoggingArgs.builder
+      builder.logging(args(argsBuilder).build)
+
+    /**
+     * @param minuteMetrics A `minuteMetrics` block as defined below.
+     * @return builder
+     */
+    def minuteMetrics(args: Endofunction[com.pulumi.azure.storage.inputs.AccountTablePropertiesMinuteMetricsArgs.Builder]):
+        com.pulumi.azure.storage.inputs.AccountTablePropertiesState.Builder =
+      val argsBuilder = com.pulumi.azure.storage.inputs.AccountTablePropertiesMinuteMetricsArgs.builder
+      builder.minuteMetrics(args(argsBuilder).build)
 
   extension (builder: com.pulumi.azure.storage.inputs.BlobInventoryPolicyRuleArgs.Builder)
     /**

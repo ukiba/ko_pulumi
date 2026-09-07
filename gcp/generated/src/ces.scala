@@ -584,6 +584,16 @@ object ces:
 
   extension (builder: com.pulumi.gcp.ces.ToolsetArgs.Builder)
     /**
+     * @param connectorToolset A toolset that generates tools from an Integration Connectors Connection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def connectorToolset(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetArgs.Builder]):
+        com.pulumi.gcp.ces.ToolsetArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetArgs.builder
+      builder.connectorToolset(args(argsBuilder).build)
+
+    /**
      * @param mcpToolset A toolset that contains a list of tools that are offered by the MCP
      * server.
      * Structure is documented below.
@@ -3898,6 +3908,61 @@ object ces:
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolWidgetToolDataMappingPythonFunctionArgs.builder
       builder.pythonFunction(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetArgs.Builder)
+    /**
+     * @param authConfig Configures how authentication is handled in Integration Connectors.
+     * Structure is documented below.
+     * @return builder
+     */
+    def authConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigArgs.builder
+      builder.authConfig(args(argsBuilder).build)
+
+    /**
+     * @param connectorActions The list of connector actions/entity operations to generate tools for.
+     * Structure is documented below.
+     * @return builder
+     */
+    def connectorActions(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetConnectorActionArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetConnectorActionArgs.builder
+      builder.connectorActions(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigArgs.Builder)
+    /**
+     * @param oauth2AuthCodeConfig Oauth 2.0 Authorization Code authentication configuration.
+     * Structure is documented below.
+     * @return builder
+     */
+    def oauth2AuthCodeConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigOauth2AuthCodeConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigOauth2AuthCodeConfigArgs.builder
+      builder.oauth2AuthCodeConfig(args(argsBuilder).build)
+
+    /**
+     * @param oauth2JwtBearerConfig JWT Profile Oauth 2.0 Authorization Grant authentication configuration.
+     * Structure is documented below.
+     * 
+     * &lt;a name=&#34;nestedConnectorToolsetAuthConfigOauth2AuthCodeConfig&#34;&gt;&lt;/a&gt;The `oauth2AuthCodeConfig` block supports:
+     * @return builder
+     */
+    def oauth2JwtBearerConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigOauth2JwtBearerConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigOauth2JwtBearerConfigArgs.builder
+      builder.oauth2JwtBearerConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetConnectorActionArgs.Builder)
+    /**
+     * @param entityOperation Entity operation configuration for the tool to use.
+     * Structure is documented below.
+     * @return builder
+     */
+    def entityOperation(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetConnectorActionEntityOperationArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetConnectorActionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetConnectorActionEntityOperationArgs.builder
+      builder.entityOperation(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationArgs.Builder)
     /**
      * @param apiKeyConfig Configurations for authentication with API key.
@@ -4093,6 +4158,16 @@ object ces:
       builder.caCerts(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.ces.inputs.ToolsetState.Builder)
+    /**
+     * @param connectorToolset A toolset that generates tools from an Integration Connectors Connection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def connectorToolset(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolsetState.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetArgs.builder
+      builder.connectorToolset(args(argsBuilder).build)
+
     /**
      * @param mcpToolset A toolset that contains a list of tools that are offered by the MCP
      * server.

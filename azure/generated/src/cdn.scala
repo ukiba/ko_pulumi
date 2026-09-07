@@ -11,6 +11,26 @@ object cdn:
     //
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
+    /**
+     * Gets information about an existing Front Door (standard/premium) Batch Rule Set.
+     * 
+     * &gt; **Note:** This data source can only read Rule Sets that were provisioned in batch mode. Use the `azure.cdn.FrontdoorRuleSet` data source for Rule Sets that were not provisioned in batch mode.
+     */
+    inline def getFrontdoorBatchRuleSet(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorBatchRuleSetArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.azure.cdn.outputs.GetFrontdoorBatchRuleSetResult] =
+      val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorBatchRuleSetArgs.builder
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorBatchRuleSet(args(argsBuilder).build)
+
+    /**
+     * Gets information about an existing Front Door (standard/premium) Batch Rule Set.
+     * 
+     * &gt; **Note:** This data source can only read Rule Sets that were provisioned in batch mode. Use the `azure.cdn.FrontdoorRuleSet` data source for Rule Sets that were not provisioned in batch mode.
+     */
+    inline def getFrontdoorBatchRuleSetPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorBatchRuleSetPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.azure.cdn.outputs.GetFrontdoorBatchRuleSetResult] =
+      val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorBatchRuleSetPlainArgs.builder
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorBatchRuleSetPlain(args(argsBuilder).build)
+
     /** Gets information about an existing Front Door (standard/premium) Custom Domain. */
     inline def getFrontdoorCustomDomain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorCustomDomainArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cdn.outputs.GetFrontdoorCustomDomainResult] =
@@ -71,13 +91,21 @@ object cdn:
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorProfilePlainArgs.builder
       com.pulumi.azure.cdn.CdnFunctions.getFrontdoorProfilePlain(args(argsBuilder).build)
 
-    /** Use this data source to access information about an existing Front Door (standard/premium) Rule Set. */
+    /**
+     * Use this data source to access information about an existing Front Door (standard/premium) Rule Set.
+     * 
+     * &gt; **Note:** This data source can only read Rule Sets that were not provisioned in batch mode. Use the `azure.cdn.FrontdoorBatchRuleSet` data source for Rule Sets that were provisioned in batch mode.
+     */
     inline def getFrontdoorRuleSet(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorRuleSetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cdn.outputs.GetFrontdoorRuleSetResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorRuleSetArgs.builder
       com.pulumi.azure.cdn.CdnFunctions.getFrontdoorRuleSet(args(argsBuilder).build)
 
-    /** Use this data source to access information about an existing Front Door (standard/premium) Rule Set. */
+    /**
+     * Use this data source to access information about an existing Front Door (standard/premium) Rule Set.
+     * 
+     * &gt; **Note:** This data source can only read Rule Sets that were not provisioned in batch mode. Use the `azure.cdn.FrontdoorBatchRuleSet` data source for Rule Sets that were provisioned in batch mode.
+     */
     inline def getFrontdoorRuleSetPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorRuleSetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cdn.outputs.GetFrontdoorRuleSetResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorRuleSetPlainArgs.builder
@@ -223,6 +251,37 @@ object cdn:
         com.pulumi.azure.cdn.EndpointCustomDomainArgs.Builder =
       val argsBuilder = com.pulumi.azure.cdn.inputs.EndpointCustomDomainUserManagedHttpsArgs.builder
       builder.userManagedHttps(args(argsBuilder).build)
+
+  /**
+   * Manages a Front Door (standard/premium) Batch Rule Set.
+   * 
+   * &gt; **Note:** This resource creates the Front Door Rule Set in batch mode and manages the full ordered batch rule collection for it. Any change to the configured `rule` blocks sends the desired final ordered rule list to the Resource Provider in a single request.
+   */
+  def FrontdoorBatchRuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.azure.cdn.FrontdoorBatchRuleSetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.azure.cdn.FrontdoorBatchRuleSetArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.azure.cdn.FrontdoorBatchRuleSet(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.azure.cdn.FrontdoorBatchRuleSetArgs.Builder)
+    /**
+     * @param rules One or more `rule` blocks as defined below. The configured blocks represent the complete set of rules managed for this Front Door Batch Rule Set. The final rule ordering is determined by each block&#39;s `order` value. A maximum of `100` `rule` blocks may be defined.
+     * 
+     * &gt; **Note:** The `rule` blocks must be declared in ascending `order`, gaps between different rules are allowed. To insert, remove, or move a rule, update the full `rule` collection in the same ascending order that you want Terraform to store.
+     * 
+     * &gt; **Note:** Each `rule` block must use a unique `name` value and a unique `order` value.
+     * 
+     * &gt; **Note:** Each `rule` that enables caching (using the `route_configuration_override.caching` block with a `behaviour` other than `Disabled`) consumes two of the `100` available rule slots. The plan fails if the effective number of rule slots exceeds this service-side quota.
+     * @return builder
+     */
+    def rules(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleArgs.Builder]*):
+        com.pulumi.azure.cdn.FrontdoorBatchRuleSetArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleArgs.builder
+      builder.rules(args.map(_(argsBuilder).build)*)
 
   /**
    * Manages a Front Door (standard/premium) Custom Domain.
@@ -455,7 +514,7 @@ object cdn:
    * 
    * &gt; **Note:** The Rules resource **must** include a `dependsOn` meta-argument which references the `azure.cdn.FrontdoorOrigin` and the `azure.cdn.FrontdoorOriginGroup`.
    * 
-   * &gt; **Note:** Azure Front Door Rule operations are currently affected by a service-side regression where unattached rules or rule sets can fail with `400 Bad Request` until they are associated with a Front Door Route. As a result, unattached and attached scenarios can currently behave differently while the service-side fix is pending.
+   * &gt; **Note:** This resource cannot be used to manage individual rules for a rule set provisioned in batch mode, to manage rules for a batch mode rule set, use `azure.cdn.FrontdoorBatchRuleSet`.
    */
   def FrontdoorRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.cdn.FrontdoorRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -486,7 +545,11 @@ object cdn:
       val argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorRuleConditionsArgs.builder
       builder.conditions(args(argsBuilder).build)
 
-  /** Manages a Front Door (standard/premium) Rule Set. */
+  /**
+   * Manages a Front Door (standard/premium) Rule Set.
+   * 
+   * &gt; **Note:** This resource creates the Front Door Rule Set in non-batch mode and individual rules are managed using `azure.cdn.FrontdoorRule`.
+   */
   def FrontdoorRuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.cdn.FrontdoorRuleSetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cdn.FrontdoorRuleSetArgs.builder
@@ -886,6 +949,282 @@ object cdn:
         com.pulumi.azure.cdn.inputs.EndpointState.Builder =
       def argsBuilder = com.pulumi.azure.cdn.inputs.EndpointOriginArgs.builder
       builder.origins(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsArgs.Builder)
+    /**
+     * @param modifyRequestHeaders One or more `modifyRequestHeader` blocks as defined below.
+     * @return builder
+     */
+    def modifyRequestHeaders(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsModifyRequestHeaderArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsModifyRequestHeaderArgs.builder
+      builder.modifyRequestHeaders(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param modifyResponseHeaders One or more `modifyResponseHeader` blocks as defined below.
+     * @return builder
+     */
+    def modifyResponseHeaders(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsModifyResponseHeaderArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsModifyResponseHeaderArgs.builder
+      builder.modifyResponseHeaders(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param routeConfigurationOverride A `routeConfigurationOverride` block as defined below.
+     * 
+     * &gt; **Note:** `routeConfigurationOverride` conflicts with `urlRedirect`.
+     * @return builder
+     */
+    def routeConfigurationOverride(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsRouteConfigurationOverrideArgs.Builder]):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsArgs.Builder =
+      val argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsRouteConfigurationOverrideArgs.builder
+      builder.routeConfigurationOverride(args(argsBuilder).build)
+
+    /**
+     * @param urlRedirect A `urlRedirect` block as defined below.
+     * @return builder
+     */
+    def urlRedirect(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsUrlRedirectArgs.Builder]):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsArgs.Builder =
+      val argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsUrlRedirectArgs.builder
+      builder.urlRedirect(args(argsBuilder).build)
+
+    /**
+     * @param urlRewrite A `urlRewrite` block as defined below.
+     * 
+     * &gt; **Note:** `urlRewrite` conflicts with `urlRedirect` and vice-versa.
+     * @return builder
+     */
+    def urlRewrite(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsUrlRewriteArgs.Builder]):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsArgs.Builder =
+      val argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsUrlRewriteArgs.builder
+      builder.urlRewrite(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsRouteConfigurationOverrideArgs.Builder)
+    /**
+     * @param caching A `caching` block as defined below.
+     * @return builder
+     */
+    def caching(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsRouteConfigurationOverrideCachingArgs.Builder]):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsRouteConfigurationOverrideArgs.Builder =
+      val argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsRouteConfigurationOverrideCachingArgs.builder
+      builder.caching(args(argsBuilder).build)
+
+    /**
+     * @param originGroup An `originGroup` block as defined below.
+     * @return builder
+     */
+    def originGroup(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsRouteConfigurationOverrideOriginGroupArgs.Builder]):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsRouteConfigurationOverrideArgs.Builder =
+      val argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsRouteConfigurationOverrideOriginGroupArgs.builder
+      builder.originGroup(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleArgs.Builder)
+    /**
+     * @param actions An `actions` block as defined below.
+     * @return builder
+     */
+    def actions(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsArgs.Builder]):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleArgs.Builder =
+      val argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleActionsArgs.builder
+      builder.actions(args(argsBuilder).build)
+
+    /**
+     * @param conditions A `conditions` block as defined below.
+     * @return builder
+     */
+    def conditions(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder]):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleArgs.Builder =
+      val argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.builder
+      builder.conditions(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder)
+    /**
+     * @param clientPorts One or more `clientPort` blocks as defined below.
+     * @return builder
+     */
+    def clientPorts(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsClientPortArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsClientPortArgs.builder
+      builder.clientPorts(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param deviceTypes One or more `deviceType` blocks as defined below.
+     * @return builder
+     */
+    def deviceTypes(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsDeviceTypeArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsDeviceTypeArgs.builder
+      builder.deviceTypes(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param hostNames One or more `hostName` blocks as defined below.
+     * @return builder
+     */
+    def hostNames(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsHostNameArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsHostNameArgs.builder
+      builder.hostNames(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param httpVersions One or more `httpVersion` blocks as defined below.
+     * @return builder
+     */
+    def httpVersions(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsHttpVersionArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsHttpVersionArgs.builder
+      builder.httpVersions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param postArguments One or more `postArgument` blocks as defined below.
+     * @return builder
+     */
+    def postArguments(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsPostArgumentArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsPostArgumentArgs.builder
+      builder.postArguments(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param queryStrings One or more `queryString` blocks as defined below.
+     * @return builder
+     */
+    def queryStrings(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsQueryStringArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsQueryStringArgs.builder
+      builder.queryStrings(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param remoteAddresses One or more `remoteAddress` blocks as defined below.
+     * @return builder
+     */
+    def remoteAddresses(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRemoteAddressArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRemoteAddressArgs.builder
+      builder.remoteAddresses(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param requestBodies One or more `requestBody` blocks as defined below.
+     * @return builder
+     */
+    def requestBodies(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestBodyArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestBodyArgs.builder
+      builder.requestBodies(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param requestCookies One or more `requestCookies` blocks as defined below.
+     * @return builder
+     */
+    def requestCookies(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestCookyArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestCookyArgs.builder
+      builder.requestCookies(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param requestFileExtensions One or more `requestFileExtension` blocks as defined below.
+     * @return builder
+     */
+    def requestFileExtensions(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestFileExtensionArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestFileExtensionArgs.builder
+      builder.requestFileExtensions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param requestFilenames One or more `requestFilename` blocks as defined below.
+     * @return builder
+     */
+    def requestFilenames(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestFilenameArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestFilenameArgs.builder
+      builder.requestFilenames(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param requestHeaders One or more `requestHeader` blocks as defined below.
+     * @return builder
+     */
+    def requestHeaders(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestHeaderArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestHeaderArgs.builder
+      builder.requestHeaders(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param requestMethods One or more `requestMethod` blocks as defined below.
+     * @return builder
+     */
+    def requestMethods(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestMethodArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestMethodArgs.builder
+      builder.requestMethods(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param requestPaths One or more `requestPath` blocks as defined below.
+     * @return builder
+     */
+    def requestPaths(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestPathArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestPathArgs.builder
+      builder.requestPaths(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param requestSchemes One or more `requestScheme` blocks as defined below.
+     * @return builder
+     */
+    def requestSchemes(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestSchemeArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestSchemeArgs.builder
+      builder.requestSchemes(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param requestUrls One or more `requestUrl` blocks as defined below.
+     * @return builder
+     */
+    def requestUrls(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestUrlArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsRequestUrlArgs.builder
+      builder.requestUrls(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param serverPorts One or more `serverPort` blocks as defined below.
+     * @return builder
+     */
+    def serverPorts(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsServerPortArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsServerPortArgs.builder
+      builder.serverPorts(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param socketAddresses One or more `socketAddress` blocks as defined below.
+     * @return builder
+     */
+    def socketAddresses(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsSocketAddressArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsSocketAddressArgs.builder
+      builder.socketAddresses(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param sslProtocols One or more `sslProtocol` blocks as defined below.
+     * @return builder
+     */
+    def sslProtocols(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsSslProtocolArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsArgs.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleConditionsSslProtocolArgs.builder
+      builder.sslProtocols(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetState.Builder)
+    /**
+     * @param rules One or more `rule` blocks as defined below. The configured blocks represent the complete set of rules managed for this Front Door Batch Rule Set. The final rule ordering is determined by each block&#39;s `order` value. A maximum of `100` `rule` blocks may be defined.
+     * 
+     * &gt; **Note:** The `rule` blocks must be declared in ascending `order`, gaps between different rules are allowed. To insert, remove, or move a rule, update the full `rule` collection in the same ascending order that you want Terraform to store.
+     * 
+     * &gt; **Note:** Each `rule` block must use a unique `name` value and a unique `order` value.
+     * 
+     * &gt; **Note:** Each `rule` that enables caching (using the `route_configuration_override.caching` block with a `behaviour` other than `Disabled`) consumes two of the `100` available rule slots. The plan fails if the effective number of rule slots exceeds this service-side quota.
+     * @return builder
+     */
+    def rules(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleArgs.Builder]*):
+        com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetState.Builder =
+      def argsBuilder = com.pulumi.azure.cdn.inputs.FrontdoorBatchRuleSetRuleArgs.builder
+      builder.rules(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.azure.cdn.inputs.FrontdoorCustomDomainState.Builder)
     /**

@@ -18,7 +18,11 @@ object azure:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   extension (builder: com.pulumi.azure.ProviderArgs.Builder)
-    def enhancedValidation(args: Endofunction[com.pulumi.azure.inputs.ProviderEnhancedValidationArgs.Builder]):
+    /**
+     * @return builder
+     * @deprecated This block has been deprecated and will be removed in version 5.0 of the AzureRM provider. Please use the `enhancedValidation` block inside the `features` block instead.
+     */
+    @deprecated() def enhancedValidation(args: Endofunction[com.pulumi.azure.inputs.ProviderEnhancedValidationArgs.Builder]):
         com.pulumi.azure.ProviderArgs.Builder =
       val argsBuilder = com.pulumi.azure.inputs.ProviderEnhancedValidationArgs.builder
       builder.enhancedValidation(args(argsBuilder).build)
@@ -53,6 +57,11 @@ object azure:
         com.pulumi.azure.inputs.ProviderFeaturesArgs.Builder =
       val argsBuilder = com.pulumi.azure.inputs.ProviderFeaturesDatabricksWorkspaceArgs.builder
       builder.databricksWorkspace(args(argsBuilder).build)
+
+    def enhancedValidation(args: Endofunction[com.pulumi.azure.inputs.ProviderFeaturesEnhancedValidationArgs.Builder]):
+        com.pulumi.azure.inputs.ProviderFeaturesArgs.Builder =
+      val argsBuilder = com.pulumi.azure.inputs.ProviderFeaturesEnhancedValidationArgs.builder
+      builder.enhancedValidation(args(argsBuilder).build)
 
     def keyVault(args: Endofunction[com.pulumi.azure.inputs.ProviderFeaturesKeyVaultArgs.Builder]):
         com.pulumi.azure.inputs.ProviderFeaturesArgs.Builder =
@@ -98,6 +107,11 @@ object azure:
         com.pulumi.azure.inputs.ProviderFeaturesArgs.Builder =
       val argsBuilder = com.pulumi.azure.inputs.ProviderFeaturesResourceGroupArgs.builder
       builder.resourceGroup(args(argsBuilder).build)
+
+    def servicebus(args: Endofunction[com.pulumi.azure.inputs.ProviderFeaturesServicebusArgs.Builder]):
+        com.pulumi.azure.inputs.ProviderFeaturesArgs.Builder =
+      val argsBuilder = com.pulumi.azure.inputs.ProviderFeaturesServicebusArgs.builder
+      builder.servicebus(args(argsBuilder).build)
 
     def storage(args: Endofunction[com.pulumi.azure.inputs.ProviderFeaturesStorageArgs.Builder]):
         com.pulumi.azure.inputs.ProviderFeaturesArgs.Builder =

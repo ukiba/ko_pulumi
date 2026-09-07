@@ -6515,6 +6515,17 @@ object biglake:
       val argsBuilder = com.pulumi.gcp.biglake.inputs.TableHiveOptionsStorageDescriptorArgs.builder
       builder.storageDescriptor(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.biglake.inputs.TableHiveOptionsStorageDescriptorArgs.Builder)
+    /**
+     * @param serdeInfo Serializer and deserializer information.
+     * Structure is documented below.
+     * @return builder
+     */
+    def serdeInfo(args: Endofunction[com.pulumi.gcp.biglake.inputs.TableHiveOptionsStorageDescriptorSerdeInfoArgs.Builder]):
+        com.pulumi.gcp.biglake.inputs.TableHiveOptionsStorageDescriptorArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.biglake.inputs.TableHiveOptionsStorageDescriptorSerdeInfoArgs.builder
+      builder.serdeInfo(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.biglake.inputs.TableState.Builder)
     /**
      * @param hiveOptions Options of a Hive table.

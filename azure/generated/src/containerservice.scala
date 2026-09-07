@@ -4,6 +4,85 @@ package azure
 import com.pulumi.resources.CustomResourceOptions
 
 object containerservice:
+  /**
+   * Manages a Managed Kubernetes Automatic Cluster (a special SKU of AKS / Azure Kubernetes Service)
+   * 
+   * &gt; **Note:** Due to the fast-moving nature of AKS, we recommend using the latest version of the Azure Provider when using AKS - you can find the latest version of the Azure Provider here.
+   * 
+   * &gt; **Note:** All arguments including the client secret will be stored in the raw state as plain-text. [Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).
+   */
+  def AutomaticCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.azure.containerservice.AutomaticClusterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.azure.containerservice.AutomaticClusterArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.azure.containerservice.AutomaticCluster(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.azure.containerservice.AutomaticClusterArgs.Builder)
+    /**
+     * @param apiServerAccess An `apiServerAccess` block as defined below.
+     * @return builder
+     */
+    def apiServerAccess(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterApiServerAccessArgs.Builder]):
+        com.pulumi.azure.containerservice.AutomaticClusterArgs.Builder =
+      val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterApiServerAccessArgs.builder
+      builder.apiServerAccess(args(argsBuilder).build)
+
+    /**
+     * @param hostedSystem A `hostedSystem` block as defined below.
+     * @return builder
+     */
+    def hostedSystem(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterHostedSystemArgs.Builder]):
+        com.pulumi.azure.containerservice.AutomaticClusterArgs.Builder =
+      val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterHostedSystemArgs.builder
+      builder.hostedSystem(args(argsBuilder).build)
+
+    /**
+     * @param identity An `identity` block as defined below.
+     * @return builder
+     */
+    def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterIdentityArgs.Builder]):
+        com.pulumi.azure.containerservice.AutomaticClusterArgs.Builder =
+      val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterIdentityArgs.builder
+      builder.identity(args(argsBuilder).build)
+
+    /**
+     * @param privateCluster A `privateCluster` block as defined below.
+     * @return builder
+     */
+    def privateCluster(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterPrivateClusterArgs.Builder]):
+        com.pulumi.azure.containerservice.AutomaticClusterArgs.Builder =
+      val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterPrivateClusterArgs.builder
+      builder.privateCluster(args(argsBuilder).build)
+
+    /**
+     * @param serviceMesh A `serviceMesh` block as defined below.
+     * @return builder
+     */
+    def serviceMesh(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshArgs.Builder]):
+        com.pulumi.azure.containerservice.AutomaticClusterArgs.Builder =
+      val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshArgs.builder
+      builder.serviceMesh(args(argsBuilder).build)
+
+    /**
+     * @param webAppRoutingIngress A `webAppRoutingIngress` block as defined below.
+     * @return builder
+     */
+    def webAppRoutingIngress(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressArgs.Builder]):
+        com.pulumi.azure.containerservice.AutomaticClusterArgs.Builder =
+      val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressArgs.builder
+      builder.webAppRoutingIngress(args(argsBuilder).build)
+
   /** Manages a Deployment Safeguard for a Kubernetes Cluster. */
   def ClusterDeploymentSafeguard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.containerservice.ClusterDeploymentSafeguardArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1112,6 +1191,86 @@ object containerservice:
         com.pulumi.azure.containerservice.TokenPasswordArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.TokenPasswordPassword2Args.builder
       builder.password2(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshArgs.Builder)
+    /**
+     * @param certificateAuthority A `certificateAuthority` block as defined below. This configuration allows you to bring your own root certificate and keys for Istio CA in the Istio-based service mesh add-on for Azure Kubernetes Service.
+     * @return builder
+     */
+    def certificateAuthority(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshCertificateAuthorityArgs.Builder]):
+        com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshArgs.Builder =
+      val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshCertificateAuthorityArgs.builder
+      builder.certificateAuthority(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.azure.containerservice.inputs.AutomaticClusterState.Builder)
+    /**
+     * @param apiServerAccess An `apiServerAccess` block as defined below.
+     * @return builder
+     */
+    def apiServerAccess(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterApiServerAccessArgs.Builder]):
+        com.pulumi.azure.containerservice.inputs.AutomaticClusterState.Builder =
+      val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterApiServerAccessArgs.builder
+      builder.apiServerAccess(args(argsBuilder).build)
+
+    /**
+     * @param hostedSystem A `hostedSystem` block as defined below.
+     * @return builder
+     */
+    def hostedSystem(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterHostedSystemArgs.Builder]):
+        com.pulumi.azure.containerservice.inputs.AutomaticClusterState.Builder =
+      val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterHostedSystemArgs.builder
+      builder.hostedSystem(args(argsBuilder).build)
+
+    /**
+     * @param identity An `identity` block as defined below.
+     * @return builder
+     */
+    def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterIdentityArgs.Builder]):
+        com.pulumi.azure.containerservice.inputs.AutomaticClusterState.Builder =
+      val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterIdentityArgs.builder
+      builder.identity(args(argsBuilder).build)
+
+    /**
+     * @param kubeConfigs A `kubeConfig` block as defined below.
+     * @return builder
+     */
+    def kubeConfigs(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterKubeConfigArgs.Builder]*):
+        com.pulumi.azure.containerservice.inputs.AutomaticClusterState.Builder =
+      def argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterKubeConfigArgs.builder
+      builder.kubeConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param privateCluster A `privateCluster` block as defined below.
+     * @return builder
+     */
+    def privateCluster(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterPrivateClusterArgs.Builder]):
+        com.pulumi.azure.containerservice.inputs.AutomaticClusterState.Builder =
+      val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterPrivateClusterArgs.builder
+      builder.privateCluster(args(argsBuilder).build)
+
+    /**
+     * @param serviceMesh A `serviceMesh` block as defined below.
+     * @return builder
+     */
+    def serviceMesh(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshArgs.Builder]):
+        com.pulumi.azure.containerservice.inputs.AutomaticClusterState.Builder =
+      val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshArgs.builder
+      builder.serviceMesh(args(argsBuilder).build)
+
+    /**
+     * @param webAppRoutingIngress A `webAppRoutingIngress` block as defined below.
+     * @return builder
+     */
+    def webAppRoutingIngress(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressArgs.Builder]):
+        com.pulumi.azure.containerservice.inputs.AutomaticClusterState.Builder =
+      val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressArgs.builder
+      builder.webAppRoutingIngress(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressArgs.Builder)
+    def webAppRoutingIdentities(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressWebAppRoutingIdentityArgs.Builder]*):
+        com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressArgs.Builder =
+      def argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressWebAppRoutingIdentityArgs.builder
+      builder.webAppRoutingIdentities(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.azure.containerservice.inputs.ConnectedRegistryState.Builder)
     /**

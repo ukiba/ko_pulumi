@@ -148,6 +148,81 @@ object cognitive:
       builder.storages(args.map(_(argsBuilder).build)*)
 
   /**
+   * Manages a Cognitive Services (Microsoft Foundry) Account Connection with Account Key authentication.
+   * 
+   * &gt; **Note:** In the new Foundry portal experience, &#34;Account Connections&#34; are shown as &#34;Tools&#34; under the &#34;Build&#34; menu.
+   */
+  def AccountConnectionAccountKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.azure.cognitive.AccountConnectionAccountKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.azure.cognitive.AccountConnectionAccountKeyArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.azure.cognitive.AccountConnectionAccountKey(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * Manages a Cognitive Services (Microsoft Foundry) Account Connection with Account Managed Identity authentication.
+   * 
+   * &gt; **Note:** In the new Foundry portal experience, &#34;Account Connections&#34; are shown as &#34;Tools&#34; under the &#34;Build&#34; menu.
+   */
+  def AccountConnectionAccountManagedIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.azure.cognitive.AccountConnectionAccountManagedIdentityArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.azure.cognitive.AccountConnectionAccountManagedIdentityArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.azure.cognitive.AccountConnectionAccountManagedIdentity(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * Manages a Cognitive Services (Microsoft Foundry) Account Connection with API Key authentication.
+   * 
+   * &gt; **Note:** In the new Foundry portal experience, &#34;Account Connections&#34; are shown as &#34;Tools&#34; under the &#34;Build&#34; menu.
+   */
+  def AccountConnectionApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.azure.cognitive.AccountConnectionApiKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.azure.cognitive.AccountConnectionApiKeyArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.azure.cognitive.AccountConnectionApiKey(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * Manages a Cognitive Services (Microsoft Foundry) Account Connection with Custom Keys authentication.
+   * 
+   * &gt; **Note:** In the new Foundry portal experience, &#34;Account Connections&#34; are shown as &#34;Tools&#34; under the &#34;Build&#34; menu.
+   */
+  def AccountConnectionCustomKeys(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.azure.cognitive.AccountConnectionCustomKeysArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.azure.cognitive.AccountConnectionCustomKeysArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.azure.cognitive.AccountConnectionCustomKeys(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * Manages a Cognitive Services (Microsoft Foundry) Account Connection with Entra ID (formerly Azure Active Directory) authentication.
+   * 
+   * &gt; **Note:** In the new Foundry portal experience, &#34;Account Connections&#34; are shown as &#34;Tools&#34; under the &#34;Build&#34; menu.
+   */
+  def AccountConnectionEntraId(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.azure.cognitive.AccountConnectionEntraIdArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.azure.cognitive.AccountConnectionEntraIdArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.azure.cognitive.AccountConnectionEntraId(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
    * Manages a Customer Managed Key for a Cognitive Services Account.
    * 
    * &gt; **Note:** It&#39;s possible to define a Customer Managed Key both within the `azure.cognitive.Account` resource via the `customerManagedKey` block and by using the `azure.cognitive.AccountCustomerManagedKey` resource. However it&#39;s not possible to use both methods to manage a Customer Managed Key for a Cognitive Account, since there&#39;ll be conflicts.

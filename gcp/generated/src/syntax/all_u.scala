@@ -243,6 +243,7 @@ export ko_pulumi.gcp.vectorsearch.vectors
 export ko_pulumi.gcp.vectorsearch.vertexEmbeddingConfig
 export ko_pulumi.gcp.vertex.unprovisioned
 export ko_pulumi.gcp.vertex.vectorSearchConfig
+export ko_pulumi.gcp.vertex.videoMetadata
 export ko_pulumi.gcp.vertex.workbenchRuntime
 export ko_pulumi.gcp.vmwareengine.vcenters
 export ko_pulumi.gcp.vmwareengine.vpcNetworks

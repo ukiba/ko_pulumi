@@ -1010,6 +1010,7 @@ export ko_pulumi.gcp.memorystore.pscAutoConnection
 export ko_pulumi.gcp.memorystore.pscAutoConnections
 export ko_pulumi.gcp.memorystore.pscConnection
 export ko_pulumi.gcp.memorystore.rdbConfig
+export ko_pulumi.gcp.memorystore.rules
 export ko_pulumi.gcp.memorystore.secondaryInstances
 export ko_pulumi.gcp.memorystore.startTime
 export ko_pulumi.gcp.memorystore.stateInfos
@@ -1175,6 +1176,7 @@ export ko_pulumi.gcp.redis.pscConnection
 export ko_pulumi.gcp.redis.pscConnections
 export ko_pulumi.gcp.redis.pscServiceAttachments
 export ko_pulumi.gcp.redis.rdbConfig
+export ko_pulumi.gcp.redis.rules
 export ko_pulumi.gcp.redis.secondaryClusters
 export ko_pulumi.gcp.redis.serverCaCerts
 export ko_pulumi.gcp.redis.startTime
@@ -1264,6 +1266,7 @@ export ko_pulumi.gcp.transcoder.segmentSettings
 export ko_pulumi.gcp.vectorsearch.sparse
 export ko_pulumi.gcp.vectorsearch.sparseVector
 export ko_pulumi.gcp.vertex.packageSpec
+export ko_pulumi.gcp.vertex.parts
 export ko_pulumi.gcp.vertex.persistentDiskSpec
 export ko_pulumi.gcp.vertex.pipelineJob
 export ko_pulumi.gcp.vertex.ports
@@ -1297,6 +1300,7 @@ export ko_pulumi.gcp.vertex.syncConfig
 export ko_pulumi.gcp.vertex.targets
 export ko_pulumi.gcp.vertex.tcpSocket
 export ko_pulumi.gcp.vertex.templateMetadatas
+export ko_pulumi.gcp.vertex.topics
 export ko_pulumi.gcp.vertex.trafficConfig
 export ko_pulumi.gcp.vertex.trafficSplitAlwaysLatest
 export ko_pulumi.gcp.vertex.trafficSplitManual

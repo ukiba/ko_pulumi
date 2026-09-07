@@ -265,6 +265,7 @@ export ko_pulumi.gcp.ces.audioProcessingConfig
 export ko_pulumi.gcp.ces.audioProcessingConfigs
 export ko_pulumi.gcp.ces.audioRecordingConfig
 export ko_pulumi.gcp.ces.audioRecordingConfigs
+export ko_pulumi.gcp.ces.authConfig
 export ko_pulumi.gcp.ces.bargeInConfig
 export ko_pulumi.gcp.ces.bargeInConfigs
 export ko_pulumi.gcp.ces.bearerTokenConfig
@@ -290,8 +291,10 @@ export ko_pulumi.gcp.ces.codeBlock
 export ko_pulumi.gcp.ces.codeCallback
 export ko_pulumi.gcp.ces.codeCallbacks
 export ko_pulumi.gcp.ces.conditionBoostSpecs
+export ko_pulumi.gcp.ces.connectorActions
 export ko_pulumi.gcp.ces.connectorConfigs
 export ko_pulumi.gcp.ces.connectorTools
+export ko_pulumi.gcp.ces.connectorToolset
 export ko_pulumi.gcp.ces.contentFilter
 export ko_pulumi.gcp.ces.contentFilters
 export ko_pulumi.gcp.ces.controlPoints
@@ -313,6 +316,7 @@ export ko_pulumi.gcp.ces.endpointControlPolicy
 export ko_pulumi.gcp.ces.engineSource
 export ko_pulumi.gcp.ces.engineSources
 export ko_pulumi.gcp.ces.engines
+export ko_pulumi.gcp.ces.entityOperation
 export ko_pulumi.gcp.ces.entityOperations
 export ko_pulumi.gcp.ces.evaluationMetricsThresholds
 export ko_pulumi.gcp.ces.event
@@ -1408,11 +1412,14 @@ export ko_pulumi.gcp.vertex.bruteForceConfig
 export ko_pulumi.gcp.vertex.buildSpec
 export ko_pulumi.gcp.vertex.categoricalThresholdConfig
 export ko_pulumi.gcp.vertex.clientToAgentConfig
+export ko_pulumi.gcp.vertex.codeExecutionResult
 export ko_pulumi.gcp.vertex.condition
 export ko_pulumi.gcp.vertex.config
 export ko_pulumi.gcp.vertex.consolidationConfig
 export ko_pulumi.gcp.vertex.containerSpec
+export ko_pulumi.gcp.vertex.content
 export ko_pulumi.gcp.vertex.contextSpec
+export ko_pulumi.gcp.vertex.conversationSource
 export ko_pulumi.gcp.vertex.createNotebookExecutionJobRequest
 export ko_pulumi.gcp.vertex.createPipelineJobRequest
 export ko_pulumi.gcp.vertex.customEnvironmentSpec
@@ -1435,8 +1442,10 @@ export ko_pulumi.gcp.vertex.encryptionSpec
 export ko_pulumi.gcp.vertex.endpointConfig
 export ko_pulumi.gcp.vertex.envs
 export ko_pulumi.gcp.vertex.errors
+export ko_pulumi.gcp.vertex.events
 export ko_pulumi.gcp.vertex.exampleStoreConfig
 export ko_pulumi.gcp.vertex.exec
+export ko_pulumi.gcp.vertex.executableCode
 export ko_pulumi.gcp.vmwareengine.autoscalingPolicies
 export ko_pulumi.gcp.vmwareengine.autoscalingSettings
 export ko_pulumi.gcp.vmwareengine.consumedMemoryThresholds

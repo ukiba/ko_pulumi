@@ -5,6 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object beyondcorp:
   /**
+   * &gt; **Warning:** `gcp.beyondcorp.AppConnection` is deprecated. App Connector is being deprecated and creation of new App Connectors is no longer permitted. Use `gcp.beyondcorp.SecurityGateway` and `gcp.beyondcorp.SecurityGatewayApplication` instead.
+   * 
    * A BeyondCorp AppConnection resource represents a BeyondCorp protected AppConnection to a remote application.
    * It creates all the necessary GCP components needed for creating a BeyondCorp protected AppConnection.
    * Multiple connectors can be authorised for a single AppConnection.
@@ -65,6 +67,8 @@ object beyondcorp:
       builder.gateway(args(argsBuilder).build)
 
   /**
+   * &gt; **Warning:** `gcp.beyondcorp.AppConnector` is deprecated. App Connector is being deprecated and creation of new App Connectors is no longer permitted. Use `gcp.beyondcorp.SecurityGateway` and `gcp.beyondcorp.SecurityGatewayApplication` instead.
+   * 
    * A BeyondCorp AppConnector resource represents an application facing component deployed proximal to
    * and with direct access to the application instances. It is used to establish connectivity between the
    * remote enterprise environment and GCP. It initiates connections to the applications and can proxy the
@@ -116,6 +120,8 @@ object beyondcorp:
       builder.principalInfo(args(argsBuilder).build)
 
   /**
+   * &gt; **Warning:** `gcp.beyondcorp.AppGateway` is deprecated. App Connector is being deprecated and creation of new App Connectors is no longer permitted. Use `gcp.beyondcorp.SecurityGateway` instead.
+   * 
    * A BeyondCorp AppGateway resource represents a BeyondCorp protected AppGateway to a remote application. It creates
    * all the necessary GCP components needed for creating a BeyondCorp protected AppGateway. Multiple connectors can be
    * authorised for a single AppGateway.
@@ -143,37 +149,61 @@ object beyondcorp:
     //
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
-    /** Get information about a Google BeyondCorp App Connection. */
+    /**
+     * &gt; **Warning:** `gcp.beyondcorp.AppConnection` is deprecated. App Connector is being deprecated and creation of new App Connectors is no longer permitted. Use `gcp.beyondcorp.SecurityGateway` and `gcp.beyondcorp.SecurityGatewayApplication` instead.
+     * 
+     * Get information about a Google BeyondCorp App Connection.
+     */
     inline def getAppConnection(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppConnectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.beyondcorp.outputs.GetAppConnectionResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetAppConnectionArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getAppConnection(args(argsBuilder).build)
 
-    /** Get information about a Google BeyondCorp App Connection. */
+    /**
+     * &gt; **Warning:** `gcp.beyondcorp.AppConnection` is deprecated. App Connector is being deprecated and creation of new App Connectors is no longer permitted. Use `gcp.beyondcorp.SecurityGateway` and `gcp.beyondcorp.SecurityGatewayApplication` instead.
+     * 
+     * Get information about a Google BeyondCorp App Connection.
+     */
     inline def getAppConnectionPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppConnectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.beyondcorp.outputs.GetAppConnectionResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetAppConnectionPlainArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getAppConnectionPlain(args(argsBuilder).build)
 
-    /** Get information about a Google BeyondCorp App Connector. */
+    /**
+     * &gt; **Warning:** `gcp.beyondcorp.AppConnector` is deprecated. App Connector is being deprecated and creation of new App Connectors is no longer permitted. Use `gcp.beyondcorp.SecurityGateway` and `gcp.beyondcorp.SecurityGatewayApplication` instead.
+     * 
+     * Get information about a Google BeyondCorp App Connector.
+     */
     inline def getAppConnector(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppConnectorArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.beyondcorp.outputs.GetAppConnectorResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetAppConnectorArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getAppConnector(args(argsBuilder).build)
 
-    /** Get information about a Google BeyondCorp App Connector. */
+    /**
+     * &gt; **Warning:** `gcp.beyondcorp.AppConnector` is deprecated. App Connector is being deprecated and creation of new App Connectors is no longer permitted. Use `gcp.beyondcorp.SecurityGateway` and `gcp.beyondcorp.SecurityGatewayApplication` instead.
+     * 
+     * Get information about a Google BeyondCorp App Connector.
+     */
     inline def getAppConnectorPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppConnectorPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.beyondcorp.outputs.GetAppConnectorResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetAppConnectorPlainArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getAppConnectorPlain(args(argsBuilder).build)
 
-    /** Get information about a Google BeyondCorp App Gateway. */
+    /**
+     * &gt; **Warning:** `gcp.beyondcorp.AppGateway` is deprecated. App Connector is being deprecated and creation of new App Connectors is no longer permitted. Use `gcp.beyondcorp.SecurityGateway` instead.
+     * 
+     * Get information about a Google BeyondCorp App Gateway.
+     */
     inline def getAppGateway(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppGatewayArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.beyondcorp.outputs.GetAppGatewayResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetAppGatewayArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getAppGateway(args(argsBuilder).build)
 
-    /** Get information about a Google BeyondCorp App Gateway. */
+    /**
+     * &gt; **Warning:** `gcp.beyondcorp.AppGateway` is deprecated. App Connector is being deprecated and creation of new App Connectors is no longer permitted. Use `gcp.beyondcorp.SecurityGateway` instead.
+     * 
+     * Get information about a Google BeyondCorp App Gateway.
+     */
     inline def getAppGatewayPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppGatewayPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.beyondcorp.outputs.GetAppGatewayResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetAppGatewayPlainArgs.builder

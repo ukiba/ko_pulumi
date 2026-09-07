@@ -509,7 +509,12 @@ export ko_pulumi.gcp.transcoder.image
 export ko_pulumi.gcp.transcoder.inputs
 export ko_pulumi.gcp.vertex.featureGroups
 export ko_pulumi.gcp.vertex.featureRegistrySource
+export ko_pulumi.gcp.vertex.fileData
+export ko_pulumi.gcp.vertex.functionCall
+export ko_pulumi.gcp.vertex.functionResponse
 export ko_pulumi.gcp.vertex.gcsNotebookSource
+export ko_pulumi.gcp.vertex.generateMemoriesExamples
+export ko_pulumi.gcp.vertex.generatedMemories
 export ko_pulumi.gcp.vertex.generationConfig
 export ko_pulumi.gcp.vertex.generationRule
 export ko_pulumi.gcp.vertex.generationTriggerConfig
@@ -522,6 +527,7 @@ export ko_pulumi.gcp.vertex.httpHeaders
 export ko_pulumi.gcp.vertex.imageSpec
 export ko_pulumi.gcp.vertex.importFeaturesAnalysis
 export ko_pulumi.gcp.vertex.indexStats
+export ko_pulumi.gcp.vertex.inlineData
 export ko_pulumi.gcp.vertex.inlineSource
 export ko_pulumi.gcp.vmwareengine.googleFileService
 export ko_pulumi.gcp.vmwareengine.hcxes

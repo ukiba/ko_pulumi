@@ -195,6 +195,27 @@ object loganalytics:
       def argsBuilder = com.pulumi.azure.loganalytics.inputs.WorkspaceTableCustomLogColumnArgs.builder
       builder.columns(args.map(_(argsBuilder).build)*)
 
+  /** Manages a Microsoft Table in a Log Analytics (formally Operational Insights) Workspace. */
+  def WorkspaceTableMicrosoft(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.azure.loganalytics.WorkspaceTableMicrosoftArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.azure.loganalytics.WorkspaceTableMicrosoftArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.azure.loganalytics.WorkspaceTableMicrosoft(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.azure.loganalytics.WorkspaceTableMicrosoftArgs.Builder)
+    /**
+     * @param columns One or more `column` blocks as defined below.
+     * @return builder
+     */
+    def columns(args: Endofunction[com.pulumi.azure.loganalytics.inputs.WorkspaceTableMicrosoftColumnArgs.Builder]*):
+        com.pulumi.azure.loganalytics.WorkspaceTableMicrosoftArgs.Builder =
+      def argsBuilder = com.pulumi.azure.loganalytics.inputs.WorkspaceTableMicrosoftColumnArgs.builder
+      builder.columns(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.azure.loganalytics.inputs.ClusterState.Builder)
     /**
      * @param identity An `identity` block as defined below. Changing this forces a new Log Analytics Cluster to be created.
@@ -222,4 +243,23 @@ object loganalytics:
     def standardColumns(args: Endofunction[com.pulumi.azure.loganalytics.inputs.WorkspaceTableCustomLogStandardColumnArgs.Builder]*):
         com.pulumi.azure.loganalytics.inputs.WorkspaceTableCustomLogState.Builder =
       def argsBuilder = com.pulumi.azure.loganalytics.inputs.WorkspaceTableCustomLogStandardColumnArgs.builder
+      builder.standardColumns(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.azure.loganalytics.inputs.WorkspaceTableMicrosoftState.Builder)
+    /**
+     * @param columns One or more `column` blocks as defined below.
+     * @return builder
+     */
+    def columns(args: Endofunction[com.pulumi.azure.loganalytics.inputs.WorkspaceTableMicrosoftColumnArgs.Builder]*):
+        com.pulumi.azure.loganalytics.inputs.WorkspaceTableMicrosoftState.Builder =
+      def argsBuilder = com.pulumi.azure.loganalytics.inputs.WorkspaceTableMicrosoftColumnArgs.builder
+      builder.columns(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param standardColumns A `standardColumn` block as defined below.
+     * @return builder
+     */
+    def standardColumns(args: Endofunction[com.pulumi.azure.loganalytics.inputs.WorkspaceTableMicrosoftStandardColumnArgs.Builder]*):
+        com.pulumi.azure.loganalytics.inputs.WorkspaceTableMicrosoftState.Builder =
+      def argsBuilder = com.pulumi.azure.loganalytics.inputs.WorkspaceTableMicrosoftStandardColumnArgs.builder
       builder.standardColumns(args.map(_(argsBuilder).build)*)

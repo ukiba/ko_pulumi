@@ -21,7 +21,9 @@ export ko_pulumi.azure.cdn.urlFileExtensionConditions
 export ko_pulumi.azure.cdn.urlFileNameConditions
 export ko_pulumi.azure.cdn.urlFilenameConditions
 export ko_pulumi.azure.cdn.urlPathConditions
+export ko_pulumi.azure.cdn.urlRedirect
 export ko_pulumi.azure.cdn.urlRedirectAction
+export ko_pulumi.azure.cdn.urlRewrite
 export ko_pulumi.azure.cdn.urlRewriteAction
 export ko_pulumi.azure.cdn.userManagedHttps
 export ko_pulumi.azure.cognitive.virtualNetworkRules
@@ -40,6 +42,7 @@ export ko_pulumi.azure.containerservice.upgradeSettings
 export ko_pulumi.azure.containerservice.volumes
 export ko_pulumi.azure.containerservice.webAppRouting
 export ko_pulumi.azure.containerservice.webAppRoutingIdentities
+export ko_pulumi.azure.containerservice.webAppRoutingIngress
 export ko_pulumi.azure.containerservice.windowsProfile
 export ko_pulumi.azure.containerservice.workloadAutoscalerProfile
 export ko_pulumi.azure.core.validations

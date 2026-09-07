@@ -99,9 +99,11 @@ export ko_pulumi.azure.cdn.association
 export ko_pulumi.azure.cdn.cache
 export ko_pulumi.azure.cdn.cacheExpirationAction
 export ko_pulumi.azure.cdn.cacheKeyQueryStringAction
+export ko_pulumi.azure.cdn.caching
 export ko_pulumi.azure.cdn.cdnManagedHttps
 export ko_pulumi.azure.cdn.cipherSuite
 export ko_pulumi.azure.cdn.clientPortConditions
+export ko_pulumi.azure.cdn.clientPorts
 export ko_pulumi.azure.cdn.conditions
 export ko_pulumi.azure.cdn.cookiesConditions
 export ko_pulumi.azure.cdn.customCiphers
@@ -109,6 +111,7 @@ export ko_pulumi.azure.cdn.customRules
 export ko_pulumi.azure.cdn.customerCertificates
 export ko_pulumi.azure.cdn.deliveryRules
 export ko_pulumi.azure.cdn.deviceCondition
+export ko_pulumi.azure.cdn.deviceTypes
 export ko_pulumi.azure.cdn.domains
 export ko_pulumi.azure.cdn.exclusions
 export ko_pulumi.azure.chaosstudio.actions
@@ -155,6 +158,7 @@ export ko_pulumi.azure.containerservice.agentSetting
 export ko_pulumi.azure.containerservice.aksAssignedIdentities
 export ko_pulumi.azure.containerservice.allowedHostPorts
 export ko_pulumi.azure.containerservice.alloweds
+export ko_pulumi.azure.containerservice.apiServerAccess
 export ko_pulumi.azure.containerservice.apiServerAccessProfile
 export ko_pulumi.azure.containerservice.authentication
 export ko_pulumi.azure.containerservice.authenticationCredentials

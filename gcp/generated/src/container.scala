@@ -2579,7 +2579,7 @@ object container:
       builder.gvnic(args(argsBuilder).build)
 
     /**
-     * @param hostMaintenancePolicy The maintenance policy for the hosts on which the GKE VMs run on.
+     * @param hostMaintenancePolicy The maintenance policy for the hosts on which the GKE VMs run on. Structure is documented below.
      * @return builder
      */
     def hostMaintenancePolicy(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigHostMaintenancePolicyArgs.Builder]):
@@ -2835,6 +2835,16 @@ object container:
         com.pulumi.gcp.container.inputs.ClusterNodeConfigGuestAcceleratorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodeConfigGuestAcceleratorGpuSharingConfigArgs.builder
       builder.gpuSharingConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.container.inputs.ClusterNodeConfigHostMaintenancePolicyArgs.Builder)
+    /**
+     * @param opportunisticMaintenanceStrategy Strategy that will trigger maintenance on behalf of the customer. Structure is documented below.
+     * @return builder
+     */
+    def opportunisticMaintenanceStrategy(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigHostMaintenancePolicyOpportunisticMaintenanceStrategyArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterNodeConfigHostMaintenancePolicyArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodeConfigHostMaintenancePolicyOpportunisticMaintenanceStrategyArgs.builder
+      builder.opportunisticMaintenanceStrategy(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodeConfigKubeletConfigArgs.Builder)
     /**
@@ -3415,7 +3425,7 @@ object container:
       builder.gvnic(args(argsBuilder).build)
 
     /**
-     * @param hostMaintenancePolicy The maintenance policy for the hosts on which the GKE VMs run on.
+     * @param hostMaintenancePolicy The maintenance policy for the hosts on which the GKE VMs run on. Structure is documented below.
      * @return builder
      */
     def hostMaintenancePolicy(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigHostMaintenancePolicyArgs.Builder]):
@@ -3671,6 +3681,16 @@ object container:
         com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigGuestAcceleratorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigGuestAcceleratorGpuSharingConfigArgs.builder
       builder.gpuSharingConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigHostMaintenancePolicyArgs.Builder)
+    /**
+     * @param opportunisticMaintenanceStrategy Strategy that will trigger maintenance on behalf of the customer. Structure is documented below.
+     * @return builder
+     */
+    def opportunisticMaintenanceStrategy(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigHostMaintenancePolicyOpportunisticMaintenanceStrategyArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigHostMaintenancePolicyArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigHostMaintenancePolicyOpportunisticMaintenanceStrategyArgs.builder
+      builder.opportunisticMaintenanceStrategy(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigKubeletConfigArgs.Builder)
     /**
@@ -4876,6 +4896,16 @@ object container:
         com.pulumi.gcp.container.inputs.NodePoolNodeConfigGuestAcceleratorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.NodePoolNodeConfigGuestAcceleratorGpuSharingConfigArgs.builder
       builder.gpuSharingConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.container.inputs.NodePoolNodeConfigHostMaintenancePolicyArgs.Builder)
+    /**
+     * @param opportunisticMaintenanceStrategy Strategy that will trigger maintenance on behalf of the customer.
+     * @return builder
+     */
+    def opportunisticMaintenanceStrategy(args: Endofunction[com.pulumi.gcp.container.inputs.NodePoolNodeConfigHostMaintenancePolicyOpportunisticMaintenanceStrategyArgs.Builder]):
+        com.pulumi.gcp.container.inputs.NodePoolNodeConfigHostMaintenancePolicyArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.NodePoolNodeConfigHostMaintenancePolicyOpportunisticMaintenanceStrategyArgs.builder
+      builder.opportunisticMaintenanceStrategy(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.container.inputs.NodePoolNodeConfigKubeletConfigArgs.Builder)
     /**

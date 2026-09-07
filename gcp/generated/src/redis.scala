@@ -99,6 +99,43 @@ object redis:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  /**
+   * A Google Cloud Redis Cluster ACL policy.
+   * 
+   * ## Import
+   * 
+   * ClusterAclPolicy can be imported using any of these accepted formats:
+   * 
+   * * `projects/{{project}}/locations/{{location}}/aclPolicies/{{acl_policy_id}}`
+   * * `{{project}}/{{location}}/{{acl_policy_id}}`
+   * * `{{location}}/{{acl_policy_id}}`
+   * 
+   * When using the `pulumi import` command, ClusterAclPolicy can be imported using one of the formats above. For example:
+   * 
+   * ```sh
+   * $ pulumi import gcp:redis/clusterAclPolicy:ClusterAclPolicy default projects/{{project}}/locations/{{location}}/aclPolicies/{{acl_policy_id}}
+   * $ pulumi import gcp:redis/clusterAclPolicy:ClusterAclPolicy default {{project}}/{{location}}/{{acl_policy_id}}
+   * $ pulumi import gcp:redis/clusterAclPolicy:ClusterAclPolicy default {{location}}/{{acl_policy_id}}
+   * ```
+   */
+  def ClusterAclPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.redis.ClusterAclPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.redis.ClusterAclPolicyArgs.builder
+    com.pulumi.gcp.redis.ClusterAclPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.redis.ClusterAclPolicyArgs.Builder)
+    /**
+     * @param rules The ACL rules within the ACL policy.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rules(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterAclPolicyRuleArgs.Builder]*):
+        com.pulumi.gcp.redis.ClusterAclPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterAclPolicyRuleArgs.builder
+      builder.rules(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.redis.ClusterArgs.Builder)
     /**
      * @param automatedBackupConfig The automated backup config for a instance.
@@ -275,6 +312,18 @@ object redis:
       val argsBuilder = com.pulumi.gcp.redis.inputs.GetClusterPlainArgs.builder
       com.pulumi.gcp.redis.RedisFunctions.getClusterPlain(args(argsBuilder).build)
 
+    /** Get information about a Google Cloud Redis Cluster ACL policy. For more information see the [official documentation](https://cloud.google.com/memorystore/docs/redis) or the [API documentation](https://cloud.google.com/memorystore/docs/redis/reference/rest). */
+    inline def getClusterAclPolicy(args: Endofunction[com.pulumi.gcp.redis.inputs.GetClusterAclPolicyArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.redis.outputs.GetClusterAclPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.redis.inputs.GetClusterAclPolicyArgs.builder
+      com.pulumi.gcp.redis.RedisFunctions.getClusterAclPolicy(args(argsBuilder).build)
+
+    /** Get information about a Google Cloud Redis Cluster ACL policy. For more information see the [official documentation](https://cloud.google.com/memorystore/docs/redis) or the [API documentation](https://cloud.google.com/memorystore/docs/redis/reference/rest). */
+    inline def getClusterAclPolicyPlain(args: Endofunction[com.pulumi.gcp.redis.inputs.GetClusterAclPolicyPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.redis.outputs.GetClusterAclPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.redis.inputs.GetClusterAclPolicyPlainArgs.builder
+      com.pulumi.gcp.redis.RedisFunctions.getClusterAclPolicyPlain(args(argsBuilder).build)
+
     /** Get info about a Google Cloud Redis instance. */
     inline def getInstance(args: Endofunction[com.pulumi.gcp.redis.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.redis.outputs.GetInstanceResult] =
@@ -286,6 +335,17 @@ object redis:
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.redis.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.redis.inputs.GetInstancePlainArgs.builder
       com.pulumi.gcp.redis.RedisFunctions.getInstancePlain(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.redis.inputs.ClusterAclPolicyState.Builder)
+    /**
+     * @param rules The ACL rules within the ACL policy.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rules(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterAclPolicyRuleArgs.Builder]*):
+        com.pulumi.gcp.redis.inputs.ClusterAclPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterAclPolicyRuleArgs.builder
+      builder.rules(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.redis.inputs.ClusterAutomatedBackupConfigArgs.Builder)
     /**

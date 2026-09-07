@@ -88,6 +88,8 @@ export ko_pulumi.gcp.ces.modalityConfigs
 export ko_pulumi.gcp.ces.modelSafeties
 export ko_pulumi.gcp.ces.modelSafety
 export ko_pulumi.gcp.ces.modelSettings
+export ko_pulumi.gcp.ces.oauth2AuthCodeConfig
+export ko_pulumi.gcp.ces.oauth2JwtBearerConfig
 export ko_pulumi.gcp.ces.oauthConfig
 export ko_pulumi.gcp.ces.oauthConfigs
 export ko_pulumi.gcp.ces.openApiTools
@@ -255,6 +257,7 @@ export ko_pulumi.gcp.container.nodePools
 export ko_pulumi.gcp.container.nodeReadinessConfig
 export ko_pulumi.gcp.container.notificationConfig
 export ko_pulumi.gcp.container.oidcConfig
+export ko_pulumi.gcp.container.opportunisticMaintenanceStrategy
 export ko_pulumi.gcp.databasemigrationservice.machineConfig
 export ko_pulumi.gcp.databasemigrationservice.mysql
 export ko_pulumi.gcp.databasemigrationservice.objectConfigs

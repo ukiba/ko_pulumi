@@ -1134,6 +1134,9 @@ object compute:
    * * [API documentation](https://cloud.google.com/compute/docs/reference/v1/backendServices)
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/load-balancing/http/backend-service)
+   * 
+   * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `iap.oauth2_client_id_wo`, `iap.oauth2_client_secret_wo`.
+   * Read more about Write-only Arguments.
    */
   def BackendService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.compute.BackendServiceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

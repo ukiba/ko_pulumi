@@ -58,7 +58,9 @@ export ko_pulumi.azure.cdn.geoFilters
 export ko_pulumi.azure.cdn.globalDeliveryRule
 export ko_pulumi.azure.cdn.healthProbe
 export ko_pulumi.azure.cdn.hostNameConditions
+export ko_pulumi.azure.cdn.hostNames
 export ko_pulumi.azure.cdn.httpVersionConditions
+export ko_pulumi.azure.cdn.httpVersions
 export ko_pulumi.azure.cdn.identity
 export ko_pulumi.azure.cdn.isDeviceConditions
 export ko_pulumi.azure.chaosstudio.identity
@@ -84,6 +86,7 @@ export ko_pulumi.azure.containerservice.gitRepo
 export ko_pulumi.azure.containerservice.gitRepository
 export ko_pulumi.azure.containerservice.gmsa
 export ko_pulumi.azure.containerservice.groups
+export ko_pulumi.azure.containerservice.hostedSystem
 export ko_pulumi.azure.containerservice.httpGets
 export ko_pulumi.azure.containerservice.httpProxyConfig
 export ko_pulumi.azure.containerservice.hubProfile
