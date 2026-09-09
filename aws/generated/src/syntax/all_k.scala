@@ -116,6 +116,7 @@ export ko_pulumi.aws.bedrock.metadatas
 export ko_pulumi.aws.bedrock.microsoftOauth2ProviderConfig
 export ko_pulumi.aws.bedrock.model
 export ko_pulumi.aws.bedrock.modelConfig
+export ko_pulumi.aws.bedrock.modelMapping
 export ko_pulumi.aws.bedrock.modelSource
 export ko_pulumi.aws.bedrock.models
 export ko_pulumi.aws.bedrock.mongoDbAtlasConfiguration
@@ -135,6 +136,7 @@ export ko_pulumi.aws.bedrock.openApiSchema
 export ko_pulumi.aws.bedrock.openaiModelConfig
 export ko_pulumi.aws.bedrock.opensearchManagedClusterConfiguration
 export ko_pulumi.aws.bedrock.opensearchServerlessConfiguration
+export ko_pulumi.aws.bedrock.operations
 export ko_pulumi.aws.bedrock.outboundAuth
 export ko_pulumi.aws.bedrock.output
 export ko_pulumi.aws.bedrock.outputConfigs
@@ -235,6 +237,8 @@ export ko_pulumi.aws.datasync.onPremConfig
 export ko_pulumi.aws.datasync.options
 export ko_pulumi.aws.datazone.lastDeployments
 export ko_pulumi.aws.datazone.model
+export ko_pulumi.aws.datazone.overrideDomainUnitOwners
+export ko_pulumi.aws.datazone.overrideProjectOwners
 export ko_pulumi.aws.dax.nodes
 export ko_pulumi.aws.devopsguru.kmsServerSideEncryption
 export ko_pulumi.aws.devopsguru.logsAnomalyDetection
@@ -421,6 +425,7 @@ export ko_pulumi.aws.lambda.loggingConfig
 export ko_pulumi.aws.lambda.metricsConfig
 export ko_pulumi.aws.lambda.onFailure
 export ko_pulumi.aws.lambda.onSuccess
+export ko_pulumi.aws.lambdamicrovms.logging
 export ko_pulumi.aws.lb.minimumLoadBalancerCapacity
 export ko_pulumi.aws.lb.mutualAuthentication
 export ko_pulumi.aws.lex.kendraConfiguration

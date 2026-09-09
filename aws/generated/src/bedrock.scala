@@ -713,7 +713,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.AgentcoreGatewayTargetArgs.Builder)
     /**
-     * @param credentialProviderConfiguration Configuration for authenticating requests to the target. Required when using `lambda`, `openApiSchema` and `smithyModel` in `mcp` block. If using `mcpServer` in `mcp` block with no authorization, it should not be specified. See `credentialProviderConfiguration` below.
+     * @param credentialProviderConfiguration Configuration for authenticating requests to the target. Required when using `lambda`, `openApiSchema` and `smithyModel` in `mcp` block. If using `mcpServer` in `mcp` block with no authorization, it should not be specified. See `credentialProviderConfiguration` Block below.
      * @return builder
      */
     def credentialProviderConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationArgs.Builder]):
@@ -722,7 +722,7 @@ object bedrock:
       builder.credentialProviderConfiguration(args(argsBuilder).build)
 
     /**
-     * @param metadataConfiguration Configuration for HTTP header and query parameter propagation between the gateway and target servers. See `metadataConfiguration` below.
+     * @param metadataConfiguration Configuration for HTTP header and query parameter propagation between the gateway and target servers. See `metadataConfiguration` Block below.
      * @return builder
      */
     def metadataConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetMetadataConfigurationArgs.Builder]):
@@ -731,7 +731,7 @@ object bedrock:
       builder.metadataConfiguration(args(argsBuilder).build)
 
     /**
-     * @param privateEndpoint Configuration for private connectivity from AgentCore Gateway to a resource inside your VPC. Traffic is routed through Amazon VPC Lattice and never traverses the public internet. See `privateEndpoint` below.
+     * @param privateEndpoint Configuration for private connectivity from AgentCore Gateway to a resource inside your VPC. Traffic is routed through Amazon VPC Lattice and never traverses the public internet. See `privateEndpoint` Block below.
      * @return builder
      */
     def privateEndpoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetPrivateEndpointArgs.Builder]):
@@ -740,7 +740,7 @@ object bedrock:
       builder.privateEndpoint(args(argsBuilder).build)
 
     /**
-     * @param targetConfiguration Configuration for the target endpoint. See `targetConfiguration` below.
+     * @param targetConfiguration Configuration for the target endpoint. See `targetConfiguration` Block below.
      * 
      * The following arguments are optional:
      * @return builder
@@ -4394,7 +4394,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationArgs.Builder)
     /**
-     * @param apiKey API key-based authentication configuration. See `apiKey` below.
+     * @param apiKey API key-based authentication configuration. See `apiKey` Block below.
      * @return builder
      */
     def apiKey(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationApiKeyArgs.Builder]):
@@ -4403,7 +4403,7 @@ object bedrock:
       builder.apiKey(args(argsBuilder).build)
 
     /**
-     * @param callerIamCredentials Caller IAM credentials-based authentication configuration. See `callerIamCredentials` below.
+     * @param callerIamCredentials Caller IAM credentials-based authentication configuration. See `callerIamCredentials` Block below.
      * @return builder
      */
     def callerIamCredentials(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationCallerIamCredentialsArgs.Builder]):
@@ -4412,7 +4412,7 @@ object bedrock:
       builder.callerIamCredentials(args(argsBuilder).build)
 
     /**
-     * @param gatewayIamRole Use the gateway&#39;s IAM role for authentication. See `gatewayIamRole` below.
+     * @param gatewayIamRole Use the gateway&#39;s IAM role for authentication. See `gatewayIamRole` Block below.
      * @return builder
      */
     def gatewayIamRole(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationGatewayIamRoleArgs.Builder]):
@@ -4430,7 +4430,7 @@ object bedrock:
       builder.jwtPassthrough(args(argsBuilder).build)
 
     /**
-     * @param oauth OAuth-based authentication configuration. See `oauth` below.
+     * @param oauth OAuth-based authentication configuration. See `oauth` Block below.
      * @return builder
      */
     def oauth(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationOauthArgs.Builder]):
@@ -4440,7 +4440,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetPrivateEndpointArgs.Builder)
     /**
-     * @param managedVpcResource AWS creates and manages the VPC Lattice resource gateway and resource configuration on your behalf using a service-linked role. See `managedVpcResource` below.
+     * @param managedVpcResource AWS creates and manages the VPC Lattice resource gateway and resource configuration on your behalf using a service-linked role. See `managedVpcResource` Block below.
      * @return builder
      */
     def managedVpcResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetPrivateEndpointManagedVpcResourceArgs.Builder]):
@@ -4449,7 +4449,7 @@ object bedrock:
       builder.managedVpcResource(args(argsBuilder).build)
 
     /**
-     * @param selfManagedLatticeResource Use an existing VPC Lattice resource configuration that you manage yourself. Useful for cross-account setups or advanced Lattice configurations. See `selfManagedLatticeResource` below.
+     * @param selfManagedLatticeResource Use an existing VPC Lattice resource configuration that you manage yourself. Useful for cross-account setups or advanced Lattice configurations. See `selfManagedLatticeResource` Block below.
      * @return builder
      */
     def selfManagedLatticeResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetPrivateEndpointSelfManagedLatticeResourceArgs.Builder]):
@@ -4459,7 +4459,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetState.Builder)
     /**
-     * @param credentialProviderConfiguration Configuration for authenticating requests to the target. Required when using `lambda`, `openApiSchema` and `smithyModel` in `mcp` block. If using `mcpServer` in `mcp` block with no authorization, it should not be specified. See `credentialProviderConfiguration` below.
+     * @param credentialProviderConfiguration Configuration for authenticating requests to the target. Required when using `lambda`, `openApiSchema` and `smithyModel` in `mcp` block. If using `mcpServer` in `mcp` block with no authorization, it should not be specified. See `credentialProviderConfiguration` Block below.
      * @return builder
      */
     def credentialProviderConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationArgs.Builder]):
@@ -4468,7 +4468,7 @@ object bedrock:
       builder.credentialProviderConfiguration(args(argsBuilder).build)
 
     /**
-     * @param metadataConfiguration Configuration for HTTP header and query parameter propagation between the gateway and target servers. See `metadataConfiguration` below.
+     * @param metadataConfiguration Configuration for HTTP header and query parameter propagation between the gateway and target servers. See `metadataConfiguration` Block below.
      * @return builder
      */
     def metadataConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetMetadataConfigurationArgs.Builder]):
@@ -4477,7 +4477,7 @@ object bedrock:
       builder.metadataConfiguration(args(argsBuilder).build)
 
     /**
-     * @param privateEndpoint Configuration for private connectivity from AgentCore Gateway to a resource inside your VPC. Traffic is routed through Amazon VPC Lattice and never traverses the public internet. See `privateEndpoint` below.
+     * @param privateEndpoint Configuration for private connectivity from AgentCore Gateway to a resource inside your VPC. Traffic is routed through Amazon VPC Lattice and never traverses the public internet. See `privateEndpoint` Block below.
      * @return builder
      */
     def privateEndpoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetPrivateEndpointArgs.Builder]):
@@ -4486,7 +4486,7 @@ object bedrock:
       builder.privateEndpoint(args(argsBuilder).build)
 
     /**
-     * @param targetConfiguration Configuration for the target endpoint. See `targetConfiguration` below.
+     * @param targetConfiguration Configuration for the target endpoint. See `targetConfiguration` Block below.
      * 
      * The following arguments are optional:
      * @return builder
@@ -4503,7 +4503,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationArgs.Builder)
     /**
-     * @param http HTTP target configuration for routing requests directly to an AgentCore Runtime agent. See `http` below.
+     * @param http HTTP target configuration for routing requests directly to an AgentCore Runtime agent. See `http` Block below.
      * @return builder
      */
     def http(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpArgs.Builder]):
@@ -4512,7 +4512,16 @@ object bedrock:
       builder.http(args(argsBuilder).build)
 
     /**
-     * @param mcp Model Context Protocol (MCP) configuration. See `mcp` below.
+     * @param inference Inference target configuration for routing requests to a large language model (LLM) provider, either through a built-in connector or an explicitly configured provider. See `inference` Block below.
+     * @return builder
+     */
+    def inference(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceArgs.builder
+      builder.inference(args(argsBuilder).build)
+
+    /**
+     * @param mcp Model Context Protocol (MCP) configuration. See `mcp` Block below.
      * @return builder
      */
     def mcp(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpArgs.Builder]):
@@ -4520,11 +4529,40 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpArgs.builder
       builder.mcp(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeArgs.Builder)
+    /**
+     * @param schema API schema configuration that defines the structure of the runtime target&#39;s API. See `schema` Block below.
+     * @return builder
+     */
+    def schema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaArgs.builder
+      builder.schema(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaArgs.Builder)
+    /**
+     * @param source Configuration for API schema. See `apiSchemaConfiguration` Block below.
+     * @return builder
+     */
+    def source(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaSourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaSourceArgs.builder
+      builder.source(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaSourceArgs.Builder)
+    def inlinePayload(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaSourceInlinePayloadArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaSourceInlinePayloadArgs.builder
+      builder.inlinePayload(args(argsBuilder).build)
+
+    def s3(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaSourceS3Args.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaSourceS3Args.builder
+      builder.s3(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpArgs.Builder)
     /**
-     * @param agentcoreRuntime AgentCore Runtime target configuration. See `agentcoreRuntime` below.
-     * 
-     * &gt; **Note:** HTTP targets can only be attached to gateways that do not have a `protocolType` set. They are not supported on MCP-protocol gateways.
+     * @param agentcoreRuntime AgentCore Runtime target configuration. See `agentcoreRuntime` Block below.
      * @return builder
      */
     def agentcoreRuntime(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeArgs.Builder]):
@@ -4532,9 +4570,128 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeArgs.builder
       builder.agentcoreRuntime(args(argsBuilder).build)
 
+    /**
+     * @param passthrough Passthrough target configuration that forwards requests to an external HTTPS endpoint. See `passthrough` Block below.
+     * 
+     * &gt; **Note:** HTTP targets can only be attached to gateways that do not have a `protocolType` set. They are not supported on MCP-protocol gateways.
+     * @return builder
+     */
+    def passthrough(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughArgs.builder
+      builder.passthrough(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughArgs.Builder)
+    /**
+     * @param schema API schema configuration that defines the structure of the passthrough target&#39;s API. Supports the same `inlinePayload` and `s3` blocks as `apiSchemaConfiguration`.
+     * @return builder
+     */
+    def schema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaArgs.builder
+      builder.schema(args(argsBuilder).build)
+
+    /**
+     * @param stickinessConfiguration Session stickiness configuration routing requests within the same session to the same target. See `stickinessConfiguration` below.
+     * @return builder
+     */
+    def stickinessConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughStickinessConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughStickinessConfigurationArgs.builder
+      builder.stickinessConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaArgs.Builder)
+    /**
+     * @param source Configuration for API schema. See `apiSchemaConfiguration` Block below.
+     * @return builder
+     */
+    def source(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaSourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaSourceArgs.builder
+      builder.source(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaSourceArgs.Builder)
+    def inlinePayload(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaSourceInlinePayloadArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaSourceInlinePayloadArgs.builder
+      builder.inlinePayload(args(argsBuilder).build)
+
+    def s3(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaSourceS3Args.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaSourceS3Args.builder
+      builder.s3(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceArgs.Builder)
+    /**
+     * @param connector Connector-based inference configuration that routes requests to an LLM provider through a built-in connector with predefined provider rules. See `connector` Block below.
+     * @return builder
+     */
+    def connector(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceConnectorArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceConnectorArgs.builder
+      builder.connector(args(argsBuilder).build)
+
+    /**
+     * @param provider Provider-based inference configuration that explicitly defines the endpoint, model mapping, and operations used to route requests to an LLM provider. See `provider` Block below.
+     * @return builder
+     */
+    def provider(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderArgs.builder
+      builder.provider(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceConnectorArgs.Builder)
+    /**
+     * @param source Source configuration identifying which connector to use. See `source` Block below.
+     * @return builder
+     */
+    def source(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceConnectorSourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceConnectorArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceConnectorSourceArgs.builder
+      builder.source(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderArgs.Builder)
+    /**
+     * @param modelMapping Configuration that translates client-facing model IDs to the model IDs expected by the provider. See `modelMapping` Block below.
+     * @return builder
+     */
+    def modelMapping(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderModelMappingArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderModelMappingArgs.builder
+      builder.modelMapping(args(argsBuilder).build)
+
+    /**
+     * @param operations List of per-operation configurations that map request paths to the models supported for each operation. See `operation` below.
+     * @return builder
+     */
+    def operations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderOperationArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderOperationArgs.builder
+      builder.operations(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderModelMappingArgs.Builder)
+    /**
+     * @param providerPrefix Provider prefix configuration used for model ID translation. See `providerPrefix` Block below.
+     * @return builder
+     */
+    def providerPrefix(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderModelMappingProviderPrefixArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderModelMappingArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderModelMappingProviderPrefixArgs.builder
+      builder.providerPrefix(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderOperationArgs.Builder)
+    /**
+     * @param models List of models supported for this operation. See `model` Block below.
+     * @return builder
+     */
+    def models(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderOperationModelArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderOperationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceProviderOperationModelArgs.builder
+      builder.models(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpApiGatewayApiGatewayToolConfigurationArgs.Builder)
     /**
-     * @param toolFilters Repeatable block of path and method patterns to expose as tools. See `toolFilter` below.
+     * @param toolFilters Repeatable block of path and method patterns to expose as tools. See `toolFilter` Block below.
      * @return builder
      */
     def toolFilters(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpApiGatewayApiGatewayToolConfigurationToolFilterArgs.Builder]*):
@@ -4543,7 +4700,7 @@ object bedrock:
       builder.toolFilters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param toolOverrides Repeatable block of explicit tool definitions with optional custom names and descriptions. See `toolOverride` below.
+     * @param toolOverrides Repeatable block of explicit tool definitions with optional custom names and descriptions. See `toolOverride` Block below.
      * @return builder
      */
     def toolOverrides(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpApiGatewayApiGatewayToolConfigurationToolOverrideArgs.Builder]*):
@@ -4553,7 +4710,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpApiGatewayArgs.Builder)
     /**
-     * @param apiGatewayToolConfiguration Configuration for API Gateway tools. See `apiGatewayToolConfiguration` below.
+     * @param apiGatewayToolConfiguration Configuration for API Gateway tools. See `apiGatewayToolConfiguration` Block below.
      * @return builder
      */
     def apiGatewayToolConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpApiGatewayApiGatewayToolConfigurationArgs.Builder]):
@@ -4563,7 +4720,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpArgs.Builder)
     /**
-     * @param apiGateway API Gateway target configuration. See `apiGateway` below.
+     * @param apiGateway API Gateway target configuration. See `apiGateway` Block below.
      * @return builder
      */
     def apiGateway(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpApiGatewayArgs.Builder]):
@@ -4572,7 +4729,16 @@ object bedrock:
       builder.apiGateway(args(argsBuilder).build)
 
     /**
-     * @param lambda Lambda function target configuration. See `lambda` below.
+     * @param connector Connector integration target configuration. Connectors provide pre-built integrations with AWS services and third-party tools. See `connector` Block below.
+     * @return builder
+     */
+    def connector(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpConnectorArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpConnectorArgs.builder
+      builder.connector(args(argsBuilder).build)
+
+    /**
+     * @param lambda Lambda function target configuration. See `lambda` Block below.
      * @return builder
      */
     def lambda(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaArgs.Builder]):
@@ -4581,7 +4747,7 @@ object bedrock:
       builder.lambda(args(argsBuilder).build)
 
     /**
-     * @param mcpServer MCP server target configuration. See `mcpServer` below.
+     * @param mcpServer MCP server target configuration. See `mcpServer` Block below.
      * @return builder
      */
     def mcpServer(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpMcpServerArgs.Builder]):
@@ -4590,7 +4756,7 @@ object bedrock:
       builder.mcpServer(args(argsBuilder).build)
 
     /**
-     * @param openApiSchema OpenAPI schema-based target configuration. See `apiSchemaConfiguration` below.
+     * @param openApiSchema OpenAPI schema-based target configuration. See `apiSchemaConfiguration` Block below.
      * @return builder
      */
     def openApiSchema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpOpenApiSchemaArgs.Builder]):
@@ -4599,7 +4765,7 @@ object bedrock:
       builder.openApiSchema(args(argsBuilder).build)
 
     /**
-     * @param smithyModel Smithy model-based target configuration. See `apiSchemaConfiguration` below.
+     * @param smithyModel Smithy model-based target configuration. See `apiSchemaConfiguration` Block below.
      * @return builder
      */
     def smithyModel(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpSmithyModelArgs.Builder]):
@@ -4607,9 +4773,38 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpSmithyModelArgs.builder
       builder.smithyModel(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpConnectorArgs.Builder)
+    /**
+     * @param configurations Per-tool configurations for the connector. See `configuration` Block below.
+     * @return builder
+     */
+    def configurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpConnectorConfigurationArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpConnectorArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpConnectorConfigurationArgs.builder
+      builder.configurations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param source Source configuration identifying which connector to use. See `source` Block below.
+     * @return builder
+     */
+    def source(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpConnectorSourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpConnectorArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpConnectorSourceArgs.builder
+      builder.source(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpConnectorConfigurationArgs.Builder)
+    /**
+     * @param parameterOverrides Parameter overrides to control parameter visibility and descriptions. See `parameterOverride` Block below.
+     * @return builder
+     */
+    def parameterOverrides(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpConnectorConfigurationParameterOverrideArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpConnectorConfigurationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpConnectorConfigurationParameterOverrideArgs.builder
+      builder.parameterOverrides(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaArgs.Builder)
     /**
-     * @param toolSchema Schema definition for the tool. See `toolSchema` below.
+     * @param toolSchema Schema definition for the tool. See `toolSchema` Block below.
      * @return builder
      */
     def toolSchema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaArgs.Builder]):
@@ -4619,7 +4814,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaArgs.Builder)
     /**
-     * @param inlinePayloads Inline tool definition. See `inlinePayload` below.
+     * @param inlinePayloads Inline tool definition. See `inlinePayload` Block below.
      * @return builder
      */
     def inlinePayloads(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadArgs.Builder]*):
@@ -4628,7 +4823,7 @@ object bedrock:
       builder.inlinePayloads(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param s3 S3-based tool definition. See `s3` below.
+     * @param s3 S3-based tool definition. See `s3` Block below.
      * @return builder
      */
     def s3(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaS3Args.Builder]):
@@ -4638,7 +4833,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadArgs.Builder)
     /**
-     * @param inputSchema Schema for the tool&#39;s input. See `schemaDefinition` below.
+     * @param inputSchema Schema for the tool&#39;s input. See `schemaDefinition` Block below.
      * @return builder
      */
     def inputSchema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaArgs.Builder]):
@@ -4647,7 +4842,7 @@ object bedrock:
       builder.inputSchema(args(argsBuilder).build)
 
     /**
-     * @param outputSchema Schema for the tool&#39;s output. See `schemaDefinition` below.
+     * @param outputSchema Schema for the tool&#39;s output. See `schemaDefinition` Block below.
      * @return builder
      */
     def outputSchema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaArgs.Builder]):
@@ -4677,7 +4872,7 @@ object bedrock:
       builder.items(args(argsBuilder).build)
 
     /**
-     * @param properties Set of property definitions for arrays of objects. See `property` below.
+     * @param properties Set of property definitions for arrays of objects. See `property` Block below.
      * @return builder
      */
     def properties(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaItemsPropertyArgs.Builder]*):
@@ -4687,7 +4882,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaPropertyArgs.Builder)
     /**
-     * @param items Items definition for array properties. See `items` above.
+     * @param items Items definition for array properties. See `items` Block above.
      * @return builder
      */
     def items(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaPropertyItemsArgs.Builder]):
@@ -4715,7 +4910,7 @@ object bedrock:
       builder.items(args(argsBuilder).build)
 
     /**
-     * @param properties Set of property definitions for arrays of objects. See `property` below.
+     * @param properties Set of property definitions for arrays of objects. See `property` Block below.
      * @return builder
      */
     def properties(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaPropertyItemsPropertyArgs.Builder]*):
@@ -4745,7 +4940,7 @@ object bedrock:
       builder.items(args(argsBuilder).build)
 
     /**
-     * @param properties Set of property definitions for arrays of objects. See `property` below.
+     * @param properties Set of property definitions for arrays of objects. See `property` Block below.
      * @return builder
      */
     def properties(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaItemsPropertyArgs.Builder]*):
@@ -4755,7 +4950,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaPropertyArgs.Builder)
     /**
-     * @param items Items definition for array properties. See `items` above.
+     * @param items Items definition for array properties. See `items` Block above.
      * @return builder
      */
     def items(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaPropertyItemsArgs.Builder]):
@@ -4783,7 +4978,7 @@ object bedrock:
       builder.items(args(argsBuilder).build)
 
     /**
-     * @param properties Set of property definitions for arrays of objects. See `property` below.
+     * @param properties Set of property definitions for arrays of objects. See `property` Block below.
      * @return builder
      */
     def properties(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaPropertyItemsPropertyArgs.Builder]*):
@@ -4793,7 +4988,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpMcpServerArgs.Builder)
     /**
-     * @param mcpToolSchema Tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. When set, dynamic tool discovery and synchronization are disabled. See `mcpToolSchema` below.
+     * @param mcpToolSchema Tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. When set, dynamic tool discovery and synchronization are disabled. See `mcpToolSchema` Block below.
      * @return builder
      */
     def mcpToolSchema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpMcpServerMcpToolSchemaArgs.Builder]):
@@ -4812,7 +5007,7 @@ object bedrock:
       builder.inlinePayload(args(argsBuilder).build)
 
     /**
-     * @param s3 S3 location of the tool schema. See `s3` below.
+     * @param s3 S3 location of the tool schema. See `s3` Block below.
      * @return builder
      */
     def s3(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpMcpServerMcpToolSchemaS3Args.Builder]):

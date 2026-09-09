@@ -73,6 +73,8 @@ export ko_pulumi.aws.cognito.webAuthnConfiguration
 export ko_pulumi.aws.comprehend.vpcConfig
 export ko_pulumi.aws.computeoptimizer.utilizationPreferences
 export ko_pulumi.aws.connect.userConfigs
+export ko_pulumi.aws.datazone.useAssetType
+export ko_pulumi.aws.datazone.user
 export ko_pulumi.aws.datazone.userParameters
 export ko_pulumi.aws.devicefarm.vpcConfig
 export ko_pulumi.aws.directoryservice.vpcSettings

@@ -6,6 +6,8 @@ import jp.ukiba.ko_pulumi
 export ko_pulumi.aws.accessanalyzer.filters
 export ko_pulumi.aws.accessanalyzer.inclusions
 export ko_pulumi.aws.accessanalyzer.internalAccess
+export ko_pulumi.aws.accountaccess.identityCenter
+export ko_pulumi.aws.accountaccess.identitySource
 export ko_pulumi.aws.alb.fixedResponse
 export ko_pulumi.aws.alb.forward
 export ko_pulumi.aws.alb.healthCheck
@@ -96,6 +98,7 @@ export ko_pulumi.aws.bedrock.humanWorkflowConfig
 export ko_pulumi.aws.bedrock.iamPrincipal
 export ko_pulumi.aws.bedrock.imageExtractionConfiguration
 export ko_pulumi.aws.bedrock.indexedKeys
+export ko_pulumi.aws.bedrock.inference
 export ko_pulumi.aws.bedrock.inferenceConfig
 export ko_pulumi.aws.bedrock.inferenceConfiguration
 export ko_pulumi.aws.bedrock.inferenceConfigurations
@@ -176,6 +179,7 @@ export ko_pulumi.aws.datapipeline.fields
 export ko_pulumi.aws.datasync.includes
 export ko_pulumi.aws.datazone.failureReasons
 export ko_pulumi.aws.datazone.formsInputs
+export ko_pulumi.aws.datazone.group
 export ko_pulumi.aws.datazone.iams
 export ko_pulumi.aws.datazone.imports
 export ko_pulumi.aws.devopsguru.filters
@@ -316,6 +320,7 @@ export ko_pulumi.aws.lambda.filters
 export ko_pulumi.aws.lambda.functionScalingConfig
 export ko_pulumi.aws.lambda.imageConfig
 export ko_pulumi.aws.lambda.instanceRequirements
+export ko_pulumi.aws.lambdamicrovms.idlePolicy
 export ko_pulumi.aws.lb.fixedResponse
 export ko_pulumi.aws.lb.fixedResponses
 export ko_pulumi.aws.lb.forward

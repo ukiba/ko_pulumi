@@ -3,6 +3,7 @@ package jp.ukiba.ko_pulumi.aws.syntax.all
 
 import jp.ukiba.ko_pulumi
 
+export ko_pulumi.aws.accountaccess.timeouts
 export ko_pulumi.aws.acm.renewalSummaries
 export ko_pulumi.aws.acmpca.revocationConfiguration
 export ko_pulumi.aws.acmpca.subject
@@ -178,9 +179,11 @@ export ko_pulumi.aws.bcmdata.refreshCadences
 export ko_pulumi.aws.bcmdata.s3Destinations
 export ko_pulumi.aws.bcmdata.s3OutputConfigurations
 export ko_pulumi.aws.bcmdata.timeouts
+export ko_pulumi.aws.bedrock.parameterOverrides
 export ko_pulumi.aws.bedrock.parameters
 export ko_pulumi.aws.bedrock.parsingConfiguration
 export ko_pulumi.aws.bedrock.parsingPrompt
+export ko_pulumi.aws.bedrock.passthrough
 export ko_pulumi.aws.bedrock.patternObjectFilters
 export ko_pulumi.aws.bedrock.performanceConfig
 export ko_pulumi.aws.bedrock.piiEntitiesConfigs
@@ -195,6 +198,8 @@ export ko_pulumi.aws.bedrock.promptConfigurations
 export ko_pulumi.aws.bedrock.promptOverrideConfigurations
 export ko_pulumi.aws.bedrock.properties
 export ko_pulumi.aws.bedrock.protocolConfiguration
+export ko_pulumi.aws.bedrock.provider
+export ko_pulumi.aws.bedrock.providerPrefix
 export ko_pulumi.aws.bedrock.provisionedConfiguration
 export ko_pulumi.aws.bedrock.queryEngineConfiguration
 export ko_pulumi.aws.bedrock.queryGenerationConfiguration
@@ -231,6 +236,7 @@ export ko_pulumi.aws.bedrock.s3VectorsConfiguration
 export ko_pulumi.aws.bedrock.salesforceConfiguration
 export ko_pulumi.aws.bedrock.salesforceOauth2ProviderConfig
 export ko_pulumi.aws.bedrock.samplingConfig
+export ko_pulumi.aws.bedrock.schema
 export ko_pulumi.aws.bedrock.secretsManager
 export ko_pulumi.aws.bedrock.seedUrls
 export ko_pulumi.aws.bedrock.segmentationConfiguration
@@ -251,10 +257,12 @@ export ko_pulumi.aws.bedrock.skills
 export ko_pulumi.aws.bedrock.slackOauth2ProviderConfig
 export ko_pulumi.aws.bedrock.slidingWindows
 export ko_pulumi.aws.bedrock.smithyModel
+export ko_pulumi.aws.bedrock.source
 export ko_pulumi.aws.bedrock.sourceConfiguration
 export ko_pulumi.aws.bedrock.sqlKnowledgeBaseConfiguration
 export ko_pulumi.aws.bedrock.staticOverride
 export ko_pulumi.aws.bedrock.staticRoute
+export ko_pulumi.aws.bedrock.stickinessConfiguration
 export ko_pulumi.aws.bedrock.storage
 export ko_pulumi.aws.bedrock.storageConfiguration
 export ko_pulumi.aws.bedrock.storageLocations
@@ -491,6 +499,8 @@ export ko_pulumi.aws.datasync.sasConfiguration
 export ko_pulumi.aws.datasync.schedule
 export ko_pulumi.aws.datasync.smb
 export ko_pulumi.aws.datasync.taskReportConfig
+export ko_pulumi.aws.datazone.principal
+export ko_pulumi.aws.datazone.project
 export ko_pulumi.aws.datazone.provisionedResources
 export ko_pulumi.aws.datazone.singleSignOn
 export ko_pulumi.aws.datazone.ssos
@@ -501,6 +511,7 @@ export ko_pulumi.aws.dax.serverSideEncryption
 export ko_pulumi.aws.devicefarm.rules
 export ko_pulumi.aws.devopsguru.sns
 export ko_pulumi.aws.devopsguru.tags
+export ko_pulumi.aws.directconnect.rateLimiterStatuses
 export ko_pulumi.aws.directoryservice.target
 export ko_pulumi.aws.dlm.parameters
 export ko_pulumi.aws.dlm.policyDetails
@@ -611,6 +622,7 @@ export ko_pulumi.aws.efs.posixUser
 export ko_pulumi.aws.efs.protection
 export ko_pulumi.aws.efs.rootDirectory
 export ko_pulumi.aws.efs.sizeInBytes
+export ko_pulumi.aws.eks.podGcControllerConfig
 export ko_pulumi.aws.eks.podIdentityAssociations
 export ko_pulumi.aws.eks.provider
 export ko_pulumi.aws.eks.rbacRoleMappings
@@ -853,6 +865,7 @@ export ko_pulumi.aws.lambda.sourceAccessConfigurations
 export ko_pulumi.aws.lambda.tenancyConfig
 export ko_pulumi.aws.lambda.timeouts
 export ko_pulumi.aws.lambda.tracingConfig
+export ko_pulumi.aws.lambdamicrovms.timeouts
 export ko_pulumi.aws.lb.pathPattern
 export ko_pulumi.aws.lb.pathPatterns
 export ko_pulumi.aws.lb.queryStrings
@@ -923,6 +936,8 @@ export ko_pulumi.aws.mailmanager.publicNetworkConfiguration
 export ko_pulumi.aws.mailmanager.publishToSns
 export ko_pulumi.aws.mailmanager.relay
 export ko_pulumi.aws.mailmanager.replaceRecipient
+export ko_pulumi.aws.mailmanager.retention
+export ko_pulumi.aws.mailmanager.retentionActuals
 export ko_pulumi.aws.mailmanager.rules
 export ko_pulumi.aws.mailmanager.send
 export ko_pulumi.aws.mailmanager.stringExpression

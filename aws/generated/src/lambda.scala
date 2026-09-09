@@ -655,7 +655,7 @@ object lambda:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /** Manages an AWS Lambda MicroVMs Image. Use this resource to define the base image, application code, and runtime configuration from which MicroVMs are launched. */
-  def MicrovmsImage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated() def MicrovmsImage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lambda.MicrovmsImageArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lambda.MicrovmsImageArgs.builder
     conf.logicalName2physicalName(name) match

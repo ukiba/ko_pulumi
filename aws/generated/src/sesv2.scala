@@ -536,7 +536,7 @@ object sesv2:
       builder.details(args(argsBuilder).build)
 
     /**
-     * @param routes List of active routes. See `routes` below.
+     * @param routes List of active routes. See `routes` Block below.
      * @return builder
      */
     def routes(args: Endofunction[com.pulumi.aws.sesv2.inputs.MultiRegionEndpointRouteArgs.Builder]*):

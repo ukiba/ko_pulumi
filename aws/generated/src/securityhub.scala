@@ -901,7 +901,7 @@ object securityhub:
 
   extension (builder: com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicyArgs.Builder)
     /**
-     * @param securityControlsConfiguration Defines which security controls are enabled in the configuration policy and any customizations to parameters affecting them. See below.
+     * @param securityControlsConfiguration Defines which security controls are enabled in the configuration policy and any customizations to parameters affecting them. It must be defined if `serviceEnabled` is set to true. See below.
      * @return builder
      */
     def securityControlsConfiguration(args: Endofunction[com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationArgs.Builder]):

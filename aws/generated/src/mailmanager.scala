@@ -4,6 +4,34 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object mailmanager:
+  /** Manages an AWS SES Mail Manager Archive. */
+  def Archive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.mailmanager.ArchiveArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.mailmanager.ArchiveArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.mailmanager.Archive(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.mailmanager.ArchiveArgs.Builder)
+    /**
+     * @param retention Retention policy for the archive. See `retention` Block.
+     * @return builder
+     */
+    def retention(args: Endofunction[com.pulumi.aws.mailmanager.inputs.ArchiveRetentionArgs.Builder]):
+        com.pulumi.aws.mailmanager.ArchiveArgs.Builder =
+      val argsBuilder = com.pulumi.aws.mailmanager.inputs.ArchiveRetentionArgs.builder
+      builder.retention(args(argsBuilder).build)
+
   /** Manages an AWS SES Mail Manager Ingress Point. */
   def IngressPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.mailmanager.IngressPointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -133,6 +161,25 @@ object mailmanager:
         com.pulumi.aws.mailmanager.TrafficPolicyArgs.Builder =
       def argsBuilder = com.pulumi.aws.mailmanager.inputs.TrafficPolicyPolicyStatementArgs.builder
       builder.policyStatements(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.mailmanager.inputs.ArchiveState.Builder)
+    /**
+     * @param retention Retention policy for the archive. See `retention` Block.
+     * @return builder
+     */
+    def retention(args: Endofunction[com.pulumi.aws.mailmanager.inputs.ArchiveRetentionArgs.Builder]):
+        com.pulumi.aws.mailmanager.inputs.ArchiveState.Builder =
+      val argsBuilder = com.pulumi.aws.mailmanager.inputs.ArchiveRetentionArgs.builder
+      builder.retention(args(argsBuilder).build)
+
+    /**
+     * @param retentionActuals Effective retention policy for the archive, including the default (`SIX_MONTHS`) when no `retention` block is configured. See `retentionActual` Block below.
+     * @return builder
+     */
+    def retentionActuals(args: Endofunction[com.pulumi.aws.mailmanager.inputs.ArchiveRetentionActualArgs.Builder]*):
+        com.pulumi.aws.mailmanager.inputs.ArchiveState.Builder =
+      def argsBuilder = com.pulumi.aws.mailmanager.inputs.ArchiveRetentionActualArgs.builder
+      builder.retentionActuals(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.mailmanager.inputs.IngressPointIngressPointConfigurationArgs.Builder)
     /**

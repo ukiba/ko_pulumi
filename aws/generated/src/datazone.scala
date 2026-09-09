@@ -214,6 +214,35 @@ object datazone:
       val argsBuilder = com.pulumi.aws.datazone.inputs.GlossaryTermTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+  /** Manages an AWS DataZone Policy Grant. */
+  def PolicyGrant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.datazone.PolicyGrantArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.datazone.PolicyGrantArgs.builder
+    com.pulumi.aws.datazone.PolicyGrant(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.datazone.PolicyGrantArgs.Builder)
+    /**
+     * @param detail Policy grant detail. Exactly one sub-block must be specified. See `detail` Block below.
+     * @return builder
+     */
+    def detail(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder]):
+        com.pulumi.aws.datazone.PolicyGrantArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.builder
+      builder.detail(args(argsBuilder).build)
+
+    /**
+     * @param principal Principal to which the policy grant applies. Exactly one sub-block must be specified. See `principal` Block below.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def principal(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalArgs.Builder]):
+        com.pulumi.aws.datazone.PolicyGrantArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalArgs.builder
+      builder.principal(args(argsBuilder).build)
+
   /** Resource for managing an AWS DataZone Project. */
   def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datazone.ProjectArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -356,6 +385,221 @@ object datazone:
         com.pulumi.aws.datazone.inputs.GlossaryTermState.Builder =
       val argsBuilder = com.pulumi.aws.datazone.inputs.GlossaryTermTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder)
+    /**
+     * @param addToProjectMemberPool Configuration for the `ADD_TO_PROJECT_MEMBER_POOL` policy type. See `addToProjectMemberPool` Block below.
+     * @return builder
+     */
+    def addToProjectMemberPool(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantDetailAddToProjectMemberPoolArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantDetailAddToProjectMemberPoolArgs.builder
+      builder.addToProjectMemberPool(args(argsBuilder).build)
+
+    /**
+     * @param createAssetType Configuration for the `CREATE_ASSET_TYPE` policy type. See `createAssetType` Block below.
+     * @return builder
+     */
+    def createAssetType(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateAssetTypeArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateAssetTypeArgs.builder
+      builder.createAssetType(args(argsBuilder).build)
+
+    /**
+     * @param createDomainUnit Configuration for the `CREATE_DOMAIN_UNIT` policy type. See `createDomainUnit` Block below.
+     * @return builder
+     */
+    def createDomainUnit(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateDomainUnitArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateDomainUnitArgs.builder
+      builder.createDomainUnit(args(argsBuilder).build)
+
+    /**
+     * @param createEnvironment Configuration for the `CREATE_ENVIRONMENT` policy type. Empty block.
+     * @return builder
+     */
+    def createEnvironment(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateEnvironmentArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateEnvironmentArgs.builder
+      builder.createEnvironment(args(argsBuilder).build)
+
+    /**
+     * @param createEnvironmentFromBlueprint Configuration for the `CREATE_ENVIRONMENT_FROM_BLUEPRINT` policy type. Empty block.
+     * @return builder
+     */
+    def createEnvironmentFromBlueprint(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateEnvironmentFromBlueprintArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateEnvironmentFromBlueprintArgs.builder
+      builder.createEnvironmentFromBlueprint(args(argsBuilder).build)
+
+    /**
+     * @param createEnvironmentProfile Configuration for the `CREATE_ENVIRONMENT_PROFILE` policy type. See `createEnvironmentProfile` Block below.
+     * @return builder
+     */
+    def createEnvironmentProfile(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateEnvironmentProfileArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateEnvironmentProfileArgs.builder
+      builder.createEnvironmentProfile(args(argsBuilder).build)
+
+    /**
+     * @param createFormType Configuration for the `CREATE_FORM_TYPE` policy type. See `createFormType` Block below.
+     * @return builder
+     */
+    def createFormType(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateFormTypeArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateFormTypeArgs.builder
+      builder.createFormType(args(argsBuilder).build)
+
+    /**
+     * @param createGlossary Configuration for the `CREATE_GLOSSARY` policy type. See `createGlossary` Block below.
+     * @return builder
+     */
+    def createGlossary(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateGlossaryArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateGlossaryArgs.builder
+      builder.createGlossary(args(argsBuilder).build)
+
+    /**
+     * @param createProject Configuration for the `CREATE_PROJECT` policy type. See `createProject` Block below.
+     * @return builder
+     */
+    def createProject(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateProjectArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateProjectArgs.builder
+      builder.createProject(args(argsBuilder).build)
+
+    /**
+     * @param createProjectFromProjectProfile Configuration for the `CREATE_PROJECT_FROM_PROJECT_PROFILE` policy type. See `createProjectFromProjectProfile` Block below.
+     * @return builder
+     */
+    def createProjectFromProjectProfile(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateProjectFromProjectProfileArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantDetailCreateProjectFromProjectProfileArgs.builder
+      builder.createProjectFromProjectProfile(args(argsBuilder).build)
+
+    /**
+     * @param delegateCreateEnvironmentProfile Configuration for the `DELEGATE_CREATE_ENVIRONMENT_PROFILE` policy type. Empty block.
+     * @return builder
+     */
+    def delegateCreateEnvironmentProfile(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantDetailDelegateCreateEnvironmentProfileArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantDetailDelegateCreateEnvironmentProfileArgs.builder
+      builder.delegateCreateEnvironmentProfile(args(argsBuilder).build)
+
+    /**
+     * @param overrideDomainUnitOwners Configuration for the `OVERRIDE_DOMAIN_UNIT_OWNERS` policy type. See `overrideDomainUnitOwners` Block below.
+     * @return builder
+     */
+    def overrideDomainUnitOwners(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantDetailOverrideDomainUnitOwnersArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantDetailOverrideDomainUnitOwnersArgs.builder
+      builder.overrideDomainUnitOwners(args(argsBuilder).build)
+
+    /**
+     * @param overrideProjectOwners Configuration for the `OVERRIDE_PROJECT_OWNERS` policy type. See `overrideProjectOwners` Block below.
+     * @return builder
+     */
+    def overrideProjectOwners(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantDetailOverrideProjectOwnersArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantDetailOverrideProjectOwnersArgs.builder
+      builder.overrideProjectOwners(args(argsBuilder).build)
+
+    /**
+     * @param useAssetType Configuration for the `USE_ASSET_TYPE` policy type. See `useAssetType` Block below.
+     * @return builder
+     */
+    def useAssetType(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantDetailUseAssetTypeArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantDetailUseAssetTypeArgs.builder
+      builder.useAssetType(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalArgs.Builder)
+    /**
+     * @param domainUnit Domain unit principal. See `domainUnit` Block below.
+     * @return builder
+     */
+    def domainUnit(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalDomainUnitArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalDomainUnitArgs.builder
+      builder.domainUnit(args(argsBuilder).build)
+
+    /**
+     * @param group Group principal. See `group` Block below.
+     * @return builder
+     */
+    def group(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalGroupArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalGroupArgs.builder
+      builder.group(args(argsBuilder).build)
+
+    /**
+     * @param project Project principal. See `project` Block below.
+     * @return builder
+     */
+    def project(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalProjectArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalProjectArgs.builder
+      builder.project(args(argsBuilder).build)
+
+    /**
+     * @param user User principal. See `user` Block below.
+     * @return builder
+     */
+    def user(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalUserArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalUserArgs.builder
+      builder.user(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalDomainUnitArgs.Builder)
+    /**
+     * @param allDomainUnitsGrantFilter Filter to grant access to all domain units. Empty block.
+     * @return builder
+     */
+    def allDomainUnitsGrantFilter(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalDomainUnitAllDomainUnitsGrantFilterArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalDomainUnitArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalDomainUnitAllDomainUnitsGrantFilterArgs.builder
+      builder.allDomainUnitsGrantFilter(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalProjectArgs.Builder)
+    /**
+     * @param domainUnitFilter Filter for domain unit scoping. See `domainUnitFilter` Block below.
+     * @return builder
+     */
+    def domainUnitFilter(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalProjectDomainUnitFilterArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalProjectArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalProjectDomainUnitFilterArgs.builder
+      builder.domainUnitFilter(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalUserArgs.Builder)
+    /**
+     * @param allUsersGrantFilter Filter to grant access to all users. Empty block.
+     * @return builder
+     */
+    def allUsersGrantFilter(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalUserAllUsersGrantFilterArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalUserArgs.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalUserAllUsersGrantFilterArgs.builder
+      builder.allUsersGrantFilter(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.datazone.inputs.PolicyGrantState.Builder)
+    /**
+     * @param detail Policy grant detail. Exactly one sub-block must be specified. See `detail` Block below.
+     * @return builder
+     */
+    def detail(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantState.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantDetailArgs.builder
+      builder.detail(args(argsBuilder).build)
+
+    /**
+     * @param principal Principal to which the policy grant applies. Exactly one sub-block must be specified. See `principal` Block below.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def principal(args: Endofunction[com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalArgs.Builder]):
+        com.pulumi.aws.datazone.inputs.PolicyGrantState.Builder =
+      val argsBuilder = com.pulumi.aws.datazone.inputs.PolicyGrantPrincipalArgs.builder
+      builder.principal(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.datazone.inputs.ProjectState.Builder)
     /**

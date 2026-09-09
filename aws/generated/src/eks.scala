@@ -668,14 +668,23 @@ object eks:
   extension (builder: com.pulumi.aws.eks.inputs.ClusterKubeControllerManagerConfigArgs.Builder)
     /**
      * @param horizontalPodAutoscalerControllerConfig Configuration block for the horizontal pod autoscaler controller. Detailed below.
-     * 
-     * &gt; **NOTE:** The `horizontalPodAutoscalerControllerConfig` requires a Provisioned Control Plane scaling tier (e.g., `tier-xl` or higher). It cannot be configured on clusters using the `standard` tier.
      * @return builder
      */
     def horizontalPodAutoscalerControllerConfig(args: Endofunction[com.pulumi.aws.eks.inputs.ClusterKubeControllerManagerConfigHorizontalPodAutoscalerControllerConfigArgs.Builder]):
         com.pulumi.aws.eks.inputs.ClusterKubeControllerManagerConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.eks.inputs.ClusterKubeControllerManagerConfigHorizontalPodAutoscalerControllerConfigArgs.builder
       builder.horizontalPodAutoscalerControllerConfig(args(argsBuilder).build)
+
+    /**
+     * @param podGcControllerConfig Configuration block for the pod garbage collection controller. Detailed below.
+     * 
+     * &gt; **NOTE:** The `horizontalPodAutoscalerControllerConfig` requires a Provisioned Control Plane scaling tier (e.g., `tier-xl` or higher). It cannot be configured on clusters using the `standard` tier.
+     * @return builder
+     */
+    def podGcControllerConfig(args: Endofunction[com.pulumi.aws.eks.inputs.ClusterKubeControllerManagerConfigPodGcControllerConfigArgs.Builder]):
+        com.pulumi.aws.eks.inputs.ClusterKubeControllerManagerConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.ClusterKubeControllerManagerConfigPodGcControllerConfigArgs.builder
+      builder.podGcControllerConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.eks.inputs.ClusterKubeSchedulerConfigArgs.Builder)
     /**
