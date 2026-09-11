@@ -5,7 +5,7 @@ package build
 
 import mill.*, scalalib.*, publish.*
 
-val pulumiAwsVersion        = "7.45.0"
+val pulumiAwsVersion        = "7.46.0"
 val pulumiGcpVersion        = "9.36.1"
 val pulumiAzureVersion      = "6.40.0"
 

@@ -6,9 +6,17 @@ import jp.ukiba.ko_pulumi
 export ko_pulumi.aws.accessanalyzer.analysisRule
 export ko_pulumi.aws.accessanalyzer.configuration
 export ko_pulumi.aws.accessanalyzer.exclusions
+export ko_pulumi.aws.accountaccess.entitlement
 export ko_pulumi.aws.acm.domainValidationOptions
 export ko_pulumi.aws.acmpca.certificateAuthorityConfiguration
 export ko_pulumi.aws.acmpca.crlConfiguration
+export ko_pulumi.aws.agentregistry.approvalConfiguration
+export ko_pulumi.aws.agentregistry.authorizerConfiguration
+export ko_pulumi.aws.agentregistry.authorizingClaimMatchValue
+export ko_pulumi.aws.agentregistry.claimMatchValue
+export ko_pulumi.aws.agentregistry.customClaims
+export ko_pulumi.aws.agentregistry.customJwtAuthorizer
+export ko_pulumi.aws.agentregistry.discoveryConfiguration
 export ko_pulumi.aws.alb.accessLogs
 export ko_pulumi.aws.alb.actions
 export ko_pulumi.aws.alb.additionalClaims
@@ -197,6 +205,7 @@ export ko_pulumi.aws.bedrock.apiSchema
 export ko_pulumi.aws.bedrock.approvalConfigurations
 export ko_pulumi.aws.bedrock.audio
 export ko_pulumi.aws.bedrock.audioExtractionConfiguration
+export ko_pulumi.aws.bedrock.auth
 export ko_pulumi.aws.bedrock.authConfiguration
 export ko_pulumi.aws.bedrock.authorizationServerMetadata
 export ko_pulumi.aws.bedrock.authorizationServerMetadatas
@@ -205,6 +214,7 @@ export ko_pulumi.aws.bedrock.authorizingClaimMatchValue
 export ko_pulumi.aws.bedrock.auto
 export ko_pulumi.aws.bedrock.automated
 export ko_pulumi.aws.bedrock.awsDataCatalogConfiguration
+export ko_pulumi.aws.bedrock.awsSkills
 export ko_pulumi.aws.bedrock.bedrockDataAutomationConfiguration
 export ko_pulumi.aws.bedrock.bedrockEmbeddingModelConfiguration
 export ko_pulumi.aws.bedrock.bedrockEvaluatorModel
@@ -484,6 +494,7 @@ export ko_pulumi.aws.dlm.encryptionConfiguration
 export ko_pulumi.aws.dlm.eventSource
 export ko_pulumi.aws.dlm.exclusions
 export ko_pulumi.aws.dms.computeConfig
+export ko_pulumi.aws.dms.docDbSettings
 export ko_pulumi.aws.dms.elasticsearchSettings
 export ko_pulumi.aws.dsql.encryptionDetails
 export ko_pulumi.aws.dynamodb.attributes
@@ -552,6 +563,7 @@ export ko_pulumi.aws.ecs.accessLogConfiguration
 export ko_pulumi.aws.ecs.advancedConfiguration
 export ko_pulumi.aws.ecs.alarms
 export ko_pulumi.aws.ecs.authorizationConfig
+export ko_pulumi.aws.ecs.autoRepairConfiguration
 export ko_pulumi.aws.ecs.autoScalingGroupProvider
 export ko_pulumi.aws.ecs.awsLogsConfigurations
 export ko_pulumi.aws.ecs.baselineEbsBandwidthMbps
@@ -978,6 +990,7 @@ export ko_pulumi.aws.memorydb.endpoints
 export ko_pulumi.aws.mq.configuration
 export ko_pulumi.aws.mq.encryptionOptions
 export ko_pulumi.aws.msk.amazonMskCluster
+export ko_pulumi.aws.msk.apacheKafkaCluster
 export ko_pulumi.aws.msk.brokerLogs
 export ko_pulumi.aws.msk.brokerNodeGroupInfo
 export ko_pulumi.aws.msk.clientAuthentication

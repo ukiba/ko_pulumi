@@ -101,6 +101,37 @@ object fis:
       val argsBuilder = com.pulumi.aws.fis.inputs.GetExperimentTemplatesPlainArgs.builder
       com.pulumi.aws.fis.FisFunctions.getExperimentTemplatesPlain(args(argsBuilder).build)
 
+  /**
+   * Manages the state of the AWS FIS (Fault Injection Simulator) safety lever for the account and Region. The safety lever is a single, account/Region-wide emergency stop: engaging it immediately stops all running experiments and blocks new ones from starting.
+   * 
+   * There is exactly one safety lever per account and Region, and it always exists \u2014 AWS does not provide APIs to create or delete it. Because of this, deleting this resource only removes it from Terraform state; it does not change the live value in AWS, so it never risks silently disengaging a safety control.
+   * 
+   * &gt; **Note:** AWS rejects a `reason` change unless `status` is also actually transitioning (for example, `engaged` to `disengaged`). Creating or updating this resource with a `status` that already matches the live safety lever succeeds only if the configured `reason` also matches the live `reason`; otherwise it fails at apply time. Pair a `reason` change with an actual `status` change.
+   */
+  def SafetyLeverState(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.fis.SafetyLeverStateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.fis.SafetyLeverStateArgs.builder
+    com.pulumi.aws.fis.SafetyLeverState(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.fis.SafetyLeverStateArgs.Builder)
+    /**
+     * @param state State of the safety lever. See below.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def state(args: Endofunction[com.pulumi.aws.fis.inputs.SafetyLeverStateStateArgs.Builder]):
+        com.pulumi.aws.fis.SafetyLeverStateArgs.Builder =
+      val argsBuilder = com.pulumi.aws.fis.inputs.SafetyLeverStateStateArgs.builder
+      builder.state(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.fis.inputs.SafetyLeverStateTimeoutsArgs.Builder]):
+        com.pulumi.aws.fis.SafetyLeverStateArgs.Builder =
+      val argsBuilder = com.pulumi.aws.fis.inputs.SafetyLeverStateTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   /** Manages an AWS FIS (Fault Injection Simulator) Target Account Configuration. */
   def TargetAccountConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.fis.TargetAccountConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -261,3 +292,20 @@ object fis:
         com.pulumi.aws.fis.inputs.ExperimentTemplateTargetArgs.Builder =
       def argsBuilder = com.pulumi.aws.fis.inputs.ExperimentTemplateTargetResourceTagArgs.builder
       builder.resourceTags(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.fis.inputs.SafetyLeverStateState.Builder)
+    /**
+     * @param state State of the safety lever. See below.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def state(args: Endofunction[com.pulumi.aws.fis.inputs.SafetyLeverStateStateArgs.Builder]):
+        com.pulumi.aws.fis.inputs.SafetyLeverStateState.Builder =
+      val argsBuilder = com.pulumi.aws.fis.inputs.SafetyLeverStateStateArgs.builder
+      builder.state(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.fis.inputs.SafetyLeverStateTimeoutsArgs.Builder]):
+        com.pulumi.aws.fis.inputs.SafetyLeverStateState.Builder =
+      val argsBuilder = com.pulumi.aws.fis.inputs.SafetyLeverStateTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)

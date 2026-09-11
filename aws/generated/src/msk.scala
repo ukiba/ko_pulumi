@@ -222,7 +222,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.ReplicatorArgs.Builder)
     /**
-     * @param kafkaClusters A list of Kafka clusters which are targets of the replicator.
+     * @param kafkaClusters The source and target Kafka clusters for the replicator. Exactly two blocks are required. Detailed below.
      * @return builder
      */
     def kafkaClusters(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterArgs.Builder]*):
@@ -588,7 +588,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterArgs.Builder)
     /**
-     * @param amazonMskCluster Details of an Amazon MSK cluster.
+     * @param amazonMskCluster Details of an Amazon MSK cluster. Exactly one of `amazonMskCluster` or `apacheKafkaCluster` must be specified. Detailed below.
      * @return builder
      */
     def amazonMskCluster(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterAmazonMskClusterArgs.Builder]):
@@ -597,13 +597,59 @@ object msk:
       builder.amazonMskCluster(args(argsBuilder).build)
 
     /**
-     * @param vpcConfig Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.
+     * @param apacheKafkaCluster Details of a self-managed or on-premises Apache Kafka cluster. Exactly one of `amazonMskCluster` or `apacheKafkaCluster` must be specified. Detailed below.
+     * @return builder
+     */
+    def apacheKafkaCluster(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterApacheKafkaClusterArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterApacheKafkaClusterArgs.builder
+      builder.apacheKafkaCluster(args(argsBuilder).build)
+
+    /**
+     * @param clientAuthentication Details of the client authentication used by the Kafka cluster. Only valid for an `apacheKafkaCluster`. Detailed below.
+     * @return builder
+     */
+    def clientAuthentication(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterClientAuthenticationArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterClientAuthenticationArgs.builder
+      builder.clientAuthentication(args(argsBuilder).build)
+
+    /**
+     * @param encryptionInTransit Details of encryption in transit to the Kafka cluster. Only valid for an `apacheKafkaCluster`. TLS encryption in transit is always applied to an `apacheKafkaCluster`; this block is only required to supply a custom root CA chain (for a cluster using a private or self-signed certificate). Detailed below.
+     * @return builder
+     */
+    def encryptionInTransit(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterEncryptionInTransitArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterEncryptionInTransitArgs.builder
+      builder.encryptionInTransit(args(argsBuilder).build)
+
+    /**
+     * @param vpcConfig Details of an Amazon VPC which has network connectivity to the Kafka cluster. Provide this on the `amazonMskCluster` entry only; the replicator reaches the Apache Kafka cluster through that VPC.
      * @return builder
      */
     def vpcConfig(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterVpcConfigArgs.Builder]):
         com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterArgs.Builder =
       val argsBuilder = com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterClientAuthenticationArgs.Builder)
+    /**
+     * @param mtls Details of the mTLS client authentication used by the Kafka cluster. Detailed below.
+     * @return builder
+     */
+    def mtls(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterClientAuthenticationMtlsArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterClientAuthenticationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterClientAuthenticationMtlsArgs.builder
+      builder.mtls(args(argsBuilder).build)
+
+    /**
+     * @param saslScram Details of the SASL/SCRAM client authentication used by the Kafka cluster. Detailed below.
+     * @return builder
+     */
+    def saslScram(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterClientAuthenticationSaslScramArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterClientAuthenticationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterClientAuthenticationSaslScramArgs.builder
+      builder.saslScram(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.msk.inputs.ReplicatorLogDeliveryArgs.Builder)
     /**
@@ -683,7 +729,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ReplicatorState.Builder)
     /**
-     * @param kafkaClusters A list of Kafka clusters which are targets of the replicator.
+     * @param kafkaClusters The source and target Kafka clusters for the replicator. Exactly two blocks are required. Detailed below.
      * @return builder
      */
     def kafkaClusters(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterArgs.Builder]*):

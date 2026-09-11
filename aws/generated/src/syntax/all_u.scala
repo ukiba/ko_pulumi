@@ -48,6 +48,7 @@ export ko_pulumi.aws.bedrock.weightedRoute
 export ko_pulumi.aws.bedrock.wordPolicyConfig
 export ko_pulumi.aws.bedrock.wordsConfigs
 export ko_pulumi.aws.bedrock.workloadIdentityDetails
+export ko_pulumi.aws.bedrockmodel.vpcConfig
 export ko_pulumi.aws.chime.voiceConnector
 export ko_pulumi.aws.chimesdkmediapipelines.voiceAnalyticsProcessorConfiguration
 export ko_pulumi.aws.cloudfront.viewerCertificate
@@ -58,6 +59,7 @@ export ko_pulumi.aws.cloudfront.vpcOriginEndpointConfig
 export ko_pulumi.aws.cloudfront.webAcl
 export ko_pulumi.aws.cloudfront.xssProtection
 export ko_pulumi.aws.cloudwatch.upperCaseStrings
+export ko_pulumi.aws.cloudwatch.warmUpConfiguration
 export ko_pulumi.aws.codeartifact.upstreams
 export ko_pulumi.aws.codebuild.vpcConfig
 export ko_pulumi.aws.codebuild.vpcConfigs

@@ -87,6 +87,7 @@ export ko_pulumi.aws.bedrock.lambdaFunction
 export ko_pulumi.aws.bedrock.levelConfigurations
 export ko_pulumi.aws.bedrock.lex
 export ko_pulumi.aws.bedrock.lifecycleConfigurations
+export ko_pulumi.aws.bedrock.litellmModelConfig
 export ko_pulumi.aws.bedrock.llmAsAJudge
 export ko_pulumi.aws.bedrock.llmExtractionConfig
 export ko_pulumi.aws.bedrock.location
@@ -145,6 +146,7 @@ export ko_pulumi.aws.bedrock.outputSchema
 export ko_pulumi.aws.bedrock.outputs
 export ko_pulumi.aws.bedrockmodel.largeDataDeliveryS3Config
 export ko_pulumi.aws.bedrockmodel.loggingConfig
+export ko_pulumi.aws.bedrockmodel.outputDataConfig
 export ko_pulumi.aws.budgets.not
 export ko_pulumi.aws.budgets.notifications
 export ko_pulumi.aws.budgets.ors
@@ -246,6 +248,9 @@ export ko_pulumi.aws.devopsguru.opsCenter
 export ko_pulumi.aws.dms.kafkaSettings
 export ko_pulumi.aws.dms.kerberosAuthenticationSettings
 export ko_pulumi.aws.dms.kinesisSettings
+export ko_pulumi.aws.dms.mariaDbSettings
+export ko_pulumi.aws.dms.microsoftSqlServerSettings
+export ko_pulumi.aws.dms.mongoDbSettings
 export ko_pulumi.aws.dms.mongodbSettings
 export ko_pulumi.aws.dms.mysqlSettings
 export ko_pulumi.aws.dms.oracleSettings
@@ -479,6 +484,7 @@ export ko_pulumi.aws.mq.maintenanceWindowStartTime
 export ko_pulumi.aws.msk.kafkaClusters
 export ko_pulumi.aws.msk.logDelivery
 export ko_pulumi.aws.msk.loggingInfo
+export ko_pulumi.aws.msk.mtls
 export ko_pulumi.aws.msk.nodeExporter
 export ko_pulumi.aws.msk.openMonitoring
 export ko_pulumi.aws.mskconnect.kafkaCluster

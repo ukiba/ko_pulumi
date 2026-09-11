@@ -663,6 +663,15 @@ object ecs:
 
   extension (builder: com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderArgs.Builder)
     /**
+     * @param autoRepairConfiguration Configuration block for the auto repair configuration. Detailed below.
+     * @return builder
+     */
+    def autoRepairConfiguration(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderAutoRepairConfigurationArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderAutoRepairConfigurationArgs.builder
+      builder.autoRepairConfiguration(args(argsBuilder).build)
+
+    /**
      * @param infrastructureOptimization Configuration block for how Amazon ECS Managed Instances optimizes the infrastructure in your capacity provider, including whether to turn optimization on or off and how long to delay optimizing idle EC2 instances. Detailed below.
      * @return builder
      */

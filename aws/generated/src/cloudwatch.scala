@@ -936,6 +936,15 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmMetricQueryArgs.builder
       builder.metricQueries(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param warmUpConfiguration Warm-up period that delays alarm evaluation after the alarm is created. During the warm-up period the alarm stays in `INSUFFICIENT_DATA` and does not perform alarm actions. See `warmUpConfiguration` below.
+     * @return builder
+     */
+    def warmUpConfiguration(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.MetricAlarmWarmUpConfigurationArgs.Builder]):
+        com.pulumi.aws.cloudwatch.MetricAlarmArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmWarmUpConfigurationArgs.builder
+      builder.warmUpConfiguration(args(argsBuilder).build)
+
   /** Provides a CloudWatch Metric Stream resource. */
   def MetricStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.MetricStreamArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1968,6 +1977,15 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.inputs.MetricAlarmState.Builder =
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmMetricQueryArgs.builder
       builder.metricQueries(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param warmUpConfiguration Warm-up period that delays alarm evaluation after the alarm is created. During the warm-up period the alarm stays in `INSUFFICIENT_DATA` and does not perform alarm actions. See `warmUpConfiguration` below.
+     * @return builder
+     */
+    def warmUpConfiguration(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.MetricAlarmWarmUpConfigurationArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.MetricAlarmState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmWarmUpConfigurationArgs.builder
+      builder.warmUpConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.cloudwatch.inputs.MetricStreamState.Builder)
     /**

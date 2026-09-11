@@ -19,6 +19,36 @@ object dms:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  /** Manages an AWS DMS (Database Migration) Data Provider. A data provider stores the database engine and connection settings for a database used in a migration project. Creating a data provider does not create a database. */
+  def DataProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.dms.DataProviderArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.dms.DataProviderArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.dms.DataProvider(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.dms.DataProviderArgs.Builder)
+    /**
+     * @param settings Database connection settings. Configure exactly one block matching `engine`. See `settings` Block below.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def settings(args: Endofunction[com.pulumi.aws.dms.inputs.DataProviderSettingsArgs.Builder]):
+        com.pulumi.aws.dms.DataProviderArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.DataProviderSettingsArgs.builder
+      builder.settings(args(argsBuilder).build)
+
   object DmsFunctions:
     // Pulumi methods are reproduced as Scala methods.
     // Java methods cause Scala warnings under -Yexplicit-nulls flag
@@ -252,6 +282,24 @@ object dms:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  /** Manages an AWS DMS (Database Migration) Instance Profile. An instance profile provides network and encryption information to DMS Schema Conversion for use in connecting to a data provider. */
+  def InstanceProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.dms.InstanceProfileArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.dms.InstanceProfileArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.dms.InstanceProfile(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
   /**
    * Provides a DMS Serverless replication config resource.
    * 
@@ -364,6 +412,118 @@ object dms:
     com.pulumi.aws.dms.S3Endpoint(name,
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.dms.inputs.DataProviderSettingsArgs.Builder)
+    /**
+     * @param docDbSettings Settings for the `docdb` engine. See `docDbSettings` Block below.
+     * @return builder
+     */
+    def docDbSettings(args: Endofunction[com.pulumi.aws.dms.inputs.DataProviderSettingsDocDbSettingsArgs.Builder]):
+        com.pulumi.aws.dms.inputs.DataProviderSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.DataProviderSettingsDocDbSettingsArgs.builder
+      builder.docDbSettings(args(argsBuilder).build)
+
+    /**
+     * @param ibmDb2LuwSettings Settings for the `db2` engine. See `ibmDb2LuwSettings` Block below.
+     * @return builder
+     */
+    def ibmDb2LuwSettings(args: Endofunction[com.pulumi.aws.dms.inputs.DataProviderSettingsIbmDb2LuwSettingsArgs.Builder]):
+        com.pulumi.aws.dms.inputs.DataProviderSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.DataProviderSettingsIbmDb2LuwSettingsArgs.builder
+      builder.ibmDb2LuwSettings(args(argsBuilder).build)
+
+    /**
+     * @param ibmDb2ZosSettings Settings for the `db2-zos` engine. See `ibmDb2ZosSettings` Block below.
+     * @return builder
+     */
+    def ibmDb2ZosSettings(args: Endofunction[com.pulumi.aws.dms.inputs.DataProviderSettingsIbmDb2ZosSettingsArgs.Builder]):
+        com.pulumi.aws.dms.inputs.DataProviderSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.DataProviderSettingsIbmDb2ZosSettingsArgs.builder
+      builder.ibmDb2ZosSettings(args(argsBuilder).build)
+
+    /**
+     * @param mariaDbSettings Settings for the `mariadb` engine. See `mariaDbSettings` Block below.
+     * @return builder
+     */
+    def mariaDbSettings(args: Endofunction[com.pulumi.aws.dms.inputs.DataProviderSettingsMariaDbSettingsArgs.Builder]):
+        com.pulumi.aws.dms.inputs.DataProviderSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.DataProviderSettingsMariaDbSettingsArgs.builder
+      builder.mariaDbSettings(args(argsBuilder).build)
+
+    /**
+     * @param microsoftSqlServerSettings Settings for the `sqlserver` engine. See `microsoftSqlServerSettings` Block below.
+     * @return builder
+     */
+    def microsoftSqlServerSettings(args: Endofunction[com.pulumi.aws.dms.inputs.DataProviderSettingsMicrosoftSqlServerSettingsArgs.Builder]):
+        com.pulumi.aws.dms.inputs.DataProviderSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.DataProviderSettingsMicrosoftSqlServerSettingsArgs.builder
+      builder.microsoftSqlServerSettings(args(argsBuilder).build)
+
+    /**
+     * @param mongoDbSettings Settings for the `mongodb` engine. See `mongoDbSettings` Block below.
+     * @return builder
+     */
+    def mongoDbSettings(args: Endofunction[com.pulumi.aws.dms.inputs.DataProviderSettingsMongoDbSettingsArgs.Builder]):
+        com.pulumi.aws.dms.inputs.DataProviderSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.DataProviderSettingsMongoDbSettingsArgs.builder
+      builder.mongoDbSettings(args(argsBuilder).build)
+
+    /**
+     * @param mysqlSettings Settings for the `mysql` and `aurora` engines. See `mysqlSettings` Block below.
+     * @return builder
+     */
+    def mysqlSettings(args: Endofunction[com.pulumi.aws.dms.inputs.DataProviderSettingsMysqlSettingsArgs.Builder]):
+        com.pulumi.aws.dms.inputs.DataProviderSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.DataProviderSettingsMysqlSettingsArgs.builder
+      builder.mysqlSettings(args(argsBuilder).build)
+
+    /**
+     * @param oracleSettings Settings for the `oracle` engine. See `oracleSettings` Block below.
+     * @return builder
+     */
+    def oracleSettings(args: Endofunction[com.pulumi.aws.dms.inputs.DataProviderSettingsOracleSettingsArgs.Builder]):
+        com.pulumi.aws.dms.inputs.DataProviderSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.DataProviderSettingsOracleSettingsArgs.builder
+      builder.oracleSettings(args(argsBuilder).build)
+
+    /**
+     * @param postgresqlSettings Settings for the `postgres` and `aurora-postgresql` engines. See `postgresqlSettings` Block below.
+     * @return builder
+     */
+    def postgresqlSettings(args: Endofunction[com.pulumi.aws.dms.inputs.DataProviderSettingsPostgresqlSettingsArgs.Builder]):
+        com.pulumi.aws.dms.inputs.DataProviderSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.DataProviderSettingsPostgresqlSettingsArgs.builder
+      builder.postgresqlSettings(args(argsBuilder).build)
+
+    /**
+     * @param redshiftSettings Settings for the `redshift` engine. See `redshiftSettings` Block below.
+     * @return builder
+     */
+    def redshiftSettings(args: Endofunction[com.pulumi.aws.dms.inputs.DataProviderSettingsRedshiftSettingsArgs.Builder]):
+        com.pulumi.aws.dms.inputs.DataProviderSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.DataProviderSettingsRedshiftSettingsArgs.builder
+      builder.redshiftSettings(args(argsBuilder).build)
+
+    /**
+     * @param sybaseAseSettings Settings for the `sybase` engine. See `sybaseAseSettings` Block below.
+     * @return builder
+     */
+    def sybaseAseSettings(args: Endofunction[com.pulumi.aws.dms.inputs.DataProviderSettingsSybaseAseSettingsArgs.Builder]):
+        com.pulumi.aws.dms.inputs.DataProviderSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.DataProviderSettingsSybaseAseSettingsArgs.builder
+      builder.sybaseAseSettings(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.dms.inputs.DataProviderState.Builder)
+    /**
+     * @param settings Database connection settings. Configure exactly one block matching `engine`. See `settings` Block below.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def settings(args: Endofunction[com.pulumi.aws.dms.inputs.DataProviderSettingsArgs.Builder]):
+        com.pulumi.aws.dms.inputs.DataProviderState.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.DataProviderSettingsArgs.builder
+      builder.settings(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.dms.inputs.EndpointState.Builder)
     /**

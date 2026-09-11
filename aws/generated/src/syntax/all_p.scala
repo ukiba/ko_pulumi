@@ -3,10 +3,13 @@ package jp.ukiba.ko_pulumi.aws.syntax.all
 
 import jp.ukiba.ko_pulumi
 
+export ko_pulumi.aws.accountaccess.principal
+export ko_pulumi.aws.accountaccess.principalRole
 export ko_pulumi.aws.accountaccess.timeouts
 export ko_pulumi.aws.acm.renewalSummaries
 export ko_pulumi.aws.acmpca.revocationConfiguration
 export ko_pulumi.aws.acmpca.subject
+export ko_pulumi.aws.agentregistry.timeouts
 export ko_pulumi.aws.alb.pathPattern
 export ko_pulumi.aws.alb.queryStrings
 export ko_pulumi.aws.alb.redirect
@@ -305,6 +308,9 @@ export ko_pulumi.aws.bedrock.triggerConditionsActuals
 export ko_pulumi.aws.bedrock.truncations
 export ko_pulumi.aws.bedrockfoundation.timeouts
 export ko_pulumi.aws.bedrockmodel.s3Config
+export ko_pulumi.aws.bedrockmodel.s3InputDataConfig
+export ko_pulumi.aws.bedrockmodel.s3OutputDataConfig
+export ko_pulumi.aws.bedrockmodel.timeouts
 export ko_pulumi.aws.billing.tags
 export ko_pulumi.aws.billing.timeRange
 export ko_pulumi.aws.billing.timeouts
@@ -521,8 +527,11 @@ export ko_pulumi.aws.dlm.schedules
 export ko_pulumi.aws.dlm.scripts
 export ko_pulumi.aws.dlm.shareRule
 export ko_pulumi.aws.dms.postgresSettings
+export ko_pulumi.aws.dms.postgresqlSettings
 export ko_pulumi.aws.dms.redisSettings
 export ko_pulumi.aws.dms.redshiftSettings
+export ko_pulumi.aws.dms.settings
+export ko_pulumi.aws.dms.sybaseAseSettings
 export ko_pulumi.aws.docdb.parameters
 export ko_pulumi.aws.docdb.restoreToPointInTime
 export ko_pulumi.aws.docdb.serverlessV2ScalingConfiguration
@@ -673,9 +682,11 @@ export ko_pulumi.aws.finspace.transitGatewayConfiguration
 export ko_pulumi.aws.fis.parameters
 export ko_pulumi.aws.fis.resourceTags
 export ko_pulumi.aws.fis.s3Configuration
+export ko_pulumi.aws.fis.state
 export ko_pulumi.aws.fis.stopConditions
 export ko_pulumi.aws.fis.target
 export ko_pulumi.aws.fis.targets
+export ko_pulumi.aws.fis.timeouts
 export ko_pulumi.aws.fms.policyOption
 export ko_pulumi.aws.fms.portRanges
 export ko_pulumi.aws.fms.resourceSets
@@ -986,6 +997,7 @@ export ko_pulumi.aws.msk.replicationInfoList
 export ko_pulumi.aws.msk.replicatorLogDelivery
 export ko_pulumi.aws.msk.s3
 export ko_pulumi.aws.msk.sasl
+export ko_pulumi.aws.msk.saslScram
 export ko_pulumi.aws.msk.startingPosition
 export ko_pulumi.aws.msk.storageInfo
 export ko_pulumi.aws.msk.timeouts

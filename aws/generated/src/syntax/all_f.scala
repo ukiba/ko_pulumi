@@ -6,6 +6,7 @@ import jp.ukiba.ko_pulumi
 export ko_pulumi.aws.accessanalyzer.filters
 export ko_pulumi.aws.accessanalyzer.inclusions
 export ko_pulumi.aws.accessanalyzer.internalAccess
+export ko_pulumi.aws.accountaccess.filter
 export ko_pulumi.aws.accountaccess.identityCenter
 export ko_pulumi.aws.accountaccess.identitySource
 export ko_pulumi.aws.alb.fixedResponse
@@ -86,6 +87,7 @@ export ko_pulumi.aws.bedrock.gatewayIamRole
 export ko_pulumi.aws.bedrock.geminiModelConfig
 export ko_pulumi.aws.bedrock.genAiResource
 export ko_pulumi.aws.bedrock.generationContext
+export ko_pulumi.aws.bedrock.git
 export ko_pulumi.aws.bedrock.githubOauth2ProviderConfig
 export ko_pulumi.aws.bedrock.googleOauth2ProviderConfig
 export ko_pulumi.aws.bedrock.guardrailConfiguration
@@ -119,6 +121,7 @@ export ko_pulumi.aws.bedrock.invocationConfiguration
 export ko_pulumi.aws.bedrock.items
 export ko_pulumi.aws.bedrock.iterator
 export ko_pulumi.aws.bedrock.jwtPassthrough
+export ko_pulumi.aws.bedrockmodel.inputDataConfig
 export ko_pulumi.aws.budgets.filterExpression
 export ko_pulumi.aws.budgets.historicalOptions
 export ko_pulumi.aws.budgets.iamActionDefinition
@@ -184,6 +187,8 @@ export ko_pulumi.aws.datazone.iams
 export ko_pulumi.aws.datazone.imports
 export ko_pulumi.aws.devopsguru.filters
 export ko_pulumi.aws.dlm.fastRestoreRule
+export ko_pulumi.aws.dms.ibmDb2LuwSettings
+export ko_pulumi.aws.dms.ibmDb2ZosSettings
 export ko_pulumi.aws.docdb.globalClusterMembers
 export ko_pulumi.aws.dynamodb.globalSecondaryIndexes
 export ko_pulumi.aws.dynamodb.globalTableWitness

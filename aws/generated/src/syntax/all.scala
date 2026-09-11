@@ -4,8 +4,10 @@ package jp.ukiba.ko_pulumi.aws.syntax.all
 import jp.ukiba.ko_pulumi
 
 export ko_pulumi.aws.account.AccountFunctions
+export ko_pulumi.aws.accountaccess.AccountaccessFunctions
 export ko_pulumi.aws.acm.AcmFunctions
 export ko_pulumi.aws.acmpca.AcmpcaFunctions
+export ko_pulumi.aws.agentregistry.AgentregistryFunctions
 export ko_pulumi.aws.alb.AlbFunctions
 export ko_pulumi.aws.amp.AmpFunctions
 export ko_pulumi.aws.apigateway.ApigatewayFunctions
