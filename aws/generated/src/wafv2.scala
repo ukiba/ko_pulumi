@@ -698,7 +698,7 @@ object wafv2:
       builder.andStatement(args(argsBuilder).build)
 
     /**
-     * @param asnMatchStatement Rule statement that inspects web traffic based on the Autonomous System Number (ASN) associated with the request&#39;s IP address. See `asnMatchStatement` below for details.
+     * @param asnMatchStatement Rule statement that inspects web traffic based on the Autonomous System Number (ASN) associated with the request&#39;s IP address. See ASN Match Statement below for details.
      * @return builder
      */
     def asnMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAsnMatchStatementArgs.Builder]):
@@ -1285,7 +1285,7 @@ object wafv2:
       builder.andStatement(args(argsBuilder).build)
 
     /**
-     * @param asnMatchStatement Rule statement that inspects web traffic based on the Autonomous System Number (ASN) associated with the request&#39;s IP address. See `asnMatchStatement` below for details.
+     * @param asnMatchStatement Rule statement that inspects web traffic based on the Autonomous System Number (ASN) associated with the request&#39;s IP address. See ASN Match Statement below for details.
      * @return builder
      */
     def asnMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementArgs.Builder]):

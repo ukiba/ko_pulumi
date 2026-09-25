@@ -65,7 +65,7 @@ object bedrockmodel:
 
   extension (builder: com.pulumi.aws.bedrockmodel.InvocationLoggingConfigurationArgs.Builder)
     /**
-     * @param loggingConfig The logging configuration values to set. See `loggingConfig` Block for details.
+     * @param loggingConfig Logging configuration values to set. See `loggingConfig` Block for details.
      * @return builder
      */
     def loggingConfig(args: Endofunction[com.pulumi.aws.bedrockmodel.inputs.InvocationLoggingConfigurationLoggingConfigArgs.Builder]):
@@ -157,7 +157,7 @@ object bedrockmodel:
 
   extension (builder: com.pulumi.aws.bedrockmodel.inputs.InvocationLoggingConfigurationState.Builder)
     /**
-     * @param loggingConfig The logging configuration values to set. See `loggingConfig` Block for details.
+     * @param loggingConfig Logging configuration values to set. See `loggingConfig` Block for details.
      * @return builder
      */
     def loggingConfig(args: Endofunction[com.pulumi.aws.bedrockmodel.inputs.InvocationLoggingConfigurationLoggingConfigArgs.Builder]):

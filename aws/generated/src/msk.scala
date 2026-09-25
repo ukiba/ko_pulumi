@@ -5,6 +5,85 @@ import com.pulumi.resources.CustomResourceOptions
 
 object msk:
   /**
+   * Manages an Amazon Managed Streaming for Apache Kafka (MSK) Channel.
+   * 
+   * With [Amazon MSK Data Delivery](https://docs.aws.amazon.com/msk/latest/developerguide/msk-data-delivery.html), a channel delivers Apache Kafka data from an Amazon MSK Provisioned cluster that uses Express brokers directly to Amazon S3, without connectors or additional infrastructure to manage. A channel reads records from a Kafka topic and delivers them to one of two destinations:
+   * 
+   * * **Amazon S3 general purpose buckets** \u2014 records are written in their source format (`JSON`, `ByteArray`, or `String`) as objects, for use cases such as log archival, compliance retention, and Kafka replay.
+   * * **Apache Iceberg tables on Amazon S3 Tables** \u2014 `JSON` records, validated against an AWS Glue Schema Registry schema, are materialized as Apache Iceberg tables.
+   * 
+   * Records that cannot be processed are routed to a required dead-letter queue (DLQ) Amazon S3 bucket. Channels are supported only on Amazon MSK Provisioned clusters that use Express brokers; Standard brokers and Amazon MSK Serverless are not supported.
+   * 
+   * &gt; **Note:** A channel does not backfill previously produced data; only data produced after creation is delivered. For the Iceberg destination, a channel creates a new Iceberg table for each configuration.
+   */
+  def Channel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.msk.ChannelArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.msk.ChannelArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.msk.Channel(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.msk.ChannelArgs.Builder)
+    /**
+     * @param encryptionConfiguration AWS KMS encryption configuration applied to data at rest. Changing this forces a new resource to be created. See `encryptionConfiguration` Block below.
+     * @return builder
+     */
+    def encryptionConfiguration(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelEncryptionConfigurationArgs.Builder]):
+        com.pulumi.aws.msk.ChannelArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelEncryptionConfigurationArgs.builder
+      builder.encryptionConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param icebergDestination Apache Iceberg destination for the channel. Exactly one of `icebergDestination` or `s3Destination` is required. With the exception of `dataFreshnessInSeconds`, changing an argument in this block forces a new resource to be created. See `icebergDestination` Block below.
+     * @return builder
+     */
+    def icebergDestination(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelIcebergDestinationArgs.Builder]):
+        com.pulumi.aws.msk.ChannelArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelIcebergDestinationArgs.builder
+      builder.icebergDestination(args(argsBuilder).build)
+
+    /**
+     * @param loggingInfo Destinations to which the channel publishes operational logs. Changing this forces a new resource to be created. See `loggingInfo` Block below.
+     * @return builder
+     */
+    def loggingInfo(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelLoggingInfoArgs.Builder]):
+        com.pulumi.aws.msk.ChannelArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelLoggingInfoArgs.builder
+      builder.loggingInfo(args(argsBuilder).build)
+
+    /**
+     * @param s3Destination Amazon S3 destination for the channel. Exactly one of `icebergDestination` or `s3Destination` is required. With the exception of `dataFreshnessInSeconds`, changing an argument in this block forces a new resource to be created. See `s3Destination` Block below.
+     * @return builder
+     */
+    def s3Destination(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelS3DestinationArgs.Builder]):
+        com.pulumi.aws.msk.ChannelArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelS3DestinationArgs.builder
+      builder.s3Destination(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelTimeoutsArgs.Builder]):
+        com.pulumi.aws.msk.ChannelArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param topicConfiguration Configuration of the Apache Kafka topic that feeds the channel. Changing this forces a new resource to be created. See `topicConfiguration` Block below.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def topicConfiguration(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelTopicConfigurationArgs.Builder]):
+        com.pulumi.aws.msk.ChannelArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelTopicConfigurationArgs.builder
+      builder.topicConfiguration(args(argsBuilder).build)
+
+  /**
    * Manages an Amazon MSK cluster.
    * 
    * &gt; **Note:** This resource manages _provisioned_ clusters. To manage a _serverless_ Amazon MSK cluster, use the `aws.msk.ServerlessCluster` resource.
@@ -347,6 +426,195 @@ object msk:
     com.pulumi.aws.msk.VpcConnection(name,
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.msk.inputs.ChannelIcebergDestinationArgs.Builder)
+    /**
+     * @param catalog AWS Glue Data Catalog and S3 Tables warehouse used by the destination. See `catalog` Block below.
+     * @return builder
+     */
+    def catalog(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelIcebergDestinationCatalogArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelIcebergDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelIcebergDestinationCatalogArgs.builder
+      builder.catalog(args(argsBuilder).build)
+
+    /**
+     * @param deadLetterQueueS3 Amazon S3 bucket and prefix where MSK writes records that fail to deliver. See `deadLetterQueueS3` Block below.
+     * @return builder
+     */
+    def deadLetterQueueS3(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelIcebergDestinationDeadLetterQueueS3Args.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelIcebergDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelIcebergDestinationDeadLetterQueueS3Args.builder
+      builder.deadLetterQueueS3(args(argsBuilder).build)
+
+    /**
+     * @param destinationTable Destination Iceberg table. See `destinationTable` Block below.
+     * @return builder
+     */
+    def destinationTable(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelIcebergDestinationDestinationTableArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelIcebergDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelIcebergDestinationDestinationTableArgs.builder
+      builder.destinationTable(args(argsBuilder).build)
+
+    /**
+     * @param schemaEvolution Configuration controlling whether the destination table&#39;s schema is evolved to match incoming records. See `schemaEvolution` Block below.
+     * @return builder
+     */
+    def schemaEvolution(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelIcebergDestinationSchemaEvolutionArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelIcebergDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelIcebergDestinationSchemaEvolutionArgs.builder
+      builder.schemaEvolution(args(argsBuilder).build)
+
+    /**
+     * @param tableCreation Configuration controlling whether MSK creates the destination table if it does not already exist. See `tableCreation` Block below.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def tableCreation(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelIcebergDestinationTableCreationArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelIcebergDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelIcebergDestinationTableCreationArgs.builder
+      builder.tableCreation(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.msk.inputs.ChannelIcebergDestinationDestinationTableArgs.Builder)
+    /**
+     * @param partitionSpec Partition specification for the destination table. See `partitionSpec` Block below.
+     * @return builder
+     */
+    def partitionSpec(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelIcebergDestinationDestinationTablePartitionSpecArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelIcebergDestinationDestinationTableArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelIcebergDestinationDestinationTablePartitionSpecArgs.builder
+      builder.partitionSpec(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.msk.inputs.ChannelIcebergDestinationDestinationTablePartitionSpecArgs.Builder)
+    /**
+     * @param sources Source column used by the partitioning strategy. For `TIME_HOUR`, exactly one source must be specified and its column must be a timestamp. See `source` Block below.
+     * @return builder
+     */
+    def sources(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelIcebergDestinationDestinationTablePartitionSpecSourceArgs.Builder]*):
+        com.pulumi.aws.msk.inputs.ChannelIcebergDestinationDestinationTablePartitionSpecArgs.Builder =
+      def argsBuilder = com.pulumi.aws.msk.inputs.ChannelIcebergDestinationDestinationTablePartitionSpecSourceArgs.builder
+      builder.sources(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.msk.inputs.ChannelLoggingInfoArgs.Builder)
+    /**
+     * @param cloudwatchLogs CloudWatch Logs destination for channel logs. See `cloudwatchLogs` Block below.
+     * @return builder
+     */
+    def cloudwatchLogs(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelLoggingInfoCloudwatchLogsArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelLoggingInfoArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelLoggingInfoCloudwatchLogsArgs.builder
+      builder.cloudwatchLogs(args(argsBuilder).build)
+
+    /**
+     * @param firehose Kinesis Data Firehose delivery stream destination for channel logs. See `firehose` Block below.
+     * @return builder
+     */
+    def firehose(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelLoggingInfoFirehoseArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelLoggingInfoArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelLoggingInfoFirehoseArgs.builder
+      builder.firehose(args(argsBuilder).build)
+
+    /**
+     * @param s3 Amazon S3 destination for channel logs. See `s3` Block below.
+     * @return builder
+     */
+    def s3(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelLoggingInfoS3Args.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelLoggingInfoArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelLoggingInfoS3Args.builder
+      builder.s3(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.msk.inputs.ChannelS3DestinationArgs.Builder)
+    /**
+     * @param deadLetterQueueS3 Amazon S3 bucket and prefix where MSK writes records that fail to deliver. See `deadLetterQueueS3` Block below.
+     * @return builder
+     */
+    def deadLetterQueueS3(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelS3DestinationDeadLetterQueueS3Args.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelS3DestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelS3DestinationDeadLetterQueueS3Args.builder
+      builder.deadLetterQueueS3(args(argsBuilder).build)
+
+    /**
+     * @param storage Amazon S3 bucket, prefix, and storage class for delivered records. See `storage` Block below.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def storage(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelS3DestinationStorageArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelS3DestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelS3DestinationStorageArgs.builder
+      builder.storage(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.msk.inputs.ChannelState.Builder)
+    /**
+     * @param encryptionConfiguration AWS KMS encryption configuration applied to data at rest. Changing this forces a new resource to be created. See `encryptionConfiguration` Block below.
+     * @return builder
+     */
+    def encryptionConfiguration(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelEncryptionConfigurationArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelState.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelEncryptionConfigurationArgs.builder
+      builder.encryptionConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param icebergDestination Apache Iceberg destination for the channel. Exactly one of `icebergDestination` or `s3Destination` is required. With the exception of `dataFreshnessInSeconds`, changing an argument in this block forces a new resource to be created. See `icebergDestination` Block below.
+     * @return builder
+     */
+    def icebergDestination(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelIcebergDestinationArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelState.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelIcebergDestinationArgs.builder
+      builder.icebergDestination(args(argsBuilder).build)
+
+    /**
+     * @param loggingInfo Destinations to which the channel publishes operational logs. Changing this forces a new resource to be created. See `loggingInfo` Block below.
+     * @return builder
+     */
+    def loggingInfo(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelLoggingInfoArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelState.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelLoggingInfoArgs.builder
+      builder.loggingInfo(args(argsBuilder).build)
+
+    /**
+     * @param s3Destination Amazon S3 destination for the channel. Exactly one of `icebergDestination` or `s3Destination` is required. With the exception of `dataFreshnessInSeconds`, changing an argument in this block forces a new resource to be created. See `s3Destination` Block below.
+     * @return builder
+     */
+    def s3Destination(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelS3DestinationArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelState.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelS3DestinationArgs.builder
+      builder.s3Destination(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelTimeoutsArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelState.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param topicConfiguration Configuration of the Apache Kafka topic that feeds the channel. Changing this forces a new resource to be created. See `topicConfiguration` Block below.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def topicConfiguration(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelTopicConfigurationArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelState.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelTopicConfigurationArgs.builder
+      builder.topicConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.msk.inputs.ChannelTopicConfigurationArgs.Builder)
+    /**
+     * @param recordConverter Configuration that controls how Apache Kafka record values are deserialized for the destination. See `recordConverter` Block below.
+     * @return builder
+     */
+    def recordConverter(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelTopicConfigurationRecordConverterArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelTopicConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelTopicConfigurationRecordConverterArgs.builder
+      builder.recordConverter(args(argsBuilder).build)
+
+    /**
+     * @param recordSchema Schema used to validate records when the value converter requires one. See `recordSchema` Block below.
+     * @return builder
+     */
+    def recordSchema(args: Endofunction[com.pulumi.aws.msk.inputs.ChannelTopicConfigurationRecordSchemaArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ChannelTopicConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ChannelTopicConfigurationRecordSchemaArgs.builder
+      builder.recordSchema(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoArgs.Builder)
     /**

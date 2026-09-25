@@ -117,7 +117,7 @@ object batch:
       builder.eksConfiguration(args(argsBuilder).build)
 
     /**
-     * @param updatePolicy Specifies the infrastructure update policy for the compute environment. See details below.
+     * @param updatePolicy Infrastructure update policy for the compute environment. See details below.
      * @return builder
      */
     def updatePolicy(args: Endofunction[com.pulumi.aws.batch.inputs.ComputeEnvironmentUpdatePolicyArgs.Builder]):
@@ -191,7 +191,7 @@ object batch:
 
   extension (builder: com.pulumi.aws.batch.JobQueueArgs.Builder)
     /**
-     * @param computeEnvironmentOrders The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler uses this parameter to determine which compute environment runs a specific job. Compute environments must be in the VALID state before you can associate them with a job queue. You can associate up to three compute environments with a job queue.
+     * @param computeEnvironmentOrders Set of compute environments mapped to a job queue and their order relative to each other. The job scheduler uses this parameter to determine which compute environment runs a specific job. Compute environments must be in the VALID state before you can associate them with a job queue. You can associate up to three compute environments with a job queue.
      * @return builder
      */
     def computeEnvironmentOrders(args: Endofunction[com.pulumi.aws.batch.inputs.JobQueueComputeEnvironmentOrderArgs.Builder]*):
@@ -200,7 +200,7 @@ object batch:
       builder.computeEnvironmentOrders(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param jobStateTimeLimitActions The set of job state time limit actions mapped to a job queue. Specifies an action that AWS Batch will take after the job has remained at the head of the queue in the specified state for longer than the specified time.
+     * @param jobStateTimeLimitActions Set of job state time limit actions mapped to a job queue. Specifies an action that AWS Batch will take after the job has remained at the head of the queue in the specified state for longer than the specified time.
      * @return builder
      */
     def jobStateTimeLimitActions(args: Endofunction[com.pulumi.aws.batch.inputs.JobQueueJobStateTimeLimitActionArgs.Builder]*):
@@ -232,6 +232,10 @@ object batch:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   extension (builder: com.pulumi.aws.batch.SchedulingPolicyArgs.Builder)
+    /**
+     * @param fairSharePolicy Fair share scheduling policy details. The `fairSharePolicy` block is documented below.
+     * @return builder
+     */
     def fairSharePolicy(args: Endofunction[com.pulumi.aws.batch.inputs.SchedulingPolicyFairSharePolicyArgs.Builder]):
         com.pulumi.aws.batch.SchedulingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.batch.inputs.SchedulingPolicyFairSharePolicyArgs.builder
@@ -248,7 +252,7 @@ object batch:
       builder.ec2Configurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param launchTemplate The launch template to use for your compute resources. See details below. This parameter isn&#39;t applicable to jobs running on Fargate resources, and shouldn&#39;t be specified.
+     * @param launchTemplate Launch template to use for your compute resources. See details below. This parameter isn&#39;t applicable to jobs running on Fargate resources, and shouldn&#39;t be specified.
      * @return builder
      */
     def launchTemplate(args: Endofunction[com.pulumi.aws.batch.inputs.ComputeEnvironmentComputeResourcesLaunchTemplateArgs.Builder]):
@@ -276,7 +280,7 @@ object batch:
       builder.eksConfiguration(args(argsBuilder).build)
 
     /**
-     * @param updatePolicy Specifies the infrastructure update policy for the compute environment. See details below.
+     * @param updatePolicy Infrastructure update policy for the compute environment. See details below.
      * @return builder
      */
     def updatePolicy(args: Endofunction[com.pulumi.aws.batch.inputs.ComputeEnvironmentUpdatePolicyArgs.Builder]):
@@ -482,7 +486,7 @@ object batch:
 
   extension (builder: com.pulumi.aws.batch.inputs.JobQueueState.Builder)
     /**
-     * @param computeEnvironmentOrders The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler uses this parameter to determine which compute environment runs a specific job. Compute environments must be in the VALID state before you can associate them with a job queue. You can associate up to three compute environments with a job queue.
+     * @param computeEnvironmentOrders Set of compute environments mapped to a job queue and their order relative to each other. The job scheduler uses this parameter to determine which compute environment runs a specific job. Compute environments must be in the VALID state before you can associate them with a job queue. You can associate up to three compute environments with a job queue.
      * @return builder
      */
     def computeEnvironmentOrders(args: Endofunction[com.pulumi.aws.batch.inputs.JobQueueComputeEnvironmentOrderArgs.Builder]*):
@@ -491,7 +495,7 @@ object batch:
       builder.computeEnvironmentOrders(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param jobStateTimeLimitActions The set of job state time limit actions mapped to a job queue. Specifies an action that AWS Batch will take after the job has remained at the head of the queue in the specified state for longer than the specified time.
+     * @param jobStateTimeLimitActions Set of job state time limit actions mapped to a job queue. Specifies an action that AWS Batch will take after the job has remained at the head of the queue in the specified state for longer than the specified time.
      * @return builder
      */
     def jobStateTimeLimitActions(args: Endofunction[com.pulumi.aws.batch.inputs.JobQueueJobStateTimeLimitActionArgs.Builder]*):
@@ -515,6 +519,10 @@ object batch:
       builder.shareDistributions(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.batch.inputs.SchedulingPolicyState.Builder)
+    /**
+     * @param fairSharePolicy Fair share scheduling policy details. The `fairSharePolicy` block is documented below.
+     * @return builder
+     */
     def fairSharePolicy(args: Endofunction[com.pulumi.aws.batch.inputs.SchedulingPolicyFairSharePolicyArgs.Builder]):
         com.pulumi.aws.batch.inputs.SchedulingPolicyState.Builder =
       val argsBuilder = com.pulumi.aws.batch.inputs.SchedulingPolicyFairSharePolicyArgs.builder

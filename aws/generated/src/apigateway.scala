@@ -630,7 +630,7 @@ object apigateway:
 
   extension (builder: com.pulumi.aws.apigateway.StageArgs.Builder)
     /**
-     * @param accessLogSettings Enables access logs for the API stage. See Access Log Settings below.
+     * @param accessLogSettings Enables access logs for the API stage. See `accessLogSettings` Block below.
      * @return builder
      */
     def accessLogSettings(args: Endofunction[com.pulumi.aws.apigateway.inputs.StageAccessLogSettingsArgs.Builder]):
@@ -639,7 +639,7 @@ object apigateway:
       builder.accessLogSettings(args(argsBuilder).build)
 
     /**
-     * @param canarySettings Configuration settings of a canary deployment. See Canary Settings below.
+     * @param canarySettings Configuration settings of a canary deployment. See `canarySettings` Block below.
      * @return builder
      */
     def canarySettings(args: Endofunction[com.pulumi.aws.apigateway.inputs.StageCanarySettingsArgs.Builder]):
@@ -811,7 +811,7 @@ object apigateway:
 
   extension (builder: com.pulumi.aws.apigateway.inputs.StageState.Builder)
     /**
-     * @param accessLogSettings Enables access logs for the API stage. See Access Log Settings below.
+     * @param accessLogSettings Enables access logs for the API stage. See `accessLogSettings` Block below.
      * @return builder
      */
     def accessLogSettings(args: Endofunction[com.pulumi.aws.apigateway.inputs.StageAccessLogSettingsArgs.Builder]):
@@ -820,7 +820,7 @@ object apigateway:
       builder.accessLogSettings(args(argsBuilder).build)
 
     /**
-     * @param canarySettings Configuration settings of a canary deployment. See Canary Settings below.
+     * @param canarySettings Configuration settings of a canary deployment. See `canarySettings` Block below.
      * @return builder
      */
     def canarySettings(args: Endofunction[com.pulumi.aws.apigateway.inputs.StageCanarySettingsArgs.Builder]):

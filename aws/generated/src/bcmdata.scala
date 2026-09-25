@@ -21,7 +21,7 @@ object bcmdata:
 
   extension (builder: com.pulumi.aws.bcmdata.ExportArgs.Builder)
     /**
-     * @param export The details of the export, including data query, name, description, and destination configuration.  See the `export` argument reference below.
+     * @param export Details of the export, including data query, name, description, and destination configuration. See the `export` block below.
      * @return builder
      */
     def `export`(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportArgs.Builder]):
@@ -36,7 +36,7 @@ object bcmdata:
 
   extension (builder: com.pulumi.aws.bcmdata.inputs.ExportExportArgs.Builder)
     /**
-     * @param dataQueries Data query for this specific data export. See the `dataQuery` argument reference below.
+     * @param dataQueries Data query for this specific data export. See the `dataQuery` block below.
      * @return builder
      */
     def dataQueries(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportDataQueryArgs.Builder]*):
@@ -45,7 +45,7 @@ object bcmdata:
       builder.dataQueries(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param destinationConfigurations Destination configuration for this specific data export. See the `destinationConfigurations` argument reference below.
+     * @param destinationConfigurations Destination configuration for this specific data export. See the `destinationConfigurations` block below.
      * @return builder
      */
     def destinationConfigurations(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportDestinationConfigurationArgs.Builder]*):
@@ -54,7 +54,7 @@ object bcmdata:
       builder.destinationConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param refreshCadences Cadence for Amazon Web Services to update the export in your S3 bucket. See the `refreshCadence` argument reference below.
+     * @param refreshCadences Cadence for Amazon Web Services to update the export in your S3 bucket. See the `refreshCadence` block below.
      * @return builder
      */
     def refreshCadences(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportRefreshCadenceArgs.Builder]*):
@@ -64,7 +64,7 @@ object bcmdata:
 
   extension (builder: com.pulumi.aws.bcmdata.inputs.ExportExportDestinationConfigurationArgs.Builder)
     /**
-     * @param s3Destinations Object that describes the destination of the data exports file. See the `s3Destination` argument reference below.
+     * @param s3Destinations Object that describes the destination of the data exports file. See the `s3Destination` block below.
      * @return builder
      */
     def s3Destinations(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportDestinationConfigurationS3DestinationArgs.Builder]*):
@@ -74,7 +74,7 @@ object bcmdata:
 
   extension (builder: com.pulumi.aws.bcmdata.inputs.ExportExportDestinationConfigurationS3DestinationArgs.Builder)
     /**
-     * @param s3OutputConfigurations Output configuration for the data export. See the `s3OutputConfigurations` argument reference below.
+     * @param s3OutputConfigurations Output configuration for the data export. See the `s3OutputConfigurations` block below.
      * @return builder
      */
     def s3OutputConfigurations(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportDestinationConfigurationS3DestinationS3OutputConfigurationArgs.Builder]*):
@@ -84,7 +84,7 @@ object bcmdata:
 
   extension (builder: com.pulumi.aws.bcmdata.inputs.ExportState.Builder)
     /**
-     * @param export The details of the export, including data query, name, description, and destination configuration.  See the `export` argument reference below.
+     * @param export Details of the export, including data query, name, description, and destination configuration. See the `export` block below.
      * @return builder
      */
     def `export`(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportArgs.Builder]):

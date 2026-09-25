@@ -464,6 +464,24 @@ object ec2transitgateway:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  /** Manages an EC2 Transit Gateway Policy Table Entry. Each entry defines a traffic matching rule within a Transit Gateway Policy Table that routes matching traffic to a specified transit gateway route table, enabling Policy-Based Routing (PBR). */
+  def PolicyTableEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.ec2transitgateway.PolicyTableEntryArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.ec2transitgateway.PolicyTableEntryArgs.builder
+    com.pulumi.aws.ec2transitgateway.PolicyTableEntry(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.ec2transitgateway.PolicyTableEntryArgs.Builder)
+    /**
+     * @param policyRule Matching criteria for the policy table entry. See below.
+     * @return builder
+     */
+    def policyRule(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.PolicyTableEntryPolicyRuleArgs.Builder]):
+        com.pulumi.aws.ec2transitgateway.PolicyTableEntryArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.PolicyTableEntryPolicyRuleArgs.builder
+      builder.policyRule(args(argsBuilder).build)
+
   /** Manages an EC2 Transit Gateway Prefix List Reference. */
   def PrefixListReference(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.PrefixListReferenceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -769,3 +787,23 @@ object ec2transitgateway:
         com.pulumi.aws.ec2transitgateway.inputs.PeeringAttachmentState.Builder =
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.PeeringAttachmentOptionsArgs.builder
       builder.options(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.PolicyTableEntryPolicyRuleArgs.Builder)
+    /**
+     * @param metadata Metadata key/value tag associated with the policy rule. See below.
+     * @return builder
+     */
+    def metadata(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.PolicyTableEntryPolicyRuleMetadataArgs.Builder]):
+        com.pulumi.aws.ec2transitgateway.inputs.PolicyTableEntryPolicyRuleArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.PolicyTableEntryPolicyRuleMetadataArgs.builder
+      builder.metadata(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.PolicyTableEntryState.Builder)
+    /**
+     * @param policyRule Matching criteria for the policy table entry. See below.
+     * @return builder
+     */
+    def policyRule(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.PolicyTableEntryPolicyRuleArgs.Builder]):
+        com.pulumi.aws.ec2transitgateway.inputs.PolicyTableEntryState.Builder =
+      val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.PolicyTableEntryPolicyRuleArgs.builder
+      builder.policyRule(args(argsBuilder).build)

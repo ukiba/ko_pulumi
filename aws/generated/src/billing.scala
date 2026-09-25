@@ -43,7 +43,7 @@ object billing:
 
   extension (builder: com.pulumi.aws.billing.ViewArgs.Builder)
     /**
-     * @param dataFilterExpression Filter Cost Explorer APIs using the expression. Refer to the data-filter-expression block documentation for more details.
+     * @param dataFilterExpression Filter Cost Explorer APIs using the expression. See `dataFilterExpression` below for details.
      * @return builder
      */
     def dataFilterExpression(args: Endofunction[com.pulumi.aws.billing.inputs.ViewDataFilterExpressionArgs.Builder]):
@@ -58,7 +58,7 @@ object billing:
 
   extension (builder: com.pulumi.aws.billing.inputs.ViewDataFilterExpressionArgs.Builder)
     /**
-     * @param dimensions Dimension to use for `expression`. Refer to #dimensions for more details.
+     * @param dimensions Dimension to use for the expression. See `dimensions` below for details.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.billing.inputs.ViewDataFilterExpressionDimensionsArgs.Builder]):
@@ -67,7 +67,7 @@ object billing:
       builder.dimensions(args(argsBuilder).build)
 
     /**
-     * @param tags List of key value map specifying tags associated to the billing view being created.
+     * @param tags Tags to use for the expression. See `tags` below for details.
      * @return builder
      */
     def tags(args: Endofunction[com.pulumi.aws.billing.inputs.ViewDataFilterExpressionTagArgs.Builder]*):
@@ -76,7 +76,7 @@ object billing:
       builder.tags(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param timeRange Time range to use for `expression`. Refer to #time-range for more details.
+     * @param timeRange Time range to use for the expression. See `timeRange` below for details.
      * @return builder
      */
     def timeRange(args: Endofunction[com.pulumi.aws.billing.inputs.ViewDataFilterExpressionTimeRangeArgs.Builder]):
@@ -86,7 +86,7 @@ object billing:
 
   extension (builder: com.pulumi.aws.billing.inputs.ViewState.Builder)
     /**
-     * @param dataFilterExpression Filter Cost Explorer APIs using the expression. Refer to the data-filter-expression block documentation for more details.
+     * @param dataFilterExpression Filter Cost Explorer APIs using the expression. See `dataFilterExpression` below for details.
      * @return builder
      */
     def dataFilterExpression(args: Endofunction[com.pulumi.aws.billing.inputs.ViewDataFilterExpressionArgs.Builder]):

@@ -172,7 +172,7 @@ object rds:
 
   extension (builder: com.pulumi.aws.rds.ClusterParameterGroupArgs.Builder)
     /**
-     * @param parameters A list of DB parameters to apply. Note that parameters may differ from a family to an other. Full list of all parameters can be discovered via [`aws rds describe-db-cluster-parameters`](https://docs.aws.amazon.com/cli/latest/reference/rds/describe-db-cluster-parameters.html) after initial creation of the group.
+     * @param parameters Set of DB parameters to apply. Note that parameters may differ from a family to an other. Full list of all parameters can be discovered via [`aws rds describe-db-cluster-parameters`](https://docs.aws.amazon.com/cli/latest/reference/rds/describe-db-cluster-parameters.html) after initial creation of the group. See `parameter` Block below for details.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.rds.inputs.ClusterParameterGroupParameterArgs.Builder]*):
@@ -310,14 +310,12 @@ object rds:
    * When upgrading the major version of an engine, `allowMajorVersionUpgrade` must be set to `true`.
    * 
    * &gt; **Note:** using `applyImmediately` can result in a brief downtime as the server reboots.
-   * See the AWS Docs on [RDS Instance Maintenance][instance-maintenance] for more information.
+   * See the AWS Docs on [RDS Instance Maintenance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html) for more information.
    * 
    * &gt; **Note:** All arguments including the username and password will be stored in the raw state as plain-text.
    * Read more about sensitive data instate.
    * 
    * Amazon RDS supports instance classes for General-purpose, Memory-optimized, Burstable Performance, and Optimized-reads use cases. For more information see [DB Instance Class Types](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html).
-   * 
-   * By default, RDS applies updates to DB Instances in-place, which can lead to service interruptions. Low-downtime updates minimize service interruptions by performing the updates with an [RDS Blue/Green deployment][blue-green] and switching over the instances when complete. Low-downtime updates are only available for MySQL, MariaDB, and PostgreSQL \u2014 other engines are not supported by RDS Blue/Green deployments \u2014 and cannot be used with DB Instances with replicas. Backups must be enabled. Enable low-downtime updates by setting `blue_green_update.enabled` to `true`.
    */
   def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.rds.InstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -335,8 +333,7 @@ object rds:
 
   extension (builder: com.pulumi.aws.rds.InstanceArgs.Builder)
     /**
-     * @param blueGreenUpdate Enables low-downtime updates using [RDS Blue/Green deployments][blue-green].
-     * See `blueGreenUpdate` below.
+     * @param blueGreenUpdate Enables low-downtime updates using [RDS Blue/Green deployments](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html). See `blueGreenUpdate` Block below.
      * @return builder
      */
     def blueGreenUpdate(args: Endofunction[com.pulumi.aws.rds.inputs.InstanceBlueGreenUpdateArgs.Builder]):
@@ -345,9 +342,7 @@ object rds:
       builder.blueGreenUpdate(args(argsBuilder).build)
 
     /**
-     * @param restoreToPointInTime A configuration block for restoring a DB instance to an arbitrary point in time.
-     * Requires the `identifier` argument to be set with the name of the new DB instance to be created.
-     * See Restore To Point In Time below for details.
+     * @param restoreToPointInTime Configuration block for restoring a DB instance to an arbitrary point in time. Requires the `identifier` argument to be set with the name of the new DB instance to be created. See `restoreToPointInTime` Block below for details.
      * @return builder
      */
     def restoreToPointInTime(args: Endofunction[com.pulumi.aws.rds.inputs.InstanceRestoreToPointInTimeArgs.Builder]):
@@ -356,7 +351,7 @@ object rds:
       builder.restoreToPointInTime(args(argsBuilder).build)
 
     /**
-     * @param s3Import Restore from a Percona Xtrabackup in S3.  See [Importing Data into an Amazon RDS MySQL DB Instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html)
+     * @param s3Import Restore from a Percona XtraBackup in S3. See [Importing Data into an Amazon RDS MySQL DB Instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html). See `s3Import` Block below.
      * @return builder
      */
     def s3Import(args: Endofunction[com.pulumi.aws.rds.inputs.InstanceS3ImportArgs.Builder]):
@@ -444,7 +439,7 @@ object rds:
 
   extension (builder: com.pulumi.aws.rds.OptionGroupArgs.Builder)
     /**
-     * @param options The options to apply. See `option` Block below for more details.
+     * @param options Options to apply. See `option` Block below for more details.
      * @return builder
      */
     def options(args: Endofunction[com.pulumi.aws.rds.inputs.OptionGroupOptionArgs.Builder]*):
@@ -484,7 +479,7 @@ object rds:
 
   extension (builder: com.pulumi.aws.rds.ParameterGroupArgs.Builder)
     /**
-     * @param parameters The DB parameters to apply. See `parameter` Block below for more details. Note that parameters may differ from a family to an other. Full list of all parameters can be discovered via [`aws rds describe-db-parameters`](https://docs.aws.amazon.com/cli/latest/reference/rds/describe-db-parameters.html) after initial creation of the group.
+     * @param parameters DB parameters to apply. See `parameter` Block below for more details. Note that parameters may differ from a family to an other. Full list of all parameters can be discovered via [`aws rds describe-db-parameters`](https://docs.aws.amazon.com/cli/latest/reference/rds/describe-db-parameters.html) after initial creation of the group.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.rds.inputs.ParameterGroupParameterArgs.Builder]*):
@@ -548,7 +543,7 @@ object rds:
 
   extension (builder: com.pulumi.aws.rds.ProxyDefaultTargetGroupArgs.Builder)
     /**
-     * @param connectionPoolConfig The settings that determine the size and behavior of the connection pool for the target group.
+     * @param connectionPoolConfig Settings that determine the size and behavior of the connection pool for the target group. See `connectionPoolConfig` Block for details.
      * @return builder
      */
     def connectionPoolConfig(args: Endofunction[com.pulumi.aws.rds.inputs.ProxyDefaultTargetGroupConnectionPoolConfigArgs.Builder]):
@@ -993,7 +988,7 @@ object rds:
 
   extension (builder: com.pulumi.aws.rds.inputs.ClusterParameterGroupState.Builder)
     /**
-     * @param parameters A list of DB parameters to apply. Note that parameters may differ from a family to an other. Full list of all parameters can be discovered via [`aws rds describe-db-cluster-parameters`](https://docs.aws.amazon.com/cli/latest/reference/rds/describe-db-cluster-parameters.html) after initial creation of the group.
+     * @param parameters Set of DB parameters to apply. Note that parameters may differ from a family to an other. Full list of all parameters can be discovered via [`aws rds describe-db-cluster-parameters`](https://docs.aws.amazon.com/cli/latest/reference/rds/describe-db-cluster-parameters.html) after initial creation of the group. See `parameter` Block below for details.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.rds.inputs.ClusterParameterGroupParameterArgs.Builder]*):
@@ -1067,7 +1062,7 @@ object rds:
 
   extension (builder: com.pulumi.aws.rds.inputs.GetEngineVersionArgs.Builder)
     /**
-     * @param filters One or more name/value pairs to use in filtering versions. There are several valid keys; for a full reference, check out [describe-db-engine-versions in the AWS CLI reference](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/describe-db-engine-versions.html).
+     * @param filters Configuration block for filtering versions. See `filter` Block below.
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.rds.inputs.GetEngineVersionFilterArgs.Builder]*):
@@ -1113,8 +1108,7 @@ object rds:
 
   extension (builder: com.pulumi.aws.rds.inputs.InstanceState.Builder)
     /**
-     * @param blueGreenUpdate Enables low-downtime updates using [RDS Blue/Green deployments][blue-green].
-     * See `blueGreenUpdate` below.
+     * @param blueGreenUpdate Enables low-downtime updates using [RDS Blue/Green deployments](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html). See `blueGreenUpdate` Block below.
      * @return builder
      */
     def blueGreenUpdate(args: Endofunction[com.pulumi.aws.rds.inputs.InstanceBlueGreenUpdateArgs.Builder]):
@@ -1123,7 +1117,7 @@ object rds:
       builder.blueGreenUpdate(args(argsBuilder).build)
 
     /**
-     * @param listenerEndpoints Specifies the listener connection endpoint for SQL Server Always On. See endpoint below.
+     * @param listenerEndpoints Listener connection endpoint for SQL Server Always On. See Endpoint below.
      * @return builder
      */
     def listenerEndpoints(args: Endofunction[com.pulumi.aws.rds.inputs.InstanceListenerEndpointArgs.Builder]*):
@@ -1132,7 +1126,7 @@ object rds:
       builder.listenerEndpoints(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param masterUserSecrets A block that specifies the master user secret. Only available when `manageMasterUserPassword` is set to true. Documented below.
+     * @param masterUserSecrets Block that specifies the master user secret. Only available when `manageMasterUserPassword` is set to true. See `masterUserSecret` Block below.
      * @return builder
      */
     def masterUserSecrets(args: Endofunction[com.pulumi.aws.rds.inputs.InstanceMasterUserSecretArgs.Builder]*):
@@ -1141,9 +1135,7 @@ object rds:
       builder.masterUserSecrets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param restoreToPointInTime A configuration block for restoring a DB instance to an arbitrary point in time.
-     * Requires the `identifier` argument to be set with the name of the new DB instance to be created.
-     * See Restore To Point In Time below for details.
+     * @param restoreToPointInTime Configuration block for restoring a DB instance to an arbitrary point in time. Requires the `identifier` argument to be set with the name of the new DB instance to be created. See `restoreToPointInTime` Block below for details.
      * @return builder
      */
     def restoreToPointInTime(args: Endofunction[com.pulumi.aws.rds.inputs.InstanceRestoreToPointInTimeArgs.Builder]):
@@ -1152,7 +1144,7 @@ object rds:
       builder.restoreToPointInTime(args(argsBuilder).build)
 
     /**
-     * @param s3Import Restore from a Percona Xtrabackup in S3.  See [Importing Data into an Amazon RDS MySQL DB Instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html)
+     * @param s3Import Restore from a Percona XtraBackup in S3. See [Importing Data into an Amazon RDS MySQL DB Instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html). See `s3Import` Block below.
      * @return builder
      */
     def s3Import(args: Endofunction[com.pulumi.aws.rds.inputs.InstanceS3ImportArgs.Builder]):
@@ -1168,7 +1160,7 @@ object rds:
 
   extension (builder: com.pulumi.aws.rds.inputs.OptionGroupOptionArgs.Builder)
     /**
-     * @param optionSettings The option settings to apply. See `optionSettings` Block below for more details.
+     * @param optionSettings Option settings to apply. See `optionSettings` Block below for more details.
      * @return builder
      */
     def optionSettings(args: Endofunction[com.pulumi.aws.rds.inputs.OptionGroupOptionOptionSettingArgs.Builder]*):
@@ -1178,7 +1170,7 @@ object rds:
 
   extension (builder: com.pulumi.aws.rds.inputs.OptionGroupState.Builder)
     /**
-     * @param options The options to apply. See `option` Block below for more details.
+     * @param options Options to apply. See `option` Block below for more details.
      * @return builder
      */
     def options(args: Endofunction[com.pulumi.aws.rds.inputs.OptionGroupOptionArgs.Builder]*):
@@ -1188,7 +1180,7 @@ object rds:
 
   extension (builder: com.pulumi.aws.rds.inputs.ParameterGroupState.Builder)
     /**
-     * @param parameters The DB parameters to apply. See `parameter` Block below for more details. Note that parameters may differ from a family to an other. Full list of all parameters can be discovered via [`aws rds describe-db-parameters`](https://docs.aws.amazon.com/cli/latest/reference/rds/describe-db-parameters.html) after initial creation of the group.
+     * @param parameters DB parameters to apply. See `parameter` Block below for more details. Note that parameters may differ from a family to an other. Full list of all parameters can be discovered via [`aws rds describe-db-parameters`](https://docs.aws.amazon.com/cli/latest/reference/rds/describe-db-parameters.html) after initial creation of the group.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.rds.inputs.ParameterGroupParameterArgs.Builder]*):
@@ -1198,7 +1190,7 @@ object rds:
 
   extension (builder: com.pulumi.aws.rds.inputs.ProxyDefaultTargetGroupState.Builder)
     /**
-     * @param connectionPoolConfig The settings that determine the size and behavior of the connection pool for the target group.
+     * @param connectionPoolConfig Settings that determine the size and behavior of the connection pool for the target group. See `connectionPoolConfig` Block for details.
      * @return builder
      */
     def connectionPoolConfig(args: Endofunction[com.pulumi.aws.rds.inputs.ProxyDefaultTargetGroupConnectionPoolConfigArgs.Builder]):
@@ -1218,7 +1210,7 @@ object rds:
 
   extension (builder: com.pulumi.aws.rds.inputs.ReservedInstanceState.Builder)
     /**
-     * @param recurringCharges Recurring price charged to run this reserved DB instance.
+     * @param recurringCharges Recurring price charged to run this reserved DB instance. See `recurringCharges` below.
      * @return builder
      */
     def recurringCharges(args: Endofunction[com.pulumi.aws.rds.inputs.ReservedInstanceRecurringChargeArgs.Builder]*):

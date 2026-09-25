@@ -159,7 +159,7 @@ object backup:
 
   extension (builder: com.pulumi.aws.backup.PlanArgs.Builder)
     /**
-     * @param advancedBackupSettings An object that specifies backup options for each resource type.
+     * @param advancedBackupSettings Object that specifies backup options for each resource type. Detailed below.
      * @return builder
      */
     def advancedBackupSettings(args: Endofunction[com.pulumi.aws.backup.inputs.PlanAdvancedBackupSettingArgs.Builder]*):
@@ -168,7 +168,7 @@ object backup:
       builder.advancedBackupSettings(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param rules A rule object that specifies a scheduled task that is used to back up a selection of resources.
+     * @param rules Rule that specifies a scheduled task used to back up a selection of resources. Detailed below.
      * @return builder
      */
     def rules(args: Endofunction[com.pulumi.aws.backup.inputs.PlanRuleArgs.Builder]*):
@@ -250,7 +250,7 @@ object backup:
 
   extension (builder: com.pulumi.aws.backup.RestoreTestingPlanArgs.Builder)
     /**
-     * @param recoveryPointSelection Specifies the recovery point selection configuration. See RecoveryPointSelection section for more details.
+     * @param recoveryPointSelection Recovery point selection configuration. See `recoveryPointSelection` below.
      * @return builder
      */
     def recoveryPointSelection(args: Endofunction[com.pulumi.aws.backup.inputs.RestoreTestingPlanRecoveryPointSelectionArgs.Builder]):
@@ -271,7 +271,7 @@ object backup:
 
   extension (builder: com.pulumi.aws.backup.RestoreTestingSelectionArgs.Builder)
     /**
-     * @param protectedResourceConditions The conditions for the protected resource.
+     * @param protectedResourceConditions Conditions for the protected resource. See `protectedResourceConditions` below.
      * @return builder
      */
     def protectedResourceConditions(args: Endofunction[com.pulumi.aws.backup.inputs.RestoreTestingSelectionProtectedResourceConditionsArgs.Builder]):
@@ -362,7 +362,7 @@ object backup:
       builder.inputParameters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param scope The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. Detailed below.
+     * @param scope Scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. Detailed below.
      * @return builder
      */
     def scope(args: Endofunction[com.pulumi.aws.backup.inputs.FrameworkControlScopeArgs.Builder]):
@@ -397,7 +397,7 @@ object backup:
       builder.copyActions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param lifecycle The lifecycle defines when a protected resource is transitioned to cold storage and when it expires.  Fields documented below.
+     * @param lifecycle Lifecycle that defines when a protected resource is transitioned to cold storage and when it expires. Detailed below.
      * @return builder
      */
     def lifecycle(args: Endofunction[com.pulumi.aws.backup.inputs.PlanRuleLifecycleArgs.Builder]):
@@ -406,7 +406,7 @@ object backup:
       builder.lifecycle(args(argsBuilder).build)
 
     /**
-     * @param scanActions Block for scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental.
+     * @param scanActions Block for scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental. Detailed below.
      * @return builder
      */
     def scanActions(args: Endofunction[com.pulumi.aws.backup.inputs.PlanRuleScanActionArgs.Builder]*):
@@ -416,7 +416,7 @@ object backup:
 
   extension (builder: com.pulumi.aws.backup.inputs.PlanRuleCopyActionArgs.Builder)
     /**
-     * @param lifecycle The lifecycle defines when a protected resource is copied over to a backup vault and when it expires.  Fields documented above.
+     * @param lifecycle Lifecycle that defines when a protected resource is copied over to a backup vault and when it expires. Detailed below.
      * @return builder
      */
     def lifecycle(args: Endofunction[com.pulumi.aws.backup.inputs.PlanRuleCopyActionLifecycleArgs.Builder]):
@@ -426,7 +426,7 @@ object backup:
 
   extension (builder: com.pulumi.aws.backup.inputs.PlanState.Builder)
     /**
-     * @param advancedBackupSettings An object that specifies backup options for each resource type.
+     * @param advancedBackupSettings Object that specifies backup options for each resource type. Detailed below.
      * @return builder
      */
     def advancedBackupSettings(args: Endofunction[com.pulumi.aws.backup.inputs.PlanAdvancedBackupSettingArgs.Builder]*):
@@ -435,7 +435,7 @@ object backup:
       builder.advancedBackupSettings(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param rules A rule object that specifies a scheduled task that is used to back up a selection of resources.
+     * @param rules Rule that specifies a scheduled task used to back up a selection of resources. Detailed below.
      * @return builder
      */
     def rules(args: Endofunction[com.pulumi.aws.backup.inputs.PlanRuleArgs.Builder]*):
@@ -473,7 +473,7 @@ object backup:
 
   extension (builder: com.pulumi.aws.backup.inputs.RestoreTestingPlanState.Builder)
     /**
-     * @param recoveryPointSelection Specifies the recovery point selection configuration. See RecoveryPointSelection section for more details.
+     * @param recoveryPointSelection Recovery point selection configuration. See `recoveryPointSelection` below.
      * @return builder
      */
     def recoveryPointSelection(args: Endofunction[com.pulumi.aws.backup.inputs.RestoreTestingPlanRecoveryPointSelectionArgs.Builder]):
@@ -483,7 +483,7 @@ object backup:
 
   extension (builder: com.pulumi.aws.backup.inputs.RestoreTestingSelectionProtectedResourceConditionsArgs.Builder)
     /**
-     * @param stringEquals The list of string equals conditions for resource tags. Filters the values of your tagged resources for only those resources that you tagged with the same value. Also called &#34;exact matching.&#34;. See the structure for details
+     * @param stringEquals List of string equals conditions for resource tags. Filters the values of your tagged resources for only those resources that you tagged with the same value. Also called &#34;exact matching.&#34;. See `stringEquals` below.
      * @return builder
      */
     def stringEquals(args: Endofunction[com.pulumi.aws.backup.inputs.RestoreTestingSelectionProtectedResourceConditionsStringEqualArgs.Builder]*):
@@ -492,7 +492,7 @@ object backup:
       builder.stringEquals(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param stringNotEquals The list of string not equals conditions for resource tags. Filters the values of your tagged resources for only those resources that you tagged that do not have the same value. Also called &#34;negated matching.&#34;. See the structure for details
+     * @param stringNotEquals List of string not equals conditions for resource tags. Filters the values of your tagged resources for only those resources that you tagged that do not have the same value. Also called &#34;negated matching.&#34;. See `stringNotEquals` below.
      * @return builder
      */
     def stringNotEquals(args: Endofunction[com.pulumi.aws.backup.inputs.RestoreTestingSelectionProtectedResourceConditionsStringNotEqualArgs.Builder]*):
@@ -502,7 +502,7 @@ object backup:
 
   extension (builder: com.pulumi.aws.backup.inputs.RestoreTestingSelectionState.Builder)
     /**
-     * @param protectedResourceConditions The conditions for the protected resource.
+     * @param protectedResourceConditions Conditions for the protected resource. See `protectedResourceConditions` below.
      * @return builder
      */
     def protectedResourceConditions(args: Endofunction[com.pulumi.aws.backup.inputs.RestoreTestingSelectionProtectedResourceConditionsArgs.Builder]):

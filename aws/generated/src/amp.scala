@@ -104,7 +104,7 @@ object amp:
 
   extension (builder: com.pulumi.aws.amp.QueryLoggingConfigurationArgs.Builder)
     /**
-     * @param destinations Configuration block for the logging destinations. See `destinations`.
+     * @param destinations Configuration block for the logging destinations. See `destination`.
      * @return builder
      */
     def destinations(args: Endofunction[com.pulumi.aws.amp.inputs.QueryLoggingConfigurationDestinationArgs.Builder]*):
@@ -369,7 +369,7 @@ object amp:
 
   extension (builder: com.pulumi.aws.amp.inputs.QueryLoggingConfigurationState.Builder)
     /**
-     * @param destinations Configuration block for the logging destinations. See `destinations`.
+     * @param destinations Configuration block for the logging destinations. See `destination`.
      * @return builder
      */
     def destinations(args: Endofunction[com.pulumi.aws.amp.inputs.QueryLoggingConfigurationDestinationArgs.Builder]*):

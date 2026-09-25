@@ -1279,6 +1279,16 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.ServiceDeploymentConfigurationLinearConfigurationArgs.builder
       builder.linearConfiguration(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.ecs.inputs.ServiceDeploymentConfigurationLifecycleHookArgs.Builder)
+    /**
+     * @param timeoutConfiguration Configuration block defining the timeout behavior for a `PAUSE` hook. Only valid when `targetType` is `PAUSE`. See below.
+     * @return builder
+     */
+    def timeoutConfiguration(args: Endofunction[com.pulumi.aws.ecs.inputs.ServiceDeploymentConfigurationLifecycleHookTimeoutConfigurationArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.ServiceDeploymentConfigurationLifecycleHookArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.ServiceDeploymentConfigurationLifecycleHookTimeoutConfigurationArgs.builder
+      builder.timeoutConfiguration(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceLoadBalancerArgs.Builder)
     /**
      * @param advancedConfiguration Configuration block for Blue/Green deployment settings. Required when using `BLUE_GREEN` deployment strategy. See below.

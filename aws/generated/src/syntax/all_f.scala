@@ -99,6 +99,7 @@ export ko_pulumi.aws.bedrock.human
 export ko_pulumi.aws.bedrock.humanWorkflowConfig
 export ko_pulumi.aws.bedrock.iamPrincipal
 export ko_pulumi.aws.bedrock.imageExtractionConfiguration
+export ko_pulumi.aws.bedrock.includedOauth2ProviderConfig
 export ko_pulumi.aws.bedrock.indexedKeys
 export ko_pulumi.aws.bedrock.inference
 export ko_pulumi.aws.bedrock.inferenceConfig
@@ -412,6 +413,7 @@ export ko_pulumi.aws.mediapackage.ingestEndpoints
 export ko_pulumi.aws.mq.instances
 export ko_pulumi.aws.msk.firehose
 export ko_pulumi.aws.msk.iam
+export ko_pulumi.aws.msk.icebergDestination
 export ko_pulumi.aws.msk.jmxExporter
 export ko_pulumi.aws.mskconnect.firehose
 export ko_pulumi.aws.neptune.globalClusterMembers

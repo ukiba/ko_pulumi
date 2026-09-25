@@ -30,8 +30,6 @@ object bedrock:
   extension (builder: com.pulumi.aws.bedrock.AgentAgentActionGroupArgs.Builder)
     /**
      * @param actionGroupExecutor ARN of the Lambda function containing the business logic that is carried out upon invoking the action or custom control method for handling the information elicited from the user. See `actionGroupExecutor` Block for details.
-     * 
-     * The following arguments are optional:
      * @return builder
      */
     def actionGroupExecutor(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentAgentActionGroupActionGroupExecutorArgs.Builder]):
@@ -49,9 +47,7 @@ object bedrock:
       builder.apiSchema(args(argsBuilder).build)
 
     /**
-     * @param functionSchema Describes the function schema for the action group.
-     * Each function represents an action in an action group.
-     * See `functionSchema` Block for details.
+     * @param functionSchema Function schema for the action group. Each function represents an action in an action group. See `functionSchema` Block for details.
      * @return builder
      */
     def functionSchema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentAgentActionGroupFunctionSchemaArgs.Builder]):
@@ -173,7 +169,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.AgentDataSourceArgs.Builder)
     /**
-     * @param dataSourceConfiguration Details about how the data source is stored. See `dataSourceConfiguration` block for details.
+     * @param dataSourceConfiguration Details about how the data source is stored. See `dataSourceConfiguration` Block for details.
      * @return builder
      */
     def dataSourceConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationArgs.Builder]):
@@ -182,7 +178,7 @@ object bedrock:
       builder.dataSourceConfiguration(args(argsBuilder).build)
 
     /**
-     * @param serverSideEncryptionConfiguration Details about the configuration of the server-side encryption. See `serverSideEncryptionConfiguration` block for details.
+     * @param serverSideEncryptionConfiguration Details about the configuration of the server-side encryption. See `serverSideEncryptionConfiguration` Block for details.
      * @return builder
      */
     def serverSideEncryptionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceServerSideEncryptionConfigurationArgs.Builder]):
@@ -196,7 +192,7 @@ object bedrock:
       builder.timeouts(args(argsBuilder).build)
 
     /**
-     * @param vectorIngestionConfiguration Details about the configuration of the server-side encryption. See `vectorIngestionConfiguration` block for details.
+     * @param vectorIngestionConfiguration Details about how to ingest the documents in the data source. See `vectorIngestionConfiguration` Block for details.
      * @return builder
      */
     def vectorIngestionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationArgs.Builder]):
@@ -224,7 +220,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.AgentFlowArgs.Builder)
     /**
-     * @param definition A definition of the nodes and connections between nodes in the flow. See Definition for more information.
+     * @param definition Nodes and connections between nodes in the flow. See `definition` Block for details.
      * @return builder
      */
     def definition(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionArgs.Builder]):
@@ -257,7 +253,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.AgentKnowledgeBaseArgs.Builder)
     /**
-     * @param knowledgeBaseConfiguration Details about the embeddings configuration of the knowledge base. See `knowledgeBaseConfiguration` block for details.
+     * @param knowledgeBaseConfiguration Details about the embeddings configuration of the knowledge base. See `knowledgeBaseConfiguration` Block for details.
      * @return builder
      */
     def knowledgeBaseConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationArgs.Builder]):
@@ -266,7 +262,7 @@ object bedrock:
       builder.knowledgeBaseConfiguration(args(argsBuilder).build)
 
     /**
-     * @param storageConfiguration Details about the storage configuration of the knowledge base. See `storageConfiguration` block for details.
+     * @param storageConfiguration Details about the storage configuration of the knowledge base. See `storageConfiguration` Block for details.
      * @return builder
      */
     def storageConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationArgs.Builder]):
@@ -299,7 +295,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.AgentPromptArgs.Builder)
     /**
-     * @param variants A list of objects, each containing details about a variant of the prompt. See Variant for more information.
+     * @param variants List of objects, each containing details about a variant of the prompt. See `variant` Block for more information.
      * @return builder
      */
     def variants(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantArgs.Builder]*):
@@ -361,8 +357,6 @@ object bedrock:
 
     /**
      * @param networkConfiguration Network configuration for the agent runtime. See `networkConfiguration` below.
-     * 
-     * The following arguments are optional:
      * @return builder
      */
     def networkConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeNetworkConfigurationArgs.Builder]):
@@ -438,6 +432,16 @@ object bedrock:
     com.pulumi.aws.bedrock.AgentcoreApiKeyCredentialProvider(name,
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.bedrock.AgentcoreApiKeyCredentialProviderArgs.Builder)
+    /**
+     * @param apiKeySecretConfig Reference to a customer-managed AWS Secrets Manager secret that stores the API key. Requires `apiKeySecretSource = &#34;EXTERNAL&#34;`. See below.
+     * @return builder
+     */
+    def apiKeySecretConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreApiKeyCredentialProviderApiKeySecretConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.AgentcoreApiKeyCredentialProviderArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreApiKeyCredentialProviderApiKeySecretConfigArgs.builder
+      builder.apiKeySecretConfig(args(argsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Browser. Browser provides AI agents with web browsing capabilities, allowing them to navigate websites, extract information, and interact with web content in a controlled environment. */
   def AgentcoreBrowser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -977,7 +981,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.AgentcoreOauth2CredentialProviderArgs.Builder)
     /**
-     * @param oauth2ProviderConfig OAuth2 provider configuration. Must contain exactly one provider type. See `oauth2ProviderConfig` below.
+     * @param oauth2ProviderConfig OAuth2 provider configuration. Must contain exactly one provider type. See `oauth2ProviderConfig` Block below.
      * 
      * The following arguments are optional:
      * @return builder
@@ -1275,7 +1279,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.CustomModelArgs.Builder)
     /**
-     * @param outputDataConfig S3 location for the output data.
+     * @param outputDataConfig S3 location for the output data. See `outputDataConfig` below.
      * @return builder
      */
     def outputDataConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.CustomModelOutputDataConfigArgs.Builder]):
@@ -1289,7 +1293,7 @@ object bedrock:
       builder.timeouts(args(argsBuilder).build)
 
     /**
-     * @param trainingDataConfig Information about the training dataset.
+     * @param trainingDataConfig Information about the training dataset. See `trainingDataConfig` below.
      * @return builder
      */
     def trainingDataConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.CustomModelTrainingDataConfigArgs.Builder]):
@@ -1298,7 +1302,7 @@ object bedrock:
       builder.trainingDataConfig(args(argsBuilder).build)
 
     /**
-     * @param validationDataConfig Information about the validation dataset.
+     * @param validationDataConfig Information about the validation dataset. See `validationDataConfig` below.
      * @return builder
      */
     def validationDataConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.CustomModelValidationDataConfigArgs.Builder]):
@@ -1307,7 +1311,7 @@ object bedrock:
       builder.validationDataConfig(args(argsBuilder).build)
 
     /**
-     * @param vpcConfig Configuration parameters for the private VPC that contains the resources you are using for this job.
+     * @param vpcConfig Configuration parameters for the private VPC that contains the resources you are using for this job. See `vpcConfig` below.
      * @return builder
      */
     def vpcConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.CustomModelVpcConfigArgs.Builder]):
@@ -1387,7 +1391,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.GuardrailArgs.Builder)
     /**
-     * @param contentPolicyConfig Content policy config for a guardrail. See Content Policy Config for more information.
+     * @param contentPolicyConfig Content policy config for a guardrail. See `contentPolicyConfig` Block for more information.
      * @return builder
      */
     def contentPolicyConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailContentPolicyConfigArgs.Builder]):
@@ -1396,7 +1400,7 @@ object bedrock:
       builder.contentPolicyConfig(args(argsBuilder).build)
 
     /**
-     * @param contextualGroundingPolicyConfig Contextual grounding policy config for a guardrail. See Contextual Grounding Policy Config for more information.
+     * @param contextualGroundingPolicyConfig Contextual grounding policy config for a guardrail. See `contextualGroundingPolicyConfig` Block for more information.
      * @return builder
      */
     def contextualGroundingPolicyConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailContextualGroundingPolicyConfigArgs.Builder]):
@@ -1404,13 +1408,17 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GuardrailContextualGroundingPolicyConfigArgs.builder
       builder.contextualGroundingPolicyConfig(args(argsBuilder).build)
 
+    /**
+     * @param crossRegionConfig Configuration block to enable cross-region routing for bedrock guardrails. See `crossRegionConfig` Block for more information. Note see [available regions](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html) here.
+     * @return builder
+     */
     def crossRegionConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailCrossRegionConfigArgs.Builder]):
         com.pulumi.aws.bedrock.GuardrailArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GuardrailCrossRegionConfigArgs.builder
       builder.crossRegionConfig(args(argsBuilder).build)
 
     /**
-     * @param sensitiveInformationPolicyConfig Sensitive information policy config for a guardrail. See Sensitive Information Policy Config for more information.
+     * @param sensitiveInformationPolicyConfig Sensitive information policy config for a guardrail. See `sensitiveInformationPolicyConfig` Block for more information.
      * @return builder
      */
     def sensitiveInformationPolicyConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailSensitiveInformationPolicyConfigArgs.Builder]):
@@ -1424,7 +1432,7 @@ object bedrock:
       builder.timeouts(args(argsBuilder).build)
 
     /**
-     * @param topicPolicyConfig Topic policy config for a guardrail. See Topic Policy Config for more information.
+     * @param topicPolicyConfig Topic policy config for a guardrail. See `topicPolicyConfig` Block for more information.
      * @return builder
      */
     def topicPolicyConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailTopicPolicyConfigArgs.Builder]):
@@ -1433,7 +1441,7 @@ object bedrock:
       builder.topicPolicyConfig(args(argsBuilder).build)
 
     /**
-     * @param wordPolicyConfig Word policy config for a guardrail. See Word Policy Config for more information.
+     * @param wordPolicyConfig Word policy config for a guardrail. See `wordPolicyConfig` Block for more information.
      * @return builder
      */
     def wordPolicyConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailWordPolicyConfigArgs.Builder]):
@@ -1475,9 +1483,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.InferenceProfileArgs.Builder)
     /**
-     * @param modelSource The source of the model this inference profile will track metrics and cost for. See `modelSource`.
-     * 
-     * The following arguments are optional:
+     * @param modelSource Source of the model this inference profile will track metrics and cost for. See `modelSource`.
      * @return builder
      */
     def modelSource(args: Endofunction[com.pulumi.aws.bedrock.inputs.InferenceProfileModelSourceArgs.Builder]):
@@ -1529,8 +1535,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentAgentActionGroupApiSchemaArgs.Builder)
     /**
-     * @param s3 Details about the S3 object containing the OpenAPI schema for the action group. See `s3` Block for details.
-     * Only one of `s3` or `payload` can be specified.
+     * @param s3 Details about the S3 object containing the OpenAPI schema for the action group. Only one of `s3` or `payload` can be specified. See `s3` Block for details.
      * @return builder
      */
     def s3(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentAgentActionGroupApiSchemaS3Args.Builder]):
@@ -1540,9 +1545,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentAgentActionGroupFunctionSchemaArgs.Builder)
     /**
-     * @param memberFunctions Contains a list of functions.
-     * Each function describes and action in the action group.
-     * See `memberFunctions` Block for details.
+     * @param memberFunctions List of functions. Each function describes an action in the action group. See `memberFunctions` Block for details.
      * @return builder
      */
     def memberFunctions(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentAgentActionGroupFunctionSchemaMemberFunctionsArgs.Builder]):
@@ -1573,8 +1576,6 @@ object bedrock:
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentAgentActionGroupState.Builder)
     /**
      * @param actionGroupExecutor ARN of the Lambda function containing the business logic that is carried out upon invoking the action or custom control method for handling the information elicited from the user. See `actionGroupExecutor` Block for details.
-     * 
-     * The following arguments are optional:
      * @return builder
      */
     def actionGroupExecutor(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentAgentActionGroupActionGroupExecutorArgs.Builder]):
@@ -1592,9 +1593,7 @@ object bedrock:
       builder.apiSchema(args(argsBuilder).build)
 
     /**
-     * @param functionSchema Describes the function schema for the action group.
-     * Each function represents an action in an action group.
-     * See `functionSchema` Block for details.
+     * @param functionSchema Function schema for the action group. Each function represents an action in an action group. See `functionSchema` Block for details.
      * @return builder
      */
     def functionSchema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentAgentActionGroupFunctionSchemaArgs.Builder]):
@@ -1704,7 +1703,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationArgs.Builder)
     /**
-     * @param confluenceConfiguration Details about the configuration of the Confluence data source. See `confluenceDataSourceConfiguration` block for details.
+     * @param confluenceConfiguration Configuration details for the Confluence data source. See `data_source_configuration.confluence_configuration` Block for details.
      * @return builder
      */
     def confluenceConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationConfluenceConfigurationArgs.Builder]):
@@ -1713,7 +1712,7 @@ object bedrock:
       builder.confluenceConfiguration(args(argsBuilder).build)
 
     /**
-     * @param managedKnowledgeBaseConnectorConfiguration Details about the configuration of a Managed Knowledge Base connector data source. See `managedKnowledgeBaseConnectorConfiguration` block for details.
+     * @param managedKnowledgeBaseConnectorConfiguration Configuration details for a Managed Knowledge Base connector data source. See `managedKnowledgeBaseConnectorConfiguration` Block for details.
      * @return builder
      */
     def managedKnowledgeBaseConnectorConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationArgs.Builder]):
@@ -1722,7 +1721,7 @@ object bedrock:
       builder.managedKnowledgeBaseConnectorConfiguration(args(argsBuilder).build)
 
     /**
-     * @param s3Configuration Details about the configuration of the S3 object containing the data source. See `s3DataSourceConfiguration` block for details.
+     * @param s3Configuration Configuration details for the S3 object that contains the data source. See `s3Configuration` Block for details.
      * @return builder
      */
     def s3Configuration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationS3ConfigurationArgs.Builder]):
@@ -1731,7 +1730,7 @@ object bedrock:
       builder.s3Configuration(args(argsBuilder).build)
 
     /**
-     * @param salesforceConfiguration Details about the configuration of the Salesforce data source. See `salesforceDataSourceConfiguration` block for details.
+     * @param salesforceConfiguration Configuration details for the Salesforce data source. See `data_source_configuration.salesforce_configuration` Block for details.
      * @return builder
      */
     def salesforceConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationArgs.Builder]):
@@ -1740,7 +1739,7 @@ object bedrock:
       builder.salesforceConfiguration(args(argsBuilder).build)
 
     /**
-     * @param sharePointConfiguration Details about the configuration of the SharePoint data source. See `sharePointDataSourceConfiguration` block for details.
+     * @param sharePointConfiguration Configuration details for the SharePoint data source. See `data_source_configuration.share_point_configuration` Block for details.
      * @return builder
      */
     def sharePointConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSharePointConfigurationArgs.Builder]):
@@ -1749,7 +1748,7 @@ object bedrock:
       builder.sharePointConfiguration(args(argsBuilder).build)
 
     /**
-     * @param webConfiguration Details about the configuration of the web data source. See `webDataSourceConfiguration` block for details.
+     * @param webConfiguration Configuration details for the web data source. See `data_source_configuration.web_configuration` Block for details.
      * @return builder
      */
     def webConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationWebConfigurationArgs.Builder]):
@@ -1758,11 +1757,19 @@ object bedrock:
       builder.webConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationConfluenceConfigurationArgs.Builder)
+    /**
+     * @param crawlerConfiguration Configuration for Confluence content. See `data_source_configuration.confluence_configuration.crawler_configuration` Block for details.
+     * @return builder
+     */
     def crawlerConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationConfluenceConfigurationCrawlerConfigurationArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationConfluenceConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationConfluenceConfigurationCrawlerConfigurationArgs.builder
       builder.crawlerConfiguration(args(argsBuilder).build)
 
+    /**
+     * @param sourceConfiguration Endpoint information to connect to your Confluence data source. See `data_source_configuration.confluence_configuration.source_configuration` Block for details.
+     * @return builder
+     */
     def sourceConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationConfluenceConfigurationSourceConfigurationArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationConfluenceConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationConfluenceConfigurationSourceConfigurationArgs.builder
@@ -1770,7 +1777,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationConfluenceConfigurationCrawlerConfigurationArgs.Builder)
     /**
-     * @param filterConfiguration The Salesforce standard object configuration. See `filterConfiguration` block for details.
+     * @param filterConfiguration Object configuration used to filter crawled content. See `data_source_configuration.share_point_configuration.crawler_configuration.filter_configuration` Block for details.
      * @return builder
      */
     def filterConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationConfluenceConfigurationCrawlerConfigurationFilterConfigurationArgs.Builder]):
@@ -1780,7 +1787,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationConfluenceConfigurationCrawlerConfigurationFilterConfigurationArgs.Builder)
     /**
-     * @param patternObjectFilters The configuration of filtering certain objects or content types of the data source. See `patternObjectFilter` block for details.
+     * @param patternObjectFilters Configuration for filtering objects or content types of the data source. See `data_source_configuration.share_point_configuration.crawler_configuration.filter_configuration.pattern_object_filter` Block for details.
      * @return builder
      */
     def patternObjectFilters(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationConfluenceConfigurationCrawlerConfigurationFilterConfigurationPatternObjectFilterArgs.Builder]*):
@@ -1790,9 +1797,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationConfluenceConfigurationCrawlerConfigurationFilterConfigurationPatternObjectFilterArgs.Builder)
     /**
-     * @param filters The configuration of specific filters applied to your data source content. Minimum of 1 filter and maximum of 25 filters.
-     * 
-     * Each filter object should contain the following configuration:
+     * @param filters Filters applied to your data source content. Minimum of 1 filter and maximum of 25 filters. See `data_source_configuration.share_point_configuration.crawler_configuration.filter_configuration.pattern_object_filter.filters` Block for details.
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationConfluenceConfigurationCrawlerConfigurationFilterConfigurationPatternObjectFilterFilterArgs.Builder]*):
@@ -1802,7 +1807,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationArgs.Builder)
     /**
-     * @param deletionProtectionConfiguration Configuration for deletion protection on the data source. See `deletionProtectionConfiguration` block for details.
+     * @param deletionProtectionConfiguration Configuration for deletion protection on the data source. See `deletionProtectionConfiguration` Block for details.
      * @return builder
      */
     def deletionProtectionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationDeletionProtectionConfigurationArgs.Builder]):
@@ -1811,7 +1816,7 @@ object bedrock:
       builder.deletionProtectionConfiguration(args(argsBuilder).build)
 
     /**
-     * @param mediaExtractionConfiguration Configuration for extracting media content (images, audio, video) from documents. See `mediaExtractionConfiguration` block for details.
+     * @param mediaExtractionConfiguration Configuration for extracting media content (images, audio, video) from documents. See `mediaExtractionConfiguration` Block for details.
      * @return builder
      */
     def mediaExtractionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationArgs.Builder]):
@@ -1821,7 +1826,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationArgs.Builder)
     /**
-     * @param audioExtractionConfiguration Configuration for extracting audio content. See `audioExtractionConfiguration` block for details.
+     * @param audioExtractionConfiguration Configuration for extracting audio content. See `audioExtractionConfiguration` Block for details.
      * @return builder
      */
     def audioExtractionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationAudioExtractionConfigurationArgs.Builder]):
@@ -1830,7 +1835,7 @@ object bedrock:
       builder.audioExtractionConfiguration(args(argsBuilder).build)
 
     /**
-     * @param imageExtractionConfiguration Configuration for extracting image content. See `imageExtractionConfiguration` block for details.
+     * @param imageExtractionConfiguration Configuration for extracting image content. See `imageExtractionConfiguration` Block for details.
      * @return builder
      */
     def imageExtractionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationImageExtractionConfigurationArgs.Builder]):
@@ -1839,7 +1844,7 @@ object bedrock:
       builder.imageExtractionConfiguration(args(argsBuilder).build)
 
     /**
-     * @param videoExtractionConfiguration Configuration for extracting video content. See `videoExtractionConfiguration` block for details.
+     * @param videoExtractionConfiguration Configuration for extracting video content. See `videoExtractionConfiguration` Block for details.
      * @return builder
      */
     def videoExtractionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationVideoExtractionConfigurationArgs.Builder]):
@@ -1848,11 +1853,19 @@ object bedrock:
       builder.videoExtractionConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationArgs.Builder)
+    /**
+     * @param crawlerConfiguration Configuration for Salesforce content. See `data_source_configuration.salesforce_configuration.crawler_configuration` Block for details.
+     * @return builder
+     */
     def crawlerConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationCrawlerConfigurationArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationCrawlerConfigurationArgs.builder
       builder.crawlerConfiguration(args(argsBuilder).build)
 
+    /**
+     * @param sourceConfiguration Endpoint information to connect to your Salesforce data source. See `data_source_configuration.salesforce_configuration.source_configuration` Block for details.
+     * @return builder
+     */
     def sourceConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationSourceConfigurationArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationSourceConfigurationArgs.builder
@@ -1860,7 +1873,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationCrawlerConfigurationArgs.Builder)
     /**
-     * @param filterConfiguration The Salesforce standard object configuration. See `filterConfiguration` block for details.
+     * @param filterConfiguration Object configuration used to filter crawled content. See `data_source_configuration.share_point_configuration.crawler_configuration.filter_configuration` Block for details.
      * @return builder
      */
     def filterConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationCrawlerConfigurationFilterConfigurationArgs.Builder]):
@@ -1870,7 +1883,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationCrawlerConfigurationFilterConfigurationArgs.Builder)
     /**
-     * @param patternObjectFilters The configuration of filtering certain objects or content types of the data source. See `patternObjectFilter` block for details.
+     * @param patternObjectFilters Configuration for filtering objects or content types of the data source. See `data_source_configuration.share_point_configuration.crawler_configuration.filter_configuration.pattern_object_filter` Block for details.
      * @return builder
      */
     def patternObjectFilters(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationCrawlerConfigurationFilterConfigurationPatternObjectFilterArgs.Builder]*):
@@ -1880,9 +1893,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationCrawlerConfigurationFilterConfigurationPatternObjectFilterArgs.Builder)
     /**
-     * @param filters The configuration of specific filters applied to your data source content. Minimum of 1 filter and maximum of 25 filters.
-     * 
-     * Each filter object should contain the following configuration:
+     * @param filters Filters applied to your data source content. Minimum of 1 filter and maximum of 25 filters. See `data_source_configuration.share_point_configuration.crawler_configuration.filter_configuration.pattern_object_filter.filters` Block for details.
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationCrawlerConfigurationFilterConfigurationPatternObjectFilterFilterArgs.Builder]*):
@@ -1891,11 +1902,19 @@ object bedrock:
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSharePointConfigurationArgs.Builder)
+    /**
+     * @param crawlerConfiguration Configuration for SharePoint content. See `data_source_configuration.share_point_configuration.crawler_configuration` Block for details.
+     * @return builder
+     */
     def crawlerConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSharePointConfigurationCrawlerConfigurationArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSharePointConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSharePointConfigurationCrawlerConfigurationArgs.builder
       builder.crawlerConfiguration(args(argsBuilder).build)
 
+    /**
+     * @param sourceConfiguration Endpoint information to connect to your SharePoint data source. See `data_source_configuration.share_point_configuration.source_configuration` Block for details.
+     * @return builder
+     */
     def sourceConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSharePointConfigurationSourceConfigurationArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSharePointConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSharePointConfigurationSourceConfigurationArgs.builder
@@ -1903,7 +1922,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSharePointConfigurationCrawlerConfigurationArgs.Builder)
     /**
-     * @param filterConfiguration The Salesforce standard object configuration. See `filterConfiguration` block for details.
+     * @param filterConfiguration Object configuration used to filter crawled content. See `data_source_configuration.share_point_configuration.crawler_configuration.filter_configuration` Block for details.
      * @return builder
      */
     def filterConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSharePointConfigurationCrawlerConfigurationFilterConfigurationArgs.Builder]):
@@ -1913,7 +1932,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSharePointConfigurationCrawlerConfigurationFilterConfigurationArgs.Builder)
     /**
-     * @param patternObjectFilters The configuration of filtering certain objects or content types of the data source. See `patternObjectFilter` block for details.
+     * @param patternObjectFilters Configuration for filtering objects or content types of the data source. See `data_source_configuration.share_point_configuration.crawler_configuration.filter_configuration.pattern_object_filter` Block for details.
      * @return builder
      */
     def patternObjectFilters(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSharePointConfigurationCrawlerConfigurationFilterConfigurationPatternObjectFilterArgs.Builder]*):
@@ -1923,9 +1942,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSharePointConfigurationCrawlerConfigurationFilterConfigurationPatternObjectFilterArgs.Builder)
     /**
-     * @param filters The configuration of specific filters applied to your data source content. Minimum of 1 filter and maximum of 25 filters.
-     * 
-     * Each filter object should contain the following configuration:
+     * @param filters Filters applied to your data source content. Minimum of 1 filter and maximum of 25 filters. See `data_source_configuration.share_point_configuration.crawler_configuration.filter_configuration.pattern_object_filter.filters` Block for details.
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSharePointConfigurationCrawlerConfigurationFilterConfigurationPatternObjectFilterFilterArgs.Builder]*):
@@ -1934,11 +1951,19 @@ object bedrock:
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationWebConfigurationArgs.Builder)
+    /**
+     * @param crawlerConfiguration Configuration for web content. See `data_source_configuration.web_configuration.crawler_configuration` Block for details.
+     * @return builder
+     */
     def crawlerConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationWebConfigurationCrawlerConfigurationArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationWebConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationWebConfigurationCrawlerConfigurationArgs.builder
       builder.crawlerConfiguration(args(argsBuilder).build)
 
+    /**
+     * @param sourceConfiguration Endpoint information to connect to your web data source. See `data_source_configuration.web_configuration.source_configuration` Block for details.
+     * @return builder
+     */
     def sourceConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationWebConfigurationSourceConfigurationArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationWebConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationWebConfigurationSourceConfigurationArgs.builder
@@ -1946,7 +1971,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationWebConfigurationCrawlerConfigurationArgs.Builder)
     /**
-     * @param crawlerLimits Configuration of crawl limits for the web URLs. See `crawlerLimits` block for details.
+     * @param crawlerLimits Configuration of crawl limits for the web URLs. See `crawlerLimits` Block for details.
      * @return builder
      */
     def crawlerLimits(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationWebConfigurationCrawlerConfigurationCrawlerLimitsArgs.Builder]):
@@ -1956,7 +1981,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationWebConfigurationSourceConfigurationArgs.Builder)
     /**
-     * @param urlConfiguration The URL configuration of your web data source. See `urlConfiguration` block for details.
+     * @param urlConfiguration URL configuration of your web data source. See `urlConfiguration` Block for details.
      * @return builder
      */
     def urlConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationWebConfigurationSourceConfigurationUrlConfigurationArgs.Builder]):
@@ -1966,7 +1991,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationWebConfigurationSourceConfigurationUrlConfigurationArgs.Builder)
     /**
-     * @param seedUrls List of one or more seed URLs to crawl. See `seedUrls` block for details.
+     * @param seedUrls List of one or more seed URLs to crawl. See `seedUrls` Block for details.
      * @return builder
      */
     def seedUrls(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationWebConfigurationSourceConfigurationUrlConfigurationSeedUrlArgs.Builder]*):
@@ -1976,7 +2001,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceState.Builder)
     /**
-     * @param dataSourceConfiguration Details about how the data source is stored. See `dataSourceConfiguration` block for details.
+     * @param dataSourceConfiguration Details about how the data source is stored. See `dataSourceConfiguration` Block for details.
      * @return builder
      */
     def dataSourceConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationArgs.Builder]):
@@ -1985,7 +2010,7 @@ object bedrock:
       builder.dataSourceConfiguration(args(argsBuilder).build)
 
     /**
-     * @param serverSideEncryptionConfiguration Details about the configuration of the server-side encryption. See `serverSideEncryptionConfiguration` block for details.
+     * @param serverSideEncryptionConfiguration Details about the configuration of the server-side encryption. See `serverSideEncryptionConfiguration` Block for details.
      * @return builder
      */
     def serverSideEncryptionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceServerSideEncryptionConfigurationArgs.Builder]):
@@ -1999,7 +2024,7 @@ object bedrock:
       builder.timeouts(args(argsBuilder).build)
 
     /**
-     * @param vectorIngestionConfiguration Details about the configuration of the server-side encryption. See `vectorIngestionConfiguration` block for details.
+     * @param vectorIngestionConfiguration Details about how to ingest the documents in the data source. See `vectorIngestionConfiguration` Block for details.
      * @return builder
      */
     def vectorIngestionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationArgs.Builder]):
@@ -2009,7 +2034,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationArgs.Builder)
     /**
-     * @param chunkingConfiguration Details about how to chunk the documents in the data source. A chunk refers to an excerpt from a data source that is returned when the knowledge base that it belongs to is queried. See `chunkingConfiguration` block for details.
+     * @param chunkingConfiguration Details about how to chunk the documents in the data source. A chunk refers to an excerpt from a data source that is returned when the knowledge base that it belongs to is queried. See `chunkingConfiguration` Block for details.
      * @return builder
      */
     def chunkingConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationChunkingConfigurationArgs.Builder]):
@@ -2018,7 +2043,7 @@ object bedrock:
       builder.chunkingConfiguration(args(argsBuilder).build)
 
     /**
-     * @param customTransformationConfiguration Configuration for custom transformation of data source documents.
+     * @param customTransformationConfiguration Configuration for custom transformation of data source documents. See `customTransformationConfiguration` Block for details.
      * @return builder
      */
     def customTransformationConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationArgs.Builder]):
@@ -2027,7 +2052,7 @@ object bedrock:
       builder.customTransformationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param parsingConfiguration Configuration for custom parsing of data source documents. See `parsingConfiguration` block for details.
+     * @param parsingConfiguration Configuration for custom parsing of data source documents. See `parsingConfiguration` Block for details.
      * @return builder
      */
     def parsingConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationParsingConfigurationArgs.Builder]):
@@ -2037,7 +2062,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationChunkingConfigurationArgs.Builder)
     /**
-     * @param fixedSizeChunkingConfiguration Configurations for when you choose fixed-size chunking. Requires chunkingStrategy as `FIXED_SIZE`. See `fixedSizeChunkingConfiguration` for details.
+     * @param fixedSizeChunkingConfiguration Configurations for when you choose fixed-size chunking. Requires `chunkingStrategy` as `FIXED_SIZE`. See `fixedSizeChunkingConfiguration` Block for details.
      * @return builder
      */
     def fixedSizeChunkingConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationChunkingConfigurationFixedSizeChunkingConfigurationArgs.Builder]):
@@ -2046,7 +2071,7 @@ object bedrock:
       builder.fixedSizeChunkingConfiguration(args(argsBuilder).build)
 
     /**
-     * @param hierarchicalChunkingConfiguration Configurations for when you choose hierarchical chunking. Requires chunkingStrategy as `HIERARCHICAL`. See `hierarchicalChunkingConfiguration` for details.
+     * @param hierarchicalChunkingConfiguration Configurations for when you choose hierarchical chunking. Requires `chunkingStrategy` as `HIERARCHICAL`. See `hierarchicalChunkingConfiguration` Block for details.
      * @return builder
      */
     def hierarchicalChunkingConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationChunkingConfigurationHierarchicalChunkingConfigurationArgs.Builder]):
@@ -2055,7 +2080,7 @@ object bedrock:
       builder.hierarchicalChunkingConfiguration(args(argsBuilder).build)
 
     /**
-     * @param semanticChunkingConfiguration Configurations for when you choose semantic chunking. Requires chunkingStrategy as `SEMANTIC`. See `semanticChunkingConfiguration` for details.
+     * @param semanticChunkingConfiguration Configurations for when you choose semantic chunking. Requires `chunkingStrategy` as `SEMANTIC`. See `semanticChunkingConfiguration` Block for details.
      * @return builder
      */
     def semanticChunkingConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationChunkingConfigurationSemanticChunkingConfigurationArgs.Builder]):
@@ -2065,7 +2090,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationChunkingConfigurationHierarchicalChunkingConfigurationArgs.Builder)
     /**
-     * @param levelConfigurations Maximum number of tokens to include in a chunk. Must contain two `levelConfigurations`. See `levelConfigurations` for details.
+     * @param levelConfigurations Token settings for each layer. Must contain two `levelConfiguration` blocks. See `levelConfiguration` Block for details.
      * @return builder
      */
     def levelConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationChunkingConfigurationHierarchicalChunkingConfigurationLevelConfigurationArgs.Builder]*):
@@ -2075,7 +2100,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationArgs.Builder)
     /**
-     * @param intermediateStorage The intermediate storage for custom transformation.
+     * @param intermediateStorage Intermediate storage for custom transformation. See `intermediateStorage` Block for details.
      * @return builder
      */
     def intermediateStorage(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationIntermediateStorageArgs.Builder]):
@@ -2084,7 +2109,7 @@ object bedrock:
       builder.intermediateStorage(args(argsBuilder).build)
 
     /**
-     * @param transformation A custom processing step for documents moving through the data source ingestion pipeline.
+     * @param transformation Custom processing step for documents moving through the data source ingestion pipeline. See `transformation` Block for details.
      * @return builder
      */
     def transformation(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationTransformationArgs.Builder]):
@@ -2094,7 +2119,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationIntermediateStorageArgs.Builder)
     /**
-     * @param s3Location Configuration block for intermedia S3 storage.
+     * @param s3Location Configuration block for intermediate S3 storage. See `s3Location` Block for details.
      * @return builder
      */
     def s3Location(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationIntermediateStorageS3LocationArgs.Builder]):
@@ -2104,7 +2129,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationTransformationArgs.Builder)
     /**
-     * @param transformationFunction The lambda function that processes documents.
+     * @param transformationFunction Lambda function that processes documents. See `transformationFunction` Block for details.
      * @return builder
      */
     def transformationFunction(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationTransformationTransformationFunctionArgs.Builder]):
@@ -2114,7 +2139,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationTransformationTransformationFunctionArgs.Builder)
     /**
-     * @param transformationLambdaConfiguration The configuration of the lambda function.
+     * @param transformationLambdaConfiguration Configuration of the Lambda function. See `transformationLambdaConfiguration` Block for details.
      * @return builder
      */
     def transformationLambdaConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationTransformationTransformationFunctionTransformationLambdaConfigurationArgs.Builder]):
@@ -2124,7 +2149,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationParsingConfigurationArgs.Builder)
     /**
-     * @param bedrockDataAutomationConfiguration Settings for using Amazon Bedrock Data Automation to parse documents. See `bedrockDataAutomationConfiguration` block for details.
+     * @param bedrockDataAutomationConfiguration Settings for using Amazon Bedrock Data Automation to parse documents. See `bedrockDataAutomationConfiguration` Block for details.
      * @return builder
      */
     def bedrockDataAutomationConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationParsingConfigurationBedrockDataAutomationConfigurationArgs.Builder]):
@@ -2133,7 +2158,7 @@ object bedrock:
       builder.bedrockDataAutomationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param bedrockFoundationModelConfiguration Settings for a foundation model used to parse documents in a data source. See `bedrockFoundationModelConfiguration` block for details.
+     * @param bedrockFoundationModelConfiguration Settings for a foundation model used to parse documents in a data source. See `bedrockFoundationModelConfiguration` Block for details.
      * @return builder
      */
     def bedrockFoundationModelConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationParsingConfigurationBedrockFoundationModelConfigurationArgs.Builder]):
@@ -2143,7 +2168,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationParsingConfigurationBedrockFoundationModelConfigurationArgs.Builder)
     /**
-     * @param parsingPrompt Instructions for interpreting the contents of the document. See `parsingPrompt` block for details.
+     * @param parsingPrompt Instructions for interpreting the contents of the document. See `parsingPrompt` Block for details.
      * @return builder
      */
     def parsingPrompt(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationParsingConfigurationBedrockFoundationModelConfigurationParsingPromptArgs.Builder]):
@@ -2153,7 +2178,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionArgs.Builder)
     /**
-     * @param connections A list of connection definitions in the flow. See Connection for more information.
+     * @param connections List of connection definitions in the flow. See `definition.connection` Block for details.
      * @return builder
      */
     def connections(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionConnectionArgs.Builder]*):
@@ -2162,7 +2187,7 @@ object bedrock:
       builder.connections(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param nodes A list of node definitions in the flow. See Node for more information.
+     * @param nodes List of node definitions in the flow. See `definition.node` Block for details.
      * @return builder
      */
     def nodes(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeArgs.Builder]*):
@@ -2172,7 +2197,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionConnectionArgs.Builder)
     /**
-     * @param configuration Configuration of the connection. See Connection Configuration for more information.
+     * @param configuration Configurations for the node. See `definition.node.configuration` Block for details.
      * @return builder
      */
     def configuration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionConnectionConfigurationArgs.Builder]):
@@ -2182,7 +2207,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionConnectionConfigurationArgs.Builder)
     /**
-     * @param conditional The configuration of a connection originating from a Condition node. See Conditional Connection Configuration for more information.
+     * @param conditional Configuration of a connection originating from a Condition node. See `definition.connection.configuration.conditional` Block for details.
      * @return builder
      */
     def conditional(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionConnectionConfigurationConditionalArgs.Builder]):
@@ -2191,7 +2216,7 @@ object bedrock:
       builder.conditional(args(argsBuilder).build)
 
     /**
-     * @param data The configuration of a connection originating from a node that isn\u2019t a Condition node. See Data Connection Configuration for more information.
+     * @param data Configuration of a connection originating from a node that isn&#39;t a Condition node. See `definition.connection.configuration.data` Block for details.
      * @return builder
      */
     def data(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionConnectionConfigurationDataArgs.Builder]):
@@ -2201,7 +2226,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeArgs.Builder)
     /**
-     * @param configuration Contains configurations for the node. See Node Configuration for more information.
+     * @param configuration Configurations for the node. See `definition.node.configuration` Block for details.
      * @return builder
      */
     def configuration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationArgs.Builder]):
@@ -2210,7 +2235,7 @@ object bedrock:
       builder.configuration(args(argsBuilder).build)
 
     /**
-     * @param inputs A list of objects containing information about an input into the node. See Node Input for more information.
+     * @param inputs Configurations for an input flow node in your flow. The node `inputs` can&#39;t be specified for this node. This block has no arguments.
      * @return builder
      */
     def inputs(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeInputArgs.Builder]*):
@@ -2219,7 +2244,7 @@ object bedrock:
       builder.inputs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param outputs A list of objects containing information about an output from the node. See Node Output for more information.
+     * @param outputs Configurations for an output flow node in your flow. The node `outputs` can&#39;t be specified for this node. This block has no arguments.
      * @return builder
      */
     def outputs(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeOutputArgs.Builder]*):
@@ -2229,7 +2254,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationArgs.Builder)
     /**
-     * @param agent Contains configurations for an agent node in your flow. Invokes an alias of an agent and returns the response. See Agent Node Configuration for more information.
+     * @param agent Configurations for an agent node in your flow. Invokes an alias of an agent and returns the response. See `definition.node.configuration.agent` Block for details.
      * @return builder
      */
     def agent(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationAgentArgs.Builder]):
@@ -2238,7 +2263,7 @@ object bedrock:
       builder.agent(args(argsBuilder).build)
 
     /**
-     * @param collector Contains configurations for a collector node in your flow. Collects an iteration of inputs and consolidates them into an array of outputs. This object has no fields.
+     * @param collector Configurations for a collector node in your flow. Collects an iteration of inputs and consolidates them into an array of outputs. This block has no arguments.
      * @return builder
      */
     def collector(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationCollectorArgs.Builder]):
@@ -2247,7 +2272,7 @@ object bedrock:
       builder.collector(args(argsBuilder).build)
 
     /**
-     * @param condition Contains configurations for a Condition node in your flow. Defines conditions that lead to different branches of the flow. See Condition Node Configuration for more information.
+     * @param condition List of conditions. See `definition.node.configuration.condition.condition` Block for details.
      * @return builder
      */
     def condition(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationConditionArgs.Builder]):
@@ -2256,7 +2281,7 @@ object bedrock:
       builder.condition(args(argsBuilder).build)
 
     /**
-     * @param inlineCode Contains configurations for an inline code node in your flow. See Inline Code Node Configuration for more information.
+     * @param inlineCode Configurations for an inline code node in your flow. See `definition.node.configuration.inline_code` Block for details.
      * @return builder
      */
     def inlineCode(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationInlineCodeArgs.Builder]):
@@ -2265,7 +2290,7 @@ object bedrock:
       builder.inlineCode(args(argsBuilder).build)
 
     /**
-     * @param input Contains configurations for an input flow node in your flow. The node `inputs` can\u2019t be specified for this node. This block has no fields.
+     * @param input Configurations for an input flow node in your flow. The node `inputs` can&#39;t be specified for this node. This block has no arguments.
      * @return builder
      */
     def input(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationInputArgs.Builder]):
@@ -2274,7 +2299,7 @@ object bedrock:
       builder.input(args(argsBuilder).build)
 
     /**
-     * @param iterator Contains configurations for an iterator node in your flow. Takes an input that is an array and iteratively sends each item of the array as an output to the following node. The size of the array is also returned in the output. The output flow node at the end of the flow iteration will return a response for each member of the array. To return only one response, you can include a collector node downstream from the iterator node. This block has no fields.
+     * @param iterator Configurations for an iterator node in your flow. Takes an input that is an array and iteratively sends each item of the array as an output to the following node. The size of the array is also returned in the output. The output flow node at the end of the flow iteration returns a response for each member of the array. To return only one response, you can include a collector node downstream from the iterator node. This block has no arguments.
      * @return builder
      */
     def iterator(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationIteratorArgs.Builder]):
@@ -2283,7 +2308,7 @@ object bedrock:
       builder.iterator(args(argsBuilder).build)
 
     /**
-     * @param knowledgeBase Contains configurations for a knowledge base node in your flow. Queries a knowledge base and returns the retrieved results or generated response. See Knowledge Base Node Configuration for more information.
+     * @param knowledgeBase Configurations for a knowledge base node in your flow. Queries a knowledge base and returns the retrieved results or generated response. See `definition.node.configuration.knowledge_base` Block for details.
      * @return builder
      */
     def knowledgeBase(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationKnowledgeBaseArgs.Builder]):
@@ -2292,7 +2317,7 @@ object bedrock:
       builder.knowledgeBase(args(argsBuilder).build)
 
     /**
-     * @param lambdaFunction Contains configurations for a Lambda function node in your flow. Invokes a Lambda function. See Lambda Function Node Configuration for more information.
+     * @param lambdaFunction Configurations for a Lambda function node in your flow. Invokes a Lambda function. See `definition.node.configuration.lambda_function` Block for details.
      * @return builder
      */
     def lambdaFunction(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationLambdaFunctionArgs.Builder]):
@@ -2301,7 +2326,7 @@ object bedrock:
       builder.lambdaFunction(args(argsBuilder).build)
 
     /**
-     * @param lex Contains configurations for a Lex node in your flow. Invokes an Amazon Lex bot to identify the intent of the input and return the intent as the output. See Lex Node Configuration for more information.
+     * @param lex Configurations for a Lex node in your flow. Invokes an Amazon Lex bot to identify the intent of the input and return the intent as the output. See `definition.node.configuration.lex` Block for details.
      * @return builder
      */
     def lex(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationLexArgs.Builder]):
@@ -2310,7 +2335,7 @@ object bedrock:
       builder.lex(args(argsBuilder).build)
 
     /**
-     * @param output Contains configurations for an output flow node in your flow. The node `outputs` can\u2019t be specified for this node. This block has no fields.
+     * @param output Configurations for an output flow node in your flow. The node `outputs` can&#39;t be specified for this node. This block has no arguments.
      * @return builder
      */
     def output(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationOutputArgs.Builder]):
@@ -2319,7 +2344,7 @@ object bedrock:
       builder.output(args(argsBuilder).build)
 
     /**
-     * @param prompt Contains configurations for a prompt node in your flow. Runs a prompt and generates the model response as the output. You can use a prompt from Prompt management or you can configure one in this node. See Prompt Node Configuration for more information.
+     * @param prompt Configurations for a prompt node in your flow. Runs a prompt and generates the model response as the output. You can use a prompt from Prompt management or you can configure one in this node. See `definition.node.configuration.prompt` Block for details.
      * @return builder
      */
     def prompt(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptArgs.Builder]):
@@ -2328,7 +2353,7 @@ object bedrock:
       builder.prompt(args(argsBuilder).build)
 
     /**
-     * @param retrieval Contains configurations for a Retrieval node in your flow. Retrieves data from an Amazon S3 location and returns it as the output. See Retrieval Node Configuration for more information.
+     * @param retrieval Configurations for a Retrieval node in your flow. Retrieves data from an Amazon S3 location and returns it as the output. See `definition.node.configuration.retrieval` Block for details.
      * @return builder
      */
     def retrieval(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationRetrievalArgs.Builder]):
@@ -2337,7 +2362,7 @@ object bedrock:
       builder.retrieval(args(argsBuilder).build)
 
     /**
-     * @param storage Contains configurations for a Storage node in your flow. Stores an input in an Amazon S3 location. See Storage Node Configuration for more information.
+     * @param storage Configurations for a Storage node in your flow. Stores an input in an Amazon S3 location. See `definition.node.configuration.storage` Block for details.
      * @return builder
      */
     def storage(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationStorageArgs.Builder]):
@@ -2347,7 +2372,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationConditionArgs.Builder)
     /**
-     * @param conditions A list of conditions. See Condition Config for more information.
+     * @param conditions List of conditions. See `definition.node.configuration.condition.condition` Block for details.
      * @return builder
      */
     def conditions(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationConditionConditionArgs.Builder]*):
@@ -2357,7 +2382,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationKnowledgeBaseArgs.Builder)
     /**
-     * @param guardrailConfiguration Configures a guardrail for knowledge base query and response generation. See Guardrail Configuration for more information.
+     * @param guardrailConfiguration Configuration of a guardrail for prompt generation. See `definition.node.configuration.prompt.guardrail_configuration` Block for details.
      * @return builder
      */
     def guardrailConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationKnowledgeBaseGuardrailConfigurationArgs.Builder]):
@@ -2366,7 +2391,7 @@ object bedrock:
       builder.guardrailConfiguration(args(argsBuilder).build)
 
     /**
-     * @param inferenceConfiguration Configures model inference for knowledge base query and response generation. See Inference Configuration for more information.
+     * @param inferenceConfiguration Inference configurations for the prompt. See `definition.node.configuration.prompt.source_configuration.inline.inference_configuration` Block for details.
      * @return builder
      */
     def inferenceConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationKnowledgeBaseInferenceConfigurationArgs.Builder]):
@@ -2376,7 +2401,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationKnowledgeBaseInferenceConfigurationArgs.Builder)
     /**
-     * @param text Contains inference configurations for a text prompt. See Text Inference Configuration for more information.
+     * @param text Message for the prompt.
      * @return builder
      */
     def text(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationKnowledgeBaseInferenceConfigurationTextArgs.Builder]):
@@ -2386,7 +2411,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptArgs.Builder)
     /**
-     * @param guardrailConfiguration Configures a guardrail for prompt generation. See Guardrail Configuration for more information.
+     * @param guardrailConfiguration Configuration of a guardrail for prompt generation. See `definition.node.configuration.prompt.guardrail_configuration` Block for details.
      * @return builder
      */
     def guardrailConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptGuardrailConfigurationArgs.Builder]):
@@ -2395,7 +2420,7 @@ object bedrock:
       builder.guardrailConfiguration(args(argsBuilder).build)
 
     /**
-     * @param sourceConfiguration Configures the prompt source, either inline or from Prompt management. See Source Configuration for more information.
+     * @param sourceConfiguration Configuration of the prompt source, either inline or from Prompt management. See `definition.node.configuration.prompt.source_configuration` Block for details.
      * @return builder
      */
     def sourceConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationArgs.Builder]):
@@ -2405,7 +2430,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationArgs.Builder)
     /**
-     * @param inline Contains configurations for a prompt that is defined inline. See Prompt Inline Configuration for more information.
+     * @param inline Configurations for a prompt that is defined inline. See `definition.node.configuration.prompt.source_configuration.inline` Block for details.
      * @return builder
      */
     def inline(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineArgs.Builder]):
@@ -2414,7 +2439,7 @@ object bedrock:
       builder.inline(args(argsBuilder).build)
 
     /**
-     * @param resource Contains configurations for a prompt from Prompt management. See Prompt Resource Configuration for more information.
+     * @param resource Configurations for a prompt from Prompt management. See `definition.node.configuration.prompt.source_configuration.resource` Block for details.
      * @return builder
      */
     def resource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationResourceArgs.Builder]):
@@ -2424,7 +2449,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineArgs.Builder)
     /**
-     * @param inferenceConfiguration Contains inference configurations for the prompt. See Inference Configuration for more information.
+     * @param inferenceConfiguration Inference configurations for the prompt. See `definition.node.configuration.prompt.source_configuration.inline.inference_configuration` Block for details.
      * @return builder
      */
     def inferenceConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineInferenceConfigurationArgs.Builder]):
@@ -2433,7 +2458,7 @@ object bedrock:
       builder.inferenceConfiguration(args(argsBuilder).build)
 
     /**
-     * @param templateConfiguration Contains a prompt and variables in the prompt that can be replaced with values at runtime. See Prompt Template Configuration for more information.
+     * @param templateConfiguration Prompt and variables in the prompt that can be replaced with values at runtime. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration` Block for details.
      * @return builder
      */
     def templateConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationArgs.Builder]):
@@ -2443,7 +2468,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineInferenceConfigurationArgs.Builder)
     /**
-     * @param text Contains inference configurations for a text prompt. See Text Inference Configuration for more information.
+     * @param text Message for the prompt.
      * @return builder
      */
     def text(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineInferenceConfigurationTextArgs.Builder]):
@@ -2453,7 +2478,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationArgs.Builder)
     /**
-     * @param chat Contains configurations to use the prompt in a conversational format. See Chat Template Configuration for more information.
+     * @param chat Configurations to use the prompt in a conversational format. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration.chat` Block for details.
      * @return builder
      */
     def chat(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatArgs.Builder]):
@@ -2462,7 +2487,7 @@ object bedrock:
       builder.chat(args(argsBuilder).build)
 
     /**
-     * @param text Contains configurations for the text in a message for a prompt. See Text Template Configuration for more information.
+     * @param text Message for the prompt.
      * @return builder
      */
     def text(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationTextArgs.Builder]):
@@ -2471,13 +2496,17 @@ object bedrock:
       builder.text(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatArgs.Builder)
+    /**
+     * @param inputVariables Variables in the prompt template. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration.text.input_variable` Block for details.
+     * @return builder
+     */
     def inputVariables(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatInputVariableArgs.Builder]*):
         com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatArgs.Builder =
       def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatInputVariableArgs.builder
       builder.inputVariables(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param messages A list of messages in the chat for the prompt. See Message for more information.
+     * @param messages Messages in the chat for the prompt. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration.chat.message` Block for details.
      * @return builder
      */
     def messages(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatMessageArgs.Builder]*):
@@ -2486,7 +2515,7 @@ object bedrock:
       builder.messages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param systems A list of system prompts to provide context to the model or to describe how it should behave. See System for more information.
+     * @param systems System prompts that provide context to the model or describe how it should behave. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration.chat.system` Block for details.
      * @return builder
      */
     def systems(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatSystemArgs.Builder]*):
@@ -2495,7 +2524,7 @@ object bedrock:
       builder.systems(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param toolConfiguration Configuration information for the tools that the model can use when generating a response. See Tool Configuration for more information.
+     * @param toolConfiguration Configuration information for the tools that the model can use when generating a response. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration.chat.tool_configuration` Block for details.
      * @return builder
      */
     def toolConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatToolConfigurationArgs.Builder]):
@@ -2505,7 +2534,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatMessageArgs.Builder)
     /**
-     * @param content Contains the content for the message you pass to, or receive from a model. See Message Content for more information.
+     * @param content Content for the message you pass to, or receive from, a model. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration.chat.message.content` Block for details.
      * @return builder
      */
     def content(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatMessageContentArgs.Builder]):
@@ -2515,7 +2544,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatMessageContentArgs.Builder)
     /**
-     * @param cachePoint Creates a cache checkpoint within a message. See Cache Point for more information.
+     * @param cachePoint Cache checkpoint within a template configuration. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration.text.cache_point` Block for details.
      * @return builder
      */
     def cachePoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatMessageContentCachePointArgs.Builder]):
@@ -2525,7 +2554,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatSystemArgs.Builder)
     /**
-     * @param cachePoint Creates a cache checkpoint within a tool designation. See Cache Point for more information.
+     * @param cachePoint Cache checkpoint within a template configuration. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration.text.cache_point` Block for details.
      * @return builder
      */
     def cachePoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatSystemCachePointArgs.Builder]):
@@ -2535,7 +2564,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatToolConfigurationArgs.Builder)
     /**
-     * @param toolChoice Defines which tools the model should request when invoked. See Tool Choice for more information.
+     * @param toolChoice Which tools the model should request when invoked. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration.chat.tool_configuration.tool_choice` Block for details.
      * @return builder
      */
     def toolChoice(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatToolConfigurationToolChoiceArgs.Builder]):
@@ -2544,7 +2573,7 @@ object bedrock:
       builder.toolChoice(args(argsBuilder).build)
 
     /**
-     * @param tools A list of tools to pass to a model. See Tool for more information.
+     * @param tools Specific tool that the model must request. No text is generated but the results of tool use are sent back to the model to help generate a response. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration.chat.tool_configuration.tool_choice.tool` Block for details.
      * @return builder
      */
     def tools(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatToolConfigurationToolArgs.Builder]*):
@@ -2554,7 +2583,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatToolConfigurationToolArgs.Builder)
     /**
-     * @param cachePoint Creates a cache checkpoint within a tool designation. See Cache Point for more information.
+     * @param cachePoint Cache checkpoint within a template configuration. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration.text.cache_point` Block for details.
      * @return builder
      */
     def cachePoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatToolConfigurationToolCachePointArgs.Builder]):
@@ -2563,7 +2592,7 @@ object bedrock:
       builder.cachePoint(args(argsBuilder).build)
 
     /**
-     * @param toolSpec The specification for the tool. See Tool Specification for more information.
+     * @param toolSpec Specification for the tool. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration.chat.tool_configuration.tool.tool_spec` Block for details.
      * @return builder
      */
     def toolSpec(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatToolConfigurationToolToolSpecArgs.Builder]):
@@ -2573,7 +2602,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatToolConfigurationToolChoiceArgs.Builder)
     /**
-     * @param any Defines tools, at least one of which must be requested by the model. No text is generated but the results of tool use are sent back to the model to help generate a response. This block has no fields.
+     * @param any Tools, at least one of which must be requested by the model. No text is generated but the results of tool use are sent back to the model to help generate a response. This block has no arguments.
      * @return builder
      */
     def any(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatToolConfigurationToolChoiceAnyArgs.Builder]):
@@ -2582,7 +2611,7 @@ object bedrock:
       builder.any(args(argsBuilder).build)
 
     /**
-     * @param auto Defines tools. The model automatically decides whether to call a tool or to generate text instead. This block has no fields.
+     * @param auto Tools. The model automatically decides whether to call a tool or to generate text instead. This block has no arguments.
      * @return builder
      */
     def auto(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatToolConfigurationToolChoiceAutoArgs.Builder]):
@@ -2591,7 +2620,7 @@ object bedrock:
       builder.auto(args(argsBuilder).build)
 
     /**
-     * @param tool Defines a specific tool that the model must request. No text is generated but the results of tool use are sent back to the model to help generate a response. See Named Tool for more information.
+     * @param tool Specific tool that the model must request. No text is generated but the results of tool use are sent back to the model to help generate a response. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration.chat.tool_configuration.tool_choice.tool` Block for details.
      * @return builder
      */
     def tool(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatToolConfigurationToolChoiceToolArgs.Builder]):
@@ -2601,7 +2630,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatToolConfigurationToolToolSpecArgs.Builder)
     /**
-     * @param inputSchema The input schema of the tool. See Tool Input Schema for more information.
+     * @param inputSchema Input schema of the tool. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration.chat.tool_configuration.tool.tool_spec.input_schema` Block for details.
      * @return builder
      */
     def inputSchema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatToolConfigurationToolToolSpecInputSchemaArgs.Builder]):
@@ -2611,7 +2640,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationTextArgs.Builder)
     /**
-     * @param cachePoint A cache checkpoint within a template configuration. See Cache Point for more information.
+     * @param cachePoint Cache checkpoint within a template configuration. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration.text.cache_point` Block for details.
      * @return builder
      */
     def cachePoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationTextCachePointArgs.Builder]):
@@ -2620,7 +2649,7 @@ object bedrock:
       builder.cachePoint(args(argsBuilder).build)
 
     /**
-     * @param inputVariables A list of variables in the prompt template. See Input Variable for more information.
+     * @param inputVariables Variables in the prompt template. See `definition.node.configuration.prompt.source_configuration.inline.template_configuration.text.input_variable` Block for details.
      * @return builder
      */
     def inputVariables(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationTextInputVariableArgs.Builder]*):
@@ -2630,7 +2659,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationRetrievalArgs.Builder)
     /**
-     * @param serviceConfiguration Contains configurations for the service to use for retrieving data to return as the output from the node. See Retrieval Service Configuration for more information.
+     * @param serviceConfiguration Configurations for the service to use for storing the input into the node. See `definition.node.configuration.storage.service_configuration` Block for details.
      * @return builder
      */
     def serviceConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationRetrievalServiceConfigurationArgs.Builder]):
@@ -2640,7 +2669,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationRetrievalServiceConfigurationArgs.Builder)
     /**
-     * @param s3 Contains configurations for the service to use for storing the input into the node. See Storage S3 Service Configuration for more information.
+     * @param s3 Configurations for the Amazon S3 location in which to store the input into the node. See `definition.node.configuration.storage.service_configuration.s3` Block for details.
      * @return builder
      */
     def s3(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationRetrievalServiceConfigurationS3Args.Builder]):
@@ -2650,7 +2679,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationStorageArgs.Builder)
     /**
-     * @param serviceConfiguration Contains configurations for a Storage node in your flow. Stores an input in an Amazon S3 location. See Storage Service Configuration for more information.
+     * @param serviceConfiguration Configurations for the service to use for storing the input into the node. See `definition.node.configuration.storage.service_configuration` Block for details.
      * @return builder
      */
     def serviceConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationStorageServiceConfigurationArgs.Builder]):
@@ -2660,7 +2689,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationStorageServiceConfigurationArgs.Builder)
     /**
-     * @param s3 Contains configurations for the service to use for storing the input into the node. See Storage S3 Service Configuration for more information.
+     * @param s3 Configurations for the Amazon S3 location in which to store the input into the node. See `definition.node.configuration.storage.service_configuration.s3` Block for details.
      * @return builder
      */
     def s3(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationStorageServiceConfigurationS3Args.Builder]):
@@ -2670,7 +2699,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowState.Builder)
     /**
-     * @param definition A definition of the nodes and connections between nodes in the flow. See Definition for more information.
+     * @param definition Nodes and connections between nodes in the flow. See `definition` Block for details.
      * @return builder
      */
     def definition(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionArgs.Builder]):
@@ -2685,7 +2714,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationArgs.Builder)
     /**
-     * @param kendraKnowledgeBaseConfiguration Settings for an Amazon Kendra knowledge base. See `kendraKnowledgeBaseConfiguration` block for details.
+     * @param kendraKnowledgeBaseConfiguration Settings for an Amazon Kendra knowledge base. See `kendraKnowledgeBaseConfiguration` Block for details.
      * @return builder
      */
     def kendraKnowledgeBaseConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationKendraKnowledgeBaseConfigurationArgs.Builder]):
@@ -2694,7 +2723,7 @@ object bedrock:
       builder.kendraKnowledgeBaseConfiguration(args(argsBuilder).build)
 
     /**
-     * @param managedKnowledgeBaseConfiguration Settings for a managed knowledge base where Amazon Bedrock manages the vector store. See `managedKnowledgeBaseConfiguration` block for details.
+     * @param managedKnowledgeBaseConfiguration Settings for a managed knowledge base where Amazon Bedrock manages the vector store. See `managedKnowledgeBaseConfiguration` Block for details.
      * @return builder
      */
     def managedKnowledgeBaseConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationArgs.Builder]):
@@ -2703,7 +2732,7 @@ object bedrock:
       builder.managedKnowledgeBaseConfiguration(args(argsBuilder).build)
 
     /**
-     * @param sqlKnowledgeBaseConfiguration Configurations for a knowledge base connected to an SQL database. See `sqlKnowledgeBaseConfiguration` block for details.
+     * @param sqlKnowledgeBaseConfiguration Configurations for a knowledge base connected to an SQL database. See `sqlKnowledgeBaseConfiguration` Block for details.
      * @return builder
      */
     def sqlKnowledgeBaseConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationArgs.Builder]):
@@ -2712,7 +2741,7 @@ object bedrock:
       builder.sqlKnowledgeBaseConfiguration(args(argsBuilder).build)
 
     /**
-     * @param vectorKnowledgeBaseConfiguration Details about the model that&#39;s used to convert the data source into vector embeddings. See `vectorKnowledgeBaseConfiguration` block for details.
+     * @param vectorKnowledgeBaseConfiguration Details about the model that&#39;s used to convert the data source into vector embeddings. See `vectorKnowledgeBaseConfiguration` Block for details.
      * @return builder
      */
     def vectorKnowledgeBaseConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationArgs.Builder]):
@@ -2722,7 +2751,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationArgs.Builder)
     /**
-     * @param embeddingModelConfiguration Configuration for the embedding model. Required when `embeddingModelType` is `CUSTOM`. See `embeddingModelConfiguration` block for details.
+     * @param embeddingModelConfiguration Configuration for the embedding model. Required when `embeddingModelType` is `CUSTOM`. See `embeddingModelConfiguration` Block for details.
      * @return builder
      */
     def embeddingModelConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationArgs.Builder]):
@@ -2731,7 +2760,7 @@ object bedrock:
       builder.embeddingModelConfiguration(args(argsBuilder).build)
 
     /**
-     * @param serverSideEncryptionConfiguration Server-side encryption configuration for the managed knowledge base. See `serverSideEncryptionConfiguration` block for details.
+     * @param serverSideEncryptionConfiguration Server-side encryption configuration for the managed knowledge base. See `serverSideEncryptionConfiguration` Block for details.
      * @return builder
      */
     def serverSideEncryptionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationServerSideEncryptionConfigurationArgs.Builder]):
@@ -2741,7 +2770,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationArgs.Builder)
     /**
-     * @param bedrockEmbeddingModelConfiguration The vector configuration details on the Bedrock embeddings model.  See `bedrockEmbeddingModelConfiguration` block for details.
+     * @param bedrockEmbeddingModelConfiguration Vector configuration details for the Bedrock embeddings model. See `bedrockEmbeddingModelConfiguration` Block for details.
      * @return builder
      */
     def bedrockEmbeddingModelConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationArgs.Builder]):
@@ -2751,7 +2780,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationArgs.Builder)
     /**
-     * @param audio Configuration for processing audio content in multimodal knowledge bases. See `audio` block for details.
+     * @param audio Configuration for processing audio content in multimodal knowledge bases. See `audio` Block for details.
      * @return builder
      */
     def audio(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioArgs.Builder]):
@@ -2760,7 +2789,7 @@ object bedrock:
       builder.audio(args(argsBuilder).build)
 
     /**
-     * @param video Configuration for processing video content in multimodal knowledge bases. See `video` block for details.
+     * @param video Configuration for processing video content in multimodal knowledge bases. See `video` Block for details.
      * @return builder
      */
     def video(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoArgs.Builder]):
@@ -2770,7 +2799,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioArgs.Builder)
     /**
-     * @param segmentationConfiguration Configuration for segmenting audio content during processing. See `segmentationConfiguration` block for details.
+     * @param segmentationConfiguration Configuration for segmenting audio content during processing. See `segmentationConfiguration` Block for details.
      * @return builder
      */
     def segmentationConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioSegmentationConfigurationArgs.Builder]):
@@ -2780,7 +2809,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoArgs.Builder)
     /**
-     * @param segmentationConfiguration Configuration for segmenting video content during processing. See `segmentationConfiguration` block for details.
+     * @param segmentationConfiguration Configuration for segmenting video content during processing. See `segmentationConfiguration` Block for details.
      * @return builder
      */
     def segmentationConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoSegmentationConfigurationArgs.Builder]):
@@ -2790,7 +2819,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationArgs.Builder)
     /**
-     * @param redshiftConfiguration Configurations for a knowledge base connected to an Amazon Redshift database. See `redshiftConfiguration` block for details.
+     * @param redshiftConfiguration Configurations for a knowledge base connected to an Amazon Redshift database. See `knowledge_base_configuration.sql_knowledge_base_configuration.redshift_configuration` Block for details.
      * @return builder
      */
     def redshiftConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationArgs.Builder]):
@@ -2800,7 +2829,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationArgs.Builder)
     /**
-     * @param queryEngineConfiguration Configurations for an Amazon Redshift query engine. See `queryEngineConfiguration` block for details.
+     * @param queryEngineConfiguration Configurations for an Amazon Redshift query engine. See `queryEngineConfiguration` Block for details.
      * @return builder
      */
     def queryEngineConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationArgs.Builder]):
@@ -2809,7 +2838,7 @@ object bedrock:
       builder.queryEngineConfiguration(args(argsBuilder).build)
 
     /**
-     * @param queryGenerationConfiguration Configurations for generating queries. See `queryGenerationConfiguration` block for details.
+     * @param queryGenerationConfiguration Configurations for generating queries. See `queryGenerationConfiguration` Block for details.
      * @return builder
      */
     def queryGenerationConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationArgs.Builder]):
@@ -2818,7 +2847,7 @@ object bedrock:
       builder.queryGenerationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param storageConfiguration Configurations for Amazon Redshift database storage. See `storageConfiguration` block for details.
+     * @param storageConfiguration Configurations for Amazon Redshift database storage. See `knowledge_base_configuration.sql_knowledge_base_configuration.redshift_configuration.storage_configuration` Block for details.
      * @return builder
      */
     def storageConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationStorageConfigurationArgs.Builder]):
@@ -2828,7 +2857,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationArgs.Builder)
     /**
-     * @param provisionedConfiguration Configurations for a provisioned Amazon Redshift query engine. See `provisionedConfiguration` block for details.
+     * @param provisionedConfiguration Configurations for a provisioned Amazon Redshift query engine. See `provisionedConfiguration` Block for details.
      * @return builder
      */
     def provisionedConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationProvisionedConfigurationArgs.Builder]):
@@ -2837,7 +2866,7 @@ object bedrock:
       builder.provisionedConfiguration(args(argsBuilder).build)
 
     /**
-     * @param serverlessConfiguration Configurations for a serverless Amazon Redshift query engine. See `serverlessConfiguration` block for details.
+     * @param serverlessConfiguration Configurations for a serverless Amazon Redshift query engine. See `serverlessConfiguration` Block for details.
      * @return builder
      */
     def serverlessConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationServerlessConfigurationArgs.Builder]):
@@ -2847,7 +2876,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationProvisionedConfigurationArgs.Builder)
     /**
-     * @param authConfiguration Configurations for authentication to Amazon Redshift. See `authConfiguration` block for details.
+     * @param authConfiguration Configurations for authentication to Amazon Redshift. See `knowledge_base_configuration.sql_knowledge_base_configuration.redshift_configuration.query_engine_configuration.provisioned_configuration.auth_configuration` Block for details.
      * @return builder
      */
     def authConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationProvisionedConfigurationAuthConfigurationArgs.Builder]):
@@ -2857,7 +2886,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationServerlessConfigurationArgs.Builder)
     /**
-     * @param authConfiguration Configurations for authentication to a Redshift Serverless. See `authConfiguration` block for details.
+     * @param authConfiguration Configurations for authentication to a Redshift Serverless. See `knowledge_base_configuration.sql_knowledge_base_configuration.redshift_configuration.query_engine_configuration.serverless_configuration.auth_configuration` Block for details.
      * @return builder
      */
     def authConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationServerlessConfigurationAuthConfigurationArgs.Builder]):
@@ -2867,7 +2896,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationArgs.Builder)
     /**
-     * @param generationContext Configurations for context to use during query generation. See `generationContext` block for details.
+     * @param generationContext Configurations for context to use during query generation. See `generationContext` Block for details.
      * @return builder
      */
     def generationContext(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextArgs.Builder]):
@@ -2877,7 +2906,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextArgs.Builder)
     /**
-     * @param curatedQueries Information about example queries to help the query engine generate appropriate SQL queries. See `curatedQuery` block for details.
+     * @param curatedQueries Information about example queries to help the query engine generate appropriate SQL queries. See `curatedQuery` Block for details.
      * @return builder
      */
     def curatedQueries(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextCuratedQueryArgs.Builder]*):
@@ -2886,7 +2915,7 @@ object bedrock:
       builder.curatedQueries(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param tables Information about a table in the database. See `table` block for details.
+     * @param tables Information about a table in the database. See `table` Block for details.
      * @return builder
      */
     def tables(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextTableArgs.Builder]*):
@@ -2896,7 +2925,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextTableArgs.Builder)
     /**
-     * @param columns Information about a column in the table. See `column` block for details.
+     * @param columns Information about a column in the table. See `column` Block for details.
      * @return builder
      */
     def columns(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextTableColumnArgs.Builder]*):
@@ -2906,7 +2935,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationStorageConfigurationArgs.Builder)
     /**
-     * @param awsDataCatalogConfiguration Configurations for storage in AWS Glue Data Catalog. See `awsDataCatalogConfiguration` block for details.
+     * @param awsDataCatalogConfiguration Configurations for storage in AWS Glue Data Catalog. See `awsDataCatalogConfiguration` Block for details.
      * @return builder
      */
     def awsDataCatalogConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationStorageConfigurationAwsDataCatalogConfigurationArgs.Builder]):
@@ -2915,7 +2944,7 @@ object bedrock:
       builder.awsDataCatalogConfiguration(args(argsBuilder).build)
 
     /**
-     * @param redshiftConfiguration Configurations for storage in Amazon Redshift. See `redshiftConfiguration` block for details.
+     * @param redshiftConfiguration Configurations for storage in Amazon Redshift. See `knowledge_base_configuration.sql_knowledge_base_configuration.redshift_configuration.storage_configuration.redshift_configuration` Block for details.
      * @return builder
      */
     def redshiftConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationStorageConfigurationRedshiftConfigurationArgs.Builder]):
@@ -2925,7 +2954,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationArgs.Builder)
     /**
-     * @param embeddingModelConfiguration The embeddings model configuration details for the vector model used in Knowledge Base.  See `embeddingModelConfiguration` block for details.
+     * @param embeddingModelConfiguration Embeddings model configuration details for the vector model used in the knowledge base. See `embeddingModelConfiguration` Block for details.
      * @return builder
      */
     def embeddingModelConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationArgs.Builder]):
@@ -2934,7 +2963,7 @@ object bedrock:
       builder.embeddingModelConfiguration(args(argsBuilder).build)
 
     /**
-     * @param supplementalDataStorageConfiguration supplemental_data_storage_configuration.  See `supplementalDataStorageConfiguration` block for details.
+     * @param supplementalDataStorageConfiguration Supplemental data storage configuration for images extracted from multimodal documents. See `supplementalDataStorageConfiguration` Block for details.
      * @return builder
      */
     def supplementalDataStorageConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationSupplementalDataStorageConfigurationArgs.Builder]):
@@ -2944,7 +2973,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationArgs.Builder)
     /**
-     * @param bedrockEmbeddingModelConfiguration The vector configuration details on the Bedrock embeddings model.  See `bedrockEmbeddingModelConfiguration` block for details.
+     * @param bedrockEmbeddingModelConfiguration Vector configuration details for the Bedrock embeddings model. See `bedrockEmbeddingModelConfiguration` Block for details.
      * @return builder
      */
     def bedrockEmbeddingModelConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationArgs.Builder]):
@@ -2954,7 +2983,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationArgs.Builder)
     /**
-     * @param audio Configuration for processing audio content in multimodal knowledge bases. See `audio` block for details.
+     * @param audio Configuration for processing audio content in multimodal knowledge bases. See `audio` Block for details.
      * @return builder
      */
     def audio(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioArgs.Builder]):
@@ -2963,7 +2992,7 @@ object bedrock:
       builder.audio(args(argsBuilder).build)
 
     /**
-     * @param video Configuration for processing video content in multimodal knowledge bases. See `video` block for details.
+     * @param video Configuration for processing video content in multimodal knowledge bases. See `video` Block for details.
      * @return builder
      */
     def video(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoArgs.Builder]):
@@ -2973,7 +3002,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioArgs.Builder)
     /**
-     * @param segmentationConfiguration Configuration for segmenting audio content during processing. See `segmentationConfiguration` block for details.
+     * @param segmentationConfiguration Configuration for segmenting audio content during processing. See `segmentationConfiguration` Block for details.
      * @return builder
      */
     def segmentationConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioSegmentationConfigurationArgs.Builder]):
@@ -2983,7 +3012,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoArgs.Builder)
     /**
-     * @param segmentationConfiguration Configuration for segmenting video content during processing. See `segmentationConfiguration` block for details.
+     * @param segmentationConfiguration Configuration for segmenting video content during processing. See `segmentationConfiguration` Block for details.
      * @return builder
      */
     def segmentationConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoSegmentationConfigurationArgs.Builder]):
@@ -2993,7 +3022,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationSupplementalDataStorageConfigurationArgs.Builder)
     /**
-     * @param storageLocations A storage location specification for images extracted from multimodal documents in your data source.  See `storageLocation` block for details.
+     * @param storageLocations Storage location specification for images extracted from multimodal documents in your data source. See `storageLocation` Block for details.
      * @return builder
      */
     def storageLocations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationSupplementalDataStorageConfigurationStorageLocationArgs.Builder]*):
@@ -3003,7 +3032,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationSupplementalDataStorageConfigurationStorageLocationArgs.Builder)
     /**
-     * @param s3Location Contains information about the Amazon S3 location for the extracted images.  See `s3Location` block for details.
+     * @param s3Location Information about the Amazon S3 location for the extracted images. See `s3Location` Block for details.
      * @return builder
      */
     def s3Location(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationSupplementalDataStorageConfigurationStorageLocationS3LocationArgs.Builder]):
@@ -3013,7 +3042,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseState.Builder)
     /**
-     * @param knowledgeBaseConfiguration Details about the embeddings configuration of the knowledge base. See `knowledgeBaseConfiguration` block for details.
+     * @param knowledgeBaseConfiguration Details about the embeddings configuration of the knowledge base. See `knowledgeBaseConfiguration` Block for details.
      * @return builder
      */
     def knowledgeBaseConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationArgs.Builder]):
@@ -3022,7 +3051,7 @@ object bedrock:
       builder.knowledgeBaseConfiguration(args(argsBuilder).build)
 
     /**
-     * @param storageConfiguration Details about the storage configuration of the knowledge base. See `storageConfiguration` block for details.
+     * @param storageConfiguration Details about the storage configuration of the knowledge base. See `storageConfiguration` Block for details.
      * @return builder
      */
     def storageConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationArgs.Builder]):
@@ -3037,7 +3066,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationArgs.Builder)
     /**
-     * @param mongoDbAtlasConfiguration The storage configuration of the knowledge base in MongoDB Atlas. See `mongoDbAtlasConfiguration` block for details.
+     * @param mongoDbAtlasConfiguration Storage configuration of the knowledge base in MongoDB Atlas. See `mongoDbAtlasConfiguration` Block for details.
      * @return builder
      */
     def mongoDbAtlasConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationMongoDbAtlasConfigurationArgs.Builder]):
@@ -3046,7 +3075,7 @@ object bedrock:
       builder.mongoDbAtlasConfiguration(args(argsBuilder).build)
 
     /**
-     * @param neptuneAnalyticsConfiguration The storage configuration of the knowledge base in Amazon Neptune Analytics. See `neptuneAnalyticsConfiguration` block for details.
+     * @param neptuneAnalyticsConfiguration Storage configuration of the knowledge base in Amazon Neptune Analytics. See `neptuneAnalyticsConfiguration` Block for details.
      * @return builder
      */
     def neptuneAnalyticsConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationNeptuneAnalyticsConfigurationArgs.Builder]):
@@ -3055,7 +3084,7 @@ object bedrock:
       builder.neptuneAnalyticsConfiguration(args(argsBuilder).build)
 
     /**
-     * @param opensearchManagedClusterConfiguration The storage configuration of the knowledge base in Amazon OpenSearch Service Managed Cluster. See `opensearchManagedClusterConfiguration` block for details.
+     * @param opensearchManagedClusterConfiguration Storage configuration of the knowledge base in Amazon OpenSearch Service Managed Cluster. See `opensearchManagedClusterConfiguration` Block for details.
      * @return builder
      */
     def opensearchManagedClusterConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationOpensearchManagedClusterConfigurationArgs.Builder]):
@@ -3064,7 +3093,7 @@ object bedrock:
       builder.opensearchManagedClusterConfiguration(args(argsBuilder).build)
 
     /**
-     * @param opensearchServerlessConfiguration The storage configuration of the knowledge base in Amazon OpenSearch Service Serverless. See `opensearchServerlessConfiguration` block for details.
+     * @param opensearchServerlessConfiguration Storage configuration of the knowledge base in Amazon OpenSearch Service Serverless. See `opensearchServerlessConfiguration` Block for details.
      * @return builder
      */
     def opensearchServerlessConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationOpensearchServerlessConfigurationArgs.Builder]):
@@ -3073,7 +3102,7 @@ object bedrock:
       builder.opensearchServerlessConfiguration(args(argsBuilder).build)
 
     /**
-     * @param pineconeConfiguration The storage configuration of the knowledge base in Pinecone. See `pineconeConfiguration` block for details.
+     * @param pineconeConfiguration Storage configuration of the knowledge base in Pinecone. See `pineconeConfiguration` Block for details.
      * @return builder
      */
     def pineconeConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationPineconeConfigurationArgs.Builder]):
@@ -3082,7 +3111,7 @@ object bedrock:
       builder.pineconeConfiguration(args(argsBuilder).build)
 
     /**
-     * @param rdsConfiguration Details about the storage configuration of the knowledge base in Amazon RDS. For more information, see [Create a vector index in Amazon RDS](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html). See `rdsConfiguration` block for details.
+     * @param rdsConfiguration Details about the storage configuration of the knowledge base in Amazon RDS. For more information, see [Create a vector index in Amazon RDS](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html). See `rdsConfiguration` Block for details.
      * @return builder
      */
     def rdsConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationRdsConfigurationArgs.Builder]):
@@ -3091,7 +3120,7 @@ object bedrock:
       builder.rdsConfiguration(args(argsBuilder).build)
 
     /**
-     * @param redisEnterpriseCloudConfiguration The storage configuration of the knowledge base in Redis Enterprise Cloud. See `redisEnterpriseCloudConfiguration` block for details.
+     * @param redisEnterpriseCloudConfiguration Storage configuration of the knowledge base in Redis Enterprise Cloud. See `redisEnterpriseCloudConfiguration` Block for details.
      * @return builder
      */
     def redisEnterpriseCloudConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationRedisEnterpriseCloudConfigurationArgs.Builder]):
@@ -3100,7 +3129,7 @@ object bedrock:
       builder.redisEnterpriseCloudConfiguration(args(argsBuilder).build)
 
     /**
-     * @param s3VectorsConfiguration The storage configuration of the knowledge base in Amazon S3 Vectors. See `s3VectorsConfiguration` block for details.
+     * @param s3VectorsConfiguration Storage configuration of the knowledge base in Amazon S3 Vectors. See `s3VectorsConfiguration` Block for details.
      * @return builder
      */
     def s3VectorsConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationS3VectorsConfigurationArgs.Builder]):
@@ -3110,7 +3139,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationMongoDbAtlasConfigurationArgs.Builder)
     /**
-     * @param fieldMapping Contains the names of the fields to which to map information about the vector store.
+     * @param fieldMapping Names of the fields to which to map information about the vector store. See `storage_configuration.mongo_db_atlas_configuration.field_mapping` Block for details.
      * @return builder
      */
     def fieldMapping(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationMongoDbAtlasConfigurationFieldMappingArgs.Builder]):
@@ -3120,7 +3149,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationNeptuneAnalyticsConfigurationArgs.Builder)
     /**
-     * @param fieldMapping The names of the fields to which to map information about the vector store. This block supports the following arguments:
+     * @param fieldMapping Names of the fields to which to map information about the vector store. See `storage_configuration.neptune_analytics_configuration.field_mapping` Block for details.
      * @return builder
      */
     def fieldMapping(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationNeptuneAnalyticsConfigurationFieldMappingArgs.Builder]):
@@ -3130,7 +3159,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationOpensearchManagedClusterConfigurationArgs.Builder)
     /**
-     * @param fieldMapping The names of the fields to which to map information about the vector store. This block supports the following arguments:
+     * @param fieldMapping Names of the fields to which to map information about the vector store. See `storage_configuration.opensearch_managed_cluster_configuration.field_mapping` Block for details.
      * @return builder
      */
     def fieldMapping(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationOpensearchManagedClusterConfigurationFieldMappingArgs.Builder]):
@@ -3140,7 +3169,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationOpensearchServerlessConfigurationArgs.Builder)
     /**
-     * @param fieldMapping The names of the fields to which to map information about the vector store. This block supports the following arguments:
+     * @param fieldMapping Names of the fields to which to map information about the vector store. See `storage_configuration.opensearch_serverless_configuration.field_mapping` Block for details.
      * @return builder
      */
     def fieldMapping(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationOpensearchServerlessConfigurationFieldMappingArgs.Builder]):
@@ -3150,7 +3179,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationPineconeConfigurationArgs.Builder)
     /**
-     * @param fieldMapping The names of the fields to which to map information about the vector store. This block supports the following arguments:
+     * @param fieldMapping Names of the fields to which to map information about the vector store. See `storage_configuration.pinecone_configuration.field_mapping` Block for details.
      * @return builder
      */
     def fieldMapping(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationPineconeConfigurationFieldMappingArgs.Builder]):
@@ -3160,7 +3189,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationRdsConfigurationArgs.Builder)
     /**
-     * @param fieldMapping Names of the fields to which to map information about the vector store. This block supports the following arguments:
+     * @param fieldMapping Names of the fields to which to map information about the vector store. See `storage_configuration.rds_configuration.field_mapping` Block for details.
      * @return builder
      */
     def fieldMapping(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationRdsConfigurationFieldMappingArgs.Builder]):
@@ -3170,7 +3199,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationRedisEnterpriseCloudConfigurationArgs.Builder)
     /**
-     * @param fieldMapping The names of the fields to which to map information about the vector store. This block supports the following arguments:
+     * @param fieldMapping Names of the fields to which to map information about the vector store. See `storage_configuration.redis_enterprise_cloud_configuration.field_mapping` Block for details.
      * @return builder
      */
     def fieldMapping(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationRedisEnterpriseCloudConfigurationFieldMappingArgs.Builder]):
@@ -3180,7 +3209,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentPromptState.Builder)
     /**
-     * @param variants A list of objects, each containing details about a variant of the prompt. See Variant for more information.
+     * @param variants List of objects, each containing details about a variant of the prompt. See `variant` Block for more information.
      * @return builder
      */
     def variants(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantArgs.Builder]*):
@@ -3190,7 +3219,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentPromptVariantArgs.Builder)
     /**
-     * @param genAiResource Specifies a generative AI resource with which to use the prompt. If this is not supplied, then a `genAiResource` must be defined. See Generative AI Resource for more information.
+     * @param genAiResource Generative AI resource with which to use the prompt. If this is not supplied, then a `modelId` must be defined. See `genAiResource` Block for more information.
      * @return builder
      */
     def genAiResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantGenAiResourceArgs.Builder]):
@@ -3199,7 +3228,7 @@ object bedrock:
       builder.genAiResource(args(argsBuilder).build)
 
     /**
-     * @param inferenceConfiguration Contains inference configurations for the prompt variant. See Inference Configuration for more information.
+     * @param inferenceConfiguration Inference configurations for the prompt variant. See `inferenceConfiguration` Block for more information.
      * @return builder
      */
     def inferenceConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantInferenceConfigurationArgs.Builder]):
@@ -3208,7 +3237,7 @@ object bedrock:
       builder.inferenceConfiguration(args(argsBuilder).build)
 
     /**
-     * @param metadatas A list of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant. See Metadata for more information.
+     * @param metadatas List of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant. See `metadata` Block for more information.
      * @return builder
      */
     def metadatas(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantMetadataArgs.Builder]*):
@@ -3217,7 +3246,7 @@ object bedrock:
       builder.metadatas(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param templateConfiguration Contains configurations for the prompt template. See Template Configuration for more information.
+     * @param templateConfiguration Configurations for the prompt template. See `templateConfiguration` Block for more information.
      * @return builder
      */
     def templateConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationArgs.Builder]):
@@ -3227,7 +3256,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentPromptVariantGenAiResourceArgs.Builder)
     /**
-     * @param agent Specifies an Amazon Bedrock agent with which to use the prompt. See Agent Configuration for more information.
+     * @param agent Amazon Bedrock agent with which to use the prompt. See `agent` Block for more information.
      * @return builder
      */
     def agent(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantGenAiResourceAgentArgs.Builder]):
@@ -3237,7 +3266,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentPromptVariantInferenceConfigurationArgs.Builder)
     /**
-     * @param text Contains inference configurations for the prompt variant. See Text Inference Configuration for more information.
+     * @param text Inference configurations for the prompt variant. See `variant.inference_configuration.text` Block for more information.
      * @return builder
      */
     def text(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantInferenceConfigurationTextArgs.Builder]):
@@ -3247,7 +3276,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationArgs.Builder)
     /**
-     * @param chat Contains configurations to use the prompt in a conversational format. See Chat Template Configuration for more information.
+     * @param chat Configurations to use the prompt in a conversational format. See `chat` Block for more information.
      * @return builder
      */
     def chat(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatArgs.Builder]):
@@ -3256,7 +3285,7 @@ object bedrock:
       builder.chat(args(argsBuilder).build)
 
     /**
-     * @param text Contains configurations for the text in a message for a prompt. See Text Template Configuration
+     * @param text Configurations for the text in a message for a prompt. See `variant.template_configuration.text` Block for more information.
      * @return builder
      */
     def text(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationTextArgs.Builder]):
@@ -3265,13 +3294,17 @@ object bedrock:
       builder.text(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatArgs.Builder)
+    /**
+     * @param inputVariables List of variables in the prompt template. See `inputVariable` Block for more information.
+     * @return builder
+     */
     def inputVariables(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatInputVariableArgs.Builder]*):
         com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatArgs.Builder =
       def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatInputVariableArgs.builder
       builder.inputVariables(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param messages A list of messages in the chat for the prompt. See Message for more information.
+     * @param messages List of messages in the chat for the prompt. See `message` Block for more information.
      * @return builder
      */
     def messages(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatMessageArgs.Builder]*):
@@ -3280,7 +3313,7 @@ object bedrock:
       builder.messages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param systems A list of system prompts to provide context to the model or to describe how it should behave. See System for more information.
+     * @param systems List of system prompts to provide context to the model or to describe how it should behave. See `system` Block for more information.
      * @return builder
      */
     def systems(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatSystemArgs.Builder]*):
@@ -3289,7 +3322,7 @@ object bedrock:
       builder.systems(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param toolConfiguration Configuration information for the tools that the model can use when generating a response. See Tool Configuration for more information.
+     * @param toolConfiguration Configuration information for the tools that the model can use when generating a response. See `toolConfiguration` Block for more information.
      * @return builder
      */
     def toolConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatToolConfigurationArgs.Builder]):
@@ -3299,7 +3332,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatMessageArgs.Builder)
     /**
-     * @param content Contains the content for the message you pass to, or receive from a model. See [Message Content] for more information.
+     * @param content Content for the message you pass to, or receive from a model. See `content` Block for more information.
      * @return builder
      */
     def content(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatMessageContentArgs.Builder]):
@@ -3308,6 +3341,10 @@ object bedrock:
       builder.content(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatMessageContentArgs.Builder)
+    /**
+     * @param cachePoint Cache checkpoint within a message. See `cachePoint` Block for more information.
+     * @return builder
+     */
     def cachePoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatMessageContentCachePointArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatMessageContentArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatMessageContentCachePointArgs.builder
@@ -3315,7 +3352,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatSystemArgs.Builder)
     /**
-     * @param cachePoint Creates a cache checkpoint within a tool designation. See Cache Point for more information.
+     * @param cachePoint Cache checkpoint within the system prompt. See `cachePoint` Block for more information.
      * @return builder
      */
     def cachePoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatSystemCachePointArgs.Builder]):
@@ -3325,7 +3362,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatToolConfigurationArgs.Builder)
     /**
-     * @param toolChoice Defines which tools the model should request when invoked. See Tool Choice for more information.
+     * @param toolChoice Configuration for which tools the model should request when invoked. See `toolChoice` Block for more information.
      * @return builder
      */
     def toolChoice(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatToolConfigurationToolChoiceArgs.Builder]):
@@ -3334,7 +3371,7 @@ object bedrock:
       builder.toolChoice(args(argsBuilder).build)
 
     /**
-     * @param tools A list of tools to pass to a model. See Tool for more information.
+     * @param tools List of tools to pass to a model. See `variant.template_configuration.chat.tool_configuration.tool` Block for more information.
      * @return builder
      */
     def tools(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatToolConfigurationToolArgs.Builder]*):
@@ -3343,17 +3380,13 @@ object bedrock:
       builder.tools(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatToolConfigurationToolArgs.Builder)
-    /**
-     * @param cachePoint Creates a cache checkpoint within a tool designation. See Cache Point for more information.
-     * @return builder
-     */
     def cachePoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatToolConfigurationToolCachePointArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatToolConfigurationToolArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatToolConfigurationToolCachePointArgs.builder
       builder.cachePoint(args(argsBuilder).build)
 
     /**
-     * @param toolSpec The specification for the tool. See Tool Specification for more information.
+     * @param toolSpec Specification for the tool. See `toolSpec` Block for more information.
      * @return builder
      */
     def toolSpec(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatToolConfigurationToolToolSpecArgs.Builder]):
@@ -3363,7 +3396,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatToolConfigurationToolChoiceArgs.Builder)
     /**
-     * @param any Defines tools, at least one of which must be requested by the model. No text is generated but the results of tool use are sent back to the model to help generate a response. This object has no fields.
+     * @param any Tools, at least one of which must be requested by the model. No text is generated but the results of tool use are sent back to the model to help generate a response. This object has no fields.
      * @return builder
      */
     def any(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatToolConfigurationToolChoiceAnyArgs.Builder]):
@@ -3372,7 +3405,7 @@ object bedrock:
       builder.any(args(argsBuilder).build)
 
     /**
-     * @param auto Defines tools. The model automatically decides whether to call a tool or to generate text instead. This object has no fields.
+     * @param auto Tools from which the model automatically decides whether to call a tool or to generate text instead. This object has no fields.
      * @return builder
      */
     def auto(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatToolConfigurationToolChoiceAutoArgs.Builder]):
@@ -3381,7 +3414,7 @@ object bedrock:
       builder.auto(args(argsBuilder).build)
 
     /**
-     * @param tool Defines a specific tool that the model must request. No text is generated but the results of tool use are sent back to the model to help generate a response. See Named Tool for more information.
+     * @param tool Specific tool that the model must request. No text is generated but the results of tool use are sent back to the model to help generate a response. See `variant.template_configuration.chat.tool_configuration.tool_choice.tool` Block for more information.
      * @return builder
      */
     def tool(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatToolConfigurationToolChoiceToolArgs.Builder]):
@@ -3391,7 +3424,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatToolConfigurationToolToolSpecArgs.Builder)
     /**
-     * @param inputSchema The input schema of the tool. See Tool Input Schema for more information.
+     * @param inputSchema Input schema of the tool. See `inputSchema` Block for more information.
      * @return builder
      */
     def inputSchema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatToolConfigurationToolToolSpecInputSchemaArgs.Builder]):
@@ -3657,8 +3690,6 @@ object bedrock:
 
     /**
      * @param networkConfiguration Network configuration for the agent runtime. See `networkConfiguration` below.
-     * 
-     * The following arguments are optional:
      * @return builder
      */
     def networkConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeNetworkConfigurationArgs.Builder]):
@@ -3708,9 +3739,18 @@ object bedrock:
       def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreApiKeyCredentialProviderApiKeySecretArnArgs.builder
       builder.apiKeySecretArns(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param apiKeySecretConfig Reference to a customer-managed AWS Secrets Manager secret that stores the API key. Requires `apiKeySecretSource = &#34;EXTERNAL&#34;`. See below.
+     * @return builder
+     */
+    def apiKeySecretConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreApiKeyCredentialProviderApiKeySecretConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreApiKeyCredentialProviderState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreApiKeyCredentialProviderApiKeySecretConfigArgs.builder
+      builder.apiKeySecretConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreBrowserCertificateArgs.Builder)
     /**
-     * @param location Location from which to retrieve the certificate. See `certificates.location` below.
+     * @param location Location from which to retrieve the certificate. See `certificate.location` below.
      * @return builder
      */
     def location(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreBrowserCertificateLocationArgs.Builder]):
@@ -3829,7 +3869,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterCertificateArgs.Builder)
     /**
-     * @param location Location from which to retrieve the certificate. See `certificates.location` below.
+     * @param location Location from which to retrieve the certificate. See `certificate.location` below.
      * @return builder
      */
     def location(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterCertificateLocationArgs.Builder]):
@@ -4527,7 +4567,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaArgs.Builder)
     /**
-     * @param source Configuration for API schema. See `apiSchemaConfiguration` Block below.
+     * @param source Configuration for the API schema. Supports exactly one of `inlinePayload` or `s3` (see `s3` Block). For HTTP targets, the `inlinePayload` block is documented under its full path (for example, `target_configuration.http.agentcore_runtime.schema.source.inline_payload` Block).
      * @return builder
      */
     def source(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaSourceArgs.Builder]):
@@ -4569,7 +4609,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughArgs.Builder)
     /**
-     * @param schema API schema configuration that defines the structure of the passthrough target&#39;s API. Supports the same `inlinePayload` and `s3` blocks as `apiSchemaConfiguration`.
+     * @param schema API schema configuration that defines the structure of the passthrough target&#39;s API. See `schema` Block below.
      * @return builder
      */
     def schema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaArgs.Builder]):
@@ -4588,7 +4628,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaArgs.Builder)
     /**
-     * @param source Configuration for API schema. See `apiSchemaConfiguration` Block below.
+     * @param source Configuration for the API schema. Supports exactly one of `inlinePayload` or `s3` (see `s3` Block). For HTTP targets, the `inlinePayload` block is documented under its full path (for example, `target_configuration.http.agentcore_runtime.schema.source.inline_payload` Block).
      * @return builder
      */
     def source(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaSourceArgs.Builder]):
@@ -4609,7 +4649,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceArgs.Builder)
     /**
-     * @param connector Connector-based inference configuration that routes requests to an LLM provider through a built-in connector with predefined provider rules. See `connector` Block below.
+     * @param connector Connector-based inference configuration that routes requests to an LLM provider through a built-in connector with predefined provider rules. See `target_configuration.inference.connector` Block below.
      * @return builder
      */
     def connector(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceConnectorArgs.Builder]):
@@ -4628,7 +4668,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceConnectorArgs.Builder)
     /**
-     * @param source Source configuration identifying which connector to use. See `source` Block below.
+     * @param source Source configuration identifying which connector to use. See `target_configuration.mcp.connector.source` Block below.
      * @return builder
      */
     def source(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationInferenceConnectorSourceArgs.Builder]):
@@ -4715,7 +4755,7 @@ object bedrock:
       builder.apiGateway(args(argsBuilder).build)
 
     /**
-     * @param connector Connector integration target configuration. Connectors provide pre-built integrations with AWS services and third-party tools. See `connector` Block below.
+     * @param connector Connector integration target configuration. Connectors provide pre-built integrations with AWS services and third-party tools. See `target_configuration.mcp.connector` Block below.
      * @return builder
      */
     def connector(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpConnectorArgs.Builder]):
@@ -4742,7 +4782,7 @@ object bedrock:
       builder.mcpServer(args(argsBuilder).build)
 
     /**
-     * @param openApiSchema OpenAPI schema-based target configuration. See `apiSchemaConfiguration` Block below.
+     * @param openApiSchema OpenAPI schema-based target configuration. Supports exactly one of `inlinePayload` (see `target_configuration.mcp.open_api_schema.inline_payload` Block) or `s3` (see `s3` Block).
      * @return builder
      */
     def openApiSchema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpOpenApiSchemaArgs.Builder]):
@@ -4751,7 +4791,7 @@ object bedrock:
       builder.openApiSchema(args(argsBuilder).build)
 
     /**
-     * @param smithyModel Smithy model-based target configuration. See `apiSchemaConfiguration` Block below.
+     * @param smithyModel Smithy model-based target configuration. Supports exactly one of `inlinePayload` (see `target_configuration.mcp.smithy_model.inline_payload` Block) or `s3` (see `s3` Block).
      * @return builder
      */
     def smithyModel(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpSmithyModelArgs.Builder]):
@@ -4770,7 +4810,7 @@ object bedrock:
       builder.configurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param source Source configuration identifying which connector to use. See `source` Block below.
+     * @param source Source configuration identifying which connector to use. See `target_configuration.mcp.connector.source` Block below.
      * @return builder
      */
     def source(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpConnectorSourceArgs.Builder]):
@@ -4800,7 +4840,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaArgs.Builder)
     /**
-     * @param inlinePayloads Inline tool definition. See `inlinePayload` Block below.
+     * @param inlinePayloads Inline tool definition. See `target_configuration.mcp.lambda.tool_schema.inline_payload` Block below.
      * @return builder
      */
     def inlinePayloads(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadArgs.Builder]*):
@@ -4819,7 +4859,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadArgs.Builder)
     /**
-     * @param inputSchema Schema for the tool&#39;s input. See `schemaDefinition` Block below.
+     * @param inputSchema Schema for the tool&#39;s input. See `inputSchema` Block below.
      * @return builder
      */
     def inputSchema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaArgs.Builder]):
@@ -4828,7 +4868,7 @@ object bedrock:
       builder.inputSchema(args(argsBuilder).build)
 
     /**
-     * @param outputSchema Schema for the tool&#39;s output. See `schemaDefinition` Block below.
+     * @param outputSchema Schema for the tool&#39;s output. See `outputSchema` Block below.
      * @return builder
      */
     def outputSchema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaArgs.Builder]):
@@ -4837,11 +4877,19 @@ object bedrock:
       builder.outputSchema(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaArgs.Builder)
+    /**
+     * @param items Schema definition for array items. Can only be used when `type` is `array`. See `target_configuration.mcp.lambda.tool_schema.inline_payload.input_schema.items` Block below.
+     * @return builder
+     */
     def items(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaItemsArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaItemsArgs.builder
       builder.items(args(argsBuilder).build)
 
+    /**
+     * @param properties Set of property definitions for object types. Can only be used when `type` is `object`. See `target_configuration.mcp.lambda.tool_schema.inline_payload.input_schema.property` Block below.
+     * @return builder
+     */
     def properties(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaPropertyArgs.Builder]*):
         com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaArgs.Builder =
       def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaPropertyArgs.builder
@@ -4849,7 +4897,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaItemsArgs.Builder)
     /**
-     * @param items Nested items definition for arrays of arrays.
+     * @param items Nested items definition for arrays of arrays. See `target_configuration.mcp.lambda.tool_schema.inline_payload.output_schema.property.items.items` Block below.
      * @return builder
      */
     def items(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaItemsItemsArgs.Builder]):
@@ -4858,7 +4906,7 @@ object bedrock:
       builder.items(args(argsBuilder).build)
 
     /**
-     * @param properties Set of property definitions for arrays of objects. See `property` Block below.
+     * @param properties Set of property definitions for arrays of objects. See `target_configuration.mcp.lambda.tool_schema.inline_payload.output_schema.property.items.property` Block below.
      * @return builder
      */
     def properties(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaItemsPropertyArgs.Builder]*):
@@ -4868,7 +4916,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaPropertyArgs.Builder)
     /**
-     * @param items Items definition for array properties. See `items` Block above.
+     * @param items Items definition for array properties. See `target_configuration.mcp.lambda.tool_schema.inline_payload.output_schema.property.items` Block below.
      * @return builder
      */
     def items(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaPropertyItemsArgs.Builder]):
@@ -4877,7 +4925,7 @@ object bedrock:
       builder.items(args(argsBuilder).build)
 
     /**
-     * @param properties Set of nested property definitions for object properties.
+     * @param properties Set of nested property definitions for object properties. See `target_configuration.mcp.lambda.tool_schema.inline_payload.output_schema.property.property` Block below.
      * @return builder
      */
     def properties(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaPropertyPropertyArgs.Builder]*):
@@ -4887,7 +4935,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaPropertyItemsArgs.Builder)
     /**
-     * @param items Nested items definition for arrays of arrays.
+     * @param items Nested items definition for arrays of arrays. See `target_configuration.mcp.lambda.tool_schema.inline_payload.output_schema.property.items.items` Block below.
      * @return builder
      */
     def items(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaPropertyItemsItemsArgs.Builder]):
@@ -4896,7 +4944,7 @@ object bedrock:
       builder.items(args(argsBuilder).build)
 
     /**
-     * @param properties Set of property definitions for arrays of objects. See `property` Block below.
+     * @param properties Set of property definitions for arrays of objects. See `target_configuration.mcp.lambda.tool_schema.inline_payload.output_schema.property.items.property` Block below.
      * @return builder
      */
     def properties(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaPropertyItemsPropertyArgs.Builder]*):
@@ -4905,11 +4953,19 @@ object bedrock:
       builder.properties(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaArgs.Builder)
+    /**
+     * @param items Schema definition for array items. Can only be used when `type` is `array`. See `target_configuration.mcp.lambda.tool_schema.inline_payload.output_schema.items` Block below.
+     * @return builder
+     */
     def items(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaItemsArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaItemsArgs.builder
       builder.items(args(argsBuilder).build)
 
+    /**
+     * @param properties Set of property definitions for object types. Can only be used when `type` is `object`. See `target_configuration.mcp.lambda.tool_schema.inline_payload.output_schema.property` Block below.
+     * @return builder
+     */
     def properties(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaPropertyArgs.Builder]*):
         com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaArgs.Builder =
       def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaPropertyArgs.builder
@@ -4917,7 +4973,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaItemsArgs.Builder)
     /**
-     * @param items Nested items definition for arrays of arrays.
+     * @param items Nested items definition for arrays of arrays. See `target_configuration.mcp.lambda.tool_schema.inline_payload.output_schema.property.items.items` Block below.
      * @return builder
      */
     def items(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaItemsItemsArgs.Builder]):
@@ -4926,7 +4982,7 @@ object bedrock:
       builder.items(args(argsBuilder).build)
 
     /**
-     * @param properties Set of property definitions for arrays of objects. See `property` Block below.
+     * @param properties Set of property definitions for arrays of objects. See `target_configuration.mcp.lambda.tool_schema.inline_payload.output_schema.property.items.property` Block below.
      * @return builder
      */
     def properties(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaItemsPropertyArgs.Builder]*):
@@ -4936,7 +4992,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaPropertyArgs.Builder)
     /**
-     * @param items Items definition for array properties. See `items` Block above.
+     * @param items Items definition for array properties. See `target_configuration.mcp.lambda.tool_schema.inline_payload.output_schema.property.items` Block below.
      * @return builder
      */
     def items(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaPropertyItemsArgs.Builder]):
@@ -4945,7 +5001,7 @@ object bedrock:
       builder.items(args(argsBuilder).build)
 
     /**
-     * @param properties Set of nested property definitions for object properties.
+     * @param properties Set of nested property definitions for object properties. See `target_configuration.mcp.lambda.tool_schema.inline_payload.output_schema.property.property` Block below.
      * @return builder
      */
     def properties(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaPropertyPropertyArgs.Builder]*):
@@ -4955,7 +5011,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaPropertyItemsArgs.Builder)
     /**
-     * @param items Nested items definition for arrays of arrays.
+     * @param items Nested items definition for arrays of arrays. See `target_configuration.mcp.lambda.tool_schema.inline_payload.output_schema.property.items.items` Block below.
      * @return builder
      */
     def items(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaPropertyItemsItemsArgs.Builder]):
@@ -4964,7 +5020,7 @@ object bedrock:
       builder.items(args(argsBuilder).build)
 
     /**
-     * @param properties Set of property definitions for arrays of objects. See `property` Block below.
+     * @param properties Set of property definitions for arrays of objects. See `target_configuration.mcp.lambda.tool_schema.inline_payload.output_schema.property.items.property` Block below.
      * @return builder
      */
     def properties(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadOutputSchemaPropertyItemsPropertyArgs.Builder]*):
@@ -5150,7 +5206,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentActualAgentcoreRuntimeEnvironmentArgs.Builder)
     /**
-     * @param filesystemConfigurations Filesystem configurations. See `filesystemConfiguration` Block below.
+     * @param filesystemConfigurations Filesystem configurations. See `environment_actual.agentcore_runtime_environment.filesystem_configuration` Block below.
      * @return builder
      */
     def filesystemConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentActualAgentcoreRuntimeEnvironmentFilesystemConfigurationArgs.Builder]*):
@@ -5159,7 +5215,7 @@ object bedrock:
       builder.filesystemConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param lifecycleConfigurations Lifecycle configuration. See `lifecycleConfiguration` Block below.
+     * @param lifecycleConfigurations Lifecycle configuration. See `environment_actual.agentcore_runtime_environment.lifecycle_configuration` Block below.
      * @return builder
      */
     def lifecycleConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentActualAgentcoreRuntimeEnvironmentLifecycleConfigurationArgs.Builder]*):
@@ -5168,9 +5224,7 @@ object bedrock:
       builder.lifecycleConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param networkConfigurations Network configuration. See `networkConfiguration` Block below.
-     * 
-     * The following attributes are exported under `agentcoreRuntimeEnvironment`:
+     * @param networkConfigurations Network configuration. See `environment_actual.agentcore_runtime_environment.network_configuration` Block below.
      * @return builder
      */
     def networkConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentActualAgentcoreRuntimeEnvironmentNetworkConfigurationArgs.Builder]*):
@@ -5180,7 +5234,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentActualAgentcoreRuntimeEnvironmentFilesystemConfigurationArgs.Builder)
     /**
-     * @param efsAccessPoints Amazon EFS access point to mount as shared file storage. Exactly one of `sessionStorage`, `s3FilesAccessPoint`, or `efsAccessPoint` must be specified. See `efsAccessPoint` Block below.
+     * @param efsAccessPoints Amazon EFS access point mounted as shared file storage. See `environment_actual.agentcore_runtime_environment.filesystem_configuration.efs_access_point` Block below.
      * @return builder
      */
     def efsAccessPoints(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentActualAgentcoreRuntimeEnvironmentFilesystemConfigurationEfsAccessPointArgs.Builder]*):
@@ -5189,7 +5243,7 @@ object bedrock:
       builder.efsAccessPoints(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param s3FilesAccessPoints Amazon S3 Files access point to mount as shared file storage. Exactly one of `sessionStorage`, `s3FilesAccessPoint`, or `efsAccessPoint` must be specified. See `s3FilesAccessPoint` Block below.
+     * @param s3FilesAccessPoints Amazon S3 Files access point mounted as shared file storage. See `environment_actual.agentcore_runtime_environment.filesystem_configuration.s3_files_access_point` Block below.
      * @return builder
      */
     def s3FilesAccessPoints(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentActualAgentcoreRuntimeEnvironmentFilesystemConfigurationS3FilesAccessPointArgs.Builder]*):
@@ -5198,7 +5252,7 @@ object bedrock:
       builder.s3FilesAccessPoints(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param sessionStorages Session storage filesystem providing persistent storage across agent runtime session invocations. Exactly one of `sessionStorage`, `s3FilesAccessPoint`, or `efsAccessPoint` must be specified. See `sessionStorage` Block below.
+     * @param sessionStorages Session storage filesystem. See `environment_actual.agentcore_runtime_environment.filesystem_configuration.session_storage` Block below.
      * @return builder
      */
     def sessionStorages(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentActualAgentcoreRuntimeEnvironmentFilesystemConfigurationSessionStorageArgs.Builder]*):
@@ -5208,7 +5262,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentActualAgentcoreRuntimeEnvironmentNetworkConfigurationArgs.Builder)
     /**
-     * @param networkModeConfigs VPC configuration. See `networkModeConfig` Block below.
+     * @param networkModeConfigs VPC configuration. See `environment_actual.agentcore_runtime_environment.network_configuration.network_mode_config` Block below.
      * @return builder
      */
     def networkModeConfigs(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentActualAgentcoreRuntimeEnvironmentNetworkConfigurationNetworkModeConfigArgs.Builder]*):
@@ -5218,7 +5272,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentActualArgs.Builder)
     /**
-     * @param agentcoreRuntimeEnvironments AgentCore runtime environment configuration. See `agentcoreRuntimeEnvironment` Block below.
+     * @param agentcoreRuntimeEnvironments AgentCore runtime environment configuration. See `environment_actual.agentcore_runtime_environment` Block below.
      * @return builder
      */
     def agentcoreRuntimeEnvironments(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentActualAgentcoreRuntimeEnvironmentArgs.Builder]*):
@@ -5228,7 +5282,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentAgentcoreRuntimeEnvironmentArgs.Builder)
     /**
-     * @param filesystemConfigurations Filesystem configurations. See `filesystemConfiguration` Block below.
+     * @param filesystemConfigurations Filesystem configurations. See `environment_actual.agentcore_runtime_environment.filesystem_configuration` Block below.
      * @return builder
      */
     def filesystemConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentAgentcoreRuntimeEnvironmentFilesystemConfigurationArgs.Builder]*):
@@ -5237,7 +5291,7 @@ object bedrock:
       builder.filesystemConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param lifecycleConfigurations Lifecycle configuration. See `lifecycleConfiguration` Block below.
+     * @param lifecycleConfigurations Lifecycle configuration. See `environment_actual.agentcore_runtime_environment.lifecycle_configuration` Block below.
      * @return builder
      */
     def lifecycleConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentAgentcoreRuntimeEnvironmentLifecycleConfigurationArgs.Builder]*):
@@ -5246,9 +5300,7 @@ object bedrock:
       builder.lifecycleConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param networkConfigurations Network configuration. See `networkConfiguration` Block below.
-     * 
-     * The following attributes are exported under `agentcoreRuntimeEnvironment`:
+     * @param networkConfigurations Network configuration. See `environment_actual.agentcore_runtime_environment.network_configuration` Block below.
      * @return builder
      */
     def networkConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentAgentcoreRuntimeEnvironmentNetworkConfigurationArgs.Builder]*):
@@ -5258,7 +5310,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentAgentcoreRuntimeEnvironmentFilesystemConfigurationArgs.Builder)
     /**
-     * @param efsAccessPoints Amazon EFS access point to mount as shared file storage. Exactly one of `sessionStorage`, `s3FilesAccessPoint`, or `efsAccessPoint` must be specified. See `efsAccessPoint` Block below.
+     * @param efsAccessPoints Amazon EFS access point mounted as shared file storage. See `environment_actual.agentcore_runtime_environment.filesystem_configuration.efs_access_point` Block below.
      * @return builder
      */
     def efsAccessPoints(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentAgentcoreRuntimeEnvironmentFilesystemConfigurationEfsAccessPointArgs.Builder]*):
@@ -5267,7 +5319,7 @@ object bedrock:
       builder.efsAccessPoints(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param s3FilesAccessPoints Amazon S3 Files access point to mount as shared file storage. Exactly one of `sessionStorage`, `s3FilesAccessPoint`, or `efsAccessPoint` must be specified. See `s3FilesAccessPoint` Block below.
+     * @param s3FilesAccessPoints Amazon S3 Files access point mounted as shared file storage. See `environment_actual.agentcore_runtime_environment.filesystem_configuration.s3_files_access_point` Block below.
      * @return builder
      */
     def s3FilesAccessPoints(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentAgentcoreRuntimeEnvironmentFilesystemConfigurationS3FilesAccessPointArgs.Builder]*):
@@ -5276,7 +5328,7 @@ object bedrock:
       builder.s3FilesAccessPoints(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param sessionStorages Session storage filesystem providing persistent storage across agent runtime session invocations. Exactly one of `sessionStorage`, `s3FilesAccessPoint`, or `efsAccessPoint` must be specified. See `sessionStorage` Block below.
+     * @param sessionStorages Session storage filesystem. See `environment_actual.agentcore_runtime_environment.filesystem_configuration.session_storage` Block below.
      * @return builder
      */
     def sessionStorages(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentAgentcoreRuntimeEnvironmentFilesystemConfigurationSessionStorageArgs.Builder]*):
@@ -5286,7 +5338,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentAgentcoreRuntimeEnvironmentNetworkConfigurationArgs.Builder)
     /**
-     * @param networkModeConfigs VPC configuration. See `networkModeConfig` Block below.
+     * @param networkModeConfigs VPC configuration. See `environment_actual.agentcore_runtime_environment.network_configuration.network_mode_config` Block below.
      * @return builder
      */
     def networkModeConfigs(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentAgentcoreRuntimeEnvironmentNetworkConfigurationNetworkModeConfigArgs.Builder]*):
@@ -5296,7 +5348,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentArgs.Builder)
     /**
-     * @param agentcoreRuntimeEnvironments AgentCore runtime environment configuration. See `agentcoreRuntimeEnvironment` Block below.
+     * @param agentcoreRuntimeEnvironments AgentCore runtime environment configuration. See `environment.agentcore_runtime_environment` Block below.
      * @return builder
      */
     def agentcoreRuntimeEnvironments(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentAgentcoreRuntimeEnvironmentArgs.Builder]*):
@@ -5316,7 +5368,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessMemoryActualAgentcoreMemoryConfigurationArgs.Builder)
     /**
-     * @param retrievalConfigs Retrieval configuration parameters. See `retrievalConfig` Block below.
+     * @param retrievalConfigs Retrieval configuration parameters. See `memory_actual.agentcore_memory_configuration.retrieval_config` Block below.
      * @return builder
      */
     def retrievalConfigs(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessMemoryActualAgentcoreMemoryConfigurationRetrievalConfigArgs.Builder]*):
@@ -5326,7 +5378,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessMemoryActualArgs.Builder)
     /**
-     * @param agentcoreMemoryConfigurations AgentCore memory configuration. Use this to connect to an existing AgentCore memory resource. See `agentcoreMemoryConfiguration` Block below.
+     * @param agentcoreMemoryConfigurations AgentCore memory configuration. See `memory_actual.agentcore_memory_configuration` Block below.
      * @return builder
      */
     def agentcoreMemoryConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessMemoryActualAgentcoreMemoryConfigurationArgs.Builder]*):
@@ -5335,7 +5387,7 @@ object bedrock:
       builder.agentcoreMemoryConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param disableds Explicitly disable memory for this harness. See `disabled` Block below.
+     * @param disableds Present when memory is explicitly disabled. See `memory_actual.disabled` Block below.
      * @return builder
      */
     def disableds(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessMemoryActualDisabledArgs.Builder]*):
@@ -5344,7 +5396,7 @@ object bedrock:
       builder.disableds(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param managedMemoryConfigurations Managed memory configuration. Creates and manages a memory resource automatically. See `managedMemoryConfiguration` Block below.
+     * @param managedMemoryConfigurations Managed memory configuration. See `memory_actual.managed_memory_configuration` Block below.
      * @return builder
      */
     def managedMemoryConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessMemoryActualManagedMemoryConfigurationArgs.Builder]*):
@@ -5354,7 +5406,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessMemoryAgentcoreMemoryConfigurationArgs.Builder)
     /**
-     * @param retrievalConfig Retrieval configuration parameters. See `retrievalConfig` Block below.
+     * @param retrievalConfig Retrieval configuration parameters. See `memory_actual.agentcore_memory_configuration.retrieval_config` Block below.
      * @return builder
      */
     def retrievalConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessMemoryAgentcoreMemoryConfigurationRetrievalConfigArgs.Builder]):
@@ -5364,7 +5416,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessMemoryArgs.Builder)
     /**
-     * @param agentcoreMemoryConfiguration AgentCore memory configuration. Use this to connect to an existing AgentCore memory resource. See `agentcoreMemoryConfiguration` Block below.
+     * @param agentcoreMemoryConfiguration AgentCore memory configuration. Use this to connect to an existing AgentCore memory resource. See `memory.agentcore_memory_configuration` Block below.
      * @return builder
      */
     def agentcoreMemoryConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessMemoryAgentcoreMemoryConfigurationArgs.Builder]):
@@ -5373,7 +5425,7 @@ object bedrock:
       builder.agentcoreMemoryConfiguration(args(argsBuilder).build)
 
     /**
-     * @param disabled Explicitly disable memory for this harness. See `disabled` Block below.
+     * @param disabled Explicitly disable memory for this harness. See `memory.disabled` Block below.
      * @return builder
      */
     def disabled(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessMemoryDisabledArgs.Builder]):
@@ -5382,7 +5434,7 @@ object bedrock:
       builder.disabled(args(argsBuilder).build)
 
     /**
-     * @param managedMemoryConfiguration Managed memory configuration. Creates and manages a memory resource automatically. See `managedMemoryConfiguration` Block below.
+     * @param managedMemoryConfiguration Managed memory configuration. Creates and manages a memory resource automatically. See `memory.managed_memory_configuration` Block below.
      * @return builder
      */
     def managedMemoryConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessMemoryManagedMemoryConfigurationArgs.Builder]):
@@ -5476,7 +5528,7 @@ object bedrock:
       builder.authorizerConfiguration(args(argsBuilder).build)
 
     /**
-     * @param environmentActuals Actual deployed environment configuration.
+     * @param environmentActuals Actual deployed environment configuration. See `environmentActual` Block below.
      * @return builder
      */
     def environmentActuals(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentActualArgs.Builder]*):
@@ -5512,7 +5564,7 @@ object bedrock:
       builder.memory(args(argsBuilder).build)
 
     /**
-     * @param memoryActuals Actual deployed memory configuration.
+     * @param memoryActuals Actual deployed memory configuration. See `memoryActual` Block below.
      * @return builder
      */
     def memoryActuals(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessMemoryActualArgs.Builder]*):
@@ -5574,7 +5626,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessToolArgs.Builder)
     /**
-     * @param config Tool-specific configuration. See `tool config` below.
+     * @param config Tool-specific configuration. See `tool.config` Block below.
      * @return builder
      */
     def config(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessToolConfigArgs.Builder]):
@@ -5650,7 +5702,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessTruncationArgs.Builder)
     /**
-     * @param configs Strategy-specific configuration. See `truncation config` below.
+     * @param configs Strategy-specific configuration. See `truncation.config` Block below.
      * @return builder
      */
     def configs(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessTruncationConfigArgs.Builder]*):
@@ -5955,7 +6007,16 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigArgs.Builder)
     /**
-     * @param customOauth2ProviderConfig Custom OAuth2 provider configuration. See `custom` below.
+     * @param atlassianOauth2ProviderConfig Atlassian OAuth provider configuration. See `atlassianOauth2ProviderConfig` Block below.
+     * @return builder
+     */
+    def atlassianOauth2ProviderConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigAtlassianOauth2ProviderConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigAtlassianOauth2ProviderConfigArgs.builder
+      builder.atlassianOauth2ProviderConfig(args(argsBuilder).build)
+
+    /**
+     * @param customOauth2ProviderConfig Custom OAuth2 provider configuration. See `customOauth2ProviderConfig` Block below.
      * @return builder
      */
     def customOauth2ProviderConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigArgs.Builder]):
@@ -5964,7 +6025,7 @@ object bedrock:
       builder.customOauth2ProviderConfig(args(argsBuilder).build)
 
     /**
-     * @param githubOauth2ProviderConfig GitHub OAuth provider configuration. See `github` below.
+     * @param githubOauth2ProviderConfig GitHub OAuth provider configuration. See `githubOauth2ProviderConfig` Block below.
      * @return builder
      */
     def githubOauth2ProviderConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGithubOauth2ProviderConfigArgs.Builder]):
@@ -5973,7 +6034,7 @@ object bedrock:
       builder.githubOauth2ProviderConfig(args(argsBuilder).build)
 
     /**
-     * @param googleOauth2ProviderConfig Google OAuth provider configuration. See `google` below.
+     * @param googleOauth2ProviderConfig Google OAuth provider configuration. See `googleOauth2ProviderConfig` Block below.
      * @return builder
      */
     def googleOauth2ProviderConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGoogleOauth2ProviderConfigArgs.Builder]):
@@ -5982,7 +6043,25 @@ object bedrock:
       builder.googleOauth2ProviderConfig(args(argsBuilder).build)
 
     /**
-     * @param microsoftOauth2ProviderConfig Microsoft OAuth provider configuration. See `microsoft` below.
+     * @param includedOauth2ProviderConfig Configuration for an included (vendor-supported) OAuth2 provider, used for the additional supported vendors. See `includedOauth2ProviderConfig` Block below.
+     * @return builder
+     */
+    def includedOauth2ProviderConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigIncludedOauth2ProviderConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigIncludedOauth2ProviderConfigArgs.builder
+      builder.includedOauth2ProviderConfig(args(argsBuilder).build)
+
+    /**
+     * @param linkedinOauth2ProviderConfig LinkedIn OAuth provider configuration. See `linkedinOauth2ProviderConfig` Block below.
+     * @return builder
+     */
+    def linkedinOauth2ProviderConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigLinkedinOauth2ProviderConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigLinkedinOauth2ProviderConfigArgs.builder
+      builder.linkedinOauth2ProviderConfig(args(argsBuilder).build)
+
+    /**
+     * @param microsoftOauth2ProviderConfig Microsoft OAuth provider configuration. See `microsoftOauth2ProviderConfig` Block below.
      * @return builder
      */
     def microsoftOauth2ProviderConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigMicrosoftOauth2ProviderConfigArgs.Builder]):
@@ -5991,7 +6070,7 @@ object bedrock:
       builder.microsoftOauth2ProviderConfig(args(argsBuilder).build)
 
     /**
-     * @param salesforceOauth2ProviderConfig Salesforce OAuth provider configuration. See `salesforce` below.
+     * @param salesforceOauth2ProviderConfig Salesforce OAuth provider configuration. See `salesforceOauth2ProviderConfig` Block below.
      * @return builder
      */
     def salesforceOauth2ProviderConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSalesforceOauth2ProviderConfigArgs.Builder]):
@@ -6000,7 +6079,7 @@ object bedrock:
       builder.salesforceOauth2ProviderConfig(args(argsBuilder).build)
 
     /**
-     * @param slackOauth2ProviderConfig Slack OAuth provider configuration. See `slack` below.
+     * @param slackOauth2ProviderConfig Slack OAuth provider configuration. See `slackOauth2ProviderConfig` Block below.
      * @return builder
      */
     def slackOauth2ProviderConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSlackOauth2ProviderConfigArgs.Builder]):
@@ -6008,9 +6087,47 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSlackOauth2ProviderConfigArgs.builder
       builder.slackOauth2ProviderConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigAtlassianOauth2ProviderConfigArgs.Builder)
+    /**
+     * @param clientSecretConfig Reference to an AWS Secrets Manager secret that stores the client secret. Required when `clientSecretSource` is `EXTERNAL`. See `clientSecretConfig` Block below.
+     * @return builder
+     */
+    def clientSecretConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigAtlassianOauth2ProviderConfigClientSecretConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigAtlassianOauth2ProviderConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigAtlassianOauth2ProviderConfigClientSecretConfigArgs.builder
+      builder.clientSecretConfig(args(argsBuilder).build)
+
+    /**
+     * @param oauthDiscoveries OAuth discovery configuration resolved by the service. See `oauth2_provider_config.slack_oauth2_provider_config.oauth_discovery` Block below.
+     * @return builder
+     */
+    def oauthDiscoveries(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigAtlassianOauth2ProviderConfigOauthDiscoveryArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigAtlassianOauth2ProviderConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigAtlassianOauth2ProviderConfigOauthDiscoveryArgs.builder
+      builder.oauthDiscoveries(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigAtlassianOauth2ProviderConfigOauthDiscoveryArgs.Builder)
+    /**
+     * @param authorizationServerMetadatas OAuth2 authorization server metadata resolved by the service. See `authorizationServerMetadata` Block below.
+     * @return builder
+     */
+    def authorizationServerMetadatas(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigAtlassianOauth2ProviderConfigOauthDiscoveryAuthorizationServerMetadataArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigAtlassianOauth2ProviderConfigOauthDiscoveryArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigAtlassianOauth2ProviderConfigOauthDiscoveryAuthorizationServerMetadataArgs.builder
+      builder.authorizationServerMetadatas(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigArgs.Builder)
     /**
-     * @param oauthDiscovery OAuth discovery configuration. See `oauthDiscovery` below.
+     * @param clientSecretConfig Reference to an AWS Secrets Manager secret that stores the client secret. Required when `clientSecretSource` is `EXTERNAL`. See `clientSecretConfig` Block below.
+     * @return builder
+     */
+    def clientSecretConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigClientSecretConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigClientSecretConfigArgs.builder
+      builder.clientSecretConfig(args(argsBuilder).build)
+
+    /**
+     * @param oauthDiscovery OAuth discovery configuration. See `oauth2_provider_config.custom_oauth2_provider_config.oauth_discovery` Block below.
      * @return builder
      */
     def oauthDiscovery(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigOauthDiscoveryArgs.Builder]):
@@ -6018,9 +6135,45 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigOauthDiscoveryArgs.builder
       builder.oauthDiscovery(args(argsBuilder).build)
 
+    /**
+     * @param onBehalfOfTokenExchangeConfig On-behalf-of token exchange configuration, enabling RFC 8693 token exchange or RFC 7523 JWT authorization grant flows. See `onBehalfOfTokenExchangeConfig` Block below.
+     * @return builder
+     */
+    def onBehalfOfTokenExchangeConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigOnBehalfOfTokenExchangeConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigOnBehalfOfTokenExchangeConfigArgs.builder
+      builder.onBehalfOfTokenExchangeConfig(args(argsBuilder).build)
+
+    /**
+     * @param privateEndpoint Default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration. See `privateEndpoint` Block below.
+     * @return builder
+     */
+    def privateEndpoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointArgs.builder
+      builder.privateEndpoint(args(argsBuilder).build)
+
+    /**
+     * @param privateEndpointOverrides Private endpoint overrides for the custom OAuth2 provider configuration. See `privateEndpointOverride` Block below.
+     * @return builder
+     */
+    def privateEndpointOverrides(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointOverrideArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointOverrideArgs.builder
+      builder.privateEndpointOverrides(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param privateKeyJwtConfig Private key JWT client authentication configuration used when signing client assertions. See `privateKeyJwtConfig` Block below.
+     * @return builder
+     */
+    def privateKeyJwtConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateKeyJwtConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateKeyJwtConfigArgs.builder
+      builder.privateKeyJwtConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigOauthDiscoveryArgs.Builder)
     /**
-     * @param authorizationServerMetadata Manual OAuth2 authorization server metadata configuration. Cannot be used together with `discoveryUrl`. See `authorizationServerMetadata` below.
+     * @param authorizationServerMetadata OAuth2 authorization server metadata resolved by the service. See `authorizationServerMetadata` Block below.
      * @return builder
      */
     def authorizationServerMetadata(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigOauthDiscoveryAuthorizationServerMetadataArgs.Builder]):
@@ -6028,9 +6181,96 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigOauthDiscoveryAuthorizationServerMetadataArgs.builder
       builder.authorizationServerMetadata(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigOnBehalfOfTokenExchangeConfigArgs.Builder)
+    /**
+     * @param tokenExchangeGrantTypeConfig Configuration specific to the `TOKEN_EXCHANGE` grant type (RFC 8693). See `tokenExchangeGrantTypeConfig` Block below.
+     * @return builder
+     */
+    def tokenExchangeGrantTypeConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigOnBehalfOfTokenExchangeConfigTokenExchangeGrantTypeConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigOnBehalfOfTokenExchangeConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigOnBehalfOfTokenExchangeConfigTokenExchangeGrantTypeConfigArgs.builder
+      builder.tokenExchangeGrantTypeConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointArgs.Builder)
+    /**
+     * @param managedVpcResource Service-managed VPC resource configuration. See `managedVpcResource` Block below.
+     * @return builder
+     */
+    def managedVpcResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointManagedVpcResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointManagedVpcResourceArgs.builder
+      builder.managedVpcResource(args(argsBuilder).build)
+
+    /**
+     * @param selfManagedLatticeResource Self-managed VPC Lattice resource configuration. See `selfManagedLatticeResource` Block below.
+     * @return builder
+     */
+    def selfManagedLatticeResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointSelfManagedLatticeResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointSelfManagedLatticeResourceArgs.builder
+      builder.selfManagedLatticeResource(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointOverrideArgs.Builder)
+    /**
+     * @param privateEndpoint Private endpoint configuration for the domain. See `privateEndpoint` Block above.
+     * @return builder
+     */
+    def privateEndpoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointOverridePrivateEndpointArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointOverrideArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointOverridePrivateEndpointArgs.builder
+      builder.privateEndpoint(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointOverridePrivateEndpointArgs.Builder)
+    /**
+     * @param managedVpcResource Service-managed VPC resource configuration. See `managedVpcResource` Block below.
+     * @return builder
+     */
+    def managedVpcResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointOverridePrivateEndpointManagedVpcResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointOverridePrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointOverridePrivateEndpointManagedVpcResourceArgs.builder
+      builder.managedVpcResource(args(argsBuilder).build)
+
+    /**
+     * @param selfManagedLatticeResource Self-managed VPC Lattice resource configuration. See `selfManagedLatticeResource` Block below.
+     * @return builder
+     */
+    def selfManagedLatticeResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointOverridePrivateEndpointSelfManagedLatticeResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointOverridePrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateEndpointOverridePrivateEndpointSelfManagedLatticeResourceArgs.builder
+      builder.selfManagedLatticeResource(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateKeyJwtConfigArgs.Builder)
+    /**
+     * @param privateKeySource Source of the private key used to sign the JWT. See `privateKeySource` Block below.
+     * @return builder
+     */
+    def privateKeySource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateKeyJwtConfigPrivateKeySourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateKeyJwtConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateKeyJwtConfigPrivateKeySourceArgs.builder
+      builder.privateKeySource(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateKeyJwtConfigPrivateKeySourceArgs.Builder)
+    /**
+     * @param kmsKeySource AWS KMS key source configuration for the signing key. See `kmsKeySource` Block below.
+     * @return builder
+     */
+    def kmsKeySource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateKeyJwtConfigPrivateKeySourceKmsKeySourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateKeyJwtConfigPrivateKeySourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigCustomOauth2ProviderConfigPrivateKeyJwtConfigPrivateKeySourceKmsKeySourceArgs.builder
+      builder.kmsKeySource(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGithubOauth2ProviderConfigArgs.Builder)
     /**
-     * @param oauthDiscoveries OAuth discovery configuration. See `oauthDiscovery` below.
+     * @param clientSecretConfig Reference to an AWS Secrets Manager secret that stores the client secret. Required when `clientSecretSource` is `EXTERNAL`. See `clientSecretConfig` Block below.
+     * @return builder
+     */
+    def clientSecretConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGithubOauth2ProviderConfigClientSecretConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGithubOauth2ProviderConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGithubOauth2ProviderConfigClientSecretConfigArgs.builder
+      builder.clientSecretConfig(args(argsBuilder).build)
+
+    /**
+     * @param oauthDiscoveries OAuth discovery configuration resolved by the service. See `oauth2_provider_config.slack_oauth2_provider_config.oauth_discovery` Block below.
      * @return builder
      */
     def oauthDiscoveries(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGithubOauth2ProviderConfigOauthDiscoveryArgs.Builder]*):
@@ -6040,7 +6280,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGithubOauth2ProviderConfigOauthDiscoveryArgs.Builder)
     /**
-     * @param authorizationServerMetadatas Manual OAuth2 authorization server metadata configuration. Cannot be used together with `discoveryUrl`. See `authorizationServerMetadata` below.
+     * @param authorizationServerMetadatas OAuth2 authorization server metadata resolved by the service. See `authorizationServerMetadata` Block below.
      * @return builder
      */
     def authorizationServerMetadatas(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGithubOauth2ProviderConfigOauthDiscoveryAuthorizationServerMetadataArgs.Builder]*):
@@ -6050,7 +6290,16 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGoogleOauth2ProviderConfigArgs.Builder)
     /**
-     * @param oauthDiscoveries OAuth discovery configuration. See `oauthDiscovery` below.
+     * @param clientSecretConfig Reference to an AWS Secrets Manager secret that stores the client secret. Required when `clientSecretSource` is `EXTERNAL`. See `clientSecretConfig` Block below.
+     * @return builder
+     */
+    def clientSecretConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGoogleOauth2ProviderConfigClientSecretConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGoogleOauth2ProviderConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGoogleOauth2ProviderConfigClientSecretConfigArgs.builder
+      builder.clientSecretConfig(args(argsBuilder).build)
+
+    /**
+     * @param oauthDiscoveries OAuth discovery configuration resolved by the service. See `oauth2_provider_config.slack_oauth2_provider_config.oauth_discovery` Block below.
      * @return builder
      */
     def oauthDiscoveries(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGoogleOauth2ProviderConfigOauthDiscoveryArgs.Builder]*):
@@ -6060,7 +6309,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGoogleOauth2ProviderConfigOauthDiscoveryArgs.Builder)
     /**
-     * @param authorizationServerMetadatas Manual OAuth2 authorization server metadata configuration. Cannot be used together with `discoveryUrl`. See `authorizationServerMetadata` below.
+     * @param authorizationServerMetadatas OAuth2 authorization server metadata resolved by the service. See `authorizationServerMetadata` Block below.
      * @return builder
      */
     def authorizationServerMetadatas(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGoogleOauth2ProviderConfigOauthDiscoveryAuthorizationServerMetadataArgs.Builder]*):
@@ -6068,9 +6317,76 @@ object bedrock:
       def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigGoogleOauth2ProviderConfigOauthDiscoveryAuthorizationServerMetadataArgs.builder
       builder.authorizationServerMetadatas(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigIncludedOauth2ProviderConfigArgs.Builder)
+    /**
+     * @param clientSecretConfig Reference to an AWS Secrets Manager secret that stores the client secret. Required when `clientSecretSource` is `EXTERNAL`. See `clientSecretConfig` Block below.
+     * @return builder
+     */
+    def clientSecretConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigIncludedOauth2ProviderConfigClientSecretConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigIncludedOauth2ProviderConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigIncludedOauth2ProviderConfigClientSecretConfigArgs.builder
+      builder.clientSecretConfig(args(argsBuilder).build)
+
+    /**
+     * @param oauthDiscoveries OAuth discovery configuration resolved by the service. See `oauth2_provider_config.slack_oauth2_provider_config.oauth_discovery` Block below.
+     * @return builder
+     */
+    def oauthDiscoveries(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigIncludedOauth2ProviderConfigOauthDiscoveryArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigIncludedOauth2ProviderConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigIncludedOauth2ProviderConfigOauthDiscoveryArgs.builder
+      builder.oauthDiscoveries(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigIncludedOauth2ProviderConfigOauthDiscoveryArgs.Builder)
+    /**
+     * @param authorizationServerMetadatas OAuth2 authorization server metadata resolved by the service. See `authorizationServerMetadata` Block below.
+     * @return builder
+     */
+    def authorizationServerMetadatas(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigIncludedOauth2ProviderConfigOauthDiscoveryAuthorizationServerMetadataArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigIncludedOauth2ProviderConfigOauthDiscoveryArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigIncludedOauth2ProviderConfigOauthDiscoveryAuthorizationServerMetadataArgs.builder
+      builder.authorizationServerMetadatas(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigLinkedinOauth2ProviderConfigArgs.Builder)
+    /**
+     * @param clientSecretConfig Reference to an AWS Secrets Manager secret that stores the client secret. Required when `clientSecretSource` is `EXTERNAL`. See `clientSecretConfig` Block below.
+     * @return builder
+     */
+    def clientSecretConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigLinkedinOauth2ProviderConfigClientSecretConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigLinkedinOauth2ProviderConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigLinkedinOauth2ProviderConfigClientSecretConfigArgs.builder
+      builder.clientSecretConfig(args(argsBuilder).build)
+
+    /**
+     * @param oauthDiscoveries OAuth discovery configuration resolved by the service. See `oauth2_provider_config.slack_oauth2_provider_config.oauth_discovery` Block below.
+     * @return builder
+     */
+    def oauthDiscoveries(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigLinkedinOauth2ProviderConfigOauthDiscoveryArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigLinkedinOauth2ProviderConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigLinkedinOauth2ProviderConfigOauthDiscoveryArgs.builder
+      builder.oauthDiscoveries(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigLinkedinOauth2ProviderConfigOauthDiscoveryArgs.Builder)
+    /**
+     * @param authorizationServerMetadatas OAuth2 authorization server metadata resolved by the service. See `authorizationServerMetadata` Block below.
+     * @return builder
+     */
+    def authorizationServerMetadatas(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigLinkedinOauth2ProviderConfigOauthDiscoveryAuthorizationServerMetadataArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigLinkedinOauth2ProviderConfigOauthDiscoveryArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigLinkedinOauth2ProviderConfigOauthDiscoveryAuthorizationServerMetadataArgs.builder
+      builder.authorizationServerMetadatas(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigMicrosoftOauth2ProviderConfigArgs.Builder)
     /**
-     * @param oauthDiscoveries OAuth discovery configuration. See `oauthDiscovery` below.
+     * @param clientSecretConfig Reference to an AWS Secrets Manager secret that stores the client secret. Required when `clientSecretSource` is `EXTERNAL`. See `clientSecretConfig` Block below.
+     * @return builder
+     */
+    def clientSecretConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigMicrosoftOauth2ProviderConfigClientSecretConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigMicrosoftOauth2ProviderConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigMicrosoftOauth2ProviderConfigClientSecretConfigArgs.builder
+      builder.clientSecretConfig(args(argsBuilder).build)
+
+    /**
+     * @param oauthDiscoveries OAuth discovery configuration resolved by the service. See `oauth2_provider_config.slack_oauth2_provider_config.oauth_discovery` Block below.
      * @return builder
      */
     def oauthDiscoveries(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigMicrosoftOauth2ProviderConfigOauthDiscoveryArgs.Builder]*):
@@ -6080,7 +6396,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigMicrosoftOauth2ProviderConfigOauthDiscoveryArgs.Builder)
     /**
-     * @param authorizationServerMetadatas Manual OAuth2 authorization server metadata configuration. Cannot be used together with `discoveryUrl`. See `authorizationServerMetadata` below.
+     * @param authorizationServerMetadatas OAuth2 authorization server metadata resolved by the service. See `authorizationServerMetadata` Block below.
      * @return builder
      */
     def authorizationServerMetadatas(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigMicrosoftOauth2ProviderConfigOauthDiscoveryAuthorizationServerMetadataArgs.Builder]*):
@@ -6090,7 +6406,16 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSalesforceOauth2ProviderConfigArgs.Builder)
     /**
-     * @param oauthDiscoveries OAuth discovery configuration. See `oauthDiscovery` below.
+     * @param clientSecretConfig Reference to an AWS Secrets Manager secret that stores the client secret. Required when `clientSecretSource` is `EXTERNAL`. See `clientSecretConfig` Block below.
+     * @return builder
+     */
+    def clientSecretConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSalesforceOauth2ProviderConfigClientSecretConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSalesforceOauth2ProviderConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSalesforceOauth2ProviderConfigClientSecretConfigArgs.builder
+      builder.clientSecretConfig(args(argsBuilder).build)
+
+    /**
+     * @param oauthDiscoveries OAuth discovery configuration resolved by the service. See `oauth2_provider_config.slack_oauth2_provider_config.oauth_discovery` Block below.
      * @return builder
      */
     def oauthDiscoveries(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSalesforceOauth2ProviderConfigOauthDiscoveryArgs.Builder]*):
@@ -6100,7 +6425,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSalesforceOauth2ProviderConfigOauthDiscoveryArgs.Builder)
     /**
-     * @param authorizationServerMetadatas Manual OAuth2 authorization server metadata configuration. Cannot be used together with `discoveryUrl`. See `authorizationServerMetadata` below.
+     * @param authorizationServerMetadatas OAuth2 authorization server metadata resolved by the service. See `authorizationServerMetadata` Block below.
      * @return builder
      */
     def authorizationServerMetadatas(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSalesforceOauth2ProviderConfigOauthDiscoveryAuthorizationServerMetadataArgs.Builder]*):
@@ -6110,7 +6435,16 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSlackOauth2ProviderConfigArgs.Builder)
     /**
-     * @param oauthDiscoveries OAuth discovery configuration. See `oauthDiscovery` below.
+     * @param clientSecretConfig Reference to an AWS Secrets Manager secret that stores the client secret. Required when `clientSecretSource` is `EXTERNAL`. See `clientSecretConfig` Block below.
+     * @return builder
+     */
+    def clientSecretConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSlackOauth2ProviderConfigClientSecretConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSlackOauth2ProviderConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSlackOauth2ProviderConfigClientSecretConfigArgs.builder
+      builder.clientSecretConfig(args(argsBuilder).build)
+
+    /**
+     * @param oauthDiscoveries OAuth discovery configuration resolved by the service. See `oauth2_provider_config.slack_oauth2_provider_config.oauth_discovery` Block below.
      * @return builder
      */
     def oauthDiscoveries(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSlackOauth2ProviderConfigOauthDiscoveryArgs.Builder]*):
@@ -6120,7 +6454,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSlackOauth2ProviderConfigOauthDiscoveryArgs.Builder)
     /**
-     * @param authorizationServerMetadatas Manual OAuth2 authorization server metadata configuration. Cannot be used together with `discoveryUrl`. See `authorizationServerMetadata` below.
+     * @param authorizationServerMetadatas OAuth2 authorization server metadata resolved by the service. See `authorizationServerMetadata` Block below.
      * @return builder
      */
     def authorizationServerMetadatas(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigSlackOauth2ProviderConfigOauthDiscoveryAuthorizationServerMetadataArgs.Builder]*):
@@ -6130,7 +6464,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderState.Builder)
     /**
-     * @param clientSecretArns ARN of the AWS Secrets Manager secret containing the client secret.
+     * @param clientSecretArns ARN of the AWS Secrets Manager secret containing the client secret. See `clientSecretArn` Block below.
      * @return builder
      */
     def clientSecretArns(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderClientSecretArnArgs.Builder]*):
@@ -6139,7 +6473,7 @@ object bedrock:
       builder.clientSecretArns(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param oauth2ProviderConfig OAuth2 provider configuration. Must contain exactly one provider type. See `oauth2ProviderConfig` below.
+     * @param oauth2ProviderConfig OAuth2 provider configuration. Must contain exactly one provider type. See `oauth2ProviderConfig` Block below.
      * 
      * The following arguments are optional:
      * @return builder
@@ -6448,7 +6782,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.CustomModelState.Builder)
     /**
-     * @param outputDataConfig S3 location for the output data.
+     * @param outputDataConfig S3 location for the output data. See `outputDataConfig` below.
      * @return builder
      */
     def outputDataConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.CustomModelOutputDataConfigArgs.Builder]):
@@ -6462,7 +6796,7 @@ object bedrock:
       builder.timeouts(args(argsBuilder).build)
 
     /**
-     * @param trainingDataConfig Information about the training dataset.
+     * @param trainingDataConfig Information about the training dataset. See `trainingDataConfig` below.
      * @return builder
      */
     def trainingDataConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.CustomModelTrainingDataConfigArgs.Builder]):
@@ -6480,7 +6814,7 @@ object bedrock:
       builder.trainingMetrics(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param validationDataConfig Information about the validation dataset.
+     * @param validationDataConfig Information about the validation dataset. See `validationDataConfig` below.
      * @return builder
      */
     def validationDataConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.CustomModelValidationDataConfigArgs.Builder]):
@@ -6489,7 +6823,7 @@ object bedrock:
       builder.validationDataConfig(args(argsBuilder).build)
 
     /**
-     * @param validationMetrics The loss metric for each validator that you provided.
+     * @param validationMetrics Loss metric for each validator that you provided.
      * @return builder
      */
     def validationMetrics(args: Endofunction[com.pulumi.aws.bedrock.inputs.CustomModelValidationMetricArgs.Builder]*):
@@ -6498,7 +6832,7 @@ object bedrock:
       builder.validationMetrics(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param vpcConfig Configuration parameters for the private VPC that contains the resources you are using for this job.
+     * @param vpcConfig Configuration parameters for the private VPC that contains the resources you are using for this job. See `vpcConfig` below.
      * @return builder
      */
     def vpcConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.CustomModelVpcConfigArgs.Builder]):
@@ -6508,7 +6842,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.CustomModelValidationDataConfigArgs.Builder)
     /**
-     * @param validators Information about the validators.
+     * @param validators Information about the validators. See `validator` below.
      * @return builder
      */
     def validators(args: Endofunction[com.pulumi.aws.bedrock.inputs.CustomModelValidationDataConfigValidatorArgs.Builder]*):
@@ -6879,6 +7213,10 @@ object bedrock:
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummaryArgs.Builder)
+    /**
+     * @param guardrailConfigurations Details about the guardrail associated with the agent. See `guardrailConfiguration` Block
+     * @return builder
+     */
     def guardrailConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummaryGuardrailConfigurationArgs.Builder]*):
         com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummaryArgs.Builder =
       def argsBuilder = com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummaryGuardrailConfigurationArgs.builder
@@ -6886,7 +7224,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsArgs.Builder)
     /**
-     * @param agentVersionSummaries List of objects, each of which contains information about a version of the agent. See Agent Version Summaries
+     * @param agentVersionSummaries List of objects, each of which contains information about a version of the agent. See `agentVersionSummaries` Block
      * @return builder
      */
     def agentVersionSummaries(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummaryArgs.Builder]*):
@@ -6896,8 +7234,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.GuardrailContentPolicyConfigArgs.Builder)
     /**
-     * @param filtersConfigs Set of content filter configs in content policy.
-     * See Filters Config for more information.
+     * @param filtersConfigs Set of content filter configs in content policy. See `content_policy_config.filters_config` Block for more information.
      * @return builder
      */
     def filtersConfigs(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailContentPolicyConfigFiltersConfigArgs.Builder]*):
@@ -6906,7 +7243,7 @@ object bedrock:
       builder.filtersConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param tierConfigs Configuration block for the content policy tier. See Tier Config for more information.
+     * @param tierConfigs Configuration block for the content policy tier. See `content_policy_config.tier_config` Block for more information.
      * @return builder
      */
     def tierConfigs(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailContentPolicyConfigTierConfigArgs.Builder]*):
@@ -6916,7 +7253,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.GuardrailContextualGroundingPolicyConfigArgs.Builder)
     /**
-     * @param filtersConfigs One or more blocks defining contextual grounding filter configs. See Contextual Grounding Filters Config for more information.
+     * @param filtersConfigs One or more blocks defining contextual grounding filter configs. See `contextual_grounding_policy_config.filters_config` Block for more information.
      * @return builder
      */
     def filtersConfigs(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailContextualGroundingPolicyConfigFiltersConfigArgs.Builder]*):
@@ -6926,7 +7263,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.GuardrailSensitiveInformationPolicyConfigArgs.Builder)
     /**
-     * @param piiEntitiesConfigs List of entities. See PII Entities Config for more information.
+     * @param piiEntitiesConfigs List of entities. See `piiEntitiesConfig` Block for more information.
      * @return builder
      */
     def piiEntitiesConfigs(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailSensitiveInformationPolicyConfigPiiEntitiesConfigArgs.Builder]*):
@@ -6935,7 +7272,7 @@ object bedrock:
       builder.piiEntitiesConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param regexesConfigs List of regex. See Regexes Config for more information.
+     * @param regexesConfigs List of regex. See `regexesConfig` Block for more information.
      * @return builder
      */
     def regexesConfigs(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailSensitiveInformationPolicyConfigRegexesConfigArgs.Builder]*):
@@ -6945,7 +7282,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.GuardrailState.Builder)
     /**
-     * @param contentPolicyConfig Content policy config for a guardrail. See Content Policy Config for more information.
+     * @param contentPolicyConfig Content policy config for a guardrail. See `contentPolicyConfig` Block for more information.
      * @return builder
      */
     def contentPolicyConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailContentPolicyConfigArgs.Builder]):
@@ -6954,7 +7291,7 @@ object bedrock:
       builder.contentPolicyConfig(args(argsBuilder).build)
 
     /**
-     * @param contextualGroundingPolicyConfig Contextual grounding policy config for a guardrail. See Contextual Grounding Policy Config for more information.
+     * @param contextualGroundingPolicyConfig Contextual grounding policy config for a guardrail. See `contextualGroundingPolicyConfig` Block for more information.
      * @return builder
      */
     def contextualGroundingPolicyConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailContextualGroundingPolicyConfigArgs.Builder]):
@@ -6962,13 +7299,17 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GuardrailContextualGroundingPolicyConfigArgs.builder
       builder.contextualGroundingPolicyConfig(args(argsBuilder).build)
 
+    /**
+     * @param crossRegionConfig Configuration block to enable cross-region routing for bedrock guardrails. See `crossRegionConfig` Block for more information. Note see [available regions](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html) here.
+     * @return builder
+     */
     def crossRegionConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailCrossRegionConfigArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.GuardrailState.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GuardrailCrossRegionConfigArgs.builder
       builder.crossRegionConfig(args(argsBuilder).build)
 
     /**
-     * @param sensitiveInformationPolicyConfig Sensitive information policy config for a guardrail. See Sensitive Information Policy Config for more information.
+     * @param sensitiveInformationPolicyConfig Sensitive information policy config for a guardrail. See `sensitiveInformationPolicyConfig` Block for more information.
      * @return builder
      */
     def sensitiveInformationPolicyConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailSensitiveInformationPolicyConfigArgs.Builder]):
@@ -6982,7 +7323,7 @@ object bedrock:
       builder.timeouts(args(argsBuilder).build)
 
     /**
-     * @param topicPolicyConfig Topic policy config for a guardrail. See Topic Policy Config for more information.
+     * @param topicPolicyConfig Topic policy config for a guardrail. See `topicPolicyConfig` Block for more information.
      * @return builder
      */
     def topicPolicyConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailTopicPolicyConfigArgs.Builder]):
@@ -6991,7 +7332,7 @@ object bedrock:
       builder.topicPolicyConfig(args(argsBuilder).build)
 
     /**
-     * @param wordPolicyConfig Word policy config for a guardrail. See Word Policy Config for more information.
+     * @param wordPolicyConfig Word policy config for a guardrail. See `wordPolicyConfig` Block for more information.
      * @return builder
      */
     def wordPolicyConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailWordPolicyConfigArgs.Builder]):
@@ -7001,7 +7342,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.GuardrailTopicPolicyConfigArgs.Builder)
     /**
-     * @param tierConfigs Configuration block for the topic policy tier. See Tier Config for more information.
+     * @param tierConfigs Configuration block for the topic policy tier. See `topic_policy_config.tier_config` Block for more information.
      * @return builder
      */
     def tierConfigs(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailTopicPolicyConfigTierConfigArgs.Builder]*):
@@ -7010,7 +7351,7 @@ object bedrock:
       builder.tierConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param topicsConfigs List of topic configs in topic policy. See Topics Config for more information.
+     * @param topicsConfigs List of topic configs in topic policy. See `topicsConfig` Block for more information.
      * @return builder
      */
     def topicsConfigs(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailTopicPolicyConfigTopicsConfigArgs.Builder]*):
@@ -7026,7 +7367,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.GuardrailWordPolicyConfigArgs.Builder)
     /**
-     * @param managedWordListsConfigs A config for the list of managed words. See Managed Word Lists Config for more information.
+     * @param managedWordListsConfigs Config for the list of managed words. See `managedWordListsConfig` Block for more information.
      * @return builder
      */
     def managedWordListsConfigs(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailWordPolicyConfigManagedWordListsConfigArgs.Builder]*):
@@ -7035,7 +7376,7 @@ object bedrock:
       builder.managedWordListsConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param wordsConfigs List of custom word configs. See Words Config for more information.
+     * @param wordsConfigs List of custom word configs. See `wordsConfig` Block for more information.
      * @return builder
      */
     def wordsConfigs(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailWordPolicyConfigWordsConfigArgs.Builder]*):
@@ -7045,9 +7386,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.InferenceProfileState.Builder)
     /**
-     * @param modelSource The source of the model this inference profile will track metrics and cost for. See `modelSource`.
-     * 
-     * The following arguments are optional:
+     * @param modelSource Source of the model this inference profile will track metrics and cost for. See `modelSource`.
      * @return builder
      */
     def modelSource(args: Endofunction[com.pulumi.aws.bedrock.inputs.InferenceProfileModelSourceArgs.Builder]):
@@ -7056,7 +7395,7 @@ object bedrock:
       builder.modelSource(args(argsBuilder).build)
 
     /**
-     * @param models A list of information about each model in the inference profile. See `models`.
+     * @param models List of information about each model in the inference profile. See `models`.
      * @return builder
      */
     def models(args: Endofunction[com.pulumi.aws.bedrock.inputs.InferenceProfileModelArgs.Builder]*):

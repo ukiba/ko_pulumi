@@ -5,6 +5,7 @@ import jp.ukiba.ko_pulumi
 
 export ko_pulumi.aws.acm.options
 export ko_pulumi.aws.acmpca.ocspConfiguration
+export ko_pulumi.aws.agentregistry.managedVpcResource
 export ko_pulumi.aws.alb.minimumLoadBalancerCapacity
 export ko_pulumi.aws.alb.mutualAuthentication
 export ko_pulumi.aws.amp.limits
@@ -77,6 +78,7 @@ export ko_pulumi.aws.batch.metadata
 export ko_pulumi.aws.bedrock.kendraKnowledgeBaseConfiguration
 export ko_pulumi.aws.bedrock.kinesis
 export ko_pulumi.aws.bedrock.kmsConfiguration
+export ko_pulumi.aws.bedrock.kmsKeySource
 export ko_pulumi.aws.bedrock.knowledgeBase
 export ko_pulumi.aws.bedrock.knowledgeBaseConfig
 export ko_pulumi.aws.bedrock.knowledgeBaseConfiguration
@@ -87,6 +89,7 @@ export ko_pulumi.aws.bedrock.lambdaFunction
 export ko_pulumi.aws.bedrock.levelConfigurations
 export ko_pulumi.aws.bedrock.lex
 export ko_pulumi.aws.bedrock.lifecycleConfigurations
+export ko_pulumi.aws.bedrock.linkedinOauth2ProviderConfig
 export ko_pulumi.aws.bedrock.litellmModelConfig
 export ko_pulumi.aws.bedrock.llmAsAJudge
 export ko_pulumi.aws.bedrock.llmExtractionConfig
@@ -133,6 +136,7 @@ export ko_pulumi.aws.bedrock.oauth
 export ko_pulumi.aws.bedrock.oauth2ProviderConfig
 export ko_pulumi.aws.bedrock.oauthDiscoveries
 export ko_pulumi.aws.bedrock.oauthDiscovery
+export ko_pulumi.aws.bedrock.onBehalfOfTokenExchangeConfig
 export ko_pulumi.aws.bedrock.openApiSchema
 export ko_pulumi.aws.bedrock.openaiModelConfig
 export ko_pulumi.aws.bedrock.opensearchManagedClusterConfiguration
@@ -285,6 +289,7 @@ export ko_pulumi.aws.ec2.operatingRegions
 export ko_pulumi.aws.ec2.organizationalUnitExclusions
 export ko_pulumi.aws.ec2.outboundHeaders
 export ko_pulumi.aws.ec2.overrides
+export ko_pulumi.aws.ec2transitgateway.metadata
 export ko_pulumi.aws.ec2transitgateway.options
 export ko_pulumi.aws.ecs.lifecycleHooks
 export ko_pulumi.aws.ecs.linearConfiguration

@@ -153,8 +153,6 @@ object mailmanager:
   extension (builder: com.pulumi.aws.mailmanager.TrafficPolicyArgs.Builder)
     /**
      * @param policyStatements Traffic policy statements. See `policyStatement` Block below.
-     * 
-     * The following arguments are optional:
      * @return builder
      */
     def policyStatements(args: Endofunction[com.pulumi.aws.mailmanager.inputs.TrafficPolicyPolicyStatementArgs.Builder]*):
@@ -839,8 +837,6 @@ object mailmanager:
   extension (builder: com.pulumi.aws.mailmanager.inputs.TrafficPolicyState.Builder)
     /**
      * @param policyStatements Traffic policy statements. See `policyStatement` Block below.
-     * 
-     * The following arguments are optional:
      * @return builder
      */
     def policyStatements(args: Endofunction[com.pulumi.aws.mailmanager.inputs.TrafficPolicyPolicyStatementArgs.Builder]*):

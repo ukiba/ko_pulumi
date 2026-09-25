@@ -717,6 +717,18 @@ object lambda:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
+   * Manages the complete IAM resource-based policy document for an AWS Lambda function, function version, or alias.
+   * 
+   * &gt; **Note:** `PutResourcePolicy` (used by this resource) replaces the *entire* resource-based policy on the Lambda resource, including any statements added with `aws.lambda.Permission`. Do not use `aws.lambda.ResourcePolicy` and `aws.lambda.Permission` on the same Lambda function, version, or alias \u2014 every apply of one will overwrite statements managed by the other.
+   */
+  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.lambda.ResourcePolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.lambda.ResourcePolicyArgs.builder
+    com.pulumi.aws.lambda.ResourcePolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
    * Manages an AWS Lambda Runtime Management Config. Use this resource to control how Lambda updates the runtime for your function.
    * 
    * Refer to the [AWS Lambda documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html) for supported runtimes.

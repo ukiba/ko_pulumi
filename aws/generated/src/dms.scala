@@ -301,6 +301,63 @@ object dms:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
+   * Manages an AWS DMS (Database Migration) Migration Project. A migration project groups the instance profile and data providers used together in a DMS Schema Conversion or homogeneous data migration.
+   * 
+   * Create an instance profile and data providers before creating a migration project.
+   */
+  def MigrationProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.dms.MigrationProjectArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.dms.MigrationProjectArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.dms.MigrationProject(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.dms.MigrationProjectArgs.Builder)
+    /**
+     * @param schemaConversionApplicationAttributes Schema conversion application attributes, including the S3 bucket path and S3 role ARN. See `schemaConversionApplicationAttributes` Block below.
+     * @return builder
+     */
+    def schemaConversionApplicationAttributes(args: Endofunction[com.pulumi.aws.dms.inputs.MigrationProjectSchemaConversionApplicationAttributesArgs.Builder]):
+        com.pulumi.aws.dms.MigrationProjectArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.MigrationProjectSchemaConversionApplicationAttributesArgs.builder
+      builder.schemaConversionApplicationAttributes(args(argsBuilder).build)
+
+    /**
+     * @param sourceDataProviderDescriptors Information about the source data provider. See `sourceDataProviderDescriptor` Block below.
+     * @return builder
+     */
+    def sourceDataProviderDescriptors(args: Endofunction[com.pulumi.aws.dms.inputs.MigrationProjectSourceDataProviderDescriptorArgs.Builder]*):
+        com.pulumi.aws.dms.MigrationProjectArgs.Builder =
+      def argsBuilder = com.pulumi.aws.dms.inputs.MigrationProjectSourceDataProviderDescriptorArgs.builder
+      builder.sourceDataProviderDescriptors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param targetDataProviderDescriptors Information about the target data provider. See `targetDataProviderDescriptor` Block below.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def targetDataProviderDescriptors(args: Endofunction[com.pulumi.aws.dms.inputs.MigrationProjectTargetDataProviderDescriptorArgs.Builder]*):
+        com.pulumi.aws.dms.MigrationProjectArgs.Builder =
+      def argsBuilder = com.pulumi.aws.dms.inputs.MigrationProjectTargetDataProviderDescriptorArgs.builder
+      builder.targetDataProviderDescriptors(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.dms.inputs.MigrationProjectTimeoutsArgs.Builder]):
+        com.pulumi.aws.dms.MigrationProjectArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.MigrationProjectTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  /**
    * Provides a DMS Serverless replication config resource.
    * 
    * &gt; **NOTE:** Changing most arguments will stop the replication if it is running. You can set `startReplication` to resume the replication afterwards.
@@ -602,6 +659,41 @@ object dms:
         com.pulumi.aws.dms.inputs.EndpointState.Builder =
       val argsBuilder = com.pulumi.aws.dms.inputs.EndpointRedshiftSettingsArgs.builder
       builder.redshiftSettings(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.dms.inputs.MigrationProjectState.Builder)
+    /**
+     * @param schemaConversionApplicationAttributes Schema conversion application attributes, including the S3 bucket path and S3 role ARN. See `schemaConversionApplicationAttributes` Block below.
+     * @return builder
+     */
+    def schemaConversionApplicationAttributes(args: Endofunction[com.pulumi.aws.dms.inputs.MigrationProjectSchemaConversionApplicationAttributesArgs.Builder]):
+        com.pulumi.aws.dms.inputs.MigrationProjectState.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.MigrationProjectSchemaConversionApplicationAttributesArgs.builder
+      builder.schemaConversionApplicationAttributes(args(argsBuilder).build)
+
+    /**
+     * @param sourceDataProviderDescriptors Information about the source data provider. See `sourceDataProviderDescriptor` Block below.
+     * @return builder
+     */
+    def sourceDataProviderDescriptors(args: Endofunction[com.pulumi.aws.dms.inputs.MigrationProjectSourceDataProviderDescriptorArgs.Builder]*):
+        com.pulumi.aws.dms.inputs.MigrationProjectState.Builder =
+      def argsBuilder = com.pulumi.aws.dms.inputs.MigrationProjectSourceDataProviderDescriptorArgs.builder
+      builder.sourceDataProviderDescriptors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param targetDataProviderDescriptors Information about the target data provider. See `targetDataProviderDescriptor` Block below.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def targetDataProviderDescriptors(args: Endofunction[com.pulumi.aws.dms.inputs.MigrationProjectTargetDataProviderDescriptorArgs.Builder]*):
+        com.pulumi.aws.dms.inputs.MigrationProjectState.Builder =
+      def argsBuilder = com.pulumi.aws.dms.inputs.MigrationProjectTargetDataProviderDescriptorArgs.builder
+      builder.targetDataProviderDescriptors(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.dms.inputs.MigrationProjectTimeoutsArgs.Builder]):
+        com.pulumi.aws.dms.inputs.MigrationProjectState.Builder =
+      val argsBuilder = com.pulumi.aws.dms.inputs.MigrationProjectTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.dms.inputs.ReplicationConfigState.Builder)
     /**

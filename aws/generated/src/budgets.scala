@@ -4,7 +4,7 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object budgets:
-  /** Provides a budgets budget resource. Budgets use the cost visualization provided by Cost Explorer to show you the status of your budgets, to provide forecasts of your estimated costs, and to track your AWS usage, including your free tier usage. */
+  /** Manages a budgets budget resource. Budgets use the cost visualization provided by Cost Explorer to show you the status of your budgets, to provide forecasts of your estimated costs, and to track your AWS usage, including your free tier usage. For more detailed documentation about each argument, refer to the [AWS official documentation](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/data-type-budget.html). */
   def Budget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.budgets.BudgetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.budgets.BudgetArgs.builder
@@ -39,7 +39,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.BudgetActionArgs.Builder)
     /**
-     * @param actionThreshold The trigger threshold of the action. See Action Threshold.
+     * @param actionThreshold Trigger threshold of the action. See `actionThreshold` Block.
      * @return builder
      */
     def actionThreshold(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionActionThresholdArgs.Builder]):
@@ -48,7 +48,7 @@ object budgets:
       builder.actionThreshold(args(argsBuilder).build)
 
     /**
-     * @param definition Specifies all of the type-specific parameters. See Definition.
+     * @param definition Type-specific parameters. See `definition` Block.
      * @return builder
      */
     def definition(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionDefinitionArgs.Builder]):
@@ -57,7 +57,7 @@ object budgets:
       builder.definition(args(argsBuilder).build)
 
     /**
-     * @param subscribers A list of subscribers. See Subscriber.
+     * @param subscribers Set of subscribers. See `subscriber` Block.
      * @return builder
      */
     def subscribers(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionSubscriberArgs.Builder]*):
@@ -76,7 +76,7 @@ object budgets:
       builder.autoAdjustData(args(argsBuilder).build)
 
     /**
-     * @param costFilters A list of CostFilter name/values pair to apply to budget. Conflicts with `filterExpression`.
+     * @param costFilters List of CostFilter name/values pair to apply to budget. Conflicts with `filterExpression`.
      * @return builder
      */
     def costFilters(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetCostFilterArgs.Builder]*):
@@ -85,7 +85,7 @@ object budgets:
       builder.costFilters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param costTypes Object containing CostTypes The types of cost included in a budget, such as tax and subscriptions.
+     * @param costTypes Object containing CostTypes that defines the types of cost included in a budget, such as tax and subscriptions.
      * @return builder
      */
     def costTypes(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetCostTypesArgs.Builder]):
@@ -141,7 +141,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetActionDefinitionArgs.Builder)
     /**
-     * @param iamActionDefinition The AWS Identity and Access Management (IAM) action definition details. See IAM Action Definition.
+     * @param iamActionDefinition AWS Identity and Access Management (IAM) action definition details. See `iamActionDefinition` Block.
      * @return builder
      */
     def iamActionDefinition(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionDefinitionIamActionDefinitionArgs.Builder]):
@@ -150,7 +150,7 @@ object budgets:
       builder.iamActionDefinition(args(argsBuilder).build)
 
     /**
-     * @param scpActionDefinition The service control policies (SCPs) action definition details. See SCP Action Definition.
+     * @param scpActionDefinition Service control policies (SCPs) action definition details. See `scpActionDefinition` Block.
      * @return builder
      */
     def scpActionDefinition(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionDefinitionScpActionDefinitionArgs.Builder]):
@@ -159,7 +159,7 @@ object budgets:
       builder.scpActionDefinition(args(argsBuilder).build)
 
     /**
-     * @param ssmActionDefinition The AWS Systems Manager (SSM) action definition details. See SSM Action Definition.
+     * @param ssmActionDefinition AWS Systems Manager (SSM) action definition details. See `ssmActionDefinition` Block.
      * @return builder
      */
     def ssmActionDefinition(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionDefinitionSsmActionDefinitionArgs.Builder]):
@@ -169,7 +169,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetActionState.Builder)
     /**
-     * @param actionThreshold The trigger threshold of the action. See Action Threshold.
+     * @param actionThreshold Trigger threshold of the action. See `actionThreshold` Block.
      * @return builder
      */
     def actionThreshold(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionActionThresholdArgs.Builder]):
@@ -178,7 +178,7 @@ object budgets:
       builder.actionThreshold(args(argsBuilder).build)
 
     /**
-     * @param definition Specifies all of the type-specific parameters. See Definition.
+     * @param definition Type-specific parameters. See `definition` Block.
      * @return builder
      */
     def definition(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionDefinitionArgs.Builder]):
@@ -187,7 +187,7 @@ object budgets:
       builder.definition(args(argsBuilder).build)
 
     /**
-     * @param subscribers A list of subscribers. See Subscriber.
+     * @param subscribers Set of subscribers. See `subscriber` Block.
      * @return builder
      */
     def subscribers(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionSubscriberArgs.Builder]*):
@@ -197,7 +197,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetAutoAdjustDataArgs.Builder)
     /**
-     * @param historicalOptions (Optional) - Configuration block of Historical Options. Required for `autoAdjustType` of `HISTORICAL` Configuration block that defines the historical data that your auto-adjusting budget is based on.
+     * @param historicalOptions Configuration block of Historical Options. Required for `autoAdjustType` of `HISTORICAL`. Defines the historical data that your auto-adjusting budget is based on.
      * @return builder
      */
     def historicalOptions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetAutoAdjustDataHistoricalOptionsArgs.Builder]):
@@ -207,7 +207,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndArgs.Builder)
     /**
-     * @param costCategories (Optional) A Cost Category Filter block.
+     * @param costCategories Cost Categories block.
      * @return builder
      */
     def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndCostCategoriesArgs.Builder]):
@@ -216,7 +216,7 @@ object budgets:
       builder.costCategories(args(argsBuilder).build)
 
     /**
-     * @param dimensions (Optional) A Dimension Filter block.
+     * @param dimensions Dimensions block.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndDimensionsArgs.Builder]):
@@ -235,7 +235,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndArgs.Builder)
     /**
-     * @param ands (Optional) A list of filter expressions to combine with AND logic. Each `and` block is one operand and must itself contain exactly one root.
+     * @param ands List of filter expressions to combine with AND logic. Each `and` block is one operand and must itself contain exactly one root.
      * @return builder
      */
     def ands(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndArgs.Builder]*):
@@ -244,7 +244,7 @@ object budgets:
       builder.ands(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param costCategories (Optional) A Cost Category Filter block.
+     * @param costCategories Cost Categories block.
      * @return builder
      */
     def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndCostCategoriesArgs.Builder]):
@@ -253,7 +253,7 @@ object budgets:
       builder.costCategories(args(argsBuilder).build)
 
     /**
-     * @param dimensions (Optional) A Dimension Filter block.
+     * @param dimensions Dimensions block.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndDimensionsArgs.Builder]):
@@ -262,7 +262,7 @@ object budgets:
       builder.dimensions(args(argsBuilder).build)
 
     /**
-     * @param not (Optional) A single filter expression to negate. Must contain exactly one root.
+     * @param not Single filter expression to negate. Must contain exactly one root.
      * @return builder
      */
     def not(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotArgs.Builder]):
@@ -271,7 +271,7 @@ object budgets:
       builder.not(args(argsBuilder).build)
 
     /**
-     * @param ors (Optional) A list of filter expressions to combine with OR logic. Each `or` block is one operand and must itself contain exactly one root.
+     * @param ors List of filter expressions to combine with OR logic. Each `or` block is one operand and must itself contain exactly one root.
      * @return builder
      */
     def ors(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrArgs.Builder]*):
@@ -290,7 +290,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotArgs.Builder)
     /**
-     * @param costCategories (Optional) A Cost Category Filter block.
+     * @param costCategories Cost Categories block.
      * @return builder
      */
     def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotCostCategoriesArgs.Builder]):
@@ -299,7 +299,7 @@ object budgets:
       builder.costCategories(args(argsBuilder).build)
 
     /**
-     * @param dimensions (Optional) A Dimension Filter block.
+     * @param dimensions Dimensions block.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotDimensionsArgs.Builder]):
@@ -318,7 +318,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrArgs.Builder)
     /**
-     * @param costCategories (Optional) A Cost Category Filter block.
+     * @param costCategories Cost Categories block.
      * @return builder
      */
     def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrCostCategoriesArgs.Builder]):
@@ -327,7 +327,7 @@ object budgets:
       builder.costCategories(args(argsBuilder).build)
 
     /**
-     * @param dimensions (Optional) A Dimension Filter block.
+     * @param dimensions Dimensions block.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrDimensionsArgs.Builder]):
@@ -346,7 +346,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionArgs.Builder)
     /**
-     * @param ands (Optional) A list of filter expressions to combine with AND logic. Each `and` block is one operand and must itself contain exactly one root.
+     * @param ands List of filter expressions to combine with AND logic. Each `and` block is one operand and must itself contain exactly one root.
      * @return builder
      */
     def ands(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndArgs.Builder]*):
@@ -355,7 +355,7 @@ object budgets:
       builder.ands(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param costCategories (Optional) A Cost Category Filter block.
+     * @param costCategories Cost Categories block.
      * @return builder
      */
     def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionCostCategoriesArgs.Builder]):
@@ -364,7 +364,7 @@ object budgets:
       builder.costCategories(args(argsBuilder).build)
 
     /**
-     * @param dimensions (Optional) A Dimension Filter block.
+     * @param dimensions Dimensions block.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionDimensionsArgs.Builder]):
@@ -373,7 +373,7 @@ object budgets:
       builder.dimensions(args(argsBuilder).build)
 
     /**
-     * @param not (Optional) A single filter expression to negate. Must contain exactly one root.
+     * @param not Single filter expression to negate. Must contain exactly one root.
      * @return builder
      */
     def not(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotArgs.Builder]):
@@ -382,7 +382,7 @@ object budgets:
       builder.not(args(argsBuilder).build)
 
     /**
-     * @param ors (Optional) A list of filter expressions to combine with OR logic. Each `or` block is one operand and must itself contain exactly one root.
+     * @param ors List of filter expressions to combine with OR logic. Each `or` block is one operand and must itself contain exactly one root.
      * @return builder
      */
     def ors(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrArgs.Builder]*):
@@ -391,7 +391,7 @@ object budgets:
       builder.ors(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param tags Map of tags assigned to the resource. If configured with a provider `defaultTags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
+     * @param tags Tags block.
      * @return builder
      */
     def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionTagsArgs.Builder]):
@@ -401,7 +401,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndArgs.Builder)
     /**
-     * @param costCategories (Optional) A Cost Category Filter block.
+     * @param costCategories Cost Categories block.
      * @return builder
      */
     def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndCostCategoriesArgs.Builder]):
@@ -410,7 +410,7 @@ object budgets:
       builder.costCategories(args(argsBuilder).build)
 
     /**
-     * @param dimensions (Optional) A Dimension Filter block.
+     * @param dimensions Dimensions block.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndDimensionsArgs.Builder]):
@@ -429,7 +429,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotArgs.Builder)
     /**
-     * @param ands (Optional) A list of filter expressions to combine with AND logic. Each `and` block is one operand and must itself contain exactly one root.
+     * @param ands List of filter expressions to combine with AND logic. Each `and` block is one operand and must itself contain exactly one root.
      * @return builder
      */
     def ands(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndArgs.Builder]*):
@@ -438,7 +438,7 @@ object budgets:
       builder.ands(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param costCategories (Optional) A Cost Category Filter block.
+     * @param costCategories Cost Categories block.
      * @return builder
      */
     def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotCostCategoriesArgs.Builder]):
@@ -447,7 +447,7 @@ object budgets:
       builder.costCategories(args(argsBuilder).build)
 
     /**
-     * @param dimensions (Optional) A Dimension Filter block.
+     * @param dimensions Dimensions block.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotDimensionsArgs.Builder]):
@@ -456,7 +456,7 @@ object budgets:
       builder.dimensions(args(argsBuilder).build)
 
     /**
-     * @param not (Optional) A single filter expression to negate. Must contain exactly one root.
+     * @param not Single filter expression to negate. Must contain exactly one root.
      * @return builder
      */
     def not(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotArgs.Builder]):
@@ -465,7 +465,7 @@ object budgets:
       builder.not(args(argsBuilder).build)
 
     /**
-     * @param ors (Optional) A list of filter expressions to combine with OR logic. Each `or` block is one operand and must itself contain exactly one root.
+     * @param ors List of filter expressions to combine with OR logic. Each `or` block is one operand and must itself contain exactly one root.
      * @return builder
      */
     def ors(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrArgs.Builder]*):
@@ -484,7 +484,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotArgs.Builder)
     /**
-     * @param costCategories (Optional) A Cost Category Filter block.
+     * @param costCategories Cost Categories block.
      * @return builder
      */
     def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotCostCategoriesArgs.Builder]):
@@ -493,7 +493,7 @@ object budgets:
       builder.costCategories(args(argsBuilder).build)
 
     /**
-     * @param dimensions (Optional) A Dimension Filter block.
+     * @param dimensions Dimensions block.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotDimensionsArgs.Builder]):
@@ -512,7 +512,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrArgs.Builder)
     /**
-     * @param costCategories (Optional) A Cost Category Filter block.
+     * @param costCategories Cost Categories block.
      * @return builder
      */
     def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrCostCategoriesArgs.Builder]):
@@ -521,7 +521,7 @@ object budgets:
       builder.costCategories(args(argsBuilder).build)
 
     /**
-     * @param dimensions (Optional) A Dimension Filter block.
+     * @param dimensions Dimensions block.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrDimensionsArgs.Builder]):
@@ -540,7 +540,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndArgs.Builder)
     /**
-     * @param costCategories (Optional) A Cost Category Filter block.
+     * @param costCategories Cost Categories block.
      * @return builder
      */
     def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndCostCategoriesArgs.Builder]):
@@ -549,7 +549,7 @@ object budgets:
       builder.costCategories(args(argsBuilder).build)
 
     /**
-     * @param dimensions (Optional) A Dimension Filter block.
+     * @param dimensions Dimensions block.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndDimensionsArgs.Builder]):
@@ -568,7 +568,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrArgs.Builder)
     /**
-     * @param ands (Optional) A list of filter expressions to combine with AND logic. Each `and` block is one operand and must itself contain exactly one root.
+     * @param ands List of filter expressions to combine with AND logic. Each `and` block is one operand and must itself contain exactly one root.
      * @return builder
      */
     def ands(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndArgs.Builder]*):
@@ -577,7 +577,7 @@ object budgets:
       builder.ands(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param costCategories (Optional) A Cost Category Filter block.
+     * @param costCategories Cost Categories block.
      * @return builder
      */
     def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrCostCategoriesArgs.Builder]):
@@ -586,7 +586,7 @@ object budgets:
       builder.costCategories(args(argsBuilder).build)
 
     /**
-     * @param dimensions (Optional) A Dimension Filter block.
+     * @param dimensions Dimensions block.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrDimensionsArgs.Builder]):
@@ -595,7 +595,7 @@ object budgets:
       builder.dimensions(args(argsBuilder).build)
 
     /**
-     * @param not (Optional) A single filter expression to negate. Must contain exactly one root.
+     * @param not Single filter expression to negate. Must contain exactly one root.
      * @return builder
      */
     def not(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotArgs.Builder]):
@@ -604,7 +604,7 @@ object budgets:
       builder.not(args(argsBuilder).build)
 
     /**
-     * @param ors (Optional) A list of filter expressions to combine with OR logic. Each `or` block is one operand and must itself contain exactly one root.
+     * @param ors List of filter expressions to combine with OR logic. Each `or` block is one operand and must itself contain exactly one root.
      * @return builder
      */
     def ors(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrArgs.Builder]*):
@@ -623,7 +623,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotArgs.Builder)
     /**
-     * @param costCategories (Optional) A Cost Category Filter block.
+     * @param costCategories Cost Categories block.
      * @return builder
      */
     def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotCostCategoriesArgs.Builder]):
@@ -632,7 +632,7 @@ object budgets:
       builder.costCategories(args(argsBuilder).build)
 
     /**
-     * @param dimensions (Optional) A Dimension Filter block.
+     * @param dimensions Dimensions block.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotDimensionsArgs.Builder]):
@@ -651,7 +651,7 @@ object budgets:
 
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrArgs.Builder)
     /**
-     * @param costCategories (Optional) A Cost Category Filter block.
+     * @param costCategories Cost Categories block.
      * @return builder
      */
     def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrCostCategoriesArgs.Builder]):
@@ -660,7 +660,7 @@ object budgets:
       builder.costCategories(args(argsBuilder).build)
 
     /**
-     * @param dimensions (Optional) A Dimension Filter block.
+     * @param dimensions Dimensions block.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrDimensionsArgs.Builder]):
@@ -688,7 +688,7 @@ object budgets:
       builder.autoAdjustData(args(argsBuilder).build)
 
     /**
-     * @param costFilters A list of CostFilter name/values pair to apply to budget. Conflicts with `filterExpression`.
+     * @param costFilters List of CostFilter name/values pair to apply to budget. Conflicts with `filterExpression`.
      * @return builder
      */
     def costFilters(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetCostFilterArgs.Builder]*):
@@ -697,7 +697,7 @@ object budgets:
       builder.costFilters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param costTypes Object containing CostTypes The types of cost included in a budget, such as tax and subscriptions.
+     * @param costTypes Object containing CostTypes that defines the types of cost included in a budget, such as tax and subscriptions.
      * @return builder
      */
     def costTypes(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetCostTypesArgs.Builder]):

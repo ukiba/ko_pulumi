@@ -202,11 +202,13 @@ val sub = sns.TopicSubscription("order-worker-sub",
 ### Runtime environment
 
 1. Java 25 or later
+
     1. We are using JDK 25 API
     1. [Scala 3.8](https://github.com/scala/scala3) requires Java 17
     1. [pulumi-java](https://github.com/pulumi/pulumi-java) requires Java 11
 
-1. Pulumi 3.262.0 or later
+1. Pulumi 3.264.0 or later
+
     1. Mac: `brew install pulumi/tap/pulumi`
 
 ### Build environment
@@ -214,11 +216,13 @@ val sub = sns.TopicSubscription("order-worker-sub",
 1. Recent Linux / macOS / Windows
 
 1. Java 25
+
     1. [Install Coursier](https://get-coursier.io/docs/cli-installation), then 
 
            eval $(cs java --jvm temurin:25 --env)
 
 1. [mill](https://com-lihaoyi.github.io/mill/)
+
     1. The launcher scripts were downloaded as follows, and then committed to the repository.
 
            curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.1.9/mill-dist-1.1.9-mill.sh -o mill
