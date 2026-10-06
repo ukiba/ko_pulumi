@@ -10738,53 +10738,6 @@ object iap:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  /**
-   * &gt; **Warning:** This resource is deprecated on Jan 22, 2025. After Jan 19, 2026 the `gcp.iap.Brand` Terraform resource will no longer function as intended due to the deprecation of the IAP OAuth Admin APIs. New projects will not be able to use these APIs. March 19, 2026 The IAP OAuth Admin APIs will be permanently shut down. Access to this feature will no longer be available.
-   * 
-   * OAuth brand data. Only &#34;Organization Internal&#34; brands can be created
-   * programmatically via API. To convert it into an external brands
-   * please use the GCP Console.
-   * 
-   * &gt; **Note:** Brands can only be created once for a Google Cloud
-   * project and the underlying Google API doesn&#39;t not support DELETE or PATCH methods.
-   * Destroying a Terraform-managed Brand will remove it from state
-   * but *will not delete it from Google Cloud.*
-   * 
-   * To get more information about Brand, see:
-   * 
-   * * [API documentation](https://cloud.google.com/iap/docs/reference/rest/v1/projects.brands)
-   * * How-to Guides
-   *     * [Setting up IAP Brand](https://cloud.google.com/iap/docs/tutorial-gce#set_up_iap)
-   */
-  def Brand(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.BrandArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
-    val argsBuilder = com.pulumi.gcp.iap.BrandArgs.builder
-    com.pulumi.gcp.iap.Brand(name,
-        args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  /**
-   * &gt; **Warning:** This resource is deprecated on Jan 22, 2025. After Jan 19, 2026 the `gcp.iap.Client` Terraform resource will no longer function as intended due to the deprecation of the IAP OAuth Admin APIs. New projects will not be able to use these APIs. March 19, 2026 The IAP OAuth Admin APIs will be permanently shut down. Access to this feature will no longer be available.
-   * 
-   * Contains the data that describes an Identity Aware Proxy owned client.
-   * 
-   * &gt; **Note:** Only internal org clients can be created via declarative tools. External clients must be
-   * manually created via the GCP console. This restriction is due to the existing APIs and not lack of support
-   * in this tool.
-   * 
-   * To get more information about Client, see:
-   * 
-   * * [API documentation](https://cloud.google.com/iap/docs/reference/rest/v1/projects.brands.identityAwareProxyClients)
-   * * How-to Guides
-   *     * [Setting up IAP Client](https://cloud.google.com/iap/docs/authentication-howto)
-   */
-  def Client(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.ClientArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
-    val argsBuilder = com.pulumi.gcp.iap.ClientArgs.builder
-    com.pulumi.gcp.iap.Client(name,
-        args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
   object IapFunctions:
     // Pulumi methods are reproduced as Scala methods.
     // Java methods cause Scala warnings under -Yexplicit-nulls flag
@@ -10863,18 +10816,6 @@ object iap:
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetAppEngineVersionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAppEngineVersionIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAppEngineVersionIamPolicyPlain(args(argsBuilder).build)
-
-    /** Get information about a Identity-Aware Proxy Client. */
-    inline def getClient(args: Endofunction[com.pulumi.gcp.iap.inputs.GetClientArgs.Builder] = scala.Predef.identity):
-        com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetClientResult] =
-      val argsBuilder = com.pulumi.gcp.iap.inputs.GetClientArgs.builder
-      com.pulumi.gcp.iap.IapFunctions.getClient(args(argsBuilder).build)
-
-    /** Get information about a Identity-Aware Proxy Client. */
-    inline def getClientPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetClientPlainArgs.Builder] = scala.Predef.identity):
-        java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetClientResult] =
-      val argsBuilder = com.pulumi.gcp.iap.inputs.GetClientPlainArgs.builder
-      com.pulumi.gcp.iap.IapFunctions.getClientPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for locationweb */
     inline def getLocationWebIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyArgs.Builder] = scala.Predef.identity):

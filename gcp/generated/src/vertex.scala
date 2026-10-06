@@ -5563,6 +5563,56 @@ object vertex:
       builder.resourceRuntimeSpec(args(argsBuilder).build)
 
   /**
+   * A RAG corpus is a container for user data uploaded to Vertex AI RAG Engine for chunking, embedding, and indexing.
+   * 
+   * To get more information about RagCorpus, see:
+   * 
+   * * [API documentation](https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/rest/v1/projects.locations.ragCorpora)
+   * * How-to Guides
+   *     * [Manage your RAG corpus](https://docs.cloud.google.com/gemini-enterprise-agent-platform/build/rag-engine/manage-your-rag-corpus)
+   */
+  def AiRagCorpus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.vertex.AiRagCorpusArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.vertex.AiRagCorpusArgs.builder
+    com.pulumi.gcp.vertex.AiRagCorpus(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.vertex.AiRagCorpusArgs.Builder)
+    /**
+     * @param encryptionSpec Optional. Immutable. The CMEK key name used to encrypt at-rest data
+     * related to this corpus. Only applicable to RagManagedDb option for Vector
+     * DB. This field can only be set at corpus creation time, and cannot be
+     * updated or deleted.
+     * Structure is documented below.
+     * @return builder
+     */
+    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusEncryptionSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.AiRagCorpusArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusEncryptionSpecArgs.builder
+      builder.encryptionSpec(args(argsBuilder).build)
+
+    /**
+     * @param vectorDbConfig Optional. Immutable. The config for the RAG-managed Vector DB.
+     * Structure is documented below.
+     * @return builder
+     */
+    def vectorDbConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.AiRagCorpusArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.builder
+      builder.vectorDbConfig(args(argsBuilder).build)
+
+    /**
+     * @param vertexAiSearchConfig Optional. Immutable. The config for the Vertex AI Search.
+     * Structure is documented below.
+     * @return builder
+     */
+    def vertexAiSearchConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVertexAiSearchConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.AiRagCorpusArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVertexAiSearchConfigArgs.builder
+      builder.vertexAiSearchConfig(args(argsBuilder).build)
+
+  /**
    * Vertex AI RAG Engine lets you scale your RagManagedDb instance based on your usage and performance requirements using a choice of two tiers, and optionally, lets you delete your Vertex AI RAG Engine data using a third tier. The tier is a project-level setting that&#39;s available in the RagEngineConfig resource that impacts all RAG corpora using RagManagedDb. The following tiers are available in RagEngineConfig: Basic, Scaled and Unprovisioned.
    * 
    * To get more information about RagEngineConfig, see:
@@ -5594,9 +5644,9 @@ object vertex:
    * 
    * To get more information about ReasoningEngine, see:
    * 
-   * * [API documentation](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.reasoningEngines/)
+   * * [API documentation](https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/rest/v1/projects.locations.reasoningEngines)
    * * How-to Guides
-   *     * [Develop and deploy agents on Vertex AI Agent Engine](https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/quickstart)
+   *     * [Scale your agents](https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale)
    */
   def AiReasoningEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiReasoningEngineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -5607,8 +5657,7 @@ object vertex:
 
   extension (builder: com.pulumi.gcp.vertex.AiReasoningEngineArgs.Builder)
     /**
-     * @param contextSpec (Optional, Beta)
-     * Optional. Configuration for how Agent Engine sub-resources should manage context.
+     * @param contextSpec Optional. Configuration for how Agent Engine sub-resources should manage context.
      * Structure is documented below.
      * @return builder
      */
@@ -6603,37 +6652,44 @@ object vertex:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
-   * &gt; **Warning:** `gcp.vertex.AiSchedule` is deprecated and will be removed in a future major release. Use `gcp.colab.Schedule` instead.
+   * A Semantic Governance Policy governs an AI agent&#39;s actions and tool execution
+   * using natural language constraints. A policy requires an active
+   * SemanticGovernancePolicyEngine (`gcp.vertex.AiSemanticGovernancePolicyEngine`)
+   * in the same project and region.
    * 
-   * An online schedule that triggers running pipeline jobs or notebook execution jobs.
+   * To get more information about SemanticGovernancePolicy, see:
+   * 
+   * * [API documentation](https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/rest/v1/projects.locations.semanticGovernancePolicies)
+   * * How-to Guides
+   *     * [Semantic governance overview](https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/policies/semantic-governance-overview)
    */
-  def AiSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.vertex.AiScheduleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
-    val argsBuilder = com.pulumi.gcp.vertex.AiScheduleArgs.builder
-    com.pulumi.gcp.vertex.AiSchedule(name,
+  def AiSemanticGovernancePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.vertex.AiSemanticGovernancePolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.vertex.AiSemanticGovernancePolicyArgs.builder
+    com.pulumi.gcp.vertex.AiSemanticGovernancePolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.gcp.vertex.AiScheduleArgs.Builder)
+  extension (builder: com.pulumi.gcp.vertex.AiSemanticGovernancePolicyArgs.Builder)
     /**
-     * @param createNotebookExecutionJobRequest Request message for [NotebookService.CreateNotebookExecutionJob]
+     * @param agentResponseCustomization Settings for customizing the agent&#39;s response to end users when this policy is evaluated.
      * Structure is documented below.
      * @return builder
      */
-    def createNotebookExecutionJobRequest(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestArgs.Builder]):
-        com.pulumi.gcp.vertex.AiScheduleArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestArgs.builder
-      builder.createNotebookExecutionJobRequest(args(argsBuilder).build)
+    def agentResponseCustomization(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyAgentResponseCustomizationArgs.Builder]):
+        com.pulumi.gcp.vertex.AiSemanticGovernancePolicyArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyAgentResponseCustomizationArgs.builder
+      builder.agentResponseCustomization(args(argsBuilder).build)
 
     /**
-     * @param createPipelineJobRequest Request message for PipelineService.CreatePipelineJob.
+     * @param mcpTools The McpTools that are affected by this policy.
      * Structure is documented below.
      * @return builder
      */
-    def createPipelineJobRequest(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestArgs.Builder]):
-        com.pulumi.gcp.vertex.AiScheduleArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestArgs.builder
-      builder.createPipelineJobRequest(args(argsBuilder).build)
+    def mcpTools(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyMcpToolsArgs.Builder]):
+        com.pulumi.gcp.vertex.AiSemanticGovernancePolicyArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyMcpToolsArgs.builder
+      builder.mcpTools(args(argsBuilder).build)
 
   /**
    * A SemanticGovernancePolicyEngine (SGPE) is the managed, runtime evaluation
@@ -6661,6 +6717,20 @@ object vertex:
     com.pulumi.gcp.vertex.AiSemanticGovernancePolicyEngine(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.vertex.AiSemanticGovernancePolicyEngineArgs.Builder)
+    /**
+     * @param gatewayConfigs Configurations for gateways, keyed by a user-defined gateway name. At most
+     * 5 gateway configurations are allowed. Each gateway name must be 1-63
+     * characters, start with a lowercase letter, contain only lowercase letters,
+     * numbers and hyphens, and not end with a hyphen.
+     * Structure is documented below.
+     * @return builder
+     */
+    def gatewayConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyEngineGatewayConfigArgs.Builder]*):
+        com.pulumi.gcp.vertex.AiSemanticGovernancePolicyEngineArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyEngineGatewayConfigArgs.builder
+      builder.gatewayConfigs(args.map(_(argsBuilder).build)*)
 
   /**
    * Tensorboard is a physical database that stores users&#39; training metrics. A default Tensorboard is provided in each region of a GCP project. If needed users can also create extra Tensorboards in their projects.
@@ -8110,6 +8180,143 @@ object vertex:
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeArgs.builder
       builder.resourceRuntimes(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiRagCorpusState.Builder)
+    /**
+     * @param corpusStatuses Output only. RagCorpus state.
+     * Structure is documented below.
+     * @return builder
+     */
+    def corpusStatuses(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusCorpusStatusArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiRagCorpusState.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusCorpusStatusArgs.builder
+      builder.corpusStatuses(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param encryptionSpec Optional. Immutable. The CMEK key name used to encrypt at-rest data
+     * related to this corpus. Only applicable to RagManagedDb option for Vector
+     * DB. This field can only be set at corpus creation time, and cannot be
+     * updated or deleted.
+     * Structure is documented below.
+     * @return builder
+     */
+    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusEncryptionSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiRagCorpusState.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusEncryptionSpecArgs.builder
+      builder.encryptionSpec(args(argsBuilder).build)
+
+    /**
+     * @param vectorDbConfig Optional. Immutable. The config for the RAG-managed Vector DB.
+     * Structure is documented below.
+     * @return builder
+     */
+    def vectorDbConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiRagCorpusState.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.builder
+      builder.vectorDbConfig(args(argsBuilder).build)
+
+    /**
+     * @param vertexAiSearchConfig Optional. Immutable. The config for the Vertex AI Search.
+     * Structure is documented below.
+     * @return builder
+     */
+    def vertexAiSearchConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVertexAiSearchConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiRagCorpusState.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVertexAiSearchConfigArgs.builder
+      builder.vertexAiSearchConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigApiAuthArgs.Builder)
+    /**
+     * @param apiKeyConfig The API secret.
+     * Structure is documented below.
+     * @return builder
+     */
+    def apiKeyConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigApiAuthApiKeyConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigApiAuthArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigApiAuthApiKeyConfigArgs.builder
+      builder.apiKeyConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder)
+    /**
+     * @param apiAuth Authentication config for the chosen Vector DB.
+     * Structure is documented below.
+     * @return builder
+     */
+    def apiAuth(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigApiAuthArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigApiAuthArgs.builder
+      builder.apiAuth(args(argsBuilder).build)
+
+    /**
+     * @param pinecone The config for the Pinecone.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pinecone(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigPineconeArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigPineconeArgs.builder
+      builder.pinecone(args(argsBuilder).build)
+
+    /**
+     * @param ragEmbeddingModelConfig Optional. Immutable. The embedding model config of the Vector DB.
+     * Structure is documented below.
+     * @return builder
+     */
+    def ragEmbeddingModelConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagEmbeddingModelConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagEmbeddingModelConfigArgs.builder
+      builder.ragEmbeddingModelConfig(args(argsBuilder).build)
+
+    /**
+     * @param ragManagedDb The config for the default RAG-managed Vector DB.
+     * Structure is documented below.
+     * @return builder
+     */
+    def ragManagedDb(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbArgs.builder
+      builder.ragManagedDb(args(argsBuilder).build)
+
+    /**
+     * @param vertexVectorSearch The config for the Vertex Vector Search.
+     * Structure is documented below.
+     * @return builder
+     */
+    def vertexVectorSearch(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigVertexVectorSearchArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigVertexVectorSearchArgs.builder
+      builder.vertexVectorSearch(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagEmbeddingModelConfigArgs.Builder)
+    /**
+     * @param vertexPredictionEndpoint The Vertex AI Prediction Endpoint used for dense vector search.
+     * Structure is documented below.
+     * @return builder
+     */
+    def vertexPredictionEndpoint(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagEmbeddingModelConfigVertexPredictionEndpointArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagEmbeddingModelConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagEmbeddingModelConfigVertexPredictionEndpointArgs.builder
+      builder.vertexPredictionEndpoint(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbArgs.Builder)
+    /**
+     * @param ann Performs an ANN search on RagCorpus.
+     * Structure is documented below.
+     * @return builder
+     */
+    def ann(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbAnnArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbAnnArgs.builder
+      builder.ann(args(argsBuilder).build)
+
+    /**
+     * @param knn Performs a KNN search on RagCorpus. This is the default choice if not specified.
+     * @return builder
+     */
+    def knn(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbKnnArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbKnnArgs.builder
+      builder.knn(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigArgs.Builder)
     /**
      * @param basic Basic tier is a cost-effective and low compute tier suitable for the following cases: Experimenting with RagManagedDb, Small data size, Latency insensitive workload, Only using RAG Engine with external vector DBs.
@@ -8322,6 +8529,16 @@ object vertex:
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder)
     /**
+     * @param audioTranscription Audio (input or output) transcription. This is only set when this Part contains audio data.
+     * Structure is documented below.
+     * @return builder
+     */
+    def audioTranscription(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartAudioTranscriptionArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartAudioTranscriptionArgs.builder
+      builder.audioTranscription(args(argsBuilder).build)
+
+    /**
      * @param codeExecutionResult Result of executing the ExecutableCode.
      * Structure is documented below.
      * @return builder
@@ -8390,6 +8607,17 @@ object vertex:
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartVideoMetadataArgs.builder
       builder.videoMetadata(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartAudioTranscriptionArgs.Builder)
+    /**
+     * @param words Detailed word-level transcriptions and timing details. Present when wordTimestamp is set.
+     * Structure is documented below.
+     * @return builder
+     */
+    def words(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartAudioTranscriptionWordArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartAudioTranscriptionArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartAudioTranscriptionWordArgs.builder
+      builder.words(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleGeneratedMemoryArgs.Builder)
     /**
@@ -8552,8 +8780,7 @@ object vertex:
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecArgs.Builder)
     /**
-     * @param agentGatewayConfig (Optional, Beta)
-     * Optional. Agent Gateway configuration for a Reasoning Engine deployment.
+     * @param agentGatewayConfig Optional. Agent Gateway configuration for a Reasoning Engine deployment.
      * Structure is documented below.
      * @return builder
      */
@@ -8669,8 +8896,7 @@ object vertex:
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecArgs.Builder)
     /**
-     * @param agentConfigSource (Optional, Beta)
-     * Optional. Specification for the deploying from agent config.
+     * @param agentConfigSource Optional. Specification for the deploying from agent config.
      * Structure is documented below.
      * @return builder
      */
@@ -8732,8 +8958,7 @@ object vertex:
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineState.Builder)
     /**
-     * @param contextSpec (Optional, Beta)
-     * Optional. Configuration for how Agent Engine sub-resources should manage context.
+     * @param contextSpec Optional. Configuration for how Agent Engine sub-resources should manage context.
      * Structure is documented below.
      * @return builder
      */
@@ -8810,213 +9035,40 @@ object vertex:
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitManualTargetArgs.builder
       builder.targets(args.map(_(argsBuilder).build)*)
 
-  extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestArgs.Builder)
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyEngineState.Builder)
     /**
-     * @param notebookExecutionJob NotebookExecutionJob represents an instance of a notebook execution.
+     * @param gatewayConfigs Configurations for gateways, keyed by a user-defined gateway name. At most
+     * 5 gateway configurations are allowed. Each gateway name must be 1-63
+     * characters, start with a lowercase letter, contain only lowercase letters,
+     * numbers and hyphens, and not end with a hyphen.
      * Structure is documented below.
      * @return builder
      */
-    def notebookExecutionJob(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.builder
-      builder.notebookExecutionJob(args(argsBuilder).build)
+    def gatewayConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyEngineGatewayConfigArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyEngineState.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyEngineGatewayConfigArgs.builder
+      builder.gatewayConfigs(args.map(_(argsBuilder).build)*)
 
-  extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder)
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyState.Builder)
     /**
-     * @param customEnvironmentSpec Compute configuration to use for an execution job.
+     * @param agentResponseCustomization Settings for customizing the agent&#39;s response to end users when this policy is evaluated.
      * Structure is documented below.
      * @return builder
      */
-    def customEnvironmentSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.builder
-      builder.customEnvironmentSpec(args(argsBuilder).build)
+    def agentResponseCustomization(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyAgentResponseCustomizationArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyState.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyAgentResponseCustomizationArgs.builder
+      builder.agentResponseCustomization(args(argsBuilder).build)
 
     /**
-     * @param dataformRepositorySource The Dataform Repository containing the input notebook.
+     * @param mcpTools The McpTools that are affected by this policy.
      * Structure is documented below.
      * @return builder
      */
-    def dataformRepositorySource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobDataformRepositorySourceArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobDataformRepositorySourceArgs.builder
-      builder.dataformRepositorySource(args(argsBuilder).build)
-
-    /**
-     * @param directNotebookSource The content of the input notebook in ipynb format.
-     * Structure is documented below.
-     * @return builder
-     */
-    def directNotebookSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobDirectNotebookSourceArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobDirectNotebookSourceArgs.builder
-      builder.directNotebookSource(args(argsBuilder).build)
-
-    /**
-     * @param encryptionSpec Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
-     * Structure is documented below.
-     * @return builder
-     */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobEncryptionSpecArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobEncryptionSpecArgs.builder
-      builder.encryptionSpec(args(argsBuilder).build)
-
-    /**
-     * @param gcsNotebookSource The Cloud Storage uri for the input notebook.
-     * Structure is documented below.
-     * @return builder
-     */
-    def gcsNotebookSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobGcsNotebookSourceArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobGcsNotebookSourceArgs.builder
-      builder.gcsNotebookSource(args(argsBuilder).build)
-
-    /**
-     * @param workbenchRuntime Configuration for a Workbench Instances-based environment.
-     * @return builder
-     */
-    def workbenchRuntime(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobWorkbenchRuntimeArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobWorkbenchRuntimeArgs.builder
-      builder.workbenchRuntime(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder)
-    /**
-     * @param machineSpec Specification of a single machine.
-     * Structure is documented below.
-     * @return builder
-     */
-    def machineSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecArgs.builder
-      builder.machineSpec(args(argsBuilder).build)
-
-    /**
-     * @param networkSpec Network spec.
-     * Structure is documented below.
-     * @return builder
-     */
-    def networkSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecNetworkSpecArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecNetworkSpecArgs.builder
-      builder.networkSpec(args(argsBuilder).build)
-
-    /**
-     * @param persistentDiskSpec Represents the spec of persistent disk options.
-     * Structure is documented below.
-     * @return builder
-     */
-    def persistentDiskSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecPersistentDiskSpecArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecPersistentDiskSpecArgs.builder
-      builder.persistentDiskSpec(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecArgs.Builder)
-    /**
-     * @param reservationAffinity A ReservationAffinity can be used to configure a Vertex AI resource (e.g., a DeployedModel) to draw its Compute Engine resources from a Shared Reservation, or exclusively from on-demand capacity.
-     * Structure is documented below.
-     * @return builder
-     */
-    def reservationAffinity(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecReservationAffinityArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecReservationAffinityArgs.builder
-      builder.reservationAffinity(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestArgs.Builder)
-    /**
-     * @param pipelineJob An instance of a machine learning PipelineJob.
-     * Structure is documented below.
-     * @return builder
-     */
-    def pipelineJob(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobArgs.builder
-      builder.pipelineJob(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobArgs.Builder)
-    /**
-     * @param encryptionSpec Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
-     * Structure is documented below.
-     * @return builder
-     */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobEncryptionSpecArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobEncryptionSpecArgs.builder
-      builder.encryptionSpec(args(argsBuilder).build)
-
-    /**
-     * @param pscInterfaceConfig Configuration for PSC-I.
-     * Structure is documented below.
-     * @return builder
-     */
-    def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigArgs.builder
-      builder.pscInterfaceConfig(args(argsBuilder).build)
-
-    /**
-     * @param runtimeConfig The runtime config of a PipelineJob.
-     * Structure is documented below.
-     * @return builder
-     */
-    def runtimeConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobRuntimeConfigArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobRuntimeConfigArgs.builder
-      builder.runtimeConfig(args(argsBuilder).build)
-
-    /**
-     * @param templateMetadatas (Output)
-     * Pipeline template metadata if PipelineJob.template_uri is from supported template registry. Currently, the only supported registry is Artifact Registry.
-     * Structure is documented below.
-     * @return builder
-     */
-    def templateMetadatas(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobTemplateMetadataArgs.Builder]*):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobArgs.Builder =
-      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobTemplateMetadataArgs.builder
-      builder.templateMetadatas(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigArgs.Builder)
-    /**
-     * @param dnsPeeringConfigs DNS peering configurations. When specified, Vertex AI will attempt to configure DNS peering zones in the tenant project VPC to resolve the specified domains using the target network&#39;s Cloud DNS. The user must grant the dns.peer role to the Vertex AI Service Agent on the target project.
-     * Structure is documented below.
-     * @return builder
-     */
-    def dnsPeeringConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigDnsPeeringConfigArgs.Builder]*):
-        com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigArgs.Builder =
-      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigDnsPeeringConfigArgs.builder
-      builder.dnsPeeringConfigs(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleState.Builder)
-    /**
-     * @param createNotebookExecutionJobRequest Request message for [NotebookService.CreateNotebookExecutionJob]
-     * Structure is documented below.
-     * @return builder
-     */
-    def createNotebookExecutionJobRequest(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleState.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestArgs.builder
-      builder.createNotebookExecutionJobRequest(args(argsBuilder).build)
-
-    /**
-     * @param createPipelineJobRequest Request message for PipelineService.CreatePipelineJob.
-     * Structure is documented below.
-     * @return builder
-     */
-    def createPipelineJobRequest(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestArgs.Builder]):
-        com.pulumi.gcp.vertex.inputs.AiScheduleState.Builder =
-      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestArgs.builder
-      builder.createPipelineJobRequest(args(argsBuilder).build)
-
-    /**
-     * @param lastScheduledRunResponses Status of a scheduled run.
-     * Structure is documented below.
-     * @return builder
-     */
-    def lastScheduledRunResponses(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleLastScheduledRunResponseArgs.Builder]*):
-        com.pulumi.gcp.vertex.inputs.AiScheduleState.Builder =
-      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleLastScheduledRunResponseArgs.builder
-      builder.lastScheduledRunResponses(args.map(_(argsBuilder).build)*)
+    def mcpTools(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyMcpToolsArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyState.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyMcpToolsArgs.builder
+      builder.mcpTools(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiTensorboardState.Builder)
     /**

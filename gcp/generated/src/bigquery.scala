@@ -351,6 +351,9 @@ object bigquery:
    * * [API documentation](https://cloud.google.com/bigquery/docs/reference/bigqueryconnection/rest/v1/projects.locations.connections/create)
    * * How-to Guides
    *     * [Cloud SQL federated queries](https://cloud.google.com/bigquery/docs/cloud-sql-federated-queries)
+   * 
+   * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `cloud_sql.credential.password_wo`.
+   * Read more about Write-only Arguments.
    */
   def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.ConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1449,6 +1452,32 @@ object bigquery:
         com.pulumi.gcp.bigquery.DataTransferConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DataTransferConfigSensitiveParamsArgs.builder
       builder.sensitiveParams(args(argsBuilder).build)
+
+  /**
+   * Enrolls a BigQuery Data Transfer Service data source in a project, making it available
+   * for use by `gcp.bigquery.DataTransferConfig`. Some data sources, notably Google Cloud
+   * Carbon Footprint exports, must be enrolled before a transfer config can be created against
+   * them.
+   * 
+   * Enrollment is project-wide: a data source enrolled in a project is available in every
+   * location that offers it.
+   * 
+   * Enrollment is eventually consistent, so a newly created or recreated enrollment may briefly
+   * read as absent before it settles.
+   * 
+   * To get more information about DataSourceEnrollment, see:
+   * 
+   * * [API documentation](https://cloud.google.com/bigquery/docs/reference/datatransfer/rest/v1/projects/enrollDataSources)
+   * * How-to Guides
+   *     * [Export your carbon footprint](https://cloud.google.com/carbon-footprint/docs/export)
+   *     * [Working with transfers](https://cloud.google.com/bigquery/docs/working-with-transfers)
+   */
+  def DataTransferDataSourceEnrollment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.DataTransferDataSourceEnrollmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.bigquery.DataTransferDataSourceEnrollmentArgs.builder
+    com.pulumi.gcp.bigquery.DataTransferDataSourceEnrollment(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
    * BigQuery Data Policy
@@ -6905,6 +6934,17 @@ object bigquery:
         com.pulumi.gcp.bigquery.inputs.DataTransferConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DataTransferConfigSensitiveParamsArgs.builder
       builder.sensitiveParams(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.bigquery.inputs.DataTransferDataSourceEnrollmentState.Builder)
+    /**
+     * @param parameters Data source parameters.
+     * Structure is documented below.
+     * @return builder
+     */
+    def parameters(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferDataSourceEnrollmentParameterArgs.Builder]*):
+        com.pulumi.gcp.bigquery.inputs.DataTransferDataSourceEnrollmentState.Builder =
+      def argsBuilder = com.pulumi.gcp.bigquery.inputs.DataTransferDataSourceEnrollmentParameterArgs.builder
+      builder.parameters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamBindingState.Builder)
     def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamBindingConditionArgs.Builder]):

@@ -56,6 +56,24 @@ object networkmanagement:
       val argsBuilder = com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceArgs.builder
       builder.source(args(argsBuilder).build)
 
+  /**
+   * A Network Monitoring Provider resource that allows third-party network monitoring
+   * solutions to integrate with Google Cloud Network Management. A provider acts as
+   * the parent resource for MonitoringPoints, NetworkPaths, and WebPaths.
+   * 
+   * To get more information about NetworkMonitoringProvider, see:
+   * 
+   * * [API documentation](https://cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/v1/projects.locations.networkMonitoringProviders)
+   * * How-to Guides
+   *     * [Network Intelligence Center Documentation](https://cloud.google.com/network-intelligence-center/docs)
+   */
+  def NetworkMonitoringProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.networkmanagement.NetworkMonitoringProviderArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.networkmanagement.NetworkMonitoringProviderArgs.builder
+    com.pulumi.gcp.networkmanagement.NetworkMonitoringProvider(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
   object NetworkmanagementFunctions:
     // Pulumi methods are reproduced as Scala methods.
     // Java methods cause Scala warnings under -Yexplicit-nulls flag

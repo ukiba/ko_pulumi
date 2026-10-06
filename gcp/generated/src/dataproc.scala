@@ -7230,7 +7230,7 @@ object dataproc:
       builder.parameters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param placement (Required) WorkflowTemplate scheduling information.
+     * @param placement WorkflowTemplate scheduling information. Structure is documented below.
      * @return builder
      */
     def placement(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementArgs.Builder]):
@@ -8856,7 +8856,7 @@ object dataproc:
 
   extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementArgs.Builder)
     /**
-     * @param clusterSelector A selector that chooses target cluster for jobs based on metadata. The selector is evaluated at the time each job is submitted.
+     * @param clusterSelector A selector that chooses target cluster for jobs based on metadata. The selector is evaluated at the time each job is submitted. Structure is documented below.
      * @return builder
      */
     def clusterSelector(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementClusterSelectorArgs.Builder]):
@@ -8865,7 +8865,7 @@ object dataproc:
       builder.clusterSelector(args(argsBuilder).build)
 
     /**
-     * @param managedCluster A cluster that is managed by the workflow.
+     * @param managedCluster A cluster that is managed by the workflow. Structure is documented below.
      * @return builder
      */
     def managedCluster(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterArgs.Builder]):
@@ -8875,7 +8875,7 @@ object dataproc:
 
   extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterArgs.Builder)
     /**
-     * @param config Required. The cluster configuration.
+     * @param config Required. The cluster configuration. Structure is documented below.
      * @return builder
      */
     def config(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigArgs.Builder]):
@@ -8948,7 +8948,7 @@ object dataproc:
       builder.lifecycleConfig(args(argsBuilder).build)
 
     /**
-     * @param masterConfig The Compute Engine config settings for additional worker instances in a cluster.
+     * @param masterConfig The Compute Engine config settings for additional worker instances in a cluster. Structure is documented below.
      * @return builder
      */
     def masterConfig(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigArgs.Builder]):
@@ -8966,7 +8966,7 @@ object dataproc:
       builder.metastoreConfig(args(argsBuilder).build)
 
     /**
-     * @param secondaryWorkerConfig The Compute Engine config settings for additional worker instances in a cluster.
+     * @param secondaryWorkerConfig The Compute Engine config settings for additional worker instances in a cluster. Structure is documented below.
      * @return builder
      */
     def secondaryWorkerConfig(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigArgs.Builder]):
@@ -8993,7 +8993,7 @@ object dataproc:
       builder.softwareConfig(args(argsBuilder).build)
 
     /**
-     * @param workerConfig The Compute Engine config settings for additional worker instances in a cluster.
+     * @param workerConfig The Compute Engine config settings for additional worker instances in a cluster. Structure is documented below.
      * 
      * ***
      * @return builder
@@ -9043,7 +9043,7 @@ object dataproc:
 
   extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigArgs.Builder)
     /**
-     * @param accelerators The Compute Engine accelerator configuration for these instances.
+     * @param accelerators The Compute Engine accelerator configuration for these instances. Structure is documented below.
      * @return builder
      */
     def accelerators(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigAcceleratorArgs.Builder]*):
@@ -9052,13 +9052,22 @@ object dataproc:
       builder.accelerators(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param diskConfig Disk option config settings.
+     * @param diskConfig Disk option config settings. Structure is documented below.
      * @return builder
      */
     def diskConfig(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigDiskConfigArgs.Builder]):
         com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigDiskConfigArgs.builder
       builder.diskConfig(args(argsBuilder).build)
+
+    /**
+     * @param instanceFlexibilityPolicy Instance flexibility Policy allowing a mixture of VM shapes and provisioning models. Supported on `masterConfig`, `workerConfig`, and `secondaryWorkerConfig` (provisioning models are supported exclusively on `secondaryWorkerConfig`). Structure is documented below.
+     * @return builder
+     */
+    def instanceFlexibilityPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyArgs.Builder]):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyArgs.builder
+      builder.instanceFlexibilityPolicy(args(argsBuilder).build)
 
     /**
      * @param managedGroupConfigs Output only. The config for Compute Engine Instance Group Manager that manages this group. This is only used for preemptible instance groups.
@@ -9069,9 +9078,58 @@ object dataproc:
       def argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigManagedGroupConfigArgs.builder
       builder.managedGroupConfigs(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigDiskConfigArgs.Builder)
+    /**
+     * @param attachedDiskConfigs Optional. Attached disk configuration. Structure is documented below.
+     * @return builder
+     */
+    def attachedDiskConfigs(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigDiskConfigAttachedDiskConfigArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigDiskConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigDiskConfigAttachedDiskConfigArgs.builder
+      builder.attachedDiskConfigs(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyArgs.Builder)
+    /**
+     * @param instanceSelectionLists List of instance selection options that the group will use when creating new VMs. Structure is documented below.
+     * @return builder
+     */
+    def instanceSelectionLists(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.builder
+      builder.instanceSelectionLists(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param instanceSelectionResults Output only. A list of instance selection results that were successfully allocated. Structure is documented below.
+     * @return builder
+     */
+    def instanceSelectionResults(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionResultArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionResultArgs.builder
+      builder.instanceSelectionResults(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder)
+    /**
+     * @param diskConfig Disk option for the instance group. Structure is documented above.
+     * @return builder
+     */
+    def diskConfig(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder]):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.builder
+      builder.diskConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder)
+    /**
+     * @param attachedDiskConfigs Optional. Attached disk configuration. Structure is documented below.
+     * @return builder
+     */
+    def attachedDiskConfigs(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigAttachedDiskConfigArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigAttachedDiskConfigArgs.builder
+      builder.attachedDiskConfigs(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigArgs.Builder)
     /**
-     * @param accelerators Optional. The Compute Engine accelerator configuration for these instances.
+     * @param accelerators The Compute Engine accelerator configuration for these instances. Structure is documented below.
      * @return builder
      */
     def accelerators(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigAcceleratorArgs.Builder]*):
@@ -9080,7 +9138,7 @@ object dataproc:
       builder.accelerators(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param diskConfig Optional. Disk option config settings.
+     * @param diskConfig Disk option config settings. Structure is documented below.
      * @return builder
      */
     def diskConfig(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfigArgs.Builder]):
@@ -9089,13 +9147,80 @@ object dataproc:
       builder.diskConfig(args(argsBuilder).build)
 
     /**
-     * @param managedGroupConfigs Output only. The config for Compute Engine Instance Group Manager that manages this group. This is only used for preemptible instance groups.
+     * @param instanceFlexibilityPolicy Instance flexibility Policy allowing a mixture of VM shapes and provisioning models. Structure is documented below.
+     * @return builder
+     */
+    def instanceFlexibilityPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyArgs.Builder]):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyArgs.builder
+      builder.instanceFlexibilityPolicy(args(argsBuilder).build)
+
+    /**
+     * @param managedGroupConfigs Output only. The config for Compute Engine Instance Group Manager that manages this group.
      * @return builder
      */
     def managedGroupConfigs(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigManagedGroupConfigArgs.Builder]*):
         com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigManagedGroupConfigArgs.builder
       builder.managedGroupConfigs(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfigArgs.Builder)
+    /**
+     * @param attachedDiskConfigs Optional. Attached disk configuration. Structure is documented below.
+     * @return builder
+     */
+    def attachedDiskConfigs(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfigAttachedDiskConfigArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfigAttachedDiskConfigArgs.builder
+      builder.attachedDiskConfigs(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyArgs.Builder)
+    /**
+     * @param instanceSelectionLists List of instance selection options that the group will use when creating new VMs. Structure is documented below.
+     * @return builder
+     */
+    def instanceSelectionLists(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.builder
+      builder.instanceSelectionLists(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param instanceSelectionResults Output only. A list of instance selection results that were successfully allocated. Structure is documented below.
+     * @return builder
+     */
+    def instanceSelectionResults(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyInstanceSelectionResultArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyInstanceSelectionResultArgs.builder
+      builder.instanceSelectionResults(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param provisioningModelMix Strategy for provisioning model mix for secondary worker instances. Supported only for `secondaryWorkerConfig`. Structure is documented below.
+     * @return builder
+     */
+    def provisioningModelMix(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyProvisioningModelMixArgs.Builder]):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyProvisioningModelMixArgs.builder
+      builder.provisioningModelMix(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder)
+    /**
+     * @param diskConfig Disk option for the instance group. Structure is documented above.
+     * @return builder
+     */
+    def diskConfig(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder]):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.builder
+      builder.diskConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder)
+    /**
+     * @param attachedDiskConfigs Optional. Attached disk configuration. Structure is documented below.
+     * @return builder
+     */
+    def attachedDiskConfigs(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigAttachedDiskConfigArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigAttachedDiskConfigArgs.builder
+      builder.attachedDiskConfigs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigSecurityConfigArgs.Builder)
     /**
@@ -9109,7 +9234,7 @@ object dataproc:
 
   extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigArgs.Builder)
     /**
-     * @param accelerators Optional. The Compute Engine accelerator configuration for these instances.
+     * @param accelerators The Compute Engine accelerator configuration for these instances. Structure is documented below.
      * @return builder
      */
     def accelerators(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigAcceleratorArgs.Builder]*):
@@ -9118,7 +9243,7 @@ object dataproc:
       builder.accelerators(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param diskConfig Optional. Disk option config settings.
+     * @param diskConfig Disk option config settings. Structure is documented below.
      * @return builder
      */
     def diskConfig(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigDiskConfigArgs.Builder]):
@@ -9127,13 +9252,71 @@ object dataproc:
       builder.diskConfig(args(argsBuilder).build)
 
     /**
-     * @param managedGroupConfigs Output only. The config for Compute Engine Instance Group Manager that manages this group. This is only used for preemptible instance groups.
+     * @param instanceFlexibilityPolicy Instance flexibility Policy allowing a mixture of VM shapes. Structure is documented below.
+     * @return builder
+     */
+    def instanceFlexibilityPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyArgs.Builder]):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyArgs.builder
+      builder.instanceFlexibilityPolicy(args(argsBuilder).build)
+
+    /**
+     * @param managedGroupConfigs Output only. The config for Compute Engine Instance Group Manager that manages this group.
      * @return builder
      */
     def managedGroupConfigs(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigManagedGroupConfigArgs.Builder]*):
         com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigManagedGroupConfigArgs.builder
       builder.managedGroupConfigs(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigDiskConfigArgs.Builder)
+    /**
+     * @param attachedDiskConfigs Optional. Attached disk configuration. Structure is documented below.
+     * @return builder
+     */
+    def attachedDiskConfigs(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigDiskConfigAttachedDiskConfigArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigDiskConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigDiskConfigAttachedDiskConfigArgs.builder
+      builder.attachedDiskConfigs(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyArgs.Builder)
+    /**
+     * @param instanceSelectionLists List of instance selection options that the group will use when creating new VMs. Structure is documented below.
+     * @return builder
+     */
+    def instanceSelectionLists(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.builder
+      builder.instanceSelectionLists(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param instanceSelectionResults Output only. A list of instance selection results that were successfully allocated. Structure is documented below.
+     * @return builder
+     */
+    def instanceSelectionResults(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionResultArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionResultArgs.builder
+      builder.instanceSelectionResults(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder)
+    /**
+     * @param diskConfig Disk option for the instance group. Structure is documented above.
+     * @return builder
+     */
+    def diskConfig(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder]):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.builder
+      builder.diskConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder)
+    /**
+     * @param attachedDiskConfigs Optional. Attached disk configuration. Structure is documented below.
+     * @return builder
+     */
+    def attachedDiskConfigs(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigAttachedDiskConfigArgs.Builder]*):
+        com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigAttachedDiskConfigArgs.builder
+      builder.attachedDiskConfigs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.dataproc.inputs.WorkflowTemplateState.Builder)
     /**
@@ -9164,7 +9347,7 @@ object dataproc:
       builder.parameters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param placement (Required) WorkflowTemplate scheduling information.
+     * @param placement WorkflowTemplate scheduling information. Structure is documented below.
      * @return builder
      */
     def placement(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementArgs.Builder]):

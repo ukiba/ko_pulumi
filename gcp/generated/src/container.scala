@@ -919,7 +919,8 @@ object container:
       builder.serviceExternalIpsConfig(args(argsBuilder).build)
 
     /**
-     * @param tpuConfig TPU configuration for the cluster.
+     * @param tpuConfig ) Configuration for Cloud TPU in this cluster.
+     * Structure is documented below.
      * @return builder
      */
     def tpuConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterTpuConfigArgs.Builder]):
@@ -928,7 +929,7 @@ object container:
       builder.tpuConfig(args(argsBuilder).build)
 
     /**
-     * @param userManagedKeysConfig The custom keys configuration of the cluster Structure is documented below.
+     * @param userManagedKeysConfig The custom keys configuration of the cluster. Structure is documented below.
      * @return builder
      */
     def userManagedKeysConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterUserManagedKeysConfigArgs.Builder]):
@@ -2102,18 +2103,10 @@ object container:
       builder.podSnapshotConfig(args(argsBuilder).build)
 
     /**
-     * @param rayOperatorConfigs . The status of the [Ray Operator
+     * @param rayOperatorConfigs The status of the [Ray Operator
      * addon](https://cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/concepts/overview).
      * It is disabled by default. Set `enabled = true` to enable. The minimum
-     * cluster version to enable Ray is 1.30.0-gke.1747000.
-     * 
-     * Ray Operator config has optional subfields
-     * `ray_cluster_logging_config.enabled` and
-     * `ray_cluster_monitoring_config.enabled` which control Ray Cluster logging
-     * and monitoring respectively. See [Collect and view logs and metrics for Ray
-     * clusters on
-     * GKE](https://cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics)
-     * for more information.
+     * cluster version to enable Ray is 1.30.0-gke.1747000. Structure is documented below.
      * @return builder
      */
     def rayOperatorConfigs(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterAddonsConfigRayOperatorConfigArgs.Builder]*):
@@ -2157,7 +2150,7 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterAddonsConfigRayOperatorConfigArgs.Builder)
     /**
-     * @param rayClusterLoggingConfig The status of Ray Logging, which scrapes Ray cluster logs to Cloud Logging. Defaults to disabled; set enabled = true to enable.
+     * @param rayClusterLoggingConfig The status of Ray Logging, which scrapes Ray cluster logs to Cloud Logging. Structure is documented below.
      * @return builder
      */
     def rayClusterLoggingConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterAddonsConfigRayOperatorConfigRayClusterLoggingConfigArgs.Builder]):
@@ -2166,7 +2159,7 @@ object container:
       builder.rayClusterLoggingConfig(args(argsBuilder).build)
 
     /**
-     * @param rayClusterMonitoringConfig The status of Ray Cluster monitoring, which shows Ray cluster metrics in Cloud Console. Defaults to disabled; set enabled = true to enable.
+     * @param rayClusterMonitoringConfig The status of Ray Cluster monitoring, which shows Ray cluster metrics in Cloud Console. Structure is documented below.
      * @return builder
      */
     def rayClusterMonitoringConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterAddonsConfigRayOperatorConfigRayClusterMonitoringConfigArgs.Builder]):
@@ -2308,8 +2301,6 @@ object container:
 
     /**
      * @param networkTierConfig Contains network tier information. Structure is documented below
-     * 
-     * &lt;a name=&#34;nestedAutoIpamConfig&#34;&gt;&lt;/a&gt;The auto ipam config supports:
      * @return builder
      */
     def networkTierConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterIpAllocationPolicyNetworkTierConfigArgs.Builder]):
@@ -2318,7 +2309,7 @@ object container:
       builder.networkTierConfig(args(argsBuilder).build)
 
     /**
-     * @param podCidrOverprovisionConfig Configuration for cluster level pod cidr overprovision. Default is disabled=false.
+     * @param podCidrOverprovisionConfig Configuration for cluster level pod cidr overprovision. Default is `disabled = false`. Structure is documented below.
      * @return builder
      */
     def podCidrOverprovisionConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterIpAllocationPolicyPodCidrOverprovisionConfigArgs.Builder]):
@@ -2387,7 +2378,7 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyMaintenanceExclusionArgs.Builder)
     /**
-     * @param exclusionOptions MaintenanceExclusionOptions provides maintenance exclusion related options.
+     * @param exclusionOptions MaintenanceExclusionOptions provides maintenance exclusion related options. Structure is documented below.
      * @return builder
      */
     def exclusionOptions(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyMaintenanceExclusionExclusionOptionsArgs.Builder]):
@@ -2579,7 +2570,7 @@ object container:
       builder.gvnic(args(argsBuilder).build)
 
     /**
-     * @param hostMaintenancePolicy The maintenance policy for the hosts on which the GKE VMs run on. Structure is documented below.
+     * @param hostMaintenancePolicy ) The maintenance policy for the hosts on which the GKE VMs run on. Structure is documented below.
      * @return builder
      */
     def hostMaintenancePolicy(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigHostMaintenancePolicyArgs.Builder]):
@@ -2694,7 +2685,7 @@ object container:
       builder.taints(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param windowsNodeConfig Windows node configuration, currently supporting OSVersion [attribute](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/NodeConfig#osversion). The value must be one of [OS_VERSION_UNSPECIFIED, OS_VERSION_LTSC2019, OS_VERSION_LTSC2022]. For example:
+     * @param windowsNodeConfig Windows node configuration. Structure is documented below.
      * @return builder
      */
     def windowsNodeConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigWindowsNodeConfigArgs.Builder]):
@@ -2723,7 +2714,7 @@ object container:
       builder.privateRegistryAccessConfig(args(argsBuilder).build)
 
     /**
-     * @param registryHosts Defines containerd registry host configuration. Each `registryHosts` entry represents a `hosts.toml` file. See [customize containerd configuration in GKE nodes](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/customize-containerd-configuration#registryHosts) for more detail. Example:
+     * @param registryHosts Defines containerd registry host configuration. Each `registryHosts` entry represents a `hosts.toml` file. See [customize containerd configuration in GKE nodes](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/customize-containerd-configuration#registryHosts) for more detail.
      * @return builder
      */
     def registryHosts(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigContainerdConfigRegistryHostArgs.Builder]*):
@@ -2742,7 +2733,7 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodeConfigContainerdConfigPrivateRegistryAccessConfigArgs.Builder)
     /**
-     * @param certificateAuthorityDomainConfigs List of configuration objects for CA and domains. Each object identifies a certificate and its assigned domains. See [how to configure for private container registries](https://cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates) for more detail. Example:
+     * @param certificateAuthorityDomainConfigs List of configuration objects for CA and domains. Each object identifies a certificate and its assigned domains. See [how to configure for private container registries](https://cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates) for more detail.
      * @return builder
      */
     def certificateAuthorityDomainConfigs(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfigArgs.Builder]*):
@@ -2752,7 +2743,7 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodeConfigContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfigArgs.Builder)
     /**
-     * @param gcpSecretManagerCertificateConfig Parameters for configuring a certificate hosted in GCP SecretManager.
+     * @param gcpSecretManagerCertificateConfig Parameters for configuring a certificate hosted in GCP SecretManager:
      * @return builder
      */
     def gcpSecretManagerCertificateConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfigGcpSecretManagerCertificateConfigArgs.Builder]):
@@ -2762,7 +2753,7 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodeConfigContainerdConfigRegistryHostArgs.Builder)
     /**
-     * @param hosts Configures a list of host-specific configurations for the server.
+     * @param hosts Configures a list of host-specific configurations for the server:
      * @return builder
      */
     def hosts(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigContainerdConfigRegistryHostHostArgs.Builder]*):
@@ -2772,7 +2763,7 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodeConfigContainerdConfigRegistryHostHostArgs.Builder)
     /**
-     * @param cas Configures the registry host certificate.
+     * @param cas Configures the registry host certificate. Contains `gcpSecretManagerSecretUri` (Optional).
      * @return builder
      */
     def cas(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigContainerdConfigRegistryHostHostCaArgs.Builder]*):
@@ -2781,7 +2772,9 @@ object container:
       builder.cas(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param clients Configures the registry host client certificate and key.
+     * @param clients Configures the registry host client certificate and key. Contains `cert` (Required) with `gcpSecretManagerSecretUri` (Optional) and `key` (Optional) with `gcpSecretManagerSecretUri` (Optional).
+     * 
+     * Example:
      * @return builder
      */
     def clients(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigContainerdConfigRegistryHostHostClientArgs.Builder]*):
@@ -2790,7 +2783,7 @@ object container:
       builder.clients(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param headers Configures the registry host headers.
+     * @param headers Configures the registry host headers. Each header contains `key` (Required, string) and `value` (Required, list of strings).
      * @return builder
      */
     def headers(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigContainerdConfigRegistryHostHostHeaderArgs.Builder]*):
@@ -3169,7 +3162,7 @@ object container:
       builder.privateRegistryAccessConfig(args(argsBuilder).build)
 
     /**
-     * @param registryHosts Defines containerd registry host configuration. Each `registryHosts` entry represents a `hosts.toml` file. See [customize containerd configuration in GKE nodes](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/customize-containerd-configuration#registryHosts) for more detail. Example:
+     * @param registryHosts Defines containerd registry host configuration. Each `registryHosts` entry represents a `hosts.toml` file. See [customize containerd configuration in GKE nodes](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/customize-containerd-configuration#registryHosts) for more detail.
      * @return builder
      */
     def registryHosts(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfigRegistryHostArgs.Builder]*):
@@ -3188,7 +3181,7 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfigPrivateRegistryAccessConfigArgs.Builder)
     /**
-     * @param certificateAuthorityDomainConfigs List of configuration objects for CA and domains. Each object identifies a certificate and its assigned domains. See [how to configure for private container registries](https://cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates) for more detail. Example:
+     * @param certificateAuthorityDomainConfigs List of configuration objects for CA and domains. Each object identifies a certificate and its assigned domains. See [how to configure for private container registries](https://cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates) for more detail.
      * @return builder
      */
     def certificateAuthorityDomainConfigs(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfigArgs.Builder]*):
@@ -3198,7 +3191,7 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfigArgs.Builder)
     /**
-     * @param gcpSecretManagerCertificateConfig Parameters for configuring a certificate hosted in GCP SecretManager.
+     * @param gcpSecretManagerCertificateConfig Parameters for configuring a certificate hosted in GCP SecretManager:
      * @return builder
      */
     def gcpSecretManagerCertificateConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfigGcpSecretManagerCertificateConfigArgs.Builder]):
@@ -3208,7 +3201,7 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfigRegistryHostArgs.Builder)
     /**
-     * @param hosts Configures a list of host-specific configurations for the server.
+     * @param hosts Configures a list of host-specific configurations for the server:
      * @return builder
      */
     def hosts(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfigRegistryHostHostArgs.Builder]*):
@@ -3218,7 +3211,7 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfigRegistryHostHostArgs.Builder)
     /**
-     * @param cas Configures the registry host certificate.
+     * @param cas Configures the registry host certificate. Contains `gcpSecretManagerSecretUri` (Optional).
      * @return builder
      */
     def cas(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfigRegistryHostHostCaArgs.Builder]*):
@@ -3227,7 +3220,9 @@ object container:
       builder.cas(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param clients Configures the registry host client certificate and key.
+     * @param clients Configures the registry host client certificate and key. Contains `cert` (Required) with `gcpSecretManagerSecretUri` (Optional) and `key` (Optional) with `gcpSecretManagerSecretUri` (Optional).
+     * 
+     * Example:
      * @return builder
      */
     def clients(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfigRegistryHostHostClientArgs.Builder]*):
@@ -3236,7 +3231,7 @@ object container:
       builder.clients(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param headers Configures the registry host headers.
+     * @param headers Configures the registry host headers. Each header contains `key` (Required, string) and `value` (Required, list of strings).
      * @return builder
      */
     def headers(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfigRegistryHostHostHeaderArgs.Builder]*):
@@ -3425,7 +3420,7 @@ object container:
       builder.gvnic(args(argsBuilder).build)
 
     /**
-     * @param hostMaintenancePolicy The maintenance policy for the hosts on which the GKE VMs run on. Structure is documented below.
+     * @param hostMaintenancePolicy ) The maintenance policy for the hosts on which the GKE VMs run on. Structure is documented below.
      * @return builder
      */
     def hostMaintenancePolicy(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigHostMaintenancePolicyArgs.Builder]):
@@ -3540,7 +3535,7 @@ object container:
       builder.taints(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param windowsNodeConfig Windows node configuration, currently supporting OSVersion [attribute](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/NodeConfig#osversion). The value must be one of [OS_VERSION_UNSPECIFIED, OS_VERSION_LTSC2019, OS_VERSION_LTSC2022]. For example:
+     * @param windowsNodeConfig Windows node configuration. Structure is documented below.
      * @return builder
      */
     def windowsNodeConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigWindowsNodeConfigArgs.Builder]):
@@ -3569,7 +3564,7 @@ object container:
       builder.privateRegistryAccessConfig(args(argsBuilder).build)
 
     /**
-     * @param registryHosts Defines containerd registry host configuration. Each `registryHosts` entry represents a `hosts.toml` file. See [customize containerd configuration in GKE nodes](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/customize-containerd-configuration#registryHosts) for more detail. Example:
+     * @param registryHosts Defines containerd registry host configuration. Each `registryHosts` entry represents a `hosts.toml` file. See [customize containerd configuration in GKE nodes](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/customize-containerd-configuration#registryHosts) for more detail.
      * @return builder
      */
     def registryHosts(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigContainerdConfigRegistryHostArgs.Builder]*):
@@ -3588,7 +3583,7 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigContainerdConfigPrivateRegistryAccessConfigArgs.Builder)
     /**
-     * @param certificateAuthorityDomainConfigs List of configuration objects for CA and domains. Each object identifies a certificate and its assigned domains. See [how to configure for private container registries](https://cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates) for more detail. Example:
+     * @param certificateAuthorityDomainConfigs List of configuration objects for CA and domains. Each object identifies a certificate and its assigned domains. See [how to configure for private container registries](https://cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates) for more detail.
      * @return builder
      */
     def certificateAuthorityDomainConfigs(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfigArgs.Builder]*):
@@ -3598,7 +3593,7 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfigArgs.Builder)
     /**
-     * @param gcpSecretManagerCertificateConfig Parameters for configuring a certificate hosted in GCP SecretManager.
+     * @param gcpSecretManagerCertificateConfig Parameters for configuring a certificate hosted in GCP SecretManager:
      * @return builder
      */
     def gcpSecretManagerCertificateConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfigGcpSecretManagerCertificateConfigArgs.Builder]):
@@ -3608,7 +3603,7 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigContainerdConfigRegistryHostArgs.Builder)
     /**
-     * @param hosts Configures a list of host-specific configurations for the server.
+     * @param hosts Configures a list of host-specific configurations for the server:
      * @return builder
      */
     def hosts(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigContainerdConfigRegistryHostHostArgs.Builder]*):
@@ -3618,7 +3613,7 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigContainerdConfigRegistryHostHostArgs.Builder)
     /**
-     * @param cas Configures the registry host certificate.
+     * @param cas Configures the registry host certificate. Contains `gcpSecretManagerSecretUri` (Optional).
      * @return builder
      */
     def cas(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigContainerdConfigRegistryHostHostCaArgs.Builder]*):
@@ -3627,7 +3622,9 @@ object container:
       builder.cas(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param clients Configures the registry host client certificate and key.
+     * @param clients Configures the registry host client certificate and key. Contains `cert` (Required) with `gcpSecretManagerSecretUri` (Optional) and `key` (Optional) with `gcpSecretManagerSecretUri` (Optional).
+     * 
+     * Example:
      * @return builder
      */
     def clients(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigContainerdConfigRegistryHostHostClientArgs.Builder]*):
@@ -3636,7 +3633,7 @@ object container:
       builder.clients(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param headers Configures the registry host headers.
+     * @param headers Configures the registry host headers. Each header contains `key` (Required, string) and `value` (Required, list of strings).
      * @return builder
      */
     def headers(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigContainerdConfigRegistryHostHostHeaderArgs.Builder]*):
@@ -4450,7 +4447,8 @@ object container:
       builder.serviceExternalIpsConfig(args(argsBuilder).build)
 
     /**
-     * @param tpuConfig TPU configuration for the cluster.
+     * @param tpuConfig ) Configuration for Cloud TPU in this cluster.
+     * Structure is documented below.
      * @return builder
      */
     def tpuConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterTpuConfigArgs.Builder]):
@@ -4459,7 +4457,7 @@ object container:
       builder.tpuConfig(args(argsBuilder).build)
 
     /**
-     * @param userManagedKeysConfig The custom keys configuration of the cluster Structure is documented below.
+     * @param userManagedKeysConfig The custom keys configuration of the cluster. Structure is documented below.
      * @return builder
      */
     def userManagedKeysConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterUserManagedKeysConfigArgs.Builder]):
@@ -4648,7 +4646,7 @@ object container:
       builder.gvnic(args(argsBuilder).build)
 
     /**
-     * @param hostMaintenancePolicy The maintenance policy for the hosts on which the GKE VMs run on.
+     * @param hostMaintenancePolicy ) The maintenance policy for the hosts on which the GKE VMs run on. Structure is documented below.
      * @return builder
      */
     def hostMaintenancePolicy(args: Endofunction[com.pulumi.gcp.container.inputs.NodePoolNodeConfigHostMaintenancePolicyArgs.Builder]):
@@ -4899,7 +4897,7 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.NodePoolNodeConfigHostMaintenancePolicyArgs.Builder)
     /**
-     * @param opportunisticMaintenanceStrategy Strategy that will trigger maintenance on behalf of the customer.
+     * @param opportunisticMaintenanceStrategy Strategy that will trigger maintenance on behalf of the customer. Structure is documented below.
      * @return builder
      */
     def opportunisticMaintenanceStrategy(args: Endofunction[com.pulumi.gcp.container.inputs.NodePoolNodeConfigHostMaintenancePolicyOpportunisticMaintenanceStrategyArgs.Builder]):

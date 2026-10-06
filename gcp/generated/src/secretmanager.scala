@@ -1864,6 +1864,9 @@ object secretmanager:
    * this, use the `createBeforeDestroy` field within the lifecycle block.
    * 
    * For more details, refer to the Terraform lifecycle documentation.
+   * 
+   * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `secretDataWo`.
+   * Read more about Write-only Arguments.
    */
   def RegionalSecretVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.secretmanager.RegionalSecretVersionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

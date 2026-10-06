@@ -3662,6 +3662,16 @@ object cloudrunv2:
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVpcAccessArgs.builder
       builder.vpcAccess(args(argsBuilder).build)
 
+    /**
+     * @param workloadIdentityConfig Workload identity settings for this Revision.
+     * Structure is documented below.
+     * @return builder
+     */
+    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateWorkloadIdentityConfigArgs.Builder]):
+        com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateWorkloadIdentityConfigArgs.builder
+      builder.workloadIdentityConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerArgs.Builder)
     /**
      * @param buildInfos (Output)
@@ -4233,10 +4243,10 @@ object cloudrunv2:
      * Structure is documented below.
      * @return builder
      */
-    def httpHeaders(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeHttpGetHttpHeadersArgs.Builder]):
+    def httpHeaders(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeHttpGetHttpHeaderArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeHttpGetArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeHttpGetHttpHeadersArgs.builder
-      builder.httpHeaders(args(argsBuilder).build)
+      def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeHttpGetHttpHeaderArgs.builder
+      builder.httpHeaders(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeArgs.Builder)
     /**
@@ -4275,10 +4285,10 @@ object cloudrunv2:
      * Structure is documented below.
      * @return builder
      */
-    def httpHeaders(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeHttpGetHttpHeadersArgs.Builder]):
+    def httpHeaders(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeHttpGetHttpHeaderArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeHttpGetArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeHttpGetHttpHeadersArgs.builder
-      builder.httpHeaders(args(argsBuilder).build)
+      def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeHttpGetHttpHeaderArgs.builder
+      builder.httpHeaders(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeArgs.Builder)
     /**

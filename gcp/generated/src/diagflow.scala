@@ -4403,6 +4403,16 @@ object diagflow:
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputSummarySuggestionArgs.builder
       builder.summarySuggestion(args(argsBuilder).build)
 
+    /**
+     * @param toolCallInfos List of request and response for tool calls executed.
+     * Structure is documented below.
+     * @return builder
+     */
+    def toolCallInfos(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoArgs.Builder]*):
+        com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoArgs.builder
+      builder.toolCallInfos(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputSummarySuggestionArgs.Builder)
     /**
      * @param summarySections Required. All the parts of generated summary.
@@ -4413,6 +4423,38 @@ object diagflow:
         com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputSummarySuggestionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputSummarySuggestionSummarySectionArgs.builder
       builder.summarySections(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoArgs.Builder)
+    /**
+     * @param toolCall Request for a tool call.
+     * Structure is documented below.
+     * @return builder
+     */
+    def toolCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallArgs.builder
+      builder.toolCall(args(argsBuilder).build)
+
+    /**
+     * @param toolCallResult Response for a tool call.
+     * Structure is documented below.
+     * @return builder
+     */
+    def toolCallResult(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallResultArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallResultArgs.builder
+      builder.toolCallResult(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallResultArgs.Builder)
+    /**
+     * @param error An error produced by the tool call.
+     * Structure is documented below.
+     * @return builder
+     */
+    def error(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallResultErrorArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallResultArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallResultErrorArgs.builder
+      builder.error(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleSummarizationSectionListArgs.Builder)
     /**

@@ -268,6 +268,16 @@ object discoveryengine:
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataConnectorEntityArgs.builder
       builder.entities(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param metadata User-facing metadata for the connector.
+     * Structure is documented below.
+     * @return builder
+     */
+    def metadata(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorMetadataArgs.Builder]):
+        com.pulumi.gcp.discoveryengine.DataConnectorArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataConnectorMetadataArgs.builder
+      builder.metadata(args(argsBuilder).build)
+
   /**
    * Data store is a collection of websites and documents used to find answers for
    * end-user&#39;s questions in Discovery Engine (a.k.a. Vertex AI Search and
@@ -1914,6 +1924,16 @@ object discoveryengine:
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataConnectorErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param metadata User-facing metadata for the connector.
+     * Structure is documented below.
+     * @return builder
+     */
+    def metadata(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorMetadataArgs.Builder]):
+        com.pulumi.gcp.discoveryengine.inputs.DataConnectorState.Builder =
+      val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataConnectorMetadataArgs.builder
+      builder.metadata(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigArgs.Builder)
     /**
      * @param chunkingConfig Whether chunking mode is enabled.
@@ -2310,6 +2330,18 @@ object discoveryengine:
         com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsGenerativeAnswerConfigArgs.builder
       builder.generativeAnswerConfig(args(argsBuilder).build)
+
+    /**
+     * @param searchAddonSpec SearchAddonSpec is used to disable add-ons for search. By default, if this
+     * field is not specified, add-ons are enabled wherever applicable.
+     * This field is only supported for search requests.
+     * Structure is documented below.
+     * @return builder
+     */
+    def searchAddonSpec(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsSearchAddonSpecArgs.Builder]):
+        com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsSearchAddonSpecArgs.builder
+      builder.searchAddonSpec(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsDataStoreUiConfigArgs.Builder)
     /**

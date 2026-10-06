@@ -422,6 +422,17 @@ object appengine:
       builder.manualScaling(args(argsBuilder).build)
 
     /**
+     * @param vpcAccess (Optional, Beta)
+     * Direct VPC Access settings for standard apps.
+     * Structure is documented below.
+     * @return builder
+     */
+    def vpcAccess(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessArgs.Builder]):
+        com.pulumi.gcp.appengine.StandardAppVersionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessArgs.builder
+      builder.vpcAccess(args(argsBuilder).build)
+
+    /**
      * @param vpcAccessConnector Enables VPC connectivity for standard apps.
      * Structure is documented below.
      * @return builder
@@ -891,6 +902,17 @@ object appengine:
       builder.manualScaling(args(argsBuilder).build)
 
     /**
+     * @param vpcAccess (Optional, Beta)
+     * Direct VPC Access settings for standard apps.
+     * Structure is documented below.
+     * @return builder
+     */
+    def vpcAccess(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessArgs.Builder]):
+        com.pulumi.gcp.appengine.inputs.StandardAppVersionState.Builder =
+      val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessArgs.builder
+      builder.vpcAccess(args(argsBuilder).build)
+
+    /**
      * @param vpcAccessConnector Enables VPC connectivity for standard apps.
      * Structure is documented below.
      * @return builder
@@ -899,3 +921,14 @@ object appengine:
         com.pulumi.gcp.appengine.inputs.StandardAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessConnectorArgs.builder
       builder.vpcAccessConnector(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessArgs.Builder)
+    /**
+     * @param networkInterfaces List of network interfaces for the VPC Access. Currently only a single network interface is supported.
+     * Structure is documented below.
+     * @return builder
+     */
+    def networkInterfaces(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessNetworkInterfaceArgs.Builder]*):
+        com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessNetworkInterfaceArgs.builder
+      builder.networkInterfaces(args.map(_(argsBuilder).build)*)

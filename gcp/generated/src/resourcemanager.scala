@@ -21,6 +21,23 @@ object resourcemanager:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
+   * Capability configs define the enabled capabilities and their scope of
+   * enforcement for folders, organizations, or projects within the resource hierarchy.
+   * 
+   * To get more information about CapabilityConfig, see:
+   * 
+   * * [API documentation](https://docs.cloud.google.com/resource-manager/reference/rest)
+   * * How-to Guides
+   *     * [Official Documentation](https://docs.cloud.google.com/resource-manager/docs/manage-applications)
+   */
+  def CapabilityConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.resourcemanager.CapabilityConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.resourcemanager.CapabilityConfigArgs.builder
+    com.pulumi.gcp.resourcemanager.CapabilityConfig(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
    * A Lien represents an encumbrance on the actions that can be performed on a resource.
    * 
    * To get more information about Lien, see:

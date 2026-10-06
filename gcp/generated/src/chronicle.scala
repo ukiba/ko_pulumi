@@ -72,6 +72,54 @@ object chronicle:
       builder.udmEventsSettings(args(argsBuilder).build)
 
   /**
+   * CaseCloseDefinition provides predefined root cause options for closing security cases in SecOps. These definitions ensure consistent documentation and reporting across case investigations upon closure.
+   * 
+   * To get more information about CaseCloseDefinition, see:
+   * 
+   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1/projects.locations.instances.caseCloseDefinitions)
+   * * How-to Guides
+   *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
+   */
+  def CaseCloseDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.CaseCloseDefinitionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.chronicle.CaseCloseDefinitionArgs.builder
+    com.pulumi.gcp.chronicle.CaseCloseDefinition(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * CaseStageDefinition represents a stage in the lifecycle of a case.
+   * 
+   * To get more information about CaseStageDefinition, see:
+   * 
+   * * [API documentation](https://cloud.google.com/chronicle/docs/reference/rest/v1/projects.locations.instances.caseStageDefinitions)
+   * * How-to Guides
+   *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
+   */
+  def CaseStageDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.CaseStageDefinitionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.chronicle.CaseStageDefinitionArgs.builder
+    com.pulumi.gcp.chronicle.CaseStageDefinition(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * A CaseTagDefinition is used to classify and tag cases based on criteria.
+   * 
+   * To get more information about CaseTagDefinition, see:
+   * 
+   * * [API documentation](https://cloud.google.com/chronicle/docs/reference/rest/v1/projects.locations.instances.caseTagDefinitions)
+   * * How-to Guides
+   *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
+   */
+  def CaseTagDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.CaseTagDefinitionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.chronicle.CaseTagDefinitionArgs.builder
+    com.pulumi.gcp.chronicle.CaseTagDefinition(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
    * The custom list is a list of objects, that can be saved as a shared resource, and can be used by playbooks.
    * 
    * To get more information about CustomList, see:
@@ -291,6 +339,17 @@ object chronicle:
     com.pulumi.gcp.chronicle.Environment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.chronicle.EnvironmentArgs.Builder)
+    /**
+     * @param dynamicParameters Additional custom properties for enriching the environment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dynamicParameters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.EnvironmentDynamicParameterArgs.Builder]*):
+        com.pulumi.gcp.chronicle.EnvironmentArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.chronicle.inputs.EnvironmentDynamicParameterArgs.builder
+      builder.dynamicParameters(args.map(_(argsBuilder).build)*)
 
   /**
    * Environment groups let you organize multiple environments into logical categories, making it easier to manage large organizations or multiple customers as a Managed Security Service Provider (MSSP).
@@ -551,14 +610,14 @@ object chronicle:
       builder.entries(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param scopeInfos ScopeInfo specifies the scope info of the reference list.
+     * @param scopeInfo ScopeInfo specifies the scope info of the reference list.
      * Structure is documented below.
      * @return builder
      */
-    def scopeInfos(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoArgs.Builder]*):
+    def scopeInfo(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoArgs.Builder]):
         com.pulumi.gcp.chronicle.ReferenceListArgs.Builder =
-      def argsBuilder = com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoArgs.builder
-      builder.scopeInfos(args.map(_(argsBuilder).build)*)
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoArgs.builder
+      builder.scopeInfo(args(argsBuilder).build)
 
   /**
    * Retrohunt is an execution of a Rule over a time range in the past.
@@ -1417,6 +1476,17 @@ object chronicle:
         com.pulumi.gcp.chronicle.inputs.DataTableState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DataTableScopeInfoArgs.builder
       builder.scopeInfo(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.chronicle.inputs.EnvironmentState.Builder)
+    /**
+     * @param dynamicParameters Additional custom properties for enriching the environment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dynamicParameters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.EnvironmentDynamicParameterArgs.Builder]*):
+        com.pulumi.gcp.chronicle.inputs.EnvironmentState.Builder =
+      def argsBuilder = com.pulumi.gcp.chronicle.inputs.EnvironmentDynamicParameterArgs.builder
+      builder.dynamicParameters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3SettingsArgs.Builder)
     /**
@@ -3661,14 +3731,14 @@ object chronicle:
       builder.entries(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param scopeInfos ScopeInfo specifies the scope info of the reference list.
+     * @param scopeInfo ScopeInfo specifies the scope info of the reference list.
      * Structure is documented below.
      * @return builder
      */
-    def scopeInfos(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoArgs.Builder]*):
+    def scopeInfo(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.ReferenceListState.Builder =
-      def argsBuilder = com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoArgs.builder
-      builder.scopeInfos(args.map(_(argsBuilder).build)*)
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoArgs.builder
+      builder.scopeInfo(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.chronicle.inputs.RetrohuntState.Builder)
     /**

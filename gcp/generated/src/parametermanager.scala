@@ -5,17 +5,29 @@ import com.pulumi.resources.CustomResourceOptions
 
 object parametermanager:
   /**
-   * A Parameter resource is a logical parameter.
+   * A Parameter is a configuration value that can be stored and managed
+   * centrally through Parameter Manager. Parameters support labels, encryption
+   * via Cloud KMS, and resource manager tags for fine-grained access control
+   * and organization.
    * 
    * To get more information about Parameter, see:
    * 
    * * [API documentation](https://cloud.google.com/secret-manager/parameter-manager/docs/reference/rest/v1/projects.locations.parameters)
+   * * How-to Guides
+   *     * [Work with parameter tags](https://docs.cloud.google.com/secret-manager/parameter-manager/docs/create-and-manage-tags)
    */
   def Parameter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.parametermanager.ParameterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
-    val argsBuilder = com.pulumi.gcp.parametermanager.ParameterArgs.builder
+    var argsBuilder = com.pulumi.gcp.parametermanager.ParameterArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
     com.pulumi.gcp.parametermanager.Parameter(name,
-        args(argsBuilder).build,
+        argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
@@ -144,17 +156,29 @@ object parametermanager:
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getRegionalParametersPlain(args(argsBuilder).build)
 
   /**
-   * A Regional Parameter is a logical regional parameter.
+   * A Regional Parameter is a configuration value stored in a specific region
+   * through Parameter Manager. Regional parameters support labels, encryption
+   * via Cloud KMS, and resource manager tags for fine-grained access control,
+   * organization, and regional compliance.
    * 
    * To get more information about RegionalParameter, see:
    * 
    * * [API documentation](https://cloud.google.com/secret-manager/parameter-manager/docs/reference/rest/v1/projects.locations.parameters)
+   * * How-to Guides
+   *     * [Work with parameter tags](https://docs.cloud.google.com/secret-manager/parameter-manager/docs/create-and-manage-tags)
    */
   def RegionalParameter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.parametermanager.RegionalParameterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
-    val argsBuilder = com.pulumi.gcp.parametermanager.RegionalParameterArgs.builder
+    var argsBuilder = com.pulumi.gcp.parametermanager.RegionalParameterArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
     com.pulumi.gcp.parametermanager.RegionalParameter(name,
-        args(argsBuilder).build,
+        argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
@@ -168,6 +192,19 @@ object parametermanager:
       (args: Endofunction[com.pulumi.gcp.parametermanager.RegionalParameterVersionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.parametermanager.RegionalParameterVersionArgs.builder
     com.pulumi.gcp.parametermanager.RegionalParameterVersion(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * A Template is a logical parameter template.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   */
+  def Template(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.parametermanager.TemplateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.parametermanager.TemplateArgs.builder
+    com.pulumi.gcp.parametermanager.Template(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 

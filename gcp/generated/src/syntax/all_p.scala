@@ -89,11 +89,9 @@ export ko_pulumi.gcp.backupdisasterrecovery.shieldedInstanceConfig
 export ko_pulumi.gcp.backupdisasterrecovery.standardSchedule
 export ko_pulumi.gcp.backupdisasterrecovery.tags
 export ko_pulumi.gcp.backupdisasterrecovery.targetResources
-export ko_pulumi.gcp.beyondcorp.principalInfo
 export ko_pulumi.gcp.beyondcorp.proxyProtocol
 export ko_pulumi.gcp.beyondcorp.proxyProtocolConfig
 export ko_pulumi.gcp.beyondcorp.resourceOverride
-export ko_pulumi.gcp.beyondcorp.serviceAccount
 export ko_pulumi.gcp.beyondcorp.serviceDiscovery
 export ko_pulumi.gcp.biglake.partitionKeys
 export ko_pulumi.gcp.biglake.partitionSpec
@@ -112,6 +110,7 @@ export ko_pulumi.gcp.biglake.sortCols
 export ko_pulumi.gcp.biglake.sortOrder
 export ko_pulumi.gcp.biglake.statuses
 export ko_pulumi.gcp.biglake.storageDescriptor
+export ko_pulumi.gcp.bigquery.parameters
 export ko_pulumi.gcp.bigquery.parquetOptions
 export ko_pulumi.gcp.bigquery.password
 export ko_pulumi.gcp.bigquery.preferredTables
@@ -145,8 +144,11 @@ export ko_pulumi.gcp.bigquery.tableReplicationInfo
 export ko_pulumi.gcp.bigquery.tableType
 export ko_pulumi.gcp.bigquery.timePartitioning
 export ko_pulumi.gcp.bigqueryanalyticshub.publisher
+export ko_pulumi.gcp.bigqueryanalyticshub.pubsubSubscription
 export ko_pulumi.gcp.bigqueryanalyticshub.pubsubTopic
+export ko_pulumi.gcp.bigqueryanalyticshub.pushConfig
 export ko_pulumi.gcp.bigqueryanalyticshub.restrictedExportConfig
+export ko_pulumi.gcp.bigqueryanalyticshub.retryPolicy
 export ko_pulumi.gcp.bigqueryanalyticshub.routine
 export ko_pulumi.gcp.bigqueryanalyticshub.selectedResources
 export ko_pulumi.gcp.bigqueryanalyticshub.sharingEnvironmentConfig
@@ -185,10 +187,13 @@ export ko_pulumi.gcp.ces.parameters
 export ko_pulumi.gcp.ces.personaProperties
 export ko_pulumi.gcp.ces.personaProperty
 export ko_pulumi.gcp.ces.promptConfig
+export ko_pulumi.gcp.ces.pythonCodeCondition
+export ko_pulumi.gcp.ces.pythonCodeConditions
 export ko_pulumi.gcp.ces.pythonFunction
 export ko_pulumi.gcp.ces.pythonFunctions
 export ko_pulumi.gcp.ces.redactionConfig
 export ko_pulumi.gcp.ces.redactionConfigs
+export ko_pulumi.gcp.ces.remoteA2aAgent
 export ko_pulumi.gcp.ces.remoteAgentTools
 export ko_pulumi.gcp.ces.remoteDialogflowAgent
 export ko_pulumi.gcp.ces.remoteDialogflowAgents
@@ -229,6 +234,8 @@ export ko_pulumi.gcp.ces.toolCall
 export ko_pulumi.gcp.ces.toolCalls
 export ko_pulumi.gcp.ces.toolExpectation
 export ko_pulumi.gcp.ces.toolFakeConfig
+export ko_pulumi.gcp.ces.toolMatchingSettings
+export ko_pulumi.gcp.ces.toolOverrides
 export ko_pulumi.gcp.ces.toolResponse
 export ko_pulumi.gcp.ces.toolResponses
 export ko_pulumi.gcp.ces.tools
@@ -237,6 +244,7 @@ export ko_pulumi.gcp.ces.toolsetTools
 export ko_pulumi.gcp.ces.toolsets
 export ko_pulumi.gcp.ces.transferAgent
 export ko_pulumi.gcp.ces.transferAgents
+export ko_pulumi.gcp.ces.transferRules
 export ko_pulumi.gcp.ces.turnLevelMetricsThresholds
 export ko_pulumi.gcp.ces.turns
 export ko_pulumi.gcp.chronicle.panIocSettings
@@ -264,7 +272,6 @@ export ko_pulumi.gcp.chronicle.ruleDetectionsSettings
 export ko_pulumi.gcp.chronicle.salesforceSettings
 export ko_pulumi.gcp.chronicle.scheduleCustomizations
 export ko_pulumi.gcp.chronicle.scopeInfo
-export ko_pulumi.gcp.chronicle.scopeInfos
 export ko_pulumi.gcp.chronicle.sentineloneAlertSettings
 export ko_pulumi.gcp.chronicle.series
 export ko_pulumi.gcp.chronicle.serviceNowCmdbSettings
@@ -626,7 +633,6 @@ export ko_pulumi.gcp.dataloss.profileTable
 export ko_pulumi.gcp.dataloss.proximity
 export ko_pulumi.gcp.dataloss.pubSub
 export ko_pulumi.gcp.dataloss.pubSubNotification
-export ko_pulumi.gcp.dataloss.publishFindingsToCloudDataCatalog
 export ko_pulumi.gcp.dataloss.publishFindingsToDataplexCatalog
 export ko_pulumi.gcp.dataloss.publishSummaryToCscc
 export ko_pulumi.gcp.dataloss.publishToChronicle
@@ -652,6 +658,7 @@ export ko_pulumi.gcp.dataloss.schedule
 export ko_pulumi.gcp.dataloss.schemaModifiedCadence
 export ko_pulumi.gcp.dataloss.secretsTarget
 export ko_pulumi.gcp.dataloss.selectedInfoTypes
+export ko_pulumi.gcp.dataloss.sensitivityLabel
 export ko_pulumi.gcp.dataloss.sensitivityScore
 export ko_pulumi.gcp.dataloss.singleResource
 export ko_pulumi.gcp.dataloss.storageConfig
@@ -831,6 +838,9 @@ export ko_pulumi.gcp.diagflow.textResponses
 export ko_pulumi.gcp.diagflow.textToSpeechSettings
 export ko_pulumi.gcp.diagflow.tlsConfig
 export ko_pulumi.gcp.diagflow.tool
+export ko_pulumi.gcp.diagflow.toolCall
+export ko_pulumi.gcp.diagflow.toolCallInfos
+export ko_pulumi.gcp.diagflow.toolCallResult
 export ko_pulumi.gcp.diagflow.trainingPhrases
 export ko_pulumi.gcp.diagflow.transitionRoutes
 export ko_pulumi.gcp.diagflow.triggerFulfillment
@@ -842,6 +852,7 @@ export ko_pulumi.gcp.discoveryengine.queryTerms
 export ko_pulumi.gcp.discoveryengine.quotaFailure
 export ko_pulumi.gcp.discoveryengine.recommendedForYouConfig
 export ko_pulumi.gcp.discoveryengine.redirectAction
+export ko_pulumi.gcp.discoveryengine.searchAddonSpec
 export ko_pulumi.gcp.discoveryengine.searchEngineConfig
 export ko_pulumi.gcp.discoveryengine.searchLinkPromotion
 export ko_pulumi.gcp.discoveryengine.shortcuts
@@ -997,6 +1008,8 @@ export ko_pulumi.gcp.looker.time
 export ko_pulumi.gcp.lustre.startDate
 export ko_pulumi.gcp.lustre.startTime
 export ko_pulumi.gcp.lustre.time
+export ko_pulumi.gcp.managedkafka.publicClusterConfig
+export ko_pulumi.gcp.managedkafka.publicClusterDetails
 export ko_pulumi.gcp.managedkafka.rebalanceConfig
 export ko_pulumi.gcp.managedkafka.taskRestartPolicy
 export ko_pulumi.gcp.managedkafka.tlsConfig
@@ -1101,11 +1114,9 @@ export ko_pulumi.gcp.networkservices.selfManaged
 export ko_pulumi.gcp.networkservices.signedTokenOptions
 export ko_pulumi.gcp.networkservices.states
 export ko_pulumi.gcp.networkservices.timeout
+export ko_pulumi.gcp.networkservices.tlsConfig
 export ko_pulumi.gcp.networkservices.trafficPortSelector
 export ko_pulumi.gcp.networkservices.trafficSpec
-export ko_pulumi.gcp.notebooks.reservationAffinity
-export ko_pulumi.gcp.notebooks.shieldedInstanceConfig
-export ko_pulumi.gcp.notebooks.softwareConfig
 export ko_pulumi.gcp.oracledatabase.placements
 export ko_pulumi.gcp.oracledatabase.polarisIcebergCatalog
 export ko_pulumi.gcp.oracledatabase.postgresqlConnectionProperties
@@ -1247,6 +1258,7 @@ export ko_pulumi.gcp.storage.sourceProjects
 export ko_pulumi.gcp.storage.startDate
 export ko_pulumi.gcp.storage.startTimeOfDay
 export ko_pulumi.gcp.storage.storageDestinationOptions
+export ko_pulumi.gcp.storage.storageDirectoryMappings
 export ko_pulumi.gcp.storage.storageFilters
 export ko_pulumi.gcp.storage.transferManifest
 export ko_pulumi.gcp.storage.transferOptions
@@ -1267,8 +1279,7 @@ export ko_pulumi.gcp.vectorsearch.sparse
 export ko_pulumi.gcp.vectorsearch.sparseVector
 export ko_pulumi.gcp.vertex.packageSpec
 export ko_pulumi.gcp.vertex.parts
-export ko_pulumi.gcp.vertex.persistentDiskSpec
-export ko_pulumi.gcp.vertex.pipelineJob
+export ko_pulumi.gcp.vertex.pinecone
 export ko_pulumi.gcp.vertex.ports
 export ko_pulumi.gcp.vertex.predictRequestResponseLoggingConfig
 export ko_pulumi.gcp.vertex.privateEndpoints
@@ -1277,12 +1288,13 @@ export ko_pulumi.gcp.vertex.pscAutomatedEndpoints
 export ko_pulumi.gcp.vertex.pscAutomationConfigs
 export ko_pulumi.gcp.vertex.pscInterfaceConfig
 export ko_pulumi.gcp.vertex.pythonSpec
+export ko_pulumi.gcp.vertex.ragEmbeddingModelConfig
+export ko_pulumi.gcp.vertex.ragManagedDb
 export ko_pulumi.gcp.vertex.ragManagedDbConfig
 export ko_pulumi.gcp.vertex.reservationAffinity
 export ko_pulumi.gcp.vertex.resourcePools
 export ko_pulumi.gcp.vertex.resourceRuntimeSpec
 export ko_pulumi.gcp.vertex.resourceRuntimes
-export ko_pulumi.gcp.vertex.runtimeConfig
 export ko_pulumi.gcp.vertex.scaled
 export ko_pulumi.gcp.vertex.scaling
 export ko_pulumi.gcp.vertex.schemaConfigs
@@ -1299,7 +1311,6 @@ export ko_pulumi.gcp.vertex.structuredMemoryConfigs
 export ko_pulumi.gcp.vertex.syncConfig
 export ko_pulumi.gcp.vertex.targets
 export ko_pulumi.gcp.vertex.tcpSocket
-export ko_pulumi.gcp.vertex.templateMetadatas
 export ko_pulumi.gcp.vertex.topics
 export ko_pulumi.gcp.vertex.trafficConfig
 export ko_pulumi.gcp.vertex.trafficSplitAlwaysLatest

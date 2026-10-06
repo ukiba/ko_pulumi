@@ -9,10 +9,12 @@ export ko_pulumi.gcp.accesscontextmanager.vpcSubnetwork
 export ko_pulumi.gcp.agenticapplications.usda
 export ko_pulumi.gcp.agenticapplications.visualizationExamples
 export ko_pulumi.gcp.agenticapplications.visualizationOptions
+export ko_pulumi.gcp.agenticapplications.webSearchConfig
 export ko_pulumi.gcp.alloydb.weeklySchedule
 export ko_pulumi.gcp.apihub.userPasswordConfig
 export ko_pulumi.gcp.appengine.urlDispatchRules
 export ko_pulumi.gcp.appengine.volumes
+export ko_pulumi.gcp.appengine.vpcAccess
 export ko_pulumi.gcp.appengine.vpcAccessConnector
 export ko_pulumi.gcp.appengine.zip
 export ko_pulumi.gcp.apphub.values
@@ -43,8 +45,12 @@ export ko_pulumi.gcp.ces.updatedVariables
 export ko_pulumi.gcp.ces.userFacts
 export ko_pulumi.gcp.ces.userInput
 export ko_pulumi.gcp.ces.variableDeclarations
+export ko_pulumi.gcp.ces.vpcScSettings
 export ko_pulumi.gcp.ces.webWidgetConfig
 export ko_pulumi.gcp.ces.webWidgetConfigs
+export ko_pulumi.gcp.ces.whatsappConfig
+export ko_pulumi.gcp.ces.whatsappConfigs
+export ko_pulumi.gcp.ces.whatsappCredentials
 export ko_pulumi.gcp.ces.widgetTool
 export ko_pulumi.gcp.chronicle.udmEventsAggregatesSettings
 export ko_pulumi.gcp.chronicle.udmEventsSettings
@@ -79,6 +85,7 @@ export ko_pulumi.gcp.cloudrunv2.valueSource
 export ko_pulumi.gcp.cloudrunv2.volumeMounts
 export ko_pulumi.gcp.cloudrunv2.volumes
 export ko_pulumi.gcp.cloudrunv2.vpcAccess
+export ko_pulumi.gcp.cloudrunv2.workloadIdentityConfig
 export ko_pulumi.gcp.cloudsecuritycompliance.validation
 export ko_pulumi.gcp.cloudsecuritycompliance.values
 export ko_pulumi.gcp.cloudtasks.uriOverride
@@ -130,6 +137,7 @@ export ko_pulumi.gcp.datacatalog.viewSpecs
 export ko_pulumi.gcp.dataflow.workload
 export ko_pulumi.gcp.dataform.workspaceCompilationOverrides
 export ko_pulumi.gcp.datafusion.window
+export ko_pulumi.gcp.dataloss.unsupportedFileType
 export ko_pulumi.gcp.dataloss.unwrapped
 export ko_pulumi.gcp.dataloss.upperBound
 export ko_pulumi.gcp.dataloss.value
@@ -205,9 +213,6 @@ export ko_pulumi.gcp.networkservices.urlRewrite
 export ko_pulumi.gcp.networkservices.usedBies
 export ko_pulumi.gcp.networkservices.validationSharedKeys
 export ko_pulumi.gcp.networkservices.versions
-export ko_pulumi.gcp.notebooks.virtualMachine
-export ko_pulumi.gcp.notebooks.virtualMachineConfig
-export ko_pulumi.gcp.notebooks.vmImage
 export ko_pulumi.gcp.oracledatabase.vmFileSystemStorage
 export ko_pulumi.gcp.orgpolicy.values
 export ko_pulumi.gcp.osconfig.updateSteps
@@ -232,6 +237,7 @@ export ko_pulumi.gcp.securesourcemanager.workforceIdentityFederationConfig
 export ko_pulumi.gcp.securitycenter.valueExpression
 export ko_pulumi.gcp.securityposture.valueExpression
 export ko_pulumi.gcp.securityposture.values
+export ko_pulumi.gcp.storage.userCredentials
 export ko_pulumi.gcp.storage.versioning
 export ko_pulumi.gcp.storage.vpcNetworkSources
 export ko_pulumi.gcp.storage.website
@@ -242,9 +248,13 @@ export ko_pulumi.gcp.vectorsearch.vectorSchemas
 export ko_pulumi.gcp.vectorsearch.vectors
 export ko_pulumi.gcp.vectorsearch.vertexEmbeddingConfig
 export ko_pulumi.gcp.vertex.unprovisioned
+export ko_pulumi.gcp.vertex.vectorDbConfig
 export ko_pulumi.gcp.vertex.vectorSearchConfig
+export ko_pulumi.gcp.vertex.vertexAiSearchConfig
+export ko_pulumi.gcp.vertex.vertexPredictionEndpoint
+export ko_pulumi.gcp.vertex.vertexVectorSearch
 export ko_pulumi.gcp.vertex.videoMetadata
-export ko_pulumi.gcp.vertex.workbenchRuntime
+export ko_pulumi.gcp.vertex.words
 export ko_pulumi.gcp.vmwareengine.vcenters
 export ko_pulumi.gcp.vmwareengine.vpcNetworks
 export ko_pulumi.gcp.workbench.upgradeHistories

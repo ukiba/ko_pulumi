@@ -28,14 +28,19 @@ object firebase:
 
   extension (builder: com.pulumi.gcp.firebase.AiLogicConfigArgs.Builder)
     /**
-     * @param generativeLanguageConfig Configuration for using the Gemini Developer API via Firebase AI Logic.
-     * When using the Gemini Developer API via Firebase AI Logic, a separate Gemini
-     * API key is stored in this configuration *on the server* so that you do
-     * **not** add your Gemini API key directly into your app&#39;s codebase.
+     * @param generativeLanguageConfig (Optional, Deprecated)
+     * Configuration for using the Gemini Developer API via Firebase AI Logic.
+     * Firebase AI Logic now uses a Google-managed service account to authenticate
+     * requests to the Gemini Developer API and no longer requires an API key.
+     * Values provided here may be silently ignored on input, and may be omitted in
+     * responses.
      * Structure is documented below.
+     * 
+     * &gt; **Warning:** `generativeLanguageConfig` is deprecated and will be removed in a future major release. Firebase AI Logic now uses a Google-managed service account to authenticate requests to the Gemini Developer API and no longer requires an API key.
      * @return builder
+     * @deprecated `generativeLanguageConfig` is deprecated and will be removed in a future major release. Firebase AI Logic now uses a Google-managed service account to authenticate requests to the Gemini Developer API and no longer requires an API key.
      */
-    def generativeLanguageConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.Builder]):
+    @deprecated() def generativeLanguageConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.Builder]):
         com.pulumi.gcp.firebase.AiLogicConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.builder
       builder.generativeLanguageConfig(args(argsBuilder).build)
@@ -898,14 +903,19 @@ object firebase:
 
   extension (builder: com.pulumi.gcp.firebase.inputs.AiLogicConfigState.Builder)
     /**
-     * @param generativeLanguageConfig Configuration for using the Gemini Developer API via Firebase AI Logic.
-     * When using the Gemini Developer API via Firebase AI Logic, a separate Gemini
-     * API key is stored in this configuration *on the server* so that you do
-     * **not** add your Gemini API key directly into your app&#39;s codebase.
+     * @param generativeLanguageConfig (Optional, Deprecated)
+     * Configuration for using the Gemini Developer API via Firebase AI Logic.
+     * Firebase AI Logic now uses a Google-managed service account to authenticate
+     * requests to the Gemini Developer API and no longer requires an API key.
+     * Values provided here may be silently ignored on input, and may be omitted in
+     * responses.
      * Structure is documented below.
+     * 
+     * &gt; **Warning:** `generativeLanguageConfig` is deprecated and will be removed in a future major release. Firebase AI Logic now uses a Google-managed service account to authenticate requests to the Gemini Developer API and no longer requires an API key.
      * @return builder
+     * @deprecated `generativeLanguageConfig` is deprecated and will be removed in a future major release. Firebase AI Logic now uses a Google-managed service account to authenticate requests to the Gemini Developer API and no longer requires an API key.
      */
-    def generativeLanguageConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.Builder]):
+    @deprecated() def generativeLanguageConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.AiLogicConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.builder
       builder.generativeLanguageConfig(args(argsBuilder).build)

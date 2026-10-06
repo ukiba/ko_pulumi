@@ -4786,6 +4786,28 @@ object compute:
       com.pulumi.gcp.compute.ComputeFunctions.getServiceAttachmentPlain(args(argsBuilder).build)
 
     /**
+     * List all service attachments in a given project and region. For more information see
+     * [the official documentation](https://cloud.google.com/vpc/docs/about-service-attachments)
+     * and
+     * [API reference](https://cloud.google.com/compute/docs/reference/rest/v1/serviceAttachments/list).
+     */
+    inline def getServiceAttachments(args: Endofunction[com.pulumi.gcp.compute.inputs.GetServiceAttachmentsArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetServiceAttachmentsResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetServiceAttachmentsArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getServiceAttachments(args(argsBuilder).build)
+
+    /**
+     * List all service attachments in a given project and region. For more information see
+     * [the official documentation](https://cloud.google.com/vpc/docs/about-service-attachments)
+     * and
+     * [API reference](https://cloud.google.com/compute/docs/reference/rest/v1/serviceAttachments/list).
+     */
+    inline def getServiceAttachmentsPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetServiceAttachmentsPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetServiceAttachmentsResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetServiceAttachmentsPlainArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getServiceAttachmentsPlain(args(argsBuilder).build)
+
+    /**
      * To get more information about Snapshot, see:
      * 
      * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/snapshots)
@@ -5134,6 +5156,9 @@ object compute:
    * * [API documentation](https://cloud.google.com/compute/docs/reference/v1/disks)
    * * How-to Guides
    *     * [Adding a persistent disk](https://cloud.google.com/compute/docs/disks/add-persistent-disk)
+   * 
+   * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `disk_encryption_key.raw_key_wo`, `disk_encryption_key.rsa_encrypted_key_wo`.
+   * Read more about Write-only Arguments.
    */
   def Disk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.compute.DiskArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -18096,9 +18121,6 @@ object compute:
   /**
    * Google Cloud Armor network edge security service resource.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about NetworkEdgeSecurityService, see:
    * 
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/networkEdgeSecurityServices)
@@ -23799,6 +23821,9 @@ object compute:
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/regionDisks)
    * * How-to Guides
    *     * [Adding or Resizing Regional Persistent Disks](https://cloud.google.com/compute/docs/disks/regional-persistent-disk)
+   * 
+   * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `disk_encryption_key.raw_key_wo`, `disk_encryption_key.rsa_encrypted_key_wo`.
+   * Read more about Write-only Arguments.
    */
   def RegionDisk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionDiskArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

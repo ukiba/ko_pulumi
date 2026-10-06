@@ -556,6 +556,56 @@ object monitoring:
       builder.windowsBasedSli(args(argsBuilder).build)
 
   /**
+   * A Snooze will prevent any alerts from being opened, and close any that are already open.
+   * The Snooze will work on alerts that match the criteria defined in the Snooze.
+   * The Snooze will be active from interval.start_time through interval.end_time.
+   * 
+   * &gt; **Note:** Monitoring Snoozes cannot be deleted from the Google Cloud Platform.
+   * Destroying a Terraform-managed Snooze will cancel the snooze and remove it from state but
+   * *will not delete the resource from the project.*
+   * 
+   * To get more information about Snooze, see:
+   * 
+   * * [API documentation](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.snoozes)
+   * * How-to Guides
+   *     * [Official Documentation](https://cloud.google.com/monitoring/alerts/snooze)
+   */
+  def Snooze(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.monitoring.SnoozeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.monitoring.SnoozeArgs.builder
+    com.pulumi.gcp.monitoring.Snooze(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.monitoring.SnoozeArgs.Builder)
+    /**
+     * @param criteria This defines the criteria for applying the Snooze.
+     * &gt; **Note:** After a snooze is created, its criteria can&#39;t be modified.
+     * Changing this block will force replacement of the resource.
+     * Structure is documented below.
+     * @return builder
+     */
+    def criteria(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SnoozeCriteriaArgs.Builder]):
+        com.pulumi.gcp.monitoring.SnoozeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.monitoring.inputs.SnoozeCriteriaArgs.builder
+      builder.criteria(args(argsBuilder).build)
+
+    /**
+     * @param interval The Snooze will be active from interval.start_time through interval.end_time.
+     * interval.start_time cannot be in the past. There is a 15 second clock skew to
+     * account for the time it takes for a request to reach the API from the UI.
+     * &gt; **Note:** You can edit the name and period of an upcoming snooze, and you
+     * can edit the name and end time of an active snooze. You can&#39;t edit a past
+     * (expired) snooze.
+     * Structure is documented below.
+     * @return builder
+     */
+    def interval(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SnoozeIntervalArgs.Builder]):
+        com.pulumi.gcp.monitoring.SnoozeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.monitoring.inputs.SnoozeIntervalArgs.builder
+      builder.interval(args(argsBuilder).build)
+
+  /**
    * This message configures which resources and services to monitor for availability.
    * 
    * To get more information about UptimeCheckConfig, see:
@@ -1336,6 +1386,34 @@ object monitoring:
         com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliMetricSumInRangeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliMetricSumInRangeRangeArgs.builder
       builder.range(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.monitoring.inputs.SnoozeState.Builder)
+    /**
+     * @param criteria This defines the criteria for applying the Snooze.
+     * &gt; **Note:** After a snooze is created, its criteria can&#39;t be modified.
+     * Changing this block will force replacement of the resource.
+     * Structure is documented below.
+     * @return builder
+     */
+    def criteria(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SnoozeCriteriaArgs.Builder]):
+        com.pulumi.gcp.monitoring.inputs.SnoozeState.Builder =
+      val argsBuilder = com.pulumi.gcp.monitoring.inputs.SnoozeCriteriaArgs.builder
+      builder.criteria(args(argsBuilder).build)
+
+    /**
+     * @param interval The Snooze will be active from interval.start_time through interval.end_time.
+     * interval.start_time cannot be in the past. There is a 15 second clock skew to
+     * account for the time it takes for a request to reach the API from the UI.
+     * &gt; **Note:** You can edit the name and period of an upcoming snooze, and you
+     * can edit the name and end time of an active snooze. You can&#39;t edit a past
+     * (expired) snooze.
+     * Structure is documented below.
+     * @return builder
+     */
+    def interval(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SnoozeIntervalArgs.Builder]):
+        com.pulumi.gcp.monitoring.inputs.SnoozeState.Builder =
+      val argsBuilder = com.pulumi.gcp.monitoring.inputs.SnoozeIntervalArgs.builder
+      builder.interval(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigContentMatcherArgs.Builder)
     /**

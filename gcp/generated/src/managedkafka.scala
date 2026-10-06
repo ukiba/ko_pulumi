@@ -160,6 +160,16 @@ object managedkafka:
       def argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigAccessConfigNetworkConfigArgs.builder
       builder.networkConfigs(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param publicClusterConfig Public connection configuration for the Kafka cluster.
+     * Structure is documented below.
+     * @return builder
+     */
+    def publicClusterConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigAccessConfigPublicClusterConfigArgs.Builder]):
+        com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigAccessConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigAccessConfigPublicClusterConfigArgs.builder
+      builder.publicClusterConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigArgs.Builder)
     /**
      * @param accessConfig The configuration of access to the Kafka cluster.
@@ -201,6 +211,16 @@ object managedkafka:
         com.pulumi.gcp.managedkafka.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigArgs.builder
       builder.gcpConfig(args(argsBuilder).build)
+
+    /**
+     * @param publicClusterDetails Details of the public cluster feature for the Kafka cluster.
+     * Structure is documented below.
+     * @return builder
+     */
+    def publicClusterDetails(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterPublicClusterDetailArgs.Builder]*):
+        com.pulumi.gcp.managedkafka.inputs.ClusterState.Builder =
+      def argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterPublicClusterDetailArgs.builder
+      builder.publicClusterDetails(args.map(_(argsBuilder).build)*)
 
     /**
      * @param rebalanceConfig Defines rebalancing behavior of a Kafka cluster.

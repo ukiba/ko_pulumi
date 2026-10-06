@@ -8,6 +8,7 @@ export ko_pulumi.gcp.accesscontextmanager.modifiers
 export ko_pulumi.gcp.accesscontextmanager.operations
 export ko_pulumi.gcp.accesscontextmanager.osConstraints
 export ko_pulumi.gcp.agenticapplications.mcpDataSources
+export ko_pulumi.gcp.agenticapplications.methodologyExportOptions
 export ko_pulumi.gcp.agentregistry.mcpServerSpec
 export ko_pulumi.gcp.alloydb.machineConfig
 export ko_pulumi.gcp.alloydb.maintenanceUpdatePolicy
@@ -30,6 +31,7 @@ export ko_pulumi.gcp.appengine.libraries
 export ko_pulumi.gcp.appengine.livenessCheck
 export ko_pulumi.gcp.appengine.manualScaling
 export ko_pulumi.gcp.appengine.network
+export ko_pulumi.gcp.appengine.networkInterfaces
 export ko_pulumi.gcp.appengine.networkSettings
 export ko_pulumi.gcp.appengine.networkUtilization
 export ko_pulumi.gcp.apphub.operatorOwners
@@ -62,6 +64,8 @@ export ko_pulumi.gcp.bigquery.metastoreServiceConfig
 export ko_pulumi.gcp.bigquery.network
 export ko_pulumi.gcp.bigqueryanalyticshub.linkedDatasetMaps
 export ko_pulumi.gcp.bigqueryanalyticshub.linkedResources
+export ko_pulumi.gcp.bigqueryanalyticshub.noWrapper
+export ko_pulumi.gcp.bigqueryanalyticshub.oidcToken
 export ko_pulumi.gcp.bigtable.maxAge
 export ko_pulumi.gcp.bigtable.maxVersions
 export ko_pulumi.gcp.certificateauthority.keySpec
@@ -83,6 +87,7 @@ export ko_pulumi.gcp.ces.loggingSettings
 export ko_pulumi.gcp.ces.mcpTools
 export ko_pulumi.gcp.ces.mcpToolset
 export ko_pulumi.gcp.ces.messages
+export ko_pulumi.gcp.ces.metricAnalysisSettings
 export ko_pulumi.gcp.ces.mockToolResponse
 export ko_pulumi.gcp.ces.modalityConfigs
 export ko_pulumi.gcp.ces.modelSafeties
@@ -273,14 +278,18 @@ export ko_pulumi.gcp.datafusion.networkConfig
 export ko_pulumi.gcp.datalineage.lineageEnablement
 export ko_pulumi.gcp.dataloss.kind
 export ko_pulumi.gcp.dataloss.kmsWrapped
+export ko_pulumi.gcp.dataloss.labelFieldsToMatches
 export ko_pulumi.gcp.dataloss.largeCustomDictionary
 export ko_pulumi.gcp.dataloss.likelihoodAdjustment
 export ko_pulumi.gcp.dataloss.limits
 export ko_pulumi.gcp.dataloss.location
+export ko_pulumi.gcp.dataloss.logToBigQuery
+export ko_pulumi.gcp.dataloss.loggingConfigs
 export ko_pulumi.gcp.dataloss.lowerBound
 export ko_pulumi.gcp.dataloss.manual
 export ko_pulumi.gcp.dataloss.max
 export ko_pulumi.gcp.dataloss.maxFindingsPerInfoTypes
+export ko_pulumi.gcp.dataloss.metadataKeyValueExpression
 export ko_pulumi.gcp.dataloss.min
 export ko_pulumi.gcp.dataloss.minLikelihoodPerInfoTypes
 export ko_pulumi.gcp.dataloss.newValue
@@ -292,6 +301,7 @@ export ko_pulumi.gcp.dataloss.otherTables
 export ko_pulumi.gcp.dataloss.others
 export ko_pulumi.gcp.dataloss.outputConfig
 export ko_pulumi.gcp.dataloss.outputPath
+export ko_pulumi.gcp.dataloss.overlaps
 export ko_pulumi.gcp.dataplex.latestJobs
 export ko_pulumi.gcp.dataplex.metastore
 export ko_pulumi.gcp.dataplex.metastoreStatuses
@@ -373,6 +383,7 @@ export ko_pulumi.gcp.discoveryengine.layoutBasedChunkingConfig
 export ko_pulumi.gcp.discoveryengine.layoutParsingConfig
 export ko_pulumi.gcp.discoveryengine.logo
 export ko_pulumi.gcp.discoveryengine.mediaRecommendationEngineConfig
+export ko_pulumi.gcp.discoveryengine.metadata
 export ko_pulumi.gcp.discoveryengine.modelArmorConfig
 export ko_pulumi.gcp.discoveryengine.mostPopularConfig
 export ko_pulumi.gcp.discoveryengine.ocrParsingConfig
@@ -544,8 +555,6 @@ export ko_pulumi.gcp.networkservices.method
 export ko_pulumi.gcp.networkservices.networkConfig
 export ko_pulumi.gcp.networkservices.originOverrideAction
 export ko_pulumi.gcp.networkservices.originRedirect
-export ko_pulumi.gcp.notebooks.kernels
-export ko_pulumi.gcp.notebooks.metrics
 export ko_pulumi.gcp.oracledatabase.kafkaConnectionProperties
 export ko_pulumi.gcp.oracledatabase.kafkaSchemaRegistryConnectionProperties
 export ko_pulumi.gcp.oracledatabase.localStandbyDbs
@@ -617,18 +626,17 @@ export ko_pulumi.gcp.transcoder.muxStreams
 export ko_pulumi.gcp.transcoder.output
 export ko_pulumi.gcp.transcoder.overlays
 export ko_pulumi.gcp.vertex.keepAliveProbe
-export ko_pulumi.gcp.vertex.lastScheduledRunResponses
+export ko_pulumi.gcp.vertex.knn
 export ko_pulumi.gcp.vertex.livenessProbe
 export ko_pulumi.gcp.vertex.machineSpec
 export ko_pulumi.gcp.vertex.machineSpecs
 export ko_pulumi.gcp.vertex.managedMemoryTopic
+export ko_pulumi.gcp.vertex.mcpTools
 export ko_pulumi.gcp.vertex.memoryBankConfig
 export ko_pulumi.gcp.vertex.memoryTopics
 export ko_pulumi.gcp.vertex.metadata
 export ko_pulumi.gcp.vertex.modelConfig
 export ko_pulumi.gcp.vertex.monitoringConfig
-export ko_pulumi.gcp.vertex.networkSpec
-export ko_pulumi.gcp.vertex.notebookExecutionJob
 export ko_pulumi.gcp.vertex.numericalThresholdConfig
 export ko_pulumi.gcp.vertex.onlineServingConfig
 export ko_pulumi.gcp.vertex.optimized

@@ -5,6 +5,93 @@ import com.pulumi.resources.CustomResourceOptions
 
 object dataloss:
   /**
+   * A policy to apply to content based on its inspection findings.
+   * 
+   * To get more information about ContentPolicy, see:
+   * 
+   * * [API documentation](https://cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.locations.contentPolicies)
+   * * How-to Guides
+   *     * [Official Documentation](https://cloud.google.com/sensitive-data-protection/docs)
+   */
+  def PreventionContentPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.builder
+    com.pulumi.gcp.dataloss.PreventionContentPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder)
+    /**
+     * @param defaultAction Action to take if the content is scanned and no rules match. Defaults to returning an ALLOW verdict if not set.
+     * Structure is documented below.
+     * @return builder
+     */
+    def defaultAction(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyDefaultActionArgs.Builder]):
+        com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyDefaultActionArgs.builder
+      builder.defaultAction(args(argsBuilder).build)
+
+    /**
+     * @param failedToScanSupportedFileType Action to take if the content is a supported file type and size but fails to be scanned, for example because the file is encrypted or corrupted.
+     * Structure is documented below.
+     * @return builder
+     */
+    def failedToScanSupportedFileType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyFailedToScanSupportedFileTypeArgs.Builder]):
+        com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyFailedToScanSupportedFileTypeArgs.builder
+      builder.failedToScanSupportedFileType(args(argsBuilder).build)
+
+    /**
+     * @param inputTooLarge Action to take if the content is a supported file type but is too large to be scanned.
+     * Structure is documented below.
+     * @return builder
+     */
+    def inputTooLarge(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInputTooLargeArgs.Builder]):
+        com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInputTooLargeArgs.builder
+      builder.inputTooLarge(args(argsBuilder).build)
+
+    /**
+     * @param inspectConfig InspectConfig to use to produce findings.
+     * Structure is documented below.
+     * @return builder
+     */
+    def inspectConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder]):
+        com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.builder
+      builder.inspectConfig(args(argsBuilder).build)
+
+    /**
+     * @param loggingConfigs Log the actions taken by the content policy to external systems.
+     * Structure is documented below.
+     * @return builder
+     */
+    def loggingConfigs(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigArgs.Builder]*):
+        com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigArgs.builder
+      builder.loggingConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param rules Policies to apply, based on the findings returned by inspection. The first rule to match applies.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rules(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleArgs.Builder]*):
+        com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleArgs.builder
+      builder.rules(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param unsupportedFileType Action to take if the content is an unsupported file type.
+     * Structure is documented below.
+     * @return builder
+     */
+    def unsupportedFileType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyUnsupportedFileTypeArgs.Builder]):
+        com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyUnsupportedFileTypeArgs.builder
+      builder.unsupportedFileType(args(argsBuilder).build)
+
+  /**
    * Allows creation of templates to de-identify content.
    * 
    * To get more information about DeidentifyTemplate, see:
@@ -198,6 +285,876 @@ object dataloss:
         com.pulumi.gcp.dataloss.PreventionStoredInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeRegexArgs.builder
       builder.regex(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyErrorArgs.Builder)
+    /**
+     * @param details (Output)
+     * A list of messages that carry the error details.
+     * @return builder
+     */
+    def details(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyErrorDetailArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyErrorArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyErrorDetailArgs.builder
+      builder.details(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder)
+    /**
+     * @param customInfoTypes Custom info types to be used. See https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
+     * Structure is documented below.
+     * @return builder
+     */
+    def customInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.builder
+      builder.customInfoTypes(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param infoTypes Restricts what infoTypes to look for. The values must correspond to InfoType values returned by infoTypes.list
+     * or listed at https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the system may automatically choose what detectors to run.
+     * By default this may be all types, but may change over time as detectors are updated.
+     * Structure is documented below.
+     * @return builder
+     */
+    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigInfoTypeArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigInfoTypeArgs.builder
+      builder.infoTypes(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param limits Configuration to control the number of findings returned.
+     * Structure is documented below.
+     * @return builder
+     */
+    def limits(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsArgs.builder
+      builder.limits(args(argsBuilder).build)
+
+    /**
+     * @param minLikelihoodPerInfoTypes Minimum likelihood per infotype. For each infotype, a user can specify a minimum likelihood.
+     * The system only returns a finding if its likelihood is above this threshold. If this field
+     * is not set, the system uses the InspectConfig min_likelihood.
+     * Structure is documented below.
+     * @return builder
+     */
+    def minLikelihoodPerInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeArgs.builder
+      builder.minLikelihoodPerInfoTypes(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param ruleSets Set of rules to apply to the findings for this InspectConfig. Exclusion rules, contained in the set are executed in the end,
+     * other rules are executed in the order they are specified for each info type.
+     * Structure is documented below.
+     * @return builder
+     */
+    def ruleSets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetArgs.builder
+      builder.ruleSets(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder)
+    /**
+     * @param detectionRules Set of detection rules to apply to all findings of this CustomInfoType. Rules are applied in order
+     * that they are specified. Only supported for the dictionary, regex, and storedType CustomInfoTypes.
+     * Structure is documented below.
+     * @return builder
+     */
+    def detectionRules(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleArgs.builder
+      builder.detectionRules(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param dictionary Dictionary which defines the rule.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryArgs.builder
+      builder.dictionary(args(argsBuilder).build)
+
+    /**
+     * @param fileLabelInfoType Configuration for a custom infoType that detects file labels.
+     * Structure is documented below.
+     * @return builder
+     */
+    def fileLabelInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeArgs.builder
+      builder.fileLabelInfoType(args(argsBuilder).build)
+
+    /**
+     * @param infoType CustomInfoType can either be a new infoType, or an extension of built-in infoType, when the name matches one of existing
+     * infoTypes and that infoType is specified in `infoTypes` field. Specifying the latter adds findings to the
+     * one detected by the system. If built-in info type is not specified in `infoTypes` list then the name is
+     * treated as a custom info type.
+     * Structure is documented below.
+     * @return builder
+     */
+    def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeInfoTypeArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeInfoTypeArgs.builder
+      builder.infoType(args(argsBuilder).build)
+
+    /**
+     * @param metadataKeyValueExpression Configuration for a custom infoType that detects key-value pairs in the metadata matching the specified regular expressions.
+     * Structure is documented below.
+     * @return builder
+     */
+    def metadataKeyValueExpression(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeMetadataKeyValueExpressionArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeMetadataKeyValueExpressionArgs.builder
+      builder.metadataKeyValueExpression(args(argsBuilder).build)
+
+    /**
+     * @param regex Regular expression which defines the rule.
+     * Structure is documented below.
+     * @return builder
+     */
+    def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeRegexArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeRegexArgs.builder
+      builder.regex(args(argsBuilder).build)
+
+    /**
+     * @param sensitivityScore Optional custom sensitivity for this InfoType. This only applies to data profiling.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeSensitivityScoreArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeSensitivityScoreArgs.builder
+      builder.sensitivityScore(args(argsBuilder).build)
+
+    /**
+     * @param storedType A reference to a StoredInfoType to use with scanning.
+     * Structure is documented below.
+     * @return builder
+     */
+    def storedType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeStoredTypeArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeStoredTypeArgs.builder
+      builder.storedType(args(argsBuilder).build)
+
+    /**
+     * @param surrogateType Message for detecting output from deidentification transformations that support reversing.
+     * @return builder
+     */
+    def surrogateType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeSurrogateTypeArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeSurrogateTypeArgs.builder
+      builder.surrogateType(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleArgs.Builder)
+    /**
+     * @param hotwordRule Hotword-based detection rule.
+     * Structure is documented below.
+     * @return builder
+     */
+    def hotwordRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleArgs.builder
+      builder.hotwordRule(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleArgs.Builder)
+    /**
+     * @param hotwordRegex Regular expression pattern defining what qualifies as a hotword.
+     * Structure is documented below.
+     * @return builder
+     */
+    def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleHotwordRegexArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleHotwordRegexArgs.builder
+      builder.hotwordRegex(args(argsBuilder).build)
+
+    /**
+     * @param likelihoodAdjustment Likelihood adjustment to apply to all matching findings.
+     * Structure is documented below.
+     * @return builder
+     */
+    def likelihoodAdjustment(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleLikelihoodAdjustmentArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleLikelihoodAdjustmentArgs.builder
+      builder.likelihoodAdjustment(args(argsBuilder).build)
+
+    /**
+     * @param proximity Proximity of the finding within which the entire hotword must reside. The total length of the window cannot
+     * exceed 1000 characters.
+     * Structure is documented below.
+     * @return builder
+     */
+    def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleProximityArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleProximityArgs.builder
+      builder.proximity(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryArgs.Builder)
+    /**
+     * @param cloudStoragePath Newline-delimited file of words in Cloud Storage. Only a single file is accepted.
+     * Structure is documented below.
+     * @return builder
+     */
+    def cloudStoragePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryCloudStoragePathArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryCloudStoragePathArgs.builder
+      builder.cloudStoragePath(args(argsBuilder).build)
+
+    /**
+     * @param wordList List of words or phrases to search for.
+     * Structure is documented below.
+     * @return builder
+     */
+    def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryWordListArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryWordListArgs.builder
+      builder.wordList(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeArgs.Builder)
+    /**
+     * @param googleDriveLabel Google Drive labels published by Google.
+     * Structure is documented below.
+     * @return builder
+     */
+    def googleDriveLabel(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeGoogleDriveLabelArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeGoogleDriveLabelArgs.builder
+      builder.googleDriveLabel(args(argsBuilder).build)
+
+    /**
+     * @param sensitivityLabel Sensitivity labels published by Microsoft.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sensitivityLabel(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeSensitivityLabelArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeSensitivityLabelArgs.builder
+      builder.sensitivityLabel(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeGoogleDriveLabelArgs.Builder)
+    /**
+     * @param labelFieldsToMatches The field values of the Google Drive label to match.
+     * Structure is documented below.
+     * @return builder
+     */
+    def labelFieldsToMatches(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeGoogleDriveLabelLabelFieldsToMatchArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeGoogleDriveLabelArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeGoogleDriveLabelLabelFieldsToMatchArgs.builder
+      builder.labelFieldsToMatches(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeInfoTypeArgs.Builder)
+    /**
+     * @param sensitivityScore Optional custom sensitivity for this InfoType. This only applies to data profiling.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeInfoTypeSensitivityScoreArgs.builder
+      builder.sensitivityScore(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigInfoTypeArgs.Builder)
+    /**
+     * @param sensitivityScore Optional custom sensitivity for this InfoType.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigInfoTypeSensitivityScoreArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigInfoTypeSensitivityScoreArgs.builder
+      builder.sensitivityScore(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsArgs.Builder)
+    /**
+     * @param maxFindingsPerInfoTypes Configuration of findings limit given for specified infoTypes.
+     * Structure is documented below.
+     * @return builder
+     */
+    def maxFindingsPerInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeArgs.builder
+      builder.maxFindingsPerInfoTypes(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeArgs.Builder)
+    /**
+     * @param infoType Type of information the findings limit applies to. Only one limit per infoType should be provided. If InfoTypeLimit does
+     * not have an infoType, the DLP API applies the limit against all infoTypes that are found but not
+     * specified in another InfoTypeLimit.
+     * Structure is documented below.
+     * @return builder
+     */
+    def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.builder
+      builder.infoType(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.Builder)
+    /**
+     * @param sensitivityScore Optional custom sensitivity for this InfoType. This only applies to data profiling.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeSensitivityScoreArgs.builder
+      builder.sensitivityScore(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeArgs.Builder)
+    /**
+     * @param infoType Type of information the likeliness threshold applies to. Only one likelihood per infoType should be provided.
+     * If InfoTypeLikelihood does not have an info_type, the configuration fails.
+     * Structure is documented below.
+     * @return builder
+     */
+    def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeInfoTypeArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeInfoTypeArgs.builder
+      builder.infoType(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeInfoTypeArgs.Builder)
+    /**
+     * @param sensitivityScore Optional custom sensitivity for this InfoType. This only applies to data profiling.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeInfoTypeSensitivityScoreArgs.builder
+      builder.sensitivityScore(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetArgs.Builder)
+    /**
+     * @param infoTypes List of infoTypes this rule set is applied to.
+     * Structure is documented below.
+     * @return builder
+     */
+    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetInfoTypeArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetInfoTypeArgs.builder
+      builder.infoTypes(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param rules Set of rules to be applied to infoTypes. The rules are applied in order.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rules(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleArgs.builder
+      builder.rules(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetInfoTypeArgs.Builder)
+    /**
+     * @param sensitivityScore Optional custom sensitivity for this InfoType.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetInfoTypeSensitivityScoreArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetInfoTypeSensitivityScoreArgs.builder
+      builder.sensitivityScore(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsArgs.Builder)
+    /**
+     * @param imageContainmentType Specifies the required spatial relationship between the bounding boxes of the target finding and the context infoType findings.
+     * Structure is documented below.
+     * @return builder
+     */
+    def imageContainmentType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeArgs.builder
+      builder.imageContainmentType(args(argsBuilder).build)
+
+    /**
+     * @param infoTypes A list of image-supported infoTypes to be used as context for the adjustment rule.
+     * Structure is documented below.
+     * @return builder
+     */
+    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsInfoTypeArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsInfoTypeArgs.builder
+      builder.infoTypes(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeArgs.Builder)
+    /**
+     * @param encloses Defines a condition where one bounding box encloses another.
+     * @return builder
+     */
+    def encloses(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeEnclosesArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeEnclosesArgs.builder
+      builder.encloses(args(argsBuilder).build)
+
+    /**
+     * @param fullyInside Defines a condition where one bounding box is fully inside another.
+     * @return builder
+     */
+    def fullyInside(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeFullyInsideArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeFullyInsideArgs.builder
+      builder.fullyInside(args(argsBuilder).build)
+
+    /**
+     * @param overlaps Defines a condition for overlapping bounding boxes.
+     * @return builder
+     */
+    def overlaps(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeOverlapsArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeOverlapsArgs.builder
+      builder.overlaps(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsInfoTypeArgs.Builder)
+    /**
+     * @param sensitivityScore Optional custom sensitivity for this InfoType.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsInfoTypeSensitivityScoreArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsInfoTypeSensitivityScoreArgs.builder
+      builder.sensitivityScore(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesArgs.Builder)
+    /**
+     * @param infoTypes Sensitive Data Protection adjusts the likelihood of a finding if that finding also matches one of these infoTypes.
+     * Structure is documented below.
+     * @return builder
+     */
+    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesInfoTypeArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesInfoTypeArgs.builder
+      builder.infoTypes(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesInfoTypeArgs.Builder)
+    /**
+     * @param sensitivityScore Optional custom sensitivity for this InfoType.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesInfoTypeSensitivityScoreArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesInfoTypeSensitivityScoreArgs.builder
+      builder.sensitivityScore(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleArgs.Builder)
+    /**
+     * @param adjustByImageFindings AdjustmentRule condition for image findings.
+     * Structure is documented below.
+     * @return builder
+     */
+    def adjustByImageFindings(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsArgs.builder
+      builder.adjustByImageFindings(args(argsBuilder).build)
+
+    /**
+     * @param adjustByMatchingInfoTypes AdjustmentRule condition for matching infoTypes.
+     * Structure is documented below.
+     * @return builder
+     */
+    def adjustByMatchingInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesArgs.builder
+      builder.adjustByMatchingInfoTypes(args(argsBuilder).build)
+
+    /**
+     * @param likelihoodAdjustment Likelihood adjustment to apply to all matching findings.
+     * Structure is documented below.
+     * @return builder
+     */
+    def likelihoodAdjustment(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleLikelihoodAdjustmentArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleLikelihoodAdjustmentArgs.builder
+      builder.likelihoodAdjustment(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleArgs.Builder)
+    /**
+     * @param adjustmentRule Rule that specifies conditions when a certain infoType&#39;s finding details should be adjusted.
+     * Structure is documented below.
+     * @return builder
+     */
+    def adjustmentRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleArgs.builder
+      builder.adjustmentRule(args(argsBuilder).build)
+
+    /**
+     * @param exclusionRule The rule that specifies conditions when findings of infoTypes specified in InspectionRuleSet are removed from results.
+     * Structure is documented below.
+     * @return builder
+     */
+    def exclusionRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleArgs.builder
+      builder.exclusionRule(args(argsBuilder).build)
+
+    /**
+     * @param hotwordRule Hotword-based detection rule.
+     * Structure is documented below.
+     * @return builder
+     */
+    def hotwordRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleArgs.builder
+      builder.hotwordRule(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleArgs.Builder)
+    /**
+     * @param dictionary Dictionary which defines the rule.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.builder
+      builder.dictionary(args(argsBuilder).build)
+
+    /**
+     * @param excludeByHotword Drop if the hotword rule is contained in the proximate context.
+     * For tabular data, the context includes the column name.
+     * Structure is documented below.
+     * @return builder
+     */
+    def excludeByHotword(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.builder
+      builder.excludeByHotword(args(argsBuilder).build)
+
+    /**
+     * @param excludeByImageFindings The rule to exclude image findings based on spatial relationships with other image findings.
+     * Structure is documented below.
+     * @return builder
+     */
+    def excludeByImageFindings(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsArgs.builder
+      builder.excludeByImageFindings(args(argsBuilder).build)
+
+    /**
+     * @param excludeInfoTypes Set of infoTypes for which findings would affect this rule.
+     * Structure is documented below.
+     * @return builder
+     */
+    def excludeInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesArgs.builder
+      builder.excludeInfoTypes(args(argsBuilder).build)
+
+    /**
+     * @param regex Regular expression which defines the rule.
+     * Structure is documented below.
+     * @return builder
+     */
+    def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleRegexArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleRegexArgs.builder
+      builder.regex(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.Builder)
+    /**
+     * @param cloudStoragePath Newline-delimited file of words in Cloud Storage. Only a single file is accepted.
+     * Structure is documented below.
+     * @return builder
+     */
+    def cloudStoragePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePathArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePathArgs.builder
+      builder.cloudStoragePath(args(argsBuilder).build)
+
+    /**
+     * @param wordList List of words or phrases to search for.
+     * Structure is documented below.
+     * @return builder
+     */
+    def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryWordListArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryWordListArgs.builder
+      builder.wordList(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.Builder)
+    /**
+     * @param hotwordRegex Regular expression pattern defining what qualifies as a hotword.
+     * Structure is documented below.
+     * @return builder
+     */
+    def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordHotwordRegexArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordHotwordRegexArgs.builder
+      builder.hotwordRegex(args(argsBuilder).build)
+
+    /**
+     * @param proximity Proximity of the finding within which the entire hotword must reside. The total length of the window cannot
+     * exceed 1000 characters. Note that the finding itself will be included in the window, so that hotwords may be
+     * used to match substrings of the finding itself. For example, the certainty of a phone number regex
+     * `(\d{3}) \d{3}-\d{4}` could be adjusted upwards if the area code is known to be the local area code of a company
+     * office using the hotword regex `(xxx)`, where `xxx` is the area code in question.
+     * Structure is documented below.
+     * @return builder
+     */
+    def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximityArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximityArgs.builder
+      builder.proximity(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsArgs.Builder)
+    /**
+     * @param imageContainmentType Specifies the required spatial relationship between the bounding boxes of the target finding and the context infoType findings.
+     * Structure is documented below.
+     * @return builder
+     */
+    def imageContainmentType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeArgs.builder
+      builder.imageContainmentType(args(argsBuilder).build)
+
+    /**
+     * @param infoTypes A list of image-supported infoTypes to be used as context for the exclusion rule.
+     * Structure is documented below.
+     * @return builder
+     */
+    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsInfoTypeArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsInfoTypeArgs.builder
+      builder.infoTypes(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeArgs.Builder)
+    /**
+     * @param encloses Defines a condition where one bounding box encloses another.
+     * @return builder
+     */
+    def encloses(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeEnclosesArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeEnclosesArgs.builder
+      builder.encloses(args(argsBuilder).build)
+
+    /**
+     * @param fullyInside Defines a condition where one bounding box is fully inside another.
+     * @return builder
+     */
+    def fullyInside(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeFullyInsideArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeFullyInsideArgs.builder
+      builder.fullyInside(args(argsBuilder).build)
+
+    /**
+     * @param overlaps Defines a condition for overlapping bounding boxes.
+     * @return builder
+     */
+    def overlaps(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeOverlapsArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeOverlapsArgs.builder
+      builder.overlaps(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsInfoTypeArgs.Builder)
+    /**
+     * @param sensitivityScore Optional custom sensitivity for this InfoType.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsInfoTypeSensitivityScoreArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsInfoTypeSensitivityScoreArgs.builder
+      builder.sensitivityScore(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesArgs.Builder)
+    /**
+     * @param infoTypes If a finding is matched by any of the infoType detectors listed here, the finding will be excluded from the scan results.
+     * Structure is documented below.
+     * @return builder
+     */
+    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeArgs.builder
+      builder.infoTypes(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeArgs.Builder)
+    /**
+     * @param sensitivityScore Optional custom sensitivity for this InfoType.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeSensitivityScoreArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeSensitivityScoreArgs.builder
+      builder.sensitivityScore(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleArgs.Builder)
+    /**
+     * @param hotwordRegex Regular expression pattern defining what qualifies as a hotword.
+     * Structure is documented below.
+     * @return builder
+     */
+    def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleHotwordRegexArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleHotwordRegexArgs.builder
+      builder.hotwordRegex(args(argsBuilder).build)
+
+    /**
+     * @param likelihoodAdjustment Likelihood adjustment to apply to all matching findings.
+     * Structure is documented below.
+     * @return builder
+     */
+    def likelihoodAdjustment(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustmentArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustmentArgs.builder
+      builder.likelihoodAdjustment(args(argsBuilder).build)
+
+    /**
+     * @param proximity Proximity of the finding within which the entire hotword must reside. The total length of the window cannot
+     * exceed 1000 characters.
+     * Structure is documented below.
+     * @return builder
+     */
+    def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleProximityArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleProximityArgs.builder
+      builder.proximity(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigArgs.Builder)
+    /**
+     * @param logToBigQuery Log actions to BigQuery.
+     * Structure is documented below.
+     * @return builder
+     */
+    def logToBigQuery(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigLogToBigQueryArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigLogToBigQueryArgs.builder
+      builder.logToBigQuery(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleArgs.Builder)
+    /**
+     * @param action The action to take if the rule matches.
+     * Structure is documented below.
+     * @return builder
+     */
+    def action(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleActionArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleActionArgs.builder
+      builder.action(args(argsBuilder).build)
+
+    /**
+     * @param conditions List of conditions that must be met for this rule to apply.
+     * Structure is documented below.
+     * @return builder
+     */
+    def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionArgs.builder
+      builder.conditions(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionArgs.Builder)
+    /**
+     * @param infoTypeCondition A condition based on info types.
+     * Structure is documented below.
+     * @return builder
+     */
+    def infoTypeCondition(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionArgs.builder
+      builder.infoTypeCondition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionArgs.Builder)
+    /**
+     * @param anyInfoType Match any info type.
+     * @return builder
+     */
+    def anyInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionAnyInfoTypeArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionAnyInfoTypeArgs.builder
+      builder.anyInfoType(args(argsBuilder).build)
+
+    /**
+     * @param infoTypes List of info types to match.
+     * Structure is documented below.
+     * @return builder
+     */
+    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionInfoTypesArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionInfoTypesArgs.builder
+      builder.infoTypes(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder)
+    /**
+     * @param defaultAction Action to take if the content is scanned and no rules match. Defaults to returning an ALLOW verdict if not set.
+     * Structure is documented below.
+     * @return builder
+     */
+    def defaultAction(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyDefaultActionArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyDefaultActionArgs.builder
+      builder.defaultAction(args(argsBuilder).build)
+
+    /**
+     * @param errors Output only. A stream of errors encountered when the policy was applied. Output only field. Will return the last 100 errors.
+     * Structure is documented below.
+     * @return builder
+     */
+    def errors(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyErrorArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyErrorArgs.builder
+      builder.errors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param failedToScanSupportedFileType Action to take if the content is a supported file type and size but fails to be scanned, for example because the file is encrypted or corrupted.
+     * Structure is documented below.
+     * @return builder
+     */
+    def failedToScanSupportedFileType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyFailedToScanSupportedFileTypeArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyFailedToScanSupportedFileTypeArgs.builder
+      builder.failedToScanSupportedFileType(args(argsBuilder).build)
+
+    /**
+     * @param inputTooLarge Action to take if the content is a supported file type but is too large to be scanned.
+     * Structure is documented below.
+     * @return builder
+     */
+    def inputTooLarge(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInputTooLargeArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInputTooLargeArgs.builder
+      builder.inputTooLarge(args(argsBuilder).build)
+
+    /**
+     * @param inspectConfig InspectConfig to use to produce findings.
+     * Structure is documented below.
+     * @return builder
+     */
+    def inspectConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.builder
+      builder.inspectConfig(args(argsBuilder).build)
+
+    /**
+     * @param loggingConfigs Log the actions taken by the content policy to external systems.
+     * Structure is documented below.
+     * @return builder
+     */
+    def loggingConfigs(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigArgs.builder
+      builder.loggingConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param rules Policies to apply, based on the findings returned by inspection. The first rule to match applies.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rules(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleArgs.builder
+      builder.rules(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param unsupportedFileType Action to take if the content is an unsupported file type.
+     * Structure is documented below.
+     * @return builder
+     */
+    def unsupportedFileType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyUnsupportedFileTypeArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyUnsupportedFileTypeArgs.builder
+      builder.unsupportedFileType(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigArgs.Builder)
     /**
@@ -3747,19 +4704,6 @@ object dataloss:
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionPubSubArgs.builder
       builder.pubSub(args(argsBuilder).build)
-
-    /**
-     * @param publishFindingsToCloudDataCatalog (Optional, Deprecated)
-     * Publish findings of a DlpJob to Data Catalog.
-     * 
-     * &gt; **Warning:** `publishFindingsToCloudDataCatalog` is deprecated and will be removed in a future major release. To publish findings to Dataplex Catalog, use `publishFindingsToDataplexCatalog` instead.
-     * @return builder
-     * @deprecated `publishFindingsToCloudDataCatalog` is deprecated and will be removed in a future major release. To publish findings to Dataplex Catalog, use `publishFindingsToDataplexCatalog` instead.
-     */
-    @deprecated() def publishFindingsToCloudDataCatalog(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionPublishFindingsToCloudDataCatalogArgs.Builder]):
-        com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionPublishFindingsToCloudDataCatalogArgs.builder
-      builder.publishFindingsToCloudDataCatalog(args(argsBuilder).build)
 
     /**
      * @param publishFindingsToDataplexCatalog Publish findings of a DlpJob as an aspect to Dataplex Universal Catalog.

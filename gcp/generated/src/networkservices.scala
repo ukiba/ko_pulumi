@@ -5,6 +5,31 @@ import com.pulumi.resources.CustomResourceOptions
 
 object networkservices:
   /**
+   * AgentConnectivityTemplate represents a reusable network configuration.
+   * 
+   * To get more information about AgentConnectivityTemplate, see:
+   * 
+   * * [API documentation](https://cloud.google.com/network-services/docs/reference/network-services/rest/v1/projects.locations.agentConnectivityTemplates)
+   */
+  def AgentConnectivityTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.networkservices.AgentConnectivityTemplateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.networkservices.AgentConnectivityTemplateArgs.builder
+    com.pulumi.gcp.networkservices.AgentConnectivityTemplate(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.networkservices.AgentConnectivityTemplateArgs.Builder)
+    /**
+     * @param egressNetworkConfig Configuration for egress network traffic.
+     * Structure is documented below.
+     * @return builder
+     */
+    def egressNetworkConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigArgs.Builder]):
+        com.pulumi.gcp.networkservices.AgentConnectivityTemplateArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigArgs.builder
+      builder.egressNetworkConfig(args(argsBuilder).build)
+
+  /**
    * AgentGateway represents the agent gateway resource.
    * 
    * To get more information about AgentGateway, see:
@@ -671,6 +696,25 @@ object networkservices:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  object NetworkservicesFunctions:
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
+    /** Get information about a Network Services Gateway. */
+    inline def getGateway(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GetGatewayArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.networkservices.outputs.GetGatewayResult] =
+      val argsBuilder = com.pulumi.gcp.networkservices.inputs.GetGatewayArgs.builder
+      com.pulumi.gcp.networkservices.NetworkservicesFunctions.getGateway(args(argsBuilder).build)
+
+    /** Get information about a Network Services Gateway. */
+    inline def getGatewayPlain(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GetGatewayPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.networkservices.outputs.GetGatewayResult] =
+      val argsBuilder = com.pulumi.gcp.networkservices.inputs.GetGatewayPlainArgs.builder
+      com.pulumi.gcp.networkservices.NetworkservicesFunctions.getGatewayPlain(args(argsBuilder).build)
+
   /**
    * &gt; **Warning:** Cloud Service Mesh&#39;s integration with Service Directory is going to be deprecated. [Learn more](https://docs.cloud.google.com/service-mesh/docs/service-routing/service-directory-integration-setup). Creating new service binding resources will be disabled.
    * 
@@ -841,6 +885,40 @@ object networkservices:
         com.pulumi.gcp.networkservices.WasmPluginArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.WasmPluginVersionArgs.builder
       builder.versions(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigArgs.Builder)
+    /**
+     * @param dnsPeeringConfig DNS peering configuration for the AgentConnectivityTemplate.
+     * When set, the gateway will resolve queries for the configured
+     * `domains` via Cloud DNS in the specified `targetNetwork`.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dnsPeeringConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigDnsPeeringConfigArgs.Builder]):
+        com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigDnsPeeringConfigArgs.builder
+      builder.dnsPeeringConfig(args(argsBuilder).build)
+
+    /**
+     * @param tlsConfig The TLS configuration for the egress traffic.
+     * Structure is documented below.
+     * @return builder
+     */
+    def tlsConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigTlsConfigArgs.Builder]):
+        com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigTlsConfigArgs.builder
+      builder.tlsConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateState.Builder)
+    /**
+     * @param egressNetworkConfig Configuration for egress network traffic.
+     * Structure is documented below.
+     * @return builder
+     */
+    def egressNetworkConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigArgs.Builder]):
+        com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateState.Builder =
+      val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigArgs.builder
+      builder.egressNetworkConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigArgs.Builder)
     /**

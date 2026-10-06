@@ -11,61 +11,37 @@ object biglake:
     //
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
-    /**
-     * Retrieves the current IAM policy data for hivecatalog
-     * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
-     * See Provider Versions for more details on beta resources.
-     */
+    /** Retrieves the current IAM policy data for hivecatalog */
     inline def getHiveCatalogIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveCatalogIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.biglake.outputs.GetHiveCatalogIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetHiveCatalogIamPolicyArgs.builder
       com.pulumi.gcp.biglake.BiglakeFunctions.getHiveCatalogIamPolicy(args(argsBuilder).build)
 
-    /**
-     * Retrieves the current IAM policy data for hivecatalog
-     * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
-     * See Provider Versions for more details on beta resources.
-     */
+    /** Retrieves the current IAM policy data for hivecatalog */
     inline def getHiveCatalogIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveCatalogIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.biglake.outputs.GetHiveCatalogIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetHiveCatalogIamPolicyPlainArgs.builder
       com.pulumi.gcp.biglake.BiglakeFunctions.getHiveCatalogIamPolicyPlain(args(argsBuilder).build)
 
-    /**
-     * Retrieves the current IAM policy data for hivedatabase
-     * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
-     * See Provider Versions for more details on beta resources.
-     */
+    /** Retrieves the current IAM policy data for hivedatabase */
     inline def getHiveDatabaseIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveDatabaseIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.biglake.outputs.GetHiveDatabaseIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetHiveDatabaseIamPolicyArgs.builder
       com.pulumi.gcp.biglake.BiglakeFunctions.getHiveDatabaseIamPolicy(args(argsBuilder).build)
 
-    /**
-     * Retrieves the current IAM policy data for hivedatabase
-     * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
-     * See Provider Versions for more details on beta resources.
-     */
+    /** Retrieves the current IAM policy data for hivedatabase */
     inline def getHiveDatabaseIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveDatabaseIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.biglake.outputs.GetHiveDatabaseIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetHiveDatabaseIamPolicyPlainArgs.builder
       com.pulumi.gcp.biglake.BiglakeFunctions.getHiveDatabaseIamPolicyPlain(args(argsBuilder).build)
 
-    /**
-     * Retrieves the current IAM policy data for hivetable
-     * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
-     * See Provider Versions for more details on beta resources.
-     */
+    /** Retrieves the current IAM policy data for hivetable */
     inline def getHiveTableIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveTableIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.biglake.outputs.GetHiveTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetHiveTableIamPolicyArgs.builder
       com.pulumi.gcp.biglake.BiglakeFunctions.getHiveTableIamPolicy(args(argsBuilder).build)
 
-    /**
-     * Retrieves the current IAM policy data for hivetable
-     * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
-     * See Provider Versions for more details on beta resources.
-     */
+    /** Retrieves the current IAM policy data for hivetable */
     inline def getHiveTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveTableIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.biglake.outputs.GetHiveTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetHiveTableIamPolicyPlainArgs.builder
@@ -159,9 +135,6 @@ object biglake:
   /**
    * Hive Catalogs in Biglake Metastore
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about HiveCatalog, see:
    * * How-to Guides
    *     * [QUICKSTART_TITLE](https://docs.cloud.google.com/lakehouse/docs/about-spark-hive-metastore)
@@ -190,9 +163,6 @@ object biglake:
    * &gt; **Note:** `gcp.biglake.HiveCatalogIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveCatalogIamBinding` and `gcp.biglake.HiveCatalogIamMember` or they will fight over what your policy should be.
    * 
    * &gt; **Note:** `gcp.biglake.HiveCatalogIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveCatalogIamMember` resources **only if** they do not grant privilege to the same role.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.biglake.HiveCatalogIamPolicy
    * 
@@ -330,9 +300,6 @@ object biglake:
    * &gt; **Note:** `gcp.biglake.HiveCatalogIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveCatalogIamBinding` and `gcp.biglake.HiveCatalogIamMember` or they will fight over what your policy should be.
    * 
    * &gt; **Note:** `gcp.biglake.HiveCatalogIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveCatalogIamMember` resources **only if** they do not grant privilege to the same role.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.biglake.HiveCatalogIamPolicy
    * 
@@ -512,9 +479,6 @@ object biglake:
    * 
    * &gt; **Note:** `gcp.biglake.HiveCatalogIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveCatalogIamMember` resources **only if** they do not grant privilege to the same role.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * ## gcp.biglake.HiveCatalogIamPolicy
    * 
    * <pre>
@@ -651,9 +615,6 @@ object biglake:
    * &gt; **Note:** `gcp.biglake.HiveCatalogIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveCatalogIamBinding` and `gcp.biglake.HiveCatalogIamMember` or they will fight over what your policy should be.
    * 
    * &gt; **Note:** `gcp.biglake.HiveCatalogIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveCatalogIamMember` resources **only if** they do not grant privilege to the same role.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.biglake.HiveCatalogIamPolicy
    * 
@@ -833,9 +794,6 @@ object biglake:
    * 
    * &gt; **Note:** `gcp.biglake.HiveCatalogIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveCatalogIamMember` resources **only if** they do not grant privilege to the same role.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * ## gcp.biglake.HiveCatalogIamPolicy
    * 
    * <pre>
@@ -972,9 +930,6 @@ object biglake:
    * &gt; **Note:** `gcp.biglake.HiveCatalogIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveCatalogIamBinding` and `gcp.biglake.HiveCatalogIamMember` or they will fight over what your policy should be.
    * 
    * &gt; **Note:** `gcp.biglake.HiveCatalogIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveCatalogIamMember` resources **only if** they do not grant privilege to the same role.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.biglake.HiveCatalogIamPolicy
    * 
@@ -1136,9 +1091,6 @@ object biglake:
   /**
    * Hive Databases in Biglake Metastore. Hive Databases exist within a Hive Catalog.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about HiveDatabase, see:
    * * How-to Guides
    *     * [QUICKSTART_TITLE](https://docs.cloud.google.com/lakehouse/docs/about-spark-hive-metastore)
@@ -1167,9 +1119,6 @@ object biglake:
    * &gt; **Note:** `gcp.biglake.HiveDatabaseIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveDatabaseIamBinding` and `gcp.biglake.HiveDatabaseIamMember` or they will fight over what your policy should be.
    * 
    * &gt; **Note:** `gcp.biglake.HiveDatabaseIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveDatabaseIamMember` resources **only if** they do not grant privilege to the same role.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.biglake.HiveDatabaseIamPolicy
    * 
@@ -1310,9 +1259,6 @@ object biglake:
    * &gt; **Note:** `gcp.biglake.HiveDatabaseIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveDatabaseIamBinding` and `gcp.biglake.HiveDatabaseIamMember` or they will fight over what your policy should be.
    * 
    * &gt; **Note:** `gcp.biglake.HiveDatabaseIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveDatabaseIamMember` resources **only if** they do not grant privilege to the same role.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.biglake.HiveDatabaseIamPolicy
    * 
@@ -1496,9 +1442,6 @@ object biglake:
    * 
    * &gt; **Note:** `gcp.biglake.HiveDatabaseIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveDatabaseIamMember` resources **only if** they do not grant privilege to the same role.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * ## gcp.biglake.HiveDatabaseIamPolicy
    * 
    * <pre>
@@ -1638,9 +1581,6 @@ object biglake:
    * &gt; **Note:** `gcp.biglake.HiveDatabaseIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveDatabaseIamBinding` and `gcp.biglake.HiveDatabaseIamMember` or they will fight over what your policy should be.
    * 
    * &gt; **Note:** `gcp.biglake.HiveDatabaseIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveDatabaseIamMember` resources **only if** they do not grant privilege to the same role.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.biglake.HiveDatabaseIamPolicy
    * 
@@ -1824,9 +1764,6 @@ object biglake:
    * 
    * &gt; **Note:** `gcp.biglake.HiveDatabaseIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveDatabaseIamMember` resources **only if** they do not grant privilege to the same role.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * ## gcp.biglake.HiveDatabaseIamPolicy
    * 
    * <pre>
@@ -1966,9 +1903,6 @@ object biglake:
    * &gt; **Note:** `gcp.biglake.HiveDatabaseIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveDatabaseIamBinding` and `gcp.biglake.HiveDatabaseIamMember` or they will fight over what your policy should be.
    * 
    * &gt; **Note:** `gcp.biglake.HiveDatabaseIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveDatabaseIamMember` resources **only if** they do not grant privilege to the same role.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.biglake.HiveDatabaseIamPolicy
    * 
@@ -2131,12 +2065,7 @@ object biglake:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  /**
-   * Hive Tables in BigLake Metastore that exist within a Hive Catalog and Database.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   */
+  /** Hive Tables in BigLake Metastore that exist within a Hive Catalog and Database. */
   def HiveTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.biglake.HiveTableArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.biglake.HiveTableArgs.builder
@@ -2182,9 +2111,6 @@ object biglake:
    * &gt; **Note:** `gcp.biglake.HiveTableIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveTableIamBinding` and `gcp.biglake.HiveTableIamMember` or they will fight over what your policy should be.
    * 
    * &gt; **Note:** `gcp.biglake.HiveTableIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveTableIamMember` resources **only if** they do not grant privilege to the same role.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.biglake.HiveTableIamPolicy
    * 
@@ -2328,9 +2254,6 @@ object biglake:
    * &gt; **Note:** `gcp.biglake.HiveTableIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveTableIamBinding` and `gcp.biglake.HiveTableIamMember` or they will fight over what your policy should be.
    * 
    * &gt; **Note:** `gcp.biglake.HiveTableIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveTableIamMember` resources **only if** they do not grant privilege to the same role.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.biglake.HiveTableIamPolicy
    * 
@@ -2517,9 +2440,6 @@ object biglake:
    * 
    * &gt; **Note:** `gcp.biglake.HiveTableIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveTableIamMember` resources **only if** they do not grant privilege to the same role.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * ## gcp.biglake.HiveTableIamPolicy
    * 
    * <pre>
@@ -2662,9 +2582,6 @@ object biglake:
    * &gt; **Note:** `gcp.biglake.HiveTableIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveTableIamBinding` and `gcp.biglake.HiveTableIamMember` or they will fight over what your policy should be.
    * 
    * &gt; **Note:** `gcp.biglake.HiveTableIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveTableIamMember` resources **only if** they do not grant privilege to the same role.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.biglake.HiveTableIamPolicy
    * 
@@ -2851,9 +2768,6 @@ object biglake:
    * 
    * &gt; **Note:** `gcp.biglake.HiveTableIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveTableIamMember` resources **only if** they do not grant privilege to the same role.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * ## gcp.biglake.HiveTableIamPolicy
    * 
    * <pre>
@@ -2996,9 +2910,6 @@ object biglake:
    * &gt; **Note:** `gcp.biglake.HiveTableIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveTableIamBinding` and `gcp.biglake.HiveTableIamMember` or they will fight over what your policy should be.
    * 
    * &gt; **Note:** `gcp.biglake.HiveTableIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveTableIamMember` resources **only if** they do not grant privilege to the same role.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.biglake.HiveTableIamPolicy
    * 

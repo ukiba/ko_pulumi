@@ -2113,10 +2113,21 @@ object bigqueryanalyticshub:
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationDatasetArgs.builder
       builder.destinationDataset(args(argsBuilder).build)
 
+    /**
+     * @param destinationPubsubSubscription Destination Pub/Sub subscription to create for the subscriber.
+     * Structure is documented below.
+     * @return builder
+     */
+    def destinationPubsubSubscription(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionArgs.Builder]):
+        com.pulumi.gcp.bigqueryanalyticshub.ListingSubscriptionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionArgs.builder
+      builder.destinationPubsubSubscription(args(argsBuilder).build)
+
   /**
    * Represents a BigQuery Query Template within a Data Exchange.
    * This resource defines a reusable SQL routine (e.g., a TVF) that can be
    * shared or executed via the Data Exchange.
+   * &gt; **Note:** Approving a Query Template is not supported by Terraform. The approve flow includes steps that can only be performed through the Google Cloud console UI. You can still create a Query Template (e.g. a TVF) and add it as a listing to a Data Clean Room via Terraform, but the final approval must be done manually.
    * 
    * To get more information about QueryTemplate, see:
    * 
@@ -2360,6 +2371,123 @@ object bigqueryanalyticshub:
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationDatasetDatasetReferenceArgs.builder
       builder.datasetReference(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionArgs.Builder)
+    /**
+     * @param pubsubSubscription Destination Pub/Sub subscription resource.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pubsubSubscription(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.Builder]):
+        com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.builder
+      builder.pubsubSubscription(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.Builder)
+    /**
+     * @param bigqueryConfig If delivery to BigQuery is used with this subscription, this field is used to configure it.
+     * Structure is documented below.
+     * @return builder
+     */
+    def bigqueryConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionBigqueryConfigArgs.Builder]):
+        com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionBigqueryConfigArgs.builder
+      builder.bigqueryConfig(args(argsBuilder).build)
+
+    /**
+     * @param cloudStorageConfig If delivery to Google Cloud Storage is used with this subscription, this field is used to configure it.
+     * Structure is documented below.
+     * @return builder
+     */
+    def cloudStorageConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionCloudStorageConfigArgs.Builder]):
+        com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionCloudStorageConfigArgs.builder
+      builder.cloudStorageConfig(args(argsBuilder).build)
+
+    /**
+     * @param deadLetterPolicy A policy that specifies the conditions for dead lettering messages in this subscription. If
+     * `deadLetterPolicy` is not set, dead lettering is disabled. The Pub/Sub service account associated
+     * with this subscriptions&#39;s parent project (i.e.,
+     * service-{project_number}{@literal @}gcp-sa-pubsub.iam.gserviceaccount.com) must have permission to
+     * Acknowledge() messages on this subscription.
+     * Structure is documented below.
+     * @return builder
+     */
+    def deadLetterPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionDeadLetterPolicyArgs.Builder]):
+        com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionDeadLetterPolicyArgs.builder
+      builder.deadLetterPolicy(args(argsBuilder).build)
+
+    /**
+     * @param expirationPolicy A policy that specifies the conditions for this subscription&#39;s expiration. A subscription is
+     * considered active as long as any connected subscriber is successfully consuming messages from
+     * the subscription or is issuing operations on the subscription. If `expirationPolicy` is not
+     * set, a default policy with `ttl` of 31 days will be used. The minimum allowed value for
+     * `expirationPolicy.ttl` is 1 day. If `expirationPolicy` is set, but `expirationPolicy.ttl`
+     * is not set, the subscription never expires.
+     * Structure is documented below.
+     * @return builder
+     */
+    def expirationPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionExpirationPolicyArgs.Builder]):
+        com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionExpirationPolicyArgs.builder
+      builder.expirationPolicy(args(argsBuilder).build)
+
+    /**
+     * @param pushConfig If push delivery is used with this subscription, this field is used to configure it.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pushConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigArgs.Builder]):
+        com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigArgs.builder
+      builder.pushConfig(args(argsBuilder).build)
+
+    /**
+     * @param retryPolicy A policy that specifies how Pub/Sub retries message delivery for this subscription. If not set,
+     * the default retry policy is applied. This generally implies that messages will be retried as soon
+     * as possible for healthy subscribers. RetryPolicy will be triggered on NACKs or acknowledgement
+     * deadline exceeded events for a given message.
+     * Structure is documented below.
+     * @return builder
+     */
+    def retryPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionRetryPolicyArgs.Builder]):
+        com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionRetryPolicyArgs.builder
+      builder.retryPolicy(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionCloudStorageConfigArgs.Builder)
+    /**
+     * @param avroConfig If set, message data will be written to Cloud Storage in Avro format.
+     * Structure is documented below.
+     * @return builder
+     */
+    def avroConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionCloudStorageConfigAvroConfigArgs.Builder]):
+        com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionCloudStorageConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionCloudStorageConfigAvroConfigArgs.builder
+      builder.avroConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigArgs.Builder)
+    /**
+     * @param noWrapper When set, the payload to the push endpoint is not wrapped.
+     * Structure is documented below.
+     * @return builder
+     */
+    def noWrapper(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigNoWrapperArgs.Builder]):
+        com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigNoWrapperArgs.builder
+      builder.noWrapper(args(argsBuilder).build)
+
+    /**
+     * @param oidcToken If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+     * Authorization header in the HTTP request for every pushed message.
+     * Structure is documented below.
+     * @return builder
+     */
+    def oidcToken(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigOidcTokenArgs.Builder]):
+        com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigOidcTokenArgs.builder
+      builder.oidcToken(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionState.Builder)
     /**
      * @param commercialInfos Commercial info metadata for this subscription. This is set if this is a commercial subscription i.e. if this subscription was created from subscribing to a commercial listing.
@@ -2380,6 +2508,16 @@ object bigqueryanalyticshub:
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionState.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationDatasetArgs.builder
       builder.destinationDataset(args(argsBuilder).build)
+
+    /**
+     * @param destinationPubsubSubscription Destination Pub/Sub subscription to create for the subscriber.
+     * Structure is documented below.
+     * @return builder
+     */
+    def destinationPubsubSubscription(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionArgs.Builder]):
+        com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionState.Builder =
+      val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionArgs.builder
+      builder.destinationPubsubSubscription(args(argsBuilder).build)
 
     /**
      * @param linkedDatasetMaps Output only. Map of listing resource names to associated linked resource,

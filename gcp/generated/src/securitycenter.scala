@@ -339,6 +339,25 @@ object securitycenter:
       builder.streamingConfig(args(argsBuilder).build)
 
   /**
+   * Generates and retrieves the email and member string of the Security Command Center Notification Service Account (`gcp-sa-scc-notification.iam.gserviceaccount.com`).
+   * 
+   * &gt; **Note:** Once created, this resource cannot be updated or destroyed. These
+   * actions are a no-op.
+   * 
+   * &gt; **Note:** This resource can be used to provision the Security Command Center Notification Service Account in IAM before configuring notification configs or applying IAM policy bindings to Pub/Sub topics, avoiding &#34;permission denied&#34; errors when using automated pipelines.
+   * 
+   * To get more information about Security Command Center Notification Service Accounts, see:
+   * 
+   * * [API documentation](https://cloud.google.com/service-usage/docs/reference/rest/v1beta1/services/generateServiceIdentity)
+   */
+  def NotificationServiceAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.securitycenter.NotificationServiceAccountArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.securitycenter.NotificationServiceAccountArgs.builder
+    com.pulumi.gcp.securitycenter.NotificationServiceAccount(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
    * Represents an instance of a Security Health Analytics custom module, including
    * its full module name, display name, enablement state, and last updated time.
    * You can create a custom module at the organization, folder, or project level.

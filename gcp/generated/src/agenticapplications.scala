@@ -85,6 +85,16 @@ object agenticapplications:
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaTableArgs.builder
       builder.tables(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param webSearchConfig Configuration for web search grounding for the analyst agent.
+     * Structure is documented below.
+     * @return builder
+     */
+    def webSearchConfig(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaWebSearchConfigArgs.Builder]):
+        com.pulumi.gcp.agenticapplications.AnalystAgentPersonaArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaWebSearchConfigArgs.builder
+      builder.webSearchConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleArgs.Builder)
     /**
      * @param resource Represents a resource that can be used by the Analyst Agent.
@@ -156,6 +166,15 @@ object agenticapplications:
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsArgs.builder
       builder.documentGenerationOptions(args(argsBuilder).build)
+
+    /**
+     * @param methodologyExportOptions Options for methodology export.
+     * @return builder
+     */
+    def methodologyExportOptions(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigMethodologyExportOptionsArgs.Builder]):
+        com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigMethodologyExportOptionsArgs.builder
+      builder.methodologyExportOptions(args(argsBuilder).build)
 
     /**
      * @param slideGenerationOptions Options for slide generation.
@@ -589,6 +608,16 @@ object agenticapplications:
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaState.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaTableArgs.builder
       builder.tables(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param webSearchConfig Configuration for web search grounding for the analyst agent.
+     * Structure is documented below.
+     * @return builder
+     */
+    def webSearchConfig(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaWebSearchConfigArgs.Builder]):
+        com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaState.Builder =
+      val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaWebSearchConfigArgs.builder
+      builder.webSearchConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaTableArgs.Builder)
     /**

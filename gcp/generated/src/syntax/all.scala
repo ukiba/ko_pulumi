@@ -49,6 +49,7 @@ export ko_pulumi.gcp.datastream.DatastreamFunctions
 export ko_pulumi.gcp.discoveryengine.DiscoveryengineFunctions
 export ko_pulumi.gcp.dns.DnsFunctions
 export ko_pulumi.gcp.endpoints.EndpointsFunctions
+export ko_pulumi.gcp.eventarc.EventarcFunctions
 export ko_pulumi.gcp.filestore.FilestoreFunctions
 export ko_pulumi.gcp.firebase.FirebaseFunctions
 export ko_pulumi.gcp.firestore.FirestoreFunctions
@@ -68,7 +69,7 @@ export ko_pulumi.gcp.monitoring.MonitoringFunctions
 export ko_pulumi.gcp.networkconnectivity.NetworkconnectivityFunctions
 export ko_pulumi.gcp.networkmanagement.NetworkmanagementFunctions
 export ko_pulumi.gcp.networksecurity.NetworksecurityFunctions
-export ko_pulumi.gcp.notebooks.NotebooksFunctions
+export ko_pulumi.gcp.networkservices.NetworkservicesFunctions
 export ko_pulumi.gcp.observability.ObservabilityFunctions
 export ko_pulumi.gcp.oracledatabase.OracledatabaseFunctions
 export ko_pulumi.gcp.organizations.OrganizationsFunctions

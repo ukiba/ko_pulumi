@@ -2178,6 +2178,64 @@ object storage:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  /** An SFTP Server resource supporting internal and external connectivity configurations. */
+  def FtpServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.storage.FtpServerArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.storage.FtpServerArgs.builder
+    com.pulumi.gcp.storage.FtpServer(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.storage.FtpServerArgs.Builder)
+    /**
+     * @param externalConfig Configuration for external access type SFTP servers.
+     * Structure is documented below.
+     * @return builder
+     */
+    def externalConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.FtpServerExternalConfigArgs.Builder]):
+        com.pulumi.gcp.storage.FtpServerArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.FtpServerExternalConfigArgs.builder
+      builder.externalConfig(args(argsBuilder).build)
+
+    /**
+     * @param internalConfig Configuration for internal access type SFTP servers.
+     * Structure is documented below.
+     * @return builder
+     */
+    def internalConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.FtpServerInternalConfigArgs.Builder]):
+        com.pulumi.gcp.storage.FtpServerArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.FtpServerInternalConfigArgs.builder
+      builder.internalConfig(args(argsBuilder).build)
+
+  /** A Storage FTP User resource supporting directory mappings and user credentials for an SFTP Server. */
+  def FtpUser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.storage.FtpUserArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.storage.FtpUserArgs.builder
+    com.pulumi.gcp.storage.FtpUser(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.storage.FtpUserArgs.Builder)
+    /**
+     * @param storageDirectoryMappings Directory mappings for the Storage FTP user.
+     * Structure is documented below.
+     * @return builder
+     */
+    def storageDirectoryMappings(args: Endofunction[com.pulumi.gcp.storage.inputs.FtpUserStorageDirectoryMappingArgs.Builder]*):
+        com.pulumi.gcp.storage.FtpUserArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.storage.inputs.FtpUserStorageDirectoryMappingArgs.builder
+      builder.storageDirectoryMappings(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param userCredentials The credentials associated with the user.
+     * Structure is documented below.
+     * @return builder
+     */
+    def userCredentials(args: Endofunction[com.pulumi.gcp.storage.inputs.FtpUserUserCredentialArgs.Builder]*):
+        com.pulumi.gcp.storage.FtpUserArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.storage.inputs.FtpUserUserCredentialArgs.builder
+      builder.userCredentials(args.map(_(argsBuilder).build)*)
+
   /**
    * The hmacKeys resource represents an HMAC key within Cloud Storage. The resource
    * consists of a secret and HMAC key metadata. HMAC keys can be used as credentials
@@ -5274,6 +5332,69 @@ object storage:
         com.pulumi.gcp.storage.inputs.DefaultObjectAccessControlState.Builder =
       def argsBuilder = com.pulumi.gcp.storage.inputs.DefaultObjectAccessControlProjectTeamArgs.builder
       builder.projectTeams(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.storage.inputs.FtpServerInternalConfigArgs.Builder)
+    /**
+     * @param consumerAcceptLists A list of consumer projects that are allowed to connect to this server.
+     * Structure is documented below.
+     * @return builder
+     */
+    def consumerAcceptLists(args: Endofunction[com.pulumi.gcp.storage.inputs.FtpServerInternalConfigConsumerAcceptListArgs.Builder]*):
+        com.pulumi.gcp.storage.inputs.FtpServerInternalConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.storage.inputs.FtpServerInternalConfigConsumerAcceptListArgs.builder
+      builder.consumerAcceptLists(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param consumerRejectLists A list of consumer projects that are rejected from connecting to this server.
+     * Structure is documented below.
+     * @return builder
+     */
+    def consumerRejectLists(args: Endofunction[com.pulumi.gcp.storage.inputs.FtpServerInternalConfigConsumerRejectListArgs.Builder]*):
+        com.pulumi.gcp.storage.inputs.FtpServerInternalConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.storage.inputs.FtpServerInternalConfigConsumerRejectListArgs.builder
+      builder.consumerRejectLists(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.storage.inputs.FtpServerState.Builder)
+    /**
+     * @param externalConfig Configuration for external access type SFTP servers.
+     * Structure is documented below.
+     * @return builder
+     */
+    def externalConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.FtpServerExternalConfigArgs.Builder]):
+        com.pulumi.gcp.storage.inputs.FtpServerState.Builder =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.FtpServerExternalConfigArgs.builder
+      builder.externalConfig(args(argsBuilder).build)
+
+    /**
+     * @param internalConfig Configuration for internal access type SFTP servers.
+     * Structure is documented below.
+     * @return builder
+     */
+    def internalConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.FtpServerInternalConfigArgs.Builder]):
+        com.pulumi.gcp.storage.inputs.FtpServerState.Builder =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.FtpServerInternalConfigArgs.builder
+      builder.internalConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.storage.inputs.FtpUserState.Builder)
+    /**
+     * @param storageDirectoryMappings Directory mappings for the Storage FTP user.
+     * Structure is documented below.
+     * @return builder
+     */
+    def storageDirectoryMappings(args: Endofunction[com.pulumi.gcp.storage.inputs.FtpUserStorageDirectoryMappingArgs.Builder]*):
+        com.pulumi.gcp.storage.inputs.FtpUserState.Builder =
+      def argsBuilder = com.pulumi.gcp.storage.inputs.FtpUserStorageDirectoryMappingArgs.builder
+      builder.storageDirectoryMappings(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param userCredentials The credentials associated with the user.
+     * Structure is documented below.
+     * @return builder
+     */
+    def userCredentials(args: Endofunction[com.pulumi.gcp.storage.inputs.FtpUserUserCredentialArgs.Builder]*):
+        com.pulumi.gcp.storage.inputs.FtpUserState.Builder =
+      def argsBuilder = com.pulumi.gcp.storage.inputs.FtpUserUserCredentialArgs.builder
+      builder.userCredentials(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.storage.inputs.InsightsDatasetConfigExcludeCloudStorageBucketsArgs.Builder)
     /**

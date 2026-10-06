@@ -75,6 +75,49 @@ object gemini:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  /**
+   * The resource for managing GdaObservability settings for Admin Control.
+   * 
+   * To get more information about GdaObservabilitySetting, see:
+   * 
+   * * [API documentation](https://cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.gdaObservabilitySettings)
+   * * How-to Guides
+   *     * [Gemini Cloud Assist overview](https://cloud.google.com/gemini/docs/cloud-assist/overview)
+   */
+  def GdaObservabilitySetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.gemini.GdaObservabilitySettingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.gemini.GdaObservabilitySettingArgs.builder
+    com.pulumi.gcp.gemini.GdaObservabilitySetting(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.gemini.GdaObservabilitySettingArgs.Builder)
+    /**
+     * @param conversationalAnalyticsSetting Message describing Setting for Conversational Analytics.
+     * Structure is documented below.
+     * @return builder
+     */
+    def conversationalAnalyticsSetting(args: Endofunction[com.pulumi.gcp.gemini.inputs.GdaObservabilitySettingConversationalAnalyticsSettingArgs.Builder]):
+        com.pulumi.gcp.gemini.GdaObservabilitySettingArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.GdaObservabilitySettingConversationalAnalyticsSettingArgs.builder
+      builder.conversationalAnalyticsSetting(args(argsBuilder).build)
+
+  /**
+   * The resource for managing GdaObservability setting bindings for Admin Control.
+   * 
+   * To get more information about GdaObservabilitySettingBinding, see:
+   * 
+   * * [API documentation](https://cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.gdaObservabilitySettings.settingBindings)
+   * * How-to Guides
+   *     * [Gemini Cloud Assist overview](https://cloud.google.com/gemini/docs/cloud-assist/overview)
+   */
+  def GdaObservabilitySettingBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.gemini.GdaObservabilitySettingBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.gemini.GdaObservabilitySettingBindingArgs.builder
+    com.pulumi.gcp.gemini.GdaObservabilitySettingBinding(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
   object GeminiFunctions:
     // Pulumi methods are reproduced as Scala methods.
     // Java methods cause Scala warnings under -Yexplicit-nulls flag
@@ -113,6 +156,47 @@ object gemini:
       (args: Endofunction[com.pulumi.gcp.gemini.GeminiGcpEnablementSettingBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.GeminiGcpEnablementSettingBindingArgs.builder
     com.pulumi.gcp.gemini.GeminiGcpEnablementSettingBinding(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * A setting that controls observability features for Gemini in BigQuery.
+   * 
+   * To get more information about GibqObservabilitySetting, see:
+   * 
+   * * [API documentation](https://cloud.google.com/gemini/docs/reference/rest/v1/projects.locations.gibqObservabilitySettings)
+   * * How-to Guides
+   *     * [Gemini in BigQuery overview](https://cloud.google.com/gemini/docs/bigquery/overview)
+   */
+  def GibqObservabilitySetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.gemini.GibqObservabilitySettingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.gemini.GibqObservabilitySettingArgs.builder
+    com.pulumi.gcp.gemini.GibqObservabilitySetting(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.gemini.GibqObservabilitySettingArgs.Builder)
+    /**
+     * @param conversationalAnalyticsSetting Settings for Conversational Analytics, which can be used to enable observability features.
+     * Structure is documented below.
+     * @return builder
+     */
+    def conversationalAnalyticsSetting(args: Endofunction[com.pulumi.gcp.gemini.inputs.GibqObservabilitySettingConversationalAnalyticsSettingArgs.Builder]):
+        com.pulumi.gcp.gemini.GibqObservabilitySettingArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.GibqObservabilitySettingConversationalAnalyticsSettingArgs.builder
+      builder.conversationalAnalyticsSetting(args(argsBuilder).build)
+
+  /**
+   * The resource for managing GibqObservabilitySetting setting bindings for Admin Control.
+   * 
+   * To get more information about GibqObservabilitySettingBinding, see:
+   * * How-to Guides
+   *     * [Gemini Cloud Assist overview](https://cloud.google.com/gemini/docs/cloud-assist/overview)
+   */
+  def GibqObservabilitySettingBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.gemini.GibqObservabilitySettingBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.gemini.GibqObservabilitySettingBindingArgs.builder
+    com.pulumi.gcp.gemini.GibqObservabilitySettingBinding(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
@@ -1175,6 +1259,28 @@ object gemini:
         com.pulumi.gcp.gemini.inputs.CodeToolsSettingState.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.CodeToolsSettingEnabledToolArgs.builder
       builder.enabledTools(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.GdaObservabilitySettingState.Builder)
+    /**
+     * @param conversationalAnalyticsSetting Message describing Setting for Conversational Analytics.
+     * Structure is documented below.
+     * @return builder
+     */
+    def conversationalAnalyticsSetting(args: Endofunction[com.pulumi.gcp.gemini.inputs.GdaObservabilitySettingConversationalAnalyticsSettingArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.GdaObservabilitySettingState.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.GdaObservabilitySettingConversationalAnalyticsSettingArgs.builder
+      builder.conversationalAnalyticsSetting(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.GibqObservabilitySettingState.Builder)
+    /**
+     * @param conversationalAnalyticsSetting Settings for Conversational Analytics, which can be used to enable observability features.
+     * Structure is documented below.
+     * @return builder
+     */
+    def conversationalAnalyticsSetting(args: Endofunction[com.pulumi.gcp.gemini.inputs.GibqObservabilitySettingConversationalAnalyticsSettingArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.GibqObservabilitySettingState.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.GibqObservabilitySettingConversationalAnalyticsSettingArgs.builder
+      builder.conversationalAnalyticsSetting(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gemini.inputs.RepositoryGroupIamBindingState.Builder)
     def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.RepositoryGroupIamBindingConditionArgs.Builder]):

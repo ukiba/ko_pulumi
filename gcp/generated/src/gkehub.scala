@@ -3805,6 +3805,16 @@ object gkehub:
       builder.binaryAuthorizationConfig(args(argsBuilder).build)
 
     /**
+     * @param compliancePostureConfig Enable/Disable Compliance Posture features for the cluster.
+     * Structure is documented below.
+     * @return builder
+     */
+    def compliancePostureConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigCompliancePostureConfigArgs.Builder]):
+        com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigCompliancePostureConfigArgs.builder
+      builder.compliancePostureConfig(args(argsBuilder).build)
+
+    /**
      * @param securityPostureConfig Enable/Disable Security Posture features for the cluster.
      * Structure is documented below.
      * @return builder
@@ -3824,6 +3834,17 @@ object gkehub:
         com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigBinaryAuthorizationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBindingArgs.builder
       builder.policyBindings(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigCompliancePostureConfigArgs.Builder)
+    /**
+     * @param complianceStandards List of enabled compliance standards.
+     * Structure is documented below.
+     * @return builder
+     */
+    def complianceStandards(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigCompliancePostureConfigComplianceStandardArgs.Builder]*):
+        com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigCompliancePostureConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigCompliancePostureConfigComplianceStandardArgs.builder
+      builder.complianceStandards(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.gkehub.inputs.FleetState.Builder)
     /**

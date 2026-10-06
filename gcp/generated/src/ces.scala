@@ -116,6 +116,17 @@ object ces:
       builder.modelSettings(args(argsBuilder).build)
 
     /**
+     * @param remoteA2aAgent The agent which will transfer execution to a remote
+     * [A2A](https://github.com/a2aproject/A2A) agent.
+     * Structure is documented below.
+     * @return builder
+     */
+    def remoteA2aAgent(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentArgs.Builder]):
+        com.pulumi.gcp.ces.AgentArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentArgs.builder
+      builder.remoteA2aAgent(args(argsBuilder).build)
+
+    /**
      * @param remoteDialogflowAgent The agent which will transfer execution to an existing remote
      * [Dialogflow](https://cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents)
      * agent flow. The corresponding Dialogflow agent will process subsequent user
@@ -138,6 +149,17 @@ object ces:
         com.pulumi.gcp.ces.AgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentToolsetArgs.builder
       builder.toolsets(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param transferRules List of transfer rules for the agent.
+     * If multiple rules match, the first one in the list will be used.
+     * Structure is documented below.
+     * @return builder
+     */
+    def transferRules(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleArgs.Builder]*):
+        com.pulumi.gcp.ces.AgentArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AgentTransferRuleArgs.builder
+      builder.transferRules(args.map(_(argsBuilder).build)*)
 
   /**
    * Customer Engagement Suite App
@@ -195,6 +217,16 @@ object ces:
         com.pulumi.gcp.ces.AppArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileArgs.builder
       builder.defaultChannelProfile(args(argsBuilder).build)
+
+    /**
+     * @param errorHandlingSettings Settings to describe how errors should be handled in the app.
+     * Structure is documented below.
+     * @return builder
+     */
+    def errorHandlingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsArgs.Builder]):
+        com.pulumi.gcp.ces.AppArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsArgs.builder
+      builder.errorHandlingSettings(args(argsBuilder).build)
 
     /**
      * @param evaluationMetricsThresholds Threshold settings for metrics in an Evaluation.
@@ -256,6 +288,16 @@ object ces:
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVariableDeclarationArgs.builder
       builder.variableDeclarations(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param vpcScSettings VPC-SC settings for the app.
+     * Structure is documented below.
+     * @return builder
+     */
+    def vpcScSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVpcScSettingsArgs.Builder]):
+        com.pulumi.gcp.ces.AppArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AppVpcScSettingsArgs.builder
+      builder.vpcScSettings(args(argsBuilder).build)
+
   /**
    * Sets the root agent of a CES App after both the app and the agent have
    * been created.
@@ -285,7 +327,12 @@ object ces:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  /** Description */
+  /**
+   * Description
+   * 
+   * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `instagram_credentials.auth_code_wo`, `whatsapp_credentials.auth_code_wo`, `whatsapp_credentials.pin_wo`.
+   * Read more about Write-only Arguments.
+   */
   def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.ces.DeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.ces.DeploymentArgs.builder
@@ -304,6 +351,26 @@ object ces:
         com.pulumi.gcp.ces.DeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentChannelProfileArgs.builder
       builder.channelProfile(args(argsBuilder).build)
+
+    /**
+     * @param instagramCredentials Ephemeral Meta credentials required when configuring an Instagram channel profile.
+     * Structure is documented below.
+     * @return builder
+     */
+    def instagramCredentials(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentInstagramCredentialsArgs.Builder]):
+        com.pulumi.gcp.ces.DeploymentArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentInstagramCredentialsArgs.builder
+      builder.instagramCredentials(args(argsBuilder).build)
+
+    /**
+     * @param whatsappCredentials Ephemeral Meta credentials required when configuring a WhatsApp channel profile.
+     * Structure is documented below.
+     * @return builder
+     */
+    def whatsappCredentials(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentWhatsappCredentialsArgs.Builder]):
+        com.pulumi.gcp.ces.DeploymentArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentWhatsappCredentialsArgs.builder
+      builder.whatsappCredentials(args(argsBuilder).build)
 
   /**
    * Customer Engagement Suite Evaluation
@@ -473,7 +540,7 @@ object ces:
    * 
    * Individual tools of type `openApiTool`, `mcpTool`, `connectorTool`, and `remoteAgentTool` **cannot** be created, updated, or managed directly using the `gcp.ces.Tool` resource.
    * 
-   * `openApiTool`, `mcpTool`, and `connectorTool` are dynamically generated at runtime based on their corresponding **toolsets** (configured via the `gcp.ces.Toolset` resource). `remoteAgentTool` represents A2A connections configured externally, and `systemTool` represents pre-defined platform tools managed entirely by Google Cloud.
+   * `openApiTool`, `mcpTool`, and `connectorTool` are dynamically generated at runtime based on their corresponding **toolsets** (configured via the `gcp.ces.Toolset` resource), `remoteAgentTool` represents A2A connections configured externally, and `systemTool` represents pre-defined platform tools managed entirely by Google Cloud.
    * 
    * Consequently, blocks like `openApiTool`, `mcpTool`, `connectorTool`, `remoteAgentTool`, and `systemTool` are marked as **read-only (output-only)** in this resource. They are populated by the server for reference purposes only (e.g., after importing an existing tool into your state) and **cannot** be configured in your Terraform HCL configuration.
    */
@@ -625,6 +692,100 @@ object ces:
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigArgs.builder
       builder.toolFakeConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardArgs.Builder)
+    /**
+     * @param skills Skills represent a unit of ability an agent can perform. This may
+     * somewhat abstract but represents a more focused set of actions that the
+     * agent is highly likely to succeed at.
+     * Structure is documented below.
+     * @return builder
+     */
+    def skills(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardSkillArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardSkillArgs.builder
+      builder.skills(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param supportedInterfaces Ordered list of supported interfaces. The first entry is preferred.
+     * Structure is documented below.
+     * @return builder
+     */
+    def supportedInterfaces(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardSupportedInterfaceArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardSupportedInterfaceArgs.builder
+      builder.supportedInterfaces(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationArgs.Builder)
+    /**
+     * @param apiKeyConfig Configurations for authentication with API key.
+     * Structure is documented below.
+     * @return builder
+     */
+    def apiKeyConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationApiKeyConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationApiKeyConfigArgs.builder
+      builder.apiKeyConfig(args(argsBuilder).build)
+
+    /**
+     * @param bearerTokenConfig Configurations for authentication with a bearer token.
+     * Structure is documented below.
+     * @return builder
+     */
+    def bearerTokenConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationBearerTokenConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationBearerTokenConfigArgs.builder
+      builder.bearerTokenConfig(args(argsBuilder).build)
+
+    /**
+     * @param oauthConfig Configurations for authentication with OAuth.
+     * Structure is documented below.
+     * @return builder
+     */
+    def oauthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationOauthConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationOauthConfigArgs.builder
+      builder.oauthConfig(args(argsBuilder).build)
+
+    /**
+     * @param serviceAccountAuthConfig Configurations for authentication using a custom service account.
+     * Structure is documented below.
+     * @return builder
+     */
+    def serviceAccountAuthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationServiceAccountAuthConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationServiceAccountAuthConfigArgs.builder
+      builder.serviceAccountAuthConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigArgs.Builder)
+    /**
+     * @param agentCard The full agent card defined inline.
+     * @return builder
+     */
+    def agentCard(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardArgs.builder
+      builder.agentCard(args(argsBuilder).build)
+
+    /**
+     * @param apiAuthentication Authentication configuration for calling the remote agent.
+     * Optional if the registry reference already handles authentication.
+     * @return builder
+     */
+    def apiAuthentication(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationArgs.builder
+      builder.apiAuthentication(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentArgs.Builder)
+    /**
+     * @param a2aConfig The A2A connection configuration.
+     * @return builder
+     */
+    def a2aConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigArgs.builder
+      builder.a2aConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.ces.inputs.AgentState.Builder)
     /**
      * @param afterAgentCallbacks The callbacks to execute after the agent is called.
@@ -729,6 +890,17 @@ object ces:
       builder.modelSettings(args(argsBuilder).build)
 
     /**
+     * @param remoteA2aAgent The agent which will transfer execution to a remote
+     * [A2A](https://github.com/a2aproject/A2A) agent.
+     * Structure is documented below.
+     * @return builder
+     */
+    def remoteA2aAgent(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AgentState.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentArgs.builder
+      builder.remoteA2aAgent(args(argsBuilder).build)
+
+    /**
      * @param remoteDialogflowAgent The agent which will transfer execution to an existing remote
      * [Dialogflow](https://cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents)
      * agent flow. The corresponding Dialogflow agent will process subsequent user
@@ -751,6 +923,74 @@ object ces:
         com.pulumi.gcp.ces.inputs.AgentState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentToolsetArgs.builder
       builder.toolsets(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param transferRules List of transfer rules for the agent.
+     * If multiple rules match, the first one in the list will be used.
+     * Structure is documented below.
+     * @return builder
+     */
+    def transferRules(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.AgentState.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AgentTransferRuleArgs.builder
+      builder.transferRules(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.AgentTransferRuleArgs.Builder)
+    /**
+     * @param deterministicTransfer Deterministic transfer rule. When the condition evaluates to true, the
+     * transfer occurs.
+     * Structure is documented below.
+     * @return builder
+     */
+    def deterministicTransfer(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AgentTransferRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferArgs.builder
+      builder.deterministicTransfer(args(argsBuilder).build)
+
+    /**
+     * @param disablePlannerTransfer A rule that prevents the planner from transferring to the target agent.
+     * Structure is documented below.
+     * @return builder
+     */
+    def disablePlannerTransfer(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleDisablePlannerTransferArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AgentTransferRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AgentTransferRuleDisablePlannerTransferArgs.builder
+      builder.disablePlannerTransfer(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferArgs.Builder)
+    /**
+     * @param expressionCondition A rule that evaluates a session state condition. If the condition
+     * evaluates to true, the transfer occurs.
+     * Structure is documented below.
+     * @return builder
+     */
+    def expressionCondition(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferExpressionConditionArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferExpressionConditionArgs.builder
+      builder.expressionCondition(args(argsBuilder).build)
+
+    /**
+     * @param pythonCodeCondition A rule that uses Python code block to evaluate the conditions. If the
+     * condition evaluates to true, the transfer occurs.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pythonCodeCondition(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferPythonCodeConditionArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferPythonCodeConditionArgs.builder
+      builder.pythonCodeCondition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.AgentTransferRuleDisablePlannerTransferArgs.Builder)
+    /**
+     * @param expressionCondition If the condition evaluates to true, planner will not be allowed to
+     * transfer to the target agent.
+     * Structure is documented below.
+     * @return builder
+     */
+    def expressionCondition(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleDisablePlannerTransferExpressionConditionArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AgentTransferRuleDisablePlannerTransferArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AgentTransferRuleDisablePlannerTransferExpressionConditionArgs.builder
+      builder.expressionCondition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigArgs.Builder)
     /**
@@ -825,6 +1065,49 @@ object ces:
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWebWidgetConfigArgs.builder
       builder.webWidgetConfig(args(argsBuilder).build)
 
+    /**
+     * @param whatsappConfig Configuration specific to WhatsApp deployments.
+     * Structure is documented below.
+     * @return builder
+     */
+    def whatsappConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWhatsappConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWhatsappConfigArgs.builder
+      builder.whatsappConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWebWidgetConfigArgs.Builder)
+    /**
+     * @param securitySettings The security settings of the web widget.
+     * Structure is documented below.
+     * @return builder
+     */
+    def securitySettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWebWidgetConfigSecuritySettingsArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWebWidgetConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWebWidgetConfigSecuritySettingsArgs.builder
+      builder.securitySettings(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsArgs.Builder)
+    /**
+     * @param endSessionConfig Configuration for ending the session in case of system errors (e.g. LLM
+     * errors).
+     * Structure is documented below.
+     * @return builder
+     */
+    def endSessionConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsEndSessionConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsEndSessionConfigArgs.builder
+      builder.endSessionConfig(args(argsBuilder).build)
+
+    /**
+     * @param fallbackResponseConfig Configuration for handling fallback responses.
+     * Structure is documented below.
+     * @return builder
+     */
+    def fallbackResponseConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsFallbackResponseConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsFallbackResponseConfigArgs.builder
+      builder.fallbackResponseConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsArgs.Builder)
     /**
      * @param goldenEvaluationMetricsThresholds Settings for golden evaluations.
@@ -846,6 +1129,18 @@ object ces:
         com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsExpectationLevelMetricsThresholdsArgs.builder
       builder.expectationLevelMetricsThresholds(args(argsBuilder).build)
+
+    /**
+     * @param toolMatchingSettings The tool matching settings. An extra tool call is a tool call that is
+     * present in the execution but does not match any tool call in the golden
+     * expectation.
+     * Structure is documented below.
+     * @return builder
+     */
+    def toolMatchingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsToolMatchingSettingsArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsToolMatchingSettingsArgs.builder
+      builder.toolMatchingSettings(args(argsBuilder).build)
 
     /**
      * @param turnLevelMetricsThresholds Turn level metrics thresholds.
@@ -899,6 +1194,17 @@ object ces:
       builder.conversationLoggingSettings(args(argsBuilder).build)
 
     /**
+     * @param metricAnalysisSettings Settings to describe the conversation data collection behaviors for the LLM
+     * analysis pipeline for the app.
+     * Structure is documented below.
+     * @return builder
+     */
+    def metricAnalysisSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsMetricAnalysisSettingsArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AppLoggingSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AppLoggingSettingsMetricAnalysisSettingsArgs.builder
+      builder.metricAnalysisSettings(args(argsBuilder).build)
+
+    /**
      * @param redactionConfig Configuration to instruct how sensitive data should be handled.
      * Structure is documented below.
      * @return builder
@@ -950,6 +1256,16 @@ object ces:
         com.pulumi.gcp.ces.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileArgs.builder
       builder.defaultChannelProfile(args(argsBuilder).build)
+
+    /**
+     * @param errorHandlingSettings Settings to describe how errors should be handled in the app.
+     * Structure is documented below.
+     * @return builder
+     */
+    def errorHandlingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AppState.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsArgs.builder
+      builder.errorHandlingSettings(args(argsBuilder).build)
 
     /**
      * @param evaluationMetricsThresholds Threshold settings for metrics in an Evaluation.
@@ -1010,6 +1326,16 @@ object ces:
         com.pulumi.gcp.ces.inputs.AppState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVariableDeclarationArgs.builder
       builder.variableDeclarations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param vpcScSettings VPC-SC settings for the app.
+     * Structure is documented below.
+     * @return builder
+     */
+    def vpcScSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVpcScSettingsArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.AppState.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.AppVpcScSettingsArgs.builder
+      builder.vpcScSettings(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.ces.inputs.AppVariableDeclarationArgs.Builder)
     /**
@@ -1159,6 +1485,80 @@ object ces:
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentToolsetArgs.builder
       builder.toolsets(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param transferRules (Output)
+     * List of transfer rules for the agent.
+     * If multiple rules match, the first one in the list will be used.
+     * Structure is documented below.
+     * @return builder
+     */
+    def transferRules(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleArgs.builder
+      builder.transferRules(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleArgs.Builder)
+    /**
+     * @param deterministicTransfers (Output)
+     * Deterministic transfer rule. When the condition evaluates to true, the
+     * transfer occurs.
+     * Structure is documented below.
+     * @return builder
+     */
+    def deterministicTransfers(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferArgs.builder
+      builder.deterministicTransfers(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param disablePlannerTransfers (Output)
+     * A rule that prevents the planner from transferring to the target agent.
+     * Structure is documented below.
+     * @return builder
+     */
+    def disablePlannerTransfers(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDisablePlannerTransferArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDisablePlannerTransferArgs.builder
+      builder.disablePlannerTransfers(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferArgs.Builder)
+    /**
+     * @param expressionConditions (Output)
+     * If the condition evaluates to true, planner will not be allowed to
+     * transfer to the target agent.
+     * Structure is documented below.
+     * @return builder
+     */
+    def expressionConditions(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferExpressionConditionArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferExpressionConditionArgs.builder
+      builder.expressionConditions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param pythonCodeConditions (Output)
+     * A rule that uses Python code block to evaluate the conditions. If the
+     * condition evaluates to true, the transfer occurs.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pythonCodeConditions(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferPythonCodeConditionArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferPythonCodeConditionArgs.builder
+      builder.pythonCodeConditions(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDisablePlannerTransferArgs.Builder)
+    /**
+     * @param expressionConditions (Output)
+     * If the condition evaluates to true, planner will not be allowed to
+     * transfer to the target agent.
+     * Structure is documented below.
+     * @return builder
+     */
+    def expressionConditions(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDisablePlannerTransferExpressionConditionArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDisablePlannerTransferArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDisablePlannerTransferExpressionConditionArgs.builder
+      builder.expressionConditions(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder)
     /**
      * @param audioProcessingConfigs (Output)
@@ -1205,6 +1605,17 @@ object ces:
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileArgs.builder
       builder.defaultChannelProfiles(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param errorHandlingSettings (Output)
+     * Settings to describe how errors should be handled in the app.
+     * Structure is documented below.
+     * @return builder
+     */
+    def errorHandlingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingArgs.builder
+      builder.errorHandlingSettings(args.map(_(argsBuilder).build)*)
 
     /**
      * @param evaluationMetricsThresholds (Output)
@@ -1271,6 +1682,17 @@ object ces:
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppVariableDeclarationArgs.builder
       builder.variableDeclarations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param vpcScSettings (Output)
+     * VPC-SC settings for the app.
+     * Structure is documented below.
+     * @return builder
+     */
+    def vpcScSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppVpcScSettingArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppVpcScSettingArgs.builder
+      builder.vpcScSettings(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppAudioProcessingConfigArgs.Builder)
     /**
@@ -1348,6 +1770,41 @@ object ces:
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileWebWidgetConfigArgs.builder
       builder.webWidgetConfigs(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param whatsappConfigs (Output)
+     * Configuration specific to WhatsApp deployments.
+     * Structure is documented below.
+     * @return builder
+     */
+    def whatsappConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileWhatsappConfigArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileWhatsappConfigArgs.builder
+      builder.whatsappConfigs(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingArgs.Builder)
+    /**
+     * @param endSessionConfigs (Output)
+     * Configuration for ending the session in case of system errors (e.g. LLM
+     * errors).
+     * Structure is documented below.
+     * @return builder
+     */
+    def endSessionConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingEndSessionConfigArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingEndSessionConfigArgs.builder
+      builder.endSessionConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param fallbackResponseConfigs (Output)
+     * Configuration for handling fallback responses.
+     * Structure is documented below.
+     * @return builder
+     */
+    def fallbackResponseConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingFallbackResponseConfigArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingFallbackResponseConfigArgs.builder
+      builder.fallbackResponseConfigs(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdArgs.Builder)
     /**
      * @param goldenEvaluationMetricsThresholds (Output)
@@ -1371,6 +1828,19 @@ object ces:
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdExpectationLevelMetricsThresholdArgs.builder
       builder.expectationLevelMetricsThresholds(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param toolMatchingSettings (Output)
+     * The tool matching settings. An extra tool call is a tool call that is
+     * present in the execution but does not match any tool call in the golden
+     * expectation.
+     * Structure is documented below.
+     * @return builder
+     */
+    def toolMatchingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdToolMatchingSettingArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdToolMatchingSettingArgs.builder
+      builder.toolMatchingSettings(args.map(_(argsBuilder).build)*)
 
     /**
      * @param turnLevelMetricsThresholds (Output)
@@ -1427,6 +1897,18 @@ object ces:
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingConversationLoggingSettingArgs.builder
       builder.conversationLoggingSettings(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param metricAnalysisSettings (Output)
+     * Settings to describe the conversation data collection behaviors for the LLM
+     * analysis pipeline for the app.
+     * Structure is documented below.
+     * @return builder
+     */
+    def metricAnalysisSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingMetricAnalysisSettingArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingMetricAnalysisSettingArgs.builder
+      builder.metricAnalysisSettings(args.map(_(argsBuilder).build)*)
 
     /**
      * @param redactionConfigs (Output)
@@ -2362,6 +2844,16 @@ object ces:
       val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentChannelProfileWebWidgetConfigArgs.builder
       builder.webWidgetConfig(args(argsBuilder).build)
 
+    /**
+     * @param whatsappConfig Configuration specific to WhatsApp deployments.
+     * Structure is documented below.
+     * @return builder
+     */
+    def whatsappConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentChannelProfileWhatsappConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.DeploymentChannelProfileArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentChannelProfileWhatsappConfigArgs.builder
+      builder.whatsappConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.ces.inputs.DeploymentChannelProfileWebWidgetConfigArgs.Builder)
     /**
      * @param securitySettings The security settings of the web widget.
@@ -2384,6 +2876,26 @@ object ces:
         com.pulumi.gcp.ces.inputs.DeploymentState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentChannelProfileArgs.builder
       builder.channelProfile(args(argsBuilder).build)
+
+    /**
+     * @param instagramCredentials Ephemeral Meta credentials required when configuring an Instagram channel profile.
+     * Structure is documented below.
+     * @return builder
+     */
+    def instagramCredentials(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentInstagramCredentialsArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.DeploymentState.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentInstagramCredentialsArgs.builder
+      builder.instagramCredentials(args(argsBuilder).build)
+
+    /**
+     * @param whatsappCredentials Ephemeral Meta credentials required when configuring a WhatsApp channel profile.
+     * Structure is documented below.
+     * @return builder
+     */
+    def whatsappCredentials(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentWhatsappCredentialsArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.DeploymentState.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentWhatsappCredentialsArgs.builder
+      builder.whatsappCredentials(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.ces.inputs.EvaluationGoldenArgs.Builder)
     /**
@@ -2904,6 +3416,16 @@ object ces:
         com.pulumi.gcp.ces.inputs.ExampleMessageChunkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ExampleMessageChunkAgentTransferArgs.builder
       builder.agentTransfer(args(argsBuilder).build)
+
+    /**
+     * @param blob Represents a blob input or output in the conversation.
+     * Structure is documented below.
+     * @return builder
+     */
+    def blob(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkBlobArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ExampleMessageChunkArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ExampleMessageChunkBlobArgs.builder
+      builder.blob(args(argsBuilder).build)
 
     /**
      * @param image Represents an image input or output in the conversation.
@@ -3517,7 +4039,7 @@ object ces:
   extension (builder: com.pulumi.gcp.ces.inputs.ToolMcpToolArgs.Builder)
     /**
      * @param apiAuthentications (Output)
-     * Authentication information required for API calls.
+     * Authentication information required for calling the remote agent.
      * Structure is documented below.
      * @return builder
      */
@@ -3621,7 +4143,7 @@ object ces:
   extension (builder: com.pulumi.gcp.ces.inputs.ToolOpenApiToolArgs.Builder)
     /**
      * @param apiAuthentications (Output)
-     * Authentication information required for API calls.
+     * Authentication information required for calling the remote agent.
      * Structure is documented below.
      * @return builder
      */
@@ -3701,6 +4223,63 @@ object ces:
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardSupportedInterfaceArgs.builder
       builder.supportedInterfaces(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationArgs.Builder)
+    /**
+     * @param apiKeyConfigs (Output)
+     * Configurations for authentication with API key.
+     * Structure is documented below.
+     * @return builder
+     */
+    def apiKeyConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationApiKeyConfigArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationApiKeyConfigArgs.builder
+      builder.apiKeyConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param bearerTokenConfigs (Output)
+     * Configurations for authentication with a bearer token.
+     * Structure is documented below.
+     * @return builder
+     */
+    def bearerTokenConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationBearerTokenConfigArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationBearerTokenConfigArgs.builder
+      builder.bearerTokenConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param oauthConfigs (Output)
+     * Configurations for authentication with OAuth.
+     * Structure is documented below.
+     * @return builder
+     */
+    def oauthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationOauthConfigArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationOauthConfigArgs.builder
+      builder.oauthConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param serviceAccountAuthConfigs (Output)
+     * Configurations for authentication using a custom service account.
+     * Structure is documented below.
+     * @return builder
+     */
+    def serviceAccountAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationServiceAccountAuthConfigArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationServiceAccountAuthConfigArgs.builder
+      builder.serviceAccountAuthConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param serviceAgentIdTokenAuthConfigs (Output)
+     * Configurations for authentication with [ID
+     * token](https://cloud.google.com/docs/authentication/token-types#id) generated
+     * from service agent.
+     * @return builder
+     */
+    def serviceAgentIdTokenAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationServiceAgentIdTokenAuthConfigArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationServiceAgentIdTokenAuthConfigArgs.builder
+      builder.serviceAgentIdTokenAuthConfigs(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolArgs.Builder)
     /**
      * @param agentCards (Output)
@@ -3712,6 +4291,17 @@ object ces:
         com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardArgs.builder
       builder.agentCards(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param apiAuthentications (Output)
+     * Authentication information required for calling the remote agent.
+     * Structure is documented below.
+     * @return builder
+     */
+    def apiAuthentications(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationArgs.builder
+      builder.apiAuthentications(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.ces.inputs.ToolState.Builder)
     /**
@@ -4049,6 +4639,16 @@ object ces:
         com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetTlsConfigArgs.builder
       builder.tlsConfig(args(argsBuilder).build)
+
+    /**
+     * @param toolOverrides A list of tool overrides for the toolset.
+     * Structure is documented below.
+     * @return builder
+     */
+    def toolOverrides(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetToolOverrideArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetToolOverrideArgs.builder
+      builder.toolOverrides(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetTlsConfigArgs.Builder)
     /**
