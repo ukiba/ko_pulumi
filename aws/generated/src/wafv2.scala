@@ -78,7 +78,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.RuleGroupArgs.Builder)
     /**
-     * @param customResponseBodies Defines custom response bodies that can be referenced by `customResponse` actions. See Custom Response Body below for details.
+     * @param customResponseBodies Custom response bodies that can be referenced by `customResponse` actions. See Custom Response Body below for details.
      * @return builder
      */
     def customResponseBodies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupCustomResponseBodyArgs.Builder]*):
@@ -87,7 +87,7 @@ object wafv2:
       builder.customResponseBodies(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param rules The rule blocks used to identify the web requests that you want to `allow`, `block`, or `count`. See Rules below for details.
+     * @param rules Rule blocks used to identify the web requests that you want to `allow`, `block`, or `count`. See Rules below for details.
      * @return builder
      */
     def rules(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleArgs.Builder]*):
@@ -96,7 +96,7 @@ object wafv2:
       builder.rules(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param visibilityConfig Defines and enables Amazon CloudWatch metrics and web request sample collection. See Visibility Configuration below for details.
+     * @param visibilityConfig Amazon CloudWatch metrics and web request sample collection configuration. See Visibility Configuration below for details.
      * @return builder
      */
     def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupVisibilityConfigArgs.Builder]):
@@ -205,7 +205,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.WebAclArgs.Builder)
     /**
-     * @param associationConfig Specifies custom configurations for the associations between the web ACL and protected resources. See `associationConfig` below for details.
+     * @param associationConfig Custom configurations for the associations between the web ACL and protected resources. See `associationConfig` below for details.
      * @return builder
      */
     def associationConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigArgs.Builder]):
@@ -214,7 +214,7 @@ object wafv2:
       builder.associationConfig(args(argsBuilder).build)
 
     /**
-     * @param captchaConfig Specifies how AWS WAF should handle CAPTCHA evaluations on the ACL level (used by [AWS Bot Control](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html)). See `captchaConfig` below for details.
+     * @param captchaConfig Configuration for how AWS WAF handles CAPTCHA evaluations at the web ACL level (used by [AWS Bot Control](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html)). See `captchaConfig` below for details.
      * @return builder
      */
     def captchaConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclCaptchaConfigArgs.Builder]):
@@ -223,7 +223,7 @@ object wafv2:
       builder.captchaConfig(args(argsBuilder).build)
 
     /**
-     * @param challengeConfig Specifies how AWS WAF should handle Challenge evaluations on the ACL level (used by [AWS Bot Control](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html)). See `challengeConfig` below for details.
+     * @param challengeConfig Configuration for how AWS WAF handles Challenge evaluations at the web ACL level (used by [AWS Bot Control](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html)). See `challengeConfig` below for details.
      * @return builder
      */
     def challengeConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclChallengeConfigArgs.Builder]):
@@ -232,7 +232,7 @@ object wafv2:
       builder.challengeConfig(args(argsBuilder).build)
 
     /**
-     * @param customResponseBodies Defines custom response bodies that can be referenced by `customResponse` actions. See `customResponseBody` below for details.
+     * @param customResponseBodies Custom response bodies that can be referenced by `customResponse` actions. See `customResponseBody` below for details.
      * @return builder
      */
     def customResponseBodies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclCustomResponseBodyArgs.Builder]*):
@@ -241,7 +241,7 @@ object wafv2:
       builder.customResponseBodies(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param dataProtectionConfig Specifies data protection to apply to the web request data for the web ACL. This is a web ACL level data protection option. See `dataProtectionConfig` below for details.
+     * @param dataProtectionConfig Data protection to apply to the web request data for the web ACL. This is a web ACL level data protection option. See `dataProtectionConfig` below for details.
      * @return builder
      */
     def dataProtectionConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigArgs.Builder]):
@@ -268,7 +268,7 @@ object wafv2:
       builder.rules(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param visibilityConfig Defines and enables Amazon CloudWatch metrics and web request sample collection. See `visibilityConfig` below for details.
+     * @param visibilityConfig Amazon CloudWatch metrics and web request sample collection configuration. See `visibilityConfig` below for details.
      * @return builder
      */
     def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclVisibilityConfigArgs.Builder]):
@@ -477,7 +477,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowArgs.Builder)
     /**
-     * @param customRequestHandling Defines custom handling for the web request. See Custom Request Handling below for details.
+     * @param customRequestHandling Custom handling for the web request. See Custom Request Handling below for details.
      * @return builder
      */
     def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowCustomRequestHandlingArgs.Builder]):
@@ -487,7 +487,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowCustomRequestHandlingArgs.Builder)
     /**
-     * @param insertHeaders The `insertHeader` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
+     * @param insertHeaders `insertHeader` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
      * @return builder
      */
     def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowCustomRequestHandlingInsertHeaderArgs.Builder]*):
@@ -543,7 +543,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockArgs.Builder)
     /**
-     * @param customResponse Defines a custom response for the web request. See Custom Response below for details.
+     * @param customResponse Custom response for the web request. See Custom Response below for details.
      * @return builder
      */
     def customResponse(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockCustomResponseArgs.Builder]):
@@ -553,7 +553,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockCustomResponseArgs.Builder)
     /**
-     * @param responseHeaders The `responseHeader` blocks used to define the HTTP response headers added to the response. See Custom HTTP Header below for details.
+     * @param responseHeaders `responseHeader` blocks used to define the HTTP response headers added to the response. See Custom HTTP Header below for details.
      * @return builder
      */
     def responseHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockCustomResponseResponseHeaderArgs.Builder]*):
@@ -563,7 +563,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaArgs.Builder)
     /**
-     * @param customRequestHandling Defines custom handling for the web request. See Custom Request Handling below for details.
+     * @param customRequestHandling Custom handling for the web request. See Custom Request Handling below for details.
      * @return builder
      */
     def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaCustomRequestHandlingArgs.Builder]):
@@ -573,7 +573,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaCustomRequestHandlingArgs.Builder)
     /**
-     * @param insertHeaders The `insertHeader` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
+     * @param insertHeaders `insertHeader` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
      * @return builder
      */
     def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaCustomRequestHandlingInsertHeaderArgs.Builder]*):
@@ -583,7 +583,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeArgs.Builder)
     /**
-     * @param customRequestHandling Defines custom handling for the web request. See Custom Request Handling below for details.
+     * @param customRequestHandling Custom handling for the web request. See Custom Request Handling below for details.
      * @return builder
      */
     def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeCustomRequestHandlingArgs.Builder]):
@@ -593,7 +593,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeCustomRequestHandlingArgs.Builder)
     /**
-     * @param insertHeaders The `insertHeader` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
+     * @param insertHeaders `insertHeader` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
      * @return builder
      */
     def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeCustomRequestHandlingInsertHeaderArgs.Builder]*):
@@ -603,7 +603,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountArgs.Builder)
     /**
-     * @param customRequestHandling Defines custom handling for the web request. See Custom Request Handling below for details.
+     * @param customRequestHandling Custom handling for the web request. See Custom Request Handling below for details.
      * @return builder
      */
     def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountCustomRequestHandlingArgs.Builder]):
@@ -613,7 +613,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountCustomRequestHandlingArgs.Builder)
     /**
-     * @param insertHeaders The `insertHeader` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
+     * @param insertHeaders `insertHeader` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
      * @return builder
      */
     def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountCustomRequestHandlingInsertHeaderArgs.Builder]*):
@@ -623,7 +623,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleArgs.Builder)
     /**
-     * @param action The action that AWS WAF should take on a web request when it matches the rule&#39;s statement. Settings at the `aws.wafv2.WebAcl` level can override the rule action setting. See Action below for details.
+     * @param action Action that AWS WAF should take on a web request when it matches the rule&#39;s statement. Settings at the `aws.wafv2.WebAcl` level can override the rule action setting. See Action below for details.
      * @return builder
      */
     def action(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionArgs.Builder]):
@@ -632,7 +632,7 @@ object wafv2:
       builder.action(args(argsBuilder).build)
 
     /**
-     * @param captchaConfig Specifies how AWS WAF should handle CAPTCHA evaluations. See Captcha Configuration below for details.
+     * @param captchaConfig Configuration for how AWS WAF handles CAPTCHA evaluations. See Captcha Configuration below for details.
      * @return builder
      */
     def captchaConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleCaptchaConfigArgs.Builder]):
@@ -650,7 +650,7 @@ object wafv2:
       builder.ruleLabels(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param statement The AWS WAF processing statement for the rule, for example `byteMatchStatement` or `geoMatchStatement`. See Statement below for details.
+     * @param statement AWS WAF processing statement for the rule, for example `byteMatchStatement` or `geoMatchStatement`. See Statement below for details.
      * @return builder
      */
     def statement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]):
@@ -659,7 +659,7 @@ object wafv2:
       builder.statement(args(argsBuilder).build)
 
     /**
-     * @param visibilityConfig Defines and enables Amazon CloudWatch metrics and web request sample collection. See Visibility Configuration below for details.
+     * @param visibilityConfig Amazon CloudWatch metrics and web request sample collection configuration. See Visibility Configuration below for details.
      * @return builder
      */
     def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleVisibilityConfigArgs.Builder]):
@@ -669,7 +669,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleCaptchaConfigArgs.Builder)
     /**
-     * @param immunityTimeProperty Defines custom immunity time. See Immunity Time Property below for details.
+     * @param immunityTimeProperty Custom immunity time. See Immunity Time Property below for details.
      * @return builder
      */
     def immunityTimeProperty(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleCaptchaConfigImmunityTimePropertyArgs.Builder]):
@@ -679,7 +679,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAndStatementArgs.Builder)
     /**
-     * @param statements The statements to combine with `AND` logic. You can use any statements that can be nested. See Statement above for details.
+     * @param statements Statements to combine with `AND` logic. You can use any statements that can be nested. See Statement above for details.
      * @return builder
      */
     def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
@@ -689,7 +689,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder)
     /**
-     * @param andStatement A logical rule statement used to combine other rule statements with AND logic. See AND Statement below for details.
+     * @param andStatement Logical rule statement used to combine other rule statements with AND logic. See AND Statement below for details.
      * @return builder
      */
     def andStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAndStatementArgs.Builder]):
@@ -707,7 +707,7 @@ object wafv2:
       builder.asnMatchStatement(args(argsBuilder).build)
 
     /**
-     * @param byteMatchStatement A rule statement that defines a string match search for AWS WAF to apply to web requests. See Byte Match Statement below for details.
+     * @param byteMatchStatement Rule statement that defines a string match search for AWS WAF to apply to web requests. See Byte Match Statement below for details.
      * @return builder
      */
     def byteMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementArgs.Builder]):
@@ -716,7 +716,7 @@ object wafv2:
       builder.byteMatchStatement(args(argsBuilder).build)
 
     /**
-     * @param geoMatchStatement A rule statement used to identify web requests based on country of origin. See GEO Match Statement below for details.
+     * @param geoMatchStatement Rule statement used to identify web requests based on country of origin. See GEO Match Statement below for details.
      * @return builder
      */
     def geoMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementGeoMatchStatementArgs.Builder]):
@@ -725,7 +725,7 @@ object wafv2:
       builder.geoMatchStatement(args(argsBuilder).build)
 
     /**
-     * @param ipSetReferenceStatement A rule statement used to detect web requests coming from particular IP addresses or address ranges. See IP Set Reference Statement below for details.
+     * @param ipSetReferenceStatement Rule statement used to detect web requests coming from particular IP addresses or address ranges. See IP Set Reference Statement below for details.
      * @return builder
      */
     def ipSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementIpSetReferenceStatementArgs.Builder]):
@@ -734,7 +734,7 @@ object wafv2:
       builder.ipSetReferenceStatement(args(argsBuilder).build)
 
     /**
-     * @param labelMatchStatement A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. See Label Match Statement below for details.
+     * @param labelMatchStatement Rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. See Label Match Statement below for details.
      * @return builder
      */
     def labelMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementLabelMatchStatementArgs.Builder]):
@@ -743,7 +743,7 @@ object wafv2:
       builder.labelMatchStatement(args(argsBuilder).build)
 
     /**
-     * @param notStatement A logical rule statement used to negate the results of another rule statement. See NOT Statement below for details.
+     * @param notStatement Logical rule statement used to negate the results of another rule statement. See NOT Statement below for details.
      * @return builder
      */
     def notStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementNotStatementArgs.Builder]):
@@ -752,7 +752,7 @@ object wafv2:
       builder.notStatement(args(argsBuilder).build)
 
     /**
-     * @param orStatement A logical rule statement used to combine other rule statements with OR logic. See OR Statement below for details.
+     * @param orStatement Logical rule statement used to combine other rule statements with OR logic. See OR Statement below for details.
      * @return builder
      */
     def orStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementOrStatementArgs.Builder]):
@@ -761,7 +761,7 @@ object wafv2:
       builder.orStatement(args(argsBuilder).build)
 
     /**
-     * @param rateBasedStatement A rate-based rule tracks the rate of requests for each originating `IP address`, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any `5-minute` time span. This statement can not be nested. See Rate Based Statement below for details.
+     * @param rateBasedStatement Rate-based rule tracks the rate of requests for each originating `IP address`, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any `5-minute` time span. This statement can not be nested. See Rate Based Statement below for details.
      * @return builder
      */
     def rateBasedStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementArgs.Builder]):
@@ -770,7 +770,7 @@ object wafv2:
       builder.rateBasedStatement(args(argsBuilder).build)
 
     /**
-     * @param regexMatchStatement A rule statement used to search web request components for a match against a single regular expression. See Regex Match Statement below for details.
+     * @param regexMatchStatement Rule statement used to search web request components for a match against a single regular expression. See Regex Match Statement below for details.
      * @return builder
      */
     def regexMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementArgs.Builder]):
@@ -779,7 +779,7 @@ object wafv2:
       builder.regexMatchStatement(args(argsBuilder).build)
 
     /**
-     * @param regexPatternSetReferenceStatement A rule statement used to search web request components for matches with regular expressions. See Regex Pattern Set Reference Statement below for details.
+     * @param regexPatternSetReferenceStatement Rule statement used to search web request components for matches with regular expressions. See Regex Pattern Set Reference Statement below for details.
      * @return builder
      */
     def regexPatternSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementArgs.Builder]):
@@ -788,7 +788,7 @@ object wafv2:
       builder.regexPatternSetReferenceStatement(args(argsBuilder).build)
 
     /**
-     * @param sizeConstraintStatement A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). See Size Constraint Statement below for more details.
+     * @param sizeConstraintStatement Rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). See Size Constraint Statement below for more details.
      * @return builder
      */
     def sizeConstraintStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementArgs.Builder]):
@@ -797,7 +797,7 @@ object wafv2:
       builder.sizeConstraintStatement(args(argsBuilder).build)
 
     /**
-     * @param sqliMatchStatement An SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want AWS WAF to inspect. See SQL Injection Match Statement below for details.
+     * @param sqliMatchStatement SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want AWS WAF to inspect. See SQL Injection Match Statement below for details.
      * @return builder
      */
     def sqliMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementArgs.Builder]):
@@ -806,7 +806,7 @@ object wafv2:
       builder.sqliMatchStatement(args(argsBuilder).build)
 
     /**
-     * @param xssMatchStatement A rule statement that defines a cross-site scripting (XSS) match search for AWS WAF to apply to web requests. See XSS Match Statement below for details.
+     * @param xssMatchStatement Rule statement that defines a cross-site scripting (XSS) match search for AWS WAF to apply to web requests. See XSS Match Statement below for details.
      * @return builder
      */
     def xssMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementArgs.Builder]):
@@ -826,7 +826,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementArgs.Builder)
     /**
-     * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
+     * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder]):
@@ -844,9 +844,7 @@ object wafv2:
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-     * At least one required.
-     * See Text Transformation below for details.
+     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementTextTransformationArgs.Builder]*):
@@ -983,7 +981,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
-     * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
+     * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
     def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
@@ -993,7 +991,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
@@ -1003,7 +1001,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
-     * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
+     * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
@@ -1013,7 +1011,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
@@ -1023,7 +1021,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
-     * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
+     * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
@@ -1033,7 +1031,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
@@ -1043,7 +1041,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementGeoMatchStatementArgs.Builder)
     /**
-     * @param forwardedIpConfig The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See Forwarded IP Config below for details.
+     * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See Forwarded IP Config below for details.
      * @return builder
      */
     def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementGeoMatchStatementForwardedIpConfigArgs.Builder]):
@@ -1053,7 +1051,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementIpSetReferenceStatementArgs.Builder)
     /**
-     * @param ipSetForwardedIpConfig The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See IPSet Forwarded IP Config below for more details.
+     * @param ipSetForwardedIpConfig Configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See IPSet Forwarded IP Config below for more details.
      * @return builder
      */
     def ipSetForwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.Builder]):
@@ -1063,7 +1061,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementNotStatementArgs.Builder)
     /**
-     * @param statements The statement to negate. You can use any statement that can be nested. See Statement above for details.
+     * @param statements Statement to negate. You can use any statement that can be nested. See Statement above for details.
      * @return builder
      */
     def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
@@ -1073,7 +1071,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementOrStatementArgs.Builder)
     /**
-     * @param statements The statements to combine with `OR` logic. You can use any statements that can be nested. See Statement above for details.
+     * @param statements Statements to combine with `OR` logic. You can use any statements that can be nested. See Statement above for details.
      * @return builder
      */
     def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
@@ -1092,7 +1090,7 @@ object wafv2:
       builder.customKeys(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param forwardedIpConfig The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. If `aggregateKeyType` is set to `FORWARDED_IP`, this block is required. See Forwarded IP Config below for details.
+     * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. If `aggregateKeyType` is set to `FORWARDED_IP`, this block is required. See Forwarded IP Config below for details.
      * @return builder
      */
     def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementForwardedIpConfigArgs.Builder]):
@@ -1101,7 +1099,7 @@ object wafv2:
       builder.forwardedIpConfig(args(argsBuilder).build)
 
     /**
-     * @param scopeDownStatement An optional nested statement that narrows the scope of the rate-based statement to matching web requests. This can be any nestable statement, and you can nest statements at any level below this scope-down statement. See Statement above for details. If `aggregateKeyType` is set to `CONSTANT`, this block is required.
+     * @param scopeDownStatement Optional nested statement that narrows the scope of the rate-based statement to matching web requests. This can be any nestable statement, and you can nest statements at any level below this scope-down statement. See Statement above for details. If `aggregateKeyType` is set to `CONSTANT`, this block is required.
      * @return builder
      */
     def scopeDownStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder]):
@@ -1116,7 +1114,7 @@ object wafv2:
       builder.asn(args(argsBuilder).build)
 
     /**
-     * @param cookie (Optional) Use the value of a cookie in the request as an aggregate key. See RateLimit `cookie` below for details.
+     * @param cookie Use the value of a cookie in the request as an aggregate key. See RateLimit `cookie` below for details.
      * @return builder
      */
     def cookie(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyCookieArgs.Builder]):
@@ -1125,7 +1123,7 @@ object wafv2:
       builder.cookie(args(argsBuilder).build)
 
     /**
-     * @param forwardedIp (Optional) Use the first IP address in an HTTP header as an aggregate key. See `forwardedIp` below for details.
+     * @param forwardedIp Use the first IP address in an HTTP header as an aggregate key. See `forwardedIp` below for details.
      * @return builder
      */
     def forwardedIp(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyForwardedIpArgs.Builder]):
@@ -1134,7 +1132,7 @@ object wafv2:
       builder.forwardedIp(args(argsBuilder).build)
 
     /**
-     * @param header (Optional) Use the value of a header in the request as an aggregate key. See RateLimit `header` below for details.
+     * @param header Use the value of a header in the request as an aggregate key. See RateLimit `header` below for details.
      * @return builder
      */
     def header(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyHeaderArgs.Builder]):
@@ -1143,7 +1141,7 @@ object wafv2:
       builder.header(args(argsBuilder).build)
 
     /**
-     * @param httpMethod (Optional) Use the request&#39;s HTTP method as an aggregate key. See RateLimit `httpMethod` below for details.
+     * @param httpMethod Use the request&#39;s HTTP method as an aggregate key. See RateLimit `httpMethod` below for details.
      * @return builder
      */
     def httpMethod(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyHttpMethodArgs.Builder]):
@@ -1152,7 +1150,7 @@ object wafv2:
       builder.httpMethod(args(argsBuilder).build)
 
     /**
-     * @param ip (Optional) Use the request&#39;s originating IP address as an aggregate key. See `RateLimit ip` below for details.
+     * @param ip Use the request&#39;s originating IP address as an aggregate key. See `RateLimit ip` below for details.
      * @return builder
      */
     def ip(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyIpArgs.Builder]):
@@ -1161,7 +1159,7 @@ object wafv2:
       builder.ip(args(argsBuilder).build)
 
     /**
-     * @param ja3Fingerprint (Optional) Use the JA3 fingerprint in the request as an aggregate key. See `RateLimit ip` below for details.
+     * @param ja3Fingerprint Use the JA3 fingerprint in the request as an aggregate key. See `RateLimit ja3Fingerprint` below for details.
      * @return builder
      */
     def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyJa3FingerprintArgs.Builder]):
@@ -1170,7 +1168,7 @@ object wafv2:
       builder.ja3Fingerprint(args(argsBuilder).build)
 
     /**
-     * @param ja4Fingerprint (Optional) Use the JA3 fingerprint in the request as an aggregate key. See `RateLimit ip` below for details.
+     * @param ja4Fingerprint Use the JA4 fingerprint in the request as an aggregate key. See `RateLimit ja4Fingerprint` below for details.
      * @return builder
      */
     def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyJa4FingerprintArgs.Builder]):
@@ -1179,7 +1177,7 @@ object wafv2:
       builder.ja4Fingerprint(args(argsBuilder).build)
 
     /**
-     * @param labelNamespace (Optional) Use the specified label namespace as an aggregate key. See RateLimit `labelNamespace` below for details.
+     * @param labelNamespace Use the specified label namespace as an aggregate key. See RateLimit `labelNamespace` below for details.
      * @return builder
      */
     def labelNamespace(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyLabelNamespaceArgs.Builder]):
@@ -1188,7 +1186,7 @@ object wafv2:
       builder.labelNamespace(args(argsBuilder).build)
 
     /**
-     * @param queryArgument (Optional) Use the specified query argument as an aggregate key. See RateLimit `queryArgument` below for details.
+     * @param queryArgument Use the specified query argument as an aggregate key. See RateLimit `queryArgument` below for details.
      * @return builder
      */
     def queryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder]):
@@ -1197,7 +1195,7 @@ object wafv2:
       builder.queryArgument(args(argsBuilder).build)
 
     /**
-     * @param queryString (Optional) Use the request&#39;s query string as an aggregate key. See RateLimit `queryString` below for details.
+     * @param queryString Use the request&#39;s query string as an aggregate key. See RateLimit `queryString` below for details.
      * @return builder
      */
     def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryStringArgs.Builder]):
@@ -1206,7 +1204,7 @@ object wafv2:
       builder.queryString(args(argsBuilder).build)
 
     /**
-     * @param uriPath (Optional) Use the request&#39;s URI path as an aggregate key. See RateLimit `uriPath` below for details.
+     * @param uriPath Use the request&#39;s URI path as an aggregate key. See RateLimit `uriPath` below for details.
      * @return builder
      */
     def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyUriPathArgs.Builder]):
@@ -1216,7 +1214,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyCookieArgs.Builder)
     /**
-     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. They are used in rate-based rule statements, to transform request components before using them as custom aggregation keys. Atleast one transformation is required. See Text Transformation above for details.
+     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. They are used in rate-based rule statements, to transform request components before using them as custom aggregation keys. Atleast one transformation is required.  See Text Transformation above for details.
      * @return builder
      */
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyCookieTextTransformationArgs.Builder]*):
@@ -1226,7 +1224,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyHeaderArgs.Builder)
     /**
-     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. They are used in rate-based rule statements, to transform request components before using them as custom aggregation keys. Atleast one transformation is required. See Text Transformation above for details.
+     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. They are used in rate-based rule statements, to transform request components before using them as custom aggregation keys. Atleast one transformation is required.  See Text Transformation above for details.
      * @return builder
      */
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyHeaderTextTransformationArgs.Builder]*):
@@ -1266,7 +1264,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAndStatementArgs.Builder)
     /**
-     * @param statements The statements to combine with `AND` logic. You can use any statements that can be nested. See Statement above for details.
+     * @param statements Statements to combine with `AND` logic. You can use any statements that can be nested. See Statement above for details.
      * @return builder
      */
     def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
@@ -1276,7 +1274,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder)
     /**
-     * @param andStatement A logical rule statement used to combine other rule statements with AND logic. See AND Statement below for details.
+     * @param andStatement Logical rule statement used to combine other rule statements with AND logic. See AND Statement below for details.
      * @return builder
      */
     def andStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAndStatementArgs.Builder]):
@@ -1294,7 +1292,7 @@ object wafv2:
       builder.asnMatchStatement(args(argsBuilder).build)
 
     /**
-     * @param byteMatchStatement A rule statement that defines a string match search for AWS WAF to apply to web requests. See Byte Match Statement below for details.
+     * @param byteMatchStatement Rule statement that defines a string match search for AWS WAF to apply to web requests. See Byte Match Statement below for details.
      * @return builder
      */
     def byteMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder]):
@@ -1303,7 +1301,7 @@ object wafv2:
       builder.byteMatchStatement(args(argsBuilder).build)
 
     /**
-     * @param geoMatchStatement A rule statement used to identify web requests based on country of origin. See GEO Match Statement below for details.
+     * @param geoMatchStatement Rule statement used to identify web requests based on country of origin. See GEO Match Statement below for details.
      * @return builder
      */
     def geoMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementArgs.Builder]):
@@ -1312,7 +1310,7 @@ object wafv2:
       builder.geoMatchStatement(args(argsBuilder).build)
 
     /**
-     * @param ipSetReferenceStatement A rule statement used to detect web requests coming from particular IP addresses or address ranges. See IP Set Reference Statement below for details.
+     * @param ipSetReferenceStatement Rule statement used to detect web requests coming from particular IP addresses or address ranges. See IP Set Reference Statement below for details.
      * @return builder
      */
     def ipSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementArgs.Builder]):
@@ -1321,7 +1319,7 @@ object wafv2:
       builder.ipSetReferenceStatement(args(argsBuilder).build)
 
     /**
-     * @param labelMatchStatement A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. See Label Match Statement below for details.
+     * @param labelMatchStatement Rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. See Label Match Statement below for details.
      * @return builder
      */
     def labelMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementLabelMatchStatementArgs.Builder]):
@@ -1330,7 +1328,7 @@ object wafv2:
       builder.labelMatchStatement(args(argsBuilder).build)
 
     /**
-     * @param notStatement A logical rule statement used to negate the results of another rule statement. See NOT Statement below for details.
+     * @param notStatement Logical rule statement used to negate the results of another rule statement. See NOT Statement below for details.
      * @return builder
      */
     def notStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementNotStatementArgs.Builder]):
@@ -1339,7 +1337,7 @@ object wafv2:
       builder.notStatement(args(argsBuilder).build)
 
     /**
-     * @param orStatement A logical rule statement used to combine other rule statements with OR logic. See OR Statement below for details.
+     * @param orStatement Logical rule statement used to combine other rule statements with OR logic. See OR Statement below for details.
      * @return builder
      */
     def orStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementOrStatementArgs.Builder]):
@@ -1348,7 +1346,7 @@ object wafv2:
       builder.orStatement(args(argsBuilder).build)
 
     /**
-     * @param regexMatchStatement A rule statement used to search web request components for a match against a single regular expression. See Regex Match Statement below for details.
+     * @param regexMatchStatement Rule statement used to search web request components for a match against a single regular expression. See Regex Match Statement below for details.
      * @return builder
      */
     def regexMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder]):
@@ -1357,7 +1355,7 @@ object wafv2:
       builder.regexMatchStatement(args(argsBuilder).build)
 
     /**
-     * @param regexPatternSetReferenceStatement A rule statement used to search web request components for matches with regular expressions. See Regex Pattern Set Reference Statement below for details.
+     * @param regexPatternSetReferenceStatement Rule statement used to search web request components for matches with regular expressions. See Regex Pattern Set Reference Statement below for details.
      * @return builder
      */
     def regexPatternSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder]):
@@ -1366,7 +1364,7 @@ object wafv2:
       builder.regexPatternSetReferenceStatement(args(argsBuilder).build)
 
     /**
-     * @param sizeConstraintStatement A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). See Size Constraint Statement below for more details.
+     * @param sizeConstraintStatement Rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). See Size Constraint Statement below for more details.
      * @return builder
      */
     def sizeConstraintStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder]):
@@ -1375,7 +1373,7 @@ object wafv2:
       builder.sizeConstraintStatement(args(argsBuilder).build)
 
     /**
-     * @param sqliMatchStatement An SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want AWS WAF to inspect. See SQL Injection Match Statement below for details.
+     * @param sqliMatchStatement SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want AWS WAF to inspect. See SQL Injection Match Statement below for details.
      * @return builder
      */
     def sqliMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder]):
@@ -1384,7 +1382,7 @@ object wafv2:
       builder.sqliMatchStatement(args(argsBuilder).build)
 
     /**
-     * @param xssMatchStatement A rule statement that defines a cross-site scripting (XSS) match search for AWS WAF to apply to web requests. See XSS Match Statement below for details.
+     * @param xssMatchStatement Rule statement that defines a cross-site scripting (XSS) match search for AWS WAF to apply to web requests. See XSS Match Statement below for details.
      * @return builder
      */
     def xssMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder]):
@@ -1404,7 +1402,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder)
     /**
-     * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
+     * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder]):
@@ -1422,9 +1420,7 @@ object wafv2:
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-     * At least one required.
-     * See Text Transformation below for details.
+     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementTextTransformationArgs.Builder]*):
@@ -1561,7 +1557,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
-     * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
+     * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
     def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
@@ -1571,7 +1567,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
@@ -1581,7 +1577,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
-     * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
+     * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
@@ -1591,7 +1587,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
@@ -1601,7 +1597,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
-     * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
+     * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
@@ -1611,7 +1607,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
@@ -1621,7 +1617,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementArgs.Builder)
     /**
-     * @param forwardedIpConfig The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See Forwarded IP Config below for details.
+     * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See Forwarded IP Config below for details.
      * @return builder
      */
     def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.Builder]):
@@ -1631,7 +1627,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementArgs.Builder)
     /**
-     * @param ipSetForwardedIpConfig The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See IPSet Forwarded IP Config below for more details.
+     * @param ipSetForwardedIpConfig Configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See IPSet Forwarded IP Config below for more details.
      * @return builder
      */
     def ipSetForwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.Builder]):
@@ -1641,7 +1637,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementNotStatementArgs.Builder)
     /**
-     * @param statements The statement to negate. You can use any statement that can be nested. See Statement above for details.
+     * @param statements Statement to negate. You can use any statement that can be nested. See Statement above for details.
      * @return builder
      */
     def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
@@ -1651,7 +1647,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementOrStatementArgs.Builder)
     /**
-     * @param statements The statements to combine with `OR` logic. You can use any statements that can be nested. See Statement above for details.
+     * @param statements Statements to combine with `OR` logic. You can use any statements that can be nested. See Statement above for details.
      * @return builder
      */
     def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
@@ -1661,7 +1657,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder)
     /**
-     * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
+     * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder]):
@@ -1679,9 +1675,7 @@ object wafv2:
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-     * At least one required.
-     * See Text Transformation below for details.
+     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.Builder]*):
@@ -1818,7 +1812,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
-     * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
+     * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
     def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
@@ -1828,7 +1822,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
@@ -1838,7 +1832,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
-     * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
+     * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
@@ -1848,7 +1842,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
@@ -1858,7 +1852,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
-     * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
+     * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
@@ -1868,7 +1862,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
@@ -1878,7 +1872,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder)
     /**
-     * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
+     * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder]):
@@ -1896,9 +1890,7 @@ object wafv2:
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-     * At least one required.
-     * See Text Transformation below for details.
+     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.Builder]*):
@@ -2035,7 +2027,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder)
     /**
-     * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
+     * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
     def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
@@ -2045,7 +2037,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
@@ -2055,7 +2047,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder)
     /**
-     * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
+     * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
@@ -2065,7 +2057,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
@@ -2075,7 +2067,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder)
     /**
-     * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
+     * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
@@ -2085,7 +2077,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
@@ -2095,7 +2087,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder)
     /**
-     * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
+     * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder]):
@@ -2113,9 +2105,7 @@ object wafv2:
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-     * At least one required.
-     * See Text Transformation below for details.
+     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.Builder]*):
@@ -2252,7 +2242,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder)
     /**
-     * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
+     * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
     def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
@@ -2262,7 +2252,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
@@ -2272,7 +2262,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder)
     /**
-     * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
+     * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
@@ -2282,7 +2272,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
@@ -2292,7 +2282,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder)
     /**
-     * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
+     * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
@@ -2302,7 +2292,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
@@ -2312,7 +2302,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder)
     /**
-     * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
+     * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder]):
@@ -2330,9 +2320,7 @@ object wafv2:
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-     * At least one required.
-     * See Text Transformation below for details.
+     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.Builder]*):
@@ -2469,7 +2457,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
-     * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
+     * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
     def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
@@ -2479,7 +2467,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
@@ -2489,7 +2477,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
-     * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
+     * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
@@ -2499,7 +2487,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
@@ -2509,7 +2497,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
-     * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
+     * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
@@ -2519,7 +2507,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
@@ -2529,7 +2517,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder)
     /**
-     * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
+     * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder]):
@@ -2547,9 +2535,7 @@ object wafv2:
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-     * At least one required.
-     * See Text Transformation below for details.
+     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformationArgs.Builder]*):
@@ -2686,7 +2672,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
-     * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
+     * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
     def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
@@ -2696,7 +2682,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
@@ -2706,7 +2692,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
-     * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
+     * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
@@ -2716,7 +2702,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
@@ -2726,7 +2712,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
-     * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
+     * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
@@ -2736,7 +2722,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
@@ -2746,7 +2732,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementArgs.Builder)
     /**
-     * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
+     * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder]):
@@ -2764,9 +2750,7 @@ object wafv2:
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-     * At least one required.
-     * See Text Transformation below for details.
+     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementTextTransformationArgs.Builder]*):
@@ -2903,7 +2887,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
-     * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
+     * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
     def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
@@ -2913,7 +2897,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
@@ -2923,7 +2907,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
-     * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
+     * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
@@ -2933,7 +2917,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
@@ -2943,7 +2927,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
-     * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
+     * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
@@ -2953,7 +2937,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
@@ -2963,7 +2947,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementArgs.Builder)
     /**
-     * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
+     * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder]):
@@ -2981,9 +2965,7 @@ object wafv2:
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-     * At least one required.
-     * See Text Transformation below for details.
+     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementTextTransformationArgs.Builder]*):
@@ -3120,7 +3102,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder)
     /**
-     * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
+     * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
     def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
@@ -3130,7 +3112,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
@@ -3140,7 +3122,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder)
     /**
-     * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
+     * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
@@ -3150,7 +3132,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
@@ -3160,7 +3142,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder)
     /**
-     * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
+     * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
@@ -3170,7 +3152,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
@@ -3180,7 +3162,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementArgs.Builder)
     /**
-     * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
+     * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder]):
@@ -3198,9 +3180,7 @@ object wafv2:
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-     * At least one required.
-     * See Text Transformation below for details.
+     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementTextTransformationArgs.Builder]*):
@@ -3337,7 +3317,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder)
     /**
-     * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
+     * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
     def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
@@ -3347,7 +3327,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
@@ -3357,7 +3337,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder)
     /**
-     * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
+     * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
@@ -3367,7 +3347,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
@@ -3377,7 +3357,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder)
     /**
-     * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
+     * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
@@ -3387,7 +3367,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
@@ -3397,7 +3377,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementArgs.Builder)
     /**
-     * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
+     * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder]):
@@ -3415,9 +3395,7 @@ object wafv2:
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-     * At least one required.
-     * See Text Transformation below for details.
+     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementTextTransformationArgs.Builder]*):
@@ -3554,7 +3532,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
-     * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
+     * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
     def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
@@ -3564,7 +3542,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
@@ -3574,7 +3552,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
-     * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
+     * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
@@ -3584,7 +3562,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
@@ -3594,7 +3572,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
-     * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
+     * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
@@ -3604,7 +3582,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
@@ -3614,7 +3592,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementArgs.Builder)
     /**
-     * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
+     * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder]):
@@ -3632,9 +3610,7 @@ object wafv2:
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-     * At least one required.
-     * See Text Transformation below for details.
+     * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementTextTransformationArgs.Builder]*):
@@ -3771,7 +3747,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
-     * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
+     * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
     def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
@@ -3781,7 +3757,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
@@ -3791,7 +3767,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
-     * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
+     * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
@@ -3801,7 +3777,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
@@ -3811,7 +3787,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
-     * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
+     * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
     def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
@@ -3821,7 +3797,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
-     * @param all An empty configuration block that is used for inspecting all headers.
+     * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
@@ -3831,7 +3807,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupState.Builder)
     /**
-     * @param customResponseBodies Defines custom response bodies that can be referenced by `customResponse` actions. See Custom Response Body below for details.
+     * @param customResponseBodies Custom response bodies that can be referenced by `customResponse` actions. See Custom Response Body below for details.
      * @return builder
      */
     def customResponseBodies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupCustomResponseBodyArgs.Builder]*):
@@ -3840,7 +3816,7 @@ object wafv2:
       builder.customResponseBodies(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param rules The rule blocks used to identify the web requests that you want to `allow`, `block`, or `count`. See Rules below for details.
+     * @param rules Rule blocks used to identify the web requests that you want to `allow`, `block`, or `count`. See Rules below for details.
      * @return builder
      */
     def rules(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleArgs.Builder]*):
@@ -3849,7 +3825,7 @@ object wafv2:
       builder.rules(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param visibilityConfig Defines and enables Amazon CloudWatch metrics and web request sample collection. See Visibility Configuration below for details.
+     * @param visibilityConfig Amazon CloudWatch metrics and web request sample collection configuration. See Visibility Configuration below for details.
      * @return builder
      */
     def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupVisibilityConfigArgs.Builder]):
@@ -3905,7 +3881,7 @@ object wafv2:
       builder.cognitoUserPool(args(argsBuilder).build)
 
     /**
-     * @param verifiedAccessInstance Customizes the request body that your protected AWS Verfied Access instances forward to AWS WAF for inspection. Applicable only when `scope` is set to `REGIONAL`. See `verifiedAccessInstance` below for details.
+     * @param verifiedAccessInstance Customizes the request body that your protected AWS Verified Access instances forward to AWS WAF for inspection. Applicable only when `scope` is set to `REGIONAL`. See `verifiedAccessInstance` below for details.
      * @return builder
      */
     def verifiedAccessInstance(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyVerifiedAccessInstanceArgs.Builder]):
@@ -3915,7 +3891,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclCaptchaConfigArgs.Builder)
     /**
-     * @param immunityTimeProperty Defines custom immunity time. See `immunityTimeProperty` below for details.
+     * @param immunityTimeProperty Custom immunity time. See `immunityTimeProperty` below for details.
      * @return builder
      */
     def immunityTimeProperty(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclCaptchaConfigImmunityTimePropertyArgs.Builder]):
@@ -3925,7 +3901,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclChallengeConfigArgs.Builder)
     /**
-     * @param immunityTimeProperty Defines custom immunity time. See `immunityTimeProperty` below for details.
+     * @param immunityTimeProperty Custom immunity time. See `immunityTimeProperty` below for details.
      * @return builder
      */
     def immunityTimeProperty(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclChallengeConfigImmunityTimePropertyArgs.Builder]):
@@ -3935,7 +3911,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigArgs.Builder)
     /**
-     * @param dataProtections A block for data protection configurations for specific web request field types. See `dataProtection` block for details.
+     * @param dataProtections Block for data protection configurations for specific web request field types. See `dataProtection` block for details.
      * @return builder
      */
     def dataProtections(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigDataProtectionArgs.Builder]*):
@@ -3945,7 +3921,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigDataProtectionArgs.Builder)
     /**
-     * @param field Specifies the field type and optional keys to apply the protection behavior to. See `field` block below for details.
+     * @param field Field type and optional keys to apply the protection behavior to. See `field` block below for details.
      * @return builder
      */
     def field(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigDataProtectionFieldArgs.Builder]):
@@ -3955,7 +3931,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowArgs.Builder)
     /**
-     * @param customRequestHandling Defines custom handling for the web request. See `customRequestHandling` below for details.
+     * @param customRequestHandling Custom handling for the web request. See `customRequestHandling` below for details.
      * @return builder
      */
     def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowCustomRequestHandlingArgs.Builder]):
@@ -3965,7 +3941,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowCustomRequestHandlingArgs.Builder)
     /**
-     * @param insertHeaders The `insertHeader` blocks used to define HTTP headers added to the request. See `insertHeader` below for details.
+     * @param insertHeaders `insertHeader` blocks used to define HTTP headers added to the request. See `insertHeader` below for details.
      * @return builder
      */
     def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowCustomRequestHandlingInsertHeaderArgs.Builder]*):
@@ -3975,7 +3951,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclDefaultActionArgs.Builder)
     /**
-     * @param allow Specifies that AWS WAF should allow requests by default. See `allow` below for details.
+     * @param allow Allows requests by default. See `allow` below for details.
      * @return builder
      */
     def allow(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowArgs.Builder]):
@@ -3984,7 +3960,7 @@ object wafv2:
       builder.allow(args(argsBuilder).build)
 
     /**
-     * @param block Specifies that AWS WAF should block requests by default. See `block` below for details.
+     * @param block Blocks requests by default. See `block` below for details.
      * @return builder
      */
     def block(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockArgs.Builder]):
@@ -3994,7 +3970,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockArgs.Builder)
     /**
-     * @param customResponse Defines a custom response for the web request. See `customResponse` below for details.
+     * @param customResponse Custom response for the web request. See `customResponse` below for details.
      * @return builder
      */
     def customResponse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockCustomResponseArgs.Builder]):
@@ -4004,7 +3980,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockCustomResponseArgs.Builder)
     /**
-     * @param responseHeaders The `responseHeader` blocks used to define the HTTP response headers added to the response. See `responseHeader` below for details.
+     * @param responseHeaders `responseHeader` blocks used to define the HTTP response headers added to the response. See `responseHeader` below for details.
      * @return builder
      */
     def responseHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockCustomResponseResponseHeaderArgs.Builder]*):
@@ -4264,7 +4240,7 @@ object wafv2:
       builder.action(args(argsBuilder).build)
 
     /**
-     * @param captchaConfig Specifies how AWS WAF should handle CAPTCHA evaluations. See `captchaConfig` below for details.
+     * @param captchaConfig Configuration for how AWS WAF handles CAPTCHA evaluations. See `captchaConfig` below for details.
      * @return builder
      */
     def captchaConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleCaptchaConfigArgs.Builder]):
@@ -4273,7 +4249,7 @@ object wafv2:
       builder.captchaConfig(args(argsBuilder).build)
 
     /**
-     * @param challengeConfig Specifies how AWS WAF should handle Challenge evaluations on the rule level. See `challengeConfig` below for details.
+     * @param challengeConfig Configuration for how AWS WAF handles Challenge evaluations at the rule level. See `challengeConfig` below for details.
      * @return builder
      */
     def challengeConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleChallengeConfigArgs.Builder]):
@@ -4300,7 +4276,7 @@ object wafv2:
       builder.ruleLabels(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param statement The AWS WAF processing statement for the rule, for example `byteMatchStatement` or `geoMatchStatement`. See `statement` below for details.
+     * @param statement AWS WAF processing statement for the rule, for example `byteMatchStatement` or `geoMatchStatement`. See `statement` below for details.
      * @return builder
      */
     def statement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder]):
@@ -4309,7 +4285,7 @@ object wafv2:
       builder.statement(args(argsBuilder).build)
 
     /**
-     * @param visibilityConfig Defines and enables Amazon CloudWatch metrics and web request sample collection. See `visibilityConfig` below for details.
+     * @param visibilityConfig Amazon CloudWatch metrics and web request sample collection configuration. See `visibilityConfig` below for details.
      * @return builder
      */
     def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleVisibilityConfigArgs.Builder]):
@@ -9736,7 +9712,7 @@ object wafv2:
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclState.Builder)
     /**
-     * @param associationConfig Specifies custom configurations for the associations between the web ACL and protected resources. See `associationConfig` below for details.
+     * @param associationConfig Custom configurations for the associations between the web ACL and protected resources. See `associationConfig` below for details.
      * @return builder
      */
     def associationConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigArgs.Builder]):
@@ -9745,7 +9721,7 @@ object wafv2:
       builder.associationConfig(args(argsBuilder).build)
 
     /**
-     * @param captchaConfig Specifies how AWS WAF should handle CAPTCHA evaluations on the ACL level (used by [AWS Bot Control](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html)). See `captchaConfig` below for details.
+     * @param captchaConfig Configuration for how AWS WAF handles CAPTCHA evaluations at the web ACL level (used by [AWS Bot Control](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html)). See `captchaConfig` below for details.
      * @return builder
      */
     def captchaConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclCaptchaConfigArgs.Builder]):
@@ -9754,7 +9730,7 @@ object wafv2:
       builder.captchaConfig(args(argsBuilder).build)
 
     /**
-     * @param challengeConfig Specifies how AWS WAF should handle Challenge evaluations on the ACL level (used by [AWS Bot Control](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html)). See `challengeConfig` below for details.
+     * @param challengeConfig Configuration for how AWS WAF handles Challenge evaluations at the web ACL level (used by [AWS Bot Control](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html)). See `challengeConfig` below for details.
      * @return builder
      */
     def challengeConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclChallengeConfigArgs.Builder]):
@@ -9763,7 +9739,7 @@ object wafv2:
       builder.challengeConfig(args(argsBuilder).build)
 
     /**
-     * @param customResponseBodies Defines custom response bodies that can be referenced by `customResponse` actions. See `customResponseBody` below for details.
+     * @param customResponseBodies Custom response bodies that can be referenced by `customResponse` actions. See `customResponseBody` below for details.
      * @return builder
      */
     def customResponseBodies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclCustomResponseBodyArgs.Builder]*):
@@ -9772,7 +9748,7 @@ object wafv2:
       builder.customResponseBodies(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param dataProtectionConfig Specifies data protection to apply to the web request data for the web ACL. This is a web ACL level data protection option. See `dataProtectionConfig` below for details.
+     * @param dataProtectionConfig Data protection to apply to the web request data for the web ACL. This is a web ACL level data protection option. See `dataProtectionConfig` below for details.
      * @return builder
      */
     def dataProtectionConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigArgs.Builder]):
@@ -9799,7 +9775,7 @@ object wafv2:
       builder.rules(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param visibilityConfig Defines and enables Amazon CloudWatch metrics and web request sample collection. See `visibilityConfig` below for details.
+     * @param visibilityConfig Amazon CloudWatch metrics and web request sample collection configuration. See `visibilityConfig` below for details.
      * @return builder
      */
     def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclVisibilityConfigArgs.Builder]):

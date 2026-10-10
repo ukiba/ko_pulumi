@@ -786,35 +786,6 @@ object storage:
    * }}{@code
    * }
    * </pre>
-   * 
-   * ## Import
-   * 
-   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
-   * 
-   * * b/{{name}}
-   * * {{name}}
-   * 
-   * Any variables not passed in the import command will be taken from the provider configuration.
-   * 
-   * Cloud Storage bucket IAM resources can be imported using the resource identifiers, role, and member.
-   * 
-   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
-   * ```sh
-   * $ terraform import google_storage_bucket_iam_member.editor &#34;b/{{bucket}} roles/storage.objectViewer user:jane{@literal @}example.com&#34;
-   * ```
-   * 
-   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
-   * ```sh
-   * $ terraform import google_storage_bucket_iam_binding.editor &#34;b/{{bucket}} roles/storage.objectViewer&#34;
-   * ```
-   * 
-   * IAM policy imports use the identifier of the resource in question, e.g.
-   * ```sh
-   * $ pulumi import gcp:storage/bucketIAMBinding:BucketIAMBinding editor b/{{bucket}}
-   * ```
-   * 
-   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
-   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
   def BucketIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.storage.BucketIAMBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1359,35 +1330,6 @@ object storage:
    * }}{@code
    * }
    * </pre>
-   * 
-   * ## Import
-   * 
-   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
-   * 
-   * * b/{{name}}
-   * * {{name}}
-   * 
-   * Any variables not passed in the import command will be taken from the provider configuration.
-   * 
-   * Cloud Storage bucket IAM resources can be imported using the resource identifiers, role, and member.
-   * 
-   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
-   * ```sh
-   * $ terraform import google_storage_bucket_iam_member.editor &#34;b/{{bucket}} roles/storage.objectViewer user:jane{@literal @}example.com&#34;
-   * ```
-   * 
-   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
-   * ```sh
-   * $ terraform import google_storage_bucket_iam_binding.editor &#34;b/{{bucket}} roles/storage.objectViewer&#34;
-   * ```
-   * 
-   * IAM policy imports use the identifier of the resource in question, e.g.
-   * ```sh
-   * $ pulumi import gcp:storage/bucketIAMMember:BucketIAMMember editor b/{{bucket}}
-   * ```
-   * 
-   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
-   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
   def BucketIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.storage.BucketIAMMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1932,35 +1874,6 @@ object storage:
    * }}{@code
    * }
    * </pre>
-   * 
-   * ## Import
-   * 
-   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
-   * 
-   * * b/{{name}}
-   * * {{name}}
-   * 
-   * Any variables not passed in the import command will be taken from the provider configuration.
-   * 
-   * Cloud Storage bucket IAM resources can be imported using the resource identifiers, role, and member.
-   * 
-   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
-   * ```sh
-   * $ terraform import google_storage_bucket_iam_member.editor &#34;b/{{bucket}} roles/storage.objectViewer user:jane{@literal @}example.com&#34;
-   * ```
-   * 
-   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
-   * ```sh
-   * $ terraform import google_storage_bucket_iam_binding.editor &#34;b/{{bucket}} roles/storage.objectViewer&#34;
-   * ```
-   * 
-   * IAM policy imports use the identifier of the resource in question, e.g.
-   * ```sh
-   * $ pulumi import gcp:storage/bucketIAMPolicy:BucketIAMPolicy editor b/{{bucket}}
-   * ```
-   * 
-   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
-   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
   def BucketIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.storage.BucketIAMPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

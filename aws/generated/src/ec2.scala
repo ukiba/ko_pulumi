@@ -134,7 +134,7 @@ object ec2:
    * Image (AMI) modeled after an existing EBS-backed EC2 instance.
    * 
    * The created AMI will refer to implicitly-created snapshots of the instance&#39;s
-   * EBS volumes and mimick its assigned block device configuration at the time
+   * EBS volumes and mimic its assigned block device configuration at the time
    * the resource is created.
    * 
    * This resource is best applied to an instance that is stopped when this instance
@@ -1469,6 +1469,8 @@ object ec2:
     /**
      * The VPC Peering Connection data source provides details about
      * a specific VPC peering connection.
+     * 
+     * The arguments of this data source act as filters for querying the available VPC peering connections. The given filters must match exactly one VPC peering connection whose data will be exported as attributes.
      */
     inline def getVpcPeeringConnection(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpcPeeringConnectionResult] =
@@ -1478,6 +1480,8 @@ object ec2:
     /**
      * The VPC Peering Connection data source provides details about
      * a specific VPC peering connection.
+     * 
+     * The arguments of this data source act as filters for querying the available VPC peering connections. The given filters must match exactly one VPC peering connection whose data will be exported as attributes.
      */
     inline def getVpcPeeringConnectionPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpcPeeringConnectionResult] =
@@ -1543,6 +1547,8 @@ object ec2:
     /**
      * The VPN Gateway data source provides details about
      * a specific VPN gateway.
+     * 
+     * The arguments of this data source act as filters for querying the available VPN gateways. The given filters must match exactly one VPN gateway whose data will be exported as attributes.
      */
     inline def getVpnGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpnGatewayArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpnGatewayResult] =
@@ -1552,6 +1558,8 @@ object ec2:
     /**
      * The VPN Gateway data source provides details about
      * a specific VPN gateway.
+     * 
+     * The arguments of this data source act as filters for querying the available VPN gateways. The given filters must match exactly one VPN gateway whose data will be exported as attributes.
      */
     inline def getVpnGatewayPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpnGatewayPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpnGatewayResult] =
@@ -2598,6 +2606,15 @@ object ec2:
       builder.attachments(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param connectionTrackingSpecification Configures the [connection tracking timeouts](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts) for the network interface. See Connection Tracking Specification below for more details.
+     * @return builder
+     */
+    def connectionTrackingSpecification(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInterfaceConnectionTrackingSpecificationArgs.Builder]):
+        com.pulumi.aws.ec2.NetworkInterfaceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInterfaceConnectionTrackingSpecificationArgs.builder
+      builder.connectionTrackingSpecification(args(argsBuilder).build)
+
+    /**
      * @param enaSrdSpecification Configures ENA Express for the network interface. The ENI must be attached to an instance to configure ENA Express. See ENA SRD Specification below for more details.
      * @return builder
      */
@@ -2668,7 +2685,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.PeeringConnectionOptionsArgs.Builder)
     /**
-     * @param accepter An optional configuration block that allows for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to be set for the VPC that accepts the peering connection (a maximum of one).
+     * @param accepter Configuration block for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to set for the VPC that accepts the peering connection (a maximum of one). See `accepter` Block below.
      * @return builder
      */
     def accepter(args: Endofunction[com.pulumi.aws.ec2.inputs.PeeringConnectionOptionsAccepterArgs.Builder]):
@@ -2677,7 +2694,7 @@ object ec2:
       builder.accepter(args(argsBuilder).build)
 
     /**
-     * @param requester A optional configuration block that allows for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to be set for the VPC that requests the peering connection (a maximum of one).
+     * @param requester Configuration block for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to set for the VPC that requests the peering connection (a maximum of one). See `requester` Block below.
      * @return builder
      */
     def requester(args: Endofunction[com.pulumi.aws.ec2.inputs.PeeringConnectionOptionsRequesterArgs.Builder]):
@@ -3358,7 +3375,11 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpcBlockPublicAccessOptionsTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Provides a VPC DHCP Options resource. */
+  /**
+   * Provides a VPC DHCP Options resource.
+   * 
+   * You can find more technical documentation about DHCP Options Set in the official [AWS User Guide](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html).
+   */
   def VpcDhcpOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcDhcpOptionsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcDhcpOptionsArgs.builder
@@ -3429,7 +3450,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.VpcEndpointArgs.Builder)
     /**
-     * @param dnsOptions The DNS options for the endpoint. See dnsOptions below.
+     * @param dnsOptions DNS options for the endpoint. See `dnsOptions` below.
      * @return builder
      */
     def dnsOptions(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcEndpointDnsOptionsArgs.Builder]):
@@ -3554,7 +3575,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.VpcIpamArgs.Builder)
     /**
-     * @param operatingRegions Determines which locales can be chosen when you create pools. Locale is the Region where you want to make an IPAM pool available for allocations. You can only create pools with locales that match the operating Regions of the IPAM. You can only create VPCs from a pool whose locale matches the VPC&#39;s Region. You specify a region using the regionName parameter. You **must** set your provider block region as an operating_region.
+     * @param operatingRegions Locales that can be chosen when you create pools. Locale is the Region where you want to make an IPAM pool available for allocations. You can only create pools with locales that match the operating Regions of the IPAM. You can only create VPCs from a pool whose locale matches the VPC&#39;s Region. You specify a region using the regionName parameter. You **must** set your provider block region as an operating_region.
      * @return builder
      */
     def operatingRegions(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcIpamOperatingRegionArgs.Builder]*):
@@ -3631,7 +3652,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.VpcIpamPoolCidrArgs.Builder)
     /**
-     * @param cidrAuthorizationContext A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. This is not stored in the state file. See cidrAuthorizationContext for more information.
+     * @param cidrAuthorizationContext Signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. This is not stored in the state file. See cidrAuthorizationContext for more information.
      * @return builder
      */
     def cidrAuthorizationContext(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcIpamPoolCidrCidrAuthorizationContextArgs.Builder]):
@@ -3664,7 +3685,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.VpcIpamResourceDiscoveryArgs.Builder)
     /**
-     * @param operatingRegions Determines which regions the Resource Discovery will enable IPAM features for usage and monitoring. Locale is the Region where you want to make an IPAM pool available for allocations. You can only create pools with locales that match the operating Regions of the IPAM Resource Discovery. You can only create VPCs from a pool whose locale matches the VPC&#39;s Region. You specify a region using the regionName parameter. **You must set your provider block region as an operating_region.**
+     * @param operatingRegions Regions the Resource Discovery will enable IPAM features for usage and monitoring. Locale is the Region where you want to make an IPAM pool available for allocations. You can only create pools with locales that match the operating Regions of the IPAM Resource Discovery. You can only create VPCs from a pool whose locale matches the VPC&#39;s Region. You specify a region using the regionName parameter. **You must set your provider block region as an operating_region.**
      * @return builder
      */
     def operatingRegions(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcIpamResourceDiscoveryOperatingRegionArgs.Builder]*):
@@ -3793,6 +3814,8 @@ object ec2:
    * The requester can use the `aws.ec2.VpcPeeringConnection` resource to manage its side of the connection
    * and the accepter can use the `aws.ec2.VpcPeeringConnectionAccepter` resource to &#34;adopt&#34; its side of the
    * connection into management.
+   * 
+   * &gt; **Note:** AWS allows a cross-account VPC Peering Connection to be deleted from either the requester&#39;s or accepter&#39;s side. However, this provider only allows the VPC Peering Connection to be deleted from the requester&#39;s side by removing the corresponding `aws.ec2.VpcPeeringConnection` resource from your configuration. Removing a `aws.ec2.VpcPeeringConnectionAccepter` resource from your configuration will remove it from your statefile and management, **but will not destroy the VPC Peering Connection.**
    */
   def VpcPeeringConnectionAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcPeeringConnectionAccepterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -3810,8 +3833,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.VpcPeeringConnectionAccepterArgs.Builder)
     /**
-     * @param accepter A configuration block that describes [VPC Peering Connection]
-     * (https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options set for the accepter VPC.
+     * @param accepter Configuration block for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to set for the VPC that accepts the peering connection (a maximum of one). See `accepter` Block below.
      * @return builder
      */
     def accepter(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcPeeringConnectionAccepterAccepterArgs.Builder]):
@@ -3820,8 +3842,7 @@ object ec2:
       builder.accepter(args(argsBuilder).build)
 
     /**
-     * @param requester A configuration block that describes [VPC Peering Connection]
-     * (https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options set for the requester VPC.
+     * @param requester Configuration block for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to set for the VPC that requests the peering connection (a maximum of one). See `requester` Block below.
      * @return builder
      */
     def requester(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcPeeringConnectionAccepterRequesterArgs.Builder]):
@@ -3831,8 +3852,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.VpcPeeringConnectionArgs.Builder)
     /**
-     * @param accepter An optional configuration block that allows for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to be set for the VPC that accepts
-     * the peering connection (a maximum of one).
+     * @param accepter Configuration block for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to set for the VPC that accepts the peering connection (a maximum of one). See `accepter` Block below.
      * @return builder
      */
     def accepter(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcPeeringConnectionAccepterArgs.Builder]):
@@ -3841,8 +3861,7 @@ object ec2:
       builder.accepter(args(argsBuilder).build)
 
     /**
-     * @param requester A optional configuration block that allows for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to be set for the VPC that requests
-     * the peering connection (a maximum of one).
+     * @param requester Configuration block for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to set for the VPC that requests the peering connection (a maximum of one). See `requester` Block below.
      * @return builder
      */
     def requester(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcPeeringConnectionRequesterArgs.Builder]):
@@ -3906,7 +3925,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.VpnConnectionArgs.Builder)
     /**
-     * @param tunnel1LogOptions Options for logging VPN tunnel activity. See Log Options below for more details.
+     * @param tunnel1LogOptions Options for logging VPN tunnel activity. See `tunnel1LogOptions` below for more details.
      * @return builder
      */
     def tunnel1LogOptions(args: Endofunction[com.pulumi.aws.ec2.inputs.VpnConnectionTunnel1LogOptionsArgs.Builder]):
@@ -3915,7 +3934,7 @@ object ec2:
       builder.tunnel1LogOptions(args(argsBuilder).build)
 
     /**
-     * @param tunnel2LogOptions Options for logging VPN tunnel activity. See Log Options below for more details.
+     * @param tunnel2LogOptions Options for logging VPN tunnel activity. See `tunnel2LogOptions` below for more details.
      * @return builder
      */
     def tunnel2LogOptions(args: Endofunction[com.pulumi.aws.ec2.inputs.VpnConnectionTunnel2LogOptionsArgs.Builder]):
@@ -4135,7 +4154,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.EncryptionControlResourceExclusionsArgs.Builder)
     /**
-     * @param egressOnlyInternetGateway `state` and `stateMessage` describing encryption enforcement state for Egress-Only Internet Gateways.
+     * @param egressOnlyInternetGateway Encryption enforcement state for Egress-Only Internet Gateways. See `resource_exclusions.egress_only_internet_gateway` below.
      * @return builder
      */
     def egressOnlyInternetGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.EncryptionControlResourceExclusionsEgressOnlyInternetGatewayArgs.Builder]):
@@ -4144,7 +4163,7 @@ object ec2:
       builder.egressOnlyInternetGateway(args(argsBuilder).build)
 
     /**
-     * @param elasticFileSystem `state` and `stateMessage` describing encryption enforcement state for Elastic File System (EFS).
+     * @param elasticFileSystem Encryption enforcement state for Elastic File System (EFS). See `resource_exclusions.elastic_file_system` below.
      * @return builder
      */
     def elasticFileSystem(args: Endofunction[com.pulumi.aws.ec2.inputs.EncryptionControlResourceExclusionsElasticFileSystemArgs.Builder]):
@@ -4153,7 +4172,7 @@ object ec2:
       builder.elasticFileSystem(args(argsBuilder).build)
 
     /**
-     * @param internetGateway `state` and `stateMessage` describing encryption enforcement state for Internet Gateways.
+     * @param internetGateway Encryption enforcement state for Internet Gateways. See `resource_exclusions.internet_gateway` below.
      * @return builder
      */
     def internetGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.EncryptionControlResourceExclusionsInternetGatewayArgs.Builder]):
@@ -4162,7 +4181,7 @@ object ec2:
       builder.internetGateway(args(argsBuilder).build)
 
     /**
-     * @param lambda `state` and `stateMessage` describing encryption enforcement state for Lambda Functions.
+     * @param lambda Encryption enforcement state for Lambda Functions. See `resource_exclusions.lambda` below.
      * @return builder
      */
     def lambda(args: Endofunction[com.pulumi.aws.ec2.inputs.EncryptionControlResourceExclusionsLambdaArgs.Builder]):
@@ -4171,7 +4190,7 @@ object ec2:
       builder.lambda(args(argsBuilder).build)
 
     /**
-     * @param natGateway `state` and `stateMessage` describing encryption enforcement state for NAT Gateways.
+     * @param natGateway Encryption enforcement state for NAT Gateways. See `resource_exclusions.nat_gateway` below.
      * @return builder
      */
     def natGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.EncryptionControlResourceExclusionsNatGatewayArgs.Builder]):
@@ -4180,7 +4199,7 @@ object ec2:
       builder.natGateway(args(argsBuilder).build)
 
     /**
-     * @param virtualPrivateGateway `state` and `stateMessage` describing encryption enforcement state for Virtual Private Gateways.
+     * @param virtualPrivateGateway Encryption enforcement state for Virtual Private Gateways. See `resource_exclusions.virtual_private_gateway` below.
      * @return builder
      */
     def virtualPrivateGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.EncryptionControlResourceExclusionsVirtualPrivateGatewayArgs.Builder]):
@@ -4189,7 +4208,7 @@ object ec2:
       builder.virtualPrivateGateway(args(argsBuilder).build)
 
     /**
-     * @param vpcLattice `state` and `stateMessage` describing encryption enforcement state for VPC Lattice.
+     * @param vpcLattice Encryption enforcement state for VPC Lattice. See `resource_exclusions.vpc_lattice` below.
      * @return builder
      */
     def vpcLattice(args: Endofunction[com.pulumi.aws.ec2.inputs.EncryptionControlResourceExclusionsVpcLatticeArgs.Builder]):
@@ -4198,7 +4217,7 @@ object ec2:
       builder.vpcLattice(args(argsBuilder).build)
 
     /**
-     * @param vpcPeering `state` and `stateMessage` describing encryption enforcement state for peered VPCs.
+     * @param vpcPeering Encryption enforcement state for peered VPCs. See `resource_exclusions.vpc_peering` below.
      * @return builder
      */
     def vpcPeering(args: Endofunction[com.pulumi.aws.ec2.inputs.EncryptionControlResourceExclusionsVpcPeeringArgs.Builder]):
@@ -4208,9 +4227,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.EncryptionControlState.Builder)
     /**
-     * @param resourceExclusions State of exclusions from encryption enforcement.
-     * Will be `nil` if `mode` is `monitor`.
-     * See `resourceExclusions` below
+     * @param resourceExclusions State of exclusions from encryption enforcement. Will be `nil` if `mode` is `monitor`. See `resourceExclusions` below.
      * @return builder
      */
     def resourceExclusions(args: Endofunction[com.pulumi.aws.ec2.inputs.EncryptionControlResourceExclusionsArgs.Builder]):
@@ -4600,10 +4617,6 @@ object ec2:
   extension (builder: com.pulumi.aws.ec2.inputs.GetKeyPairArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
-     * 
-     * The arguments of this data source act as filters for querying the available
-     * Key Pairs. The given filters must match exactly one Key Pair
-     * whose data will be exported as attributes.
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetKeyPairFilterArgs.Builder]*):
@@ -4802,10 +4815,6 @@ object ec2:
   extension (builder: com.pulumi.aws.ec2.inputs.GetPrefixListArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
-     * 
-     * The arguments of this data source act as filters for querying the available
-     * prefix lists. The given filters must match exactly one prefix list
-     * whose data will be exported as attributes.
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetPrefixListFilterArgs.Builder]*):
@@ -4986,8 +4995,6 @@ object ec2:
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
-     * 
-     * The arguments of this data source act as filters for querying the available IPAM Pools in the current region.
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsFilterArgs.Builder]*):
@@ -4998,8 +5005,6 @@ object ec2:
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcIpamsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
-     * 
-     * The arguments of this data source act as filters for querying the available IPAMs.
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamsFilterArgs.Builder]*):
@@ -6318,6 +6323,15 @@ object ec2:
       builder.attachments(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param connectionTrackingSpecification Configures the [connection tracking timeouts](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts) for the network interface. See Connection Tracking Specification below for more details.
+     * @return builder
+     */
+    def connectionTrackingSpecification(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInterfaceConnectionTrackingSpecificationArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.NetworkInterfaceState.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInterfaceConnectionTrackingSpecificationArgs.builder
+      builder.connectionTrackingSpecification(args(argsBuilder).build)
+
+    /**
      * @param enaSrdSpecification Configures ENA Express for the network interface. The ENI must be attached to an instance to configure ENA Express. See ENA SRD Specification below for more details.
      * @return builder
      */
@@ -6328,7 +6342,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.PeeringConnectionOptionsState.Builder)
     /**
-     * @param accepter An optional configuration block that allows for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to be set for the VPC that accepts the peering connection (a maximum of one).
+     * @param accepter Configuration block for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to set for the VPC that accepts the peering connection (a maximum of one). See `accepter` Block below.
      * @return builder
      */
     def accepter(args: Endofunction[com.pulumi.aws.ec2.inputs.PeeringConnectionOptionsAccepterArgs.Builder]):
@@ -6337,7 +6351,7 @@ object ec2:
       builder.accepter(args(argsBuilder).build)
 
     /**
-     * @param requester A optional configuration block that allows for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to be set for the VPC that requests the peering connection (a maximum of one).
+     * @param requester Configuration block for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to set for the VPC that requests the peering connection (a maximum of one). See `requester` Block below.
      * @return builder
      */
     def requester(args: Endofunction[com.pulumi.aws.ec2.inputs.PeeringConnectionOptionsRequesterArgs.Builder]):
@@ -6753,7 +6767,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.VpcEncryptionControlResourceExclusionsArgs.Builder)
     /**
-     * @param egressOnlyInternetGateway `state` and `stateMessage` describing encryption enforcement state for Egress-Only Internet Gateways.
+     * @param egressOnlyInternetGateway Encryption enforcement state for Egress-Only Internet Gateways. See `resource_exclusions.egress_only_internet_gateway` below.
      * @return builder
      */
     def egressOnlyInternetGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcEncryptionControlResourceExclusionsEgressOnlyInternetGatewayArgs.Builder]):
@@ -6762,7 +6776,7 @@ object ec2:
       builder.egressOnlyInternetGateway(args(argsBuilder).build)
 
     /**
-     * @param elasticFileSystem `state` and `stateMessage` describing encryption enforcement state for Elastic File System (EFS).
+     * @param elasticFileSystem Encryption enforcement state for Elastic File System (EFS). See `resource_exclusions.elastic_file_system` below.
      * @return builder
      */
     def elasticFileSystem(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcEncryptionControlResourceExclusionsElasticFileSystemArgs.Builder]):
@@ -6771,7 +6785,7 @@ object ec2:
       builder.elasticFileSystem(args(argsBuilder).build)
 
     /**
-     * @param internetGateway `state` and `stateMessage` describing encryption enforcement state for Internet Gateways.
+     * @param internetGateway Encryption enforcement state for Internet Gateways. See `resource_exclusions.internet_gateway` below.
      * @return builder
      */
     def internetGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcEncryptionControlResourceExclusionsInternetGatewayArgs.Builder]):
@@ -6780,7 +6794,7 @@ object ec2:
       builder.internetGateway(args(argsBuilder).build)
 
     /**
-     * @param lambda `state` and `stateMessage` describing encryption enforcement state for Lambda Functions.
+     * @param lambda Encryption enforcement state for Lambda Functions. See `resource_exclusions.lambda` below.
      * @return builder
      */
     def lambda(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcEncryptionControlResourceExclusionsLambdaArgs.Builder]):
@@ -6789,7 +6803,7 @@ object ec2:
       builder.lambda(args(argsBuilder).build)
 
     /**
-     * @param natGateway `state` and `stateMessage` describing encryption enforcement state for NAT Gateways.
+     * @param natGateway Encryption enforcement state for NAT Gateways. See `resource_exclusions.nat_gateway` below.
      * @return builder
      */
     def natGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcEncryptionControlResourceExclusionsNatGatewayArgs.Builder]):
@@ -6798,7 +6812,7 @@ object ec2:
       builder.natGateway(args(argsBuilder).build)
 
     /**
-     * @param virtualPrivateGateway `state` and `stateMessage` describing encryption enforcement state for Virtual Private Gateways.
+     * @param virtualPrivateGateway Encryption enforcement state for Virtual Private Gateways. See `resource_exclusions.virtual_private_gateway` below.
      * @return builder
      */
     def virtualPrivateGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcEncryptionControlResourceExclusionsVirtualPrivateGatewayArgs.Builder]):
@@ -6807,7 +6821,7 @@ object ec2:
       builder.virtualPrivateGateway(args(argsBuilder).build)
 
     /**
-     * @param vpcLattice `state` and `stateMessage` describing encryption enforcement state for VPC Lattice.
+     * @param vpcLattice Encryption enforcement state for VPC Lattice. See `resource_exclusions.vpc_lattice` below.
      * @return builder
      */
     def vpcLattice(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcEncryptionControlResourceExclusionsVpcLatticeArgs.Builder]):
@@ -6816,7 +6830,7 @@ object ec2:
       builder.vpcLattice(args(argsBuilder).build)
 
     /**
-     * @param vpcPeering `state` and `stateMessage` describing encryption enforcement state for peered VPCs.
+     * @param vpcPeering Encryption enforcement state for peered VPCs. See `resource_exclusions.vpc_peering` below.
      * @return builder
      */
     def vpcPeering(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcEncryptionControlResourceExclusionsVpcPeeringArgs.Builder]):
@@ -6826,9 +6840,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.VpcEncryptionControlState.Builder)
     /**
-     * @param resourceExclusions State of exclusions from encryption enforcement.
-     * Will be `nil` if `mode` is `monitor`.
-     * See `resourceExclusions` below
+     * @param resourceExclusions State of exclusions from encryption enforcement. Will be `nil` if `mode` is `monitor`. See `resourceExclusions` below.
      * @return builder
      */
     def resourceExclusions(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcEncryptionControlResourceExclusionsArgs.Builder]):
@@ -6853,7 +6865,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.VpcEndpointState.Builder)
     /**
-     * @param dnsEntries The DNS entries for the VPC Endpoint. Applicable for endpoints of type `Interface`. DNS blocks are documented below.
+     * @param dnsEntries DNS entries for the VPC Endpoint. Applicable for endpoints of type `Interface`. See `dnsEntry` below.
      * @return builder
      */
     def dnsEntries(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcEndpointDnsEntryArgs.Builder]*):
@@ -6862,7 +6874,7 @@ object ec2:
       builder.dnsEntries(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param dnsOptions The DNS options for the endpoint. See dnsOptions below.
+     * @param dnsOptions DNS options for the endpoint. See `dnsOptions` below.
      * @return builder
      */
     def dnsOptions(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcEndpointDnsOptionsArgs.Builder]):
@@ -6881,7 +6893,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.VpcIpamPoolCidrState.Builder)
     /**
-     * @param cidrAuthorizationContext A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. This is not stored in the state file. See cidrAuthorizationContext for more information.
+     * @param cidrAuthorizationContext Signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. This is not stored in the state file. See cidrAuthorizationContext for more information.
      * @return builder
      */
     def cidrAuthorizationContext(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcIpamPoolCidrCidrAuthorizationContextArgs.Builder]):
@@ -6901,7 +6913,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.VpcIpamResourceDiscoveryState.Builder)
     /**
-     * @param operatingRegions Determines which regions the Resource Discovery will enable IPAM features for usage and monitoring. Locale is the Region where you want to make an IPAM pool available for allocations. You can only create pools with locales that match the operating Regions of the IPAM Resource Discovery. You can only create VPCs from a pool whose locale matches the VPC&#39;s Region. You specify a region using the regionName parameter. **You must set your provider block region as an operating_region.**
+     * @param operatingRegions Regions the Resource Discovery will enable IPAM features for usage and monitoring. Locale is the Region where you want to make an IPAM pool available for allocations. You can only create pools with locales that match the operating Regions of the IPAM Resource Discovery. You can only create VPCs from a pool whose locale matches the VPC&#39;s Region. You specify a region using the regionName parameter. **You must set your provider block region as an operating_region.**
      * @return builder
      */
     def operatingRegions(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcIpamResourceDiscoveryOperatingRegionArgs.Builder]*):
@@ -6920,7 +6932,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.VpcIpamState.Builder)
     /**
-     * @param operatingRegions Determines which locales can be chosen when you create pools. Locale is the Region where you want to make an IPAM pool available for allocations. You can only create pools with locales that match the operating Regions of the IPAM. You can only create VPCs from a pool whose locale matches the VPC&#39;s Region. You specify a region using the regionName parameter. You **must** set your provider block region as an operating_region.
+     * @param operatingRegions Locales that can be chosen when you create pools. Locale is the Region where you want to make an IPAM pool available for allocations. You can only create pools with locales that match the operating Regions of the IPAM. You can only create VPCs from a pool whose locale matches the VPC&#39;s Region. You specify a region using the regionName parameter. You **must** set your provider block region as an operating_region.
      * @return builder
      */
     def operatingRegions(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcIpamOperatingRegionArgs.Builder]*):
@@ -6930,8 +6942,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.VpcPeeringConnectionAccepterState.Builder)
     /**
-     * @param accepter A configuration block that describes [VPC Peering Connection]
-     * (https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options set for the accepter VPC.
+     * @param accepter Configuration block for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to set for the VPC that accepts the peering connection (a maximum of one). See `accepter` Block below.
      * @return builder
      */
     def accepter(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcPeeringConnectionAccepterAccepterArgs.Builder]):
@@ -6940,8 +6951,7 @@ object ec2:
       builder.accepter(args(argsBuilder).build)
 
     /**
-     * @param requester A configuration block that describes [VPC Peering Connection]
-     * (https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options set for the requester VPC.
+     * @param requester Configuration block for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to set for the VPC that requests the peering connection (a maximum of one). See `requester` Block below.
      * @return builder
      */
     def requester(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcPeeringConnectionAccepterRequesterArgs.Builder]):
@@ -6951,8 +6961,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.VpcPeeringConnectionState.Builder)
     /**
-     * @param accepter An optional configuration block that allows for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to be set for the VPC that accepts
-     * the peering connection (a maximum of one).
+     * @param accepter Configuration block for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to set for the VPC that accepts the peering connection (a maximum of one). See `accepter` Block below.
      * @return builder
      */
     def accepter(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcPeeringConnectionAccepterArgs.Builder]):
@@ -6961,8 +6970,7 @@ object ec2:
       builder.accepter(args(argsBuilder).build)
 
     /**
-     * @param requester A optional configuration block that allows for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to be set for the VPC that requests
-     * the peering connection (a maximum of one).
+     * @param requester Configuration block for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to set for the VPC that requests the peering connection (a maximum of one). See `requester` Block below.
      * @return builder
      */
     def requester(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcPeeringConnectionRequesterArgs.Builder]):
@@ -6972,7 +6980,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.VpnConnectionState.Builder)
     /**
-     * @param routes The static routes associated with the VPN connection. Detailed below.
+     * @param routes Static routes associated with the VPN connection. Detailed below.
      * @return builder
      */
     def routes(args: Endofunction[com.pulumi.aws.ec2.inputs.VpnConnectionRouteArgs.Builder]*):
@@ -6981,7 +6989,7 @@ object ec2:
       builder.routes(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param tunnel1LogOptions Options for logging VPN tunnel activity. See Log Options below for more details.
+     * @param tunnel1LogOptions Options for logging VPN tunnel activity. See `tunnel1LogOptions` below for more details.
      * @return builder
      */
     def tunnel1LogOptions(args: Endofunction[com.pulumi.aws.ec2.inputs.VpnConnectionTunnel1LogOptionsArgs.Builder]):
@@ -6990,7 +6998,7 @@ object ec2:
       builder.tunnel1LogOptions(args(argsBuilder).build)
 
     /**
-     * @param tunnel2LogOptions Options for logging VPN tunnel activity. See Log Options below for more details.
+     * @param tunnel2LogOptions Options for logging VPN tunnel activity. See `tunnel2LogOptions` below for more details.
      * @return builder
      */
     def tunnel2LogOptions(args: Endofunction[com.pulumi.aws.ec2.inputs.VpnConnectionTunnel2LogOptionsArgs.Builder]):

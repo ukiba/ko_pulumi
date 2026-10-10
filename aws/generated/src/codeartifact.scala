@@ -92,7 +92,7 @@ object codeartifact:
       def argsBuilder = com.pulumi.aws.codeartifact.inputs.RepositoryUpstreamArgs.builder
       builder.upstreams(args.map(_(argsBuilder).build)*)
 
-  /** Provides a CodeArtifact Repostory Permissions Policy Resource. */
+  /** Provides a CodeArtifact Repository Permissions Policy Resource. */
   def RepositoryPermissionsPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codeartifact.RepositoryPermissionsPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.codeartifact.RepositoryPermissionsPolicyArgs.builder

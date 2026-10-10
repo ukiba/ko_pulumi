@@ -5191,6 +5191,8 @@ object compute:
      * If you do not provide an encryption key when creating the disk, then
      * the disk will be encrypted using an automatically generated key and
      * you do not need to provide a key to use the disk later.
+     * ~&gt;**NOTE** Only changing `kmsKeySelfLink` between Cloud KMS keys is
+     * done in place; other changes to this block recreate the disk.
      * Structure is documented below.
      * @return builder
      */
@@ -35376,6 +35378,8 @@ object compute:
      * If you do not provide an encryption key when creating the disk, then
      * the disk will be encrypted using an automatically generated key and
      * you do not need to provide a key to use the disk later.
+     * ~&gt;**NOTE** Only changing `kmsKeySelfLink` between Cloud KMS keys is
+     * done in place; other changes to this block recreate the disk.
      * Structure is documented below.
      * @return builder
      */
@@ -41077,6 +41081,17 @@ object compute:
 
   extension (builder: com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder)
     /**
+     * @param requestBodies (Optional, Beta)
+     * A list of request body fields to be excluded from inspection during preconfigured WAF evaluation.
+     * Structure is documented below.
+     * @return builder
+     */
+    def requestBodies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestBodyArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestBodyArgs.builder
+      builder.requestBodies(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param requestCookies Request cookie whose value will be excluded from inspection during preconfigured WAF evaluation.
      * Structure is documented below.
      * @return builder
@@ -42180,6 +42195,19 @@ object compute:
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionRetryPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionRetryPolicyPerTryTimeoutArgs.builder
       builder.perTryTimeout(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionUrlRewriteArgs.Builder)
+    /**
+     * @param regexRewrite The regex rewrite to be applied to the URL. Only one of
+     * pathPrefixRewrite, pathTemplateRewrite, or regexRewrite may be
+     * specified.
+     * Structure is documented below.
+     * @return builder
+     */
+    def regexRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionUrlRewriteRegexRewriteArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionUrlRewriteArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionUrlRewriteRegexRewriteArgs.builder
+      builder.regexRewrite(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionWeightedBackendServiceArgs.Builder)
     /**
@@ -43287,7 +43315,7 @@ object compute:
   extension (builder: com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder)
     /**
      * @param requestBodies (Optional, Beta)
-     * A list of request body fields to be excluded from inspection during\npreconfigured WAF evaluation.
+     * A list of request body fields to be excluded from inspection during preconfigured WAF evaluation.
      * Structure is documented below.
      * @return builder
      */
@@ -45391,6 +45419,19 @@ object compute:
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionRetryPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionRetryPolicyPerTryTimeoutArgs.builder
       builder.perTryTimeout(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionUrlRewriteArgs.Builder)
+    /**
+     * @param regexRewrite The regex rewrite to be applied to the URL. Only one of
+     * pathPrefixRewrite, pathTemplateRewrite, or regexRewrite may be
+     * specified.
+     * Structure is documented below.
+     * @return builder
+     */
+    def regexRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionUrlRewriteRegexRewriteArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionUrlRewriteArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionUrlRewriteRegexRewriteArgs.builder
+      builder.regexRewrite(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceArgs.Builder)
     /**

@@ -1080,6 +1080,56 @@ object diagflow:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
+   * Provides a list of actions available to a Generator (e.g., OpenAPI call, Function call, Connector call).
+   * 
+   * To get more information about Tool, see:
+   * 
+   * * [API documentation](https://cloud.google.com/dialogflow/es/docs/reference/rest/v2/projects.locations.tools)
+   * * How-to Guides
+   *     * [Official Documentation](https://cloud.google.com/agent-assist/docs)
+   */
+  def Tool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.diagflow.ToolArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.diagflow.ToolArgs.builder
+    com.pulumi.gcp.diagflow.Tool(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.diagflow.ToolArgs.Builder)
+    /**
+     * @param connectorSpec Integration connectors tool specification.
+     * This field is part of a union field `specification`: Only one of `openApiSpec`, `functionSpec`, or `connectorSpec` may be set.
+     * Structure is documented below.
+     * @return builder
+     */
+    def connectorSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecArgs.Builder]):
+        com.pulumi.gcp.diagflow.ToolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecArgs.builder
+      builder.connectorSpec(args(argsBuilder).build)
+
+    /**
+     * @param functionSpec Client side executed function specification.
+     * This field is part of a union field `specification`: Only one of `openApiSpec`, `functionSpec`, or `connectorSpec` may be set.
+     * Structure is documented below.
+     * @return builder
+     */
+    def functionSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolFunctionSpecArgs.Builder]):
+        com.pulumi.gcp.diagflow.ToolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolFunctionSpecArgs.builder
+      builder.functionSpec(args(argsBuilder).build)
+
+    /**
+     * @param openApiSpec OpenAPI specification of the Tool.
+     * This field is part of a union field `specification`: Only one of `openApiSpec`, `functionSpec`, or `connectorSpec` may be set.
+     * Structure is documented below.
+     * @return builder
+     */
+    def openApiSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.Builder]):
+        com.pulumi.gcp.diagflow.ToolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.builder
+      builder.openApiSpec(args(argsBuilder).build)
+
+  /**
    * You can create multiple versions of your agent and publish them to separate environments.
    * 
    * To get more information about Version, see:
@@ -4501,3 +4551,146 @@ object diagflow:
         com.pulumi.gcp.diagflow.inputs.SipTrunkState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.SipTrunkConnectionArgs.builder
       builder.connections(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecActionArgs.Builder)
+    /**
+     * @param entityOperation Entity operation configuration for the tool to use. This field is part of a required union field `actionSpec`.
+     * Structure is documented below.
+     * @return builder
+     */
+    def entityOperation(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecActionEntityOperationArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecActionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecActionEntityOperationArgs.builder
+      builder.entityOperation(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecArgs.Builder)
+    /**
+     * @param actions Actions for the tool to use.
+     * Structure is documented below.
+     * @return builder
+     */
+    def actions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecActionArgs.Builder]*):
+        com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecActionArgs.builder
+      builder.actions(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.Builder)
+    /**
+     * @param authentication Optional. Authentication information required by the API.
+     * Structure is documented below.
+     * @return builder
+     */
+    def authentication(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationArgs.builder
+      builder.authentication(args(argsBuilder).build)
+
+    /**
+     * @param serviceDirectoryConfig Optional. Service Directory configuration.
+     * Structure is documented below.
+     * @return builder
+     */
+    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecServiceDirectoryConfigArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecServiceDirectoryConfigArgs.builder
+      builder.serviceDirectoryConfig(args(argsBuilder).build)
+
+    /**
+     * @param tlsConfig Optional. TLS configuration for the HTTPS verification.
+     * Structure is documented below.
+     * @return builder
+     */
+    def tlsConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecTlsConfigArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecTlsConfigArgs.builder
+      builder.tlsConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationArgs.Builder)
+    /**
+     * @param apiKeyConfig Config for API key auth.
+     * This field is part of a union field `authConfig`: Only one of `apiKeyConfig`, `oauthConfig`, `serviceAgentAuthConfig`, or `bearerTokenConfig` may be set.
+     * Structure is documented below.
+     * @return builder
+     */
+    def apiKeyConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationApiKeyConfigArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationApiKeyConfigArgs.builder
+      builder.apiKeyConfig(args(argsBuilder).build)
+
+    /**
+     * @param bearerTokenConfig Config for bearer token auth.
+     * This field is part of a union field `authConfig`: Only one of `apiKeyConfig`, `oauthConfig`, `serviceAgentAuthConfig`, or `bearerTokenConfig` may be set.
+     * Structure is documented below.
+     * @return builder
+     */
+    def bearerTokenConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationBearerTokenConfigArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationBearerTokenConfigArgs.builder
+      builder.bearerTokenConfig(args(argsBuilder).build)
+
+    /**
+     * @param oauthConfig Config for OAuth.
+     * This field is part of a union field `authConfig`: Only one of `apiKeyConfig`, `oauthConfig`, `serviceAgentAuthConfig`, or `bearerTokenConfig` may be set.
+     * Structure is documented below.
+     * @return builder
+     */
+    def oauthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationOauthConfigArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationOauthConfigArgs.builder
+      builder.oauthConfig(args(argsBuilder).build)
+
+    /**
+     * @param serviceAgentAuthConfig Config for [Dialogflow service agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent) auth.
+     * This field is part of a union field `authConfig`: Only one of `apiKeyConfig`, `oauthConfig`, `serviceAgentAuthConfig`, or `bearerTokenConfig` may be set.
+     * Structure is documented below.
+     * @return builder
+     */
+    def serviceAgentAuthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationServiceAgentAuthConfigArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationServiceAgentAuthConfigArgs.builder
+      builder.serviceAgentAuthConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecTlsConfigArgs.Builder)
+    /**
+     * @param caCerts Specifies a list of allowed custom CA certificates for HTTPS verification.
+     * Structure is documented below.
+     * @return builder
+     */
+    def caCerts(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecTlsConfigCaCertArgs.Builder]*):
+        com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecTlsConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecTlsConfigCaCertArgs.builder
+      builder.caCerts(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.diagflow.inputs.ToolState.Builder)
+    /**
+     * @param connectorSpec Integration connectors tool specification.
+     * This field is part of a union field `specification`: Only one of `openApiSpec`, `functionSpec`, or `connectorSpec` may be set.
+     * Structure is documented below.
+     * @return builder
+     */
+    def connectorSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.ToolState.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecArgs.builder
+      builder.connectorSpec(args(argsBuilder).build)
+
+    /**
+     * @param functionSpec Client side executed function specification.
+     * This field is part of a union field `specification`: Only one of `openApiSpec`, `functionSpec`, or `connectorSpec` may be set.
+     * Structure is documented below.
+     * @return builder
+     */
+    def functionSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolFunctionSpecArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.ToolState.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolFunctionSpecArgs.builder
+      builder.functionSpec(args(argsBuilder).build)
+
+    /**
+     * @param openApiSpec OpenAPI specification of the Tool.
+     * This field is part of a union field `specification`: Only one of `openApiSpec`, `functionSpec`, or `connectorSpec` may be set.
+     * Structure is documented below.
+     * @return builder
+     */
+    def openApiSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.ToolState.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.builder
+      builder.openApiSpec(args(argsBuilder).build)

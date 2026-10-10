@@ -802,6 +802,17 @@ object networksecurity:
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileUrlFilteringProfileArgs.builder
       builder.urlFilteringProfile(args(argsBuilder).build)
 
+    /**
+     * @param wildfireAnalysisProfile (Optional, Beta)
+     * The wildfire analysis configuration for the security profile.
+     * Structure is documented below.
+     * @return builder
+     */
+    def wildfireAnalysisProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder]):
+        com.pulumi.gcp.networksecurity.SecurityProfileArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.builder
+      builder.wildfireAnalysisProfile(args(argsBuilder).build)
+
   /**
    * A security profile group defines a container for security profiles.
    * 
@@ -1845,6 +1856,17 @@ object networksecurity:
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileUrlFilteringProfileArgs.builder
       builder.urlFilteringProfile(args(argsBuilder).build)
 
+    /**
+     * @param wildfireAnalysisProfile (Optional, Beta)
+     * The wildfire analysis configuration for the security profile.
+     * Structure is documented below.
+     * @return builder
+     */
+    def wildfireAnalysisProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder]):
+        com.pulumi.gcp.networksecurity.inputs.SecurityProfileState.Builder =
+      val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.builder
+      builder.wildfireAnalysisProfile(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileArgs.Builder)
     /**
      * @param antivirusOverrides Defines what action to take for antivirus threats per protocol.
@@ -1890,6 +1912,110 @@ object networksecurity:
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileUrlFilteringProfileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileUrlFilteringProfileUrlFilterArgs.builder
       builder.urlFilters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder)
+    /**
+     * @param wildfireInlineCloudAnalysisRules The configuration for inline cloud analysis of files.
+     * Structure is documented below.
+     * @return builder
+     */
+    def wildfireInlineCloudAnalysisRules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineCloudAnalysisRuleArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineCloudAnalysisRuleArgs.builder
+      builder.wildfireInlineCloudAnalysisRules(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param wildfireInlineMlOverrides Defines what action to take for WildFire inline ML threats per protocol.
+     * Structure is documented below.
+     * @return builder
+     */
+    def wildfireInlineMlOverrides(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlOverrideArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlOverrideArgs.builder
+      builder.wildfireInlineMlOverrides(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param wildfireInlineMlSetting WildFire inline Machine Learning setting for the Security Profile.
+     * Structure is documented below.
+     * @return builder
+     */
+    def wildfireInlineMlSetting(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingArgs.Builder]):
+        com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingArgs.builder
+      builder.wildfireInlineMlSetting(args(argsBuilder).build)
+
+    /**
+     * @param wildfireOverrides Defines what action to take for WildFire threats per protocol.
+     * Structure is documented below.
+     * @return builder
+     */
+    def wildfireOverrides(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireOverrideArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireOverrideArgs.builder
+      builder.wildfireOverrides(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param wildfireSubmissionRules The configuration for file submission to WildFire in cloud.
+     * Structure is documented below.
+     * @return builder
+     */
+    def wildfireSubmissionRules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireSubmissionRuleArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireSubmissionRuleArgs.builder
+      builder.wildfireSubmissionRules(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param wildfireThreatOverrides The configuration for overriding threats actions by threat id match.
+     * Structure is documented below.
+     * @return builder
+     */
+    def wildfireThreatOverrides(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireThreatOverrideArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireThreatOverrideArgs.builder
+      builder.wildfireThreatOverrides(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineCloudAnalysisRuleArgs.Builder)
+    /**
+     * @param customFileTypes Defines the custom file types to match for a rule. The API will only accept this if `fileSelectionMode` is set to `CUSTOM_FILE_TYPES`
+     * Structure is documented below.
+     * @return builder
+     */
+    def customFileTypes(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineCloudAnalysisRuleCustomFileTypesArgs.Builder]):
+        com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineCloudAnalysisRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineCloudAnalysisRuleCustomFileTypesArgs.builder
+      builder.customFileTypes(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingArgs.Builder)
+    /**
+     * @param fileExceptions File exceptions to exclude from WildFire inline ML.
+     * Structure is documented below.
+     * @return builder
+     */
+    def fileExceptions(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingFileExceptionArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingFileExceptionArgs.builder
+      builder.fileExceptions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param inlineMlConfigs Defines what action to take for a specific file type in WildFire inline ML.
+     * Structure is documented below.
+     * @return builder
+     */
+    def inlineMlConfigs(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingInlineMlConfigArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingInlineMlConfigArgs.builder
+      builder.inlineMlConfigs(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireSubmissionRuleArgs.Builder)
+    /**
+     * @param customFileTypes Defines the custom file types to match for a rule. The API will only accept this if `fileSelectionMode` is set to `CUSTOM_FILE_TYPES`
+     * Structure is documented below.
+     * @return builder
+     */
+    def customFileTypes(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireSubmissionRuleCustomFileTypesArgs.Builder]):
+        com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireSubmissionRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireSubmissionRuleCustomFileTypesArgs.builder
+      builder.customFileTypes(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyArgs.Builder)
     /**

@@ -432,6 +432,7 @@ export ko_pulumi.gcp.networkconnectivity.gateway
 export ko_pulumi.gcp.networkconnectivity.instances
 export ko_pulumi.gcp.networkconnectivity.interconnectAttachment
 export ko_pulumi.gcp.networkconnectivity.ipRangeReservations
+export ko_pulumi.gcp.networksecurity.fileExceptions
 export ko_pulumi.gcp.networksecurity.from
 export ko_pulumi.gcp.networksecurity.grpcEndpoint
 export ko_pulumi.gcp.networksecurity.headerSet
@@ -440,6 +441,7 @@ export ko_pulumi.gcp.networksecurity.hosts
 export ko_pulumi.gcp.networksecurity.httpHeaderMatch
 export ko_pulumi.gcp.networksecurity.httpRules
 export ko_pulumi.gcp.networksecurity.iamServiceAccount
+export ko_pulumi.gcp.networksecurity.inlineMlConfigs
 export ko_pulumi.gcp.networksecurity.ipBlocks
 export ko_pulumi.gcp.networkservices.failoverConfig
 export ko_pulumi.gcp.networkservices.faultInjectionPolicy

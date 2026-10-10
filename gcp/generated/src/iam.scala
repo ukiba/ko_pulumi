@@ -128,6 +128,7 @@ object iam:
      * The exact variables and functions that may be referenced within an expression are
      * determined by the service that evaluates it. See the service documentation for
      * additional information.
+     * Conditions are currently only supported when the bound policy is a principal access boundary policy.
      * Structure is documented below.
      * @return builder
      */
@@ -138,6 +139,8 @@ object iam:
 
     /**
      * @param target Target is the full resource name of the resource to which the policy will be bound. Immutable once set.
+     * Exactly one of `principalSet` (for principal access boundary policy bindings) or
+     * `resource` (for access policy bindings) must be set.
      * Structure is documented below.
      * @return builder
      */
@@ -295,6 +298,18 @@ object iam:
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolIamPolicyPlainArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolIamPolicyPlain(args(argsBuilder).build)
 
+    /** Get the JSON Web Key Set (JWKS) public keys (`/openid/jwks`) for an Agent Workload Identity Pool from GCP. */
+    inline def getWorkloadIdentityPoolJwks(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolJwksArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolJwksResult] =
+      val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolJwksArgs.builder
+      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolJwks(args(argsBuilder).build)
+
+    /** Get the JSON Web Key Set (JWKS) public keys (`/openid/jwks`) for an Agent Workload Identity Pool from GCP. */
+    inline def getWorkloadIdentityPoolJwksPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolJwksPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolJwksResult] =
+      val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolJwksPlainArgs.builder
+      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolJwksPlain(args(argsBuilder).build)
+
     /** Get the OpenID provider configuration (`/.well-known/openid-configuration`) for an Agent Workload Identity Pool from Google Cloud. */
     inline def getWorkloadIdentityPoolOpenidConfig(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolOpenidConfigResult] =
@@ -433,6 +448,7 @@ object iam:
      * The exact variables and functions that may be referenced within an expression are
      * determined by the service that evaluates it. See the service documentation for
      * additional information.
+     * Conditions are currently only supported when the bound policy is a principal access boundary policy.
      * Structure is documented below.
      * @return builder
      */
@@ -443,6 +459,8 @@ object iam:
 
     /**
      * @param target Target is the full resource name of the resource to which the policy will be bound. Immutable once set.
+     * Exactly one of `principalSet` (for principal access boundary policy bindings) or
+     * `resource` (for access policy bindings) must be set.
      * Structure is documented below.
      * @return builder
      */
@@ -550,6 +568,7 @@ object iam:
      * The exact variables and functions that may be referenced within an expression are
      * determined by the service that evaluates it. See the service documentation for
      * additional information.
+     * Conditions are currently only supported when the bound policy is a principal access boundary policy.
      * Structure is documented below.
      * @return builder
      */
@@ -560,6 +579,8 @@ object iam:
 
     /**
      * @param target Target is the full resource name of the resource to which the policy will be bound. Immutable once set.
+     * Exactly one of `principalSet` (for principal access boundary policy bindings) or
+     * `resource` (for access policy bindings) must be set.
      * Structure is documented below.
      * @return builder
      */
@@ -3745,6 +3766,7 @@ object iam:
      * The exact variables and functions that may be referenced within an expression are
      * determined by the service that evaluates it. See the service documentation for
      * additional information.
+     * Conditions are currently only supported when the bound policy is a principal access boundary policy.
      * Structure is documented below.
      * @return builder
      */
@@ -3755,6 +3777,8 @@ object iam:
 
     /**
      * @param target Target is the full resource name of the resource to which the policy will be bound. Immutable once set.
+     * Exactly one of `principalSet` (for principal access boundary policy bindings) or
+     * `resource` (for access policy bindings) must be set.
      * Structure is documented below.
      * @return builder
      */
@@ -3845,6 +3869,7 @@ object iam:
      * The exact variables and functions that may be referenced within an expression are
      * determined by the service that evaluates it. See the service documentation for
      * additional information.
+     * Conditions are currently only supported when the bound policy is a principal access boundary policy.
      * Structure is documented below.
      * @return builder
      */
@@ -3855,6 +3880,8 @@ object iam:
 
     /**
      * @param target Target is the full resource name of the resource to which the policy will be bound. Immutable once set.
+     * Exactly one of `principalSet` (for principal access boundary policy bindings) or
+     * `resource` (for access policy bindings) must be set.
      * Structure is documented below.
      * @return builder
      */
@@ -3967,6 +3994,7 @@ object iam:
      * The exact variables and functions that may be referenced within an expression are
      * determined by the service that evaluates it. See the service documentation for
      * additional information.
+     * Conditions are currently only supported when the bound policy is a principal access boundary policy.
      * Structure is documented below.
      * @return builder
      */
@@ -3977,6 +4005,8 @@ object iam:
 
     /**
      * @param target Target is the full resource name of the resource to which the policy will be bound. Immutable once set.
+     * Exactly one of `principalSet` (for principal access boundary policy bindings) or
+     * `resource` (for access policy bindings) must be set.
      * Structure is documented below.
      * @return builder
      */

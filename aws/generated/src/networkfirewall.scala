@@ -54,7 +54,7 @@ object networkfirewall:
 
   extension (builder: com.pulumi.aws.networkfirewall.FirewallArgs.Builder)
     /**
-     * @param availabilityZoneMappings Required when creating a transit gateway-attached firewall. Set of configuration blocks describing the avaiability availability where you want to create firewall endpoints for a transit gateway-attached firewall.
+     * @param availabilityZoneMappings Required when creating a transit gateway-attached firewall. Set of configuration blocks describing the availability availability where you want to create firewall endpoints for a transit gateway-attached firewall.
      * @return builder
      */
     def availabilityZoneMappings(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.FirewallAvailabilityZoneMappingArgs.Builder]*):
@@ -509,7 +509,7 @@ object networkfirewall:
 
   extension (builder: com.pulumi.aws.networkfirewall.inputs.FirewallState.Builder)
     /**
-     * @param availabilityZoneMappings Required when creating a transit gateway-attached firewall. Set of configuration blocks describing the avaiability availability where you want to create firewall endpoints for a transit gateway-attached firewall.
+     * @param availabilityZoneMappings Required when creating a transit gateway-attached firewall. Set of configuration blocks describing the availability availability where you want to create firewall endpoints for a transit gateway-attached firewall.
      * @return builder
      */
     def availabilityZoneMappings(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.FirewallAvailabilityZoneMappingArgs.Builder]*):

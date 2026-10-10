@@ -29,7 +29,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.ApplicationArgs.Builder)
     /**
-     * @param applicationConfiguration The application&#39;s configuration
+     * @param applicationConfiguration Application configuration. See `applicationConfiguration` Block below.
      * @return builder
      */
     def applicationConfiguration(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationArgs.Builder]):
@@ -38,7 +38,7 @@ object kinesisanalyticsv2:
       builder.applicationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param cloudwatchLoggingOptions A CloudWatch log stream to monitor application configuration errors.
+     * @param cloudwatchLoggingOptions CloudWatch log stream to monitor application configuration errors. See `cloudwatchLoggingOptions` Block below.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationCloudwatchLoggingOptionsArgs.Builder]):
@@ -59,7 +59,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationApplicationCodeConfigurationArgs.Builder)
     /**
-     * @param codeContent The location and type of the application code.
+     * @param codeContent Location and type of the application code. See `codeContent` Block below.
      * @return builder
      */
     def codeContent(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentArgs.Builder]):
@@ -69,7 +69,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentArgs.Builder)
     /**
-     * @param s3ContentLocation Information about the Amazon S3 bucket containing the application code.
+     * @param s3ContentLocation Information about the Amazon S3 bucket containing the application code. See `s3ContentLocation` Block below.
      * @return builder
      */
     def s3ContentLocation(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocationArgs.Builder]):
@@ -79,7 +79,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationArgs.Builder)
     /**
-     * @param applicationCodeConfiguration The code location and type parameters for the application.
+     * @param applicationCodeConfiguration Code location and type parameters for the application. See `applicationCodeConfiguration` Block below.
      * @return builder
      */
     def applicationCodeConfiguration(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationApplicationCodeConfigurationArgs.Builder]):
@@ -88,7 +88,7 @@ object kinesisanalyticsv2:
       builder.applicationCodeConfiguration(args(argsBuilder).build)
 
     /**
-     * @param applicationEncryptionConfiguration The encryption configuration for the application. This can be used to encrypt data at rest in the application.
+     * @param applicationEncryptionConfiguration Encryption configuration for the application. Use this to encrypt data at rest in the application. See `applicationEncryptionConfiguration` Block below.
      * @return builder
      */
     def applicationEncryptionConfiguration(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationApplicationEncryptionConfigurationArgs.Builder]):
@@ -97,7 +97,7 @@ object kinesisanalyticsv2:
       builder.applicationEncryptionConfiguration(args(argsBuilder).build)
 
     /**
-     * @param applicationSnapshotConfiguration Describes whether snapshots are enabled for a Flink-based application.
+     * @param applicationSnapshotConfiguration Snapshot configuration for a Flink-based application. See `applicationSnapshotConfiguration` Block below.
      * @return builder
      */
     def applicationSnapshotConfiguration(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationApplicationSnapshotConfigurationArgs.Builder]):
@@ -106,7 +106,7 @@ object kinesisanalyticsv2:
       builder.applicationSnapshotConfiguration(args(argsBuilder).build)
 
     /**
-     * @param environmentProperties Describes execution properties for a Flink-based application.
+     * @param environmentProperties Execution properties for a Flink-based application. See `environmentProperties` Block below.
      * @return builder
      */
     def environmentProperties(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationEnvironmentPropertiesArgs.Builder]):
@@ -115,7 +115,7 @@ object kinesisanalyticsv2:
       builder.environmentProperties(args(argsBuilder).build)
 
     /**
-     * @param flinkApplicationConfiguration The configuration of a Flink-based application.
+     * @param flinkApplicationConfiguration Configuration of a Flink-based application. See `flinkApplicationConfiguration` Block below.
      * @return builder
      */
     def flinkApplicationConfiguration(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationFlinkApplicationConfigurationArgs.Builder]):
@@ -124,7 +124,7 @@ object kinesisanalyticsv2:
       builder.flinkApplicationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param runConfiguration Describes the starting properties for a Flink-based application.
+     * @param runConfiguration Starting properties for a Flink-based application. See `runConfiguration` Block below.
      * @return builder
      */
     def runConfiguration(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationRunConfigurationArgs.Builder]):
@@ -133,7 +133,7 @@ object kinesisanalyticsv2:
       builder.runConfiguration(args(argsBuilder).build)
 
     /**
-     * @param sqlApplicationConfiguration The configuration of a SQL-based application.
+     * @param sqlApplicationConfiguration Configuration of a SQL-based application. See `sqlApplicationConfiguration` Block below.
      * @return builder
      */
     def sqlApplicationConfiguration(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationArgs.Builder]):
@@ -142,7 +142,7 @@ object kinesisanalyticsv2:
       builder.sqlApplicationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param vpcConfiguration The VPC configuration of a Flink-based application.
+     * @param vpcConfiguration VPC configuration of a Flink-based application. See `vpcConfiguration` Block below.
      * @return builder
      */
     def vpcConfiguration(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationVpcConfigurationArgs.Builder]):
@@ -152,7 +152,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationEnvironmentPropertiesArgs.Builder)
     /**
-     * @param propertyGroups Describes the execution property groups.
+     * @param propertyGroups Execution property groups. See `propertyGroup` Block below.
      * @return builder
      */
     def propertyGroups(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationEnvironmentPropertiesPropertyGroupArgs.Builder]*):
@@ -162,7 +162,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationFlinkApplicationConfigurationArgs.Builder)
     /**
-     * @param checkpointConfiguration Describes an application&#39;s checkpointing configuration.
+     * @param checkpointConfiguration Application&#39;s checkpointing configuration. See `checkpointConfiguration` Block below.
      * @return builder
      */
     def checkpointConfiguration(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfigurationArgs.Builder]):
@@ -171,7 +171,7 @@ object kinesisanalyticsv2:
       builder.checkpointConfiguration(args(argsBuilder).build)
 
     /**
-     * @param monitoringConfiguration Describes configuration parameters for CloudWatch logging for an application.
+     * @param monitoringConfiguration Configuration parameters for CloudWatch logging for an application. See `monitoringConfiguration` Block below.
      * @return builder
      */
     def monitoringConfiguration(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfigurationArgs.Builder]):
@@ -180,7 +180,7 @@ object kinesisanalyticsv2:
       builder.monitoringConfiguration(args(argsBuilder).build)
 
     /**
-     * @param parallelismConfiguration Describes parameters for how an application executes multiple tasks simultaneously.
+     * @param parallelismConfiguration Parameters for how an application executes multiple tasks simultaneously. See `parallelismConfiguration` Block below.
      * @return builder
      */
     def parallelismConfiguration(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfigurationArgs.Builder]):
@@ -190,7 +190,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationRunConfigurationArgs.Builder)
     /**
-     * @param applicationRestoreConfiguration The restore behavior of a restarting application.
+     * @param applicationRestoreConfiguration Restore behavior of a restarting application. See `applicationRestoreConfiguration` Block below.
      * @return builder
      */
     def applicationRestoreConfiguration(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationRunConfigurationApplicationRestoreConfigurationArgs.Builder]):
@@ -199,7 +199,7 @@ object kinesisanalyticsv2:
       builder.applicationRestoreConfiguration(args(argsBuilder).build)
 
     /**
-     * @param flinkRunConfiguration The starting parameters for a Flink-based Kinesis Data Analytics application.
+     * @param flinkRunConfiguration Starting parameters for a Flink-based application. See `flinkRunConfiguration` Block below.
      * @return builder
      */
     def flinkRunConfiguration(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationRunConfigurationFlinkRunConfigurationArgs.Builder]):
@@ -209,7 +209,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationArgs.Builder)
     /**
-     * @param input The input stream used by the application.
+     * @param input Input stream used by the application. See `input` Block below.
      * @return builder
      */
     def input(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputArgs.Builder]):
@@ -218,7 +218,7 @@ object kinesisanalyticsv2:
       builder.input(args(argsBuilder).build)
 
     /**
-     * @param outputs The destination streams used by the application.
+     * @param outputs Destination streams used by the application. See `output` Block below.
      * @return builder
      */
     def outputs(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationOutputArgs.Builder]*):
@@ -227,7 +227,7 @@ object kinesisanalyticsv2:
       builder.outputs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param referenceDataSource The reference data source used by the application.
+     * @param referenceDataSource Reference data source used by the application. See `referenceDataSource` Block below.
      * @return builder
      */
     def referenceDataSource(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceArgs.Builder]):
@@ -237,7 +237,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputArgs.Builder)
     /**
-     * @param inputParallelism Describes the number of in-application streams to create.
+     * @param inputParallelism Number of in-application streams to create. See `inputParallelism` Block below.
      * @return builder
      */
     def inputParallelism(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelismArgs.Builder]):
@@ -246,8 +246,7 @@ object kinesisanalyticsv2:
       builder.inputParallelism(args(argsBuilder).build)
 
     /**
-     * @param inputProcessingConfiguration The input processing configuration for the input.
-     * An input processor transforms records as they are received from the stream, before the application&#39;s SQL code executes.
+     * @param inputProcessingConfiguration Input processing configuration for the input. An input processor transforms records as they are received from the stream, before the application&#39;s SQL code executes. See `inputProcessingConfiguration` Block below.
      * @return builder
      */
     def inputProcessingConfiguration(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationArgs.Builder]):
@@ -256,7 +255,7 @@ object kinesisanalyticsv2:
       builder.inputProcessingConfiguration(args(argsBuilder).build)
 
     /**
-     * @param inputSchema Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.
+     * @param inputSchema Format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created. See `inputSchema` Block below.
      * @return builder
      */
     def inputSchema(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaArgs.Builder]):
@@ -265,7 +264,7 @@ object kinesisanalyticsv2:
       builder.inputSchema(args(argsBuilder).build)
 
     /**
-     * @param inputStartingPositionConfigurations The point at which the application starts processing records from the streaming source.
+     * @param inputStartingPositionConfigurations Point at which the application starts processing records from the streaming source. See `inputStartingPositionConfiguration` Block below.
      * @return builder
      */
     def inputStartingPositionConfigurations(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputStartingPositionConfigurationArgs.Builder]*):
@@ -274,7 +273,7 @@ object kinesisanalyticsv2:
       builder.inputStartingPositionConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param kinesisFirehoseInput If the streaming source is a Kinesis Data Firehose delivery stream, identifies the delivery stream&#39;s ARN.
+     * @param kinesisFirehoseInput If the streaming source is a Kinesis Data Firehose delivery stream, identifies the delivery stream&#39;s ARN. See `kinesisFirehoseInput` Block below.
      * @return builder
      */
     def kinesisFirehoseInput(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInputArgs.Builder]):
@@ -283,7 +282,7 @@ object kinesisanalyticsv2:
       builder.kinesisFirehoseInput(args(argsBuilder).build)
 
     /**
-     * @param kinesisStreamsInput If the streaming source is a Kinesis data stream, identifies the stream&#39;s ARN.
+     * @param kinesisStreamsInput If the streaming source is a Kinesis data stream, identifies the stream&#39;s ARN. See `kinesisStreamsInput` Block below.
      * @return builder
      */
     def kinesisStreamsInput(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInputArgs.Builder]):
@@ -293,7 +292,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationArgs.Builder)
     /**
-     * @param inputLambdaProcessor Describes the Lambda function that is used to preprocess the records in the stream before being processed by your application code.
+     * @param inputLambdaProcessor Lambda function used to preprocess the records in the stream before being processed by your application code. See `inputLambdaProcessor` Block below.
      * @return builder
      */
     def inputLambdaProcessor(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessorArgs.Builder]):
@@ -303,7 +302,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaArgs.Builder)
     /**
-     * @param recordColumns Describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.
+     * @param recordColumns Mapping of each data element in the streaming source to the corresponding column in the in-application stream. See `recordColumn` Block below.
      * @return builder
      */
     def recordColumns(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordColumnArgs.Builder]*):
@@ -312,7 +311,7 @@ object kinesisanalyticsv2:
       builder.recordColumns(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param recordFormat Specifies the format of the records on the streaming source.
+     * @param recordFormat Format of the records on the streaming source. See `recordFormat` Block below.
      * @return builder
      */
     def recordFormat(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatArgs.Builder]):
@@ -322,7 +321,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatArgs.Builder)
     /**
-     * @param mappingParameters Provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.
+     * @param mappingParameters Additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source. See `mappingParameters` Block below.
      * @return builder
      */
     def mappingParameters(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersArgs.Builder]):
@@ -332,7 +331,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersArgs.Builder)
     /**
-     * @param csvMappingParameters Provides additional mapping information when the record format uses delimiters (for example, CSV).
+     * @param csvMappingParameters Additional mapping information when the record format uses delimiters (for example, CSV). See `csvMappingParameters` Block below.
      * @return builder
      */
     def csvMappingParameters(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParametersArgs.Builder]):
@@ -341,7 +340,7 @@ object kinesisanalyticsv2:
       builder.csvMappingParameters(args(argsBuilder).build)
 
     /**
-     * @param jsonMappingParameters Provides additional mapping information when JSON is the record format on the streaming source.
+     * @param jsonMappingParameters Additional mapping information when JSON is the record format on the streaming source. See `jsonMappingParameters` Block below.
      * @return builder
      */
     def jsonMappingParameters(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParametersArgs.Builder]):
@@ -351,7 +350,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationOutputArgs.Builder)
     /**
-     * @param destinationSchema Describes the data format when records are written to the destination.
+     * @param destinationSchema Data format when records are written to the destination. See `destinationSchema` Block below.
      * @return builder
      */
     def destinationSchema(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchemaArgs.Builder]):
@@ -360,7 +359,7 @@ object kinesisanalyticsv2:
       builder.destinationSchema(args(argsBuilder).build)
 
     /**
-     * @param kinesisFirehoseOutput Identifies a Kinesis Data Firehose delivery stream as the destination.
+     * @param kinesisFirehoseOutput Destination Kinesis Data Firehose delivery stream. See `kinesisFirehoseOutput` Block below.
      * @return builder
      */
     def kinesisFirehoseOutput(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutputArgs.Builder]):
@@ -369,7 +368,7 @@ object kinesisanalyticsv2:
       builder.kinesisFirehoseOutput(args(argsBuilder).build)
 
     /**
-     * @param kinesisStreamsOutput Identifies a Kinesis data stream as the destination.
+     * @param kinesisStreamsOutput Destination Kinesis data stream. See `kinesisStreamsOutput` Block below.
      * @return builder
      */
     def kinesisStreamsOutput(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutputArgs.Builder]):
@@ -378,7 +377,7 @@ object kinesisanalyticsv2:
       builder.kinesisStreamsOutput(args(argsBuilder).build)
 
     /**
-     * @param lambdaOutput Identifies a Lambda function as the destination.
+     * @param lambdaOutput Destination Lambda function. See `lambdaOutput` Block below.
      * @return builder
      */
     def lambdaOutput(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutputArgs.Builder]):
@@ -388,7 +387,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceArgs.Builder)
     /**
-     * @param referenceSchema Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.
+     * @param referenceSchema Format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. See `referenceSchema` Block below.
      * @return builder
      */
     def referenceSchema(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaArgs.Builder]):
@@ -397,7 +396,7 @@ object kinesisanalyticsv2:
       builder.referenceSchema(args(argsBuilder).build)
 
     /**
-     * @param s3ReferenceDataSource Identifies the S3 bucket and object that contains the reference data.
+     * @param s3ReferenceDataSource S3 bucket and object that contains the reference data. See `s3ReferenceDataSource` Block below.
      * @return builder
      */
     def s3ReferenceDataSource(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceS3ReferenceDataSourceArgs.Builder]):
@@ -407,7 +406,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaArgs.Builder)
     /**
-     * @param recordColumns Describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.
+     * @param recordColumns Mapping of each data element in the streaming source to the corresponding column in the in-application stream. See `recordColumn` Block above.
      * @return builder
      */
     def recordColumns(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordColumnArgs.Builder]*):
@@ -416,7 +415,7 @@ object kinesisanalyticsv2:
       builder.recordColumns(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param recordFormat Specifies the format of the records on the streaming source.
+     * @param recordFormat Format of the records on the streaming source. See `recordFormat` Block above.
      * @return builder
      */
     def recordFormat(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatArgs.Builder]):
@@ -426,7 +425,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatArgs.Builder)
     /**
-     * @param mappingParameters Provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.
+     * @param mappingParameters Additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source. See `mappingParameters` Block below.
      * @return builder
      */
     def mappingParameters(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersArgs.Builder]):
@@ -436,7 +435,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersArgs.Builder)
     /**
-     * @param csvMappingParameters Provides additional mapping information when the record format uses delimiters (for example, CSV).
+     * @param csvMappingParameters Additional mapping information when the record format uses delimiters (for example, CSV). See `csvMappingParameters` Block below.
      * @return builder
      */
     def csvMappingParameters(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParametersArgs.Builder]):
@@ -445,7 +444,7 @@ object kinesisanalyticsv2:
       builder.csvMappingParameters(args(argsBuilder).build)
 
     /**
-     * @param jsonMappingParameters Provides additional mapping information when JSON is the record format on the streaming source.
+     * @param jsonMappingParameters Additional mapping information when JSON is the record format on the streaming source. See `jsonMappingParameters` Block below.
      * @return builder
      */
     def jsonMappingParameters(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParametersArgs.Builder]):
@@ -455,7 +454,7 @@ object kinesisanalyticsv2:
 
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationState.Builder)
     /**
-     * @param applicationConfiguration The application&#39;s configuration
+     * @param applicationConfiguration Application configuration. See `applicationConfiguration` Block below.
      * @return builder
      */
     def applicationConfiguration(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationArgs.Builder]):
@@ -464,7 +463,7 @@ object kinesisanalyticsv2:
       builder.applicationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param cloudwatchLoggingOptions A CloudWatch log stream to monitor application configuration errors.
+     * @param cloudwatchLoggingOptions CloudWatch log stream to monitor application configuration errors. See `cloudwatchLoggingOptions` Block below.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationCloudwatchLoggingOptionsArgs.Builder]):

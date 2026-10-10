@@ -24,7 +24,7 @@ object sfn:
 
   extension (builder: com.pulumi.aws.sfn.ActivityArgs.Builder)
     /**
-     * @param encryptionConfiguration Defines what encryption configuration is used to encrypt data in the Activity. For more information see the section [Data at rest encyption](https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html) in the AWS Step Functions User Guide.
+     * @param encryptionConfiguration Defines what encryption configuration is used to encrypt data in the Activity. For more information see the section [Data at rest encryption](https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html) in the AWS Step Functions User Guide.
      * @return builder
      */
     def encryptionConfiguration(args: Endofunction[com.pulumi.aws.sfn.inputs.ActivityEncryptionConfigurationArgs.Builder]):
@@ -164,7 +164,7 @@ object sfn:
 
   extension (builder: com.pulumi.aws.sfn.inputs.ActivityState.Builder)
     /**
-     * @param encryptionConfiguration Defines what encryption configuration is used to encrypt data in the Activity. For more information see the section [Data at rest encyption](https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html) in the AWS Step Functions User Guide.
+     * @param encryptionConfiguration Defines what encryption configuration is used to encrypt data in the Activity. For more information see the section [Data at rest encryption](https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html) in the AWS Step Functions User Guide.
      * @return builder
      */
     def encryptionConfiguration(args: Endofunction[com.pulumi.aws.sfn.inputs.ActivityEncryptionConfigurationArgs.Builder]):

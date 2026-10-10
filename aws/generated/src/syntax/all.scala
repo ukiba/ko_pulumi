@@ -86,6 +86,7 @@ export ko_pulumi.aws.kinesis.KinesisFunctions
 export ko_pulumi.aws.kms.KmsFunctions
 export ko_pulumi.aws.lakeformation.LakeformationFunctions
 export ko_pulumi.aws.lambda.LambdaFunctions
+export ko_pulumi.aws.lambdamicrovms.LambdamicrovmsFunctions
 export ko_pulumi.aws.lb.LbFunctions
 export ko_pulumi.aws.lex.LexFunctions
 export ko_pulumi.aws.licensemanager.LicensemanagerFunctions

@@ -458,6 +458,7 @@ export ko_pulumi.gcp.compute.rawDisk
 export ko_pulumi.gcp.compute.recaptchaOptions
 export ko_pulumi.gcp.compute.recaptchaOptionsConfig
 export ko_pulumi.gcp.compute.redirectOptions
+export ko_pulumi.gcp.compute.regexRewrite
 export ko_pulumi.gcp.compute.regions
 export ko_pulumi.gcp.compute.requestBodies
 export ko_pulumi.gcp.compute.requestCookies
@@ -610,6 +611,7 @@ export ko_pulumi.gcp.databasemigrationservice.postgresql
 export ko_pulumi.gcp.databasemigrationservice.primaryInstanceSettings
 export ko_pulumi.gcp.databasemigrationservice.privateConnectivity
 export ko_pulumi.gcp.databasemigrationservice.pscInterfaceConfig
+export ko_pulumi.gcp.databasemigrationservice.reservedPublicIpConfig
 export ko_pulumi.gcp.databasemigrationservice.reverseSshConnectivity
 export ko_pulumi.gcp.databasemigrationservice.settings
 export ko_pulumi.gcp.databasemigrationservice.sourceObjectsConfig

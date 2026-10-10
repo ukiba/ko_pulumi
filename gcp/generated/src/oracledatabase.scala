@@ -759,6 +759,17 @@ object oracledatabase:
       builder.customerContacts(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param exascaleConfigs (Output)
+     * The Exascale configuration for the Exadata Infrastructure.
+     * Structure is documented below.
+     * @return builder
+     */
+    def exascaleConfigs(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesExascaleConfigArgs.Builder]*):
+        com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesExascaleConfigArgs.builder
+      builder.exascaleConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param maintenanceWindow Maintenance window as defined by Oracle.
      * https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/MaintenanceWindow
      * Structure is documented below.

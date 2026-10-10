@@ -62,7 +62,7 @@ object qldb:
 
   extension (builder: com.pulumi.aws.qldb.StreamArgs.Builder)
     /**
-     * @param kinesisConfiguration The configuration settings of the Kinesis Data Streams destination for your stream request. Documented below.
+     * @param kinesisConfiguration Configuration settings of the Kinesis Data Streams destination for your stream request. Documented below.
      * @return builder
      */
     def kinesisConfiguration(args: Endofunction[com.pulumi.aws.qldb.inputs.StreamKinesisConfigurationArgs.Builder]):
@@ -72,7 +72,7 @@ object qldb:
 
   extension (builder: com.pulumi.aws.qldb.inputs.StreamState.Builder)
     /**
-     * @param kinesisConfiguration The configuration settings of the Kinesis Data Streams destination for your stream request. Documented below.
+     * @param kinesisConfiguration Configuration settings of the Kinesis Data Streams destination for your stream request. Documented below.
      * @return builder
      */
     def kinesisConfiguration(args: Endofunction[com.pulumi.aws.qldb.inputs.StreamKinesisConfigurationArgs.Builder]):

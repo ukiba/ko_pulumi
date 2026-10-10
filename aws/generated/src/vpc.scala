@@ -98,7 +98,7 @@ object vpc:
 
   extension (builder: com.pulumi.aws.vpc.RouteServerPeerArgs.Builder)
     /**
-     * @param bgpOptions The BGP options for the peer, including ASN (Autonomous System Number) and BFD (Bidrectional Forwarding Detection) settings. Configuration block with BGP Options configuration Detailed below
+     * @param bgpOptions BGP options for the peer, including ASN (Autonomous System Number) and BFD (Bidrectional Forwarding Detection) settings. Configuration block with BGP Options configuration Detailed below
      * @return builder
      */
     def bgpOptions(args: Endofunction[com.pulumi.aws.vpc.inputs.RouteServerPeerBgpOptionsArgs.Builder]):
@@ -218,13 +218,21 @@ object vpc:
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetEndpointAssociationsPlainArgs.builder
       com.pulumi.aws.vpc.VpcFunctions.getEndpointAssociationsPlain(args(argsBuilder).build)
 
-    /** `aws.vpc.getSecurityGroupRule` provides details about a specific security group rule. */
+    /**
+     * `aws.vpc.getSecurityGroupRule` provides details about a specific security group rule.
+     * 
+     * The arguments of this data source act as filters for querying the available security group rules. The given filters must match exactly one security group rule whose data will be exported as attributes.
+     */
     inline def getSecurityGroupRule(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpc.outputs.GetSecurityGroupRuleResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRuleArgs.builder
       com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRule(args(argsBuilder).build)
 
-    /** `aws.vpc.getSecurityGroupRule` provides details about a specific security group rule. */
+    /**
+     * `aws.vpc.getSecurityGroupRule` provides details about a specific security group rule.
+     * 
+     * The arguments of this data source act as filters for querying the available security group rules. The given filters must match exactly one security group rule whose data will be exported as attributes.
+     */
     inline def getSecurityGroupRulePlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpc.outputs.GetSecurityGroupRuleResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRulePlainArgs.builder
@@ -251,10 +259,6 @@ object vpc:
   extension (builder: com.pulumi.aws.vpc.inputs.GetSecurityGroupRuleArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
-     * 
-     * The arguments of this data source act as filters for querying the available
-     * security group rules. The given filters must match exactly one security group rule
-     * whose data will be exported as attributes.
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRuleFilterArgs.Builder]*):
@@ -280,7 +284,7 @@ object vpc:
 
   extension (builder: com.pulumi.aws.vpc.inputs.RouteServerPeerState.Builder)
     /**
-     * @param bgpOptions The BGP options for the peer, including ASN (Autonomous System Number) and BFD (Bidrectional Forwarding Detection) settings. Configuration block with BGP Options configuration Detailed below
+     * @param bgpOptions BGP options for the peer, including ASN (Autonomous System Number) and BFD (Bidrectional Forwarding Detection) settings. Configuration block with BGP Options configuration Detailed below
      * @return builder
      */
     def bgpOptions(args: Endofunction[com.pulumi.aws.vpc.inputs.RouteServerPeerBgpOptionsArgs.Builder]):

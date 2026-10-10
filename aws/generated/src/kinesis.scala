@@ -55,8 +55,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.AnalyticsApplicationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch log stream options to monitor application errors.
-     * See CloudWatch Logging Options below for more details.
+     * @param cloudwatchLoggingOptions CloudWatch log stream options to monitor application errors. See `cloudwatchLoggingOptions` Block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationCloudwatchLoggingOptionsArgs.Builder]):
@@ -65,7 +64,7 @@ object kinesis:
       builder.cloudwatchLoggingOptions(args(argsBuilder).build)
 
     /**
-     * @param inputs Input configuration of the application. See Inputs below for more details.
+     * @param inputs Input configuration of the application. See `inputs` Block below for details.
      * @return builder
      */
     def inputs(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsArgs.Builder]):
@@ -74,7 +73,7 @@ object kinesis:
       builder.inputs(args(argsBuilder).build)
 
     /**
-     * @param outputs Output destination configuration of the application. See Outputs below for more details.
+     * @param outputs Output destination configuration of the application. See `outputs` Block below for details.
      * @return builder
      */
     def outputs(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationOutputArgs.Builder]*):
@@ -83,8 +82,7 @@ object kinesis:
       builder.outputs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param referenceDataSources An S3 Reference Data Source for the application.
-     * See Reference Data Sources below for more details.
+     * @param referenceDataSources S3 Reference Data Source for the application. See `referenceDataSources` Block below for details.
      * @return builder
      */
     def referenceDataSources(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesArgs.Builder]):
@@ -161,7 +159,7 @@ object kinesis:
       builder.kinesisSourceConfiguration(args(argsBuilder).build)
 
     /**
-     * @param mskSourceConfiguration The configuration for the Amazon MSK cluster to be used as the source for a delivery stream. See `mskSourceConfiguration` block below for details.
+     * @param mskSourceConfiguration Configuration for the Amazon MSK cluster to be used as the source for a delivery stream. See `mskSourceConfiguration` block below for details.
      * @return builder
      */
     def mskSourceConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamMskSourceConfigurationArgs.Builder]):
@@ -216,8 +214,6 @@ object kinesis:
 
     /**
      * @param splunkConfiguration Configuration options when `destination` is `splunk`. See `splunkConfiguration` block below for details.
-     * 
-     * **NOTE:** Server-side encryption should not be enabled when a kinesis stream is configured as the source of the firehose delivery stream.
      * @return builder
      */
     def splunkConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSplunkConfigurationArgs.Builder]):
@@ -330,7 +326,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.StreamArgs.Builder)
     /**
-     * @param streamModeDetails Indicates the [capacity mode](https://docs.aws.amazon.com/streams/latest/dev/how-do-i-size-a-stream.html) of the data stream. Detailed below.
+     * @param streamModeDetails [Capacity mode](https://docs.aws.amazon.com/streams/latest/dev/how-do-i-size-a-stream.html) of the data stream. Detailed below.
      * @return builder
      */
     def streamModeDetails(args: Endofunction[com.pulumi.aws.kinesis.inputs.StreamStreamModeDetailsArgs.Builder]):
@@ -396,8 +392,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsArgs.Builder)
     /**
-     * @param kinesisFirehose The Kinesis Firehose configuration for the streaming source. Conflicts with `kinesisStream`.
-     * See Kinesis Firehose below for more details.
+     * @param kinesisFirehose Kinesis Firehose configuration for the streaming source. Conflicts with `kinesisStream`. See `inputs.kinesis_firehose` Block below for details.
      * @return builder
      */
     def kinesisFirehose(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsKinesisFirehoseArgs.Builder]):
@@ -406,8 +401,7 @@ object kinesis:
       builder.kinesisFirehose(args(argsBuilder).build)
 
     /**
-     * @param kinesisStream The Kinesis Stream configuration for the streaming source. Conflicts with `kinesisFirehose`.
-     * See Kinesis Stream below for more details.
+     * @param kinesisStream Kinesis Stream configuration for the streaming source. Conflicts with `kinesisFirehose`. See `inputs.kinesis_stream` Block below for details.
      * @return builder
      */
     def kinesisStream(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsKinesisStreamArgs.Builder]):
@@ -416,8 +410,7 @@ object kinesis:
       builder.kinesisStream(args(argsBuilder).build)
 
     /**
-     * @param parallelism The number of Parallel in-application streams to create.
-     * See Parallelism below for more details.
+     * @param parallelism Number of Parallel in-application streams to create. See `inputs.parallelism` Block below for details.
      * @return builder
      */
     def parallelism(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsParallelismArgs.Builder]):
@@ -426,8 +419,7 @@ object kinesis:
       builder.parallelism(args(argsBuilder).build)
 
     /**
-     * @param processingConfiguration The Processing Configuration to transform records as they are received from the stream.
-     * See Processing Configuration below for more details.
+     * @param processingConfiguration Processing Configuration to transform records as they are received from the stream. See `inputs.processing_configuration` Block below for details.
      * @return builder
      */
     def processingConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsProcessingConfigurationArgs.Builder]):
@@ -436,7 +428,7 @@ object kinesis:
       builder.processingConfiguration(args(argsBuilder).build)
 
     /**
-     * @param schema The Schema format of the data in the streaming source. See Source Schema below for more details.
+     * @param schema Schema format of the data in the streaming source. See `inputs.schema` Block below for details.
      * @return builder
      */
     def schema(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaArgs.Builder]):
@@ -445,8 +437,7 @@ object kinesis:
       builder.schema(args(argsBuilder).build)
 
     /**
-     * @param startingPositionConfigurations The point at which the application starts processing records from the streaming source.
-     * See Starting Position Configuration below for more details.
+     * @param startingPositionConfigurations Point at which the application starts processing records from the streaming source. See `inputs.starting_position_configuration` Block below for details.
      * @return builder
      */
     def startingPositionConfigurations(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsStartingPositionConfigurationArgs.Builder]*):
@@ -455,63 +446,34 @@ object kinesis:
       builder.startingPositionConfigurations(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsProcessingConfigurationArgs.Builder)
-    /**
-     * @param lambda The Lambda function configuration. See Lambda below for more details.
-     * @return builder
-     */
     def lambda(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsProcessingConfigurationLambdaArgs.Builder]):
         com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsProcessingConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsProcessingConfigurationLambdaArgs.builder
       builder.lambda(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaArgs.Builder)
-    /**
-     * @param recordColumns The Record Column mapping for the streaming source data element.
-     * See Record Columns below for more details.
-     * @return builder
-     */
     def recordColumns(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaRecordColumnArgs.Builder]*):
         com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaArgs.Builder =
       def argsBuilder = com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaRecordColumnArgs.builder
       builder.recordColumns(args.map(_(argsBuilder).build)*)
 
-    /**
-     * @param recordFormat The Record Format and mapping information to schematize a record.
-     * See Record Format below for more details.
-     * @return builder
-     */
     def recordFormat(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaRecordFormatArgs.Builder]):
         com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaArgs.Builder =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaRecordFormatArgs.builder
       builder.recordFormat(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaRecordFormatArgs.Builder)
-    /**
-     * @param mappingParameters The Mapping Information for the record format.
-     * See Mapping Parameters below for more details.
-     * @return builder
-     */
     def mappingParameters(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaRecordFormatMappingParametersArgs.Builder]):
         com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaRecordFormatArgs.Builder =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaRecordFormatMappingParametersArgs.builder
       builder.mappingParameters(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaRecordFormatMappingParametersArgs.Builder)
-    /**
-     * @param csv Mapping information when the record format uses delimiters.
-     * See CSV Mapping Parameters below for more details.
-     * @return builder
-     */
     def csv(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvArgs.Builder]):
         com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaRecordFormatMappingParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvArgs.builder
       builder.csv(args(argsBuilder).build)
 
-    /**
-     * @param json Mapping information when JSON is the record format on the streaming source.
-     * See JSON Mapping Parameters below for more details.
-     * @return builder
-     */
     def json(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaRecordFormatMappingParametersJsonArgs.Builder]):
         com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaRecordFormatMappingParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsSchemaRecordFormatMappingParametersJsonArgs.builder
@@ -519,8 +481,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.AnalyticsApplicationOutputArgs.Builder)
     /**
-     * @param kinesisFirehose The Kinesis Firehose configuration for the destination stream. Conflicts with `kinesisStream`.
-     * See Kinesis Firehose below for more details.
+     * @param kinesisFirehose Kinesis Firehose configuration for the destination stream. Conflicts with `kinesisStream`. See `outputs.kinesis_firehose` Block below for details.
      * @return builder
      */
     def kinesisFirehose(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationOutputKinesisFirehoseArgs.Builder]):
@@ -529,8 +490,7 @@ object kinesis:
       builder.kinesisFirehose(args(argsBuilder).build)
 
     /**
-     * @param kinesisStream The Kinesis Stream configuration for the destination stream. Conflicts with `kinesisFirehose`.
-     * See Kinesis Stream below for more details.
+     * @param kinesisStream Kinesis Stream configuration for the destination stream. Conflicts with `kinesisFirehose`. See `outputs.kinesis_stream` Block below for details.
      * @return builder
      */
     def kinesisStream(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationOutputKinesisStreamArgs.Builder]):
@@ -539,7 +499,7 @@ object kinesis:
       builder.kinesisStream(args(argsBuilder).build)
 
     /**
-     * @param lambda The Lambda function destination. See Lambda below for more details.
+     * @param lambda Lambda function destination. See `outputs.lambda` Block below for details.
      * @return builder
      */
     def lambda(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationOutputLambdaArgs.Builder]):
@@ -548,7 +508,7 @@ object kinesis:
       builder.lambda(args(argsBuilder).build)
 
     /**
-     * @param schema The Schema format of the data written to the destination. See Destination Schema below for more details.
+     * @param schema Schema format of the data written to the destination. See `outputs.schema` Block below for details.
      * @return builder
      */
     def schema(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationOutputSchemaArgs.Builder]):
@@ -558,7 +518,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesArgs.Builder)
     /**
-     * @param s3 The S3 configuration for the reference data source. See S3 Reference below for more details.
+     * @param s3 S3 configuration for the reference data source. See `reference_data_sources.s3` Block below for details.
      * @return builder
      */
     def s3(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesS3Args.Builder]):
@@ -567,7 +527,7 @@ object kinesis:
       builder.s3(args(argsBuilder).build)
 
     /**
-     * @param schema The Schema format of the data in the streaming source. See Source Schema below for more details.
+     * @param schema Schema format of the data in the streaming source. See `reference_data_sources.schema` Block below for details.
      * @return builder
      */
     def schema(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaArgs.Builder]):
@@ -576,53 +536,28 @@ object kinesis:
       builder.schema(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaArgs.Builder)
-    /**
-     * @param recordColumns The Record Column mapping for the streaming source data element.
-     * See Record Columns below for more details.
-     * @return builder
-     */
     def recordColumns(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaRecordColumnArgs.Builder]*):
         com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaArgs.Builder =
       def argsBuilder = com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaRecordColumnArgs.builder
       builder.recordColumns(args.map(_(argsBuilder).build)*)
 
-    /**
-     * @param recordFormat The Record Format and mapping information to schematize a record.
-     * See Record Format below for more details.
-     * @return builder
-     */
     def recordFormat(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatArgs.Builder]):
         com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaArgs.Builder =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatArgs.builder
       builder.recordFormat(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatArgs.Builder)
-    /**
-     * @param mappingParameters The Mapping Information for the record format.
-     * See Mapping Parameters below for more details.
-     * @return builder
-     */
     def mappingParameters(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersArgs.Builder]):
         com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatArgs.Builder =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersArgs.builder
       builder.mappingParameters(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersArgs.Builder)
-    /**
-     * @param csv Mapping information when the record format uses delimiters.
-     * See CSV Mapping Parameters below for more details.
-     * @return builder
-     */
     def csv(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsvArgs.Builder]):
         com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsvArgs.builder
       builder.csv(args(argsBuilder).build)
 
-    /**
-     * @param json Mapping information when JSON is the record format on the streaming source.
-     * See JSON Mapping Parameters below for more details.
-     * @return builder
-     */
     def json(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJsonArgs.Builder]):
         com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJsonArgs.builder
@@ -630,8 +565,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.AnalyticsApplicationState.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch log stream options to monitor application errors.
-     * See CloudWatch Logging Options below for more details.
+     * @param cloudwatchLoggingOptions CloudWatch log stream options to monitor application errors. See `cloudwatchLoggingOptions` Block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationCloudwatchLoggingOptionsArgs.Builder]):
@@ -640,7 +574,7 @@ object kinesis:
       builder.cloudwatchLoggingOptions(args(argsBuilder).build)
 
     /**
-     * @param inputs Input configuration of the application. See Inputs below for more details.
+     * @param inputs Input configuration of the application. See `inputs` Block below for details.
      * @return builder
      */
     def inputs(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsArgs.Builder]):
@@ -649,7 +583,7 @@ object kinesis:
       builder.inputs(args(argsBuilder).build)
 
     /**
-     * @param outputs Output destination configuration of the application. See Outputs below for more details.
+     * @param outputs Output destination configuration of the application. See `outputs` Block below for details.
      * @return builder
      */
     def outputs(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationOutputArgs.Builder]*):
@@ -658,8 +592,7 @@ object kinesis:
       builder.outputs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param referenceDataSources An S3 Reference Data Source for the application.
-     * See Reference Data Sources below for more details.
+     * @param referenceDataSources S3 Reference Data Source for the application. See `referenceDataSources` Block below for details.
      * @return builder
      */
     def referenceDataSources(args: Endofunction[com.pulumi.aws.kinesis.inputs.AnalyticsApplicationReferenceDataSourcesArgs.Builder]):
@@ -669,7 +602,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamElasticsearchConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLoggingOptionsArgs.Builder]):
@@ -678,7 +611,7 @@ object kinesis:
       builder.cloudwatchLoggingOptions(args(argsBuilder).build)
 
     /**
-     * @param processingConfiguration The data processing configuration.  See `processingConfiguration` block below for details.
+     * @param processingConfiguration Data processing configuration.  See `processingConfiguration` block below for details.
      * @return builder
      */
     def processingConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationArgs.Builder]):
@@ -687,7 +620,7 @@ object kinesis:
       builder.processingConfiguration(args(argsBuilder).build)
 
     /**
-     * @param s3Configuration The S3 Configuration. See `s3Configuration` block below for details.
+     * @param s3Configuration S3 Configuration. See `s3Configuration` block below for details.
      * @return builder
      */
     def s3Configuration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamElasticsearchConfigurationS3ConfigurationArgs.Builder]):
@@ -696,7 +629,7 @@ object kinesis:
       builder.s3Configuration(args(argsBuilder).build)
 
     /**
-     * @param vpcConfig The VPC configuration for the delivery stream to connect to Elastic Search associated with the VPC. See `vpcConfig` block below for details.
+     * @param vpcConfig VPC configuration for the delivery stream to connect to Elastic Search associated with the VPC. See `vpcConfig` block below for details.
      * @return builder
      */
     def vpcConfig(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamElasticsearchConfigurationVpcConfigArgs.Builder]):
@@ -706,7 +639,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationArgs.Builder)
     /**
-     * @param processors Specifies the data processors as multiple blocks. See `processors` block below for details.
+     * @param processors Data processors as multiple blocks. See `processors` block below for details.
      * @return builder
      */
     def processors(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationProcessorArgs.Builder]*):
@@ -716,7 +649,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationProcessorArgs.Builder)
     /**
-     * @param parameters Specifies the processor parameters as multiple blocks. See `parameters` block below for details.
+     * @param parameters Processor parameters as multiple blocks. See `parameters` block below for details.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationProcessorParameterArgs.Builder]*):
@@ -726,7 +659,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamElasticsearchConfigurationS3ConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamElasticsearchConfigurationS3ConfigurationCloudwatchLoggingOptionsArgs.Builder]):
@@ -735,6 +668,10 @@ object kinesis:
       builder.cloudwatchLoggingOptions(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationArgs.Builder)
+    /**
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @return builder
+     */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptionsArgs.Builder]):
         com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptionsArgs.builder
@@ -750,7 +687,7 @@ object kinesis:
       builder.dataFormatConversionConfiguration(args(argsBuilder).build)
 
     /**
-     * @param dynamicPartitioningConfiguration The configuration for dynamic partitioning. Required when using [dynamic partitioning](https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html). See `dynamicPartitioningConfiguration` block below for details.
+     * @param dynamicPartitioningConfiguration Configuration for dynamic partitioning. Required when using [dynamic partitioning](https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html). See `dynamicPartitioningConfiguration` block below for details.
      * @return builder
      */
     def dynamicPartitioningConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationArgs.Builder]):
@@ -759,7 +696,7 @@ object kinesis:
       builder.dynamicPartitioningConfiguration(args(argsBuilder).build)
 
     /**
-     * @param processingConfiguration The data processing configuration.  See `processingConfiguration` block below for details.
+     * @param processingConfiguration Data processing configuration. See `processingConfiguration` block below for details.
      * @return builder
      */
     def processingConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfigurationArgs.Builder]):
@@ -768,7 +705,7 @@ object kinesis:
       builder.processingConfiguration(args(argsBuilder).build)
 
     /**
-     * @param s3BackupConfiguration The configuration for backup in Amazon S3. Required if `s3BackupMode` is `Enabled`. Supports the same fields as `s3Configuration` object.
+     * @param s3BackupConfiguration Configuration for backup in Amazon S3. Required if `s3BackupMode` is `Enabled`. See `s3BackupConfiguration` block below for details.
      * @return builder
      */
     def s3BackupConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationArgs.Builder]):
@@ -778,7 +715,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationArgs.Builder)
     /**
-     * @param inputFormatConfiguration Specifies the deserializer that you want Kinesis Data Firehose to use to convert the format of your data from JSON. See `inputFormatConfiguration` block below for details.
+     * @param inputFormatConfiguration Deserializer that you want Kinesis Data Firehose to use to convert the format of your data from JSON. See `inputFormatConfiguration` block below for details.
      * @return builder
      */
     def inputFormatConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationArgs.Builder]):
@@ -787,7 +724,7 @@ object kinesis:
       builder.inputFormatConfiguration(args(argsBuilder).build)
 
     /**
-     * @param outputFormatConfiguration Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data to the Parquet or ORC format. See `outputFormatConfiguration` block below for details.
+     * @param outputFormatConfiguration Serializer that you want Kinesis Data Firehose to use to convert the format of your data to the Parquet or ORC format. See `outputFormatConfiguration` block below for details.
      * @return builder
      */
     def outputFormatConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationArgs.Builder]):
@@ -796,7 +733,7 @@ object kinesis:
       builder.outputFormatConfiguration(args(argsBuilder).build)
 
     /**
-     * @param schemaConfiguration Specifies the AWS Glue Data Catalog table that contains the column information. See `schemaConfiguration` block below for details.
+     * @param schemaConfiguration AWS Glue Data Catalog table that contains the column information. See `schemaConfiguration` block below for details.
      * @return builder
      */
     def schemaConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationSchemaConfigurationArgs.Builder]):
@@ -806,7 +743,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationArgs.Builder)
     /**
-     * @param deserializer Specifies which deserializer to use. You can choose either the Apache Hive JSON SerDe or the OpenX JSON SerDe. See `deserializer` block below for details.
+     * @param deserializer Which deserializer to use. You can choose either the Apache Hive JSON SerDe or the OpenX JSON SerDe. See `deserializer` block below for details.
      * @return builder
      */
     def deserializer(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerArgs.Builder]):
@@ -816,7 +753,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerArgs.Builder)
     /**
-     * @param hiveJsonSerDe Specifies the native Hive / HCatalog JsonSerDe. More details below. See `hiveJsonSerDe` block below for details.
+     * @param hiveJsonSerDe Native Hive / HCatalog JsonSerDe. See `hiveJsonSerDe` block below for details.
      * @return builder
      */
     def hiveJsonSerDe(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDeArgs.Builder]):
@@ -825,7 +762,7 @@ object kinesis:
       builder.hiveJsonSerDe(args(argsBuilder).build)
 
     /**
-     * @param openXJsonSerDe Specifies the OpenX SerDe. See `openXJsonSerDe` block below for details.
+     * @param openXJsonSerDe OpenX SerDe. See `openXJsonSerDe` block below for details.
      * @return builder
      */
     def openXJsonSerDe(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDeArgs.Builder]):
@@ -835,7 +772,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationArgs.Builder)
     /**
-     * @param serializer Specifies which serializer to use. You can choose either the ORC SerDe or the Parquet SerDe. See `serializer` block below for details.
+     * @param serializer Which serializer to use. You can choose either the ORC SerDe or the Parquet SerDe. See `serializer` block below for details.
      * @return builder
      */
     def serializer(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerArgs.Builder]):
@@ -845,7 +782,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerArgs.Builder)
     /**
-     * @param orcSerDe Specifies converting data to the ORC format before storing it in Amazon S3. For more information, see [Apache ORC](https://orc.apache.org/docs/). See `orcSerDe` block below for details.
+     * @param orcSerDe Converts data to the ORC format before storing it in Amazon S3. For more information, see [Apache ORC](https://orc.apache.org/docs/). See `orcSerDe` block below for details.
      * @return builder
      */
     def orcSerDe(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDeArgs.Builder]):
@@ -854,7 +791,7 @@ object kinesis:
       builder.orcSerDe(args(argsBuilder).build)
 
     /**
-     * @param parquetSerDe Specifies converting data to the Parquet format before storing it in Amazon S3. For more information, see [Apache Parquet](https://parquet.apache.org/docs/). More details below.
+     * @param parquetSerDe Converts data to the Parquet format before storing it in Amazon S3. For more information, see [Apache Parquet](https://parquet.apache.org/docs/). See `parquetSerDe` block below for details.
      * @return builder
      */
     def parquetSerDe(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerParquetSerDeArgs.Builder]):
@@ -864,7 +801,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfigurationArgs.Builder)
     /**
-     * @param processors Specifies the data processors as multiple blocks. See `processors` block below for details.
+     * @param processors Data processors as multiple blocks. See `processors` block below for details.
      * @return builder
      */
     def processors(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfigurationProcessorArgs.Builder]*):
@@ -874,7 +811,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfigurationProcessorArgs.Builder)
     /**
-     * @param parameters Specifies the processor parameters as multiple blocks. See `parameters` block below for details.
+     * @param parameters Processor parameters as multiple blocks. See `parameters` block below for details.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfigurationProcessorParameterArgs.Builder]*):
@@ -883,6 +820,10 @@ object kinesis:
       builder.parameters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationArgs.Builder)
+    /**
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @return builder
+     */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptionsArgs.Builder]):
         com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptionsArgs.builder
@@ -890,7 +831,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamHttpEndpointConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptionsArgs.Builder]):
@@ -899,7 +840,7 @@ object kinesis:
       builder.cloudwatchLoggingOptions(args(argsBuilder).build)
 
     /**
-     * @param processingConfiguration The data processing configuration.  See `processingConfiguration` block below for details.
+     * @param processingConfiguration Data processing configuration.  See `processingConfiguration` block below for details.
      * @return builder
      */
     def processingConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfigurationArgs.Builder]):
@@ -908,7 +849,7 @@ object kinesis:
       builder.processingConfiguration(args(argsBuilder).build)
 
     /**
-     * @param requestConfiguration The request configuration.  See `requestConfiguration` block below for details.
+     * @param requestConfiguration Request configuration.  See `requestConfiguration` block below for details.
      * @return builder
      */
     def requestConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurationArgs.Builder]):
@@ -917,7 +858,7 @@ object kinesis:
       builder.requestConfiguration(args(argsBuilder).build)
 
     /**
-     * @param s3Configuration The S3 Configuration. See `s3Configuration` block below for details.
+     * @param s3Configuration S3 Configuration. See `s3Configuration` block below for details.
      * @return builder
      */
     def s3Configuration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamHttpEndpointConfigurationS3ConfigurationArgs.Builder]):
@@ -926,7 +867,7 @@ object kinesis:
       builder.s3Configuration(args(argsBuilder).build)
 
     /**
-     * @param secretsManagerConfiguration The Secret Manager Configuration. See `secretsManagerConfiguration` block below for details.
+     * @param secretsManagerConfiguration Secret Manager Configuration. See `secretsManagerConfiguration` block below for details.
      * @return builder
      */
     def secretsManagerConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamHttpEndpointConfigurationSecretsManagerConfigurationArgs.Builder]):
@@ -936,7 +877,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfigurationArgs.Builder)
     /**
-     * @param processors Specifies the data processors as multiple blocks. See `processors` block below for details.
+     * @param processors Data processors as multiple blocks. See `processors` block below for details.
      * @return builder
      */
     def processors(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfigurationProcessorArgs.Builder]*):
@@ -946,7 +887,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfigurationProcessorArgs.Builder)
     /**
-     * @param parameters Specifies the processor parameters as multiple blocks. See `parameters` block below for details.
+     * @param parameters Processor parameters as multiple blocks. See `parameters` block below for details.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfigurationProcessorParameterArgs.Builder]*):
@@ -956,7 +897,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurationArgs.Builder)
     /**
-     * @param commonAttributes Describes the metadata sent to the HTTP endpoint destination. See `commonAttributes` block below for details.
+     * @param commonAttributes Metadata sent to the HTTP endpoint destination. See `commonAttributes` block below for details.
      * @return builder
      */
     def commonAttributes(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurationCommonAttributeArgs.Builder]*):
@@ -966,7 +907,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamHttpEndpointConfigurationS3ConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamHttpEndpointConfigurationS3ConfigurationCloudwatchLoggingOptionsArgs.Builder]):
@@ -976,7 +917,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamIcebergConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamIcebergConfigurationCloudwatchLoggingOptionsArgs.Builder]):
@@ -994,7 +935,7 @@ object kinesis:
       builder.destinationTableConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param processingConfiguration The data processing configuration.  See `processingConfiguration` block below for details.
+     * @param processingConfiguration Data processing configuration.  See `processingConfiguration` block below for details.
      * @return builder
      */
     def processingConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamIcebergConfigurationProcessingConfigurationArgs.Builder]):
@@ -1003,7 +944,7 @@ object kinesis:
       builder.processingConfiguration(args(argsBuilder).build)
 
     /**
-     * @param s3Configuration The S3 Configuration. See `s3Configuration` block below for details.
+     * @param s3Configuration S3 Configuration. See `s3Configuration` block below for details.
      * @return builder
      */
     def s3Configuration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamIcebergConfigurationS3ConfigurationArgs.Builder]):
@@ -1013,7 +954,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamIcebergConfigurationProcessingConfigurationArgs.Builder)
     /**
-     * @param processors Specifies the data processors as multiple blocks. See `processors` block below for details.
+     * @param processors Data processors as multiple blocks. See `processors` block below for details.
      * @return builder
      */
     def processors(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamIcebergConfigurationProcessingConfigurationProcessorArgs.Builder]*):
@@ -1023,7 +964,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamIcebergConfigurationProcessingConfigurationProcessorArgs.Builder)
     /**
-     * @param parameters Specifies the processor parameters as multiple blocks. See `parameters` block below for details.
+     * @param parameters Processor parameters as multiple blocks. See `parameters` block below for details.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamIcebergConfigurationProcessingConfigurationProcessorParameterArgs.Builder]*):
@@ -1033,7 +974,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamIcebergConfigurationS3ConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamIcebergConfigurationS3ConfigurationCloudwatchLoggingOptionsArgs.Builder]):
@@ -1043,7 +984,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamMskSourceConfigurationArgs.Builder)
     /**
-     * @param authenticationConfiguration The authentication configuration of the Amazon MSK cluster. See `authenticationConfiguration` block below for details.
+     * @param authenticationConfiguration Authentication configuration of the Amazon MSK cluster. See `authenticationConfiguration` block below for details.
      * @return builder
      */
     def authenticationConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamMskSourceConfigurationAuthenticationConfigurationArgs.Builder]):
@@ -1053,7 +994,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchConfigurationCloudwatchLoggingOptionsArgs.Builder]):
@@ -1062,7 +1003,7 @@ object kinesis:
       builder.cloudwatchLoggingOptions(args(argsBuilder).build)
 
     /**
-     * @param documentIdOptions The method for setting up document ID. See [`documentIdOptions` block] below for details.
+     * @param documentIdOptions Method for setting up document ID. See `documentIdOptions` block below for details.
      * @return builder
      */
     def documentIdOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchConfigurationDocumentIdOptionsArgs.Builder]):
@@ -1071,7 +1012,7 @@ object kinesis:
       builder.documentIdOptions(args(argsBuilder).build)
 
     /**
-     * @param processingConfiguration The data processing configuration. See `processingConfiguration` block below for details.
+     * @param processingConfiguration Data processing configuration. See `processingConfiguration` block below for details.
      * @return builder
      */
     def processingConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchConfigurationProcessingConfigurationArgs.Builder]):
@@ -1080,7 +1021,7 @@ object kinesis:
       builder.processingConfiguration(args(argsBuilder).build)
 
     /**
-     * @param s3Configuration The S3 Configuration. See `s3Configuration` block below for details.
+     * @param s3Configuration S3 Configuration. See `s3Configuration` block below for details.
      * @return builder
      */
     def s3Configuration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchConfigurationS3ConfigurationArgs.Builder]):
@@ -1089,7 +1030,7 @@ object kinesis:
       builder.s3Configuration(args(argsBuilder).build)
 
     /**
-     * @param vpcConfig The VPC configuration for the delivery stream to connect to OpenSearch associated with the VPC. See `vpcConfig` block below for details.
+     * @param vpcConfig VPC configuration for the delivery stream to connect to OpenSearch associated with the VPC. See `vpcConfig` block below for details.
      * @return builder
      */
     def vpcConfig(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchConfigurationVpcConfigArgs.Builder]):
@@ -1099,7 +1040,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchConfigurationProcessingConfigurationArgs.Builder)
     /**
-     * @param processors Specifies the data processors as multiple blocks. See `processors` block below for details.
+     * @param processors Data processors as multiple blocks. See `processors` block below for details.
      * @return builder
      */
     def processors(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchConfigurationProcessingConfigurationProcessorArgs.Builder]*):
@@ -1109,7 +1050,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchConfigurationProcessingConfigurationProcessorArgs.Builder)
     /**
-     * @param parameters Specifies the processor parameters as multiple blocks. See `parameters` block below for details.
+     * @param parameters Processor parameters as multiple blocks. See `parameters` block below for details.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchConfigurationProcessingConfigurationProcessorParameterArgs.Builder]*):
@@ -1119,7 +1060,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchConfigurationS3ConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchConfigurationS3ConfigurationCloudwatchLoggingOptionsArgs.Builder]):
@@ -1129,7 +1070,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchserverlessConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchserverlessConfigurationCloudwatchLoggingOptionsArgs.Builder]):
@@ -1138,7 +1079,7 @@ object kinesis:
       builder.cloudwatchLoggingOptions(args(argsBuilder).build)
 
     /**
-     * @param processingConfiguration The data processing configuration.  See `processingConfiguration` block below for details.
+     * @param processingConfiguration Data processing configuration.  See `processingConfiguration` block below for details.
      * @return builder
      */
     def processingConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchserverlessConfigurationProcessingConfigurationArgs.Builder]):
@@ -1147,7 +1088,7 @@ object kinesis:
       builder.processingConfiguration(args(argsBuilder).build)
 
     /**
-     * @param s3Configuration The S3 Configuration. See `s3Configuration` block below for details.
+     * @param s3Configuration S3 Configuration. See `s3Configuration` block below for details.
      * @return builder
      */
     def s3Configuration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchserverlessConfigurationS3ConfigurationArgs.Builder]):
@@ -1156,7 +1097,7 @@ object kinesis:
       builder.s3Configuration(args(argsBuilder).build)
 
     /**
-     * @param vpcConfig The VPC configuration for the delivery stream to connect to OpenSearch Serverless associated with the VPC. See `vpcConfig` block below for details.
+     * @param vpcConfig VPC configuration for the delivery stream to connect to OpenSearch Serverless associated with the VPC. See `vpcConfig` block below for details.
      * @return builder
      */
     def vpcConfig(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchserverlessConfigurationVpcConfigArgs.Builder]):
@@ -1166,7 +1107,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchserverlessConfigurationProcessingConfigurationArgs.Builder)
     /**
-     * @param processors Specifies the data processors as multiple blocks. See `processors` block below for details.
+     * @param processors Data processors as multiple blocks. See `processors` block below for details.
      * @return builder
      */
     def processors(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchserverlessConfigurationProcessingConfigurationProcessorArgs.Builder]*):
@@ -1176,7 +1117,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchserverlessConfigurationProcessingConfigurationProcessorArgs.Builder)
     /**
-     * @param parameters Specifies the processor parameters as multiple blocks. See `parameters` block below for details.
+     * @param parameters Processor parameters as multiple blocks. See `parameters` block below for details.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchserverlessConfigurationProcessingConfigurationProcessorParameterArgs.Builder]*):
@@ -1186,7 +1127,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchserverlessConfigurationS3ConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamOpensearchserverlessConfigurationS3ConfigurationCloudwatchLoggingOptionsArgs.Builder]):
@@ -1196,7 +1137,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptionsArgs.Builder]):
@@ -1205,7 +1146,7 @@ object kinesis:
       builder.cloudwatchLoggingOptions(args(argsBuilder).build)
 
     /**
-     * @param processingConfiguration The data processing configuration.  See `processingConfiguration` block below for details.
+     * @param processingConfiguration Data processing configuration. See `processingConfiguration` block below for details.
      * @return builder
      */
     def processingConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationProcessingConfigurationArgs.Builder]):
@@ -1214,8 +1155,7 @@ object kinesis:
       builder.processingConfiguration(args(argsBuilder).build)
 
     /**
-     * @param s3BackupConfiguration The configuration for backup in Amazon S3. Required if `s3BackupMode` is `Enabled`. Supports the same fields as `s3Configuration` object.
-     * `secretsManagerConfiguration` - (Optional) The Secrets Manager configuration. See `secretsManagerConfiguration` block below for details. This value is required if `username` and `password` are not provided.
+     * @param s3BackupConfiguration Configuration for backup in Amazon S3. Required if `s3BackupMode` is `Enabled`. See `s3BackupConfiguration` block below for details.
      * @return builder
      */
     def s3BackupConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationArgs.Builder]):
@@ -1224,7 +1164,7 @@ object kinesis:
       builder.s3BackupConfiguration(args(argsBuilder).build)
 
     /**
-     * @param s3Configuration The S3 Configuration. See s3Configuration below for details.
+     * @param s3Configuration S3 Configuration. See `s3Configuration` block below for details.
      * @return builder
      */
     def s3Configuration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationS3ConfigurationArgs.Builder]):
@@ -1232,6 +1172,10 @@ object kinesis:
       val argsBuilder = com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationS3ConfigurationArgs.builder
       builder.s3Configuration(args(argsBuilder).build)
 
+    /**
+     * @param secretsManagerConfiguration Secrets Manager configuration. See `secretsManagerConfiguration` block below for details. This value is required if `username` and `password` are not provided.
+     * @return builder
+     */
     def secretsManagerConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationSecretsManagerConfigurationArgs.Builder]):
         com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationSecretsManagerConfigurationArgs.builder
@@ -1239,7 +1183,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationProcessingConfigurationArgs.Builder)
     /**
-     * @param processors Specifies the data processors as multiple blocks. See `processors` block below for details.
+     * @param processors Data processors as multiple blocks. See `processors` block below for details.
      * @return builder
      */
     def processors(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationProcessingConfigurationProcessorArgs.Builder]*):
@@ -1249,7 +1193,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationProcessingConfigurationProcessorArgs.Builder)
     /**
-     * @param parameters Specifies the processor parameters as multiple blocks. See `parameters` block below for details.
+     * @param parameters Processor parameters as multiple blocks. See `parameters` block below for details.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationProcessingConfigurationProcessorParameterArgs.Builder]*):
@@ -1258,6 +1202,10 @@ object kinesis:
       builder.parameters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationArgs.Builder)
+    /**
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @return builder
+     */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptionsArgs.Builder]):
         com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptionsArgs.builder
@@ -1265,7 +1213,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationS3ConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamRedshiftConfigurationS3ConfigurationCloudwatchLoggingOptionsArgs.Builder]):
@@ -1275,7 +1223,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSnowflakeConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSnowflakeConfigurationCloudwatchLoggingOptionsArgs.Builder]):
@@ -1284,7 +1232,7 @@ object kinesis:
       builder.cloudwatchLoggingOptions(args(argsBuilder).build)
 
     /**
-     * @param processingConfiguration The processing configuration. See `processingConfiguration` block below for details.
+     * @param processingConfiguration Processing configuration. See `processingConfiguration` block below for details.
      * @return builder
      */
     def processingConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSnowflakeConfigurationProcessingConfigurationArgs.Builder]):
@@ -1293,7 +1241,7 @@ object kinesis:
       builder.processingConfiguration(args(argsBuilder).build)
 
     /**
-     * @param s3Configuration The S3 configuration. See `s3Configuration` block below for details.
+     * @param s3Configuration S3 configuration. See `s3Configuration` block below for details.
      * @return builder
      */
     def s3Configuration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSnowflakeConfigurationS3ConfigurationArgs.Builder]):
@@ -1302,7 +1250,7 @@ object kinesis:
       builder.s3Configuration(args(argsBuilder).build)
 
     /**
-     * @param secretsManagerConfiguration The Secrets Manager configuration. See `secretsManagerConfiguration` block below for details. This value is required if `user` and `privateKey` are not provided.
+     * @param secretsManagerConfiguration Secrets Manager configuration. See `secretsManagerConfiguration` block below for details. This value is required if `user` and `privateKey` are not provided.
      * @return builder
      */
     def secretsManagerConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSnowflakeConfigurationSecretsManagerConfigurationArgs.Builder]):
@@ -1311,7 +1259,7 @@ object kinesis:
       builder.secretsManagerConfiguration(args(argsBuilder).build)
 
     /**
-     * @param snowflakeRoleConfiguration The configuration for Snowflake role.
+     * @param snowflakeRoleConfiguration Configuration for Snowflake role. See `snowflakeRoleConfiguration` block below for details.
      * @return builder
      */
     def snowflakeRoleConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSnowflakeConfigurationSnowflakeRoleConfigurationArgs.Builder]):
@@ -1320,7 +1268,7 @@ object kinesis:
       builder.snowflakeRoleConfiguration(args(argsBuilder).build)
 
     /**
-     * @param snowflakeVpcConfiguration The VPC configuration for Snowflake.
+     * @param snowflakeVpcConfiguration VPC configuration for Snowflake. See `snowflakeVpcConfiguration` block below for details.
      * @return builder
      */
     def snowflakeVpcConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSnowflakeConfigurationSnowflakeVpcConfigurationArgs.Builder]):
@@ -1330,7 +1278,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSnowflakeConfigurationProcessingConfigurationArgs.Builder)
     /**
-     * @param processors Specifies the data processors as multiple blocks. See `processors` block below for details.
+     * @param processors Data processors as multiple blocks. See `processors` block below for details.
      * @return builder
      */
     def processors(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSnowflakeConfigurationProcessingConfigurationProcessorArgs.Builder]*):
@@ -1340,7 +1288,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSnowflakeConfigurationProcessingConfigurationProcessorArgs.Builder)
     /**
-     * @param parameters Specifies the processor parameters as multiple blocks. See `parameters` block below for details.
+     * @param parameters Processor parameters as multiple blocks. See `parameters` block below for details.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSnowflakeConfigurationProcessingConfigurationProcessorParameterArgs.Builder]*):
@@ -1350,7 +1298,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSnowflakeConfigurationS3ConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSnowflakeConfigurationS3ConfigurationCloudwatchLoggingOptionsArgs.Builder]):
@@ -1360,7 +1308,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSplunkConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptionsArgs.Builder]):
@@ -1369,7 +1317,7 @@ object kinesis:
       builder.cloudwatchLoggingOptions(args(argsBuilder).build)
 
     /**
-     * @param processingConfiguration The data processing configuration.  See `processingConfiguration` block below for details.
+     * @param processingConfiguration Data processing configuration.  See `processingConfiguration` block below for details.
      * @return builder
      */
     def processingConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationArgs.Builder]):
@@ -1378,7 +1326,7 @@ object kinesis:
       builder.processingConfiguration(args(argsBuilder).build)
 
     /**
-     * @param s3Configuration The S3 Configuration. See `s3Configuration` block below for details.
+     * @param s3Configuration S3 Configuration. See `s3Configuration` block below for details.
      * @return builder
      */
     def s3Configuration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSplunkConfigurationS3ConfigurationArgs.Builder]):
@@ -1386,6 +1334,10 @@ object kinesis:
       val argsBuilder = com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSplunkConfigurationS3ConfigurationArgs.builder
       builder.s3Configuration(args(argsBuilder).build)
 
+    /**
+     * @param secretsManagerConfiguration Secrets Manager configuration. See `secretsManagerConfiguration` block below for details. This value is required if `hecToken` is not provided.
+     * @return builder
+     */
     def secretsManagerConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSplunkConfigurationSecretsManagerConfigurationArgs.Builder]):
         com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSplunkConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSplunkConfigurationSecretsManagerConfigurationArgs.builder
@@ -1393,7 +1345,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationArgs.Builder)
     /**
-     * @param processors Specifies the data processors as multiple blocks. See `processors` block below for details.
+     * @param processors Data processors as multiple blocks. See `processors` block below for details.
      * @return builder
      */
     def processors(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationProcessorArgs.Builder]*):
@@ -1403,7 +1355,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationProcessorArgs.Builder)
     /**
-     * @param parameters Specifies the processor parameters as multiple blocks. See `parameters` block below for details.
+     * @param parameters Processor parameters as multiple blocks. See `parameters` block below for details.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationProcessorParameterArgs.Builder]*):
@@ -1413,7 +1365,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSplunkConfigurationS3ConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLoggingOptions The CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
+     * @param cloudwatchLoggingOptions CloudWatch Logging Options for the delivery stream. See `cloudwatchLoggingOptions` block below for details.
      * @return builder
      */
     def cloudwatchLoggingOptions(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSplunkConfigurationS3ConfigurationCloudwatchLoggingOptionsArgs.Builder]):
@@ -1468,7 +1420,7 @@ object kinesis:
       builder.kinesisSourceConfiguration(args(argsBuilder).build)
 
     /**
-     * @param mskSourceConfiguration The configuration for the Amazon MSK cluster to be used as the source for a delivery stream. See `mskSourceConfiguration` block below for details.
+     * @param mskSourceConfiguration Configuration for the Amazon MSK cluster to be used as the source for a delivery stream. See `mskSourceConfiguration` block below for details.
      * @return builder
      */
     def mskSourceConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamMskSourceConfigurationArgs.Builder]):
@@ -1523,8 +1475,6 @@ object kinesis:
 
     /**
      * @param splunkConfiguration Configuration options when `destination` is `splunk`. See `splunkConfiguration` block below for details.
-     * 
-     * **NOTE:** Server-side encryption should not be enabled when a kinesis stream is configured as the source of the firehose delivery stream.
      * @return builder
      */
     def splunkConfiguration(args: Endofunction[com.pulumi.aws.kinesis.inputs.FirehoseDeliveryStreamSplunkConfigurationArgs.Builder]):
@@ -1534,7 +1484,7 @@ object kinesis:
 
   extension (builder: com.pulumi.aws.kinesis.inputs.StreamState.Builder)
     /**
-     * @param streamModeDetails Indicates the [capacity mode](https://docs.aws.amazon.com/streams/latest/dev/how-do-i-size-a-stream.html) of the data stream. Detailed below.
+     * @param streamModeDetails [Capacity mode](https://docs.aws.amazon.com/streams/latest/dev/how-do-i-size-a-stream.html) of the data stream. Detailed below.
      * @return builder
      */
     def streamModeDetails(args: Endofunction[com.pulumi.aws.kinesis.inputs.StreamStreamModeDetailsArgs.Builder]):

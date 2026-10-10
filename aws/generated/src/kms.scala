@@ -41,6 +41,10 @@ object kms:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   extension (builder: com.pulumi.aws.kms.CustomKeyStoreArgs.Builder)
+    /**
+     * @param xksProxyAuthenticationCredential Authentication credential for the external key store proxy (XKS proxy). Applies when `customKeyStoreType` is `EXTERNAL_KEY_STORE`. See `xksProxyAuthenticationCredential` block below.
+     * @return builder
+     */
     def xksProxyAuthenticationCredential(args: Endofunction[com.pulumi.aws.kms.inputs.CustomKeyStoreXksProxyAuthenticationCredentialArgs.Builder]):
         com.pulumi.aws.kms.CustomKeyStoreArgs.Builder =
       val argsBuilder = com.pulumi.aws.kms.inputs.CustomKeyStoreXksProxyAuthenticationCredentialArgs.builder
@@ -88,7 +92,7 @@ object kms:
 
   extension (builder: com.pulumi.aws.kms.GrantArgs.Builder)
     /**
-     * @param constraints A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see [Encryption Context](https://docs.aws.amazon.com/kms/latest/developerguide/encrypt_context.html).
+     * @param constraints Structure that you can use to allow certain operations in the grant only when the desired encryption context is present. See `constraints` Block for details. For more information about encryption context, see [Encryption Context](https://docs.aws.amazon.com/kms/latest/developerguide/encrypt_context.html).
      * @return builder
      */
     def constraints(args: Endofunction[com.pulumi.aws.kms.inputs.GrantConstraintArgs.Builder]*):
@@ -286,6 +290,10 @@ object kms:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   extension (builder: com.pulumi.aws.kms.inputs.CustomKeyStoreState.Builder)
+    /**
+     * @param xksProxyAuthenticationCredential Authentication credential for the external key store proxy (XKS proxy). Applies when `customKeyStoreType` is `EXTERNAL_KEY_STORE`. See `xksProxyAuthenticationCredential` block below.
+     * @return builder
+     */
     def xksProxyAuthenticationCredential(args: Endofunction[com.pulumi.aws.kms.inputs.CustomKeyStoreXksProxyAuthenticationCredentialArgs.Builder]):
         com.pulumi.aws.kms.inputs.CustomKeyStoreState.Builder =
       val argsBuilder = com.pulumi.aws.kms.inputs.CustomKeyStoreXksProxyAuthenticationCredentialArgs.builder
@@ -299,7 +307,7 @@ object kms:
 
   extension (builder: com.pulumi.aws.kms.inputs.GetSecretsArgs.Builder)
     /**
-     * @param secrets One or more encrypted payload definitions from the KMS service. See the Secret Definitions below.
+     * @param secrets One or more encrypted payload definitions from the KMS service. See `secret` below.
      * @return builder
      */
     def secrets(args: Endofunction[com.pulumi.aws.kms.inputs.GetSecretsSecretArgs.Builder]*):
@@ -309,7 +317,7 @@ object kms:
 
   extension (builder: com.pulumi.aws.kms.inputs.GrantState.Builder)
     /**
-     * @param constraints A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see [Encryption Context](https://docs.aws.amazon.com/kms/latest/developerguide/encrypt_context.html).
+     * @param constraints Structure that you can use to allow certain operations in the grant only when the desired encryption context is present. See `constraints` Block for details. For more information about encryption context, see [Encryption Context](https://docs.aws.amazon.com/kms/latest/developerguide/encrypt_context.html).
      * @return builder
      */
     def constraints(args: Endofunction[com.pulumi.aws.kms.inputs.GrantConstraintArgs.Builder]*):

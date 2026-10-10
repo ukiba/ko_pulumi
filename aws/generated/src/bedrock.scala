@@ -999,7 +999,7 @@ object bedrock:
   /**
    * Manages an AWS Bedrock AgentCore Online Evaluation Configuration. Online evaluation configurations continuously monitor agent performance by sampling live traffic from CloudWatch logs and applying evaluators to assess agent quality in production.
    * 
-   * &gt; **Note:** CloudWatch Transaction Serach must be [enabled](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Enable-TransactionSearch.html) before using this resource.
+   * &gt; **Note:** CloudWatch Transaction Search must be [enabled](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Enable-TransactionSearch.html) before using this resource.
    */
   def AgentcoreOnlineEvaluationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreOnlineEvaluationConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1176,8 +1176,15 @@ object bedrock:
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
     com.pulumi.aws.bedrock.AgentcoreWorkloadIdentity(name,
-        args(argsBuilder).build,
+        argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   object BedrockFunctions:
@@ -4567,7 +4574,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaArgs.Builder)
     /**
-     * @param source Configuration for the API schema. Supports exactly one of `inlinePayload` or `s3` (see `s3` Block). For HTTP targets, the `inlinePayload` block is documented under its full path (for example, `target_configuration.http.agentcore_runtime.schema.source.inline_payload` Block).
+     * @param source Configuration for the API schema. Supports exactly one of `inlinePayload` or `s3`. For HTTP targets, these blocks are documented under their full paths (for example, `target_configuration.http.agentcore_runtime.schema.source.inline_payload` Block and `target_configuration.http.agentcore_runtime.schema.source.s3` Block).
      * @return builder
      */
     def source(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeSchemaSourceArgs.Builder]):
@@ -4628,7 +4635,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaArgs.Builder)
     /**
-     * @param source Configuration for the API schema. Supports exactly one of `inlinePayload` or `s3` (see `s3` Block). For HTTP targets, the `inlinePayload` block is documented under its full path (for example, `target_configuration.http.agentcore_runtime.schema.source.inline_payload` Block).
+     * @param source Configuration for the API schema. Supports exactly one of `inlinePayload` or `s3`. For HTTP targets, these blocks are documented under their full paths (for example, `target_configuration.http.agentcore_runtime.schema.source.inline_payload` Block and `target_configuration.http.agentcore_runtime.schema.source.s3` Block).
      * @return builder
      */
     def source(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpPassthroughSchemaSourceArgs.Builder]):
@@ -4782,7 +4789,7 @@ object bedrock:
       builder.mcpServer(args(argsBuilder).build)
 
     /**
-     * @param openApiSchema OpenAPI schema-based target configuration. Supports exactly one of `inlinePayload` (see `target_configuration.mcp.open_api_schema.inline_payload` Block) or `s3` (see `s3` Block).
+     * @param openApiSchema OpenAPI schema-based target configuration. Supports exactly one of `inlinePayload` (see `target_configuration.mcp.open_api_schema.inline_payload` Block) or `s3` (see `target_configuration.mcp.open_api_schema.s3` Block).
      * @return builder
      */
     def openApiSchema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpOpenApiSchemaArgs.Builder]):
@@ -4791,7 +4798,7 @@ object bedrock:
       builder.openApiSchema(args(argsBuilder).build)
 
     /**
-     * @param smithyModel Smithy model-based target configuration. Supports exactly one of `inlinePayload` (see `target_configuration.mcp.smithy_model.inline_payload` Block) or `s3` (see `s3` Block).
+     * @param smithyModel Smithy model-based target configuration. Supports exactly one of `inlinePayload` (see `target_configuration.mcp.smithy_model.inline_payload` Block) or `s3` (see `target_configuration.mcp.smithy_model.s3` Block).
      * @return builder
      */
     def smithyModel(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpSmithyModelArgs.Builder]):
@@ -4849,7 +4856,7 @@ object bedrock:
       builder.inlinePayloads(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param s3 S3-based tool definition. See `s3` Block below.
+     * @param s3 S3-based tool definition. See `target_configuration.mcp.lambda.tool_schema.s3` Block below.
      * @return builder
      */
     def s3(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaS3Args.Builder]):
@@ -5049,7 +5056,7 @@ object bedrock:
       builder.inlinePayload(args(argsBuilder).build)
 
     /**
-     * @param s3 S3 location of the tool schema. See `s3` Block below.
+     * @param s3 S3 location of the tool schema. See `target_configuration.mcp.mcp_server.mcp_tool_schema.s3` Block below.
      * @return builder
      */
     def s3(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpMcpServerMcpToolSchemaS3Args.Builder]):
@@ -5848,7 +5855,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyConfigurationSelfManagedConfigurationTriggerConditionsArgs.Builder)
     /**
-     * @param messageBasedTrigger Message-based condition. See `messageBasedTrigger` Block below.
+     * @param messageBasedTrigger Message-based condition. See `configuration.self_managed_configuration.trigger_conditions.message_based_trigger` Block below.
      * @return builder
      */
     def messageBasedTrigger(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyConfigurationSelfManagedConfigurationTriggerConditionsMessageBasedTriggerArgs.Builder]):
@@ -5857,7 +5864,7 @@ object bedrock:
       builder.messageBasedTrigger(args(argsBuilder).build)
 
     /**
-     * @param timeBasedTrigger Idle-time condition. See `timeBasedTrigger` Block below.
+     * @param timeBasedTrigger Idle-time condition. See `configuration.self_managed_configuration.trigger_conditions.time_based_trigger` Block below.
      * @return builder
      */
     def timeBasedTrigger(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyConfigurationSelfManagedConfigurationTriggerConditionsTimeBasedTriggerArgs.Builder]):
@@ -5866,7 +5873,7 @@ object bedrock:
       builder.timeBasedTrigger(args(argsBuilder).build)
 
     /**
-     * @param tokenBasedTrigger Token-based condition. See `tokenBasedTrigger` Block below.
+     * @param tokenBasedTrigger Token-based condition. See `configuration.self_managed_configuration.trigger_conditions.token_based_trigger` Block below.
      * @return builder
      */
     def tokenBasedTrigger(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyConfigurationSelfManagedConfigurationTriggerConditionsTokenBasedTriggerArgs.Builder]):

@@ -21,7 +21,7 @@ object codegurureviewer:
 
   extension (builder: com.pulumi.aws.codegurureviewer.RepositoryAssociationArgs.Builder)
     /**
-     * @param kmsKeyDetails An object describing the KMS key to asssociate. Block is documented below.
+     * @param kmsKeyDetails An object describing the KMS key to associate. Block is documented below.
      * @return builder
      */
     def kmsKeyDetails(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationKmsKeyDetailsArgs.Builder]):
@@ -69,7 +69,7 @@ object codegurureviewer:
 
   extension (builder: com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationState.Builder)
     /**
-     * @param kmsKeyDetails An object describing the KMS key to asssociate. Block is documented below.
+     * @param kmsKeyDetails An object describing the KMS key to associate. Block is documented below.
      * @return builder
      */
     def kmsKeyDetails(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationKmsKeyDetailsArgs.Builder]):

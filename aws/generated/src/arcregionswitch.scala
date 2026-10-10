@@ -173,7 +173,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowArgs.Builder)
     /**
-     * @param steps Steps in the workflow. See `step` Block for details.
+     * @param steps Steps in the workflow. See `workflow.step` Block for details.
      * @return builder
      */
     def steps(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepArgs.Builder]*):
@@ -510,7 +510,7 @@ object arcregionswitch:
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigArgs.Builder)
     /**
-     * @param steps Steps to execute in parallel. See `step` Block for details. The parallel step schema matches `step` Block but does not support `parallelConfig` to prevent infinite nesting.
+     * @param steps Steps to execute in parallel. See `workflow.step.parallel_config.step` Block for details. The parallel step schema matches `workflow.step` Block but does not support `parallelConfig` to prevent infinite nesting.
      * @return builder
      */
     def steps(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepArgs.Builder]*):

@@ -33,7 +33,7 @@ object timestreamquery:
       builder.errorReportConfiguration(args(argsBuilder).build)
 
     /**
-     * @param lastRunSummaries Runtime summary for the last scheduled query run.
+     * @param lastRunSummaries Runtime summary for the last scheduled query run. See `lastRunSummary` Block for details.
      * @return builder
      */
     def lastRunSummaries(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryLastRunSummaryArgs.Builder]*):
@@ -51,7 +51,7 @@ object timestreamquery:
       builder.notificationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param recentlyFailedRuns Runtime summary for the last five failed scheduled query runs.
+     * @param recentlyFailedRuns Runtime summary for the last five failed scheduled query runs. See `recentlyFailedRuns` Block for details.
      * @return builder
      */
     def recentlyFailedRuns(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryRecentlyFailedRunArgs.Builder]*):
@@ -96,7 +96,7 @@ object timestreamquery:
 
   extension (builder: com.pulumi.aws.timestreamquery.inputs.ScheduledQueryLastRunSummaryArgs.Builder)
     /**
-     * @param errorReportLocations S3 location for error report.
+     * @param errorReportLocations S3 location for error report. See `recently_failed_runs.error_report_location` Block for details.
      * @return builder
      */
     def errorReportLocations(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryLastRunSummaryErrorReportLocationArgs.Builder]*):
@@ -105,7 +105,7 @@ object timestreamquery:
       builder.errorReportLocations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param executionStats Statistics for a single scheduled query run.
+     * @param executionStats Statistics for a single scheduled query run. See `recently_failed_runs.execution_stats` Block for details.
      * @return builder
      */
     def executionStats(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryLastRunSummaryExecutionStatArgs.Builder]*):
@@ -114,7 +114,7 @@ object timestreamquery:
       builder.executionStats(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param queryInsightsResponses Various insights and metrics related to the run summary of the scheduled query.
+     * @param queryInsightsResponses Various insights and metrics related to the run summary of the scheduled query. See `recently_failed_runs.query_insights_response` Block for details.
      * @return builder
      */
     def queryInsightsResponses(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryLastRunSummaryQueryInsightsResponseArgs.Builder]*):
@@ -124,7 +124,7 @@ object timestreamquery:
 
   extension (builder: com.pulumi.aws.timestreamquery.inputs.ScheduledQueryLastRunSummaryErrorReportLocationArgs.Builder)
     /**
-     * @param s3ReportLocations S3 location where error reports are written.
+     * @param s3ReportLocations S3 location where error reports are written. See `recently_failed_runs.error_report_location.s3_report_location` Block for details.
      * @return builder
      */
     def s3ReportLocations(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryLastRunSummaryErrorReportLocationS3ReportLocationArgs.Builder]*):
@@ -134,7 +134,7 @@ object timestreamquery:
 
   extension (builder: com.pulumi.aws.timestreamquery.inputs.ScheduledQueryLastRunSummaryQueryInsightsResponseArgs.Builder)
     /**
-     * @param querySpatialCoverages Insights into the spatial coverage of the query, including the table with sub-optimal (max) spatial pruning. This information can help you identify areas for improvement in your partitioning strategy to enhance spatial pruning.
+     * @param querySpatialCoverages Insights into the spatial coverage of the query, including the table with sub-optimal (max) spatial pruning. This information can help you identify areas for improvement in your partitioning strategy to enhance spatial pruning. See `recently_failed_runs.query_insights_response.query_spatial_coverage` Block for details.
      * @return builder
      */
     def querySpatialCoverages(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryLastRunSummaryQueryInsightsResponseQuerySpatialCoverageArgs.Builder]*):
@@ -143,7 +143,7 @@ object timestreamquery:
       builder.querySpatialCoverages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param queryTemporalRanges Insights into the temporal range of the query, including the table with the largest (max) time range. Following are some of the potential options for optimizing time-based pruning: add missing time-predicates, remove functions around the time predicates, add time predicates to all the sub-queries.
+     * @param queryTemporalRanges Insights into the temporal range of the query, including the table with the largest (max) time range. Following are some of the potential options for optimizing time-based pruning: add missing time-predicates, remove functions around the time predicates, add time predicates to all the sub-queries. See `recently_failed_runs.query_insights_response.query_temporal_range` Block for details.
      * @return builder
      */
     def queryTemporalRanges(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryLastRunSummaryQueryInsightsResponseQueryTemporalRangeArgs.Builder]*):
@@ -153,7 +153,7 @@ object timestreamquery:
 
   extension (builder: com.pulumi.aws.timestreamquery.inputs.ScheduledQueryLastRunSummaryQueryInsightsResponseQuerySpatialCoverageArgs.Builder)
     /**
-     * @param maxes Insights into the most sub-optimal performing table on the temporal axis:
+     * @param maxes Insights into the most sub-optimal performing table on the temporal axis. See `recently_failed_runs.query_insights_response.query_temporal_range.max` Block for details.
      * @return builder
      */
     def maxes(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryLastRunSummaryQueryInsightsResponseQuerySpatialCoverageMaxisArgs.Builder]*):
@@ -163,7 +163,7 @@ object timestreamquery:
 
   extension (builder: com.pulumi.aws.timestreamquery.inputs.ScheduledQueryLastRunSummaryQueryInsightsResponseQueryTemporalRangeArgs.Builder)
     /**
-     * @param maxes Insights into the most sub-optimal performing table on the temporal axis:
+     * @param maxes Insights into the most sub-optimal performing table on the temporal axis. See `recently_failed_runs.query_insights_response.query_temporal_range.max` Block for details.
      * @return builder
      */
     def maxes(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryLastRunSummaryQueryInsightsResponseQueryTemporalRangeMaxisArgs.Builder]*):
@@ -183,7 +183,7 @@ object timestreamquery:
 
   extension (builder: com.pulumi.aws.timestreamquery.inputs.ScheduledQueryRecentlyFailedRunArgs.Builder)
     /**
-     * @param errorReportLocations S3 location for error report.
+     * @param errorReportLocations S3 location for error report. See `recently_failed_runs.error_report_location` Block for details.
      * @return builder
      */
     def errorReportLocations(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryRecentlyFailedRunErrorReportLocationArgs.Builder]*):
@@ -192,7 +192,7 @@ object timestreamquery:
       builder.errorReportLocations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param executionStats Statistics for a single scheduled query run.
+     * @param executionStats Statistics for a single scheduled query run. See `recently_failed_runs.execution_stats` Block for details.
      * @return builder
      */
     def executionStats(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryRecentlyFailedRunExecutionStatArgs.Builder]*):
@@ -201,7 +201,7 @@ object timestreamquery:
       builder.executionStats(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param queryInsightsResponses Various insights and metrics related to the run summary of the scheduled query.
+     * @param queryInsightsResponses Various insights and metrics related to the run summary of the scheduled query. See `recently_failed_runs.query_insights_response` Block for details.
      * @return builder
      */
     def queryInsightsResponses(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryRecentlyFailedRunQueryInsightsResponseArgs.Builder]*):
@@ -211,7 +211,7 @@ object timestreamquery:
 
   extension (builder: com.pulumi.aws.timestreamquery.inputs.ScheduledQueryRecentlyFailedRunErrorReportLocationArgs.Builder)
     /**
-     * @param s3ReportLocations S3 location where error reports are written.
+     * @param s3ReportLocations S3 location where error reports are written. See `recently_failed_runs.error_report_location.s3_report_location` Block for details.
      * @return builder
      */
     def s3ReportLocations(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryRecentlyFailedRunErrorReportLocationS3ReportLocationArgs.Builder]*):
@@ -221,7 +221,7 @@ object timestreamquery:
 
   extension (builder: com.pulumi.aws.timestreamquery.inputs.ScheduledQueryRecentlyFailedRunQueryInsightsResponseArgs.Builder)
     /**
-     * @param querySpatialCoverages Insights into the spatial coverage of the query, including the table with sub-optimal (max) spatial pruning. This information can help you identify areas for improvement in your partitioning strategy to enhance spatial pruning.
+     * @param querySpatialCoverages Insights into the spatial coverage of the query, including the table with sub-optimal (max) spatial pruning. This information can help you identify areas for improvement in your partitioning strategy to enhance spatial pruning. See `recently_failed_runs.query_insights_response.query_spatial_coverage` Block for details.
      * @return builder
      */
     def querySpatialCoverages(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryRecentlyFailedRunQueryInsightsResponseQuerySpatialCoverageArgs.Builder]*):
@@ -230,7 +230,7 @@ object timestreamquery:
       builder.querySpatialCoverages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param queryTemporalRanges Insights into the temporal range of the query, including the table with the largest (max) time range. Following are some of the potential options for optimizing time-based pruning: add missing time-predicates, remove functions around the time predicates, add time predicates to all the sub-queries.
+     * @param queryTemporalRanges Insights into the temporal range of the query, including the table with the largest (max) time range. Following are some of the potential options for optimizing time-based pruning: add missing time-predicates, remove functions around the time predicates, add time predicates to all the sub-queries. See `recently_failed_runs.query_insights_response.query_temporal_range` Block for details.
      * @return builder
      */
     def queryTemporalRanges(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryRecentlyFailedRunQueryInsightsResponseQueryTemporalRangeArgs.Builder]*):
@@ -240,7 +240,7 @@ object timestreamquery:
 
   extension (builder: com.pulumi.aws.timestreamquery.inputs.ScheduledQueryRecentlyFailedRunQueryInsightsResponseQuerySpatialCoverageArgs.Builder)
     /**
-     * @param maxes Insights into the most sub-optimal performing table on the temporal axis:
+     * @param maxes Insights into the most sub-optimal performing table on the temporal axis. See `recently_failed_runs.query_insights_response.query_temporal_range.max` Block for details.
      * @return builder
      */
     def maxes(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryRecentlyFailedRunQueryInsightsResponseQuerySpatialCoverageMaxisArgs.Builder]*):
@@ -250,7 +250,7 @@ object timestreamquery:
 
   extension (builder: com.pulumi.aws.timestreamquery.inputs.ScheduledQueryRecentlyFailedRunQueryInsightsResponseQueryTemporalRangeArgs.Builder)
     /**
-     * @param maxes Insights into the most sub-optimal performing table on the temporal axis:
+     * @param maxes Insights into the most sub-optimal performing table on the temporal axis. See `recently_failed_runs.query_insights_response.query_temporal_range.max` Block for details.
      * @return builder
      */
     def maxes(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryRecentlyFailedRunQueryInsightsResponseQueryTemporalRangeMaxisArgs.Builder]*):
@@ -269,7 +269,7 @@ object timestreamquery:
       builder.errorReportConfiguration(args(argsBuilder).build)
 
     /**
-     * @param lastRunSummaries Runtime summary for the last scheduled query run.
+     * @param lastRunSummaries Runtime summary for the last scheduled query run. See `lastRunSummary` Block for details.
      * @return builder
      */
     def lastRunSummaries(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryLastRunSummaryArgs.Builder]*):
@@ -287,7 +287,7 @@ object timestreamquery:
       builder.notificationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param recentlyFailedRuns Runtime summary for the last five failed scheduled query runs.
+     * @param recentlyFailedRuns Runtime summary for the last five failed scheduled query runs. See `recentlyFailedRuns` Block for details.
      * @return builder
      */
     def recentlyFailedRuns(args: Endofunction[com.pulumi.aws.timestreamquery.inputs.ScheduledQueryRecentlyFailedRunArgs.Builder]*):

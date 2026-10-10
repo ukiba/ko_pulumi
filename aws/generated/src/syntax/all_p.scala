@@ -525,6 +525,7 @@ export ko_pulumi.aws.devopsguru.sns
 export ko_pulumi.aws.devopsguru.tags
 export ko_pulumi.aws.directconnect.rateLimiterStatuses
 export ko_pulumi.aws.directoryservice.target
+export ko_pulumi.aws.directoryservice.timeouts
 export ko_pulumi.aws.dlm.parameters
 export ko_pulumi.aws.dlm.policyDetails
 export ko_pulumi.aws.dlm.retainRule
@@ -1086,10 +1087,16 @@ export ko_pulumi.aws.observabilityadmin.sourceLogsConfiguration
 export ko_pulumi.aws.observabilityadmin.sourceMetricsConfiguration
 export ko_pulumi.aws.observabilityadmin.tagPropagationConfiguration
 export ko_pulumi.aws.observabilityadmin.timeouts
+export ko_pulumi.aws.odb.pointInTimeRestore
+export ko_pulumi.aws.odb.resourcePoolSummary
+export ko_pulumi.aws.odb.restoreFromBackup
 export ko_pulumi.aws.odb.s3Accesses
+export ko_pulumi.aws.odb.scheduledOperations
 export ko_pulumi.aws.odb.serviceNetworkEndpoints
+export ko_pulumi.aws.odb.sourceConfiguration
 export ko_pulumi.aws.odb.stsAccesses
 export ko_pulumi.aws.odb.timeouts
+export ko_pulumi.aws.odb.transportableTablespace
 export ko_pulumi.aws.opensearch.packageSource
 export ko_pulumi.aws.opensearch.remoteDomainInfo
 export ko_pulumi.aws.opensearch.s3VectorsEngine

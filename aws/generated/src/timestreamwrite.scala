@@ -36,7 +36,7 @@ object timestreamwrite:
 
   extension (builder: com.pulumi.aws.timestreamwrite.TableArgs.Builder)
     /**
-     * @param magneticStoreWriteProperties Contains properties to set on the table when enabling magnetic store writes. See Magnetic Store Write Properties below for more details.
+     * @param magneticStoreWriteProperties Properties to set on the table when enabling magnetic store writes. See `magneticStoreWriteProperties` Block below for more details.
      * @return builder
      */
     def magneticStoreWriteProperties(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.TableMagneticStoreWritePropertiesArgs.Builder]):
@@ -45,7 +45,7 @@ object timestreamwrite:
       builder.magneticStoreWriteProperties(args(argsBuilder).build)
 
     /**
-     * @param retentionProperties The retention duration for the memory store and magnetic store. See Retention Properties below for more details. If not provided, `magneticStoreRetentionPeriodInDays` default to 73000 and `memoryStoreRetentionPeriodInHours` defaults to 6.
+     * @param retentionProperties Retention duration for the memory store and magnetic store. See `retentionProperties` Block below for more details. If not provided, `magneticStoreRetentionPeriodInDays` defaults to 73000 and `memoryStoreRetentionPeriodInHours` defaults to 6.
      * @return builder
      */
     def retentionProperties(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.TableRetentionPropertiesArgs.Builder]):
@@ -54,7 +54,7 @@ object timestreamwrite:
       builder.retentionProperties(args(argsBuilder).build)
 
     /**
-     * @param schema The schema of the table. See Schema below for more details.
+     * @param schema Schema of the table. See `schema` Block below for more details.
      * @return builder
      */
     def schema(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.TableSchemaArgs.Builder]):
@@ -95,7 +95,7 @@ object timestreamwrite:
 
   extension (builder: com.pulumi.aws.timestreamwrite.inputs.TableMagneticStoreWritePropertiesArgs.Builder)
     /**
-     * @param magneticStoreRejectedDataLocation The location to write error reports for records rejected asynchronously during magnetic store writes. See Magnetic Store Rejected Data Location below for more details.
+     * @param magneticStoreRejectedDataLocation Location to write error reports for records rejected asynchronously during magnetic store writes. See `magneticStoreRejectedDataLocation` Block below for more details.
      * @return builder
      */
     def magneticStoreRejectedDataLocation(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.TableMagneticStoreWritePropertiesMagneticStoreRejectedDataLocationArgs.Builder]):
@@ -105,7 +105,7 @@ object timestreamwrite:
 
   extension (builder: com.pulumi.aws.timestreamwrite.inputs.TableMagneticStoreWritePropertiesMagneticStoreRejectedDataLocationArgs.Builder)
     /**
-     * @param s3Configuration Configuration of an S3 location to write error reports for records rejected, asynchronously, during magnetic store writes. See S3 Configuration below for more details.
+     * @param s3Configuration Configuration of an S3 location to write error reports for records rejected, asynchronously, during magnetic store writes. See `s3Configuration` Block below for more details.
      * @return builder
      */
     def s3Configuration(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.TableMagneticStoreWritePropertiesMagneticStoreRejectedDataLocationS3ConfigurationArgs.Builder]):
@@ -115,7 +115,7 @@ object timestreamwrite:
 
   extension (builder: com.pulumi.aws.timestreamwrite.inputs.TableSchemaArgs.Builder)
     /**
-     * @param compositePartitionKey A non-empty list of partition keys defining the attributes used to partition the table data. The order of the list determines the partition hierarchy. The name and type of each partition key as well as the partition key order cannot be changed after the table is created. However, the enforcement level of each partition key can be changed. See Composite Partition Key below for more details.
+     * @param compositePartitionKey Non-empty list of partition keys defining the attributes used to partition the table data. The order of the list determines the partition hierarchy. The name and type of each partition key as well as the partition key order cannot be changed after the table is created. However, the enforcement level of each partition key can be changed. See `compositePartitionKey` Block below for more details.
      * @return builder
      */
     def compositePartitionKey(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.TableSchemaCompositePartitionKeyArgs.Builder]):
@@ -125,7 +125,7 @@ object timestreamwrite:
 
   extension (builder: com.pulumi.aws.timestreamwrite.inputs.TableState.Builder)
     /**
-     * @param magneticStoreWriteProperties Contains properties to set on the table when enabling magnetic store writes. See Magnetic Store Write Properties below for more details.
+     * @param magneticStoreWriteProperties Properties to set on the table when enabling magnetic store writes. See `magneticStoreWriteProperties` Block below for more details.
      * @return builder
      */
     def magneticStoreWriteProperties(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.TableMagneticStoreWritePropertiesArgs.Builder]):
@@ -134,7 +134,7 @@ object timestreamwrite:
       builder.magneticStoreWriteProperties(args(argsBuilder).build)
 
     /**
-     * @param retentionProperties The retention duration for the memory store and magnetic store. See Retention Properties below for more details. If not provided, `magneticStoreRetentionPeriodInDays` default to 73000 and `memoryStoreRetentionPeriodInHours` defaults to 6.
+     * @param retentionProperties Retention duration for the memory store and magnetic store. See `retentionProperties` Block below for more details. If not provided, `magneticStoreRetentionPeriodInDays` defaults to 73000 and `memoryStoreRetentionPeriodInHours` defaults to 6.
      * @return builder
      */
     def retentionProperties(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.TableRetentionPropertiesArgs.Builder]):
@@ -143,7 +143,7 @@ object timestreamwrite:
       builder.retentionProperties(args(argsBuilder).build)
 
     /**
-     * @param schema The schema of the table. See Schema below for more details.
+     * @param schema Schema of the table. See `schema` Block below for more details.
      * @return builder
      */
     def schema(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.TableSchemaArgs.Builder]):

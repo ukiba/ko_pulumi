@@ -30,6 +30,9 @@ object appengine:
    *    entire project to delete the application. This provider will report the application has been
    *    successfully deleted; this is a limitation of the provider, and will go away in the future.
    *    This provider is not able to delete App Engine applications.
+   * 
+   * &gt; **Note:** All arguments marked as write-only values will not be stored in the state: `iap.oauth2_client_secret_wo`.
+   * Read more about Write-only Arguments.
    */
   def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.appengine.ApplicationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

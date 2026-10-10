@@ -104,7 +104,7 @@ object amp:
 
   extension (builder: com.pulumi.aws.amp.QueryLoggingConfigurationArgs.Builder)
     /**
-     * @param destinations Configuration block for the logging destinations. See `destination`.
+     * @param destinations Configuration block for the logging destinations. See `destination` Block.
      * @return builder
      */
     def destinations(args: Endofunction[com.pulumi.aws.amp.inputs.QueryLoggingConfigurationDestinationArgs.Builder]*):
@@ -264,7 +264,7 @@ object amp:
 
   extension (builder: com.pulumi.aws.amp.WorkspaceArgs.Builder)
     /**
-     * @param loggingConfiguration Logging configuration for the workspace. See Logging Configuration below for details.
+     * @param loggingConfiguration Logging configuration for the workspace. See `loggingConfiguration` Block below for details.
      * @return builder
      */
     def loggingConfiguration(args: Endofunction[com.pulumi.aws.amp.inputs.WorkspaceLoggingConfigurationArgs.Builder]):
@@ -350,7 +350,7 @@ object amp:
 
   extension (builder: com.pulumi.aws.amp.inputs.QueryLoggingConfigurationDestinationArgs.Builder)
     /**
-     * @param cloudwatchLogs Configuration block for CloudWatch Logs destination. See `cloudwatchLogs`.
+     * @param cloudwatchLogs Configuration block for CloudWatch Logs destination. See `cloudwatchLogs` Block.
      * @return builder
      */
     def cloudwatchLogs(args: Endofunction[com.pulumi.aws.amp.inputs.QueryLoggingConfigurationDestinationCloudwatchLogsArgs.Builder]):
@@ -359,7 +359,7 @@ object amp:
       builder.cloudwatchLogs(args(argsBuilder).build)
 
     /**
-     * @param filters A list of filter configurations that specify which logs should be sent to the destination. See `filters`.
+     * @param filters List of filter configurations that specify which logs should be sent to the destination. See `filters` Block.
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.amp.inputs.QueryLoggingConfigurationDestinationFiltersArgs.Builder]):
@@ -369,7 +369,7 @@ object amp:
 
   extension (builder: com.pulumi.aws.amp.inputs.QueryLoggingConfigurationState.Builder)
     /**
-     * @param destinations Configuration block for the logging destinations. See `destination`.
+     * @param destinations Configuration block for the logging destinations. See `destination` Block.
      * @return builder
      */
     def destinations(args: Endofunction[com.pulumi.aws.amp.inputs.QueryLoggingConfigurationDestinationArgs.Builder]*):
@@ -536,7 +536,7 @@ object amp:
 
   extension (builder: com.pulumi.aws.amp.inputs.WorkspaceState.Builder)
     /**
-     * @param loggingConfiguration Logging configuration for the workspace. See Logging Configuration below for details.
+     * @param loggingConfiguration Logging configuration for the workspace. See `loggingConfiguration` Block below for details.
      * @return builder
      */
     def loggingConfiguration(args: Endofunction[com.pulumi.aws.amp.inputs.WorkspaceLoggingConfigurationArgs.Builder]):

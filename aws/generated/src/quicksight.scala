@@ -54,7 +54,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.AnalysisArgs.Builder)
     /**
-     * @param parameters The parameters for the creation of the analysis, which you want to use to override the default settings. An analysis can have any type of parameters, and some parameters might accept multiple values. See parameters.
+     * @param parameters Parameters for the creation of the analysis, which you want to use to override the default settings. An analysis can have any type of parameters, and some parameters might accept multiple values. See parameters.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.quicksight.inputs.AnalysisParametersArgs.Builder]):
@@ -63,7 +63,7 @@ object quicksight:
       builder.parameters(args(argsBuilder).build)
 
     /**
-     * @param permissions A set of resource permissions on the analysis. Maximum of 64 items. See permissions.
+     * @param permissions Set of resource permissions on the analysis. Maximum of 64 items. See permissions.
      * @return builder
      */
     def permissions(args: Endofunction[com.pulumi.aws.quicksight.inputs.AnalysisPermissionArgs.Builder]*):
@@ -72,7 +72,7 @@ object quicksight:
       builder.permissions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param sourceEntity The entity that you are using as a source when you create the analysis (template). Only one of `definition` or `sourceEntity` should be configured. See source_entity.
+     * @param sourceEntity Entity that you are using as a source when you create the analysis (template). Only one of `definition` or `sourceEntity` should be configured. See source_entity.
      * @return builder
      */
     def sourceEntity(args: Endofunction[com.pulumi.aws.quicksight.inputs.AnalysisSourceEntityArgs.Builder]):
@@ -97,7 +97,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.CustomPermissionsArgs.Builder)
     /**
-     * @param capabilities Actions to include in the custom permissions profile. See capabilities.
+     * @param capabilities Actions to include in the custom permissions profile. See `capabilities` Block.
      * @return builder
      */
     def capabilities(args: Endofunction[com.pulumi.aws.quicksight.inputs.CustomPermissionsCapabilitiesArgs.Builder]):
@@ -125,7 +125,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.DashboardArgs.Builder)
     /**
-     * @param dashboardPublishOptions Options for publishing the dashboard. See dashboard_publish_options.
+     * @param dashboardPublishOptions Options for publishing the dashboard. See `dashboardPublishOptions`.
      * @return builder
      */
     def dashboardPublishOptions(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardDashboardPublishOptionsArgs.Builder]):
@@ -134,7 +134,7 @@ object quicksight:
       builder.dashboardPublishOptions(args(argsBuilder).build)
 
     /**
-     * @param parameters The parameters for the creation of the dashboard, which you want to use to override the default settings. A dashboard can have any type of parameters, and some parameters might accept multiple values. See parameters.
+     * @param parameters Parameters for the creation of the dashboard, which you want to use to override the default settings. A dashboard can have any type of parameters, and some parameters might accept multiple values. See `parameters`.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardParametersArgs.Builder]):
@@ -143,7 +143,7 @@ object quicksight:
       builder.parameters(args(argsBuilder).build)
 
     /**
-     * @param permissions A set of resource permissions on the dashboard. Maximum of 64 items. See permissions.
+     * @param permissions Set of resource permissions on the dashboard. Maximum of 64 items. See `permissions`.
      * @return builder
      */
     def permissions(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardPermissionArgs.Builder]*):
@@ -152,7 +152,7 @@ object quicksight:
       builder.permissions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param sourceEntity The entity that you are using as a source when you create the dashboard (template). Only one of `definition` or `sourceEntity` should be configured. See source_entity.
+     * @param sourceEntity Entity that you are using as a source when you create the dashboard (template). Only one of `definition` or `sourceEntity` should be configured. See `sourceEntity`.
      * @return builder
      */
     def sourceEntity(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardSourceEntityArgs.Builder]):
@@ -180,7 +180,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.DataSetArgs.Builder)
     /**
-     * @param columnGroups Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported. See column_groups.
+     * @param columnGroups Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported. See `columnGroups` Block below.
      * @return builder
      */
     def columnGroups(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetColumnGroupArgs.Builder]*):
@@ -189,7 +189,7 @@ object quicksight:
       builder.columnGroups(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param columnLevelPermissionRules A set of 1 or more definitions of a [ColumnLevelPermissionRule](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html). See column_level_permission_rules.
+     * @param columnLevelPermissionRules Set of 1 or more definitions of a [ColumnLevelPermissionRule](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html). See `columnLevelPermissionRules` Block below.
      * @return builder
      */
     def columnLevelPermissionRules(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetColumnLevelPermissionRuleArgs.Builder]*):
@@ -198,7 +198,7 @@ object quicksight:
       builder.columnLevelPermissionRules(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param dataSetUsageConfiguration The usage configuration to apply to child datasets that reference this dataset as a source. See data_set_usage_configuration.
+     * @param dataSetUsageConfiguration Usage configuration to apply to child datasets that reference this dataset as a source. See `dataSetUsageConfiguration` Block below.
      * @return builder
      */
     def dataSetUsageConfiguration(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetDataSetUsageConfigurationArgs.Builder]):
@@ -207,7 +207,7 @@ object quicksight:
       builder.dataSetUsageConfiguration(args(argsBuilder).build)
 
     /**
-     * @param fieldFolders The folder that contains fields and nested subfolders for your dataset. See field_folders.
+     * @param fieldFolders Folder that contains fields and nested subfolders for your dataset. See `fieldFolders` Block below.
      * @return builder
      */
     def fieldFolders(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetFieldFolderArgs.Builder]*):
@@ -216,7 +216,7 @@ object quicksight:
       builder.fieldFolders(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param logicalTableMaps Configures the combination and transformation of the data from the physical tables. Maximum of 1 entry. See logical_table_map.
+     * @param logicalTableMaps Configures the combination and transformation of the data from the physical tables. Maximum of 1 entry. See `logicalTableMap` Block below.
      * @return builder
      */
     def logicalTableMaps(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapArgs.Builder]*):
@@ -225,7 +225,7 @@ object quicksight:
       builder.logicalTableMaps(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param permissions A set of resource permissions on the data source. Maximum of 64 items. See permissions.
+     * @param permissions Set of resource permissions on the data source. Maximum of 64 items. See `permissions` Block below.
      * @return builder
      */
     def permissions(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetPermissionArgs.Builder]*):
@@ -234,7 +234,7 @@ object quicksight:
       builder.permissions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param physicalTableMaps Declares the physical tables that are available in the underlying data sources. See physical_table_map.
+     * @param physicalTableMaps Declares the physical tables that are available in the underlying data sources. See `physicalTableMap` Block below.
      * @return builder
      */
     def physicalTableMaps(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapArgs.Builder]*):
@@ -243,7 +243,7 @@ object quicksight:
       builder.physicalTableMaps(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param refreshProperties The refresh properties for the data set. **NOTE**: Only valid when `importMode` is set to `SPICE`. See refresh_properties.
+     * @param refreshProperties Refresh properties for the data set. **NOTE**: Only valid when `importMode` is set to `SPICE`. See `refreshProperties` Block below.
      * @return builder
      */
     def refreshProperties(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetRefreshPropertiesArgs.Builder]):
@@ -252,7 +252,7 @@ object quicksight:
       builder.refreshProperties(args(argsBuilder).build)
 
     /**
-     * @param rowLevelPermissionDataSet The row-level security configuration for the data that you want to create. See row_level_permission_data_set.
+     * @param rowLevelPermissionDataSet Row-level security configuration for the data that you want to create. See `rowLevelPermissionDataSet` Block below.
      * @return builder
      */
     def rowLevelPermissionDataSet(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetRowLevelPermissionDataSetArgs.Builder]):
@@ -261,7 +261,7 @@ object quicksight:
       builder.rowLevelPermissionDataSet(args(argsBuilder).build)
 
     /**
-     * @param rowLevelPermissionTagConfiguration The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only. See row_level_permission_tag_configuration.
+     * @param rowLevelPermissionTagConfiguration Configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only. See `rowLevelPermissionTagConfiguration` Block below.
      * @return builder
      */
     def rowLevelPermissionTagConfiguration(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetRowLevelPermissionTagConfigurationArgs.Builder]):
@@ -289,7 +289,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.DataSourceArgs.Builder)
     /**
-     * @param credentials The credentials Amazon QuickSight uses to connect to your underlying source. See Credentials below for more details.
+     * @param credentials Credentials Amazon QuickSight uses to connect to your underlying source. See `credentials` Block below for more details.
      * @return builder
      */
     def credentials(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSourceCredentialsArgs.Builder]):
@@ -298,7 +298,7 @@ object quicksight:
       builder.credentials(args(argsBuilder).build)
 
     /**
-     * @param parameters The parameters used to connect to this data source (exactly one).
+     * @param parameters Parameters used to connect to this data source (exactly one). See `parameters` Block for details.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSourceParametersArgs.Builder]):
@@ -307,7 +307,7 @@ object quicksight:
       builder.parameters(args(argsBuilder).build)
 
     /**
-     * @param permissions A set of resource permissions on the data source. Maximum of 64 items. See Permission below for more details.
+     * @param permissions Set of resource permissions on the data source. Maximum of 64 items. See `permission` Block below for more details.
      * @return builder
      */
     def permissions(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSourcePermissionArgs.Builder]*):
@@ -316,7 +316,7 @@ object quicksight:
       builder.permissions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param sslProperties Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source. See SSL Properties below for more details.
+     * @param sslProperties Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source. See `sslProperties` Block below for more details.
      * @return builder
      */
     def sslProperties(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSourceSslPropertiesArgs.Builder]):
@@ -325,7 +325,7 @@ object quicksight:
       builder.sslProperties(args(argsBuilder).build)
 
     /**
-     * @param vpcConnectionProperties Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source. See VPC Connection Properties below for more details.
+     * @param vpcConnectionProperties Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source. See `vpcConnectionProperties` Block below for more details.
      * @return builder
      */
     def vpcConnectionProperties(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSourceVpcConnectionPropertiesArgs.Builder]):
@@ -353,7 +353,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.FolderArgs.Builder)
     /**
-     * @param permissions A set of resource permissions on the folder. Maximum of 64 items. See permissions.
+     * @param permissions Set of resource permissions on the folder. Maximum of 64 items. See `permissions` Block.
      * @return builder
      */
     def permissions(args: Endofunction[com.pulumi.aws.quicksight.inputs.FolderPermissionArgs.Builder]*):
@@ -437,7 +437,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.KeyRegistrationArgs.Builder)
     /**
-     * @param keyRegistrations Registered keys. See key_registration.
+     * @param keyRegistrations Registered keys. See `keyRegistration` Block.
      * @return builder
      */
     def keyRegistrations(args: Endofunction[com.pulumi.aws.quicksight.inputs.KeyRegistrationKeyRegistrationArgs.Builder]*):
@@ -559,9 +559,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.RefreshScheduleArgs.Builder)
     /**
-     * @param schedule The [refresh schedule](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RefreshSchedule.html). See schedule
-     * 
-     * The following arguments are optional:
+     * @param schedule [Refresh schedule](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RefreshSchedule.html) configuration. See `schedule` Block.
      * @return builder
      */
     def schedule(args: Endofunction[com.pulumi.aws.quicksight.inputs.RefreshScheduleScheduleArgs.Builder]):
@@ -617,7 +615,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.TemplateArgs.Builder)
     /**
-     * @param permissions A set of resource permissions on the template. Maximum of 64 items. See permissions.
+     * @param permissions Set of resource permissions on the template. Maximum of 64 items. See `permissions` Block.
      * @return builder
      */
     def permissions(args: Endofunction[com.pulumi.aws.quicksight.inputs.TemplatePermissionArgs.Builder]*):
@@ -626,7 +624,7 @@ object quicksight:
       builder.permissions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param sourceEntity The entity that you are using as a source when you create the template (analysis or template). Only one of `definition` or `sourceEntity` should be configured. See source_entity.
+     * @param sourceEntity Entity that you are using as a source when you create the template (analysis or template). Only one of `definition` or `sourceEntity` should be configured. See `sourceEntity` Block.
      * @return builder
      */
     def sourceEntity(args: Endofunction[com.pulumi.aws.quicksight.inputs.TemplateSourceEntityArgs.Builder]):
@@ -654,7 +652,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.ThemeArgs.Builder)
     /**
-     * @param configuration The theme configuration, which contains the theme display properties. See configuration.
+     * @param configuration Theme configuration, which contains the theme display properties. See configuration.
      * @return builder
      */
     def configuration(args: Endofunction[com.pulumi.aws.quicksight.inputs.ThemeConfigurationArgs.Builder]):
@@ -663,7 +661,7 @@ object quicksight:
       builder.configuration(args(argsBuilder).build)
 
     /**
-     * @param permissions A set of resource permissions on the theme. Maximum of 64 items. See permissions.
+     * @param permissions Set of resource permissions on the theme. Maximum of 64 items. See permissions.
      * @return builder
      */
     def permissions(args: Endofunction[com.pulumi.aws.quicksight.inputs.ThemePermissionArgs.Builder]*):
@@ -719,7 +717,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.AnalysisParametersArgs.Builder)
     /**
-     * @param dateTimeParameters A list of parameters that have a data type of date-time. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DateTimeParameter.html).
+     * @param dateTimeParameters List of parameters that have a data type of date-time. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DateTimeParameter.html).
      * @return builder
      */
     def dateTimeParameters(args: Endofunction[com.pulumi.aws.quicksight.inputs.AnalysisParametersDateTimeParameterArgs.Builder]*):
@@ -728,7 +726,7 @@ object quicksight:
       builder.dateTimeParameters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param decimalParameters A list of parameters that have a data type of decimal. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DecimalParameter.html).
+     * @param decimalParameters List of parameters that have a data type of decimal. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DecimalParameter.html).
      * @return builder
      */
     def decimalParameters(args: Endofunction[com.pulumi.aws.quicksight.inputs.AnalysisParametersDecimalParameterArgs.Builder]*):
@@ -737,7 +735,7 @@ object quicksight:
       builder.decimalParameters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param integerParameters A list of parameters that have a data type of integer. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_IntegerParameter.html).
+     * @param integerParameters List of parameters that have a data type of integer. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_IntegerParameter.html).
      * @return builder
      */
     def integerParameters(args: Endofunction[com.pulumi.aws.quicksight.inputs.AnalysisParametersIntegerParameterArgs.Builder]*):
@@ -746,7 +744,7 @@ object quicksight:
       builder.integerParameters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param stringParameters A list of parameters that have a data type of string. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StringParameter.html).
+     * @param stringParameters List of parameters that have a data type of string. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StringParameter.html).
      * @return builder
      */
     def stringParameters(args: Endofunction[com.pulumi.aws.quicksight.inputs.AnalysisParametersStringParameterArgs.Builder]*):
@@ -756,7 +754,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.AnalysisSourceEntityArgs.Builder)
     /**
-     * @param sourceTemplate The source template. See source_template.
+     * @param sourceTemplate Source template. See source_template.
      * @return builder
      */
     def sourceTemplate(args: Endofunction[com.pulumi.aws.quicksight.inputs.AnalysisSourceEntitySourceTemplateArgs.Builder]):
@@ -776,7 +774,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.AnalysisState.Builder)
     /**
-     * @param parameters The parameters for the creation of the analysis, which you want to use to override the default settings. An analysis can have any type of parameters, and some parameters might accept multiple values. See parameters.
+     * @param parameters Parameters for the creation of the analysis, which you want to use to override the default settings. An analysis can have any type of parameters, and some parameters might accept multiple values. See parameters.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.quicksight.inputs.AnalysisParametersArgs.Builder]):
@@ -785,7 +783,7 @@ object quicksight:
       builder.parameters(args(argsBuilder).build)
 
     /**
-     * @param permissions A set of resource permissions on the analysis. Maximum of 64 items. See permissions.
+     * @param permissions Set of resource permissions on the analysis. Maximum of 64 items. See permissions.
      * @return builder
      */
     def permissions(args: Endofunction[com.pulumi.aws.quicksight.inputs.AnalysisPermissionArgs.Builder]*):
@@ -794,7 +792,7 @@ object quicksight:
       builder.permissions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param sourceEntity The entity that you are using as a source when you create the analysis (template). Only one of `definition` or `sourceEntity` should be configured. See source_entity.
+     * @param sourceEntity Entity that you are using as a source when you create the analysis (template). Only one of `definition` or `sourceEntity` should be configured. See source_entity.
      * @return builder
      */
     def sourceEntity(args: Endofunction[com.pulumi.aws.quicksight.inputs.AnalysisSourceEntityArgs.Builder]):
@@ -804,7 +802,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.CustomPermissionsState.Builder)
     /**
-     * @param capabilities Actions to include in the custom permissions profile. See capabilities.
+     * @param capabilities Actions to include in the custom permissions profile. See `capabilities` Block.
      * @return builder
      */
     def capabilities(args: Endofunction[com.pulumi.aws.quicksight.inputs.CustomPermissionsCapabilitiesArgs.Builder]):
@@ -814,7 +812,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DashboardDashboardPublishOptionsArgs.Builder)
     /**
-     * @param adHocFilteringOption Ad hoc (one-time) filtering option. See ad_hoc_filtering_option.
+     * @param adHocFilteringOption Ad hoc (one-time) filtering option. See `adHocFilteringOption`.
      * @return builder
      */
     def adHocFilteringOption(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardDashboardPublishOptionsAdHocFilteringOptionArgs.Builder]):
@@ -823,7 +821,7 @@ object quicksight:
       builder.adHocFilteringOption(args(argsBuilder).build)
 
     /**
-     * @param dataPointDrillUpDownOption The drill-down options of data points in a dashboard. See data_point_drill_up_down_option.
+     * @param dataPointDrillUpDownOption Drill-down options of data points in a dashboard. See `dataPointDrillUpDownOption`.
      * @return builder
      */
     def dataPointDrillUpDownOption(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardDashboardPublishOptionsDataPointDrillUpDownOptionArgs.Builder]):
@@ -832,7 +830,7 @@ object quicksight:
       builder.dataPointDrillUpDownOption(args(argsBuilder).build)
 
     /**
-     * @param dataPointMenuLabelOption The data point menu label options of a dashboard. See data_point_menu_label_option.
+     * @param dataPointMenuLabelOption Data point menu label options of a dashboard. See `dataPointMenuLabelOption`.
      * @return builder
      */
     def dataPointMenuLabelOption(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardDashboardPublishOptionsDataPointMenuLabelOptionArgs.Builder]):
@@ -841,7 +839,7 @@ object quicksight:
       builder.dataPointMenuLabelOption(args(argsBuilder).build)
 
     /**
-     * @param dataPointTooltipOption The data point tool tip options of a dashboard. See data_point_tooltip_option.
+     * @param dataPointTooltipOption Data point tool tip options of a dashboard. See `dataPointTooltipOption`.
      * @return builder
      */
     def dataPointTooltipOption(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardDashboardPublishOptionsDataPointTooltipOptionArgs.Builder]):
@@ -850,7 +848,7 @@ object quicksight:
       builder.dataPointTooltipOption(args(argsBuilder).build)
 
     /**
-     * @param exportToCsvOption Export to .csv option. See export_to_csv_option.
+     * @param exportToCsvOption Export to .csv option. See `exportToCsvOption`.
      * @return builder
      */
     def exportToCsvOption(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardDashboardPublishOptionsExportToCsvOptionArgs.Builder]):
@@ -859,7 +857,7 @@ object quicksight:
       builder.exportToCsvOption(args(argsBuilder).build)
 
     /**
-     * @param exportWithHiddenFieldsOption Determines if hidden fields are exported with a dashboard. See export_with_hidden_fields_option.
+     * @param exportWithHiddenFieldsOption Whether hidden fields are exported with a dashboard. See `exportWithHiddenFieldsOption`.
      * @return builder
      */
     def exportWithHiddenFieldsOption(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardDashboardPublishOptionsExportWithHiddenFieldsOptionArgs.Builder]):
@@ -868,7 +866,7 @@ object quicksight:
       builder.exportWithHiddenFieldsOption(args(argsBuilder).build)
 
     /**
-     * @param sheetControlsOption Sheet controls option. See sheet_controls_option.
+     * @param sheetControlsOption Sheet controls option. See `sheetControlsOption`.
      * @return builder
      */
     def sheetControlsOption(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardDashboardPublishOptionsSheetControlsOptionArgs.Builder]):
@@ -877,7 +875,7 @@ object quicksight:
       builder.sheetControlsOption(args(argsBuilder).build)
 
     /**
-     * @param sheetLayoutElementMaximizationOption The sheet layout maximization options of a dashboard. See sheet_layout_element_maximization_option.
+     * @param sheetLayoutElementMaximizationOption Sheet layout maximization options of a dashboard. See `sheetLayoutElementMaximizationOption`.
      * @return builder
      */
     def sheetLayoutElementMaximizationOption(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardDashboardPublishOptionsSheetLayoutElementMaximizationOptionArgs.Builder]):
@@ -886,7 +884,7 @@ object quicksight:
       builder.sheetLayoutElementMaximizationOption(args(argsBuilder).build)
 
     /**
-     * @param visualAxisSortOption The axis sort options of a dashboard. See visual_axis_sort_option.
+     * @param visualAxisSortOption Axis sort options of a dashboard. See `visualAxisSortOption`.
      * @return builder
      */
     def visualAxisSortOption(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardDashboardPublishOptionsVisualAxisSortOptionArgs.Builder]):
@@ -895,7 +893,7 @@ object quicksight:
       builder.visualAxisSortOption(args(argsBuilder).build)
 
     /**
-     * @param visualMenuOption The menu options of a visual in a dashboard. See visual_menu_option.
+     * @param visualMenuOption Menu options of a visual in a dashboard. See `visualMenuOption`.
      * @return builder
      */
     def visualMenuOption(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardDashboardPublishOptionsVisualMenuOptionArgs.Builder]):
@@ -905,7 +903,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DashboardParametersArgs.Builder)
     /**
-     * @param dateTimeParameters A list of parameters that have a data type of date-time. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DateTimeParameter.html).
+     * @param dateTimeParameters List of parameters that have a data type of date-time. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DateTimeParameter.html).
      * @return builder
      */
     def dateTimeParameters(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardParametersDateTimeParameterArgs.Builder]*):
@@ -914,7 +912,7 @@ object quicksight:
       builder.dateTimeParameters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param decimalParameters A list of parameters that have a data type of decimal. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DecimalParameter.html).
+     * @param decimalParameters List of parameters that have a data type of decimal. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DecimalParameter.html).
      * @return builder
      */
     def decimalParameters(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardParametersDecimalParameterArgs.Builder]*):
@@ -923,7 +921,7 @@ object quicksight:
       builder.decimalParameters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param integerParameters A list of parameters that have a data type of integer. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_IntegerParameter.html).
+     * @param integerParameters List of parameters that have a data type of integer. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_IntegerParameter.html).
      * @return builder
      */
     def integerParameters(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardParametersIntegerParameterArgs.Builder]*):
@@ -932,7 +930,7 @@ object quicksight:
       builder.integerParameters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param stringParameters A list of parameters that have a data type of string. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StringParameter.html).
+     * @param stringParameters List of parameters that have a data type of string. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StringParameter.html).
      * @return builder
      */
     def stringParameters(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardParametersStringParameterArgs.Builder]*):
@@ -942,7 +940,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DashboardSourceEntityArgs.Builder)
     /**
-     * @param sourceTemplate The source template. See source_template.
+     * @param sourceTemplate Source template. See `sourceTemplate`.
      * @return builder
      */
     def sourceTemplate(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardSourceEntitySourceTemplateArgs.Builder]):
@@ -952,7 +950,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DashboardSourceEntitySourceTemplateArgs.Builder)
     /**
-     * @param dataSetReferences List of dataset references. See data_set_references.
+     * @param dataSetReferences List of dataset references. See `dataSetReferences`.
      * @return builder
      */
     def dataSetReferences(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardSourceEntitySourceTemplateDataSetReferenceArgs.Builder]*):
@@ -962,7 +960,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DashboardState.Builder)
     /**
-     * @param dashboardPublishOptions Options for publishing the dashboard. See dashboard_publish_options.
+     * @param dashboardPublishOptions Options for publishing the dashboard. See `dashboardPublishOptions`.
      * @return builder
      */
     def dashboardPublishOptions(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardDashboardPublishOptionsArgs.Builder]):
@@ -971,7 +969,7 @@ object quicksight:
       builder.dashboardPublishOptions(args(argsBuilder).build)
 
     /**
-     * @param parameters The parameters for the creation of the dashboard, which you want to use to override the default settings. A dashboard can have any type of parameters, and some parameters might accept multiple values. See parameters.
+     * @param parameters Parameters for the creation of the dashboard, which you want to use to override the default settings. A dashboard can have any type of parameters, and some parameters might accept multiple values. See `parameters`.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardParametersArgs.Builder]):
@@ -980,7 +978,7 @@ object quicksight:
       builder.parameters(args(argsBuilder).build)
 
     /**
-     * @param permissions A set of resource permissions on the dashboard. Maximum of 64 items. See permissions.
+     * @param permissions Set of resource permissions on the dashboard. Maximum of 64 items. See `permissions`.
      * @return builder
      */
     def permissions(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardPermissionArgs.Builder]*):
@@ -989,7 +987,7 @@ object quicksight:
       builder.permissions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param sourceEntity The entity that you are using as a source when you create the dashboard (template). Only one of `definition` or `sourceEntity` should be configured. See source_entity.
+     * @param sourceEntity Entity that you are using as a source when you create the dashboard (template). Only one of `definition` or `sourceEntity` should be configured. See `sourceEntity`.
      * @return builder
      */
     def sourceEntity(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardSourceEntityArgs.Builder]):
@@ -999,7 +997,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetColumnGroupArgs.Builder)
     /**
-     * @param geoSpatialColumnGroup Geospatial column group that denotes a hierarchy. See geo_spatial_column_group.
+     * @param geoSpatialColumnGroup Geospatial column group that denotes a hierarchy. See `geoSpatialColumnGroup` Block below.
      * @return builder
      */
     def geoSpatialColumnGroup(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetColumnGroupGeoSpatialColumnGroupArgs.Builder]):
@@ -1009,7 +1007,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapArgs.Builder)
     /**
-     * @param dataTransforms Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. See data_transforms.
+     * @param dataTransforms Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. See `dataTransforms` Block below.
      * @return builder
      */
     def dataTransforms(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformArgs.Builder]*):
@@ -1018,7 +1016,7 @@ object quicksight:
       builder.dataTransforms(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param source Source of this logical table. See source.
+     * @param source Source of this logical table. See `source` Block below.
      * @return builder
      */
     def source(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapSourceArgs.Builder]):
@@ -1028,7 +1026,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformArgs.Builder)
     /**
-     * @param castColumnTypeOperation A transform operation that casts a column to a different type. See cast_column_type_operation.
+     * @param castColumnTypeOperation Transform operation that casts a column to a different type. See `castColumnTypeOperation` Block below.
      * @return builder
      */
     def castColumnTypeOperation(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformCastColumnTypeOperationArgs.Builder]):
@@ -1037,7 +1035,7 @@ object quicksight:
       builder.castColumnTypeOperation(args(argsBuilder).build)
 
     /**
-     * @param createColumnsOperation An operation that creates calculated columns. Columns created in one such operation form a lexical closure. See create_columns_operation.
+     * @param createColumnsOperation Operation that creates calculated columns. Columns created in one such operation form a lexical closure. See `createColumnsOperation` Block below.
      * @return builder
      */
     def createColumnsOperation(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformCreateColumnsOperationArgs.Builder]):
@@ -1046,7 +1044,7 @@ object quicksight:
       builder.createColumnsOperation(args(argsBuilder).build)
 
     /**
-     * @param filterOperation An operation that filters rows based on some condition. See filter_operation.
+     * @param filterOperation Operation that filters rows based on some condition. See `filterOperation` Block below.
      * @return builder
      */
     def filterOperation(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformFilterOperationArgs.Builder]):
@@ -1055,7 +1053,7 @@ object quicksight:
       builder.filterOperation(args(argsBuilder).build)
 
     /**
-     * @param projectOperation An operation that projects columns. Operations that come after a projection can only refer to projected columns. See project_operation.
+     * @param projectOperation Operation that projects columns. Operations that come after a projection can only refer to projected columns. See `projectOperation` Block below.
      * @return builder
      */
     def projectOperation(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformProjectOperationArgs.Builder]):
@@ -1064,7 +1062,7 @@ object quicksight:
       builder.projectOperation(args(argsBuilder).build)
 
     /**
-     * @param renameColumnOperation An operation that renames a column. See rename_column_operation.
+     * @param renameColumnOperation Operation that renames a column. See `renameColumnOperation` Block below.
      * @return builder
      */
     def renameColumnOperation(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformRenameColumnOperationArgs.Builder]):
@@ -1073,7 +1071,7 @@ object quicksight:
       builder.renameColumnOperation(args(argsBuilder).build)
 
     /**
-     * @param tagColumnOperation An operation that tags a column with additional information. See tag_column_operation.
+     * @param tagColumnOperation Operation that tags a column with additional information. See `tagColumnOperation` Block below.
      * @return builder
      */
     def tagColumnOperation(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformTagColumnOperationArgs.Builder]):
@@ -1082,7 +1080,7 @@ object quicksight:
       builder.tagColumnOperation(args(argsBuilder).build)
 
     /**
-     * @param untagColumnOperation A transform operation that removes tags associated with a column. See untag_column_operation.
+     * @param untagColumnOperation Transform operation that removes tags associated with a column. See `untagColumnOperation` Block below.
      * @return builder
      */
     def untagColumnOperation(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformUntagColumnOperationArgs.Builder]):
@@ -1092,7 +1090,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformCreateColumnsOperationArgs.Builder)
     /**
-     * @param columns Calculated columns to create. See columns.
+     * @param columns Calculated columns to create. See `logical_table_map.data_transforms.create_columns_operation.columns` Block below.
      * @return builder
      */
     def columns(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformCreateColumnsOperationColumnArgs.Builder]*):
@@ -1102,7 +1100,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformTagColumnOperationArgs.Builder)
     /**
-     * @param tags The dataset column tag, currently only used for geospatial type tagging. See tags.
+     * @param tags Dataset column tag, currently only used for geospatial type tagging. See `tags` Block below.
      * @return builder
      */
     def tags(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformTagColumnOperationTagArgs.Builder]*):
@@ -1112,7 +1110,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformTagColumnOperationTagArgs.Builder)
     /**
-     * @param columnDescription A description for a column. See column_description.
+     * @param columnDescription Description for a column. See `columnDescription` Block below.
      * @return builder
      */
     def columnDescription(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformTagColumnOperationTagColumnDescriptionArgs.Builder]):
@@ -1122,7 +1120,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapSourceArgs.Builder)
     /**
-     * @param joinInstruction Specifies the result of a join of two logical tables. See join_instruction.
+     * @param joinInstruction Result of a join of two logical tables. See `joinInstruction` Block below.
      * @return builder
      */
     def joinInstruction(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapSourceJoinInstructionArgs.Builder]):
@@ -1132,7 +1130,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapSourceJoinInstructionArgs.Builder)
     /**
-     * @param leftJoinKeyProperties Join key properties of the left operand. See left_join_key_properties.
+     * @param leftJoinKeyProperties Join key properties of the left operand. See `leftJoinKeyProperties` Block below.
      * @return builder
      */
     def leftJoinKeyProperties(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapSourceJoinInstructionLeftJoinKeyPropertiesArgs.Builder]):
@@ -1141,7 +1139,7 @@ object quicksight:
       builder.leftJoinKeyProperties(args(argsBuilder).build)
 
     /**
-     * @param rightJoinKeyProperties Join key properties of the right operand. See right_join_key_properties.
+     * @param rightJoinKeyProperties Join key properties of the right operand. See `rightJoinKeyProperties` Block below.
      * @return builder
      */
     def rightJoinKeyProperties(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapSourceJoinInstructionRightJoinKeyPropertiesArgs.Builder]):
@@ -1151,7 +1149,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapArgs.Builder)
     /**
-     * @param customSql A physical table type built from the results of the custom SQL query. See custom_sql.
+     * @param customSql Physical table type built from the results of the custom SQL query. See `customSql` Block below.
      * @return builder
      */
     def customSql(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapCustomSqlArgs.Builder]):
@@ -1160,7 +1158,7 @@ object quicksight:
       builder.customSql(args(argsBuilder).build)
 
     /**
-     * @param relationalTable A physical table type for relational data sources. See relational_table.
+     * @param relationalTable Physical table type for relational data sources. See `relationalTable` Block below.
      * @return builder
      */
     def relationalTable(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapRelationalTableArgs.Builder]):
@@ -1169,7 +1167,7 @@ object quicksight:
       builder.relationalTable(args(argsBuilder).build)
 
     /**
-     * @param s3Source A physical table type for as S3 data source. See s3_source.
+     * @param s3Source Physical table type for an S3 data source. See `s3Source` Block below.
      * @return builder
      */
     def s3Source(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapS3SourceArgs.Builder]):
@@ -1179,7 +1177,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapCustomSqlArgs.Builder)
     /**
-     * @param columns Column schema from the SQL query result set. See columns.
+     * @param columns Column schema from the SQL query result set. See `physical_table_map.custom_sql.columns` Block below.
      * @return builder
      */
     def columns(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapCustomSqlColumnArgs.Builder]*):
@@ -1189,7 +1187,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapRelationalTableArgs.Builder)
     /**
-     * @param inputColumns Column schema of the table. See input_columns.
+     * @param inputColumns Column schema of the table. See `inputColumns` Block below.
      * @return builder
      */
     def inputColumns(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapRelationalTableInputColumnArgs.Builder]*):
@@ -1199,7 +1197,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapS3SourceArgs.Builder)
     /**
-     * @param inputColumns Column schema of the table. See input_columns.
+     * @param inputColumns Column schema of the table. See `inputColumns` Block below.
      * @return builder
      */
     def inputColumns(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapS3SourceInputColumnArgs.Builder]*):
@@ -1208,7 +1206,7 @@ object quicksight:
       builder.inputColumns(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param uploadSettings Information about the format for the S3 source file or files. See upload_settings.
+     * @param uploadSettings Information about the format for the S3 source file or files. See `uploadSettings` Block below.
      * @return builder
      */
     def uploadSettings(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapS3SourceUploadSettingsArgs.Builder]):
@@ -1218,7 +1216,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetRefreshPropertiesArgs.Builder)
     /**
-     * @param refreshConfiguration The refresh configuration for the data set. See refresh_configuration.
+     * @param refreshConfiguration Refresh configuration for the data set. See `refreshConfiguration` Block below.
      * @return builder
      */
     def refreshConfiguration(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetRefreshPropertiesRefreshConfigurationArgs.Builder]):
@@ -1228,7 +1226,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetRefreshPropertiesRefreshConfigurationArgs.Builder)
     /**
-     * @param incrementalRefresh The incremental refresh for the data set. See incremental_refresh.
+     * @param incrementalRefresh Incremental refresh for the data set. See `incrementalRefresh` Block below.
      * @return builder
      */
     def incrementalRefresh(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetRefreshPropertiesRefreshConfigurationIncrementalRefreshArgs.Builder]):
@@ -1238,7 +1236,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetRefreshPropertiesRefreshConfigurationIncrementalRefreshArgs.Builder)
     /**
-     * @param lookbackWindow The lookback window setup for an incremental refresh configuration. See lookback_window.
+     * @param lookbackWindow Lookback window setup for an incremental refresh configuration. See `lookbackWindow` Block below.
      * @return builder
      */
     def lookbackWindow(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetRefreshPropertiesRefreshConfigurationIncrementalRefreshLookbackWindowArgs.Builder]):
@@ -1248,7 +1246,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetRowLevelPermissionTagConfigurationArgs.Builder)
     /**
-     * @param tagRules A set of rules associated with row-level security, such as the tag names and columns that they are assigned to. See tag_rules.
+     * @param tagRules Set of rules associated with row-level security, such as the tag names and columns that they are assigned to. See `tagRules` Block below.
      * @return builder
      */
     def tagRules(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetRowLevelPermissionTagConfigurationTagRuleArgs.Builder]*):
@@ -1258,7 +1256,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetState.Builder)
     /**
-     * @param columnGroups Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported. See column_groups.
+     * @param columnGroups Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported. See `columnGroups` Block below.
      * @return builder
      */
     def columnGroups(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetColumnGroupArgs.Builder]*):
@@ -1267,7 +1265,7 @@ object quicksight:
       builder.columnGroups(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param columnLevelPermissionRules A set of 1 or more definitions of a [ColumnLevelPermissionRule](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html). See column_level_permission_rules.
+     * @param columnLevelPermissionRules Set of 1 or more definitions of a [ColumnLevelPermissionRule](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html). See `columnLevelPermissionRules` Block below.
      * @return builder
      */
     def columnLevelPermissionRules(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetColumnLevelPermissionRuleArgs.Builder]*):
@@ -1276,7 +1274,7 @@ object quicksight:
       builder.columnLevelPermissionRules(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param dataSetUsageConfiguration The usage configuration to apply to child datasets that reference this dataset as a source. See data_set_usage_configuration.
+     * @param dataSetUsageConfiguration Usage configuration to apply to child datasets that reference this dataset as a source. See `dataSetUsageConfiguration` Block below.
      * @return builder
      */
     def dataSetUsageConfiguration(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetDataSetUsageConfigurationArgs.Builder]):
@@ -1285,7 +1283,7 @@ object quicksight:
       builder.dataSetUsageConfiguration(args(argsBuilder).build)
 
     /**
-     * @param fieldFolders The folder that contains fields and nested subfolders for your dataset. See field_folders.
+     * @param fieldFolders Folder that contains fields and nested subfolders for your dataset. See `fieldFolders` Block below.
      * @return builder
      */
     def fieldFolders(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetFieldFolderArgs.Builder]*):
@@ -1294,7 +1292,7 @@ object quicksight:
       builder.fieldFolders(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param logicalTableMaps Configures the combination and transformation of the data from the physical tables. Maximum of 1 entry. See logical_table_map.
+     * @param logicalTableMaps Configures the combination and transformation of the data from the physical tables. Maximum of 1 entry. See `logicalTableMap` Block below.
      * @return builder
      */
     def logicalTableMaps(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapArgs.Builder]*):
@@ -1303,7 +1301,7 @@ object quicksight:
       builder.logicalTableMaps(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param outputColumns The final set of columns available for use in analyses and dashboards after all data preparation and transformation steps have been applied within the data set.  See `outputColumns` Block below.
+     * @param outputColumns Final set of columns available for use in analyses and dashboards after all data preparation and transformation steps have been applied within the data set. See `outputColumns` Block below.
      * @return builder
      */
     def outputColumns(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetOutputColumnArgs.Builder]*):
@@ -1312,7 +1310,7 @@ object quicksight:
       builder.outputColumns(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param permissions A set of resource permissions on the data source. Maximum of 64 items. See permissions.
+     * @param permissions Set of resource permissions on the data source. Maximum of 64 items. See `permissions` Block below.
      * @return builder
      */
     def permissions(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetPermissionArgs.Builder]*):
@@ -1321,7 +1319,7 @@ object quicksight:
       builder.permissions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param physicalTableMaps Declares the physical tables that are available in the underlying data sources. See physical_table_map.
+     * @param physicalTableMaps Declares the physical tables that are available in the underlying data sources. See `physicalTableMap` Block below.
      * @return builder
      */
     def physicalTableMaps(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapArgs.Builder]*):
@@ -1330,7 +1328,7 @@ object quicksight:
       builder.physicalTableMaps(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param refreshProperties The refresh properties for the data set. **NOTE**: Only valid when `importMode` is set to `SPICE`. See refresh_properties.
+     * @param refreshProperties Refresh properties for the data set. **NOTE**: Only valid when `importMode` is set to `SPICE`. See `refreshProperties` Block below.
      * @return builder
      */
     def refreshProperties(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetRefreshPropertiesArgs.Builder]):
@@ -1339,7 +1337,7 @@ object quicksight:
       builder.refreshProperties(args(argsBuilder).build)
 
     /**
-     * @param rowLevelPermissionDataSet The row-level security configuration for the data that you want to create. See row_level_permission_data_set.
+     * @param rowLevelPermissionDataSet Row-level security configuration for the data that you want to create. See `rowLevelPermissionDataSet` Block below.
      * @return builder
      */
     def rowLevelPermissionDataSet(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetRowLevelPermissionDataSetArgs.Builder]):
@@ -1348,7 +1346,7 @@ object quicksight:
       builder.rowLevelPermissionDataSet(args(argsBuilder).build)
 
     /**
-     * @param rowLevelPermissionTagConfiguration The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only. See row_level_permission_tag_configuration.
+     * @param rowLevelPermissionTagConfiguration Configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only. See `rowLevelPermissionTagConfiguration` Block below.
      * @return builder
      */
     def rowLevelPermissionTagConfiguration(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSetRowLevelPermissionTagConfigurationArgs.Builder]):
@@ -1358,7 +1356,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSourceCredentialsArgs.Builder)
     /**
-     * @param credentialPair Credential pair. See Credential Pair below for more details.
+     * @param credentialPair Credential pair. See `credentialPair` Block below for more details.
      * @return builder
      */
     def credentialPair(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSourceCredentialsCredentialPairArgs.Builder]):
@@ -1558,7 +1556,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSourceParametersS3Args.Builder)
     /**
-     * @param manifestFileLocation An object containing the S3 location of the S3 manifest file.
+     * @param manifestFileLocation S3 location of the S3 manifest file. See `manifestFileLocation` Block below for more details.
      * @return builder
      */
     def manifestFileLocation(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSourceParametersS3ManifestFileLocationArgs.Builder]):
@@ -1568,7 +1566,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSourceState.Builder)
     /**
-     * @param credentials The credentials Amazon QuickSight uses to connect to your underlying source. See Credentials below for more details.
+     * @param credentials Credentials Amazon QuickSight uses to connect to your underlying source. See `credentials` Block below for more details.
      * @return builder
      */
     def credentials(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSourceCredentialsArgs.Builder]):
@@ -1577,7 +1575,7 @@ object quicksight:
       builder.credentials(args(argsBuilder).build)
 
     /**
-     * @param parameters The parameters used to connect to this data source (exactly one).
+     * @param parameters Parameters used to connect to this data source (exactly one). See `parameters` Block for details.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSourceParametersArgs.Builder]):
@@ -1586,7 +1584,7 @@ object quicksight:
       builder.parameters(args(argsBuilder).build)
 
     /**
-     * @param permissions A set of resource permissions on the data source. Maximum of 64 items. See Permission below for more details.
+     * @param permissions Set of resource permissions on the data source. Maximum of 64 items. See `permission` Block below for more details.
      * @return builder
      */
     def permissions(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSourcePermissionArgs.Builder]*):
@@ -1595,7 +1593,7 @@ object quicksight:
       builder.permissions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param sslProperties Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source. See SSL Properties below for more details.
+     * @param sslProperties Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source. See `sslProperties` Block below for more details.
      * @return builder
      */
     def sslProperties(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSourceSslPropertiesArgs.Builder]):
@@ -1604,7 +1602,7 @@ object quicksight:
       builder.sslProperties(args(argsBuilder).build)
 
     /**
-     * @param vpcConnectionProperties Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source. See VPC Connection Properties below for more details.
+     * @param vpcConnectionProperties Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source. See `vpcConnectionProperties` Block below for more details.
      * @return builder
      */
     def vpcConnectionProperties(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSourceVpcConnectionPropertiesArgs.Builder]):
@@ -1614,7 +1612,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.FolderState.Builder)
     /**
-     * @param permissions A set of resource permissions on the folder. Maximum of 64 items. See permissions.
+     * @param permissions Set of resource permissions on the folder. Maximum of 64 items. See `permissions` Block.
      * @return builder
      */
     def permissions(args: Endofunction[com.pulumi.aws.quicksight.inputs.FolderPermissionArgs.Builder]*):
@@ -1634,7 +1632,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.KeyRegistrationState.Builder)
     /**
-     * @param keyRegistrations Registered keys. See key_registration.
+     * @param keyRegistrations Registered keys. See `keyRegistration` Block.
      * @return builder
      */
     def keyRegistrations(args: Endofunction[com.pulumi.aws.quicksight.inputs.KeyRegistrationKeyRegistrationArgs.Builder]*):
@@ -1650,7 +1648,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.RefreshScheduleScheduleArgs.Builder)
     /**
-     * @param scheduleFrequency The configuration of the [schedule frequency](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RefreshFrequency.html). See schedule_frequency.
+     * @param scheduleFrequency Configuration of the [schedule frequency](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RefreshFrequency.html). See `scheduleFrequency` Block.
      * @return builder
      */
     def scheduleFrequency(args: Endofunction[com.pulumi.aws.quicksight.inputs.RefreshScheduleScheduleScheduleFrequencyArgs.Builder]):
@@ -1660,7 +1658,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.RefreshScheduleScheduleScheduleFrequencyArgs.Builder)
     /**
-     * @param refreshOnDay The [refresh on entity](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ScheduleRefreshOnEntity.html) configuration for weekly or monthly schedules. See refresh_on_day.
+     * @param refreshOnDay [Refresh on entity](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ScheduleRefreshOnEntity.html) configuration for weekly or monthly schedules. See `refreshOnDay` Block.
      * @return builder
      */
     def refreshOnDay(args: Endofunction[com.pulumi.aws.quicksight.inputs.RefreshScheduleScheduleScheduleFrequencyRefreshOnDayArgs.Builder]):
@@ -1670,9 +1668,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.RefreshScheduleState.Builder)
     /**
-     * @param schedule The [refresh schedule](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RefreshSchedule.html). See schedule
-     * 
-     * The following arguments are optional:
+     * @param schedule [Refresh schedule](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RefreshSchedule.html) configuration. See `schedule` Block.
      * @return builder
      */
     def schedule(args: Endofunction[com.pulumi.aws.quicksight.inputs.RefreshScheduleScheduleArgs.Builder]):
@@ -1682,7 +1678,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.TemplateSourceEntityArgs.Builder)
     /**
-     * @param sourceAnalysis The source analysis, if it is based on an analysis.. Only one of `sourceAnalysis` or `sourceTemplate` should be configured. See source_analysis.
+     * @param sourceAnalysis Source analysis, if it is based on an analysis. Only one of `sourceAnalysis` or `sourceTemplate` should be configured. See `sourceAnalysis` Block.
      * @return builder
      */
     def sourceAnalysis(args: Endofunction[com.pulumi.aws.quicksight.inputs.TemplateSourceEntitySourceAnalysisArgs.Builder]):
@@ -1691,7 +1687,7 @@ object quicksight:
       builder.sourceAnalysis(args(argsBuilder).build)
 
     /**
-     * @param sourceTemplate The source template, if it is based on an template.. Only one of `sourceAnalysis` or `sourceTemplate` should be configured. See source_template.
+     * @param sourceTemplate Source template, if it is based on a template. Only one of `sourceAnalysis` or `sourceTemplate` should be configured. See `sourceTemplate` Block.
      * @return builder
      */
     def sourceTemplate(args: Endofunction[com.pulumi.aws.quicksight.inputs.TemplateSourceEntitySourceTemplateArgs.Builder]):
@@ -1701,7 +1697,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.TemplateSourceEntitySourceAnalysisArgs.Builder)
     /**
-     * @param dataSetReferences A list of dataset references used as placeholders in the template. See data_set_references.
+     * @param dataSetReferences List of dataset references used as placeholders in the template. See `dataSetReferences` Block.
      * @return builder
      */
     def dataSetReferences(args: Endofunction[com.pulumi.aws.quicksight.inputs.TemplateSourceEntitySourceAnalysisDataSetReferenceArgs.Builder]*):
@@ -1711,7 +1707,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.TemplateState.Builder)
     /**
-     * @param permissions A set of resource permissions on the template. Maximum of 64 items. See permissions.
+     * @param permissions Set of resource permissions on the template. Maximum of 64 items. See `permissions` Block.
      * @return builder
      */
     def permissions(args: Endofunction[com.pulumi.aws.quicksight.inputs.TemplatePermissionArgs.Builder]*):
@@ -1720,7 +1716,7 @@ object quicksight:
       builder.permissions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param sourceEntity The entity that you are using as a source when you create the template (analysis or template). Only one of `definition` or `sourceEntity` should be configured. See source_entity.
+     * @param sourceEntity Entity that you are using as a source when you create the template (analysis or template). Only one of `definition` or `sourceEntity` should be configured. See `sourceEntity` Block.
      * @return builder
      */
     def sourceEntity(args: Endofunction[com.pulumi.aws.quicksight.inputs.TemplateSourceEntityArgs.Builder]):
@@ -1748,7 +1744,7 @@ object quicksight:
       builder.sheet(args(argsBuilder).build)
 
     /**
-     * @param typography Determines the typography options. See typography.
+     * @param typography Typography options. See typography.
      * @return builder
      */
     def typography(args: Endofunction[com.pulumi.aws.quicksight.inputs.ThemeConfigurationTypographyArgs.Builder]):
@@ -1767,7 +1763,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.ThemeConfigurationSheetArgs.Builder)
     /**
-     * @param tile The display options for tiles. See tile.
+     * @param tile Display options for tiles. See tile.
      * @return builder
      */
     def tile(args: Endofunction[com.pulumi.aws.quicksight.inputs.ThemeConfigurationSheetTileArgs.Builder]):
@@ -1776,7 +1772,7 @@ object quicksight:
       builder.tile(args(argsBuilder).build)
 
     /**
-     * @param tileLayout The layout options for tiles. See tile_layout.
+     * @param tileLayout Layout options for tiles. See tile_layout.
      * @return builder
      */
     def tileLayout(args: Endofunction[com.pulumi.aws.quicksight.inputs.ThemeConfigurationSheetTileLayoutArgs.Builder]):
@@ -1786,7 +1782,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.ThemeConfigurationSheetTileArgs.Builder)
     /**
-     * @param border The border around a tile. See border.
+     * @param border Border around a tile. See border.
      * @return builder
      */
     def border(args: Endofunction[com.pulumi.aws.quicksight.inputs.ThemeConfigurationSheetTileBorderArgs.Builder]):
@@ -1796,7 +1792,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.ThemeConfigurationSheetTileLayoutArgs.Builder)
     /**
-     * @param gutter The gutter settings that apply between tiles. See gutter.
+     * @param gutter Gutter settings that apply between tiles. See gutter.
      * @return builder
      */
     def gutter(args: Endofunction[com.pulumi.aws.quicksight.inputs.ThemeConfigurationSheetTileLayoutGutterArgs.Builder]):
@@ -1805,7 +1801,7 @@ object quicksight:
       builder.gutter(args(argsBuilder).build)
 
     /**
-     * @param margin The margin settings that apply around the outside edge of sheets. See margin.
+     * @param margin Margin settings that apply around the outside edge of sheets. See margin.
      * @return builder
      */
     def margin(args: Endofunction[com.pulumi.aws.quicksight.inputs.ThemeConfigurationSheetTileLayoutMarginArgs.Builder]):
@@ -1815,7 +1811,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.ThemeConfigurationTypographyArgs.Builder)
     /**
-     * @param fontFamilies Determines the list of font families. Maximum number of 5 items. See font_families.
+     * @param fontFamilies List of font families. Maximum number of 5 items. See font_families.
      * @return builder
      */
     def fontFamilies(args: Endofunction[com.pulumi.aws.quicksight.inputs.ThemeConfigurationTypographyFontFamilyArgs.Builder]*):
@@ -1825,7 +1821,7 @@ object quicksight:
 
   extension (builder: com.pulumi.aws.quicksight.inputs.ThemeState.Builder)
     /**
-     * @param configuration The theme configuration, which contains the theme display properties. See configuration.
+     * @param configuration Theme configuration, which contains the theme display properties. See configuration.
      * @return builder
      */
     def configuration(args: Endofunction[com.pulumi.aws.quicksight.inputs.ThemeConfigurationArgs.Builder]):
@@ -1834,7 +1830,7 @@ object quicksight:
       builder.configuration(args(argsBuilder).build)
 
     /**
-     * @param permissions A set of resource permissions on the theme. Maximum of 64 items. See permissions.
+     * @param permissions Set of resource permissions on the theme. Maximum of 64 items. See permissions.
      * @return builder
      */
     def permissions(args: Endofunction[com.pulumi.aws.quicksight.inputs.ThemePermissionArgs.Builder]*):

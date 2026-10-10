@@ -68,6 +68,57 @@ object directoryservice:
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.GetDirectoryPlainArgs.builder
       com.pulumi.aws.directoryservice.DirectoryserviceFunctions.getDirectoryPlain(args(argsBuilder).build)
 
+  /**
+   * Manages an IP route for an AWS Directory Service directory. IP routes are used to route traffic from an AWS Managed Microsoft AD or AD Connector directory to an IPv4 or IPv6 CIDR block, such as an on-premises network reachable over a VPN or AWS Direct Connect connection, or a peered VPC.
+   * 
+   * &gt; To manage the complete set of IP routes for a directory, and remove any not configured in Terraform, use `aws.directoryservice.IpRoutesExclusive` instead. Using both resources for the same directory causes persistent drift unless every `aws.directoryservice.IpRoute` has an equivalent `ipRoute` block.
+   * 
+   * &gt; Adding an IPv6 route (`cidrIpv6`) requires the directory&#39;s network type to be dual-stack (IPv4 and IPv6). Enabling IPv6 support on a directory is a one-way operation performed outside of Terraform; see [Updating directory network type](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_update-directory-type.html).
+   */
+  def IpRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.directoryservice.IpRouteArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.directoryservice.IpRouteArgs.builder
+    com.pulumi.aws.directoryservice.IpRoute(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.directoryservice.IpRouteArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRouteTimeoutsArgs.Builder]):
+        com.pulumi.aws.directoryservice.IpRouteArgs.Builder =
+      val argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRouteTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  /**
+   * Manages an exclusive set of IP routes for an AWS Directory Service directory. IP routes are used to route traffic from an AWS Managed Microsoft AD or AD Connector directory to an IPv4 or IPv6 CIDR block, such as an on-premises network reachable over a VPN or AWS Direct Connect connection, or a peered VPC.
+   * 
+   * &gt; This resource takes exclusive ownership over the IP routes of a directory. This includes removal of IP routes which are not explicitly configured. To prevent persistent drift, ensure any `aws.directoryservice.IpRoute` resources managed alongside this resource have an equivalent `ipRoute` block.
+   * 
+   * &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured IP routes. It __will not__ remove the configured IP routes from the directory.
+   * 
+   * &gt; Adding an IPv6 route (`cidrIpv6`) requires the directory&#39;s network type to be dual-stack (IPv4 and IPv6). Enabling IPv6 support on a directory is a one-way operation performed outside of Terraform; see [Updating directory network type](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_update-directory-type.html).
+   */
+  def IpRoutesExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.directoryservice.IpRoutesExclusiveArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.directoryservice.IpRoutesExclusiveArgs.builder
+    com.pulumi.aws.directoryservice.IpRoutesExclusive(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.directoryservice.IpRoutesExclusiveArgs.Builder)
+    /**
+     * @param ipRoutes Set of IP routes the directory should have. Omit all `ipRoute` blocks to remove every IP route from the directory. See `ipRoute` Block below.
+     * @return builder
+     */
+    def ipRoutes(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveIpRouteArgs.Builder]*):
+        com.pulumi.aws.directoryservice.IpRoutesExclusiveArgs.Builder =
+      def argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveIpRouteArgs.builder
+      builder.ipRoutes(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveTimeoutsArgs.Builder]):
+        com.pulumi.aws.directoryservice.IpRoutesExclusiveArgs.Builder =
+      val argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   /** Provides a Log subscription for AWS Directory Service that pushes logs to cloudwatch. */
   def LogSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.LogSubscriptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -178,6 +229,27 @@ object directoryservice:
         com.pulumi.aws.directoryservice.inputs.DirectoryState.Builder =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.DirectoryVpcSettingsArgs.builder
       builder.vpcSettings(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.directoryservice.inputs.IpRouteState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRouteTimeoutsArgs.Builder]):
+        com.pulumi.aws.directoryservice.inputs.IpRouteState.Builder =
+      val argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRouteTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveState.Builder)
+    /**
+     * @param ipRoutes Set of IP routes the directory should have. Omit all `ipRoute` blocks to remove every IP route from the directory. See `ipRoute` Block below.
+     * @return builder
+     */
+    def ipRoutes(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveIpRouteArgs.Builder]*):
+        com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveState.Builder =
+      def argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveIpRouteArgs.builder
+      builder.ipRoutes(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveTimeoutsArgs.Builder]):
+        com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveState.Builder =
+      val argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.directoryservice.inputs.ServiceRegionState.Builder)
     /**

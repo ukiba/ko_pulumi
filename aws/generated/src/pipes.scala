@@ -32,7 +32,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.PipeArgs.Builder)
     /**
-     * @param enrichmentParameters Parameters to configure enrichment for your pipe. Detailed below.
+     * @param enrichmentParameters Parameters to configure enrichment for the pipe. See `enrichmentParameters` Block for details.
      * @return builder
      */
     def enrichmentParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeEnrichmentParametersArgs.Builder]):
@@ -41,7 +41,7 @@ object pipes:
       builder.enrichmentParameters(args(argsBuilder).build)
 
     /**
-     * @param logConfiguration Logging configuration settings for the pipe. Detailed below.
+     * @param logConfiguration Logging configuration settings for the pipe. See `logConfiguration` Block for details.
      * @return builder
      */
     def logConfiguration(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeLogConfigurationArgs.Builder]):
@@ -50,7 +50,7 @@ object pipes:
       builder.logConfiguration(args(argsBuilder).build)
 
     /**
-     * @param sourceParameters Parameters to configure a source for the pipe. Detailed below.
+     * @param sourceParameters Parameters to configure a source for the pipe. See `sourceParameters` Block for details.
      * @return builder
      */
     def sourceParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersArgs.Builder]):
@@ -59,7 +59,7 @@ object pipes:
       builder.sourceParameters(args(argsBuilder).build)
 
     /**
-     * @param targetParameters Parameters to configure a target for your pipe. Detailed below.
+     * @param targetParameters Parameters to configure a target for the pipe. See `targetParameters` Block for details.
      * @return builder
      */
     def targetParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersArgs.Builder]):
@@ -69,7 +69,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeEnrichmentParametersArgs.Builder)
     /**
-     * @param httpParameters Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination. If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you&#39;re using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence. Detailed below.
+     * @param httpParameters HTTP parameters to use when the target is an API Gateway REST endpoint or EventBridge ApiDestination. If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you&#39;re using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence. See `enrichment_parameters.http_parameters` Block for details.
      * @return builder
      */
     def httpParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeEnrichmentParametersHttpParametersArgs.Builder]):
@@ -79,7 +79,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeLogConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLogsLogDestination Amazon CloudWatch Logs logging configuration settings for the pipe. Detailed below.
+     * @param cloudwatchLogsLogDestination Amazon CloudWatch Logs logging configuration settings for the pipe. See `cloudwatchLogsLogDestination` Block for details.
      * @return builder
      */
     def cloudwatchLogsLogDestination(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeLogConfigurationCloudwatchLogsLogDestinationArgs.Builder]):
@@ -88,7 +88,7 @@ object pipes:
       builder.cloudwatchLogsLogDestination(args(argsBuilder).build)
 
     /**
-     * @param firehoseLogDestination Amazon Kinesis Data Firehose logging configuration settings for the pipe. Detailed below.
+     * @param firehoseLogDestination Amazon Kinesis Data Firehose logging configuration settings for the pipe. See `firehoseLogDestination` Block for details.
      * @return builder
      */
     def firehoseLogDestination(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeLogConfigurationFirehoseLogDestinationArgs.Builder]):
@@ -97,7 +97,7 @@ object pipes:
       builder.firehoseLogDestination(args(argsBuilder).build)
 
     /**
-     * @param s3LogDestination Amazon S3 logging configuration settings for the pipe. Detailed below.
+     * @param s3LogDestination Amazon S3 logging configuration settings for the pipe. See `s3LogDestination` Block for details.
      * @return builder
      */
     def s3LogDestination(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeLogConfigurationS3LogDestinationArgs.Builder]):
@@ -107,7 +107,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeSourceParametersActivemqBrokerParametersArgs.Builder)
     /**
-     * @param credentials The credentials needed to access the resource. Detailed below.
+     * @param credentials Credentials needed to access the resource. See `source_parameters.activemq_broker_parameters.credentials` Block for details.
      * @return builder
      */
     def credentials(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersActivemqBrokerParametersCredentialsArgs.Builder]):
@@ -117,7 +117,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeSourceParametersArgs.Builder)
     /**
-     * @param activemqBrokerParameters The parameters for using an Active MQ broker as a source. Detailed below.
+     * @param activemqBrokerParameters Parameters for using an Active MQ broker as a source. See `activemqBrokerParameters` Block for details.
      * @return builder
      */
     def activemqBrokerParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersActivemqBrokerParametersArgs.Builder]):
@@ -126,7 +126,7 @@ object pipes:
       builder.activemqBrokerParameters(args(argsBuilder).build)
 
     /**
-     * @param dynamodbStreamParameters The parameters for using a DynamoDB stream as a source.  Detailed below.
+     * @param dynamodbStreamParameters Parameters for using a DynamoDB stream as a source. See `dynamodbStreamParameters` Block for details.
      * @return builder
      */
     def dynamodbStreamParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersDynamodbStreamParametersArgs.Builder]):
@@ -135,7 +135,7 @@ object pipes:
       builder.dynamodbStreamParameters(args(argsBuilder).build)
 
     /**
-     * @param filterCriteria The collection of event patterns used to [filter events](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-filtering.html). Detailed below.
+     * @param filterCriteria Collection of event patterns used to [filter events](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-filtering.html). See `filterCriteria` Block for details.
      * @return builder
      */
     def filterCriteria(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersFilterCriteriaArgs.Builder]):
@@ -144,7 +144,7 @@ object pipes:
       builder.filterCriteria(args(argsBuilder).build)
 
     /**
-     * @param kinesisStreamParameters The parameters for using a Kinesis stream as a source. Detailed below.
+     * @param kinesisStreamParameters Parameters for using a Kinesis stream as a source. See `source_parameters.kinesis_stream_parameters` Block for details.
      * @return builder
      */
     def kinesisStreamParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersKinesisStreamParametersArgs.Builder]):
@@ -153,7 +153,7 @@ object pipes:
       builder.kinesisStreamParameters(args(argsBuilder).build)
 
     /**
-     * @param managedStreamingKafkaParameters The parameters for using an MSK stream as a source. Detailed below.
+     * @param managedStreamingKafkaParameters Parameters for using an MSK stream as a source. See `managedStreamingKafkaParameters` Block for details.
      * @return builder
      */
     def managedStreamingKafkaParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersManagedStreamingKafkaParametersArgs.Builder]):
@@ -162,7 +162,7 @@ object pipes:
       builder.managedStreamingKafkaParameters(args(argsBuilder).build)
 
     /**
-     * @param rabbitmqBrokerParameters The parameters for using a Rabbit MQ broker as a source. Detailed below.
+     * @param rabbitmqBrokerParameters Parameters for using a Rabbit MQ broker as a source. See `rabbitmqBrokerParameters` Block for details.
      * @return builder
      */
     def rabbitmqBrokerParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersRabbitmqBrokerParametersArgs.Builder]):
@@ -171,7 +171,7 @@ object pipes:
       builder.rabbitmqBrokerParameters(args(argsBuilder).build)
 
     /**
-     * @param selfManagedKafkaParameters The parameters for using a self-managed Apache Kafka stream as a source. Detailed below.
+     * @param selfManagedKafkaParameters Parameters for using a self-managed Apache Kafka stream as a source. See `selfManagedKafkaParameters` Block for details.
      * @return builder
      */
     def selfManagedKafkaParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersSelfManagedKafkaParametersArgs.Builder]):
@@ -180,7 +180,7 @@ object pipes:
       builder.selfManagedKafkaParameters(args(argsBuilder).build)
 
     /**
-     * @param sqsQueueParameters The parameters for using a Amazon SQS stream as a source. Detailed below.
+     * @param sqsQueueParameters Parameters for using an Amazon SQS stream as a source. See `source_parameters.sqs_queue_parameters` Block for details.
      * @return builder
      */
     def sqsQueueParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersSqsQueueParametersArgs.Builder]):
@@ -190,7 +190,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeSourceParametersDynamodbStreamParametersArgs.Builder)
     /**
-     * @param deadLetterConfig Define the target queue to send dead-letter queue events to. Detailed below.
+     * @param deadLetterConfig Define the target queue to send dead-letter queue events to. See `deadLetterConfig` Block for details.
      * @return builder
      */
     def deadLetterConfig(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersDynamodbStreamParametersDeadLetterConfigArgs.Builder]):
@@ -200,7 +200,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeSourceParametersFilterCriteriaArgs.Builder)
     /**
-     * @param filters An array of up to 5 event patterns. Detailed below.
+     * @param filters Array of up to 5 event patterns. See `filter` Block for details.
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersFilterCriteriaFilterArgs.Builder]*):
@@ -209,10 +209,6 @@ object pipes:
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeSourceParametersKinesisStreamParametersArgs.Builder)
-    /**
-     * @param deadLetterConfig Define the target queue to send dead-letter queue events to. Detailed below.
-     * @return builder
-     */
     def deadLetterConfig(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersKinesisStreamParametersDeadLetterConfigArgs.Builder]):
         com.pulumi.aws.pipes.inputs.PipeSourceParametersKinesisStreamParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.pipes.inputs.PipeSourceParametersKinesisStreamParametersDeadLetterConfigArgs.builder
@@ -220,7 +216,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeSourceParametersManagedStreamingKafkaParametersArgs.Builder)
     /**
-     * @param credentials The credentials needed to access the resource. Detailed below.
+     * @param credentials Credentials needed to access the resource. See `source_parameters.managed_streaming_kafka_parameters.credentials` Block for details.
      * @return builder
      */
     def credentials(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersManagedStreamingKafkaParametersCredentialsArgs.Builder]):
@@ -230,7 +226,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeSourceParametersRabbitmqBrokerParametersArgs.Builder)
     /**
-     * @param credentials The credentials needed to access the resource. Detailed below.
+     * @param credentials Credentials needed to access the resource. See `source_parameters.rabbitmq_broker_parameters.credentials` Block for details.
      * @return builder
      */
     def credentials(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersRabbitmqBrokerParametersCredentialsArgs.Builder]):
@@ -240,7 +236,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeSourceParametersSelfManagedKafkaParametersArgs.Builder)
     /**
-     * @param credentials The credentials needed to access the resource. Detailed below.
+     * @param credentials Credentials needed to access the resource. See `source_parameters.self_managed_kafka_parameters.credentials` Block for details.
      * @return builder
      */
     def credentials(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersSelfManagedKafkaParametersCredentialsArgs.Builder]):
@@ -249,7 +245,7 @@ object pipes:
       builder.credentials(args(argsBuilder).build)
 
     /**
-     * @param vpc This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used. Detailed below.
+     * @param vpc VPC subnets and security groups for the stream, and whether a public IP address is to be used. See `vpc` Block for details.
      * @return builder
      */
     def vpc(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersSelfManagedKafkaParametersVpcArgs.Builder]):
@@ -259,7 +255,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeState.Builder)
     /**
-     * @param enrichmentParameters Parameters to configure enrichment for your pipe. Detailed below.
+     * @param enrichmentParameters Parameters to configure enrichment for the pipe. See `enrichmentParameters` Block for details.
      * @return builder
      */
     def enrichmentParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeEnrichmentParametersArgs.Builder]):
@@ -268,7 +264,7 @@ object pipes:
       builder.enrichmentParameters(args(argsBuilder).build)
 
     /**
-     * @param logConfiguration Logging configuration settings for the pipe. Detailed below.
+     * @param logConfiguration Logging configuration settings for the pipe. See `logConfiguration` Block for details.
      * @return builder
      */
     def logConfiguration(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeLogConfigurationArgs.Builder]):
@@ -277,7 +273,7 @@ object pipes:
       builder.logConfiguration(args(argsBuilder).build)
 
     /**
-     * @param sourceParameters Parameters to configure a source for the pipe. Detailed below.
+     * @param sourceParameters Parameters to configure a source for the pipe. See `sourceParameters` Block for details.
      * @return builder
      */
     def sourceParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeSourceParametersArgs.Builder]):
@@ -286,7 +282,7 @@ object pipes:
       builder.sourceParameters(args(argsBuilder).build)
 
     /**
-     * @param targetParameters Parameters to configure a target for your pipe. Detailed below.
+     * @param targetParameters Parameters to configure a target for the pipe. See `targetParameters` Block for details.
      * @return builder
      */
     def targetParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersArgs.Builder]):
@@ -296,7 +292,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeTargetParametersArgs.Builder)
     /**
-     * @param batchJobParameters The parameters for using an AWS Batch job as a target. Detailed below.
+     * @param batchJobParameters Parameters for using an AWS Batch job as a target. See `batchJobParameters` Block for details.
      * @return builder
      */
     def batchJobParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersBatchJobParametersArgs.Builder]):
@@ -305,7 +301,7 @@ object pipes:
       builder.batchJobParameters(args(argsBuilder).build)
 
     /**
-     * @param cloudwatchLogsParameters The parameters for using an CloudWatch Logs log stream as a target. Detailed below.
+     * @param cloudwatchLogsParameters Parameters for using a CloudWatch Logs log stream as a target. See `cloudwatchLogsParameters` Block for details.
      * @return builder
      */
     def cloudwatchLogsParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersCloudwatchLogsParametersArgs.Builder]):
@@ -314,7 +310,7 @@ object pipes:
       builder.cloudwatchLogsParameters(args(argsBuilder).build)
 
     /**
-     * @param ecsTaskParameters The parameters for using an Amazon ECS task as a target. Detailed below.
+     * @param ecsTaskParameters Parameters for using an Amazon ECS task as a target. See `ecsTaskParameters` Block for details.
      * @return builder
      */
     def ecsTaskParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersArgs.Builder]):
@@ -323,7 +319,7 @@ object pipes:
       builder.ecsTaskParameters(args(argsBuilder).build)
 
     /**
-     * @param eventbridgeEventBusParameters The parameters for using an EventBridge event bus as a target. Detailed below.
+     * @param eventbridgeEventBusParameters Parameters for using an EventBridge event bus as a target. See `eventbridgeEventBusParameters` Block for details.
      * @return builder
      */
     def eventbridgeEventBusParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersEventbridgeEventBusParametersArgs.Builder]):
@@ -332,7 +328,7 @@ object pipes:
       builder.eventbridgeEventBusParameters(args(argsBuilder).build)
 
     /**
-     * @param httpParameters These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations. Detailed below.
+     * @param httpParameters Custom parameters used when the target is an API Gateway REST API or EventBridge ApiDestination. See `target_parameters.http_parameters` Block for details.
      * @return builder
      */
     def httpParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersHttpParametersArgs.Builder]):
@@ -341,7 +337,7 @@ object pipes:
       builder.httpParameters(args(argsBuilder).build)
 
     /**
-     * @param kinesisStreamParameters The parameters for using a Kinesis stream as a source. Detailed below.
+     * @param kinesisStreamParameters Parameters for using a Kinesis stream as a target. See `target_parameters.kinesis_stream_parameters` Block for details.
      * @return builder
      */
     def kinesisStreamParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersKinesisStreamParametersArgs.Builder]):
@@ -350,7 +346,7 @@ object pipes:
       builder.kinesisStreamParameters(args(argsBuilder).build)
 
     /**
-     * @param lambdaFunctionParameters The parameters for using a Lambda function as a target. Detailed below.
+     * @param lambdaFunctionParameters Parameters for using a Lambda function as a target. See `lambdaFunctionParameters` Block for details.
      * @return builder
      */
     def lambdaFunctionParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersLambdaFunctionParametersArgs.Builder]):
@@ -359,7 +355,7 @@ object pipes:
       builder.lambdaFunctionParameters(args(argsBuilder).build)
 
     /**
-     * @param redshiftDataParameters These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API BatchExecuteStatement. Detailed below.
+     * @param redshiftDataParameters Custom parameters used when the target is an Amazon Redshift cluster to invoke the Amazon Redshift Data API BatchExecuteStatement. See `redshiftDataParameters` Block for details.
      * @return builder
      */
     def redshiftDataParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersRedshiftDataParametersArgs.Builder]):
@@ -368,7 +364,7 @@ object pipes:
       builder.redshiftDataParameters(args(argsBuilder).build)
 
     /**
-     * @param sagemakerPipelineParameters The parameters for using a SageMaker AI pipeline as a target. Detailed below.
+     * @param sagemakerPipelineParameters Parameters for using a SageMaker AI pipeline as a target. See `sagemakerPipelineParameters` Block for details.
      * @return builder
      */
     def sagemakerPipelineParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersSagemakerPipelineParametersArgs.Builder]):
@@ -377,7 +373,7 @@ object pipes:
       builder.sagemakerPipelineParameters(args(argsBuilder).build)
 
     /**
-     * @param sqsQueueParameters The parameters for using a Amazon SQS stream as a target. Detailed below.
+     * @param sqsQueueParameters Parameters for using an Amazon SQS stream as a target. See `target_parameters.sqs_queue_parameters` Block for details.
      * @return builder
      */
     def sqsQueueParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersSqsQueueParametersArgs.Builder]):
@@ -386,7 +382,7 @@ object pipes:
       builder.sqsQueueParameters(args(argsBuilder).build)
 
     /**
-     * @param stepFunctionStateMachineParameters The parameters for using a Step Functions state machine as a target. Detailed below.
+     * @param stepFunctionStateMachineParameters Parameters for using a Step Functions state machine as a target. See `stepFunctionStateMachineParameters` Block for details.
      * @return builder
      */
     def stepFunctionStateMachineParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersStepFunctionStateMachineParametersArgs.Builder]):
@@ -396,7 +392,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeTargetParametersBatchJobParametersArgs.Builder)
     /**
-     * @param arrayProperties The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job. Detailed below.
+     * @param arrayProperties Array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job. See `arrayProperties` Block for details.
      * @return builder
      */
     def arrayProperties(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersBatchJobParametersArrayPropertiesArgs.Builder]):
@@ -405,7 +401,7 @@ object pipes:
       builder.arrayProperties(args(argsBuilder).build)
 
     /**
-     * @param containerOverrides The overrides that are sent to a container. Detailed below.
+     * @param containerOverrides Overrides that are sent to a container. See `containerOverrides` Block for details.
      * @return builder
      */
     def containerOverrides(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersBatchJobParametersContainerOverridesArgs.Builder]):
@@ -414,7 +410,7 @@ object pipes:
       builder.containerOverrides(args(argsBuilder).build)
 
     /**
-     * @param dependsOns A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a SEQUENTIAL type dependency without specifying a job ID for array jobs so that each child array job completes sequentially, starting at index 0. You can also specify an N_TO_N type dependency with a job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each dependency to complete before it can begin. Detailed below.
+     * @param dependsOns List of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a SEQUENTIAL type dependency without specifying a job ID for array jobs so that each child array job completes sequentially, starting at index 0. You can also specify an N_TO_N type dependency with a job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each dependency to complete before it can begin. See `dependsOn` Block for details.
      * @return builder
      */
     def dependsOns(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersBatchJobParametersDependsOnArgs.Builder]*):
@@ -423,7 +419,7 @@ object pipes:
       builder.dependsOns(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param retryStrategy The retry strategy to use for failed jobs. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition. Detailed below.
+     * @param retryStrategy Retry strategy to use for failed jobs. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition. See `retryStrategy` Block for details.
      * @return builder
      */
     def retryStrategy(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersBatchJobParametersRetryStrategyArgs.Builder]):
@@ -433,7 +429,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeTargetParametersBatchJobParametersContainerOverridesArgs.Builder)
     /**
-     * @param environments The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. You must also specify a container name. Detailed below.
+     * @param environments Environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. Environment variables cannot start with &#34; AWS Batch &#34;. This naming convention is reserved for variables that AWS Batch sets. See `target_parameters.batch_job_parameters.container_overrides.environment` Block for details.
      * @return builder
      */
     def environments(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersBatchJobParametersContainerOverridesEnvironmentArgs.Builder]*):
@@ -442,7 +438,7 @@ object pipes:
       builder.environments(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param resourceRequirements The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU. Detailed below.
+     * @param resourceRequirements Type and amount of resources to assign to a container. This overrides the settings in the job definition. The supported resources include GPU, MEMORY, and VCPU. See `target_parameters.batch_job_parameters.container_overrides.resource_requirement` Block for details.
      * @return builder
      */
     def resourceRequirements(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersBatchJobParametersContainerOverridesResourceRequirementArgs.Builder]*):
@@ -452,7 +448,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersArgs.Builder)
     /**
-     * @param capacityProviderStrategies List of capacity provider strategies to use for the task. If a capacityProviderStrategy is specified, the launchType parameter must be omitted. If no capacityProviderStrategy or launchType is specified, the defaultCapacityProviderStrategy for the cluster is used. Detailed below.
+     * @param capacityProviderStrategies List of capacity provider strategies to use for the task. If a capacityProviderStrategy is specified, the launchType parameter must be omitted. If no capacityProviderStrategy or launchType is specified, the defaultCapacityProviderStrategy for the cluster is used. See `capacityProviderStrategy` Block for details.
      * @return builder
      */
     def capacityProviderStrategies(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersCapacityProviderStrategyArgs.Builder]*):
@@ -461,7 +457,7 @@ object pipes:
       builder.capacityProviderStrategies(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param networkConfiguration Use this structure if the Amazon ECS task uses the awsvpc network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if LaunchType is FARGATE because the awsvpc mode is required for Fargate tasks. If you specify NetworkConfiguration when the target ECS task does not use the awsvpc network mode, the task fails. Detailed below.
+     * @param networkConfiguration Use this structure if the Amazon ECS task uses the awsvpc network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if LaunchType is FARGATE because the awsvpc mode is required for Fargate tasks. If you specify NetworkConfiguration when the target ECS task does not use the awsvpc network mode, the task fails. See `networkConfiguration` Block for details.
      * @return builder
      */
     def networkConfiguration(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersNetworkConfigurationArgs.Builder]):
@@ -470,7 +466,7 @@ object pipes:
       builder.networkConfiguration(args(argsBuilder).build)
 
     /**
-     * @param overrides The overrides that are associated with a task. Detailed below.
+     * @param overrides Overrides that are associated with a task. See `overrides` Block for details.
      * @return builder
      */
     def overrides(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersOverridesArgs.Builder]):
@@ -479,7 +475,7 @@ object pipes:
       builder.overrides(args(argsBuilder).build)
 
     /**
-     * @param placementConstraints An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime). Detailed below.
+     * @param placementConstraints Array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime). See `placementConstraint` Block for details.
      * @return builder
      */
     def placementConstraints(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersPlacementConstraintArgs.Builder]*):
@@ -488,7 +484,7 @@ object pipes:
       builder.placementConstraints(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param placementStrategies The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. Detailed below.
+     * @param placementStrategies Placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. See `placementStrategy` Block for details.
      * @return builder
      */
     def placementStrategies(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersPlacementStrategyArgs.Builder]*):
@@ -498,7 +494,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersNetworkConfigurationArgs.Builder)
     /**
-     * @param awsVpcConfiguration Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode. Detailed below.
+     * @param awsVpcConfiguration Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode. See `awsVpcConfiguration` Block for details.
      * @return builder
      */
     def awsVpcConfiguration(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersNetworkConfigurationAwsVpcConfigurationArgs.Builder]):
@@ -508,7 +504,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersOverridesArgs.Builder)
     /**
-     * @param containerOverrides One or more container overrides that are sent to a task. Detailed below.
+     * @param containerOverrides One or more container overrides that are sent to a task. See `containerOverride` Block for details.
      * @return builder
      */
     def containerOverrides(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersOverridesContainerOverrideArgs.Builder]*):
@@ -517,7 +513,7 @@ object pipes:
       builder.containerOverrides(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param ephemeralStorage The ephemeral storage setting override for the task.  Detailed below.
+     * @param ephemeralStorage Ephemeral storage setting override for the task. See `ephemeralStorage` Block for details.
      * @return builder
      */
     def ephemeralStorage(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersOverridesEphemeralStorageArgs.Builder]):
@@ -526,7 +522,7 @@ object pipes:
       builder.ephemeralStorage(args(argsBuilder).build)
 
     /**
-     * @param inferenceAcceleratorOverrides List of Elastic Inference accelerator overrides for the task. Detailed below.
+     * @param inferenceAcceleratorOverrides List of Elastic Inference accelerator overrides for the task. See `inferenceAcceleratorOverride` Block for details.
      * @return builder
      */
     def inferenceAcceleratorOverrides(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersOverridesInferenceAcceleratorOverrideArgs.Builder]*):
@@ -536,7 +532,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersOverridesContainerOverrideArgs.Builder)
     /**
-     * @param environmentFiles A list of files containing the environment variables to pass to a container, instead of the value from the container definition. Detailed below.
+     * @param environmentFiles List of files containing the environment variables to pass to a container, instead of the value from the container definition. See `environmentFile` Block for details.
      * @return builder
      */
     def environmentFiles(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersOverridesContainerOverrideEnvironmentFileArgs.Builder]*):
@@ -545,7 +541,7 @@ object pipes:
       builder.environmentFiles(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param environments The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. You must also specify a container name. Detailed below.
+     * @param environments Environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. You must also specify a container name. See `target_parameters.ecs_task_parameters.overrides.container_override.environment` Block for details.
      * @return builder
      */
     def environments(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersOverridesContainerOverrideEnvironmentArgs.Builder]*):
@@ -554,7 +550,7 @@ object pipes:
       builder.environments(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param resourceRequirements The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU. Detailed below.
+     * @param resourceRequirements Type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU. See `target_parameters.ecs_task_parameters.overrides.container_override.resource_requirement` Block for details.
      * @return builder
      */
     def resourceRequirements(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersOverridesContainerOverrideResourceRequirementArgs.Builder]*):
@@ -564,7 +560,7 @@ object pipes:
 
   extension (builder: com.pulumi.aws.pipes.inputs.PipeTargetParametersSagemakerPipelineParametersArgs.Builder)
     /**
-     * @param pipelineParameters List of Parameter names and values for SageMaker AI Model Building Pipeline execution. Detailed below.
+     * @param pipelineParameters List of Parameter names and values for SageMaker AI Model Building Pipeline execution. See `pipelineParameter` Block for details.
      * @return builder
      */
     def pipelineParameters(args: Endofunction[com.pulumi.aws.pipes.inputs.PipeTargetParametersSagemakerPipelineParametersPipelineParameterArgs.Builder]*):

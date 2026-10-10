@@ -24,7 +24,7 @@ object polly:
 
   extension (builder: com.pulumi.aws.polly.inputs.GetVoicesArgs.Builder)
     /**
-     * @param voices List of voices with their properties. See `voices` Attribute Reference below.
+     * @param voices List of voices with their properties. See `voices` Block below.
      * @return builder
      */
     def voices(args: Endofunction[com.pulumi.aws.polly.inputs.GetVoicesVoiceArgs.Builder]*):

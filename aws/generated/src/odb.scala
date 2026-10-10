@@ -5,6 +5,127 @@ import com.pulumi.resources.CustomResourceOptions
 
 object odb:
   /**
+   * Manages an Oracle Database{@literal @}AWS Autonomous Database Serverless (ADB-S) instance. ADB-S uses shared Exadata infrastructure managed by Oracle and requires an existing ODB network; it does not require a customer-managed Exadata infrastructure or VM cluster.
+   * 
+   * Provisioning, updating, and deleting an Autonomous Database are asynchronous and can take several hours. The AWS account and Region must be onboarded for Oracle Database{@literal @}AWS and have sufficient service quotas.
+   * 
+   * The AWS API defines all create parameters as optional because the valid combination depends on `source`. For a new database (`source = &#34;NONE&#34;`), configure the ODB network, database identity, workload, compute, storage, license, and ADMIN password values required by your Oracle Database{@literal @}AWS tenancy.
+   */
+  def AutonomousDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.odb.AutonomousDatabaseArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.odb.AutonomousDatabaseArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.odb.AutonomousDatabase(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.odb.AutonomousDatabaseArgs.Builder)
+    /**
+     * @param adminPasswordSource Source of the `ADMIN` password. Conflicts with `adminPassword` and `adminPasswordWo`. See `adminPasswordSource` Block below.
+     * @return builder
+     */
+    def adminPasswordSource(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseAdminPasswordSourceArgs.Builder]):
+        com.pulumi.aws.odb.AutonomousDatabaseArgs.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseAdminPasswordSourceArgs.builder
+      builder.adminPasswordSource(args(argsBuilder).build)
+
+    /**
+     * @param customerContactsToSendToOcis Customer contacts that receive operational notifications from OCI. See `customerContactsToSendToOci` Block below.
+     * @return builder
+     */
+    def customerContactsToSendToOcis(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseCustomerContactsToSendToOciArgs.Builder]*):
+        com.pulumi.aws.odb.AutonomousDatabaseArgs.Builder =
+      def argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseCustomerContactsToSendToOciArgs.builder
+      builder.customerContactsToSendToOcis(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param dbToolsDetails Database management tools to enable. See `dbToolsDetails` Block below.
+     * @return builder
+     */
+    def dbToolsDetails(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseDbToolsDetailArgs.Builder]*):
+        com.pulumi.aws.odb.AutonomousDatabaseArgs.Builder =
+      def argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseDbToolsDetailArgs.builder
+      builder.dbToolsDetails(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param longTermBackupSchedule Long-term backup schedule. See `longTermBackupSchedule` Block below.
+     * @return builder
+     */
+    def longTermBackupSchedule(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseLongTermBackupScheduleArgs.Builder]):
+        com.pulumi.aws.odb.AutonomousDatabaseArgs.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseLongTermBackupScheduleArgs.builder
+      builder.longTermBackupSchedule(args(argsBuilder).build)
+
+    /**
+     * @param resourcePoolSummary Resource pool configuration. See `resourcePoolSummary` Block below.
+     * @return builder
+     */
+    def resourcePoolSummary(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseResourcePoolSummaryArgs.Builder]):
+        com.pulumi.aws.odb.AutonomousDatabaseArgs.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseResourcePoolSummaryArgs.builder
+      builder.resourcePoolSummary(args(argsBuilder).build)
+
+    /**
+     * @param scheduledOperations Scheduled database start and stop times. See `scheduledOperations` Block below.
+     * @return builder
+     */
+    def scheduledOperations(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseScheduledOperationArgs.Builder]*):
+        com.pulumi.aws.odb.AutonomousDatabaseArgs.Builder =
+      def argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseScheduledOperationArgs.builder
+      builder.scheduledOperations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param sourceConfiguration Source-specific configuration used during creation. See `sourceConfiguration` Block below. Changing this value creates a new resource.
+     * @return builder
+     */
+    def sourceConfiguration(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationArgs.Builder]):
+        com.pulumi.aws.odb.AutonomousDatabaseArgs.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationArgs.builder
+      builder.sourceConfiguration(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseTimeoutsArgs.Builder]):
+        com.pulumi.aws.odb.AutonomousDatabaseArgs.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param transportableTablespace Transportable tablespace configuration. See `transportableTablespace` Block below. Changing this value creates a new resource.
+     * @return builder
+     */
+    def transportableTablespace(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseTransportableTablespaceArgs.Builder]):
+        com.pulumi.aws.odb.AutonomousDatabaseArgs.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseTransportableTablespaceArgs.builder
+      builder.transportableTablespace(args(argsBuilder).build)
+
+  /**
+   * Manages the Oracle Database{@literal @}AWS Autonomous Database Serverless integration with AWS Secrets Manager. The resource provisions an Oracle-managed service role that can assume a customer-managed role to read an administrator-password secret.
+   * 
+   * &gt; **Note:** This integration is shared by all databases in the AWS account and Region. Creating this resource manages the existing integration if it is already enabled. Destroying this resource disables the integration for the entire account and Region, which can disrupt databases outside this Terraform configuration that use AWS Secrets Manager credentials. Manage the integration in only one Terraform configuration and coordinate changes with all database owners that depend on it.
+   * 
+   * For accounts with a resource anchor, creating or destroying this resource preserves an existing OCI identity domain. If no identity domain exists, the service creates one when enabling or disabling the integration. This resource does not delete the identity domain.
+   * 
+   * Create the customer-managed IAM role separately. Its trust policy must allow the exported `roleArn` to assume it, and its permissions must grant access to the selected secret. See the [AWS Secrets Manager documentation](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html) for IAM permission guidance.
+   */
+  def AutonomousDatabaseSecretsManagerIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.odb.AutonomousDatabaseSecretsManagerIntegrationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.odb.AutonomousDatabaseSecretsManagerIntegrationArgs.builder
+    com.pulumi.aws.odb.AutonomousDatabaseSecretsManagerIntegration(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.odb.AutonomousDatabaseSecretsManagerIntegrationArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseSecretsManagerIntegrationTimeoutsArgs.Builder]):
+        com.pulumi.aws.odb.AutonomousDatabaseSecretsManagerIntegrationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseSecretsManagerIntegrationTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  /**
    * Resource managing cloud autonomous vm cluster in AWS for Oracle Database{@literal @}AWS.
    * 
    * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
@@ -182,6 +303,18 @@ object odb:
     //
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
+    /** Provides details about an Oracle Database{@literal @}AWS Autonomous Database Serverless (ADB-S) instance by its unique identifier. */
+    inline def getAutonomousDatabase(args: Endofunction[com.pulumi.aws.odb.inputs.GetAutonomousDatabaseArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetAutonomousDatabaseResult] =
+      val argsBuilder = com.pulumi.aws.odb.inputs.GetAutonomousDatabaseArgs.builder
+      com.pulumi.aws.odb.OdbFunctions.getAutonomousDatabase(args(argsBuilder).build)
+
+    /** Provides details about an Oracle Database{@literal @}AWS Autonomous Database Serverless (ADB-S) instance by its unique identifier. */
+    inline def getAutonomousDatabasePlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetAutonomousDatabasePlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetAutonomousDatabaseResult] =
+      val argsBuilder = com.pulumi.aws.odb.inputs.GetAutonomousDatabasePlainArgs.builder
+      com.pulumi.aws.odb.OdbFunctions.getAutonomousDatabasePlain(args(argsBuilder).build)
+
     /**
      * Data source for managing cloud autonomous vm cluster resource in AWS for Oracle Database{@literal @}AWS.
      * 
@@ -303,7 +436,7 @@ object odb:
       com.pulumi.aws.odb.OdbFunctions.getCloudVmClustersPlain(args(argsBuilder).build)
 
     /**
-     * Data source for manging db nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
+     * Data source for managing db nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
      * 
      * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
@@ -313,7 +446,7 @@ object odb:
       com.pulumi.aws.odb.OdbFunctions.getDbNode(args(argsBuilder).build)
 
     /**
-     * Data source for manging db nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
+     * Data source for managing db nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
      * 
      * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
@@ -323,7 +456,7 @@ object odb:
       com.pulumi.aws.odb.OdbFunctions.getDbNodePlain(args(argsBuilder).build)
 
     /**
-     * Data source for manging db nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
+     * Data source for managing db nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
      * 
      * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
@@ -333,7 +466,7 @@ object odb:
       com.pulumi.aws.odb.OdbFunctions.getDbNodes(args(argsBuilder).build)
 
     /**
-     * Data source for manging db nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
+     * Data source for managing db nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
      * 
      * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
@@ -343,7 +476,7 @@ object odb:
       com.pulumi.aws.odb.OdbFunctions.getDbNodesPlain(args(argsBuilder).build)
 
     /**
-     * Data source for manging db server linked to exadata infrastructure of Oracle Database{@literal @}AWS.
+     * Data source for managing db server linked to exadata infrastructure of Oracle Database{@literal @}AWS.
      * 
      * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
@@ -353,7 +486,7 @@ object odb:
       com.pulumi.aws.odb.OdbFunctions.getDbServer(args(argsBuilder).build)
 
     /**
-     * Data source for manging db server linked to exadata infrastructure of Oracle Database{@literal @}AWS.
+     * Data source for managing db server linked to exadata infrastructure of Oracle Database{@literal @}AWS.
      * 
      * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
@@ -363,7 +496,7 @@ object odb:
       com.pulumi.aws.odb.OdbFunctions.getDbServerPlain(args(argsBuilder).build)
 
     /**
-     * Data source for manging db servers linked to exadata infrastructure of Oracle Database{@literal @}AWS.
+     * Data source for managing db servers linked to exadata infrastructure of Oracle Database{@literal @}AWS.
      * 
      * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
@@ -373,7 +506,7 @@ object odb:
       com.pulumi.aws.odb.OdbFunctions.getDbServers(args(argsBuilder).build)
 
     /**
-     * Data source for manging db servers linked to exadata infrastructure of Oracle Database{@literal @}AWS.
+     * Data source for managing db servers linked to exadata infrastructure of Oracle Database{@literal @}AWS.
      * 
      * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
@@ -497,6 +630,127 @@ object odb:
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetNetworksResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetNetworksPlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getNetworksPlain(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.odb.inputs.AutonomousDatabaseAdminPasswordSourceArgs.Builder)
+    def customerManagedAwsSecret(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseAdminPasswordSourceCustomerManagedAwsSecretArgs.Builder]):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseAdminPasswordSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseAdminPasswordSourceCustomerManagedAwsSecretArgs.builder
+      builder.customerManagedAwsSecret(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.odb.inputs.AutonomousDatabaseSecretsManagerIntegrationState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseSecretsManagerIntegrationTimeoutsArgs.Builder]):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseSecretsManagerIntegrationState.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseSecretsManagerIntegrationTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationArgs.Builder)
+    def cloneToRefreshable(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationCloneToRefreshableArgs.Builder]):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationCloneToRefreshableArgs.builder
+      builder.cloneToRefreshable(args(argsBuilder).build)
+
+    def crossRegionDataGuard(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationCrossRegionDataGuardArgs.Builder]):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationCrossRegionDataGuardArgs.builder
+      builder.crossRegionDataGuard(args(argsBuilder).build)
+
+    def crossRegionDisasterRecovery(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationCrossRegionDisasterRecoveryArgs.Builder]):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationCrossRegionDisasterRecoveryArgs.builder
+      builder.crossRegionDisasterRecovery(args(argsBuilder).build)
+
+    def databaseClone(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationDatabaseCloneArgs.Builder]):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationDatabaseCloneArgs.builder
+      builder.databaseClone(args(argsBuilder).build)
+
+    def pointInTimeRestore(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationPointInTimeRestoreArgs.Builder]):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationPointInTimeRestoreArgs.builder
+      builder.pointInTimeRestore(args(argsBuilder).build)
+
+    def restoreFromBackup(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationRestoreFromBackupArgs.Builder]):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationRestoreFromBackupArgs.builder
+      builder.restoreFromBackup(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.odb.inputs.AutonomousDatabaseState.Builder)
+    /**
+     * @param adminPasswordSource Source of the `ADMIN` password. Conflicts with `adminPassword` and `adminPasswordWo`. See `adminPasswordSource` Block below.
+     * @return builder
+     */
+    def adminPasswordSource(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseAdminPasswordSourceArgs.Builder]):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseState.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseAdminPasswordSourceArgs.builder
+      builder.adminPasswordSource(args(argsBuilder).build)
+
+    /**
+     * @param customerContactsToSendToOcis Customer contacts that receive operational notifications from OCI. See `customerContactsToSendToOci` Block below.
+     * @return builder
+     */
+    def customerContactsToSendToOcis(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseCustomerContactsToSendToOciArgs.Builder]*):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseState.Builder =
+      def argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseCustomerContactsToSendToOciArgs.builder
+      builder.customerContactsToSendToOcis(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param dbToolsDetails Database management tools to enable. See `dbToolsDetails` Block below.
+     * @return builder
+     */
+    def dbToolsDetails(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseDbToolsDetailArgs.Builder]*):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseState.Builder =
+      def argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseDbToolsDetailArgs.builder
+      builder.dbToolsDetails(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param longTermBackupSchedule Long-term backup schedule. See `longTermBackupSchedule` Block below.
+     * @return builder
+     */
+    def longTermBackupSchedule(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseLongTermBackupScheduleArgs.Builder]):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseState.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseLongTermBackupScheduleArgs.builder
+      builder.longTermBackupSchedule(args(argsBuilder).build)
+
+    /**
+     * @param resourcePoolSummary Resource pool configuration. See `resourcePoolSummary` Block below.
+     * @return builder
+     */
+    def resourcePoolSummary(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseResourcePoolSummaryArgs.Builder]):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseState.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseResourcePoolSummaryArgs.builder
+      builder.resourcePoolSummary(args(argsBuilder).build)
+
+    /**
+     * @param scheduledOperations Scheduled database start and stop times. See `scheduledOperations` Block below.
+     * @return builder
+     */
+    def scheduledOperations(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseScheduledOperationArgs.Builder]*):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseState.Builder =
+      def argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseScheduledOperationArgs.builder
+      builder.scheduledOperations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param sourceConfiguration Source-specific configuration used during creation. See `sourceConfiguration` Block below. Changing this value creates a new resource.
+     * @return builder
+     */
+    def sourceConfiguration(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationArgs.Builder]):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseState.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseSourceConfigurationArgs.builder
+      builder.sourceConfiguration(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseTimeoutsArgs.Builder]):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseState.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param transportableTablespace Transportable tablespace configuration. See `transportableTablespace` Block below. Changing this value creates a new resource.
+     * @return builder
+     */
+    def transportableTablespace(args: Endofunction[com.pulumi.aws.odb.inputs.AutonomousDatabaseTransportableTablespaceArgs.Builder]):
+        com.pulumi.aws.odb.inputs.AutonomousDatabaseState.Builder =
+      val argsBuilder = com.pulumi.aws.odb.inputs.AutonomousDatabaseTransportableTablespaceArgs.builder
+      builder.transportableTablespace(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowArgs.Builder)
     /**

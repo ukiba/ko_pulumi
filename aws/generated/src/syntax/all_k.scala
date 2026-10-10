@@ -519,6 +519,7 @@ export ko_pulumi.aws.observabilityadmin.loggingFilter
 export ko_pulumi.aws.observabilityadmin.logsEncryptionConfiguration
 export ko_pulumi.aws.observabilityadmin.mskMonitoringParameters
 export ko_pulumi.aws.odb.kmsAccesses
+export ko_pulumi.aws.odb.longTermBackupSchedule
 export ko_pulumi.aws.odb.maintenanceWindow
 export ko_pulumi.aws.odb.managedS3BackupAccesses
 export ko_pulumi.aws.odb.managedServices

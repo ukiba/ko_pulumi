@@ -14,7 +14,7 @@ object verifiedpermissions:
 
   extension (builder: com.pulumi.aws.verifiedpermissions.IdentitySourceArgs.Builder)
     /**
-     * @param configuration Specifies the details required to communicate with the identity provider (IdP) associated with this identity source. See Configuration below.
+     * @param configuration Details required to communicate with the identity provider (IdP) associated with this identity source. See Configuration below.
      * @return builder
      */
     def configuration(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationArgs.Builder]):
@@ -32,7 +32,7 @@ object verifiedpermissions:
 
   extension (builder: com.pulumi.aws.verifiedpermissions.PolicyArgs.Builder)
     /**
-     * @param definition The definition of the policy. See Definition below.
+     * @param definition Definition of the policy. See Definition below.
      * @return builder
      */
     def definition(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.PolicyDefinitionArgs.Builder]):
@@ -57,7 +57,9 @@ object verifiedpermissions:
 
   extension (builder: com.pulumi.aws.verifiedpermissions.PolicyStoreArgs.Builder)
     /**
-     * @param validationSettings Validation settings for the policy store.
+     * @param validationSettings Validation settings for the policy store. See Validation Settings below.
+     * 
+     * The following arguments are optional:
      * @return builder
      */
     def validationSettings(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.PolicyStoreValidationSettingsArgs.Builder]):
@@ -83,7 +85,7 @@ object verifiedpermissions:
 
   extension (builder: com.pulumi.aws.verifiedpermissions.SchemaArgs.Builder)
     /**
-     * @param definition The definition of the schema.
+     * @param definition Definition of the schema. See Definition below.
      * @return builder
      */
     def definition(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.SchemaDefinitionArgs.Builder]):
@@ -112,7 +114,7 @@ object verifiedpermissions:
 
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationArgs.Builder)
     /**
-     * @param cognitoUserPoolConfiguration Specifies the configuration details of an Amazon Cognito user pool that Verified Permissions can use as a source of authenticated identities as entities. See Cognito User Pool Configuration below.
+     * @param cognitoUserPoolConfiguration Configuration details of an Amazon Cognito user pool that Verified Permissions can use as a source of authenticated identities as entities. See Cognito User Pool Configuration below.
      * @return builder
      */
     def cognitoUserPoolConfiguration(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationCognitoUserPoolConfigurationArgs.Builder]):
@@ -121,7 +123,7 @@ object verifiedpermissions:
       builder.cognitoUserPoolConfiguration(args(argsBuilder).build)
 
     /**
-     * @param openIdConnectConfiguration Specifies the configuration details of an OpenID Connect (OIDC) identity provider, or identity source, that Verified Permissions can use to generate entities from authenticated identities. See Open ID Connect Configuration below.
+     * @param openIdConnectConfiguration Configuration details of an OpenID Connect (OIDC) identity provider, or identity source, that Verified Permissions can use to generate entities from authenticated identities. See Open ID Connect Configuration below.
      * @return builder
      */
     def openIdConnectConfiguration(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationOpenIdConnectConfigurationArgs.Builder]):
@@ -131,7 +133,7 @@ object verifiedpermissions:
 
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationCognitoUserPoolConfigurationArgs.Builder)
     /**
-     * @param groupConfiguration The type of entity that a policy store maps to groups from an Amazon Cognito user pool identity source. See Group Configuration below.
+     * @param groupConfiguration Type of entity that a policy store maps to groups from an Amazon Cognito user pool identity source. See Group Configuration below.
      * @return builder
      */
     def groupConfiguration(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationCognitoUserPoolConfigurationGroupConfigurationArgs.Builder]):
@@ -141,7 +143,7 @@ object verifiedpermissions:
 
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationOpenIdConnectConfigurationArgs.Builder)
     /**
-     * @param groupConfiguration The type of entity that a policy store maps to groups from an Amazon Cognito user pool identity source. See Group Configuration below.
+     * @param groupConfiguration Type of entity that a policy store maps to groups from an Amazon Cognito user pool identity source. See Group Configuration below.
      * @return builder
      */
     def groupConfiguration(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationOpenIdConnectConfigurationGroupConfigurationArgs.Builder]):
@@ -150,7 +152,7 @@ object verifiedpermissions:
       builder.groupConfiguration(args(argsBuilder).build)
 
     /**
-     * @param tokenSelection The token type that you want to process from your OIDC identity provider. Your policy store can process either identity (ID) or access tokens from a given OIDC identity source. See Token Selection below.
+     * @param tokenSelection Token type that you want to process from your OIDC identity provider. Your policy store can process either identity (ID) or access tokens from a given OIDC identity source. See Token Selection below.
      * @return builder
      */
     def tokenSelection(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationOpenIdConnectConfigurationTokenSelectionArgs.Builder]):
@@ -160,7 +162,7 @@ object verifiedpermissions:
 
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationOpenIdConnectConfigurationTokenSelectionArgs.Builder)
     /**
-     * @param accessTokenOnly The OIDC configuration for processing access tokens. See Access Token Only below.
+     * @param accessTokenOnly OIDC configuration for processing access tokens. See Access Token Only below.
      * @return builder
      */
     def accessTokenOnly(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationOpenIdConnectConfigurationTokenSelectionAccessTokenOnlyArgs.Builder]):
@@ -169,7 +171,7 @@ object verifiedpermissions:
       builder.accessTokenOnly(args(argsBuilder).build)
 
     /**
-     * @param identityTokenOnly The OIDC configuration for processing identity (ID) tokens. See Identity Token Only below.
+     * @param identityTokenOnly OIDC configuration for processing identity (ID) tokens. See Identity Token Only below.
      * @return builder
      */
     def identityTokenOnly(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationOpenIdConnectConfigurationTokenSelectionIdentityTokenOnlyArgs.Builder]):
@@ -179,7 +181,7 @@ object verifiedpermissions:
 
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceState.Builder)
     /**
-     * @param configuration Specifies the details required to communicate with the identity provider (IdP) associated with this identity source. See Configuration below.
+     * @param configuration Details required to communicate with the identity provider (IdP) associated with this identity source. See Configuration below.
      * @return builder
      */
     def configuration(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationArgs.Builder]):
@@ -189,7 +191,7 @@ object verifiedpermissions:
 
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.PolicyDefinitionArgs.Builder)
     /**
-     * @param static_ The static policy statement. See Static below.
+     * @param static_ Static policy statement. See Static below.
      * @return builder
      */
     def static_(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.PolicyDefinitionStaticArgs.Builder]):
@@ -198,7 +200,7 @@ object verifiedpermissions:
       builder.static_(args(argsBuilder).build)
 
     /**
-     * @param templateLinked The template linked policy. See Template Linked below.
+     * @param templateLinked Template linked policy. See Template Linked below.
      * @return builder
      */
     def templateLinked(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.PolicyDefinitionTemplateLinkedArgs.Builder]):
@@ -208,7 +210,7 @@ object verifiedpermissions:
 
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.PolicyDefinitionTemplateLinkedArgs.Builder)
     /**
-     * @param principal The principal of the template linked policy.
+     * @param principal Principal of the template linked policy. See Principal below.
      * @return builder
      */
     def principal(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.PolicyDefinitionTemplateLinkedPrincipalArgs.Builder]):
@@ -217,7 +219,7 @@ object verifiedpermissions:
       builder.principal(args(argsBuilder).build)
 
     /**
-     * @param resource The resource of the template linked policy.
+     * @param resource Resource of the template linked policy. See Resource below.
      * @return builder
      */
     def resource(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.PolicyDefinitionTemplateLinkedResourceArgs.Builder]):
@@ -227,7 +229,7 @@ object verifiedpermissions:
 
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.PolicyState.Builder)
     /**
-     * @param definition The definition of the policy. See Definition below.
+     * @param definition Definition of the policy. See Definition below.
      * @return builder
      */
     def definition(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.PolicyDefinitionArgs.Builder]):
@@ -237,7 +239,9 @@ object verifiedpermissions:
 
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.PolicyStoreState.Builder)
     /**
-     * @param validationSettings Validation settings for the policy store.
+     * @param validationSettings Validation settings for the policy store. See Validation Settings below.
+     * 
+     * The following arguments are optional:
      * @return builder
      */
     def validationSettings(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.PolicyStoreValidationSettingsArgs.Builder]):
@@ -247,7 +251,7 @@ object verifiedpermissions:
 
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.SchemaState.Builder)
     /**
-     * @param definition The definition of the schema.
+     * @param definition Definition of the schema. See Definition below.
      * @return builder
      */
     def definition(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.SchemaDefinitionArgs.Builder]):

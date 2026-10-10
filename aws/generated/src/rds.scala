@@ -1117,7 +1117,7 @@ object rds:
       builder.blueGreenUpdate(args(argsBuilder).build)
 
     /**
-     * @param listenerEndpoints Listener connection endpoint for SQL Server Always On. See Endpoint below.
+     * @param listenerEndpoints Listener connection endpoint for SQL Server Always On. See `listenerEndpoint` Block below.
      * @return builder
      */
     def listenerEndpoints(args: Endofunction[com.pulumi.aws.rds.inputs.InstanceListenerEndpointArgs.Builder]*):

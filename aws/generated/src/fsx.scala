@@ -660,7 +660,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.OntapFileSystemEndpointArgs.Builder)
     /**
-     * @param interclusters Endpoint for managing your file system by setting up NetApp SnapMirror with other ONTAP systems. See Endpoint.
+     * @param interclusters Endpoint for managing your file system by setting up NetApp SnapMirror with other ONTAP systems. See `endpoints.intercluster` below.
      * @return builder
      */
     def interclusters(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapFileSystemEndpointInterclusterArgs.Builder]*):
@@ -669,7 +669,7 @@ object fsx:
       builder.interclusters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param managements Endpoint for managing your file system using the NetApp ONTAP CLI and NetApp ONTAP API. See Endpoint.
+     * @param managements Endpoint for managing your file system using the NetApp ONTAP CLI and NetApp ONTAP API. See `endpoints.management` below.
      * @return builder
      */
     def managements(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapFileSystemEndpointManagementArgs.Builder]*):
@@ -708,7 +708,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.OntapStorageVirtualMachineEndpointArgs.Builder)
     /**
-     * @param iscsis Endpoint for accessing data on your storage virtual machine via iSCSI protocol. See Endpoint.
+     * @param iscsis Endpoint for accessing data on your storage virtual machine via iSCSI protocol. See `endpoints.iscsi` below.
      * @return builder
      */
     def iscsis(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapStorageVirtualMachineEndpointIscsiArgs.Builder]*):
@@ -717,7 +717,7 @@ object fsx:
       builder.iscsis(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param managements Endpoint for managing your file system using the NetApp ONTAP CLI and NetApp ONTAP API. See Endpoint.
+     * @param managements Endpoint for managing your file system using the NetApp ONTAP CLI and NetApp ONTAP API. See `endpoints.management` below.
      * @return builder
      */
     def managements(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapStorageVirtualMachineEndpointManagementArgs.Builder]*):
@@ -726,7 +726,7 @@ object fsx:
       builder.managements(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param nfs Endpoint for accessing data on your storage virtual machine via NFS protocol. See Endpoint.
+     * @param nfs Endpoint for accessing data on your storage virtual machine via NFS protocol. See `endpoints.nfs` below.
      * @return builder
      */
     def nfs(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapStorageVirtualMachineEndpointNfArgs.Builder]*):
@@ -735,7 +735,7 @@ object fsx:
       builder.nfs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param smbs Endpoint for accessing data on your storage virtual machine via SMB protocol. This is only set if an activeDirectoryConfiguration has been set. See Endpoint.
+     * @param smbs Endpoint for accessing data on your storage virtual machine via SMB protocol. This is only set if an activeDirectoryConfiguration has been set. See `endpoints.smb` below.
      * @return builder
      */
     def smbs(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapStorageVirtualMachineEndpointSmbArgs.Builder]*):

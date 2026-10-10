@@ -1201,6 +1201,7 @@ export ko_pulumi.gcp.networksecurity.cloudIap
 export ko_pulumi.gcp.networksecurity.condition
 export ko_pulumi.gcp.networksecurity.connectedDeploymentGroups
 export ko_pulumi.gcp.networksecurity.connectedEndpointGroups
+export ko_pulumi.gcp.networksecurity.customFileTypes
 export ko_pulumi.gcp.networksecurity.customInterceptProfile
 export ko_pulumi.gcp.networksecurity.customMirroringProfile
 export ko_pulumi.gcp.networksecurity.customProvider
@@ -1254,6 +1255,7 @@ export ko_pulumi.gcp.oracledatabase.dbSystemOptions
 export ko_pulumi.gcp.oracledatabase.deploymentDiagnosticData
 export ko_pulumi.gcp.oracledatabase.diagnosticsDataCollectionOptions
 export ko_pulumi.gcp.oracledatabase.elasticsearchConnectionProperties
+export ko_pulumi.gcp.oracledatabase.exascaleConfigs
 export ko_pulumi.gcp.oracledatabase.exascaleDbStorageDetails
 export ko_pulumi.gcp.organizations.allow
 export ko_pulumi.gcp.organizations.auditConfigs

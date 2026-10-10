@@ -190,6 +190,16 @@ object databasemigrationservice:
       builder.pscInterfaceConfig(args(argsBuilder).build)
 
     /**
+     * @param reservedPublicIpConfig The Reserved Public IP configuration.
+     * Structure is documented below.
+     * @return builder
+     */
+    def reservedPublicIpConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionReservedPublicIpConfigArgs.Builder]):
+        com.pulumi.gcp.databasemigrationservice.PrivateConnectionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionReservedPublicIpConfigArgs.builder
+      builder.reservedPublicIpConfig(args(argsBuilder).build)
+
+    /**
      * @param vpcPeeringConfig The VPC Peering configuration is used to create VPC peering
      * between databasemigrationservice and the consumer&#39;s VPC.
      * Structure is documented below.
@@ -560,6 +570,16 @@ object databasemigrationservice:
         com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionPscInterfaceConfigArgs.builder
       builder.pscInterfaceConfig(args(argsBuilder).build)
+
+    /**
+     * @param reservedPublicIpConfig The Reserved Public IP configuration.
+     * Structure is documented below.
+     * @return builder
+     */
+    def reservedPublicIpConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionReservedPublicIpConfigArgs.Builder]):
+        com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionState.Builder =
+      val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionReservedPublicIpConfigArgs.builder
+      builder.reservedPublicIpConfig(args(argsBuilder).build)
 
     /**
      * @param vpcPeeringConfig The VPC Peering configuration is used to create VPC peering

@@ -187,6 +187,7 @@ export ko_pulumi.aws.datazone.group
 export ko_pulumi.aws.datazone.iams
 export ko_pulumi.aws.datazone.imports
 export ko_pulumi.aws.devopsguru.filters
+export ko_pulumi.aws.directoryservice.ipRoutes
 export ko_pulumi.aws.dlm.fastRestoreRule
 export ko_pulumi.aws.dms.ibmDb2LuwSettings
 export ko_pulumi.aws.dms.ibmDb2ZosSettings

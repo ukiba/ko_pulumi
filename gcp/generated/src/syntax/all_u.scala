@@ -207,6 +207,13 @@ export ko_pulumi.gcp.networkconnectivity.warnings
 export ko_pulumi.gcp.networksecurity.urlFilteringProfile
 export ko_pulumi.gcp.networksecurity.urlFilters
 export ko_pulumi.gcp.networksecurity.value
+export ko_pulumi.gcp.networksecurity.wildfireAnalysisProfile
+export ko_pulumi.gcp.networksecurity.wildfireInlineCloudAnalysisRules
+export ko_pulumi.gcp.networksecurity.wildfireInlineMlOverrides
+export ko_pulumi.gcp.networksecurity.wildfireInlineMlSetting
+export ko_pulumi.gcp.networksecurity.wildfireOverrides
+export ko_pulumi.gcp.networksecurity.wildfireSubmissionRules
+export ko_pulumi.gcp.networksecurity.wildfireThreatOverrides
 export ko_pulumi.gcp.networkservices.ullMulticastDomain
 export ko_pulumi.gcp.networkservices.urlRedirect
 export ko_pulumi.gcp.networkservices.urlRewrite
