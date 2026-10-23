@@ -3,7 +3,7 @@ package build
 import JavacSyntax.*
 
 import com.sun.source.tree.ClassTree
-import com.sun.source.doctree.{DocCommentTree, DeprecatedTree}
+import com.sun.source.doctree.DeprecatedTree
 import com.sun.source.util.{DocTrees, TreePathScanner, JavacTask}
 
 import scala.jdk.StreamConverters.*
@@ -108,18 +108,18 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
     // to avoid `two or more overloaded variants of method Cluster have default arguments`
     // for ecs.Cluster, eks.Cluster, rds.Cluster, redshift.Cluster, msk.Cluster, ...
     // they would be referenced with the prefix
-    val extMethodsDedup = (for
+    val exportedExtMethods = (for
       (packageComps, members) <- packageMembers.toSeq
       case ResourceArgsMember(_, names) <- members
       name <- names
     yield ExtMethod(packageComps.last, name)).toSet
-    val funcsDedup = (for
+    val exportedFuncs = (for
       (packageComps, members) <- packageMembers.toSeq
       case FunctionsMember(_, name) <- members
     yield s"${packageComps.last}.$name").toSet
 
     // don't create empty files
-    val splitFiles = splitConfs.filter(conf => extMethodsDedup.exists(conf.contains)).map: conf =>
+    val splitFiles = splitConfs.filter(conf => exportedExtMethods.exists(conf.contains)).map: conf =>
       (conf = conf, file = dstRoot.resolve(conf.fileName))
 
     Using.Manager: use =>
@@ -135,11 +135,11 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
           |
           |""".stripMargin)
 
-      funcsDedup.toSeq.sorted.foreach: func =>
+      exportedFuncs.toSeq.sorted.foreach: func =>
         mainWriter.append(s"export ko_pulumi.$packageName.$func\n")
 
       splitWriters.foreach: writer =>
-        extMethodsDedup.filter(writer.conf.contains).toSeq.sorted.foreach: extMethod =>
+        exportedExtMethods.filter(writer.conf.contains).toSeq.sorted.foreach: extMethod =>
           writer.writer.append(s"export ko_pulumi.$packageName.${extMethod.cls}.${extMethod.method}\n")
 
     `all.scala` +: splitFiles.map(_.file)
@@ -154,35 +154,23 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
   val packageMembers = collection.mutable.Map.empty[Seq[String], Vector[Member]].withDefaultValue(Vector())
 
   class Scanner(using trees: DocTrees, elements: Elements, types: Types) extends TreePathScanner[Unit, Unit]:
-    object elems:
-      val `java.lang.String`                      = elements.getTypeElement("java.lang.String")
-      val `java.lang.Deprecated`                  = elements.getTypeElement("java.lang.Deprecated")
-      val `java.util.Map`                         = elements.getTypeElement("java.util.Map")
-      val `com.pulumi.core.Output`                = elements.getTypeElement("com.pulumi.core.Output")
-      val `java.util.concurrent.CompletableFuture` = elements.getTypeElement("java.util.concurrent.CompletableFuture")
-      val `com.pulumi.resources.CustomResource`   = elements.getTypeElement("com.pulumi.resources.CustomResource")
-      val `com.pulumi.resources.ProviderResource` = elements.getTypeElement("com.pulumi.resources.ProviderResource")
-      val `com.pulumi.resources.CustomResourceOptions` =
-          elements.getTypeElement("com.pulumi.resources.CustomResourceOptions")
-      val `com.pulumi.resources.ResourceArgs`     = elements.getTypeElement("com.pulumi.resources.ResourceArgs")
-      val `com.pulumi.resources.InvokeArgs`       = elements.getTypeElement("com.pulumi.resources.InvokeArgs")
-      val `com.pulumi.resources.CallArgs`         = elements.getTypeElement("com.pulumi.resources.CallArgs")
+    def typeElemOf(qualifiedName: String): TypeElement = elements.getTypeElement(qualifiedName)
+    def typeOf(qualifiedName: String): TypeMirror = typeElemOf(qualifiedName).asType
 
-    // types
-    val `java.lang.String`     = elems.`java.lang.String`    .asType
-    val `java.lang.Deprecated` = elems.`java.lang.Deprecated`.asType
-    val `java.util.Map<java.lang.String,java.lang.String>` =
-        types.getDeclaredType(elems.`java.util.Map`, `java.lang.String`, `java.lang.String`)
-    val `com.pulumi.core.Output<java.util.Map<java.lang.String,java.lang.String>>` =
-        types.getDeclaredType(elems.`com.pulumi.core.Output`, `java.util.Map<java.lang.String,java.lang.String>`)
-    val `com.pulumi.resources.CustomResource`   = elems.`com.pulumi.resources.CustomResource`  .asType
-    val `com.pulumi.resources.ProviderResource` = elems.`com.pulumi.resources.ProviderResource`.asType
-    val `com.pulumi.resources.CustomResourceOptions` = elems.`com.pulumi.resources.CustomResourceOptions`.asType
+    val outputElem = typeElemOf("com.pulumi.core.Output")
+
+    val stringType                = typeOf("java.lang.String")
+    val deprecatedType            = typeOf("java.lang.Deprecated")
+    val stringMapType             = types.getDeclaredType(typeElemOf("java.util.Map"), stringType, stringType)
+    val outputStringMapType       = types.getDeclaredType(outputElem, stringMapType)
+    val customResourceType        = typeOf("com.pulumi.resources.CustomResource")
+    val providerResourceType      = typeOf("com.pulumi.resources.ProviderResource")
+    val customResourceOptionsType = typeOf("com.pulumi.resources.CustomResourceOptions")
 
     val argsSuperclasses = Seq(  // TODO subclasses of InputArgs
-      elems.`com.pulumi.resources.ResourceArgs`.asType,
-      elems.`com.pulumi.resources.InvokeArgs`  .asType,
-      elems.`com.pulumi.resources.CallArgs`    .asType,
+      typeOf("com.pulumi.resources.ResourceArgs"),
+      typeOf("com.pulumi.resources.InvokeArgs"),
+      typeOf("com.pulumi.resources.CallArgs"),
     )
     def isArgsType(typeMirror: TypeMirror) = argsSuperclasses.exists(types.isSubtype(typeMirror, _))
 
@@ -195,8 +183,8 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
           case pkgName => pkgName.toString.split('.').toSeq
 
         if clsElem.superclass.exists(superclass =>
-            types.isSameType(superclass, `com.pulumi.resources.CustomResource`) ||
-            types.isSameType(superclass, `com.pulumi.resources.ProviderResource`)) then
+            types.isSameType(superclass, customResourceType) ||
+            types.isSameType(superclass, providerResourceType)) then
           genCustomResource(clsElem, packageComps)
         else if clsElem.superclass.exists(superclass => argsSuperclasses.exists(types.isSameType(superclass, _))) then
           genResourceArgs(clsElem, packageComps)
@@ -238,21 +226,22 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       val clsName = clsElem.simpleName
 
       // the Args type of the constructor (String name, XxxArgs args, CustomResourceOptions options)
-      clsElem.enclosedElements.collectFirst:
+      clsElem.enclosedElements.collect:
         case ctor: ExecutableElement if ctor.getKind == ElementKind.CONSTRUCTOR && ctor.parameters.length == 3 &&
-            types.isSameType(ctor.parameters(0).asType, `java.lang.String`) &&
-            types.isSameType(ctor.parameters(2).asType, `com.pulumi.resources.CustomResourceOptions`) &&
-            types.asElement(ctor.parameters(1).asType).simpleName.contentEquals(s"${clsName}Args") =>
-          types.asElement(ctor.parameters(1).asType).asInstanceOf[TypeElement]
+            types.isSameType(ctor.parameters(0).asType, stringType) &&
+            types.isSameType(ctor.parameters(2).asType, customResourceOptionsType) =>
+          types.asElement(ctor.parameters(1).asType)  // null if primitive
+      .collectFirst:
+        case argsType: TypeElement if argsType.simpleName.contentEquals(s"${clsName}Args") => argsType
       match
         case Some(argsType) =>
           val argsBuilderType = builderOf(argsType)
 
-          val nameSetter = methodOf(argsBuilderType, "name", `java.lang.String`)
+          val nameSetter = methodOf(argsBuilderType, "name", stringType)
           val argsBuilderHasTags =
-              methodOf(argsBuilderType, "tags", `java.util.Map<java.lang.String,java.lang.String>`).nonEmpty
+              methodOf(argsBuilderType, "tags", stringMapType).nonEmpty
 
-          val clsDoc = scaladocWithoutExamples(trees.getDocCommentTree(clsElem), indent = "  ")
+          val clsDoc = scaladocOf(clsElem, indent = "  ")
 
           // each conf carries the methods it calls, to propagate their deprecation,
           // and its code starts with a newline, to be appended to the preceding line
@@ -271,7 +260,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
               |    conf.logicalName2ecsTaskDefinitionFamily(name) match
               |      case Some(family) => argsBuilder = argsBuilder.family(family)
               |      case None         =>""".stripMargin,
-              calls = Seq(requiredMethod(argsBuilderType, "family", `java.lang.String`))),
+              calls = Seq(requiredMethod(argsBuilderType, "family", stringType))),
           ).flatten
 
           // post-args-function: tags set by args-function are preserved
@@ -285,7 +274,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
             |              if map.contains("Name") then map else map + ("Name" -> tagName))
             |      case None =>""".stripMargin, calls = Seq(
               requiredMethod(argsBuilderType, "tags",
-                  `com.pulumi.core.Output<java.util.Map<java.lang.String,java.lang.String>>`),
+                  outputStringMapType),
               requiredMethod(argsType, "tags")))
           .toSeq
 
@@ -297,14 +286,13 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
           val finalArgsExpr = if argsBuilderHasTags then "argsBuilder.build" else "args(argsBuilder).build"
 
-          // identity is qualified to avoid the collision with gcp.storage.identity
-          val resourceFuncType = s"Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity"
+          val resourceFuncType = s"Endofunction[CustomResourceOptions.Builder] = $identityExpr"
           // the confs reassign argsBuilder
           val builderVarOrVal = if confs.nonEmpty then "var" else "val"
           val argsTypeName = argsType.getQualifiedName
           packageMembers(packageComps) :+= CustomResourceMember(s"""
             |  ${clsDoc}${deprecated}def $clsName(name: String, resourceOptions: $resourceFuncType)
-            |      (args: Endofunction[$argsTypeName.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+            |      (args: Endofunction[$argsTypeName.Builder] = $identityExpr)(using conf: KoPulumiConf) =
             |    $builderVarOrVal argsBuilder = $argsTypeName.builder${confs.map(_.code).mkString}
             |    ${clsElem.getQualifiedName}(name,
             |        $finalArgsExpr,
@@ -356,25 +344,24 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
         val extMethods = argsBuilderMethods.map: (method, argsType, isVararg) =>
           val methodName = escapeScalaKeyword(method.simpleName.toString)
 
-          val methodDoc = Option(trees.getDocCommentTree(method)).map: docTree =>
-            scaladoc(docTree.toString.split('\n').toSeq, indent = "    ")
-          .mkString
+          val methodDoc = scaladocOf(method, indent = "    ")
 
           val deprecated = deprecatedOf(method)
 
-          val argsFuncType = s"Endofunction[${renderScalaType(argsType)}.Builder]"
+          val argsTypeName = renderScalaType(argsType)
+          val argsFuncType = s"Endofunction[$argsTypeName.Builder]"
           if !isVararg then
             s"""
               |    ${methodDoc}${deprecated}def $methodName(args: $argsFuncType):
               |        ${renderScalaType(method.returnType)} =
-              |      val argsBuilder = ${renderScalaType(argsType)}.builder
+              |      val argsBuilder = $argsTypeName.builder
               |      builder.$methodName(args(argsBuilder).build)
               |""".stripMargin
           else
             s"""
               |    ${methodDoc}${deprecated}def $methodName(args: $argsFuncType*):
               |        ${renderScalaType(method.returnType)} =
-              |      def argsBuilder = ${renderScalaType(argsType)}.builder
+              |      def argsBuilder = $argsTypeName.builder
               |      builder.$methodName(args.map(_(argsBuilder).build)*)
               |""".stripMargin
         .mkString
@@ -408,8 +395,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       val clsName = clsElem.simpleName
 
       // exclude com.pulumi.aws.appstream.ImageBuilderArgs.builder(ImageBuilderArgs)
-      val resultTypes = Seq(elems.`com.pulumi.core.Output`, elems.`java.util.concurrent.CompletableFuture`)
-          .map(elem => types.erasure(elem.asType))
+      val resultTypes = Seq(outputElem.asType, typeOf("java.util.concurrent.CompletableFuture")).map(types.erasure)
 
       // static Output<GetAmiResult> getAmi(GetAmiArgs args)
       val functionMethods = clsElem.enclosedElements.collect:
@@ -425,14 +411,13 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
         val functions = functionMethods.map: method =>
           val methodName = escapeScalaKeyword(method.simpleName.toString)
 
-          val methodDoc = scaladocWithoutExamples(trees.getDocCommentTree(method), indent = "    ")
+          val methodDoc = scaladocOf(method, indent = "    ")
 
           val deprecated = deprecatedOf(method)
 
           val argsType = renderScalaType(method.parameters.head.asType)
 
-          // identity is qualified to avoid the collision with gcp.storage.identity
-          val argsFuncType = s"Endofunction[$argsType.Builder] = scala.Predef.identity"
+          val argsFuncType = s"Endofunction[$argsType.Builder] = $identityExpr"
           s"""
             |    ${methodDoc}${deprecated}inline def $methodName(args: $argsFuncType):
             |        ${renderScalaType(method.returnType)} =
@@ -470,17 +455,17 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       methodOf(owner, name, paramTypes*).getOrElse:
         throw IllegalStateException(s"$owner must have $name(${paramTypes.mkString(", ")})")
 
-    // the examples are long, and don't use the improved syntax
-    def scaladocWithoutExamples(docTree: DocCommentTree, indent: String): String =
-      Option(docTree).map: docTree =>
+    // without the examples, which are long and don't use the improved syntax
+    def scaladocOf(elem: Element, indent: String): String =
+      Option(trees.getDocCommentTree(elem)).map: docTree =>
         val lines = docTree.toString.split('\n').toSeq.takeWhile(_.trim != "## Example Usage")
         scaladoc(lines, indent)
       .mkString
 
     // annotation is needed since @deprecated tag in scaladoc does not suppress the deprecated warnings
     def deprecatedOf(elem: Element): String =
-      deprecatedSinceOf(elem).map: since =>
-        val sinceArg = since.map(value => s"since = ${stringLiteralOf(value)}").mkString
+      deprecationOf(elem).map: deprecation =>
+        val sinceArg = deprecation.since.map(value => s"since = ${stringLiteralOf(value)}").mkString
         s"@deprecated(${sinceArg}) "  // maybe propagate anno.elementValues
       .mkString
 
@@ -488,40 +473,38 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
     // (like javac, scalac does not warn inside deprecated members)
     def deprecatedCallsOf(calledMethods: Seq[ExecutableElement]): String =
       val deprecatedMethods = calledMethods.distinct.flatMap: method =>
-        deprecatedSinceOf(method).map(since => (method = method, since = since))
+        deprecationOf(method).map(deprecation => (method = method, deprecation = deprecation))
       Option.when(deprecatedMethods.nonEmpty):
-        val reasons = deprecatedMethods.map(_.method).map: method =>
-          val reason = deprecatedReasonOf(method).map(": " + _).mkString
+        val reasons = deprecatedMethods.map: (method, deprecation) =>
+          val reason = deprecation.reason.map(": " + _).mkString
           s"${method.getEnclosingElement}.${method.simpleName}$reason"
-        val sinces = deprecatedMethods.flatMap(_.since).distinct
+        val sinces = deprecatedMethods.flatMap(_.deprecation.since).distinct
         val since = Option.when(sinces.nonEmpty):
           s", since = ${stringLiteralOf(sinces.mkString(", "))}"
         .mkString
         s"@deprecated(${stringLiteralOf(s"calls deprecated ${reasons.mkString("; ")}")}$since) "
       .mkString
 
-    // Some(since) if @Deprecated
-    def deprecatedSinceOf(elem: Element): Option[Option[String]] =
-      elem.annotationMirrors.find(anno => types.isSameType(anno.annotationType, `java.lang.Deprecated`)).map: anno =>
-        anno.elementValues.collectFirst:
+    // Some if @Deprecated, with its `since` element and the body of `@deprecated` Javadoc tag (whitespace collapsed)
+    def deprecationOf(elem: Element): Option[(since: Option[String], reason: Option[String])] =
+      elem.annotationMirrors.find(anno => types.isSameType(anno.annotationType, deprecatedType)).map: anno =>
+        val since = anno.elementValues.collectFirst:
           case (method: ExecutableElement, value: AnnotationValue) if method.getSimpleName.contentEquals("since") =>
             value.getValue.asInstanceOf[String]
+        val reason = Option(trees.getDocCommentTree(elem)).toSeq.flatMap(_.getBlockTags.asScala).collectFirst:
+          case tag: DeprecatedTree => tag.getBody.asScala.mkString.trim.replaceAll("\\s+", " ")
+        .filter(_.nonEmpty)
+        (since = since, reason = reason)
 
-    // the body of `@deprecated` Javadoc tag, with whitespace collapsed
-    def deprecatedReasonOf(elem: Element): Option[String] =
-      Option(trees.getDocCommentTree(elem)).toSeq.flatMap(_.getBlockTags.asScala).collectFirst:
-        case tag: DeprecatedTree => tag.getBody.asScala.mkString.trim.replaceAll("\\s+", " ")
-      .filter(_.nonEmpty)
+  // qualified to avoid the collision with gcp.storage.identity
+  val identityExpr = "scala.Predef.identity"
 
   def renderScalaType(typeMirror: TypeMirror): String =
     val text = typeMirror.toString
     text.replace('<', '[').replace('>', ']')  // change the generic type parameter syntax
 
   def escapeScalaKeyword(ident: String): String =
-    if hardKeywords.contains(ident) then
-      s"`$ident`"
-    else
-      ident
+    if hardKeywords.contains(ident) then s"`$ident`" else ident
 
   def stringLiteralOf(str: String): String = s""""${str.replace("\\", "\\\\").replace("\"", "\\\"")}""""
 
@@ -546,7 +529,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
   def newWriter(file: Path): Writer =
     Option(file.getParent).foreach: parentDir =>
-      if !Files.isDirectory(parentDir) then
+      if !Files.isDirectory(parentDir) then  // createDirectories throws if a symlink to a directory
         Files.createDirectories(parentDir)
 
     Files.newBufferedWriter(file)  // UTF_8
