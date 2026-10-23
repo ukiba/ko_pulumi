@@ -21,12 +21,16 @@ import java.util.Locale.ENGLISH
 
 class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpath: Seq[String]):
   def processDirectory(srcRoot: Path): Seq[Path] =
-    scan(srcRoot)
-    (writePackageFiles() ++ writeSyntaxFiles()).sorted
+    val packageMembers = scan(srcRoot)
+    (writePackageFiles(packageMembers) ++ writeSyntaxFiles(packageMembers)).sorted
 
-  def scan(srcRoot: Path): Unit =
+  // the key is package components
+  def scan(srcRoot: Path): Map[Seq[String], Vector[Member]] =
     def isJavaFile(path: Path) = !Files.isDirectory(path) && path.getFileName.toString.toLowerCase.endsWith(".java")
     val files = Using.resource(Files.walk(srcRoot))(_.toScala(Seq).filter(isJavaFile).sorted)
+
+    // Vector since List append performs bad with thousands of classes
+    val packageMembers = collection.mutable.Map.empty[Seq[String], Vector[Member]].withDefaultValue(Vector())
 
     val compiler = ToolProvider.getSystemJavaCompiler
     def getStandardFileManager = compiler.getStandardFileManager(
@@ -56,10 +60,12 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       val unitTrees = task.parse()
       task.analyze()  // needed for getElement / getTypeMirror
 
-      Scanner().scan(unitTrees, ())
+      Scanner(packageMembers).scan(unitTrees, ())
+
+    packageMembers.toMap
 
   // one file per package
-  def writePackageFiles(): Seq[Path] =
+  def writePackageFiles(packageMembers: Map[Seq[String], Vector[Member]]): Seq[Path] =
     packageMembers.toSeq.map: (packageComps, members) =>
       val scalaFile = dstRoot.resolve(s"${packageComps.last}.scala")
 
@@ -82,7 +88,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       scalaFile
 
   // support `jp.ukiba.ko_pulumi.$packageName.all.*`
-  def writeSyntaxFiles(): Seq[Path] =
+  def writeSyntaxFiles(packageMembers: Map[Seq[String], Vector[Member]]): Seq[Path] =
     case class ExtMethod(cls: String, method: String)
     object ExtMethod:
       given Ordering[ExtMethod] = Ordering.by(e => (e.cls, e.method))
@@ -150,10 +156,8 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
   case class ResourceArgsMember  (text: String, names: Seq[String]) extends Member
   case class FunctionsMember     (text: String, name: String)       extends Member
 
-  // the key is package components; Vector since List append performs bad with thousands of classes
-  val packageMembers = collection.mutable.Map.empty[Seq[String], Vector[Member]].withDefaultValue(Vector())
-
-  class Scanner(using trees: DocTrees, elements: Elements, types: Types) extends TreePathScanner[Unit, Unit]:
+  class Scanner(packageMembers: collection.mutable.Map[Seq[String], Vector[Member]])
+      (using trees: DocTrees, elements: Elements, types: Types) extends TreePathScanner[Unit, Unit]:
     def typeElemOf(qualifiedName: String): TypeElement = elements.getTypeElement(qualifiedName)
     def typeOf(qualifiedName: String): TypeMirror = typeElemOf(qualifiedName).asType
 
@@ -163,9 +167,13 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
     val deprecatedType            = typeOf("java.lang.Deprecated")
     val stringMapType             = types.getDeclaredType(typeElemOf("java.util.Map"), stringType, stringType)
     val outputStringMapType       = types.getDeclaredType(outputElem, stringMapType)
-    val customResourceType        = typeOf("com.pulumi.resources.CustomResource")
-    val providerResourceType      = typeOf("com.pulumi.resources.ProviderResource")
     val customResourceOptionsType = typeOf("com.pulumi.resources.CustomResourceOptions")
+
+    // erased; excludes com.pulumi.aws.appstream.ImageBuilderArgs.builder(ImageBuilderArgs)
+    val functionResultTypes =
+        Seq(outputElem.asType, typeOf("java.util.concurrent.CompletableFuture")).map(types.erasure)
+
+    val customResourceType = typeOf("com.pulumi.resources.CustomResource")  // also the superclass of ProviderResource
 
     val argsSuperclasses = Seq(  // TODO subclasses of InputArgs
       typeOf("com.pulumi.resources.ResourceArgs"),
@@ -182,11 +190,9 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
           case null    => throw IllegalStateException("pulumi class must be in a package")
           case pkgName => pkgName.toString.split('.').toSeq
 
-        if clsElem.superclass.exists(superclass =>
-            types.isSameType(superclass, customResourceType) ||
-            types.isSameType(superclass, providerResourceType)) then
+        if types.isSubtype(clsElem.asType, customResourceType) then
           genCustomResource(clsElem, packageComps)
-        else if clsElem.superclass.exists(superclass => argsSuperclasses.exists(types.isSameType(superclass, _))) then
+        else if isArgsType(clsElem.asType) then
           genResourceArgs(clsElem, packageComps)
         else if clsElem.getModifiers.contains(Modifier.PUBLIC) then
           genFunctions(clsElem, packageComps)
@@ -233,72 +239,68 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
           types.asElement(ctor.parameters(1).asType)  // null if primitive
       .collectFirst:
         case argsType: TypeElement if argsType.simpleName.contentEquals(s"${clsName}Args") => argsType
-      match
-        case Some(argsType) =>
-          val argsBuilderType = builderOf(argsType)
+      .foreach: argsType =>
+        val argsBuilderType = builderOf(argsType)
 
-          val nameSetter = methodOf(argsBuilderType, "name", stringType)
-          val argsBuilderHasTags =
-              methodOf(argsBuilderType, "tags", stringMapType).nonEmpty
+        val nameSetter = methodOf(argsBuilderType, "name", stringType)
+        val tagsSetter = methodOf(argsBuilderType, "tags", outputStringMapType)
+        val tagsGetter = methodOf(argsType, "tags")
 
-          val clsDoc = scaladocOf(clsElem, indent = "  ")
+        val clsDoc = scaladocOf(clsElem, indent = "  ")
 
-          // each conf carries the methods it calls, to propagate their deprecation,
-          // and its code starts with a newline, to be appended to the preceding line
+        // each conf carries the methods it calls, to propagate their deprecation,
+        // and its code starts with a newline, to be appended to the preceding line
 
-          // pre-args-function propagation: args-function can override
-          // Name tag is handled separately because overriding a part of Map is not straight forward
-          val applyConfs = Seq(
-            nameSetter.map: setter =>
-              (code = """
-              |    conf.logicalName2physicalName(name) match
-              |      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
-              |      case None               =>""".stripMargin, calls = Seq(setter)),
-
-            Option.when(argsType.getQualifiedName.contentEquals("com.pulumi.aws.ecs.TaskDefinitionArgs")):
-              (code = """
-              |    conf.logicalName2ecsTaskDefinitionFamily(name) match
-              |      case Some(family) => argsBuilder = argsBuilder.family(family)
-              |      case None         =>""".stripMargin,
-              calls = Seq(requiredMethod(argsBuilderType, "family", stringType))),
-          ).flatten
-
-          // post-args-function: tags set by args-function are preserved
-          val mergeConfs = Option.when(argsBuilderHasTags):
+        // pre-args-function propagation: args-function can override
+        // Name tag is handled separately because overriding a part of Map is not straight forward
+        val applyConfs = Seq(
+          nameSetter.map: setter =>
             (code = """
-            |    argsBuilder = args(argsBuilder)
-            |    conf.logicalName2tagName(name) match
-            |      case Some(tagName) =>
-            |        argsBuilder = argsBuilder.tags:
-            |          transformOptOutputMap(argsBuilder.build.tags, map =>
-            |              if map.contains("Name") then map else map + ("Name" -> tagName))
-            |      case None =>""".stripMargin, calls = Seq(
-              requiredMethod(argsBuilderType, "tags",
-                  outputStringMapType),
-              requiredMethod(argsType, "tags")))
-          .toSeq
+            |    conf.logicalName2physicalName(name) match
+            |      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+            |      case None               =>""".stripMargin, calls = Seq(setter)),
 
-          val confs = applyConfs ++ mergeConfs
+          Option.when(argsType.getQualifiedName.contentEquals("com.pulumi.aws.ecs.TaskDefinitionArgs")):
+            (code = """
+            |    conf.logicalName2ecsTaskDefinitionFamily(name) match
+            |      case Some(family) => argsBuilder = argsBuilder.family(family)
+            |      case None         =>""".stripMargin,
+            calls = Seq(requiredMethod(argsBuilderType, "family", stringType))),
+        ).flatten
 
-          val clsDeprecated = deprecatedOf(clsElem)
-          val deprecated =
-            if clsDeprecated.nonEmpty then clsDeprecated else deprecatedCallsOf(confs.flatMap(_.calls))
+        // post-args-function: tags set by args-function are preserved
+        val mergeConfs = tagsSetter.zip(tagsGetter).map: (setter, getter) =>
+          (code = """
+          |    argsBuilder = args(argsBuilder)
+          |    conf.logicalName2tagName(name) match
+          |      case Some(tagName) =>
+          |        argsBuilder = argsBuilder.tags:
+          |          transformOptOutputMap(argsBuilder.build.tags, map =>
+          |              if map.contains("Name") then map else map + ("Name" -> tagName))
+          |      case None =>""".stripMargin, calls = Seq(setter, getter))
+        .toSeq
 
-          val finalArgsExpr = if argsBuilderHasTags then "argsBuilder.build" else "args(argsBuilder).build"
+        val confs = applyConfs ++ mergeConfs
 
-          val resourceFuncType = s"Endofunction[CustomResourceOptions.Builder] = $identityExpr"
-          // the confs reassign argsBuilder
-          val builderVarOrVal = if confs.nonEmpty then "var" else "val"
-          val argsTypeName = argsType.getQualifiedName
-          packageMembers(packageComps) :+= CustomResourceMember(s"""
-            |  ${clsDoc}${deprecated}def $clsName(name: String, resourceOptions: $resourceFuncType)
-            |      (args: Endofunction[$argsTypeName.Builder] = $identityExpr)(using conf: KoPulumiConf) =
-            |    $builderVarOrVal argsBuilder = $argsTypeName.builder${confs.map(_.code).mkString}
-            |    ${clsElem.getQualifiedName}(name,
-            |        $finalArgsExpr,
-            |        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-            |""".stripMargin.dropWhile(_ == '\n'))  // drop the leading empty line
-        case None =>
+        val clsDeprecated = deprecatedOf(clsElem)
+        val deprecated =
+          if clsDeprecated.nonEmpty then clsDeprecated else deprecatedCallsOf(confs.flatMap(_.calls))
+
+        // mergeConfs apply args
+        val finalArgsExpr = if mergeConfs.nonEmpty then "argsBuilder.build" else "args(argsBuilder).build"
+
+        val resourceFuncType = s"Endofunction[CustomResourceOptions.Builder] = $identityExpr"
+        // the confs reassign argsBuilder
+        val builderVarOrVal = if confs.nonEmpty then "var" else "val"
+        val argsTypeName = argsType.getQualifiedName
+        packageMembers(packageComps) :+= CustomResourceMember(s"""
+          |  ${clsDoc}${deprecated}def $clsName(name: String, resourceOptions: $resourceFuncType)
+          |      (args: Endofunction[$argsTypeName.Builder] = $identityExpr)(using conf: KoPulumiConf) =
+          |    $builderVarOrVal argsBuilder = $argsTypeName.builder${confs.map(_.code).mkString}
+          |    ${clsElem.getQualifiedName}(name,
+          |        $finalArgsExpr,
+          |        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+          |""".stripMargin.dropWhile(_ == '\n'))  // drop the leading empty line
 
     /*
       Generate the following code
@@ -394,14 +396,11 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
     def genFunctions(clsElem: TypeElement, packageComps: Seq[String]) =
       val clsName = clsElem.simpleName
 
-      // exclude com.pulumi.aws.appstream.ImageBuilderArgs.builder(ImageBuilderArgs)
-      val resultTypes = Seq(outputElem.asType, typeOf("java.util.concurrent.CompletableFuture")).map(types.erasure)
-
       // static Output<GetAmiResult> getAmi(GetAmiArgs args)
       val functionMethods = clsElem.enclosedElements.collect:
         case method: ExecutableElement if method.getKind == ElementKind.METHOD &&
             method.getModifiers.contains(Modifier.STATIC) &&
-            resultTypes.exists(types.isSameType(types.erasure(method.returnType), _)) &&
+            functionResultTypes.exists(types.isSameType(types.erasure(method.returnType), _)) &&
             method.parameters.length == 1 &&
             Option(types.asElement(method.parameters.head.asType))  // null if primitive
               .exists(_.simpleName.contentEquals(s"${method.simpleName.toString.withUpperCaseHead}Args")) =>
