@@ -22,7 +22,7 @@ object azure:
      * @return builder
      * @deprecated This block has been deprecated and will be removed in version 5.0 of the AzureRM provider. Please use the `enhancedValidation` block inside the `features` block instead.
      */
-    @deprecated() def enhancedValidation(args: Endofunction[com.pulumi.azure.inputs.ProviderEnhancedValidationArgs.Builder]):
+    @deprecated("This block has been deprecated and will be removed in version 5.0 of the AzureRM provider. Please use the `enhancedValidation` block inside the `features` block instead.") def enhancedValidation(args: Endofunction[com.pulumi.azure.inputs.ProviderEnhancedValidationArgs.Builder]):
         com.pulumi.azure.ProviderArgs.Builder =
       val argsBuilder = com.pulumi.azure.inputs.ProviderEnhancedValidationArgs.builder
       builder.enhancedValidation(args(argsBuilder).build)

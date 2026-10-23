@@ -464,10 +464,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
     // annotation is needed since @deprecated tag in scaladoc does not suppress the deprecated warnings
     def deprecatedOf(elem: Element): String =
-      deprecationOf(elem).map: deprecation =>
-        val sinceArg = deprecation.since.map(value => s"since = ${stringLiteralOf(value)}").mkString
-        s"@deprecated(${sinceArg}) "  // maybe propagate anno.elementValues
-      .mkString
+      deprecationOf(elem).map(deprecation => deprecatedAnnotation(deprecation.reason, deprecation.since)).mkString
 
     // deprecated if a called method is, so that the warning is shown to the users instead of the caller
     // (like javac, scalac does not warn inside deprecated members)
@@ -479,11 +476,13 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
           val reason = deprecation.reason.map(": " + _).mkString
           s"${method.getEnclosingElement}.${method.simpleName}$reason"
         val sinces = deprecatedMethods.flatMap(_.deprecation.since).distinct
-        val since = Option.when(sinces.nonEmpty):
-          s", since = ${stringLiteralOf(sinces.mkString(", "))}"
-        .mkString
-        s"@deprecated(${stringLiteralOf(s"calls deprecated ${reasons.mkString("; ")}")}$since) "
+        deprecatedAnnotation(Some(s"calls deprecated ${reasons.mkString("; ")}"),
+            Option.when(sinces.nonEmpty)(sinces.mkString(", ")))
       .mkString
+
+    def deprecatedAnnotation(message: Option[String], since: Option[String]): String =
+      val args = message.map(stringLiteralOf) ++ since.map(value => s"since = ${stringLiteralOf(value)}")
+      s"@deprecated(${args.mkString(", ")}) "
 
     // Some if @Deprecated, with its `since` element and the body of `@deprecated` Javadoc tag (whitespace collapsed)
     def deprecationOf(elem: Element): Option[(since: Option[String], reason: Option[String])] =

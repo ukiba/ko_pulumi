@@ -289,7 +289,7 @@ object kendra:
      * @return builder
      * @deprecated s3_configuration is deprecated. Use templateConfiguration instead.
      */
-    @deprecated() def s3Configuration(args: Endofunction[com.pulumi.aws.kendra.inputs.DataSourceConfigurationS3ConfigurationArgs.Builder]):
+    @deprecated("s3_configuration is deprecated. Use templateConfiguration instead.") def s3Configuration(args: Endofunction[com.pulumi.aws.kendra.inputs.DataSourceConfigurationS3ConfigurationArgs.Builder]):
         com.pulumi.aws.kendra.inputs.DataSourceConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.kendra.inputs.DataSourceConfigurationS3ConfigurationArgs.builder
       builder.s3Configuration(args(argsBuilder).build)
@@ -308,7 +308,7 @@ object kendra:
      * @return builder
      * @deprecated web_crawler_configuration is deprecated. Use templateConfiguration instead.
      */
-    @deprecated() def webCrawlerConfiguration(args: Endofunction[com.pulumi.aws.kendra.inputs.DataSourceConfigurationWebCrawlerConfigurationArgs.Builder]):
+    @deprecated("web_crawler_configuration is deprecated. Use templateConfiguration instead.") def webCrawlerConfiguration(args: Endofunction[com.pulumi.aws.kendra.inputs.DataSourceConfigurationWebCrawlerConfigurationArgs.Builder]):
         com.pulumi.aws.kendra.inputs.DataSourceConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.kendra.inputs.DataSourceConfigurationWebCrawlerConfigurationArgs.builder
       builder.webCrawlerConfiguration(args(argsBuilder).build)

@@ -4929,7 +4929,7 @@ object kms:
      * @return builder
      * @deprecated `externalProtectionLevelOptions` is being un-nested from the `attestation` field. Please use the top level `externalProtectionLevelOptions` field instead.
      */
-    @deprecated() def externalProtectionLevelOptions(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyVersionAttestationExternalProtectionLevelOptionsArgs.Builder]):
+    @deprecated("`externalProtectionLevelOptions` is being un-nested from the `attestation` field. Please use the top level `externalProtectionLevelOptions` field instead.") def externalProtectionLevelOptions(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyVersionAttestationExternalProtectionLevelOptionsArgs.Builder]):
         com.pulumi.gcp.kms.inputs.CryptoKeyVersionAttestationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.CryptoKeyVersionAttestationExternalProtectionLevelOptionsArgs.builder
       builder.externalProtectionLevelOptions(args(argsBuilder).build)

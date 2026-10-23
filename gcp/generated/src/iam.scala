@@ -1595,7 +1595,7 @@ object iam:
      * @return builder
      * @deprecated `extendedAttributesOauth2Client` is deprecated. Use SCIM instead.
      */
-    @deprecated() def extendedAttributesOauth2Client(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientArgs.Builder]):
+    @deprecated("`extendedAttributesOauth2Client` is deprecated. Use SCIM instead.") def extendedAttributesOauth2Client(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientArgs.Builder]):
         com.pulumi.gcp.iam.WorkforcePoolProviderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientArgs.builder
       builder.extendedAttributesOauth2Client(args(argsBuilder).build)
@@ -4161,7 +4161,7 @@ object iam:
      * @return builder
      * @deprecated `extendedAttributesOauth2Client` is deprecated. Use SCIM instead.
      */
-    @deprecated() def extendedAttributesOauth2Client(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientArgs.Builder]):
+    @deprecated("`extendedAttributesOauth2Client` is deprecated. Use SCIM instead.") def extendedAttributesOauth2Client(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolProviderState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientArgs.builder
       builder.extendedAttributesOauth2Client(args(argsBuilder).build)

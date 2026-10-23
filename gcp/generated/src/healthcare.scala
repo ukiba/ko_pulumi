@@ -2351,7 +2351,7 @@ object healthcare:
      * @return builder
      * @deprecated `notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.
      */
-    @deprecated() def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.Builder]):
+    @deprecated("`notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.") def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.FhirStoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.builder
       builder.notificationConfig(args(argsBuilder).build)
@@ -3410,7 +3410,7 @@ object healthcare:
      * @return builder
      * @deprecated `notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.
      */
-    @deprecated() def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigArgs.Builder]):
+    @deprecated("`notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.") def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.Hl7StoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigArgs.builder
       builder.notificationConfig(args(argsBuilder).build)
@@ -4295,7 +4295,7 @@ object healthcare:
      * @return builder
      * @deprecated `notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.
      */
-    @deprecated() def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.Builder]):
+    @deprecated("`notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.") def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.FhirStoreState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.builder
       builder.notificationConfig(args(argsBuilder).build)
@@ -4394,7 +4394,7 @@ object healthcare:
      * @return builder
      * @deprecated `notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.
      */
-    @deprecated() def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigArgs.Builder]):
+    @deprecated("`notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.") def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.Hl7StoreState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigArgs.builder
       builder.notificationConfig(args(argsBuilder).build)

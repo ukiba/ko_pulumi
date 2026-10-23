@@ -183,7 +183,7 @@ object batch:
      * @return builder
      * @deprecated the `certificate` property has been deprecated and will be removed in v5.0 of the AzureRM provider.
      */
-    @deprecated() def certificates(args: Endofunction[com.pulumi.azure.batch.inputs.PoolCertificateArgs.Builder]*):
+    @deprecated("the `certificate` property has been deprecated and will be removed in v5.0 of the AzureRM provider.") def certificates(args: Endofunction[com.pulumi.azure.batch.inputs.PoolCertificateArgs.Builder]*):
         com.pulumi.azure.batch.PoolArgs.Builder =
       def argsBuilder = com.pulumi.azure.batch.inputs.PoolCertificateArgs.builder
       builder.certificates(args.map(_(argsBuilder).build)*)
@@ -534,7 +534,7 @@ object batch:
      * @return builder
      * @deprecated the `certificate` property has been deprecated and will be removed in v5.0 of the AzureRM provider.
      */
-    @deprecated() def certificates(args: Endofunction[com.pulumi.azure.batch.inputs.PoolCertificateArgs.Builder]*):
+    @deprecated("the `certificate` property has been deprecated and will be removed in v5.0 of the AzureRM provider.") def certificates(args: Endofunction[com.pulumi.azure.batch.inputs.PoolCertificateArgs.Builder]*):
         com.pulumi.azure.batch.inputs.PoolState.Builder =
       def argsBuilder = com.pulumi.azure.batch.inputs.PoolCertificateArgs.builder
       builder.certificates(args.map(_(argsBuilder).build)*)

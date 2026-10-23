@@ -241,7 +241,7 @@ object sentinel:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /** Manages a Sentinel Automation Rule. */
-  @deprecated() def AuthomationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.sentinel.AuthomationRule has been deprecated in favor of azure.sentinel.AutomationRule") def AuthomationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.sentinel.AuthomationRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.AuthomationRuleArgs.builder
     conf.logicalName2physicalName(name) match

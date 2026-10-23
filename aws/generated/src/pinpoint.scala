@@ -92,7 +92,7 @@ object pinpoint:
      * @return builder
      * @deprecated campaign_hook is deprecated. AWS End User Messaging engagement features are being discontinued on October 30, 2026. See the AWS End User Messaging migration guide for details.
      */
-    @deprecated() def campaignHook(args: Endofunction[com.pulumi.aws.pinpoint.inputs.AppCampaignHookArgs.Builder]):
+    @deprecated("campaign_hook is deprecated. AWS End User Messaging engagement features are being discontinued on October 30, 2026. See the AWS End User Messaging migration guide for details.") def campaignHook(args: Endofunction[com.pulumi.aws.pinpoint.inputs.AppCampaignHookArgs.Builder]):
         com.pulumi.aws.pinpoint.AppArgs.Builder =
       val argsBuilder = com.pulumi.aws.pinpoint.inputs.AppCampaignHookArgs.builder
       builder.campaignHook(args(argsBuilder).build)
@@ -102,7 +102,7 @@ object pinpoint:
      * @return builder
      * @deprecated limits is deprecated. AWS End User Messaging engagement features are being discontinued on October 30, 2026. See the AWS End User Messaging migration guide for details.
      */
-    @deprecated() def limits(args: Endofunction[com.pulumi.aws.pinpoint.inputs.AppLimitsArgs.Builder]):
+    @deprecated("limits is deprecated. AWS End User Messaging engagement features are being discontinued on October 30, 2026. See the AWS End User Messaging migration guide for details.") def limits(args: Endofunction[com.pulumi.aws.pinpoint.inputs.AppLimitsArgs.Builder]):
         com.pulumi.aws.pinpoint.AppArgs.Builder =
       val argsBuilder = com.pulumi.aws.pinpoint.inputs.AppLimitsArgs.builder
       builder.limits(args(argsBuilder).build)
@@ -112,7 +112,7 @@ object pinpoint:
      * @return builder
      * @deprecated quiet_time is deprecated. AWS End User Messaging engagement features are being discontinued on October 30, 2026. See the AWS End User Messaging migration guide for details.
      */
-    @deprecated() def quietTime(args: Endofunction[com.pulumi.aws.pinpoint.inputs.AppQuietTimeArgs.Builder]):
+    @deprecated("quiet_time is deprecated. AWS End User Messaging engagement features are being discontinued on October 30, 2026. See the AWS End User Messaging migration guide for details.") def quietTime(args: Endofunction[com.pulumi.aws.pinpoint.inputs.AppQuietTimeArgs.Builder]):
         com.pulumi.aws.pinpoint.AppArgs.Builder =
       val argsBuilder = com.pulumi.aws.pinpoint.inputs.AppQuietTimeArgs.builder
       builder.quietTime(args(argsBuilder).build)
@@ -166,7 +166,7 @@ object pinpoint:
      * @return builder
      * @deprecated email_template is deprecated. AWS End User Messaging email features are being discontinued on October 30, 2026. Migrate to Amazon SES.
      */
-    @deprecated() def emailTemplates(args: Endofunction[com.pulumi.aws.pinpoint.inputs.EmailTemplateEmailTemplateArgs.Builder]*):
+    @deprecated("email_template is deprecated. AWS End User Messaging email features are being discontinued on October 30, 2026. Migrate to Amazon SES.") def emailTemplates(args: Endofunction[com.pulumi.aws.pinpoint.inputs.EmailTemplateEmailTemplateArgs.Builder]*):
         com.pulumi.aws.pinpoint.EmailTemplateArgs.Builder =
       def argsBuilder = com.pulumi.aws.pinpoint.inputs.EmailTemplateEmailTemplateArgs.builder
       builder.emailTemplates(args.map(_(argsBuilder).build)*)
@@ -379,7 +379,7 @@ object pinpoint:
      * @return builder
      * @deprecated campaign_hook is deprecated. AWS End User Messaging engagement features are being discontinued on October 30, 2026. See the AWS End User Messaging migration guide for details.
      */
-    @deprecated() def campaignHook(args: Endofunction[com.pulumi.aws.pinpoint.inputs.AppCampaignHookArgs.Builder]):
+    @deprecated("campaign_hook is deprecated. AWS End User Messaging engagement features are being discontinued on October 30, 2026. See the AWS End User Messaging migration guide for details.") def campaignHook(args: Endofunction[com.pulumi.aws.pinpoint.inputs.AppCampaignHookArgs.Builder]):
         com.pulumi.aws.pinpoint.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.aws.pinpoint.inputs.AppCampaignHookArgs.builder
       builder.campaignHook(args(argsBuilder).build)
@@ -389,7 +389,7 @@ object pinpoint:
      * @return builder
      * @deprecated limits is deprecated. AWS End User Messaging engagement features are being discontinued on October 30, 2026. See the AWS End User Messaging migration guide for details.
      */
-    @deprecated() def limits(args: Endofunction[com.pulumi.aws.pinpoint.inputs.AppLimitsArgs.Builder]):
+    @deprecated("limits is deprecated. AWS End User Messaging engagement features are being discontinued on October 30, 2026. See the AWS End User Messaging migration guide for details.") def limits(args: Endofunction[com.pulumi.aws.pinpoint.inputs.AppLimitsArgs.Builder]):
         com.pulumi.aws.pinpoint.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.aws.pinpoint.inputs.AppLimitsArgs.builder
       builder.limits(args(argsBuilder).build)
@@ -399,7 +399,7 @@ object pinpoint:
      * @return builder
      * @deprecated quiet_time is deprecated. AWS End User Messaging engagement features are being discontinued on October 30, 2026. See the AWS End User Messaging migration guide for details.
      */
-    @deprecated() def quietTime(args: Endofunction[com.pulumi.aws.pinpoint.inputs.AppQuietTimeArgs.Builder]):
+    @deprecated("quiet_time is deprecated. AWS End User Messaging engagement features are being discontinued on October 30, 2026. See the AWS End User Messaging migration guide for details.") def quietTime(args: Endofunction[com.pulumi.aws.pinpoint.inputs.AppQuietTimeArgs.Builder]):
         com.pulumi.aws.pinpoint.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.aws.pinpoint.inputs.AppQuietTimeArgs.builder
       builder.quietTime(args(argsBuilder).build)
@@ -420,7 +420,7 @@ object pinpoint:
      * @return builder
      * @deprecated email_template is deprecated. AWS End User Messaging email features are being discontinued on October 30, 2026. Migrate to Amazon SES.
      */
-    @deprecated() def emailTemplates(args: Endofunction[com.pulumi.aws.pinpoint.inputs.EmailTemplateEmailTemplateArgs.Builder]*):
+    @deprecated("email_template is deprecated. AWS End User Messaging email features are being discontinued on October 30, 2026. Migrate to Amazon SES.") def emailTemplates(args: Endofunction[com.pulumi.aws.pinpoint.inputs.EmailTemplateEmailTemplateArgs.Builder]*):
         com.pulumi.aws.pinpoint.inputs.EmailTemplateState.Builder =
       def argsBuilder = com.pulumi.aws.pinpoint.inputs.EmailTemplateEmailTemplateArgs.builder
       builder.emailTemplates(args.map(_(argsBuilder).build)*)

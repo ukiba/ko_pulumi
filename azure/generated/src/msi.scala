@@ -9,7 +9,7 @@ object msi:
    * 
    * Manages a User Assigned Identity.
    */
-  @deprecated() def UserAssignedIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.msi.UserAssignedIdentity has been deprecated in favor of azure.authorization.UserAssignedIdentity") def UserAssignedIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.msi.UserAssignedIdentityArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.msi.UserAssignedIdentityArgs.builder
     conf.logicalName2physicalName(name) match

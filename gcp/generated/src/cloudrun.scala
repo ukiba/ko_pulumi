@@ -1331,7 +1331,7 @@ object cloudrun:
      * @return builder
      * @deprecated `envFrom` is deprecated and will be removed in a future major release. This field is not supported by the Cloud Run API.
      */
-    @deprecated() def envFroms(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.ServiceTemplateSpecContainerEnvFromArgs.Builder]*):
+    @deprecated("`envFrom` is deprecated and will be removed in a future major release. This field is not supported by the Cloud Run API.") def envFroms(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.ServiceTemplateSpecContainerEnvFromArgs.Builder]*):
         com.pulumi.gcp.cloudrun.inputs.ServiceTemplateSpecContainerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrun.inputs.ServiceTemplateSpecContainerEnvFromArgs.builder
       builder.envFroms(args.map(_(argsBuilder).build)*)

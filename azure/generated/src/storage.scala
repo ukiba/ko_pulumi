@@ -95,7 +95,7 @@ object storage:
      * @return builder
      * @deprecated this block has been deprecated and superseded by the `azure.storage.AccountQueueProperties` resource and will be removed in v5.0 of the AzureRM provider
      */
-    @deprecated() def queueProperties(args: Endofunction[com.pulumi.azure.storage.inputs.AccountQueuePropertiesArgs.Builder]):
+    @deprecated("this block has been deprecated and superseded by the `azure.storage.AccountQueueProperties` resource and will be removed in v5.0 of the AzureRM provider") def queueProperties(args: Endofunction[com.pulumi.azure.storage.inputs.AccountQueuePropertiesArgs.Builder]):
         com.pulumi.azure.storage.AccountArgs.Builder =
       val argsBuilder = com.pulumi.azure.storage.inputs.AccountQueuePropertiesArgs.builder
       builder.queueProperties(args(argsBuilder).build)
@@ -138,7 +138,7 @@ object storage:
      * @return builder
      * @deprecated this block has been deprecated and superseded by the `azure.storage.AccountStaticWebsite` resource and will be removed in v5.0 of the AzureRM provider
      */
-    @deprecated() def staticWebsite(args: Endofunction[com.pulumi.azure.storage.inputs.AccountStaticWebsiteArgs.Builder]):
+    @deprecated("this block has been deprecated and superseded by the `azure.storage.AccountStaticWebsite` resource and will be removed in v5.0 of the AzureRM provider") def staticWebsite(args: Endofunction[com.pulumi.azure.storage.inputs.AccountStaticWebsiteArgs.Builder]):
         com.pulumi.azure.storage.AccountArgs.Builder =
       val argsBuilder = com.pulumi.azure.storage.inputs.AccountStaticWebsiteArgs.builder
       builder.staticWebsite(args(argsBuilder).build)
@@ -910,7 +910,7 @@ object storage:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /** @deprecated ZipBlob resource is deprecated in the 2.0 version of the provider. Use Blob resource instead. */
-  @deprecated() def ZipBlob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("ZipBlob resource is deprecated in the 2.0 version of the provider. Use Blob resource instead.") def ZipBlob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.storage.ZipBlobArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.ZipBlobArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1174,7 +1174,7 @@ object storage:
      * @return builder
      * @deprecated this block has been deprecated and superseded by the `azure.storage.AccountQueueProperties` resource and will be removed in v5.0 of the AzureRM provider
      */
-    @deprecated() def queueProperties(args: Endofunction[com.pulumi.azure.storage.inputs.AccountQueuePropertiesArgs.Builder]):
+    @deprecated("this block has been deprecated and superseded by the `azure.storage.AccountQueueProperties` resource and will be removed in v5.0 of the AzureRM provider") def queueProperties(args: Endofunction[com.pulumi.azure.storage.inputs.AccountQueuePropertiesArgs.Builder]):
         com.pulumi.azure.storage.inputs.AccountState.Builder =
       val argsBuilder = com.pulumi.azure.storage.inputs.AccountQueuePropertiesArgs.builder
       builder.queueProperties(args(argsBuilder).build)
@@ -1217,7 +1217,7 @@ object storage:
      * @return builder
      * @deprecated this block has been deprecated and superseded by the `azure.storage.AccountStaticWebsite` resource and will be removed in v5.0 of the AzureRM provider
      */
-    @deprecated() def staticWebsite(args: Endofunction[com.pulumi.azure.storage.inputs.AccountStaticWebsiteArgs.Builder]):
+    @deprecated("this block has been deprecated and superseded by the `azure.storage.AccountStaticWebsite` resource and will be removed in v5.0 of the AzureRM provider") def staticWebsite(args: Endofunction[com.pulumi.azure.storage.inputs.AccountStaticWebsiteArgs.Builder]):
         com.pulumi.azure.storage.inputs.AccountState.Builder =
       val argsBuilder = com.pulumi.azure.storage.inputs.AccountStaticWebsiteArgs.builder
       builder.staticWebsite(args(argsBuilder).build)

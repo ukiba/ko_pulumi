@@ -473,7 +473,7 @@ object monitoring:
      * @return builder
      * @deprecated `metric` has been deprecated in favour of the `enabledMetric` property and will be removed in v5.0 of the AzureRM provider
      */
-    @deprecated() def metrics(args: Endofunction[com.pulumi.azure.monitoring.inputs.DiagnosticSettingMetricArgs.Builder]*):
+    @deprecated("`metric` has been deprecated in favour of the `enabledMetric` property and will be removed in v5.0 of the AzureRM provider") def metrics(args: Endofunction[com.pulumi.azure.monitoring.inputs.DiagnosticSettingMetricArgs.Builder]*):
         com.pulumi.azure.monitoring.DiagnosticSettingArgs.Builder =
       def argsBuilder = com.pulumi.azure.monitoring.inputs.DiagnosticSettingMetricArgs.builder
       builder.metrics(args.map(_(argsBuilder).build)*)
@@ -825,7 +825,7 @@ object monitoring:
      * @return builder
      * @deprecated Azure does not support retention for new Azure Active Directory Diagnostic Settings
      */
-    @deprecated() def retentionPolicy(args: Endofunction[com.pulumi.azure.monitoring.inputs.AadDiagnosticSettingEnabledLogRetentionPolicyArgs.Builder]):
+    @deprecated("Azure does not support retention for new Azure Active Directory Diagnostic Settings") def retentionPolicy(args: Endofunction[com.pulumi.azure.monitoring.inputs.AadDiagnosticSettingEnabledLogRetentionPolicyArgs.Builder]):
         com.pulumi.azure.monitoring.inputs.AadDiagnosticSettingEnabledLogArgs.Builder =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.AadDiagnosticSettingEnabledLogRetentionPolicyArgs.builder
       builder.retentionPolicy(args(argsBuilder).build)
@@ -1717,7 +1717,7 @@ object monitoring:
      * @return builder
      * @deprecated `retentionPolicy` has been deprecated in favour of `azure.storage.ManagementPolicy` resource and will be removed in v5.0 of the AzureRM provider - to learn more https://aka.ms/diagnostic_settings_log_retention
      */
-    @deprecated() def retentionPolicy(args: Endofunction[com.pulumi.azure.monitoring.inputs.DiagnosticSettingEnabledLogRetentionPolicyArgs.Builder]):
+    @deprecated("`retentionPolicy` has been deprecated in favour of `azure.storage.ManagementPolicy` resource and will be removed in v5.0 of the AzureRM provider - to learn more https://aka.ms/diagnostic_settings_log_retention") def retentionPolicy(args: Endofunction[com.pulumi.azure.monitoring.inputs.DiagnosticSettingEnabledLogRetentionPolicyArgs.Builder]):
         com.pulumi.azure.monitoring.inputs.DiagnosticSettingEnabledLogArgs.Builder =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.DiagnosticSettingEnabledLogRetentionPolicyArgs.builder
       builder.retentionPolicy(args(argsBuilder).build)
@@ -1727,7 +1727,7 @@ object monitoring:
      * @return builder
      * @deprecated `retentionPolicy` has been deprecated in favour of the `azure.storage.ManagementPolicy` resource and will be removed in v5.0 of the AzureRM provider - to learn more go to https://aka.ms/diagnostic_settings_log_retention
      */
-    @deprecated() def retentionPolicy(args: Endofunction[com.pulumi.azure.monitoring.inputs.DiagnosticSettingMetricRetentionPolicyArgs.Builder]):
+    @deprecated("`retentionPolicy` has been deprecated in favour of the `azure.storage.ManagementPolicy` resource and will be removed in v5.0 of the AzureRM provider - to learn more go to https://aka.ms/diagnostic_settings_log_retention") def retentionPolicy(args: Endofunction[com.pulumi.azure.monitoring.inputs.DiagnosticSettingMetricRetentionPolicyArgs.Builder]):
         com.pulumi.azure.monitoring.inputs.DiagnosticSettingMetricArgs.Builder =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.DiagnosticSettingMetricRetentionPolicyArgs.builder
       builder.retentionPolicy(args(argsBuilder).build)
@@ -1759,7 +1759,7 @@ object monitoring:
      * @return builder
      * @deprecated `metric` has been deprecated in favour of the `enabledMetric` property and will be removed in v5.0 of the AzureRM provider
      */
-    @deprecated() def metrics(args: Endofunction[com.pulumi.azure.monitoring.inputs.DiagnosticSettingMetricArgs.Builder]*):
+    @deprecated("`metric` has been deprecated in favour of the `enabledMetric` property and will be removed in v5.0 of the AzureRM provider") def metrics(args: Endofunction[com.pulumi.azure.monitoring.inputs.DiagnosticSettingMetricArgs.Builder]*):
         com.pulumi.azure.monitoring.inputs.DiagnosticSettingState.Builder =
       def argsBuilder = com.pulumi.azure.monitoring.inputs.DiagnosticSettingMetricArgs.builder
       builder.metrics(args.map(_(argsBuilder).build)*)

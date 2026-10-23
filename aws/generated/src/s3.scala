@@ -158,7 +158,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  @deprecated() def BucketAccelerateConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("aws.s3/bucketaccelerateconfigurationv2.BucketAccelerateConfigurationV2 has been deprecated in favor of aws.s3/bucketaccelerateconfiguration.BucketAccelerateConfiguration") def BucketAccelerateConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketAccelerateConfigurationV2Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketAccelerateConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketAccelerateConfigurationV2(name,
@@ -196,7 +196,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  @deprecated() def BucketAclV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("aws.s3/bucketaclv2.BucketAclV2 has been deprecated in favor of aws.s3/bucketacl.BucketAcl") def BucketAclV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketAclV2Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketAclV2Args.builder
     com.pulumi.aws.s3.BucketAclV2(name,
@@ -219,7 +219,7 @@ object s3:
      * @return builder
      * @deprecated cors_rule is deprecated. Use the aws.s3.BucketCorsConfiguration resource instead.
      */
-    @deprecated() def corsRules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketCorsRuleArgs.Builder]*):
+    @deprecated("cors_rule is deprecated. Use the aws.s3.BucketCorsConfiguration resource instead.") def corsRules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketCorsRuleArgs.Builder]*):
         com.pulumi.aws.s3.BucketArgs.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketCorsRuleArgs.builder
       builder.corsRules(args.map(_(argsBuilder).build)*)
@@ -229,7 +229,7 @@ object s3:
      * @return builder
      * @deprecated grant is deprecated. Use the aws.s3.BucketAcl resource instead.
      */
-    @deprecated() def grants(args: Endofunction[com.pulumi.aws.s3.inputs.BucketGrantArgs.Builder]*):
+    @deprecated("grant is deprecated. Use the aws.s3.BucketAcl resource instead.") def grants(args: Endofunction[com.pulumi.aws.s3.inputs.BucketGrantArgs.Builder]*):
         com.pulumi.aws.s3.BucketArgs.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketGrantArgs.builder
       builder.grants(args.map(_(argsBuilder).build)*)
@@ -239,7 +239,7 @@ object s3:
      * @return builder
      * @deprecated lifecycle_rule is deprecated. Use the aws.s3.BucketLifecycleConfiguration resource instead.
      */
-    @deprecated() def lifecycleRules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketLifecycleRuleArgs.Builder]*):
+    @deprecated("lifecycle_rule is deprecated. Use the aws.s3.BucketLifecycleConfiguration resource instead.") def lifecycleRules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketLifecycleRuleArgs.Builder]*):
         com.pulumi.aws.s3.BucketArgs.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketLifecycleRuleArgs.builder
       builder.lifecycleRules(args.map(_(argsBuilder).build)*)
@@ -249,7 +249,7 @@ object s3:
      * @return builder
      * @deprecated logging is deprecated. Use the aws.s3.BucketLogging resource instead.
      */
-    @deprecated() def logging(args: Endofunction[com.pulumi.aws.s3.inputs.BucketLoggingArgs.Builder]):
+    @deprecated("logging is deprecated. Use the aws.s3.BucketLogging resource instead.") def logging(args: Endofunction[com.pulumi.aws.s3.inputs.BucketLoggingArgs.Builder]):
         com.pulumi.aws.s3.BucketArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLoggingArgs.builder
       builder.logging(args(argsBuilder).build)
@@ -259,7 +259,7 @@ object s3:
      * @return builder
      * @deprecated object_lock_configuration is deprecated. Use the top-level parameter objectLockEnabled and the aws.s3.BucketObjectLockConfiguration resource instead.
      */
-    @deprecated() def objectLockConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationArgs.Builder]):
+    @deprecated("object_lock_configuration is deprecated. Use the top-level parameter objectLockEnabled and the aws.s3.BucketObjectLockConfiguration resource instead.") def objectLockConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationArgs.Builder]):
         com.pulumi.aws.s3.BucketArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationArgs.builder
       builder.objectLockConfiguration(args(argsBuilder).build)
@@ -269,7 +269,7 @@ object s3:
      * @return builder
      * @deprecated policy is deprecated. Use the aws.s3.BucketPolicy resource instead.
      */
-    @deprecated() def policy(args: Endofunction[com.pulumi.aws.s3.inputs.PolicyDocumentArgs.Builder]):
+    @deprecated("policy is deprecated. Use the aws.s3.BucketPolicy resource instead.") def policy(args: Endofunction[com.pulumi.aws.s3.inputs.PolicyDocumentArgs.Builder]):
         com.pulumi.aws.s3.BucketArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
@@ -279,7 +279,7 @@ object s3:
      * @return builder
      * @deprecated replication_configuration is deprecated. Use the aws.s3.BucketReplicationConfig resource instead.
      */
-    @deprecated() def replicationConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketReplicationConfigurationArgs.Builder]):
+    @deprecated("replication_configuration is deprecated. Use the aws.s3.BucketReplicationConfig resource instead.") def replicationConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketReplicationConfigurationArgs.Builder]):
         com.pulumi.aws.s3.BucketArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketReplicationConfigurationArgs.builder
       builder.replicationConfiguration(args(argsBuilder).build)
@@ -289,7 +289,7 @@ object s3:
      * @return builder
      * @deprecated server_side_encryption_configuration is deprecated. Use the aws.s3.BucketServerSideEncryptionConfiguration resource instead.
      */
-    @deprecated() def serverSideEncryptionConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationArgs.Builder]):
+    @deprecated("server_side_encryption_configuration is deprecated. Use the aws.s3.BucketServerSideEncryptionConfiguration resource instead.") def serverSideEncryptionConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationArgs.Builder]):
         com.pulumi.aws.s3.BucketArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationArgs.builder
       builder.serverSideEncryptionConfiguration(args(argsBuilder).build)
@@ -299,7 +299,7 @@ object s3:
      * @return builder
      * @deprecated versioning is deprecated. Use the aws.s3.BucketVersioning resource instead.
      */
-    @deprecated() def versioning(args: Endofunction[com.pulumi.aws.s3.inputs.BucketVersioningArgs.Builder]):
+    @deprecated("versioning is deprecated. Use the aws.s3.BucketVersioning resource instead.") def versioning(args: Endofunction[com.pulumi.aws.s3.inputs.BucketVersioningArgs.Builder]):
         com.pulumi.aws.s3.BucketArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketVersioningArgs.builder
       builder.versioning(args(argsBuilder).build)
@@ -309,7 +309,7 @@ object s3:
      * @return builder
      * @deprecated website is deprecated. Use the aws.s3.BucketWebsiteConfiguration resource instead.
      */
-    @deprecated() def website(args: Endofunction[com.pulumi.aws.s3.inputs.BucketWebsiteArgs.Builder]):
+    @deprecated("website is deprecated. Use the aws.s3.BucketWebsiteConfiguration resource instead.") def website(args: Endofunction[com.pulumi.aws.s3.inputs.BucketWebsiteArgs.Builder]):
         com.pulumi.aws.s3.BucketArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketWebsiteArgs.builder
       builder.website(args(argsBuilder).build)
@@ -345,7 +345,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  @deprecated() def BucketCorsConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("aws.s3/bucketcorsconfigurationv2.BucketCorsConfigurationV2 has been deprecated in favor of aws.s3/bucketcorsconfiguration.BucketCorsConfiguration") def BucketCorsConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketCorsConfigurationV2Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketCorsConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketCorsConfigurationV2(name,
@@ -452,7 +452,7 @@ object s3:
    * Running Pulumi operations shortly after creating a lifecycle configuration may result in changes that affect configuration idempotence.
    * See the Amazon S3 User Guide on [setting lifecycle configuration on a bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/how-to-set-lifecycle-configuration-intro.html).
    */
-  @deprecated() def BucketLifecycleConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("aws.s3/bucketlifecycleconfigurationv2.BucketLifecycleConfigurationV2 has been deprecated in favor of aws.s3/bucketlifecycleconfiguration.BucketLifecycleConfiguration") def BucketLifecycleConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketLifecycleConfigurationV2Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketLifecycleConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketLifecycleConfigurationV2(name,
@@ -518,7 +518,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  @deprecated() def BucketLoggingV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("aws.s3/bucketloggingv2.BucketLoggingV2 has been deprecated in favor of aws.s3/bucketlogging.BucketLogging") def BucketLoggingV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketLoggingV2Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketLoggingV2Args.builder
     com.pulumi.aws.s3.BucketLoggingV2(name,
@@ -678,7 +678,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  @deprecated() def BucketObjectLockConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("aws.s3/bucketobjectlockconfigurationv2.BucketObjectLockConfigurationV2 has been deprecated in favor of aws.s3/bucketobjectlockconfiguration.BucketObjectLockConfiguration") def BucketObjectLockConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketObjectLockConfigurationV2Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketObjectLockConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketObjectLockConfigurationV2(name,
@@ -823,7 +823,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  @deprecated() def BucketRequestPaymentConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("aws.s3/bucketrequestpaymentconfigurationv2.BucketRequestPaymentConfigurationV2 has been deprecated in favor of aws.s3/bucketrequestpaymentconfiguration.BucketRequestPaymentConfiguration") def BucketRequestPaymentConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketRequestPaymentConfigurationV2Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketRequestPaymentConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketRequestPaymentConfigurationV2(name,
@@ -861,7 +861,7 @@ object s3:
    * 
    * &gt; **NOTE:** Starting in April 2026, Amazon S3 will automatically block server-side encryption with customer-provided keys (SSE-C) for all new buckets. Use the `blockedEncryptionTypes` argument to manage this behavior. For more information, see the [SSE-C changes FAQ](https://docs.aws.amazon.com/AmazonS3/latest/userguide/default-s3-c-encryption-setting-faq.html).
    */
-  @deprecated() def BucketServerSideEncryptionConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("aws.s3/bucketserversideencryptionconfigurationv2.BucketServerSideEncryptionConfigurationV2 has been deprecated in favor of aws.s3/bucketserversideencryptionconfiguration.BucketServerSideEncryptionConfiguration") def BucketServerSideEncryptionConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketServerSideEncryptionConfigurationV2Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketServerSideEncryptionConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketServerSideEncryptionConfigurationV2(name,
@@ -887,7 +887,7 @@ object s3:
    * 
    * &gt; To support ABAC (Attribute Based Access Control) in general purpose buckets, this resource will now attempt to send tags in the create request and use the S3 Control tagging APIs [`TagResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html), [`UntagResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html), and [`ListTagsForResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html) for read and update operations. The calling principal must have the corresponding `s3:TagResource`, `s3:UntagResource`, and `s3:ListTagsForResource` [IAM permissions](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-actions-as-permissions). If the principal lacks the appropriate permissions, the provider will fall back to tagging after creation and using the S3 tagging APIs [`PutBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html), [`DeleteBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html), and [`GetBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html) instead. With ABAC enabled, tag modifications may fail with the fall back behavior. See the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html) for additional details on enabling ABAC in general purpose buckets.
    */
-  @deprecated() def BucketV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("s3.BucketV2 has been deprecated in favor of s3.Bucket") def BucketV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketV2Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.BucketV2Args.builder
     argsBuilder = args(argsBuilder)
@@ -907,7 +907,7 @@ object s3:
      * @return builder
      * @deprecated cors_rule is deprecated. Use the aws.s3.BucketCorsConfiguration resource instead.
      */
-    @deprecated() def corsRules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2CorsRuleArgs.Builder]*):
+    @deprecated("cors_rule is deprecated. Use the aws.s3.BucketCorsConfiguration resource instead.") def corsRules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2CorsRuleArgs.Builder]*):
         com.pulumi.aws.s3.BucketV2Args.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2CorsRuleArgs.builder
       builder.corsRules(args.map(_(argsBuilder).build)*)
@@ -917,7 +917,7 @@ object s3:
      * @return builder
      * @deprecated grant is deprecated. Use the aws.s3.BucketAcl resource instead.
      */
-    @deprecated() def grants(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2GrantArgs.Builder]*):
+    @deprecated("grant is deprecated. Use the aws.s3.BucketAcl resource instead.") def grants(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2GrantArgs.Builder]*):
         com.pulumi.aws.s3.BucketV2Args.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2GrantArgs.builder
       builder.grants(args.map(_(argsBuilder).build)*)
@@ -927,7 +927,7 @@ object s3:
      * @return builder
      * @deprecated lifecycle_rule is deprecated. Use the aws.s3.BucketLifecycleConfiguration resource instead.
      */
-    @deprecated() def lifecycleRules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2LifecycleRuleArgs.Builder]*):
+    @deprecated("lifecycle_rule is deprecated. Use the aws.s3.BucketLifecycleConfiguration resource instead.") def lifecycleRules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2LifecycleRuleArgs.Builder]*):
         com.pulumi.aws.s3.BucketV2Args.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2LifecycleRuleArgs.builder
       builder.lifecycleRules(args.map(_(argsBuilder).build)*)
@@ -937,7 +937,7 @@ object s3:
      * @return builder
      * @deprecated logging is deprecated. Use the aws.s3.BucketLogging resource instead.
      */
-    @deprecated() def loggings(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2LoggingArgs.Builder]*):
+    @deprecated("logging is deprecated. Use the aws.s3.BucketLogging resource instead.") def loggings(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2LoggingArgs.Builder]*):
         com.pulumi.aws.s3.BucketV2Args.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2LoggingArgs.builder
       builder.loggings(args.map(_(argsBuilder).build)*)
@@ -947,7 +947,7 @@ object s3:
      * @return builder
      * @deprecated object_lock_configuration is deprecated. Use the top-level parameter objectLockEnabled and the aws.s3.BucketObjectLockConfiguration resource instead.
      */
-    @deprecated() def objectLockConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationArgs.Builder]):
+    @deprecated("object_lock_configuration is deprecated. Use the top-level parameter objectLockEnabled and the aws.s3.BucketObjectLockConfiguration resource instead.") def objectLockConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationArgs.Builder]):
         com.pulumi.aws.s3.BucketV2Args.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationArgs.builder
       builder.objectLockConfiguration(args(argsBuilder).build)
@@ -957,7 +957,7 @@ object s3:
      * @return builder
      * @deprecated replication_configuration is deprecated. Use the aws.s3.BucketReplicationConfig resource instead.
      */
-    @deprecated() def replicationConfigurations(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationArgs.Builder]*):
+    @deprecated("replication_configuration is deprecated. Use the aws.s3.BucketReplicationConfig resource instead.") def replicationConfigurations(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationArgs.Builder]*):
         com.pulumi.aws.s3.BucketV2Args.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationArgs.builder
       builder.replicationConfigurations(args.map(_(argsBuilder).build)*)
@@ -967,7 +967,7 @@ object s3:
      * @return builder
      * @deprecated server_side_encryption_configuration is deprecated. Use the aws.s3.BucketServerSideEncryptionConfiguration resource instead.
      */
-    @deprecated() def serverSideEncryptionConfigurations(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ServerSideEncryptionConfigurationArgs.Builder]*):
+    @deprecated("server_side_encryption_configuration is deprecated. Use the aws.s3.BucketServerSideEncryptionConfiguration resource instead.") def serverSideEncryptionConfigurations(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ServerSideEncryptionConfigurationArgs.Builder]*):
         com.pulumi.aws.s3.BucketV2Args.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2ServerSideEncryptionConfigurationArgs.builder
       builder.serverSideEncryptionConfigurations(args.map(_(argsBuilder).build)*)
@@ -977,7 +977,7 @@ object s3:
      * @return builder
      * @deprecated versioning is deprecated. Use the aws.s3.BucketVersioning resource instead.
      */
-    @deprecated() def versionings(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2VersioningArgs.Builder]*):
+    @deprecated("versioning is deprecated. Use the aws.s3.BucketVersioning resource instead.") def versionings(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2VersioningArgs.Builder]*):
         com.pulumi.aws.s3.BucketV2Args.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2VersioningArgs.builder
       builder.versionings(args.map(_(argsBuilder).build)*)
@@ -987,7 +987,7 @@ object s3:
      * @return builder
      * @deprecated website is deprecated. Use the aws.s3.BucketWebsiteConfiguration resource instead.
      */
-    @deprecated() def websites(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2WebsiteArgs.Builder]*):
+    @deprecated("website is deprecated. Use the aws.s3.BucketWebsiteConfiguration resource instead.") def websites(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2WebsiteArgs.Builder]*):
         com.pulumi.aws.s3.BucketV2Args.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2WebsiteArgs.builder
       builder.websites(args.map(_(argsBuilder).build)*)
@@ -1031,7 +1031,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  @deprecated() def BucketVersioningV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("aws.s3/bucketversioningv2.BucketVersioningV2 has been deprecated in favor of aws.s3/bucketversioning.BucketVersioning") def BucketVersioningV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketVersioningV2Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketVersioningV2Args.builder
     com.pulumi.aws.s3.BucketVersioningV2(name,
@@ -1102,7 +1102,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  @deprecated() def BucketWebsiteConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("aws.s3/bucketwebsiteconfigurationv2.BucketWebsiteConfigurationV2 has been deprecated in favor of aws.s3/bucketwebsiteconfiguration.BucketWebsiteConfiguration") def BucketWebsiteConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketWebsiteConfigurationV2Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketWebsiteConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketWebsiteConfigurationV2(name,
@@ -2373,7 +2373,7 @@ object s3:
      * @return builder
      * @deprecated rule is deprecated. Use the aws.s3.BucketObjectLockConfiguration resource instead.
      */
-    @deprecated() def rule(args: Endofunction[com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationRuleArgs.Builder]):
+    @deprecated("rule is deprecated. Use the aws.s3.BucketObjectLockConfiguration resource instead.") def rule(args: Endofunction[com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationRuleArgs.Builder]):
         com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
@@ -2741,7 +2741,7 @@ object s3:
      * @return builder
      * @deprecated cors_rule is deprecated. Use the aws.s3.BucketCorsConfiguration resource instead.
      */
-    @deprecated() def corsRules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketCorsRuleArgs.Builder]*):
+    @deprecated("cors_rule is deprecated. Use the aws.s3.BucketCorsConfiguration resource instead.") def corsRules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketCorsRuleArgs.Builder]*):
         com.pulumi.aws.s3.inputs.BucketState.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketCorsRuleArgs.builder
       builder.corsRules(args.map(_(argsBuilder).build)*)
@@ -2751,7 +2751,7 @@ object s3:
      * @return builder
      * @deprecated grant is deprecated. Use the aws.s3.BucketAcl resource instead.
      */
-    @deprecated() def grants(args: Endofunction[com.pulumi.aws.s3.inputs.BucketGrantArgs.Builder]*):
+    @deprecated("grant is deprecated. Use the aws.s3.BucketAcl resource instead.") def grants(args: Endofunction[com.pulumi.aws.s3.inputs.BucketGrantArgs.Builder]*):
         com.pulumi.aws.s3.inputs.BucketState.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketGrantArgs.builder
       builder.grants(args.map(_(argsBuilder).build)*)
@@ -2761,7 +2761,7 @@ object s3:
      * @return builder
      * @deprecated lifecycle_rule is deprecated. Use the aws.s3.BucketLifecycleConfiguration resource instead.
      */
-    @deprecated() def lifecycleRules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketLifecycleRuleArgs.Builder]*):
+    @deprecated("lifecycle_rule is deprecated. Use the aws.s3.BucketLifecycleConfiguration resource instead.") def lifecycleRules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketLifecycleRuleArgs.Builder]*):
         com.pulumi.aws.s3.inputs.BucketState.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketLifecycleRuleArgs.builder
       builder.lifecycleRules(args.map(_(argsBuilder).build)*)
@@ -2771,7 +2771,7 @@ object s3:
      * @return builder
      * @deprecated logging is deprecated. Use the aws.s3.BucketLogging resource instead.
      */
-    @deprecated() def logging(args: Endofunction[com.pulumi.aws.s3.inputs.BucketLoggingArgs.Builder]):
+    @deprecated("logging is deprecated. Use the aws.s3.BucketLogging resource instead.") def logging(args: Endofunction[com.pulumi.aws.s3.inputs.BucketLoggingArgs.Builder]):
         com.pulumi.aws.s3.inputs.BucketState.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLoggingArgs.builder
       builder.logging(args(argsBuilder).build)
@@ -2781,7 +2781,7 @@ object s3:
      * @return builder
      * @deprecated object_lock_configuration is deprecated. Use the top-level parameter objectLockEnabled and the aws.s3.BucketObjectLockConfiguration resource instead.
      */
-    @deprecated() def objectLockConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationArgs.Builder]):
+    @deprecated("object_lock_configuration is deprecated. Use the top-level parameter objectLockEnabled and the aws.s3.BucketObjectLockConfiguration resource instead.") def objectLockConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationArgs.Builder]):
         com.pulumi.aws.s3.inputs.BucketState.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationArgs.builder
       builder.objectLockConfiguration(args(argsBuilder).build)
@@ -2791,7 +2791,7 @@ object s3:
      * @return builder
      * @deprecated policy is deprecated. Use the aws.s3.BucketPolicy resource instead.
      */
-    @deprecated() def policy(args: Endofunction[com.pulumi.aws.s3.inputs.PolicyDocumentArgs.Builder]):
+    @deprecated("policy is deprecated. Use the aws.s3.BucketPolicy resource instead.") def policy(args: Endofunction[com.pulumi.aws.s3.inputs.PolicyDocumentArgs.Builder]):
         com.pulumi.aws.s3.inputs.BucketState.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
@@ -2801,7 +2801,7 @@ object s3:
      * @return builder
      * @deprecated replication_configuration is deprecated. Use the aws.s3.BucketReplicationConfig resource instead.
      */
-    @deprecated() def replicationConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketReplicationConfigurationArgs.Builder]):
+    @deprecated("replication_configuration is deprecated. Use the aws.s3.BucketReplicationConfig resource instead.") def replicationConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketReplicationConfigurationArgs.Builder]):
         com.pulumi.aws.s3.inputs.BucketState.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketReplicationConfigurationArgs.builder
       builder.replicationConfiguration(args(argsBuilder).build)
@@ -2811,7 +2811,7 @@ object s3:
      * @return builder
      * @deprecated server_side_encryption_configuration is deprecated. Use the aws.s3.BucketServerSideEncryptionConfiguration resource instead.
      */
-    @deprecated() def serverSideEncryptionConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationArgs.Builder]):
+    @deprecated("server_side_encryption_configuration is deprecated. Use the aws.s3.BucketServerSideEncryptionConfiguration resource instead.") def serverSideEncryptionConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationArgs.Builder]):
         com.pulumi.aws.s3.inputs.BucketState.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationArgs.builder
       builder.serverSideEncryptionConfiguration(args(argsBuilder).build)
@@ -2821,7 +2821,7 @@ object s3:
      * @return builder
      * @deprecated versioning is deprecated. Use the aws.s3.BucketVersioning resource instead.
      */
-    @deprecated() def versioning(args: Endofunction[com.pulumi.aws.s3.inputs.BucketVersioningArgs.Builder]):
+    @deprecated("versioning is deprecated. Use the aws.s3.BucketVersioning resource instead.") def versioning(args: Endofunction[com.pulumi.aws.s3.inputs.BucketVersioningArgs.Builder]):
         com.pulumi.aws.s3.inputs.BucketState.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketVersioningArgs.builder
       builder.versioning(args(argsBuilder).build)
@@ -2831,7 +2831,7 @@ object s3:
      * @return builder
      * @deprecated website is deprecated. Use the aws.s3.BucketWebsiteConfiguration resource instead.
      */
-    @deprecated() def website(args: Endofunction[com.pulumi.aws.s3.inputs.BucketWebsiteArgs.Builder]):
+    @deprecated("website is deprecated. Use the aws.s3.BucketWebsiteConfiguration resource instead.") def website(args: Endofunction[com.pulumi.aws.s3.inputs.BucketWebsiteArgs.Builder]):
         com.pulumi.aws.s3.inputs.BucketState.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketWebsiteArgs.builder
       builder.website(args(argsBuilder).build)
@@ -2879,7 +2879,7 @@ object s3:
      * @return builder
      * @deprecated rule is deprecated. Use the aws.s3.BucketObjectLockConfiguration resource instead.
      */
-    @deprecated() def rules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationRuleArgs.Builder]*):
+    @deprecated("rule is deprecated. Use the aws.s3.BucketObjectLockConfiguration resource instead.") def rules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationRuleArgs.Builder]*):
         com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -2996,7 +2996,7 @@ object s3:
      * @return builder
      * @deprecated cors_rule is deprecated. Use the aws.s3.BucketCorsConfiguration resource instead.
      */
-    @deprecated() def corsRules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2CorsRuleArgs.Builder]*):
+    @deprecated("cors_rule is deprecated. Use the aws.s3.BucketCorsConfiguration resource instead.") def corsRules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2CorsRuleArgs.Builder]*):
         com.pulumi.aws.s3.inputs.BucketV2State.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2CorsRuleArgs.builder
       builder.corsRules(args.map(_(argsBuilder).build)*)
@@ -3006,7 +3006,7 @@ object s3:
      * @return builder
      * @deprecated grant is deprecated. Use the aws.s3.BucketAcl resource instead.
      */
-    @deprecated() def grants(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2GrantArgs.Builder]*):
+    @deprecated("grant is deprecated. Use the aws.s3.BucketAcl resource instead.") def grants(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2GrantArgs.Builder]*):
         com.pulumi.aws.s3.inputs.BucketV2State.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2GrantArgs.builder
       builder.grants(args.map(_(argsBuilder).build)*)
@@ -3016,7 +3016,7 @@ object s3:
      * @return builder
      * @deprecated lifecycle_rule is deprecated. Use the aws.s3.BucketLifecycleConfiguration resource instead.
      */
-    @deprecated() def lifecycleRules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2LifecycleRuleArgs.Builder]*):
+    @deprecated("lifecycle_rule is deprecated. Use the aws.s3.BucketLifecycleConfiguration resource instead.") def lifecycleRules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2LifecycleRuleArgs.Builder]*):
         com.pulumi.aws.s3.inputs.BucketV2State.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2LifecycleRuleArgs.builder
       builder.lifecycleRules(args.map(_(argsBuilder).build)*)
@@ -3026,7 +3026,7 @@ object s3:
      * @return builder
      * @deprecated logging is deprecated. Use the aws.s3.BucketLogging resource instead.
      */
-    @deprecated() def loggings(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2LoggingArgs.Builder]*):
+    @deprecated("logging is deprecated. Use the aws.s3.BucketLogging resource instead.") def loggings(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2LoggingArgs.Builder]*):
         com.pulumi.aws.s3.inputs.BucketV2State.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2LoggingArgs.builder
       builder.loggings(args.map(_(argsBuilder).build)*)
@@ -3036,7 +3036,7 @@ object s3:
      * @return builder
      * @deprecated object_lock_configuration is deprecated. Use the top-level parameter objectLockEnabled and the aws.s3.BucketObjectLockConfiguration resource instead.
      */
-    @deprecated() def objectLockConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationArgs.Builder]):
+    @deprecated("object_lock_configuration is deprecated. Use the top-level parameter objectLockEnabled and the aws.s3.BucketObjectLockConfiguration resource instead.") def objectLockConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationArgs.Builder]):
         com.pulumi.aws.s3.inputs.BucketV2State.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationArgs.builder
       builder.objectLockConfiguration(args(argsBuilder).build)
@@ -3046,7 +3046,7 @@ object s3:
      * @return builder
      * @deprecated replication_configuration is deprecated. Use the aws.s3.BucketReplicationConfig resource instead.
      */
-    @deprecated() def replicationConfigurations(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationArgs.Builder]*):
+    @deprecated("replication_configuration is deprecated. Use the aws.s3.BucketReplicationConfig resource instead.") def replicationConfigurations(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationArgs.Builder]*):
         com.pulumi.aws.s3.inputs.BucketV2State.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationArgs.builder
       builder.replicationConfigurations(args.map(_(argsBuilder).build)*)
@@ -3056,7 +3056,7 @@ object s3:
      * @return builder
      * @deprecated server_side_encryption_configuration is deprecated. Use the aws.s3.BucketServerSideEncryptionConfiguration resource instead.
      */
-    @deprecated() def serverSideEncryptionConfigurations(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ServerSideEncryptionConfigurationArgs.Builder]*):
+    @deprecated("server_side_encryption_configuration is deprecated. Use the aws.s3.BucketServerSideEncryptionConfiguration resource instead.") def serverSideEncryptionConfigurations(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ServerSideEncryptionConfigurationArgs.Builder]*):
         com.pulumi.aws.s3.inputs.BucketV2State.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2ServerSideEncryptionConfigurationArgs.builder
       builder.serverSideEncryptionConfigurations(args.map(_(argsBuilder).build)*)
@@ -3066,7 +3066,7 @@ object s3:
      * @return builder
      * @deprecated versioning is deprecated. Use the aws.s3.BucketVersioning resource instead.
      */
-    @deprecated() def versionings(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2VersioningArgs.Builder]*):
+    @deprecated("versioning is deprecated. Use the aws.s3.BucketVersioning resource instead.") def versionings(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2VersioningArgs.Builder]*):
         com.pulumi.aws.s3.inputs.BucketV2State.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2VersioningArgs.builder
       builder.versionings(args.map(_(argsBuilder).build)*)
@@ -3076,7 +3076,7 @@ object s3:
      * @return builder
      * @deprecated website is deprecated. Use the aws.s3.BucketWebsiteConfiguration resource instead.
      */
-    @deprecated() def websites(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2WebsiteArgs.Builder]*):
+    @deprecated("website is deprecated. Use the aws.s3.BucketWebsiteConfiguration resource instead.") def websites(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2WebsiteArgs.Builder]*):
         com.pulumi.aws.s3.inputs.BucketV2State.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2WebsiteArgs.builder
       builder.websites(args.map(_(argsBuilder).build)*)

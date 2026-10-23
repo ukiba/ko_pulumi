@@ -5545,7 +5545,7 @@ object wafv2:
      * @return builder
      * @deprecated Use awsManagedRulesAtpRuleSet request_inspection password_field
      */
-    @deprecated() def passwordField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigPasswordFieldArgs.Builder]):
+    @deprecated("Use awsManagedRulesAtpRuleSet request_inspection password_field") def passwordField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigPasswordFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigPasswordFieldArgs.builder
       builder.passwordField(args(argsBuilder).build)
@@ -5554,7 +5554,7 @@ object wafv2:
      * @return builder
      * @deprecated Use awsManagedRulesAtpRuleSet request_inspection username_field
      */
-    @deprecated() def usernameField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigUsernameFieldArgs.Builder]):
+    @deprecated("Use awsManagedRulesAtpRuleSet request_inspection username_field") def usernameField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigUsernameFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)

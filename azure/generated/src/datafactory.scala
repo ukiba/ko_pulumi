@@ -764,7 +764,7 @@ object datafactory:
      * @return builder
      * @deprecated the `keyVaultSasToken` property has been deprecated in favour of the `sasTokenLinkedKeyVaultKey` property and will be removed in v5.0 of the AzureRM Provider
      */
-    @deprecated() def keyVaultSasToken(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageKeyVaultSasTokenArgs.Builder]):
+    @deprecated("the `keyVaultSasToken` property has been deprecated in favour of the `sasTokenLinkedKeyVaultKey` property and will be removed in v5.0 of the AzureRM Provider") def keyVaultSasToken(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageKeyVaultSasTokenArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceAzureBlobStorageArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageKeyVaultSasTokenArgs.builder
       builder.keyVaultSasToken(args(argsBuilder).build)
@@ -2064,7 +2064,7 @@ object datafactory:
      * @return builder
      * @deprecated the `keyVaultSasToken` property has been deprecated in favour of the `sasTokenLinkedKeyVaultKey` property and will be removed in v5.0 of the AzureRM Provider
      */
-    @deprecated() def keyVaultSasToken(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageKeyVaultSasTokenArgs.Builder]):
+    @deprecated("the `keyVaultSasToken` property has been deprecated in favour of the `sasTokenLinkedKeyVaultKey` property and will be removed in v5.0 of the AzureRM Provider") def keyVaultSasToken(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageKeyVaultSasTokenArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageKeyVaultSasTokenArgs.builder
       builder.keyVaultSasToken(args(argsBuilder).build)

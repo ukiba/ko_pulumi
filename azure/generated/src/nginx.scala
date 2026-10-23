@@ -112,7 +112,7 @@ object nginx:
      * @return builder
      * @deprecated The `loggingStorageAccount` block has been deprecated and will be removed in v5.0 of the AzureRM Provider. To enable logs, use the `azure.monitoring.DiagnosticSetting` resource instead.
      */
-    @deprecated() def loggingStorageAccounts(args: Endofunction[com.pulumi.azure.nginx.inputs.DeploymentLoggingStorageAccountArgs.Builder]*):
+    @deprecated("The `loggingStorageAccount` block has been deprecated and will be removed in v5.0 of the AzureRM Provider. To enable logs, use the `azure.monitoring.DiagnosticSetting` resource instead.") def loggingStorageAccounts(args: Endofunction[com.pulumi.azure.nginx.inputs.DeploymentLoggingStorageAccountArgs.Builder]*):
         com.pulumi.azure.nginx.DeploymentArgs.Builder =
       def argsBuilder = com.pulumi.azure.nginx.inputs.DeploymentLoggingStorageAccountArgs.builder
       builder.loggingStorageAccounts(args.map(_(argsBuilder).build)*)
@@ -250,7 +250,7 @@ object nginx:
      * @return builder
      * @deprecated The `loggingStorageAccount` block has been deprecated and will be removed in v5.0 of the AzureRM Provider. To enable logs, use the `azure.monitoring.DiagnosticSetting` resource instead.
      */
-    @deprecated() def loggingStorageAccounts(args: Endofunction[com.pulumi.azure.nginx.inputs.DeploymentLoggingStorageAccountArgs.Builder]*):
+    @deprecated("The `loggingStorageAccount` block has been deprecated and will be removed in v5.0 of the AzureRM Provider. To enable logs, use the `azure.monitoring.DiagnosticSetting` resource instead.") def loggingStorageAccounts(args: Endofunction[com.pulumi.azure.nginx.inputs.DeploymentLoggingStorageAccountArgs.Builder]*):
         com.pulumi.azure.nginx.inputs.DeploymentState.Builder =
       def argsBuilder = com.pulumi.azure.nginx.inputs.DeploymentLoggingStorageAccountArgs.builder
       builder.loggingStorageAccounts(args.map(_(argsBuilder).build)*)

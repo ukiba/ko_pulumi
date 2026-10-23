@@ -11,7 +11,7 @@ object bigquery:
    * 
    * * [API documentation](https://cloud.google.com/bigtable/docs/reference/admin/rest/v2/projects.instances.appProfiles)
    */
-  @deprecated() def AppProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("gcp.bigquery.AppProfile has been deprecated in favor of gcp.bigtable.AppProfile") def AppProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.AppProfileArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.AppProfileArgs.builder
     com.pulumi.gcp.bigquery.AppProfile(name,

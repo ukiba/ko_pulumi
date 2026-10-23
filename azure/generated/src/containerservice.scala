@@ -855,7 +855,7 @@ object containerservice:
      * @return builder
      * @deprecated The service team has indicated this field is now deprecated and not to be used, as such we are marking it as such and no longer sending it to the API, please see url: https://learn.microsoft.com/en-us/azure/kubernetes-fleet/architectural-overview
      */
-    @deprecated() def hubProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesFleetManagerHubProfileArgs.Builder]):
+    @deprecated("The service team has indicated this field is now deprecated and not to be used, as such we are marking it as such and no longer sending it to the API, please see url: https://learn.microsoft.com/en-us/azure/kubernetes-fleet/architectural-overview") def hubProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesFleetManagerHubProfileArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesFleetManagerArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesFleetManagerHubProfileArgs.builder
       builder.hubProfile(args(argsBuilder).build)
@@ -1145,7 +1145,7 @@ object containerservice:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /** Manages an Azure Container Registry Webhook. */
-  @deprecated() def RegistryWebook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.containerservice.RegistryWebook has been deprecated in favor of azure.containerservice.RegistryWebhook") def RegistryWebook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.containerservice.RegistryWebookArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.RegistryWebookArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2188,7 +2188,7 @@ object containerservice:
      * @return builder
      * @deprecated The service team has indicated this field is now deprecated and not to be used, as such we are marking it as such and no longer sending it to the API, please see url: https://learn.microsoft.com/en-us/azure/kubernetes-fleet/architectural-overview
      */
-    @deprecated() def hubProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesFleetManagerHubProfileArgs.Builder]):
+    @deprecated("The service team has indicated this field is now deprecated and not to be used, as such we are marking it as such and no longer sending it to the API, please see url: https://learn.microsoft.com/en-us/azure/kubernetes-fleet/architectural-overview") def hubProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesFleetManagerHubProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesFleetManagerState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesFleetManagerHubProfileArgs.builder
       builder.hubProfile(args(argsBuilder).build)

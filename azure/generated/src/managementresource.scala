@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object managementresource:
   /** Manages a Management Lock which is scoped to a Subscription, Resource Group or Resource. */
-  @deprecated() def ManangementLock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.managementresource.ManangementLock has been deprecated in favor of azure.management.Lock") def ManangementLock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.managementresource.ManangementLockArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.managementresource.ManangementLockArgs.builder
     conf.logicalName2physicalName(name) match

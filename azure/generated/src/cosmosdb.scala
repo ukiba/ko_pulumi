@@ -340,7 +340,7 @@ object cosmosdb:
       builder.uniqueKeys(args.map(_(argsBuilder).build)*)
 
   /** Manages a MongoDB Cluster using vCore Architecture. */
-  @deprecated() def MongoCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.cosmosdb/mongocluster.MongoCluster has been deprecated in favor of azure.mongocluster/mongocluster.MongoCluster") def MongoCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.MongoClusterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.MongoClusterArgs.builder
     conf.logicalName2physicalName(name) match

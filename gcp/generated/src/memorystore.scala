@@ -92,7 +92,7 @@ object memorystore:
      * @return builder
      * @deprecated `desiredPscAutoConnections` is deprecated. Use `desiredAutoCreatedEndpoints` instead. `terraform import` will only work with desiredAutoCreatedEndpoints`.
      */
-    @deprecated() def desiredPscAutoConnections(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredPscAutoConnectionArgs.Builder]*):
+    @deprecated("`desiredPscAutoConnections` is deprecated. Use `desiredAutoCreatedEndpoints` instead. `terraform import` will only work with desiredAutoCreatedEndpoints`.") def desiredPscAutoConnections(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredPscAutoConnectionArgs.Builder]*):
         com.pulumi.gcp.memorystore.InstanceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceDesiredPscAutoConnectionArgs.builder
       builder.desiredPscAutoConnections(args.map(_(argsBuilder).build)*)
@@ -444,7 +444,7 @@ object memorystore:
      * @return builder
      * @deprecated `desiredPscAutoConnections` is deprecated. Use `desiredAutoCreatedEndpoints` instead. `terraform import` will only work with desiredAutoCreatedEndpoints`.
      */
-    @deprecated() def desiredPscAutoConnections(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredPscAutoConnectionArgs.Builder]*):
+    @deprecated("`desiredPscAutoConnections` is deprecated. Use `desiredAutoCreatedEndpoints` instead. `terraform import` will only work with desiredAutoCreatedEndpoints`.") def desiredPscAutoConnections(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredPscAutoConnectionArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceDesiredPscAutoConnectionArgs.builder
       builder.desiredPscAutoConnections(args.map(_(argsBuilder).build)*)
@@ -456,7 +456,7 @@ object memorystore:
      * @return builder
      * @deprecated This field is deprecated. As a result it will not be populated if the connections are created using `desiredAutoCreatedEndpoints` parameter or `gcp.memorystore.InstanceDesiredUserCreatedEndpoints` resource. Instead of this parameter, for discovery, use `endpoints.connections.pscConnection` and `endpoints.connections.pscAutoConnection` with `connectionType` CONNECTION_TYPE_DISCOVERY.
      */
-    @deprecated() def discoveryEndpoints(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDiscoveryEndpointArgs.Builder]*):
+    @deprecated("This field is deprecated. As a result it will not be populated if the connections are created using `desiredAutoCreatedEndpoints` parameter or `gcp.memorystore.InstanceDesiredUserCreatedEndpoints` resource. Instead of this parameter, for discovery, use `endpoints.connections.pscConnection` and `endpoints.connections.pscAutoConnection` with `connectionType` CONNECTION_TYPE_DISCOVERY.") def discoveryEndpoints(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDiscoveryEndpointArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceDiscoveryEndpointArgs.builder
       builder.discoveryEndpoints(args.map(_(argsBuilder).build)*)
@@ -558,7 +558,7 @@ object memorystore:
      * @return builder
      * @deprecated `pscAutoConnections` is deprecated  Use `endpoints.connections.pscAutoConnections` instead.
      */
-    @deprecated() def pscAutoConnections(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstancePscAutoConnectionArgs.Builder]*):
+    @deprecated("`pscAutoConnections` is deprecated Use `endpoints.connections.pscAutoConnections` instead.") def pscAutoConnections(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstancePscAutoConnectionArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstancePscAutoConnectionArgs.builder
       builder.pscAutoConnections(args.map(_(argsBuilder).build)*)

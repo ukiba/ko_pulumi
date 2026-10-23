@@ -5097,7 +5097,7 @@ object compute:
      * and
      * [API](https://cloud.google.com/compute/docs/reference/rest/v1/routers/getRouterStatus).
      */
-    @deprecated() inline def routerStatus(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterStatusArgs.Builder] = scala.Predef.identity):
+    @deprecated("gcp.compute.RouterStatus has been deprecated in favor of gcp.compute.getRouterStatus") inline def routerStatus(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterStatusArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.RouterStatusResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterStatusArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.routerStatus(args(argsBuilder).build)
@@ -5110,7 +5110,7 @@ object compute:
      * and
      * [API](https://cloud.google.com/compute/docs/reference/rest/v1/routers/getRouterStatus).
      */
-    @deprecated() inline def routerStatusPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterStatusPlainArgs.Builder] = scala.Predef.identity):
+    @deprecated("gcp.compute.RouterStatus has been deprecated in favor of gcp.compute.getRouterStatus") inline def routerStatusPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterStatusPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.RouterStatusResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterStatusPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.routerStatusPlain(args(argsBuilder).build)
@@ -18049,7 +18049,7 @@ object compute:
    * 
    * In conclusion: Be extremely cautious.
    */
-  @deprecated() def MangedSslCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("gcp.compute.MangedSslCertificate has been deprecated in favor of gcp.compute.ManagedSslCertificate") def MangedSslCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.compute.MangedSslCertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.MangedSslCertificateArgs.builder
     conf.logicalName2physicalName(name) match

@@ -12,13 +12,13 @@ object dashboard:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing shared dashboard in the Azure Portal. This is the data source of the `azurermDashboard` resource. */
-    @deprecated() inline def azurerm_portal_dashboard(args: Endofunction[com.pulumi.azure.dashboard.inputs.Azurerm_portal_dashboardArgs.Builder] = scala.Predef.identity):
+    @deprecated("azure.dashboard/azurerm_portal_dashboard.azurerm_portal_dashboard has been deprecated in favor of azure.portal/azurerm_portal_dashboard.azurerm_portal_dashboard") inline def azurerm_portal_dashboard(args: Endofunction[com.pulumi.azure.dashboard.inputs.Azurerm_portal_dashboardArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.dashboard.outputs.Azurerm_portal_dashboardResult] =
       val argsBuilder = com.pulumi.azure.dashboard.inputs.Azurerm_portal_dashboardArgs.builder
       com.pulumi.azure.dashboard.DashboardFunctions.azurerm_portal_dashboard(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing shared dashboard in the Azure Portal. This is the data source of the `azurermDashboard` resource. */
-    @deprecated() inline def azurerm_portal_dashboardPlain(args: Endofunction[com.pulumi.azure.dashboard.inputs.Azurerm_portal_dashboardPlainArgs.Builder] = scala.Predef.identity):
+    @deprecated("azure.dashboard/azurerm_portal_dashboard.azurerm_portal_dashboard has been deprecated in favor of azure.portal/azurerm_portal_dashboard.azurerm_portal_dashboard") inline def azurerm_portal_dashboardPlain(args: Endofunction[com.pulumi.azure.dashboard.inputs.Azurerm_portal_dashboardPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.dashboard.outputs.Azurerm_portal_dashboardResult] =
       val argsBuilder = com.pulumi.azure.dashboard.inputs.Azurerm_portal_dashboardPlainArgs.builder
       com.pulumi.azure.dashboard.DashboardFunctions.azurerm_portal_dashboardPlain(args(argsBuilder).build)

@@ -40,7 +40,7 @@ object firebase:
      * @return builder
      * @deprecated `generativeLanguageConfig` is deprecated and will be removed in a future major release. Firebase AI Logic now uses a Google-managed service account to authenticate requests to the Gemini Developer API and no longer requires an API key.
      */
-    @deprecated() def generativeLanguageConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.Builder]):
+    @deprecated("`generativeLanguageConfig` is deprecated and will be removed in a future major release. Firebase AI Logic now uses a Google-managed service account to authenticate requests to the Gemini Developer API and no longer requires an API key.") def generativeLanguageConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.Builder]):
         com.pulumi.gcp.firebase.AiLogicConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.builder
       builder.generativeLanguageConfig(args(argsBuilder).build)
@@ -915,7 +915,7 @@ object firebase:
      * @return builder
      * @deprecated `generativeLanguageConfig` is deprecated and will be removed in a future major release. Firebase AI Logic now uses a Google-managed service account to authenticate requests to the Gemini Developer API and no longer requires an API key.
      */
-    @deprecated() def generativeLanguageConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.Builder]):
+    @deprecated("`generativeLanguageConfig` is deprecated and will be removed in a future major release. Firebase AI Logic now uses a Google-managed service account to authenticate requests to the Gemini Developer API and no longer requires an API key.") def generativeLanguageConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.AiLogicConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.builder
       builder.generativeLanguageConfig(args(argsBuilder).build)

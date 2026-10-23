@@ -1310,7 +1310,7 @@ object vertex:
      * @return builder
      * @deprecated `embeddingManagement` is deprecated. This field is no longer needed anymore and embedding management is automatically enabled when specifying Optimized storage type
      */
-    @deprecated() def embeddingManagement(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEmbeddingManagementArgs.Builder]):
+    @deprecated("`embeddingManagement` is deprecated. This field is no longer needed anymore and embedding management is automatically enabled when specifying Optimized storage type") def embeddingManagement(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEmbeddingManagementArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureOnlineStoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEmbeddingManagementArgs.builder
       builder.embeddingManagement(args(argsBuilder).build)
@@ -7764,7 +7764,7 @@ object vertex:
      * @return builder
      * @deprecated `embeddingManagement` is deprecated. This field is no longer needed anymore and embedding management is automatically enabled when specifying Optimized storage type
      */
-    @deprecated() def embeddingManagement(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEmbeddingManagementArgs.Builder]):
+    @deprecated("`embeddingManagement` is deprecated. This field is no longer needed anymore and embedding management is automatically enabled when specifying Optimized storage type") def embeddingManagement(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEmbeddingManagementArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEmbeddingManagementArgs.builder
       builder.embeddingManagement(args(argsBuilder).build)

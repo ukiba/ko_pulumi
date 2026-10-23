@@ -66,7 +66,7 @@ object kusto:
      * @return builder
      * @deprecated `languageExtensions` has been deprecated in favour of `languageExtension` and will be removed in v5.0 of the AzureRM provider
      */
-    @deprecated() def languageExtensions(args: Endofunction[com.pulumi.azure.kusto.inputs.ClusterLanguageExtensionArgs.Builder]*):
+    @deprecated("`languageExtensions` has been deprecated in favour of `languageExtension` and will be removed in v5.0 of the AzureRM provider") def languageExtensions(args: Endofunction[com.pulumi.azure.kusto.inputs.ClusterLanguageExtensionArgs.Builder]*):
         com.pulumi.azure.kusto.ClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.kusto.inputs.ClusterLanguageExtensionArgs.builder
       builder.languageExtensions(args.map(_(argsBuilder).build)*)
@@ -93,7 +93,7 @@ object kusto:
      * @return builder
      * @deprecated The `virtualNetworkConfiguration` block has been deprecated as it is no longer supported by Azure and will be removed in v5.0 of the AzureRM Provider - for more information see https://techcommunity.microsoft.com/blog/azuredataexplorer/deprecation-of-virtual-network-injection-for-azure-data-explorer/4198192
      */
-    @deprecated() def virtualNetworkConfiguration(args: Endofunction[com.pulumi.azure.kusto.inputs.ClusterVirtualNetworkConfigurationArgs.Builder]):
+    @deprecated("The `virtualNetworkConfiguration` block has been deprecated as it is no longer supported by Azure and will be removed in v5.0 of the AzureRM Provider - for more information see https://techcommunity.microsoft.com/blog/azuredataexplorer/deprecation-of-virtual-network-injection-for-azure-data-explorer/4198192") def virtualNetworkConfiguration(args: Endofunction[com.pulumi.azure.kusto.inputs.ClusterVirtualNetworkConfigurationArgs.Builder]):
         com.pulumi.azure.kusto.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.kusto.inputs.ClusterVirtualNetworkConfigurationArgs.builder
       builder.virtualNetworkConfiguration(args(argsBuilder).build)
@@ -273,7 +273,7 @@ object kusto:
      * @return builder
      * @deprecated `languageExtensions` has been deprecated in favour of `languageExtension` and will be removed in v5.0 of the AzureRM provider
      */
-    @deprecated() def languageExtensions(args: Endofunction[com.pulumi.azure.kusto.inputs.ClusterLanguageExtensionArgs.Builder]*):
+    @deprecated("`languageExtensions` has been deprecated in favour of `languageExtension` and will be removed in v5.0 of the AzureRM provider") def languageExtensions(args: Endofunction[com.pulumi.azure.kusto.inputs.ClusterLanguageExtensionArgs.Builder]*):
         com.pulumi.azure.kusto.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.azure.kusto.inputs.ClusterLanguageExtensionArgs.builder
       builder.languageExtensions(args.map(_(argsBuilder).build)*)
@@ -300,7 +300,7 @@ object kusto:
      * @return builder
      * @deprecated The `virtualNetworkConfiguration` block has been deprecated as it is no longer supported by Azure and will be removed in v5.0 of the AzureRM Provider - for more information see https://techcommunity.microsoft.com/blog/azuredataexplorer/deprecation-of-virtual-network-injection-for-azure-data-explorer/4198192
      */
-    @deprecated() def virtualNetworkConfiguration(args: Endofunction[com.pulumi.azure.kusto.inputs.ClusterVirtualNetworkConfigurationArgs.Builder]):
+    @deprecated("The `virtualNetworkConfiguration` block has been deprecated as it is no longer supported by Azure and will be removed in v5.0 of the AzureRM Provider - for more information see https://techcommunity.microsoft.com/blog/azuredataexplorer/deprecation-of-virtual-network-injection-for-azure-data-explorer/4198192") def virtualNetworkConfiguration(args: Endofunction[com.pulumi.azure.kusto.inputs.ClusterVirtualNetworkConfigurationArgs.Builder]):
         com.pulumi.azure.kusto.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.azure.kusto.inputs.ClusterVirtualNetworkConfigurationArgs.builder
       builder.virtualNetworkConfiguration(args(argsBuilder).build)

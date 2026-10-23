@@ -1779,7 +1779,7 @@ object networksecurity:
      * @return builder
      * @deprecated `locationsDetails` is deprecated and will be removed in a future major release. Use `locations` instead.
      */
-    @deprecated() def locationsDetails(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupAssociationLocationsDetailArgs.Builder]*):
+    @deprecated("`locationsDetails` is deprecated and will be removed in a future major release. Use `locations` instead.") def locationsDetails(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupAssociationLocationsDetailArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupAssociationState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupAssociationLocationsDetailArgs.builder
       builder.locationsDetails(args.map(_(argsBuilder).build)*)
@@ -1859,7 +1859,7 @@ object networksecurity:
      * @return builder
      * @deprecated `locationsDetails` is deprecated and will be removed in a future major release. Use `locations` instead.
      */
-    @deprecated() def locationsDetails(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupAssociationLocationsDetailArgs.Builder]*):
+    @deprecated("`locationsDetails` is deprecated and will be removed in a future major release. Use `locations` instead.") def locationsDetails(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupAssociationLocationsDetailArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupAssociationState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupAssociationLocationsDetailArgs.builder
       builder.locationsDetails(args.map(_(argsBuilder).build)*)

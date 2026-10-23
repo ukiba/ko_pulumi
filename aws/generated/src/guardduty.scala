@@ -29,7 +29,7 @@ object guardduty:
      * @return builder
      * @deprecated datasources is deprecated. Use aws.guardduty.DetectorFeature resources instead.
      */
-    @deprecated() def datasources(args: Endofunction[com.pulumi.aws.guardduty.inputs.DetectorDatasourcesArgs.Builder]):
+    @deprecated("datasources is deprecated. Use aws.guardduty.DetectorFeature resources instead.") def datasources(args: Endofunction[com.pulumi.aws.guardduty.inputs.DetectorDatasourcesArgs.Builder]):
         com.pulumi.aws.guardduty.DetectorArgs.Builder =
       val argsBuilder = com.pulumi.aws.guardduty.inputs.DetectorDatasourcesArgs.builder
       builder.datasources(args(argsBuilder).build)
@@ -241,7 +241,7 @@ object guardduty:
      * @return builder
      * @deprecated datasources is deprecated. Use &#34;aws.guardduty.OrganizationConfigurationFeature&#34; resources instead.
      */
-    @deprecated() def datasources(args: Endofunction[com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesArgs.Builder]):
+    @deprecated("datasources is deprecated. Use &#34;aws.guardduty.OrganizationConfigurationFeature&#34; resources instead.") def datasources(args: Endofunction[com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesArgs.Builder]):
         com.pulumi.aws.guardduty.OrganizationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesArgs.builder
       builder.datasources(args(argsBuilder).build)
@@ -382,7 +382,7 @@ object guardduty:
      * @return builder
      * @deprecated datasources is deprecated. Use aws.guardduty.DetectorFeature resources instead.
      */
-    @deprecated() def datasources(args: Endofunction[com.pulumi.aws.guardduty.inputs.DetectorDatasourcesArgs.Builder]):
+    @deprecated("datasources is deprecated. Use aws.guardduty.DetectorFeature resources instead.") def datasources(args: Endofunction[com.pulumi.aws.guardduty.inputs.DetectorDatasourcesArgs.Builder]):
         com.pulumi.aws.guardduty.inputs.DetectorState.Builder =
       val argsBuilder = com.pulumi.aws.guardduty.inputs.DetectorDatasourcesArgs.builder
       builder.datasources(args(argsBuilder).build)
@@ -526,7 +526,7 @@ object guardduty:
      * @return builder
      * @deprecated datasources is deprecated. Use &#34;aws.guardduty.OrganizationConfigurationFeature&#34; resources instead.
      */
-    @deprecated() def datasources(args: Endofunction[com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesArgs.Builder]):
+    @deprecated("datasources is deprecated. Use &#34;aws.guardduty.OrganizationConfigurationFeature&#34; resources instead.") def datasources(args: Endofunction[com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesArgs.Builder]):
         com.pulumi.aws.guardduty.inputs.OrganizationConfigurationState.Builder =
       val argsBuilder = com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesArgs.builder
       builder.datasources(args(argsBuilder).build)

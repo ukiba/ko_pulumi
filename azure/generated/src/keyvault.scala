@@ -43,7 +43,7 @@ object keyvault:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /** Manages a Key Vault Certificate. */
-  @deprecated() def Certifiate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.keyvault.Certifiate has been deprecated in favor of azure.keyvault.Certificate") def Certifiate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.keyvault.CertifiateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.keyvault.CertifiateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -240,7 +240,7 @@ object keyvault:
      * @return builder
      * @deprecated As the `contact` property uses a data plane API, to better support private endpoints and key vaults with public network access disabled, new key vaults with the `contact` field defined in the configuration file will now be required to use the `azure.keyvault.CertificateContacts` resource instead of the exposed `contact` field in the key vault resource itself. This field will be removed in v5.0 of the provider.
      */
-    @deprecated() def contacts(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyVaultContactArgs.Builder]*):
+    @deprecated("As the `contact` property uses a data plane API, to better support private endpoints and key vaults with public network access disabled, new key vaults with the `contact` field defined in the configuration file will now be required to use the `azure.keyvault.CertificateContacts` resource instead of the exposed `contact` field in the key vault resource itself. This field will be removed in v5.0 of the provider.") def contacts(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyVaultContactArgs.Builder]*):
         com.pulumi.azure.keyvault.KeyVaultArgs.Builder =
       def argsBuilder = com.pulumi.azure.keyvault.inputs.KeyVaultContactArgs.builder
       builder.contacts(args.map(_(argsBuilder).build)*)
@@ -860,7 +860,7 @@ object keyvault:
      * @return builder
      * @deprecated As the `contact` property uses a data plane API, to better support private endpoints and key vaults with public network access disabled, new key vaults with the `contact` field defined in the configuration file will now be required to use the `azure.keyvault.CertificateContacts` resource instead of the exposed `contact` field in the key vault resource itself. This field will be removed in v5.0 of the provider.
      */
-    @deprecated() def contacts(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyVaultContactArgs.Builder]*):
+    @deprecated("As the `contact` property uses a data plane API, to better support private endpoints and key vaults with public network access disabled, new key vaults with the `contact` field defined in the configuration file will now be required to use the `azure.keyvault.CertificateContacts` resource instead of the exposed `contact` field in the key vault resource itself. This field will be removed in v5.0 of the provider.") def contacts(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyVaultContactArgs.Builder]*):
         com.pulumi.azure.keyvault.inputs.KeyVaultState.Builder =
       def argsBuilder = com.pulumi.azure.keyvault.inputs.KeyVaultContactArgs.builder
       builder.contacts(args.map(_(argsBuilder).build)*)

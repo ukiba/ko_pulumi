@@ -29,7 +29,7 @@ object ssmincidents:
      * @return builder
      * @deprecated region is deprecated. Use regions instead.
      */
-    @deprecated() def region(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.Builder]*):
+    @deprecated("region is deprecated. Use regions instead.") def region(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.Builder]*):
         com.pulumi.aws.ssmincidents.ReplicationSetArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.builder
       builder.region(args.map(_(argsBuilder).build)*)
@@ -138,7 +138,7 @@ object ssmincidents:
      * @return builder
      * @deprecated region is deprecated. Use regions instead.
      */
-    @deprecated() def region(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.Builder]*):
+    @deprecated("region is deprecated. Use regions instead.") def region(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.Builder]*):
         com.pulumi.aws.ssmincidents.inputs.ReplicationSetState.Builder =
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.builder
       builder.region(args.map(_(argsBuilder).build)*)

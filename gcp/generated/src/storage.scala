@@ -4582,13 +4582,13 @@ object storage:
       com.pulumi.gcp.storage.StorageFunctions.getTransferProjectServiceAccountPlain(args(argsBuilder).build)
 
     /** Use this data source to retrieve Storage Transfer service account for this project */
-    @deprecated() inline def getTransferProjectServieAccount(args: Endofunction[com.pulumi.gcp.storage.inputs.GetTransferProjectServieAccountArgs.Builder] = scala.Predef.identity):
+    @deprecated("gcp.storage.getTransferProjectServieAccount has been deprecated in favor of gcp.storage.getTransferProjectServiceAccount") inline def getTransferProjectServieAccount(args: Endofunction[com.pulumi.gcp.storage.inputs.GetTransferProjectServieAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetTransferProjectServieAccountResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetTransferProjectServieAccountArgs.builder
       com.pulumi.gcp.storage.StorageFunctions.getTransferProjectServieAccount(args(argsBuilder).build)
 
     /** Use this data source to retrieve Storage Transfer service account for this project */
-    @deprecated() inline def getTransferProjectServieAccountPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetTransferProjectServieAccountPlainArgs.Builder] = scala.Predef.identity):
+    @deprecated("gcp.storage.getTransferProjectServieAccount has been deprecated in favor of gcp.storage.getTransferProjectServiceAccount") inline def getTransferProjectServieAccountPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetTransferProjectServieAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetTransferProjectServieAccountResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetTransferProjectServieAccountPlainArgs.builder
       com.pulumi.gcp.storage.StorageFunctions.getTransferProjectServieAccountPlain(args(argsBuilder).build)

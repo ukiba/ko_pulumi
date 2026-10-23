@@ -1624,7 +1624,7 @@ object ec2:
       builder.timeouts(args(argsBuilder).build)
 
   /** Manages a VPC Encryption Control. */
-  @deprecated() def EncryptionControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("aws.ec2/encryptioncontrol.EncryptionControl has been deprecated in favor of aws.ec2/vpcencryptioncontrol.VpcEncryptionControl") def EncryptionControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2.EncryptionControlArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.EncryptionControlArgs.builder
     argsBuilder = args(argsBuilder)
@@ -1866,7 +1866,7 @@ object ec2:
      * @return builder
      * @deprecated network_interface is deprecated. To specify the primary network interface, use primaryNetworkInterface instead. To attach additional network interfaces, use the aws.ec2.NetworkInterfaceAttachment resource.
      */
-    @deprecated() def networkInterfaces(args: Endofunction[com.pulumi.aws.ec2.inputs.InstanceNetworkInterfaceArgs.Builder]*):
+    @deprecated("network_interface is deprecated. To specify the primary network interface, use primaryNetworkInterface instead. To attach additional network interfaces, use the aws.ec2.NetworkInterfaceAttachment resource.") def networkInterfaces(args: Endofunction[com.pulumi.aws.ec2.inputs.InstanceNetworkInterfaceArgs.Builder]*):
         com.pulumi.aws.ec2.InstanceArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.InstanceNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -3139,7 +3139,7 @@ object ec2:
      * @return builder
      * @deprecated network_interface is deprecated. To specify the primary network interface, use primaryNetworkInterface instead. To attach additional network interfaces, use the aws.ec2.NetworkInterfaceAttachment resource.
      */
-    @deprecated() def networkInterfaces(args: Endofunction[com.pulumi.aws.ec2.inputs.SpotInstanceRequestNetworkInterfaceArgs.Builder]*):
+    @deprecated("network_interface is deprecated. To specify the primary network interface, use primaryNetworkInterface instead. To attach additional network interfaces, use the aws.ec2.NetworkInterfaceAttachment resource.") def networkInterfaces(args: Endofunction[com.pulumi.aws.ec2.inputs.SpotInstanceRequestNetworkInterfaceArgs.Builder]*):
         com.pulumi.aws.ec2.SpotInstanceRequestArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.SpotInstanceRequestNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -5784,7 +5784,7 @@ object ec2:
      * @return builder
      * @deprecated network_interface is deprecated. To specify the primary network interface, use primaryNetworkInterface instead. To attach additional network interfaces, use the aws.ec2.NetworkInterfaceAttachment resource.
      */
-    @deprecated() def networkInterfaces(args: Endofunction[com.pulumi.aws.ec2.inputs.InstanceNetworkInterfaceArgs.Builder]*):
+    @deprecated("network_interface is deprecated. To specify the primary network interface, use primaryNetworkInterface instead. To attach additional network interfaces, use the aws.ec2.NetworkInterfaceAttachment resource.") def networkInterfaces(args: Endofunction[com.pulumi.aws.ec2.inputs.InstanceNetworkInterfaceArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.InstanceNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -7297,7 +7297,7 @@ object ec2:
      * @return builder
      * @deprecated network_interface is deprecated. To specify the primary network interface, use primaryNetworkInterface instead. To attach additional network interfaces, use the aws.ec2.NetworkInterfaceAttachment resource.
      */
-    @deprecated() def networkInterfaces(args: Endofunction[com.pulumi.aws.ec2.inputs.SpotInstanceRequestNetworkInterfaceArgs.Builder]*):
+    @deprecated("network_interface is deprecated. To specify the primary network interface, use primaryNetworkInterface instead. To attach additional network interfaces, use the aws.ec2.NetworkInterfaceAttachment resource.") def networkInterfaces(args: Endofunction[com.pulumi.aws.ec2.inputs.SpotInstanceRequestNetworkInterfaceArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.SpotInstanceRequestState.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.SpotInstanceRequestNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)

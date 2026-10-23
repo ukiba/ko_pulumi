@@ -226,7 +226,7 @@ object postgresql:
    * </pre>
    * @deprecated postgresql.DefaultPrivileg has been deprecated in favor of postgresql.DefaultPrivileges
    */
-  @deprecated() def DefaultPrivileg(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("postgresql.DefaultPrivileg has been deprecated in favor of postgresql.DefaultPrivileges") def DefaultPrivileg(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.postgresql.DefaultPrivilegArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.postgresql.DefaultPrivilegArgs.builder
     com.pulumi.postgresql.DefaultPrivileg(name,
@@ -1440,7 +1440,7 @@ object postgresql:
      * @return builder
      * @deprecated Use postgresql.Grant resource instead (with object_type=&#34;schema&#34;)
      */
-    @deprecated() def policies(args: Endofunction[com.pulumi.postgresql.inputs.SchemaPolicyArgs.Builder]*):
+    @deprecated("Use postgresql.Grant resource instead (with object_type=&#34;schema&#34;)") def policies(args: Endofunction[com.pulumi.postgresql.inputs.SchemaPolicyArgs.Builder]*):
         com.pulumi.postgresql.SchemaArgs.Builder =
       def argsBuilder = com.pulumi.postgresql.inputs.SchemaPolicyArgs.builder
       builder.policies(args.map(_(argsBuilder).build)*)
@@ -1750,7 +1750,7 @@ object postgresql:
      * @return builder
      * @deprecated Use postgresql.Grant resource instead (with object_type=&#34;schema&#34;)
      */
-    @deprecated() def policies(args: Endofunction[com.pulumi.postgresql.inputs.SchemaPolicyArgs.Builder]*):
+    @deprecated("Use postgresql.Grant resource instead (with object_type=&#34;schema&#34;)") def policies(args: Endofunction[com.pulumi.postgresql.inputs.SchemaPolicyArgs.Builder]*):
         com.pulumi.postgresql.inputs.SchemaState.Builder =
       def argsBuilder = com.pulumi.postgresql.inputs.SchemaPolicyArgs.builder
       builder.policies(args.map(_(argsBuilder).build)*)

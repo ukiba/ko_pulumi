@@ -45,7 +45,7 @@ object eventhub:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /** Manages an EventGrid Domain */
-  @deprecated() def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.eventhub.Domain has been deprecated in favor of azure.eventgrid.Domain") def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.eventhub.DomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.DomainArgs.builder
     conf.logicalName2physicalName(name) match
@@ -104,7 +104,7 @@ object eventhub:
    * 
    * &gt; **Note:** at this time EventGrid Topics are only available in a limited number of regions.
    */
-  @deprecated() def EventGridTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.eventhub.EventGridTopic has been deprecated in favor of azure.eventgrid.Topic") def EventGridTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.eventhub.EventGridTopicArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.EventGridTopicArgs.builder
     conf.logicalName2physicalName(name) match
@@ -189,7 +189,7 @@ object eventhub:
       builder.retentionDescription(args(argsBuilder).build)
 
   /** Manages a Event Hubs authorization Rule within an Event Hub. */
-  @deprecated() def EventHubAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.eventhub.EventHubAuthorizationRule has been deprecated in favor of azure.eventhub.AuthorizationRule") def EventHubAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.eventhub.EventHubAuthorizationRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.EventHubAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -200,7 +200,7 @@ object eventhub:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /** Manages a Event Hubs Consumer Group as a nested resource within an Event Hub. */
-  @deprecated() def EventHubConsumerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.eventhub.EventHubConsumerGroup has been deprecated in favor of azure.eventhub.ConsumerGroup") def EventHubConsumerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.eventhub.EventHubConsumerGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.EventHubConsumerGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -259,7 +259,7 @@ object eventhub:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /** Manages an EventGrid Event Subscription */
-  @deprecated() def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.eventhub.EventSubscription has been deprecated in favor of azure.eventgrid.EventSubscription") def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.eventhub.EventSubscriptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.EventSubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -420,13 +420,13 @@ object eventhub:
       com.pulumi.azure.eventhub.EventhubFunctions.getEventHubPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing EventHub Namespace. */
-    @deprecated() inline def getEventhubNamespace(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetEventhubNamespaceArgs.Builder] = scala.Predef.identity):
+    @deprecated("azure.eventhub.getEventhubNamespace has been deprecated in favor of azure.eventhub.getNamespace") inline def getEventhubNamespace(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetEventhubNamespaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.eventhub.outputs.GetEventhubNamespaceResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetEventhubNamespaceArgs.builder
       com.pulumi.azure.eventhub.EventhubFunctions.getEventhubNamespace(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing EventHub Namespace. */
-    @deprecated() inline def getEventhubNamespacePlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetEventhubNamespacePlainArgs.Builder] = scala.Predef.identity):
+    @deprecated("azure.eventhub.getEventhubNamespace has been deprecated in favor of azure.eventhub.getNamespace") inline def getEventhubNamespacePlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetEventhubNamespacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventhub.outputs.GetEventhubNamespaceResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetEventhubNamespacePlainArgs.builder
       com.pulumi.azure.eventhub.EventhubFunctions.getEventhubNamespacePlain(args(argsBuilder).build)
@@ -468,13 +468,13 @@ object eventhub:
       com.pulumi.azure.eventhub.EventhubFunctions.getSasPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing ServiceBus Namespace. */
-    @deprecated() inline def getServiceBusNamespace(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetServiceBusNamespaceArgs.Builder] = scala.Predef.identity):
+    @deprecated("azure.eventhub.getServiceBusNamespace has been deprecated in favor of azure.servicebus.getNamespace") inline def getServiceBusNamespace(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetServiceBusNamespaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.eventhub.outputs.GetServiceBusNamespaceResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetServiceBusNamespaceArgs.builder
       com.pulumi.azure.eventhub.EventhubFunctions.getServiceBusNamespace(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing ServiceBus Namespace. */
-    @deprecated() inline def getServiceBusNamespacePlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetServiceBusNamespacePlainArgs.Builder] = scala.Predef.identity):
+    @deprecated("azure.eventhub.getServiceBusNamespace has been deprecated in favor of azure.servicebus.getNamespace") inline def getServiceBusNamespacePlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetServiceBusNamespacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventhub.outputs.GetServiceBusNamespaceResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetServiceBusNamespacePlainArgs.builder
       com.pulumi.azure.eventhub.EventhubFunctions.getServiceBusNamespacePlain(args(argsBuilder).build)
@@ -491,7 +491,7 @@ object eventhub:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /** Manages a ServiceBus Namespace. */
-  @deprecated() def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.eventhub.Namespace has been deprecated in favor of azure.servicebus.Namespace") def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.eventhub.NamespaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.NamespaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -537,7 +537,7 @@ object eventhub:
       builder.networkRuleSet(args(argsBuilder).build)
 
   /** Manages a ServiceBus Namespace authorization Rule within a ServiceBus. */
-  @deprecated() def NamespaceAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.eventhub.NamespaceAuthorizationRule has been deprecated in favor of azure.servicebus.NamespaceAuthorizationRule") def NamespaceAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.eventhub.NamespaceAuthorizationRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.NamespaceAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -570,7 +570,7 @@ object eventhub:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /** Manages a ServiceBus Queue. */
-  @deprecated() def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.eventhub.Queue has been deprecated in favor of azure.servicebus.Queue") def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.eventhub.QueueArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.QueueArgs.builder
     conf.logicalName2physicalName(name) match
@@ -581,7 +581,7 @@ object eventhub:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /** Manages an Authorization Rule for a ServiceBus Queue. */
-  @deprecated() def QueueAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.eventhub.QueueAuthorizationRule has been deprecated in favor of azure.servicebus.QueueAuthorizationRule") def QueueAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.eventhub.QueueAuthorizationRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.QueueAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -592,7 +592,7 @@ object eventhub:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /** Manages a ServiceBus Subscription. */
-  @deprecated() def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.eventhub.Subscription has been deprecated in favor of azure.servicebus.Subscription") def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.eventhub.SubscriptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.SubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -613,7 +613,7 @@ object eventhub:
       builder.clientScopedSubscription(args(argsBuilder).build)
 
   /** Manages a ServiceBus Subscription Rule. */
-  @deprecated() def SubscriptionRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.eventhub.SubscriptionRule has been deprecated in favor of azure.servicebus.SubscriptionRule") def SubscriptionRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.eventhub.SubscriptionRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.SubscriptionRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -638,7 +638,7 @@ object eventhub:
    * 
    * &gt; **Note:** Topics can only be created in Namespaces with an SKU of `Standard` or higher.
    */
-  @deprecated() def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.eventhub.Topic has been deprecated in favor of azure.servicebus.Topic") def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.eventhub.TopicArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.TopicArgs.builder
     conf.logicalName2physicalName(name) match
@@ -649,7 +649,7 @@ object eventhub:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /** Manages a ServiceBus Topic authorization Rule within a ServiceBus Topic. */
-  @deprecated() def TopicAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("azure.eventhub.TopicAuthorizationRule has been deprecated in favor of azure.servicebus.TopicAuthorizationRule") def TopicAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.eventhub.TopicAuthorizationRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.TopicAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match

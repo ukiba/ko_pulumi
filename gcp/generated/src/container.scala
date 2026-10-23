@@ -112,7 +112,7 @@ object container:
      * @return builder
      * @deprecated `securityPostureConfig` is deprecated and will be removed in a future major release.
      */
-    @deprecated() def securityPostureConfig(args: Endofunction[com.pulumi.gcp.container.inputs.AttachedClusterSecurityPostureConfigArgs.Builder]):
+    @deprecated("`securityPostureConfig` is deprecated and will be removed in a future major release.") def securityPostureConfig(args: Endofunction[com.pulumi.gcp.container.inputs.AttachedClusterSecurityPostureConfigArgs.Builder]):
         com.pulumi.gcp.container.AttachedClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.AttachedClusterSecurityPostureConfigArgs.builder
       builder.securityPostureConfig(args(argsBuilder).build)
@@ -570,7 +570,7 @@ object container:
      * @return builder
      * @deprecated GKE Enterprise features are now available without an Enterprise tier. This field is deprecated and will be removed in a future major release
      */
-    @deprecated() def enterpriseConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterEnterpriseConfigArgs.Builder]):
+    @deprecated("GKE Enterprise features are now available without an Enterprise tier. This field is deprecated and will be removed in a future major release") def enterpriseConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterEnterpriseConfigArgs.Builder]):
         com.pulumi.gcp.container.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.ClusterEnterpriseConfigArgs.builder
       builder.enterpriseConfig(args(argsBuilder).build)
@@ -1377,7 +1377,7 @@ object container:
      * @return builder
      * @deprecated `securityPostureConfig` is deprecated and will be removed in a future major release.
      */
-    @deprecated() def securityPostureConfig(args: Endofunction[com.pulumi.gcp.container.inputs.AttachedClusterSecurityPostureConfigArgs.Builder]):
+    @deprecated("`securityPostureConfig` is deprecated and will be removed in a future major release.") def securityPostureConfig(args: Endofunction[com.pulumi.gcp.container.inputs.AttachedClusterSecurityPostureConfigArgs.Builder]):
         com.pulumi.gcp.container.inputs.AttachedClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.AttachedClusterSecurityPostureConfigArgs.builder
       builder.securityPostureConfig(args(argsBuilder).build)
@@ -4118,7 +4118,7 @@ object container:
      * @return builder
      * @deprecated GKE Enterprise features are now available without an Enterprise tier. This field is deprecated and will be removed in a future major release
      */
-    @deprecated() def enterpriseConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterEnterpriseConfigArgs.Builder]):
+    @deprecated("GKE Enterprise features are now available without an Enterprise tier. This field is deprecated and will be removed in a future major release") def enterpriseConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterEnterpriseConfigArgs.Builder]):
         com.pulumi.gcp.container.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.ClusterEnterpriseConfigArgs.builder
       builder.enterpriseConfig(args(argsBuilder).build)

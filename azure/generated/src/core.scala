@@ -132,13 +132,13 @@ object core:
       com.pulumi.azure.core.CoreFunctions.getTenantTemplateDeploymentPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing User Assigned Identity. */
-    @deprecated() inline def getUserAssignedIdentity(args: Endofunction[com.pulumi.azure.core.inputs.GetUserAssignedIdentityArgs.Builder] = scala.Predef.identity):
+    @deprecated("azure.core.getUserAssignedIdentity has been deprecated in favor of azure.authorization.getUserAssignedIdentity") inline def getUserAssignedIdentity(args: Endofunction[com.pulumi.azure.core.inputs.GetUserAssignedIdentityArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetUserAssignedIdentityResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetUserAssignedIdentityArgs.builder
       com.pulumi.azure.core.CoreFunctions.getUserAssignedIdentity(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing User Assigned Identity. */
-    @deprecated() inline def getUserAssignedIdentityPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetUserAssignedIdentityPlainArgs.Builder] = scala.Predef.identity):
+    @deprecated("azure.core.getUserAssignedIdentity has been deprecated in favor of azure.authorization.getUserAssignedIdentity") inline def getUserAssignedIdentityPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetUserAssignedIdentityPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetUserAssignedIdentityResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetUserAssignedIdentityPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getUserAssignedIdentityPlain(args(argsBuilder).build)

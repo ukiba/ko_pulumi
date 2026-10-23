@@ -421,13 +421,13 @@ object monitoring:
       com.pulumi.gcp.monitoring.MonitoringFunctions.getNotificationChannelPlain(args(argsBuilder).build)
 
     /** Get the value and metadata from a Secret Manager secret version. For more information see the [official documentation](https://cloud.google.com/secret-manager/docs/) and [API](https://cloud.google.com/secret-manager/docs/reference/rest/v1/projects.secrets.versions). If you don&#39;t need the metadata (i.e., if you want to use a more limited role to access the secret version only), see also the gcp.secretmanager.getSecretVersionAccess datasource. */
-    @deprecated() inline def getSecretVersion(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetSecretVersionArgs.Builder] = scala.Predef.identity):
+    @deprecated("gcp.monitoring.getSecretVersion has been deprecated in favor of gcp.secretmanager.getSecretVersion") inline def getSecretVersion(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetSecretVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.monitoring.outputs.GetSecretVersionResult] =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.GetSecretVersionArgs.builder
       com.pulumi.gcp.monitoring.MonitoringFunctions.getSecretVersion(args(argsBuilder).build)
 
     /** Get the value and metadata from a Secret Manager secret version. For more information see the [official documentation](https://cloud.google.com/secret-manager/docs/) and [API](https://cloud.google.com/secret-manager/docs/reference/rest/v1/projects.secrets.versions). If you don&#39;t need the metadata (i.e., if you want to use a more limited role to access the secret version only), see also the gcp.secretmanager.getSecretVersionAccess datasource. */
-    @deprecated() inline def getSecretVersionPlain(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetSecretVersionPlainArgs.Builder] = scala.Predef.identity):
+    @deprecated("gcp.monitoring.getSecretVersion has been deprecated in favor of gcp.secretmanager.getSecretVersion") inline def getSecretVersionPlain(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetSecretVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.monitoring.outputs.GetSecretVersionResult] =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.GetSecretVersionPlainArgs.builder
       com.pulumi.gcp.monitoring.MonitoringFunctions.getSecretVersionPlain(args(argsBuilder).build)
