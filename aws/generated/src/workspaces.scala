@@ -176,7 +176,7 @@ object workspaces:
       builder.timeouts(args(argsBuilder).build)
 
   /**
-   * Provides a workspace in [AWS Workspaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces.html) Service
+   * Provides a workspace in [AWS WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces.html) Service
    * 
    * &gt; **NOTE:** AWS WorkSpaces service requires [`workspaces_DefaultRole`](https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role) IAM role to operate normally.
    */
@@ -235,25 +235,25 @@ object workspaces:
       val argsBuilder = com.pulumi.aws.workspaces.inputs.GetDirectoryPlainArgs.builder
       com.pulumi.aws.workspaces.WorkspacesFunctions.getDirectoryPlain(args(argsBuilder).build)
 
-    /** Use this data source to get information about a Workspaces image. */
+    /** Use this data source to get information about a WorkSpaces image. */
     inline def getImage(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetImageArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.workspaces.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.aws.workspaces.inputs.GetImageArgs.builder
       com.pulumi.aws.workspaces.WorkspacesFunctions.getImage(args(argsBuilder).build)
 
-    /** Use this data source to get information about a Workspaces image. */
+    /** Use this data source to get information about a WorkSpaces image. */
     inline def getImagePlain(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetImagePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.workspaces.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.aws.workspaces.inputs.GetImagePlainArgs.builder
       com.pulumi.aws.workspaces.WorkspacesFunctions.getImagePlain(args(argsBuilder).build)
 
-    /** Use this data source to get information about a workspace in [AWS Workspaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces.html) Service. */
+    /** Use this data source to get information about a workspace in [AWS WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces.html) Service. */
     inline def getWorkspace(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.workspaces.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.aws.workspaces.inputs.GetWorkspaceArgs.builder
       com.pulumi.aws.workspaces.WorkspacesFunctions.getWorkspace(args(argsBuilder).build)
 
-    /** Use this data source to get information about a workspace in [AWS Workspaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces.html) Service. */
+    /** Use this data source to get information about a workspace in [AWS WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces.html) Service. */
     inline def getWorkspacePlain(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.workspaces.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.aws.workspaces.inputs.GetWorkspacePlainArgs.builder

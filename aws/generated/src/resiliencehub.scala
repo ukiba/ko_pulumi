@@ -345,6 +345,26 @@ object resiliencehub:
       def argsBuilder = com.pulumi.aws.resiliencehub.inputs.V2InputSourceResourceConfigurationResourceTagArgs.builder
       builder.resourceTags(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.resiliencehub.inputs.V2InputSourceResourceConfigurationEksArgs.Builder)
+    /**
+     * @param labelSelector Kubernetes label selector that narrows discovery to the objects whose labels match. When omitted, all supported objects in the selected namespaces are discovered. See `labelSelector` Block below.
+     * @return builder
+     */
+    def labelSelector(args: Endofunction[com.pulumi.aws.resiliencehub.inputs.V2InputSourceResourceConfigurationEksLabelSelectorArgs.Builder]):
+        com.pulumi.aws.resiliencehub.inputs.V2InputSourceResourceConfigurationEksArgs.Builder =
+      val argsBuilder = com.pulumi.aws.resiliencehub.inputs.V2InputSourceResourceConfigurationEksLabelSelectorArgs.builder
+      builder.labelSelector(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.resiliencehub.inputs.V2InputSourceResourceConfigurationEksLabelSelectorArgs.Builder)
+    /**
+     * @param matchExpressions Label requirements that an object must satisfy. Every requirement must match. See `matchExpressions` Block below.
+     * @return builder
+     */
+    def matchExpressions(args: Endofunction[com.pulumi.aws.resiliencehub.inputs.V2InputSourceResourceConfigurationEksLabelSelectorMatchExpressionArgs.Builder]*):
+        com.pulumi.aws.resiliencehub.inputs.V2InputSourceResourceConfigurationEksLabelSelectorArgs.Builder =
+      def argsBuilder = com.pulumi.aws.resiliencehub.inputs.V2InputSourceResourceConfigurationEksLabelSelectorMatchExpressionArgs.builder
+      builder.matchExpressions(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.resiliencehub.inputs.V2InputSourceState.Builder)
     /**
      * @param resourceConfiguration Resource configuration for an input source. See `resourceConfiguration` Block below.

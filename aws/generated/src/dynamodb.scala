@@ -182,11 +182,11 @@ object dynamodb:
   /**
    * Provides a DynamoDB table resource.
    * 
-   * &gt; **Note:** It is recommended to use [`ignoreChanges`](https://www.pulumi.com/docs/intro/concepts/programming-model/#ignorechanges) for `readCapacity` and/or `writeCapacity` if there&#39;s `autoscaling policy` attached to the table.
+   * &gt; **Note:** We recommend using `lifecycle` `ignoreChanges` for `readCapacity` and/or `writeCapacity` if there&#39;s Auto Scaling policy attached to the table.
    * 
    * &gt; **Note:** When using aws.dynamodb.TableReplica with this resource, use `lifecycle` `ignoreChanges` for `replica`, _e.g._, `lifecycle { ignoreChanges = [replica] }`.
    * 
-   * &gt; **Note:** If autoscaling creates drift for your `globalSecondaryIndex` blocks and/or more granular `lifecycle` management for GSIs, we recommend using the new **experimental** resource `aws.dynamodb.GlobalSecondaryIndex`.
+   * &gt; **Note:** If Auto Scaling creates drift for your `globalSecondaryIndex` blocks and/or more granular `lifecycle` management for GSIs, we recommend using the new **experimental** resource `aws.dynamodb.GlobalSecondaryIndex`.
    * 
    * &gt; **Note:** Only define attributes on the table object that are going to be used as a hash key or range key for the table itself, or for LSI/GSI keys. Adding attributes not used in these scenarios causes an infinite plan loop. When using `aws.dynamodb.GlobalSecondaryIndex`, you do not need to define attributes for externally managed GSIs in the `aws.dynamodb.Table` resource.
    */

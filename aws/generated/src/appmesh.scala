@@ -677,7 +677,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecArgs.Builder)
     /**
-     * @param grpcRoute GRPC routing information for the route. See `spec.grpc_route` Block for details.
+     * @param grpcRoute gRPC routing information for the route. See `spec.grpc_route` Block for details.
      * @return builder
      */
     def grpcRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteArgs.Builder]):

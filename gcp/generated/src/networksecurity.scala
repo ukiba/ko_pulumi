@@ -416,6 +416,17 @@ object networksecurity:
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.FirewallEndpointEndpointSettingsArgs.builder
       builder.endpointSettings(args(argsBuilder).build)
 
+    /**
+     * @param wildfireSettings (Optional, Beta)
+     * Settings for WildFire analysis on the firewall endpoint.
+     * Structure is documented below.
+     * @return builder
+     */
+    def wildfireSettings(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsArgs.Builder]):
+        com.pulumi.gcp.networksecurity.FirewallEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsArgs.builder
+      builder.wildfireSettings(args(argsBuilder).build)
+
   /**
    * Firewall endpoint association links a firewall endpoint to a VPC network in
    * the same zone. After you define this association, Cloud Firewall forwards the
@@ -1209,7 +1220,7 @@ object networksecurity:
 
   extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToArgs.Builder)
     /**
-     * @param notOperations Describes the negated properties of the targets of a request. Matches requests for operations that do not match the criteria specified in this field. At least one of operations or notOperations must be specified. Limited to 1 not_operation.
+     * @param notOperations Describes properties of one or more targets of a request. At least one of operations or notOperations must be specified. Limited to 1 operation.
      * Structure is documented below.
      * @return builder
      */
@@ -1436,6 +1447,17 @@ object networksecurity:
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalArgs.builder
       builder.principals(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param resources A list of resources to match against the resource of the source VM of a request.
+     * Limited to 5 resources.
+     * Structure is documented below.
+     * @return builder
+     */
+    def resources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceArgs.builder
+      builder.resources(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalArgs.Builder)
     /**
      * @param principal Required. A non-empty string whose value is matched against the principal value based on the principalSelector.
@@ -1447,6 +1469,27 @@ object networksecurity:
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalPrincipalArgs.builder
       builder.principal(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceArgs.Builder)
+    /**
+     * @param iamServiceAccount An IAM service account to match against the source service account of the VM sending the request.
+     * Structure is documented below.
+     * @return builder
+     */
+    def iamServiceAccount(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceIamServiceAccountArgs.Builder]):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceIamServiceAccountArgs.builder
+      builder.iamServiceAccount(args(argsBuilder).build)
+
+    /**
+     * @param tagValueIdSet A list of resource tag value permanent IDs to match against the resource manager tags value associated with the source VM of a request.
+     * Structure is documented below.
+     * @return builder
+     */
+    def tagValueIdSet(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceTagValueIdSetArgs.Builder]):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceTagValueIdSetArgs.builder
+      builder.tagValueIdSet(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceArgs.Builder)
     /**
@@ -1470,6 +1513,17 @@ object networksecurity:
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourcePrincipalArgs.builder
       builder.principals(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param resources A list of resources to match against the resource of the source VM of a request.
+     * Limited to 5 resources.
+     * Structure is documented below.
+     * @return builder
+     */
+    def resources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceArgs.builder
+      builder.resources(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourcePrincipalArgs.Builder)
     /**
      * @param principal Required. A non-empty string whose value is matched against the principal value based on the principalSelector.
@@ -1482,7 +1536,38 @@ object networksecurity:
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourcePrincipalPrincipalArgs.builder
       builder.principal(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceArgs.Builder)
+    /**
+     * @param iamServiceAccount An IAM service account to match against the source service account of the VM sending the request.
+     * Structure is documented below.
+     * @return builder
+     */
+    def iamServiceAccount(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceIamServiceAccountArgs.Builder]):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceIamServiceAccountArgs.builder
+      builder.iamServiceAccount(args(argsBuilder).build)
+
+    /**
+     * @param tagValueIdSet A list of resource tag value permanent IDs to match against the resource manager tags value associated with the source VM of a request.
+     * Structure is documented below.
+     * @return builder
+     */
+    def tagValueIdSet(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceTagValueIdSetArgs.Builder]):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceTagValueIdSetArgs.builder
+      builder.tagValueIdSet(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToArgs.Builder)
+    /**
+     * @param notOperations Describes properties of one or more targets of a request. At least one of operations or notOperations must be specified. Limited to 1 operation.
+     * Structure is documented below.
+     * @return builder
+     */
+    def notOperations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToNotOperationArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToNotOperationArgs.builder
+      builder.notOperations(args.map(_(argsBuilder).build)*)
+
     /**
      * @param operations Describes properties of one or more targets of a request. At least one of operations or notOperations must be specified. Limited to 1 operation.
      * Structure is documented below.
@@ -1492,6 +1577,16 @@ object networksecurity:
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToNotOperationArgs.Builder)
+    /**
+     * @param snis Structure is documented below.
+     * @return builder
+     */
+    def snis(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToNotOperationSniArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToNotOperationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToNotOperationSniArgs.builder
+      builder.snis(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToOperationArgs.Builder)
     /**
@@ -1619,6 +1714,28 @@ object networksecurity:
         com.pulumi.gcp.networksecurity.inputs.FirewallEndpointState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.FirewallEndpointEndpointSettingsArgs.builder
       builder.endpointSettings(args(argsBuilder).build)
+
+    /**
+     * @param wildfireSettings (Optional, Beta)
+     * Settings for WildFire analysis on the firewall endpoint.
+     * Structure is documented below.
+     * @return builder
+     */
+    def wildfireSettings(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsArgs.Builder]):
+        com.pulumi.gcp.networksecurity.inputs.FirewallEndpointState.Builder =
+      val argsBuilder = com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsArgs.builder
+      builder.wildfireSettings(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsArgs.Builder)
+    /**
+     * @param wildfireInlineCloudAnalysisSettings Settings for WildFire inline cloud analysis.
+     * Structure is documented below.
+     * @return builder
+     */
+    def wildfireInlineCloudAnalysisSettings(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsWildfireInlineCloudAnalysisSettingsArgs.Builder]):
+        com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsWildfireInlineCloudAnalysisSettingsArgs.builder
+      builder.wildfireInlineCloudAnalysisSettings(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.networksecurity.inputs.InterceptDeploymentGroupState.Builder)
     /**

@@ -294,7 +294,7 @@ object securityhub:
    * 
    * &gt; **NOTE:** This is an advanced AWS resource. Pulumi will automatically assume management of the Security Hub Organization Configuration without import and perform no actions on removal from the Pulumi program.
    * 
-   * &gt; **NOTE:** Deleting this resource resets security hub to a local organization configuration with auto enable false.
+   * &gt; **NOTE:** Deleting this resource resets Security Hub to a local organization configuration with auto enable false.
    */
   def OrganizationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.OrganizationConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1313,7 +1313,7 @@ object securityhub:
       builder.networkDestinationDomains(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param networkDestinationIpv4s The destination IPv4 address of network-related information about a finding. See Ip Filter below for more details.
+     * @param networkDestinationIpv4s The destination IPv4 address of network-related information about a finding. See IP Filter below for more details.
      * @return builder
      */
     def networkDestinationIpv4s(args: Endofunction[com.pulumi.aws.securityhub.inputs.InsightFiltersNetworkDestinationIpv4Args.Builder]*):
@@ -1322,7 +1322,7 @@ object securityhub:
       builder.networkDestinationIpv4s(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param networkDestinationIpv6s The destination IPv6 address of network-related information about a finding. See Ip Filter below for more details.
+     * @param networkDestinationIpv6s The destination IPv6 address of network-related information about a finding. See IP Filter below for more details.
      * @return builder
      */
     def networkDestinationIpv6s(args: Endofunction[com.pulumi.aws.securityhub.inputs.InsightFiltersNetworkDestinationIpv6Args.Builder]*):
@@ -1367,7 +1367,7 @@ object securityhub:
       builder.networkSourceDomains(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param networkSourceIpv4s The source IPv4 address of network-related information about a finding. See Ip Filter below for more details.
+     * @param networkSourceIpv4s The source IPv4 address of network-related information about a finding. See IP Filter below for more details.
      * @return builder
      */
     def networkSourceIpv4s(args: Endofunction[com.pulumi.aws.securityhub.inputs.InsightFiltersNetworkSourceIpv4Args.Builder]*):
@@ -1376,7 +1376,7 @@ object securityhub:
       builder.networkSourceIpv4s(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param networkSourceIpv6s The source IPv6 address of network-related information about a finding. See Ip Filter below for more details.
+     * @param networkSourceIpv6s The source IPv6 address of network-related information about a finding. See IP Filter below for more details.
      * @return builder
      */
     def networkSourceIpv6s(args: Endofunction[com.pulumi.aws.securityhub.inputs.InsightFiltersNetworkSourceIpv6Args.Builder]*):
@@ -1565,7 +1565,7 @@ object securityhub:
       builder.resourceAwsEc2InstanceImageIds(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param resourceAwsEc2InstanceIpv4Addresses The IPv4 addresses associated with the instance. See Ip Filter below for more details.
+     * @param resourceAwsEc2InstanceIpv4Addresses The IPv4 addresses associated with the instance. See IP Filter below for more details.
      * @return builder
      */
     def resourceAwsEc2InstanceIpv4Addresses(args: Endofunction[com.pulumi.aws.securityhub.inputs.InsightFiltersResourceAwsEc2InstanceIpv4AddressArgs.Builder]*):
@@ -1574,7 +1574,7 @@ object securityhub:
       builder.resourceAwsEc2InstanceIpv4Addresses(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param resourceAwsEc2InstanceIpv6Addresses The IPv6 addresses associated with the instance. See Ip Filter below for more details.
+     * @param resourceAwsEc2InstanceIpv6Addresses The IPv6 addresses associated with the instance. See IP Filter below for more details.
      * @return builder
      */
     def resourceAwsEc2InstanceIpv6Addresses(args: Endofunction[com.pulumi.aws.securityhub.inputs.InsightFiltersResourceAwsEc2InstanceIpv6AddressArgs.Builder]*):

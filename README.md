@@ -207,7 +207,7 @@ val sub = sns.TopicSubscription("order-worker-sub",
     1. [Scala 3.8](https://github.com/scala/scala3) requires Java 17
     1. [pulumi-java](https://github.com/pulumi/pulumi-java) requires Java 11
 
-1. Pulumi 3.268.0 or later
+1. Pulumi 3.272.0 or later
 
     1. Mac: `brew install pulumi/tap/pulumi`
 
@@ -219,10 +219,10 @@ val sub = sns.TopicSubscription("order-worker-sub",
 
     1. The bootstrap scripts, which download mill and Java, have been committed
 
-           curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.1.10/mill-dist-1.1.10-mill.sh -o mill
+           curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.3.1/mill-dist-1.3.1-mill.sh -o mill
            chmod +x mill
 
-           curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.1.10/mill-dist-1.1.10-mill.bat -o mill.bat
+           curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.3.1/mill-dist-1.3.1-mill.bat -o mill.bat
 
     1. On Windows, upgrade PowerShell to version 7 or newer.
 

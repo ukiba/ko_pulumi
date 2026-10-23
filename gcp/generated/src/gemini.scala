@@ -53,6 +53,992 @@ object gemini:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  /**
+   * A DataAgent lets users interact with configured data sources by using
+   * natural language, as part of the Conversational Analytics API.
+   * 
+   * &gt; **Note:** Deleting a DataAgent soft-deletes it. A soft-deleted DataAgent
+   * is purged after 30 days (see `purgeTime`), and its `dataAgentId` cannot be
+   * reused in the same project and location until then. Changing a field that
+   * forces replacement (such as `kmsKey`) while keeping the same `dataAgentId`
+   * therefore fails with an `ALREADY_EXISTS` error; use a new `dataAgentId`
+   * instead.
+   * 
+   * To get more information about DataAgent, see:
+   * 
+   * * [API documentation](https://cloud.google.com/gemini/docs/conversational-analytics-api/reference/rest/v1/projects.locations.dataAgents)
+   * * How-to Guides
+   *     * [Conversational Analytics API overview](https://cloud.google.com/gemini/data-agents/conversational-analytics-api/overview)
+   */
+  def DataAnalyticsDataAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.gemini.DataAnalyticsDataAgentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.gemini.DataAnalyticsDataAgentArgs.builder
+    com.pulumi.gcp.gemini.DataAnalyticsDataAgent(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.gemini.DataAnalyticsDataAgentArgs.Builder)
+    /**
+     * @param dataAnalyticsAgent Data analytics agent configuration.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dataAnalyticsAgent(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.Builder]):
+        com.pulumi.gcp.gemini.DataAnalyticsDataAgentArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.builder
+      builder.dataAnalyticsAgent(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Gemini Data Analytics DataAgent. Each of these resources serves a different use case:
+   * 
+   * * `gcp.gemini.DataAnalyticsDataAgentIamPolicy`: Authoritative. Sets the IAM policy for the dataagent and replaces any existing policy already attached.
+   * * `gcp.gemini.DataAnalyticsDataAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataagent are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gemini.DataAnalyticsDataAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataagent are preserved. Members added outside of Terraform will **not** be detected as drift.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.gemini.DataAnalyticsDataAgentIamPolicy`: Retrieves the IAM policy for the dataagent
+   * 
+   * &gt; **Note:** `gcp.gemini.DataAnalyticsDataAgentIamPolicy` **cannot** be used in conjunction with `gcp.gemini.DataAnalyticsDataAgentIamBinding` and `gcp.gemini.DataAnalyticsDataAgentIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.gemini.DataAnalyticsDataAgentIamBinding` resources **can be** used in conjunction with `gcp.gemini.DataAnalyticsDataAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicy;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/geminidataanalytics.dataAgentUser")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new DataAnalyticsDataAgentIamPolicy("policy", DataAnalyticsDataAgentIamPolicyArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBinding;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new DataAnalyticsDataAgentIamBinding("binding", DataAnalyticsDataAgentIamBindingArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .role("roles/geminidataanalytics.dataAgentUser")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMember;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new DataAnalyticsDataAgentIamMember("member", DataAnalyticsDataAgentIamMemberArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .role("roles/geminidataanalytics.dataAgentUser")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Gemini Data Analytics DataAgent
+   * 
+   * Three different resources help you manage your IAM policy for Gemini Data Analytics DataAgent. Each of these resources serves a different use case:
+   * 
+   * * `gcp.gemini.DataAnalyticsDataAgentIamPolicy`: Authoritative. Sets the IAM policy for the dataagent and replaces any existing policy already attached.
+   * * `gcp.gemini.DataAnalyticsDataAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataagent are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gemini.DataAnalyticsDataAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataagent are preserved. Members added outside of Terraform will **not** be detected as drift.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.gemini.DataAnalyticsDataAgentIamPolicy`: Retrieves the IAM policy for the dataagent
+   * 
+   * &gt; **Note:** `gcp.gemini.DataAnalyticsDataAgentIamPolicy` **cannot** be used in conjunction with `gcp.gemini.DataAnalyticsDataAgentIamBinding` and `gcp.gemini.DataAnalyticsDataAgentIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.gemini.DataAnalyticsDataAgentIamBinding` resources **can be** used in conjunction with `gcp.gemini.DataAnalyticsDataAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicy;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/geminidataanalytics.dataAgentUser")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new DataAnalyticsDataAgentIamPolicy("policy", DataAnalyticsDataAgentIamPolicyArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBinding;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new DataAnalyticsDataAgentIamBinding("binding", DataAnalyticsDataAgentIamBindingArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .role("roles/geminidataanalytics.dataAgentUser")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMember;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new DataAnalyticsDataAgentIamMember("member", DataAnalyticsDataAgentIamMemberArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .role("roles/geminidataanalytics.dataAgentUser")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}}
+   * * {{project}}/{{location}}/{{data_agent_id}}
+   * * {{location}}/{{data_agent_id}}
+   * * {{data_agent_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Gemini Data Analytics dataagent IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_gemini_data_analytics_data_agent_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_gemini_data_analytics_data_agent_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:gemini/dataAnalyticsDataAgentIamBinding:DataAnalyticsDataAgentIamBinding editor projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def DataAnalyticsDataAgentIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBindingArgs.builder
+    com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBinding(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBindingArgs.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBindingArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Gemini Data Analytics DataAgent. Each of these resources serves a different use case:
+   * 
+   * * `gcp.gemini.DataAnalyticsDataAgentIamPolicy`: Authoritative. Sets the IAM policy for the dataagent and replaces any existing policy already attached.
+   * * `gcp.gemini.DataAnalyticsDataAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataagent are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gemini.DataAnalyticsDataAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataagent are preserved. Members added outside of Terraform will **not** be detected as drift.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.gemini.DataAnalyticsDataAgentIamPolicy`: Retrieves the IAM policy for the dataagent
+   * 
+   * &gt; **Note:** `gcp.gemini.DataAnalyticsDataAgentIamPolicy` **cannot** be used in conjunction with `gcp.gemini.DataAnalyticsDataAgentIamBinding` and `gcp.gemini.DataAnalyticsDataAgentIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.gemini.DataAnalyticsDataAgentIamBinding` resources **can be** used in conjunction with `gcp.gemini.DataAnalyticsDataAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicy;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/geminidataanalytics.dataAgentUser")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new DataAnalyticsDataAgentIamPolicy("policy", DataAnalyticsDataAgentIamPolicyArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBinding;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new DataAnalyticsDataAgentIamBinding("binding", DataAnalyticsDataAgentIamBindingArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .role("roles/geminidataanalytics.dataAgentUser")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMember;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new DataAnalyticsDataAgentIamMember("member", DataAnalyticsDataAgentIamMemberArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .role("roles/geminidataanalytics.dataAgentUser")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Gemini Data Analytics DataAgent
+   * 
+   * Three different resources help you manage your IAM policy for Gemini Data Analytics DataAgent. Each of these resources serves a different use case:
+   * 
+   * * `gcp.gemini.DataAnalyticsDataAgentIamPolicy`: Authoritative. Sets the IAM policy for the dataagent and replaces any existing policy already attached.
+   * * `gcp.gemini.DataAnalyticsDataAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataagent are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gemini.DataAnalyticsDataAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataagent are preserved. Members added outside of Terraform will **not** be detected as drift.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.gemini.DataAnalyticsDataAgentIamPolicy`: Retrieves the IAM policy for the dataagent
+   * 
+   * &gt; **Note:** `gcp.gemini.DataAnalyticsDataAgentIamPolicy` **cannot** be used in conjunction with `gcp.gemini.DataAnalyticsDataAgentIamBinding` and `gcp.gemini.DataAnalyticsDataAgentIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.gemini.DataAnalyticsDataAgentIamBinding` resources **can be** used in conjunction with `gcp.gemini.DataAnalyticsDataAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicy;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/geminidataanalytics.dataAgentUser")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new DataAnalyticsDataAgentIamPolicy("policy", DataAnalyticsDataAgentIamPolicyArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBinding;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new DataAnalyticsDataAgentIamBinding("binding", DataAnalyticsDataAgentIamBindingArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .role("roles/geminidataanalytics.dataAgentUser")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMember;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new DataAnalyticsDataAgentIamMember("member", DataAnalyticsDataAgentIamMemberArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .role("roles/geminidataanalytics.dataAgentUser")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}}
+   * * {{project}}/{{location}}/{{data_agent_id}}
+   * * {{location}}/{{data_agent_id}}
+   * * {{data_agent_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Gemini Data Analytics dataagent IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_gemini_data_analytics_data_agent_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_gemini_data_analytics_data_agent_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:gemini/dataAnalyticsDataAgentIamMember:DataAnalyticsDataAgentIamMember editor projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def DataAnalyticsDataAgentIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMemberArgs.builder
+    com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMember(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMemberArgs.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMemberArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Gemini Data Analytics DataAgent. Each of these resources serves a different use case:
+   * 
+   * * `gcp.gemini.DataAnalyticsDataAgentIamPolicy`: Authoritative. Sets the IAM policy for the dataagent and replaces any existing policy already attached.
+   * * `gcp.gemini.DataAnalyticsDataAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataagent are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gemini.DataAnalyticsDataAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataagent are preserved. Members added outside of Terraform will **not** be detected as drift.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.gemini.DataAnalyticsDataAgentIamPolicy`: Retrieves the IAM policy for the dataagent
+   * 
+   * &gt; **Note:** `gcp.gemini.DataAnalyticsDataAgentIamPolicy` **cannot** be used in conjunction with `gcp.gemini.DataAnalyticsDataAgentIamBinding` and `gcp.gemini.DataAnalyticsDataAgentIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.gemini.DataAnalyticsDataAgentIamBinding` resources **can be** used in conjunction with `gcp.gemini.DataAnalyticsDataAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicy;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/geminidataanalytics.dataAgentUser")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new DataAnalyticsDataAgentIamPolicy("policy", DataAnalyticsDataAgentIamPolicyArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBinding;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new DataAnalyticsDataAgentIamBinding("binding", DataAnalyticsDataAgentIamBindingArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .role("roles/geminidataanalytics.dataAgentUser")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMember;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new DataAnalyticsDataAgentIamMember("member", DataAnalyticsDataAgentIamMemberArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .role("roles/geminidataanalytics.dataAgentUser")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Gemini Data Analytics DataAgent
+   * 
+   * Three different resources help you manage your IAM policy for Gemini Data Analytics DataAgent. Each of these resources serves a different use case:
+   * 
+   * * `gcp.gemini.DataAnalyticsDataAgentIamPolicy`: Authoritative. Sets the IAM policy for the dataagent and replaces any existing policy already attached.
+   * * `gcp.gemini.DataAnalyticsDataAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataagent are preserved. Members added outside of Terraform for the same role will be detected as drift and removed on the next `pulumi up`.
+   * * `gcp.gemini.DataAnalyticsDataAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataagent are preserved. Members added outside of Terraform will **not** be detected as drift.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.gemini.DataAnalyticsDataAgentIamPolicy`: Retrieves the IAM policy for the dataagent
+   * 
+   * &gt; **Note:** `gcp.gemini.DataAnalyticsDataAgentIamPolicy` **cannot** be used in conjunction with `gcp.gemini.DataAnalyticsDataAgentIamBinding` and `gcp.gemini.DataAnalyticsDataAgentIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.gemini.DataAnalyticsDataAgentIamBinding` resources **can be** used in conjunction with `gcp.gemini.DataAnalyticsDataAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicy;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/geminidataanalytics.dataAgentUser")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new DataAnalyticsDataAgentIamPolicy("policy", DataAnalyticsDataAgentIamPolicyArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBinding;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new DataAnalyticsDataAgentIamBinding("binding", DataAnalyticsDataAgentIamBindingArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .role("roles/geminidataanalytics.dataAgentUser")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.gemini.DataAnalyticsDataAgentIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMember;
+   * import com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new DataAnalyticsDataAgentIamMember("member", DataAnalyticsDataAgentIamMemberArgs.builder()
+   *             .project(example.get("project"))
+   *             .location(example.get("location"))
+   *             .dataAgentId(example.get("dataAgentId"))
+   *             .role("roles/geminidataanalytics.dataAgentUser")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}}
+   * * {{project}}/{{location}}/{{data_agent_id}}
+   * * {{location}}/{{data_agent_id}}
+   * * {{data_agent_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Gemini Data Analytics dataagent IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_gemini_data_analytics_data_agent_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_gemini_data_analytics_data_agent_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:gemini/dataAnalyticsDataAgentIamPolicy:DataAnalyticsDataAgentIamPolicy editor projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def DataAnalyticsDataAgentIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicyArgs.builder
+    com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
   /** The resource for managing DataSharingWithGoogle settings for Admin Control. */
   def DataSharingWithGoogleSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.gemini.DataSharingWithGoogleSettingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -124,6 +1110,18 @@ object gemini:
     // when the return value is assigned to class member without explicit type, e.g.:
     //
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
+    /** Retrieves the current IAM policy data for dataagent */
+    inline def getDataAnalyticsDataAgentIamPolicy(args: Endofunction[com.pulumi.gcp.gemini.inputs.GetDataAnalyticsDataAgentIamPolicyArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.gemini.outputs.GetDataAnalyticsDataAgentIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.GetDataAnalyticsDataAgentIamPolicyArgs.builder
+      com.pulumi.gcp.gemini.GeminiFunctions.getDataAnalyticsDataAgentIamPolicy(args(argsBuilder).build)
+
+    /** Retrieves the current IAM policy data for dataagent */
+    inline def getDataAnalyticsDataAgentIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gemini.inputs.GetDataAnalyticsDataAgentIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.gemini.outputs.GetDataAnalyticsDataAgentIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.GetDataAnalyticsDataAgentIamPolicyPlainArgs.builder
+      com.pulumi.gcp.gemini.GeminiFunctions.getDataAnalyticsDataAgentIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for repositorygroup */
     inline def getRepositoryGroupIamPolicy(args: Endofunction[com.pulumi.gcp.gemini.inputs.GetRepositoryGroupIamPolicyArgs.Builder] = scala.Predef.identity):
@@ -1259,6 +2257,351 @@ object gemini:
         com.pulumi.gcp.gemini.inputs.CodeToolsSettingState.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.CodeToolsSettingEnabledToolArgs.builder
       builder.enabledTools(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.Builder)
+    /**
+     * @param lastPublishedContexts (Output)
+     * Output only. The last published context for the agent.
+     * Structure is documented below.
+     * @return builder
+     */
+    def lastPublishedContexts(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextArgs.Builder]*):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextArgs.builder
+      builder.lastPublishedContexts(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param publishedContext Optional. The published context for the agent. This context is used by
+     * the Chat API in production.
+     * Structure is documented below.
+     * @return builder
+     */
+    def publishedContext(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextArgs.builder
+      builder.publishedContext(args(argsBuilder).build)
+
+    /**
+     * @param stagingContext Optional. The staging context for the agent. This context is used to
+     * test and validate changes before publishing.
+     * Structure is documented below.
+     * @return builder
+     */
+    def stagingContext(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextArgs.builder
+      builder.stagingContext(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextArgs.Builder)
+    /**
+     * @param datasourceReferences Output only. Data sources that are available for answering questions.
+     * @return builder
+     */
+    def datasourceReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesArgs.builder
+      builder.datasourceReferences(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesArgs.Builder)
+    /**
+     * @param bq References to BigQuery tables.
+     * Structure is documented below.
+     * @return builder
+     */
+    def bq(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesBqArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesBqArgs.builder
+      builder.bq(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesBqArgs.Builder)
+    /**
+     * @param tableReferences References to BigQuery tables.
+     * Structure is documented below.
+     * @return builder
+     */
+    def tableReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesBqTableReferenceArgs.Builder]*):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesBqArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesBqTableReferenceArgs.builder
+      builder.tableReferences(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextArgs.Builder)
+    /**
+     * @param datasourceReferences Required. Data sources that are available for answering questions.
+     * This Terraform resource currently supports BigQuery table references.
+     * Structure is documented below.
+     * @return builder
+     */
+    def datasourceReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesArgs.builder
+      builder.datasourceReferences(args(argsBuilder).build)
+
+    /**
+     * @param exampleQueries Optional. A list of example queries for BigQuery data sources.
+     * Structure is documented below.
+     * @return builder
+     */
+    def exampleQueries(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextExampleQueryArgs.Builder]*):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextExampleQueryArgs.builder
+      builder.exampleQueries(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param glossaryTerms Optional. Term definitions for the agent&#39;s domain.
+     * Structure is documented below.
+     * @return builder
+     */
+    def glossaryTerms(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextGlossaryTermArgs.Builder]*):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextGlossaryTermArgs.builder
+      builder.glossaryTerms(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param options Optional. Additional options for the conversation.
+     * Structure is documented below.
+     * @return builder
+     */
+    def options(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsArgs.builder
+      builder.options(args(argsBuilder).build)
+
+    /**
+     * @param schemaRelationships Optional. Relationships between table schemas, including referencing
+     * and referenced columns.
+     * Structure is documented below.
+     * @return builder
+     */
+    def schemaRelationships(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipArgs.Builder]*):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipArgs.builder
+      builder.schemaRelationships(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesArgs.Builder)
+    /**
+     * @param bq References to BigQuery tables.
+     * Structure is documented below.
+     * @return builder
+     */
+    def bq(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesBqArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesBqArgs.builder
+      builder.bq(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesBqArgs.Builder)
+    /**
+     * @param tableReferences References to BigQuery tables.
+     * Structure is documented below.
+     * @return builder
+     */
+    def tableReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesBqTableReferenceArgs.Builder]*):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesBqArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesBqTableReferenceArgs.builder
+      builder.tableReferences(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsAnalysisArgs.Builder)
+    /**
+     * @param python Optional. Options for Python analysis.
+     * Structure is documented below.
+     * @return builder
+     */
+    def python(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsAnalysisPythonArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsAnalysisArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsAnalysisPythonArgs.builder
+      builder.python(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsArgs.Builder)
+    /**
+     * @param analysis Optional. Options for analysis.
+     * Structure is documented below.
+     * @return builder
+     */
+    def analysis(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsAnalysisArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsAnalysisArgs.builder
+      builder.analysis(args(argsBuilder).build)
+
+    /**
+     * @param datasource Optional. Options for datasource configuration.
+     * Structure is documented below.
+     * @return builder
+     */
+    def datasource(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsDatasourceArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsDatasourceArgs.builder
+      builder.datasource(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipArgs.Builder)
+    /**
+     * @param leftSchemaPaths Required. An ordered list of fields for the left side of the join.
+     * Structure is documented below.
+     * @return builder
+     */
+    def leftSchemaPaths(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipLeftSchemaPathsArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipLeftSchemaPathsArgs.builder
+      builder.leftSchemaPaths(args(argsBuilder).build)
+
+    /**
+     * @param rightSchemaPaths Required. An ordered list of fields for the right side of the join.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rightSchemaPaths(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipRightSchemaPathsArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipRightSchemaPathsArgs.builder
+      builder.rightSchemaPaths(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextArgs.Builder)
+    /**
+     * @param datasourceReferences Required. Data sources that are available for answering questions.
+     * This Terraform resource currently supports BigQuery table references.
+     * Structure is documented below.
+     * @return builder
+     */
+    def datasourceReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesArgs.builder
+      builder.datasourceReferences(args(argsBuilder).build)
+
+    /**
+     * @param exampleQueries Optional. A list of example queries for BigQuery data sources.
+     * Structure is documented below.
+     * @return builder
+     */
+    def exampleQueries(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextExampleQueryArgs.Builder]*):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextExampleQueryArgs.builder
+      builder.exampleQueries(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param glossaryTerms Optional. Term definitions for the agent&#39;s domain.
+     * Structure is documented below.
+     * @return builder
+     */
+    def glossaryTerms(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextGlossaryTermArgs.Builder]*):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextGlossaryTermArgs.builder
+      builder.glossaryTerms(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param options Optional. Additional options for the conversation.
+     * Structure is documented below.
+     * @return builder
+     */
+    def options(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsArgs.builder
+      builder.options(args(argsBuilder).build)
+
+    /**
+     * @param schemaRelationships Optional. Relationships between table schemas, including referencing
+     * and referenced columns.
+     * Structure is documented below.
+     * @return builder
+     */
+    def schemaRelationships(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipArgs.Builder]*):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipArgs.builder
+      builder.schemaRelationships(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesArgs.Builder)
+    /**
+     * @param bq References to BigQuery tables.
+     * Structure is documented below.
+     * @return builder
+     */
+    def bq(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesBqArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesBqArgs.builder
+      builder.bq(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesBqArgs.Builder)
+    /**
+     * @param tableReferences References to BigQuery tables.
+     * Structure is documented below.
+     * @return builder
+     */
+    def tableReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesBqTableReferenceArgs.Builder]*):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesBqArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesBqTableReferenceArgs.builder
+      builder.tableReferences(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsAnalysisArgs.Builder)
+    /**
+     * @param python Optional. Options for Python analysis.
+     * Structure is documented below.
+     * @return builder
+     */
+    def python(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsAnalysisPythonArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsAnalysisArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsAnalysisPythonArgs.builder
+      builder.python(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsArgs.Builder)
+    /**
+     * @param analysis Optional. Options for analysis.
+     * Structure is documented below.
+     * @return builder
+     */
+    def analysis(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsAnalysisArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsAnalysisArgs.builder
+      builder.analysis(args(argsBuilder).build)
+
+    /**
+     * @param datasource Optional. Options for datasource configuration.
+     * Structure is documented below.
+     * @return builder
+     */
+    def datasource(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsDatasourceArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsDatasourceArgs.builder
+      builder.datasource(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipArgs.Builder)
+    /**
+     * @param leftSchemaPaths Required. An ordered list of fields for the left side of the join.
+     * Structure is documented below.
+     * @return builder
+     */
+    def leftSchemaPaths(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipLeftSchemaPathsArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipLeftSchemaPathsArgs.builder
+      builder.leftSchemaPaths(args(argsBuilder).build)
+
+    /**
+     * @param rightSchemaPaths Required. An ordered list of fields for the right side of the join.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rightSchemaPaths(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipRightSchemaPathsArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipRightSchemaPathsArgs.builder
+      builder.rightSchemaPaths(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamBindingState.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamBindingState.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamMemberState.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamMemberState.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentState.Builder)
+    /**
+     * @param dataAnalyticsAgent Data analytics agent configuration.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dataAnalyticsAgent(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.Builder]):
+        com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentState.Builder =
+      val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.builder
+      builder.dataAnalyticsAgent(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gemini.inputs.GdaObservabilitySettingState.Builder)
     /**

@@ -24,7 +24,7 @@ object ecs:
   /**
    * Provides an ECS cluster capacity provider. More information can be found on the [ECS Developer Guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-capacity-providers.html).
    * 
-   * &gt; **NOTE:** Associating an ECS Capacity Provider to an Auto Scaling Group will automatically add the `AmazonECSManaged` tag to the Auto Scaling Group. This tag should be included in the `aws.autoscaling.Group` resource configuration to prevent the provider from removing it in subsequent executions as well as ensuring the `AmazonECSManaged` tag is propagated to all EC2 Instances in the Auto Scaling Group if `minSize` is above 0 on creation. Any EC2 Instances in the Auto Scaling Group without this tag must be manually be updated, otherwise they may cause unexpected scaling behavior and metrics.
+   * &gt; **NOTE:** Associating an ECS Capacity Provider to an Auto Scaling group will automatically add the `AmazonECSManaged` tag to the Auto Scaling group. This tag should be included in the `aws.autoscaling.Group` resource configuration to prevent Terraform from removing it in subsequent executions as well as ensuring the `AmazonECSManaged` tag is propagated to all EC2 Instances in the Auto Scaling group if `minSize` is above 0 on creation. Any EC2 Instances in the Auto Scaling group without this tag must be manually be updated, otherwise they may cause unexpected scaling behavior and metrics.
    * 
    * &gt; **NOTE:** You must specify exactly one of `autoScalingGroupProvider` or `managedInstancesProvider`. When using `managedInstancesProvider`, the `cluster` parameter is required. When using `autoScalingGroupProvider`, the `cluster` parameter must not be set.
    * 
@@ -49,7 +49,7 @@ object ecs:
 
   extension (builder: com.pulumi.aws.ecs.CapacityProviderArgs.Builder)
     /**
-     * @param autoScalingGroupProvider Configuration block for the provider for the ECS auto scaling group. Detailed below. Exactly one of `autoScalingGroupProvider` or `managedInstancesProvider` must be specified.
+     * @param autoScalingGroupProvider Configuration block for the provider for the ECS Auto Scaling group. Detailed below. Exactly one of `autoScalingGroupProvider` or `managedInstancesProvider` must be specified.
      * @return builder
      */
     def autoScalingGroupProvider(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderAutoScalingGroupProviderArgs.Builder]):
@@ -819,7 +819,7 @@ object ecs:
 
   extension (builder: com.pulumi.aws.ecs.inputs.CapacityProviderState.Builder)
     /**
-     * @param autoScalingGroupProvider Configuration block for the provider for the ECS auto scaling group. Detailed below. Exactly one of `autoScalingGroupProvider` or `managedInstancesProvider` must be specified.
+     * @param autoScalingGroupProvider Configuration block for the provider for the ECS Auto Scaling group. Detailed below. Exactly one of `autoScalingGroupProvider` or `managedInstancesProvider` must be specified.
      * @return builder
      */
     def autoScalingGroupProvider(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderAutoScalingGroupProviderArgs.Builder]):
@@ -1613,7 +1613,7 @@ object ecs:
       builder.efsVolumeConfiguration(args(argsBuilder).build)
 
     /**
-     * @param fsxWindowsFileServerVolumeConfiguration Configuration block for an FSX Windows File Server volume. Detailed below.
+     * @param fsxWindowsFileServerVolumeConfiguration Configuration block for an FSx Windows File Server volume. Detailed below.
      * @return builder
      */
     def fsxWindowsFileServerVolumeConfiguration(args: Endofunction[com.pulumi.aws.ecs.inputs.TaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationArgs.Builder]):

@@ -4,7 +4,7 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object bedrock:
-  /** Resource for managing an AWS Agents for Amazon Bedrock Agent. */
+  /** Manages an AWS Agents for Amazon Bedrock Agent. */
   def AgentAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentAgentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentAgentArgs.builder
@@ -19,7 +19,7 @@ object bedrock:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  /** Resource for managing an AWS Agents for Amazon Bedrock Agent Action Group. */
+  /** Manages an AWS Agents for Amazon Bedrock Agent Action Group. */
   def AgentAgentActionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentAgentActionGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.bedrock.AgentAgentActionGroupArgs.builder
@@ -60,7 +60,7 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentAgentActionGroupTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Resource for managing an AWS Agents for Amazon Bedrock Agent Alias. */
+  /** Manages an AWS Agents for Amazon Bedrock Agent Alias. */
   def AgentAgentAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentAgentAliasArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentAgentAliasArgs.builder
@@ -101,7 +101,7 @@ object bedrock:
       builder.guardrailConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param memoryConfigurations Configurations for the agent&#39;s ability to retain the conversational context.
+     * @param memoryConfigurations Configurations for the agent&#39;s ability to retain the conversational context. See `memoryConfiguration` Block for details.
      * @return builder
      */
     def memoryConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentAgentMemoryConfigurationArgs.Builder]*):
@@ -123,7 +123,7 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentAgentTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Resource for managing an AWS Bedrock Agents Agent Collaborator. */
+  /** Manages an AWS Bedrock Agents Agent Collaborator. */
   def AgentAgentCollaborator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentAgentCollaboratorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.bedrock.AgentAgentCollaboratorArgs.builder
@@ -132,6 +132,10 @@ object bedrock:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   extension (builder: com.pulumi.aws.bedrock.AgentAgentCollaboratorArgs.Builder)
+    /**
+     * @param agentDescriptor Agent descriptor for the agent collaborator. See `agentDescriptor` Block for details.
+     * @return builder
+     */
     def agentDescriptor(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentAgentCollaboratorAgentDescriptorArgs.Builder]):
         com.pulumi.aws.bedrock.AgentAgentCollaboratorArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentAgentCollaboratorAgentDescriptorArgs.builder
@@ -142,7 +146,7 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentAgentCollaboratorTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Resource for managing an AWS Agents for Amazon Bedrock Agent Knowledge Base Association. */
+  /** Manages an AWS Agents for Amazon Bedrock Agent Knowledge Base Association. */
   def AgentAgentKnowledgeBaseAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentAgentKnowledgeBaseAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.bedrock.AgentAgentKnowledgeBaseAssociationArgs.builder
@@ -156,7 +160,7 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentAgentKnowledgeBaseAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Resource for managing an AWS Agents for Amazon Bedrock Data Source. */
+  /** Manages an AWS Agents for Amazon Bedrock Data Source. */
   def AgentDataSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentDataSourceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentDataSourceArgs.builder
@@ -200,7 +204,7 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationArgs.builder
       builder.vectorIngestionConfiguration(args(argsBuilder).build)
 
-  /** Resource for managing an AWS Bedrock Agents Flow. */
+  /** Manages an AWS Bedrock Agents Flow. */
   def AgentFlow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentFlowArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentFlowArgs.builder
@@ -233,7 +237,7 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentFlowTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Resource for managing an AWS Agents for Amazon Bedrock Knowledge Base. */
+  /** Manages an AWS Agents for Amazon Bedrock Knowledge Base. */
   def AgentKnowledgeBase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentKnowledgeBaseArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentKnowledgeBaseArgs.builder
@@ -275,7 +279,7 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Resource for managing an AWS Bedrock Agents Prompt. */
+  /** Manages an AWS Bedrock Agents Prompt. */
   def AgentPrompt(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentPromptArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentPromptArgs.builder
@@ -320,7 +324,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.AgentcoreAgentRuntimeArgs.Builder)
     /**
-     * @param agentRuntimeArtifact Container artifact configuration. See `agentRuntimeArtifact` below.
+     * @param agentRuntimeArtifact Artifact configuration for the agent runtime, either a container image or code stored in Amazon S3. See `agentRuntimeArtifact` below.
      * @return builder
      */
     def agentRuntimeArtifact(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAgentRuntimeArtifactArgs.Builder]):
@@ -794,7 +798,7 @@ object bedrock:
       builder.environmentArtifact(args(argsBuilder).build)
 
     /**
-     * @param environments Compute environment configuration. See `environment` Block below.If not specified, configured values can be found in `environmentActual`. Clearing this value will leave the environment configuration as is, but Terraform will not track changes.
+     * @param environments Compute environment configuration. See `environment` Block below. If not specified, configured values can be found in `environmentActual`. Clearing this value will leave the environment configuration as is, but Terraform will not track changes.
      * @return builder
      */
     def environments(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentArgs.Builder]*):
@@ -908,11 +912,7 @@ object bedrock:
   /**
    * Manages an AWS Bedrock AgentCore Memory Strategy. Memory strategies define how the agent processes and organizes information within a memory, such as semantic understanding, summarization, or custom processing logic.
    * 
-   * **Important Limitations:**
-   * 
-   * - Each memory can have a maximum of 6 strategies total
-   * - Only one strategy of each built-in type (`SEMANTIC`, `SUMMARIZATION`, `USER_PREFERENCE`, `EPISODIC`) can exist per memory
-   * - Multiple `CUSTOM` strategies are allowed (subject to the total limit of 6)
+   * &gt; **Note:** Each memory can have a maximum of 6 strategies. Only one strategy of each built-in type (`SEMANTIC`, `SUMMARIZATION`, `USER_PREFERENCE`, `EPISODIC`) can exist per memory. Multiple `CUSTOM` strategies are allowed, subject to the total limit of 6.
    */
   def AgentcoreMemoryStrategy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreMemoryStrategyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1139,7 +1139,7 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Manages an AWS Bedrock Agent Core Resource Policy. Resource-based policies in Amazon Bedrock Agent Core allow you to control which principals (AWS accounts, IAM users, or IAM roles) can invoke and manage your Amazon Bedrock Agent Core Runtime and Gateway resources. */
+  /** Manages an AWS Bedrock AgentCore Resource Policy. Resource-based policies in Amazon Bedrock AgentCore allow you to control which principals (AWS accounts, IAM users, or IAM roles) can invoke and manage your Amazon Bedrock AgentCore Runtime and Gateway resources. */
   def AgentcoreResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreResourcePolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.bedrock.AgentcoreResourcePolicyArgs.builder
@@ -1150,7 +1150,7 @@ object bedrock:
   /**
    * Manages the AWS KMS customer master key (CMK) for a token vault.
    * 
-   * &gt; Deletion of this resource will not modify the CMK, only remove the resource from state.
+   * &gt; **Note:** Deletion of this resource will not modify the CMK, only remove the resource from state.
    */
   def AgentcoreTokenVaultCmk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreTokenVaultCmkArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1194,61 +1194,61 @@ object bedrock:
     //
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
-    /** Data source for managing an AWS Amazon BedrockAgent Agent Versions. */
+    /** Provides details about AWS Bedrock Agents Agent Versions. */
     inline def getAgentAgentVersions(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.bedrock.outputs.GetAgentAgentVersionsResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getAgentAgentVersions(args(argsBuilder).build)
 
-    /** Data source for managing an AWS Amazon BedrockAgent Agent Versions. */
+    /** Provides details about AWS Bedrock Agents Agent Versions. */
     inline def getAgentAgentVersionsPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.bedrock.outputs.GetAgentAgentVersionsResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsPlainArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getAgentAgentVersionsPlain(args(argsBuilder).build)
 
-    /** Returns properties of a specific Amazon Bedrock custom model. */
+    /** Provides details about a specific Amazon Bedrock custom model. */
     inline def getCustomModel(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.bedrock.outputs.GetCustomModelResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetCustomModelArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getCustomModel(args(argsBuilder).build)
 
-    /** Returns properties of a specific Amazon Bedrock custom model. */
+    /** Provides details about a specific Amazon Bedrock custom model. */
     inline def getCustomModelPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.bedrock.outputs.GetCustomModelResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetCustomModelPlainArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getCustomModelPlain(args(argsBuilder).build)
 
-    /** Returns a list of Amazon Bedrock custom models. */
+    /** Provides details about Amazon Bedrock custom models. */
     inline def getCustomModels(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.bedrock.outputs.GetCustomModelsResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetCustomModelsArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getCustomModels(args(argsBuilder).build)
 
-    /** Returns a list of Amazon Bedrock custom models. */
+    /** Provides details about Amazon Bedrock custom models. */
     inline def getCustomModelsPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.bedrock.outputs.GetCustomModelsResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetCustomModelsPlainArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getCustomModelsPlain(args(argsBuilder).build)
 
-    /** Data source for managing an AWS Bedrock Inference Profile. */
+    /** Provides details about an AWS Bedrock Inference Profile. */
     inline def getInferenceProfile(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfileArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.bedrock.outputs.GetInferenceProfileResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetInferenceProfileArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getInferenceProfile(args(argsBuilder).build)
 
-    /** Data source for managing an AWS Bedrock Inference Profile. */
+    /** Provides details about an AWS Bedrock Inference Profile. */
     inline def getInferenceProfilePlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfilePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.bedrock.outputs.GetInferenceProfileResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetInferenceProfilePlainArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getInferenceProfilePlain(args(argsBuilder).build)
 
-    /** Data source for managing AWS Bedrock Inference Profiles. */
+    /** Provides details about AWS Bedrock Inference Profiles. */
     inline def getInferenceProfiles(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfilesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.bedrock.outputs.GetInferenceProfilesResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetInferenceProfilesArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getInferenceProfiles(args(argsBuilder).build)
 
-    /** Data source for managing AWS Bedrock Inference Profiles. */
+    /** Provides details about AWS Bedrock Inference Profiles. */
     inline def getInferenceProfilesPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfilesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.bedrock.outputs.GetInferenceProfilesResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetInferenceProfilesPlainArgs.builder
@@ -1329,7 +1329,7 @@ object bedrock:
   /**
    * Manages an Amazon Bedrock evaluation job. An evaluation job assesses model or knowledge base performance using either automated metrics or human workers.
    * 
-   * &gt; Amazon Bedrock does not support permanently deleting an evaluation job. Destroying this resource stops the job (if it is still running) using the [StopEvaluationJob](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_StopEvaluationJob.html) API, then removes it from Terraform state. Set `skipDestroy` to leave the job in its current state instead.
+   * &gt; **Note:** Amazon Bedrock does not support permanently deleting an evaluation job. Destroying this resource stops the job (if it is still running) using the [StopEvaluationJob](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_StopEvaluationJob.html) API, then removes it from Terraform state. Set `skipDestroy` to leave the job in its current state instead.
    */
   def EvaluationJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.EvaluationJobArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1378,7 +1378,7 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Resource for managing an Amazon Bedrock Guardrail. */
+  /** Manages an Amazon Bedrock Guardrail. */
   def Guardrail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.GuardrailArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.GuardrailArgs.builder
@@ -1416,7 +1416,7 @@ object bedrock:
       builder.contextualGroundingPolicyConfig(args(argsBuilder).build)
 
     /**
-     * @param crossRegionConfig Configuration block to enable cross-region routing for bedrock guardrails. See `crossRegionConfig` Block for more information. Note see [available regions](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html) here.
+     * @param crossRegionConfig Configuration block to enable cross-region routing for bedrock guardrails. See `crossRegionConfig` Block for more information. See [available Regions](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region-support.html).
      * @return builder
      */
     def crossRegionConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailCrossRegionConfigArgs.Builder]):
@@ -1456,7 +1456,7 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GuardrailWordPolicyConfigArgs.builder
       builder.wordPolicyConfig(args(argsBuilder).build)
 
-  /** Resource for managing an AWS Bedrock Guardrail Version. */
+  /** Manages an AWS Bedrock Guardrail Version. */
   def GuardrailVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.GuardrailVersionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.bedrock.GuardrailVersionArgs.builder
@@ -1470,7 +1470,7 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GuardrailVersionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Resource for managing an AWS Bedrock Inference Profile. */
+  /** Manages an AWS Bedrock Inference Profile. */
   def InferenceProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.InferenceProfileArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.InferenceProfileArgs.builder
@@ -1529,9 +1529,9 @@ object bedrock:
    * 
    * **This is an advanced resource** and has special caveats to be aware of when using it. Please read this document in its entirety before using this resource.
    * 
-   * The `aws.bedrock.UseCaseForModelAccess` resource behaves differently from normal resources in that if an Use Case For Model Access already exists, Terraform does not _create_ this resource, but instead &#34;adopts&#34; it into management if it is the same. As the ability to update doesn&#39;t exist, changes compared to the existing resource generate an error.
+   * The `aws.bedrock.UseCaseForModelAccess` resource behaves differently from normal resources in that if a Use Case For Model Access already exists, Terraform does not _create_ this resource, but instead &#34;adopts&#34; it into management if it is the same. As the ability to update doesn&#39;t exist, changes compared to the existing resource generate an error.
    * If no Use Case For Model Access exists, Terraform creates a new Use Case For Model Access.
-   * By default, `terraform destroy` does not delete the Use Case For Model Access but does remove the resource from Terraform state. Real deletion does not exist for this resource.
+   * `terraform destroy` does not delete the Use Case For Model Access but does remove the resource from Terraform state. Real deletion does not exist for this resource.
    */
   def UseCaseForModelAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.UseCaseForModelAccessArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1629,6 +1629,10 @@ object bedrock:
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentAgentCollaboratorState.Builder)
+    /**
+     * @param agentDescriptor Agent descriptor for the agent collaborator. See `agentDescriptor` Block for details.
+     * @return builder
+     */
     def agentDescriptor(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentAgentCollaboratorAgentDescriptorArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentAgentCollaboratorState.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentAgentCollaboratorAgentDescriptorArgs.builder
@@ -1686,7 +1690,7 @@ object bedrock:
       builder.guardrailConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param memoryConfigurations Configurations for the agent&#39;s ability to retain the conversational context.
+     * @param memoryConfigurations Configurations for the agent&#39;s ability to retain the conversational context. See `memoryConfiguration` Block for details.
      * @return builder
      */
     def memoryConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentAgentMemoryConfigurationArgs.Builder]*):
@@ -1831,6 +1835,15 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationArgs.builder
       builder.mediaExtractionConfiguration(args(argsBuilder).build)
 
+    /**
+     * @param syncSchedule Recurring schedule on which the connector automatically syncs this data source. See `syncSchedule` Block for details.
+     * @return builder
+     */
+    def syncSchedule(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleArgs.builder
+      builder.syncSchedule(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationArgs.Builder)
     /**
      * @param audioExtractionConfiguration Configuration for extracting audio content. See `audioExtractionConfiguration` Block for details.
@@ -1858,6 +1871,54 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationVideoExtractionConfigurationArgs.builder
       builder.videoExtractionConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleArgs.Builder)
+    /**
+     * @param daily Daily sync that runs once a day at a system-chosen off-peak time. The run time is not configurable. See `daily` Block for details.
+     * @return builder
+     */
+    def daily(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleDailyArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleDailyArgs.builder
+      builder.daily(args(argsBuilder).build)
+
+    /**
+     * @param monthly Monthly sync that runs once a month on the specified day of the month. See `monthly` Block for details.
+     * @return builder
+     */
+    def monthly(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleMonthlyArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleMonthlyArgs.builder
+      builder.monthly(args(argsBuilder).build)
+
+    /**
+     * @param weekly Weekly sync that runs once a week on the specified day of the week. See `weekly` Block for details.
+     * @return builder
+     */
+    def weekly(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleWeeklyArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleWeeklyArgs.builder
+      builder.weekly(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleMonthlyArgs.Builder)
+    /**
+     * @param dayOfMonth Day of the month on which the monthly sync runs. See `dayOfMonth` Block for details.
+     * @return builder
+     */
+    def dayOfMonth(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleMonthlyDayOfMonthArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleMonthlyArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleMonthlyDayOfMonthArgs.builder
+      builder.dayOfMonth(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleMonthlyDayOfMonthArgs.Builder)
+    /**
+     * @param lastDayOfMonth Configure this option to run the monthly sync on the last calendar day of each month. See `lastDayOfMonth` Block for details.
+     * @return builder
+     */
+    def lastDayOfMonth(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleMonthlyDayOfMonthLastDayOfMonthArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleMonthlyDayOfMonthArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationSyncScheduleMonthlyDayOfMonthLastDayOfMonthArgs.builder
+      builder.lastDayOfMonth(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationArgs.Builder)
     /**
@@ -2050,6 +2111,15 @@ object bedrock:
       builder.chunkingConfiguration(args(argsBuilder).build)
 
     /**
+     * @param contextEnrichmentConfiguration Context enrichment configuration used to provide additional context to the RAG application. Required when the knowledge base uses Amazon Neptune Analytics (GraphRAG) storage. See `contextEnrichmentConfiguration` Block for details.
+     * @return builder
+     */
+    def contextEnrichmentConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationContextEnrichmentConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationContextEnrichmentConfigurationArgs.builder
+      builder.contextEnrichmentConfiguration(args(argsBuilder).build)
+
+    /**
      * @param customTransformationConfiguration Configuration for custom transformation of data source documents. See `customTransformationConfiguration` Block for details.
      * @return builder
      */
@@ -2104,6 +2174,26 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationChunkingConfigurationHierarchicalChunkingConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationChunkingConfigurationHierarchicalChunkingConfigurationLevelConfigurationArgs.builder
       builder.levelConfigurations(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationContextEnrichmentConfigurationArgs.Builder)
+    /**
+     * @param bedrockFoundationModelConfiguration Settings for a foundation model used to enrich the context of data source documents. Required when `type` is `BEDROCK_FOUNDATION_MODEL`. See `context_enrichment_configuration.bedrock_foundation_model_configuration` Block for details.
+     * @return builder
+     */
+    def bedrockFoundationModelConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationContextEnrichmentConfigurationBedrockFoundationModelConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationContextEnrichmentConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationContextEnrichmentConfigurationBedrockFoundationModelConfigurationArgs.builder
+      builder.bedrockFoundationModelConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationContextEnrichmentConfigurationBedrockFoundationModelConfigurationArgs.Builder)
+    /**
+     * @param enrichmentStrategyConfiguration Strategy used to enrich the context of data source documents. See `context_enrichment_configuration.bedrock_foundation_model_configuration.enrichment_strategy_configuration` Block for details.
+     * @return builder
+     */
+    def enrichmentStrategyConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationContextEnrichmentConfigurationBedrockFoundationModelConfigurationEnrichmentStrategyConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationContextEnrichmentConfigurationBedrockFoundationModelConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationContextEnrichmentConfigurationBedrockFoundationModelConfigurationEnrichmentStrategyConfigurationArgs.builder
+      builder.enrichmentStrategyConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationArgs.Builder)
     /**
@@ -2242,7 +2332,7 @@ object bedrock:
       builder.configuration(args(argsBuilder).build)
 
     /**
-     * @param inputs Configurations for an input flow node in your flow. The node `inputs` can&#39;t be specified for this node. This block has no arguments.
+     * @param inputs Configurations for an input flow node in your flow. The `definition.node.input` block can&#39;t be specified for this node. This block has no arguments.
      * @return builder
      */
     def inputs(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeInputArgs.Builder]*):
@@ -2251,7 +2341,7 @@ object bedrock:
       builder.inputs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param outputs Configurations for an output flow node in your flow. The node `outputs` can&#39;t be specified for this node. This block has no arguments.
+     * @param outputs Configurations for an output flow node in your flow. The `definition.node.output` block can&#39;t be specified for this node. This block has no arguments.
      * @return builder
      */
     def outputs(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeOutputArgs.Builder]*):
@@ -2297,7 +2387,7 @@ object bedrock:
       builder.inlineCode(args(argsBuilder).build)
 
     /**
-     * @param input Configurations for an input flow node in your flow. The node `inputs` can&#39;t be specified for this node. This block has no arguments.
+     * @param input Configurations for an input flow node in your flow. The `definition.node.input` block can&#39;t be specified for this node. This block has no arguments.
      * @return builder
      */
     def input(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationInputArgs.Builder]):
@@ -2315,7 +2405,7 @@ object bedrock:
       builder.iterator(args(argsBuilder).build)
 
     /**
-     * @param knowledgeBase Configurations for a knowledge base node in your flow. Queries a knowledge base and returns the retrieved results or generated response. See `definition.node.configuration.knowledge_base` Block for details.
+     * @param knowledgeBase Configurations for a knowledge base node in your flow. Queries a knowledge base and returns a response generated from the retrieved results. See `definition.node.configuration.knowledge_base` Block for details.
      * @return builder
      */
     def knowledgeBase(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationKnowledgeBaseArgs.Builder]):
@@ -2342,7 +2432,7 @@ object bedrock:
       builder.lex(args(argsBuilder).build)
 
     /**
-     * @param output Configurations for an output flow node in your flow. The node `outputs` can&#39;t be specified for this node. This block has no arguments.
+     * @param output Configurations for an output flow node in your flow. The `definition.node.output` block can&#39;t be specified for this node. This block has no arguments.
      * @return builder
      */
     def output(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationOutputArgs.Builder]):
@@ -2893,7 +2983,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationServerlessConfigurationArgs.Builder)
     /**
-     * @param authConfiguration Configurations for authentication to a Redshift Serverless. See `knowledge_base_configuration.sql_knowledge_base_configuration.redshift_configuration.query_engine_configuration.serverless_configuration.auth_configuration` Block for details.
+     * @param authConfiguration Configurations for authentication to Amazon Redshift Serverless. See `knowledge_base_configuration.sql_knowledge_base_configuration.redshift_configuration.query_engine_configuration.serverless_configuration.auth_configuration` Block for details.
      * @return builder
      */
     def authConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationServerlessConfigurationAuthConfigurationArgs.Builder]):
@@ -3339,7 +3429,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatMessageArgs.Builder)
     /**
-     * @param content Content for the message you pass to, or receive from a model. See `content` Block for more information.
+     * @param content Content for the message you pass to, or receive from, a model. See `content` Block for more information.
      * @return builder
      */
     def content(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatMessageContentArgs.Builder]):
@@ -3660,7 +3750,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeState.Builder)
     /**
-     * @param agentRuntimeArtifact Container artifact configuration. See `agentRuntimeArtifact` below.
+     * @param agentRuntimeArtifact Artifact configuration for the agent runtime, either a container image or code stored in Amazon S3. See `agentRuntimeArtifact` below.
      * @return builder
      */
     def agentRuntimeArtifact(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAgentRuntimeArtifactArgs.Builder]):
@@ -4536,7 +4626,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationArgs.Builder)
     /**
-     * @param http HTTP target configuration for routing requests directly to an AgentCore Runtime agent. See `http` Block below.
+     * @param http HTTP target configuration for routing requests directly to an AgentCore Runtime agent or to an external HTTPS endpoint. See `http` Block below.
      * @return builder
      */
     def http(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpArgs.Builder]):
@@ -5037,7 +5127,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpMcpServerArgs.Builder)
     /**
-     * @param mcpToolSchema Tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. When set, dynamic tool discovery and synchronization are disabled. See `mcpToolSchema` Block below.
+     * @param mcpToolSchema Tool schema configuration for the MCP server target. When set, dynamic tool discovery and synchronization are disabled. See `mcpToolSchema` Block below.
      * @return builder
      */
     def mcpToolSchema(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpMcpServerMcpToolSchemaArgs.Builder]):
@@ -5553,7 +5643,7 @@ object bedrock:
       builder.environmentArtifact(args(argsBuilder).build)
 
     /**
-     * @param environments Compute environment configuration. See `environment` Block below.If not specified, configured values can be found in `environmentActual`. Clearing this value will leave the environment configuration as is, but Terraform will not track changes.
+     * @param environments Compute environment configuration. See `environment` Block below. If not specified, configured values can be found in `environmentActual`. Clearing this value will leave the environment configuration as is, but Terraform will not track changes.
      * @return builder
      */
     def environments(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentArgs.Builder]*):
@@ -7221,7 +7311,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummaryArgs.Builder)
     /**
-     * @param guardrailConfigurations Details about the guardrail associated with the agent. See `guardrailConfiguration` Block
+     * @param guardrailConfigurations Details about the guardrail associated with the agent. See `guardrailConfiguration` Block.
      * @return builder
      */
     def guardrailConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummaryGuardrailConfigurationArgs.Builder]*):
@@ -7231,7 +7321,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsArgs.Builder)
     /**
-     * @param agentVersionSummaries List of objects, each of which contains information about a version of the agent. See `agentVersionSummaries` Block
+     * @param agentVersionSummaries List of objects, each of which contains information about a version of the agent. See `agentVersionSummaries` Block.
      * @return builder
      */
     def agentVersionSummaries(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummaryArgs.Builder]*):
@@ -7307,7 +7397,7 @@ object bedrock:
       builder.contextualGroundingPolicyConfig(args(argsBuilder).build)
 
     /**
-     * @param crossRegionConfig Configuration block to enable cross-region routing for bedrock guardrails. See `crossRegionConfig` Block for more information. Note see [available regions](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html) here.
+     * @param crossRegionConfig Configuration block to enable cross-region routing for bedrock guardrails. See `crossRegionConfig` Block for more information. See [available Regions](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region-support.html).
      * @return builder
      */
     def crossRegionConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.GuardrailCrossRegionConfigArgs.Builder]):

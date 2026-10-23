@@ -24,7 +24,7 @@ object gamelift:
 
   extension (builder: com.pulumi.aws.gamelift.AliasArgs.Builder)
     /**
-     * @param routingStrategy Specifies the fleet and/or routing type to use for the alias.
+     * @param routingStrategy Fleet and/or routing type to use for the alias.
      * @return builder
      */
     def routingStrategy(args: Endofunction[com.pulumi.aws.gamelift.inputs.AliasRoutingStrategyArgs.Builder]):
@@ -204,7 +204,7 @@ object gamelift:
 
   extension (builder: com.pulumi.aws.gamelift.inputs.AliasState.Builder)
     /**
-     * @param routingStrategy Specifies the fleet and/or routing type to use for the alias.
+     * @param routingStrategy Fleet and/or routing type to use for the alias.
      * @return builder
      */
     def routingStrategy(args: Endofunction[com.pulumi.aws.gamelift.inputs.AliasRoutingStrategyArgs.Builder]):

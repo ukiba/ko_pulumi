@@ -209,13 +209,13 @@ object ec2transitgateway:
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetRouteTablePropagationsPlainArgs.builder
       com.pulumi.aws.ec2transitgateway.Ec2transitgatewayFunctions.getRouteTablePropagationsPlain(args(argsBuilder).build)
 
-    /** Provides informations for routes of a specific transit gateway, such as state, type, cidr */
+    /** Provides informations for routes of a specific transit gateway, such as state, type, CIDR */
     inline def getRouteTableRoutes(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableRoutesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2transitgateway.outputs.GetRouteTableRoutesResult] =
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableRoutesArgs.builder
       com.pulumi.aws.ec2transitgateway.Ec2transitgatewayFunctions.getRouteTableRoutes(args(argsBuilder).build)
 
-    /** Provides informations for routes of a specific transit gateway, such as state, type, cidr */
+    /** Provides informations for routes of a specific transit gateway, such as state, type, CIDR */
     inline def getRouteTableRoutesPlain(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableRoutesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2transitgateway.outputs.GetRouteTableRoutesResult] =
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableRoutesPlainArgs.builder
@@ -433,7 +433,7 @@ object ec2transitgateway:
 
   extension (builder: com.pulumi.aws.ec2transitgateway.PeeringAttachmentArgs.Builder)
     /**
-     * @param options Describes whether dynamic routing is enabled or disabled for the transit gateway peering request. See options below for more details!
+     * @param options Block describing whether dynamic routing is enabled or disabled for the transit gateway peering request. If not configured, the value is populated from the API. See options below for more details!
      * @return builder
      */
     def options(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.PeeringAttachmentOptionsArgs.Builder]):
@@ -780,7 +780,7 @@ object ec2transitgateway:
 
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.PeeringAttachmentState.Builder)
     /**
-     * @param options Describes whether dynamic routing is enabled or disabled for the transit gateway peering request. See options below for more details!
+     * @param options Block describing whether dynamic routing is enabled or disabled for the transit gateway peering request. If not configured, the value is populated from the API. See options below for more details!
      * @return builder
      */
     def options(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.PeeringAttachmentOptionsArgs.Builder]):

@@ -439,7 +439,7 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.IdentityProviderConfigOidcArgs.builder
       builder.oidc(args(argsBuilder).build)
 
-  /** Manages an EKS Node Group, which can provision and optionally update an Auto Scaling Group of Kubernetes worker nodes compatible with EKS. Additional documentation about this functionality can be found in the [EKS User Guide](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html). */
+  /** Manages an EKS Node Group, which can provision and optionally update an Auto Scaling group of Kubernetes worker nodes compatible with EKS. Additional documentation about this functionality can be found in the [EKS User Guide](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html). */
   def NodeGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.eks.NodeGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.NodeGroupArgs.builder
@@ -955,7 +955,7 @@ object eks:
 
   extension (builder: com.pulumi.aws.eks.inputs.NodeGroupResourceArgs.Builder)
     /**
-     * @param autoscalingGroups List of objects containing information about AutoScaling Groups.
+     * @param autoscalingGroups List of objects containing information about Auto Scaling groups.
      * @return builder
      */
     def autoscalingGroups(args: Endofunction[com.pulumi.aws.eks.inputs.NodeGroupResourceAutoscalingGroupArgs.Builder]*):

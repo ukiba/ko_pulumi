@@ -43,7 +43,7 @@ object mediaconvert:
 
   extension (builder: com.pulumi.aws.mediaconvert.QueueArgs.Builder)
     /**
-     * @param reservationPlanSettings A detail pricing plan of the  reserved queue. See below.
+     * @param reservationPlanSettings Detail pricing plan of the reserved queue. See below.
      * @return builder
      */
     def reservationPlanSettings(args: Endofunction[com.pulumi.aws.mediaconvert.inputs.QueueReservationPlanSettingsArgs.Builder]):
@@ -53,7 +53,7 @@ object mediaconvert:
 
   extension (builder: com.pulumi.aws.mediaconvert.inputs.QueueState.Builder)
     /**
-     * @param reservationPlanSettings A detail pricing plan of the  reserved queue. See below.
+     * @param reservationPlanSettings Detail pricing plan of the reserved queue. See below.
      * @return builder
      */
     def reservationPlanSettings(args: Endofunction[com.pulumi.aws.mediaconvert.inputs.QueueReservationPlanSettingsArgs.Builder]):

@@ -119,7 +119,7 @@ object directoryservice:
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Provides a Log subscription for AWS Directory Service that pushes logs to cloudwatch. */
+  /** Provides a Log subscription for AWS Directory Service that pushes logs to CloudWatch. */
   def LogSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.LogSubscriptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directoryservice.LogSubscriptionArgs.builder

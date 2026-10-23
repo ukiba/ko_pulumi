@@ -200,7 +200,7 @@ object kms:
 
     /**
      * Use this data source to get detailed information about
-     * the specified KMS Key with flexible key id input.
+     * the specified KMS Key with flexible key ID input.
      * This can be useful to reference key alias
      * without having to hard code the ARN as input.
      */
@@ -211,7 +211,7 @@ object kms:
 
     /**
      * Use this data source to get detailed information about
-     * the specified KMS Key with flexible key id input.
+     * the specified KMS Key with flexible key ID input.
      * This can be useful to reference key alias
      * without having to hard code the ARN as input.
      */
@@ -220,13 +220,13 @@ object kms:
       val argsBuilder = com.pulumi.aws.kms.inputs.GetKeyPlainArgs.builder
       com.pulumi.aws.kms.KmsFunctions.getKeyPlain(args(argsBuilder).build)
 
-    /** Use this data source to get the public key about the specified KMS Key with flexible key id input. This can be useful to reference key alias without having to hard code the ARN as input. */
+    /** Use this data source to get the public key about the specified KMS Key with flexible key ID input. This can be useful to reference key alias without having to hard code the ARN as input. */
     inline def getPublicKey(args: Endofunction[com.pulumi.aws.kms.inputs.GetPublicKeyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kms.outputs.GetPublicKeyResult] =
       val argsBuilder = com.pulumi.aws.kms.inputs.GetPublicKeyArgs.builder
       com.pulumi.aws.kms.KmsFunctions.getPublicKey(args(argsBuilder).build)
 
-    /** Use this data source to get the public key about the specified KMS Key with flexible key id input. This can be useful to reference key alias without having to hard code the ARN as input. */
+    /** Use this data source to get the public key about the specified KMS Key with flexible key ID input. This can be useful to reference key alias without having to hard code the ARN as input. */
     inline def getPublicKeyPlain(args: Endofunction[com.pulumi.aws.kms.inputs.GetPublicKeyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kms.outputs.GetPublicKeyResult] =
       val argsBuilder = com.pulumi.aws.kms.inputs.GetPublicKeyPlainArgs.builder

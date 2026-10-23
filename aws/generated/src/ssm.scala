@@ -187,7 +187,7 @@ object ssm:
 
   extension (builder: com.pulumi.aws.ssm.MaintenanceWindowTaskArgs.Builder)
     /**
-     * @param targets The targets (either instances or window target ids). Instances are specified using Key=InstanceIds,Values=instanceid1,instanceid2. Window target ids are specified using Key=WindowTargetIds,Values=window target id1, window target id2.
+     * @param targets The targets (either instances or window target IDs). Instances are specified using Key=InstanceIds,Values=instanceid1,instanceid2. Window target IDs are specified using Key=WindowTargetIds,Values=window target id1, window target id2.
      * @return builder
      */
     def targets(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTargetArgs.Builder]*):
@@ -626,7 +626,7 @@ object ssm:
 
   extension (builder: com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskState.Builder)
     /**
-     * @param targets The targets (either instances or window target ids). Instances are specified using Key=InstanceIds,Values=instanceid1,instanceid2. Window target ids are specified using Key=WindowTargetIds,Values=window target id1, window target id2.
+     * @param targets The targets (either instances or window target IDs). Instances are specified using Key=InstanceIds,Values=instanceid1,instanceid2. Window target IDs are specified using Key=WindowTargetIds,Values=window target id1, window target id2.
      * @return builder
      */
     def targets(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTargetArgs.Builder]*):

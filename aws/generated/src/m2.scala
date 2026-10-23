@@ -24,7 +24,7 @@ object m2:
 
   extension (builder: com.pulumi.aws.m2.ApplicationArgs.Builder)
     /**
-     * @param definition The application definition for this application. You can specify either inline JSON or an S3 bucket location.
+     * @param definition Application definition for this application. You can specify either inline JSON or an S3 bucket location.
      * @return builder
      */
     def definition(args: Endofunction[com.pulumi.aws.m2.inputs.ApplicationDefinitionArgs.Builder]):
@@ -87,7 +87,7 @@ object m2:
 
   extension (builder: com.pulumi.aws.m2.inputs.ApplicationState.Builder)
     /**
-     * @param definition The application definition for this application. You can specify either inline JSON or an S3 bucket location.
+     * @param definition Application definition for this application. You can specify either inline JSON or an S3 bucket location.
      * @return builder
      */
     def definition(args: Endofunction[com.pulumi.aws.m2.inputs.ApplicationDefinitionArgs.Builder]):

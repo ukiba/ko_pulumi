@@ -116,12 +116,15 @@ export ko_pulumi.gcp.backupdisasterrecovery.accessConfigs
 export ko_pulumi.gcp.backupdisasterrecovery.advancedMachineFeatures
 export ko_pulumi.gcp.backupdisasterrecovery.aliasIpRanges
 export ko_pulumi.gcp.backupdisasterrecovery.allocationAffinity
+export ko_pulumi.gcp.backupdisasterrecovery.backupPlanDetails
 export ko_pulumi.gcp.backupdisasterrecovery.backupRules
 export ko_pulumi.gcp.backupdisasterrecovery.backupWindow
+export ko_pulumi.gcp.backupdisasterrecovery.bindingSummaries
 export ko_pulumi.gcp.backupdisasterrecovery.computeInstanceBackupPlanProperties
 export ko_pulumi.gcp.backupdisasterrecovery.computeInstanceRestoreProperties
 export ko_pulumi.gcp.backupdisasterrecovery.computeInstanceTargetEnvironment
 export ko_pulumi.gcp.backupdisasterrecovery.confidentialInstanceConfig
+export ko_pulumi.gcp.backupdisasterrecovery.criteria
 export ko_pulumi.gcp.backupdisasterrecovery.diskBackupPlanProperties
 export ko_pulumi.gcp.backupdisasterrecovery.diskEncryptionKey
 export ko_pulumi.gcp.backupdisasterrecovery.diskRestoreProperties
@@ -197,6 +200,7 @@ export ko_pulumi.gcp.bigqueryanalyticshub.defaultExchangeConfig
 export ko_pulumi.gcp.bigqueryanalyticshub.destinationDataset
 export ko_pulumi.gcp.bigqueryanalyticshub.destinationPubsubSubscription
 export ko_pulumi.gcp.bigqueryanalyticshub.effectiveReplicas
+export ko_pulumi.gcp.bigqueryanalyticshub.encryptionConfiguration
 export ko_pulumi.gcp.bigqueryanalyticshub.expirationPolicy
 export ko_pulumi.gcp.bigquerydatapolicy.condition
 export ko_pulumi.gcp.bigquerydatapolicy.dataMaskingPolicy
@@ -596,6 +600,7 @@ export ko_pulumi.gcp.compute.diskConsistencyGroupPolicy
 export ko_pulumi.gcp.compute.diskEncryptionKey
 export ko_pulumi.gcp.compute.disks
 export ko_pulumi.gcp.compute.duration
+export ko_pulumi.gcp.compute.dynamicCompressionPolicy
 export ko_pulumi.gcp.compute.dynamicForwarding
 export ko_pulumi.gcp.compute.elements
 export ko_pulumi.gcp.compute.endpoints
@@ -639,6 +644,7 @@ export ko_pulumi.gcp.container.autoscaling
 export ko_pulumi.gcp.container.autoscalingMetricsCollection
 export ko_pulumi.gcp.container.awsServicesAuthentication
 export ko_pulumi.gcp.container.azureServicesAuthentication
+export ko_pulumi.gcp.container.bestEffortProvisioning
 export ko_pulumi.gcp.container.bigqueryDestination
 export ko_pulumi.gcp.container.binaryAuthorization
 export ko_pulumi.gcp.container.blueGreenSettings
@@ -855,6 +861,7 @@ export ko_pulumi.gcp.developerconnect.details
 export ko_pulumi.gcp.developerconnect.errors
 export ko_pulumi.gcp.diagflow.actions
 export ko_pulumi.gcp.diagflow.advancedSettings
+export ko_pulumi.gcp.diagflow.agentCoachingContext
 export ko_pulumi.gcp.diagflow.answerFeedbackSettings
 export ko_pulumi.gcp.diagflow.apiKeyConfig
 export ko_pulumi.gcp.diagflow.audioExportGcsDestination
@@ -977,10 +984,16 @@ export ko_pulumi.gcp.folder.deny
 export ko_pulumi.gcp.folder.enrolledServices
 export ko_pulumi.gcp.gcp.batching
 export ko_pulumi.gcp.gcp.externalCredentials
+export ko_pulumi.gcp.gemini.analysis
+export ko_pulumi.gcp.gemini.bq
 export ko_pulumi.gcp.gemini.condition
 export ko_pulumi.gcp.gemini.configs
 export ko_pulumi.gcp.gemini.conversationalAnalyticsSetting
+export ko_pulumi.gcp.gemini.dataAnalyticsAgent
+export ko_pulumi.gcp.gemini.datasource
+export ko_pulumi.gcp.gemini.datasourceReferences
 export ko_pulumi.gcp.gemini.enabledTools
+export ko_pulumi.gcp.gemini.exampleQueries
 export ko_pulumi.gcp.gkebackup.backupConfig
 export ko_pulumi.gcp.gkebackup.backupSchedule
 export ko_pulumi.gcp.gkebackup.clusterResourceRestoreScope
@@ -1187,6 +1200,7 @@ export ko_pulumi.gcp.networkconnectivity.condition
 export ko_pulumi.gcp.networkconnectivity.endpoints
 export ko_pulumi.gcp.networkconnectivity.error
 export ko_pulumi.gcp.networkconnectivity.errorInfo
+export ko_pulumi.gcp.networkconnectivity.exportPscConfig
 export ko_pulumi.gcp.networkmanagement.appEngineVersion
 export ko_pulumi.gcp.networkmanagement.cloudFunction
 export ko_pulumi.gcp.networkmanagement.cloudRunRevision
@@ -1364,6 +1378,7 @@ export ko_pulumi.gcp.sql.advancedMachineFeatures
 export ko_pulumi.gcp.sql.authorizedNetworks
 export ko_pulumi.gcp.sql.backupConfiguration
 export ko_pulumi.gcp.sql.backupRetentionSettings
+export ko_pulumi.gcp.sql.blueGreenDeployment
 export ko_pulumi.gcp.sql.clone_
 export ko_pulumi.gcp.sql.connectionPoolConfigs
 export ko_pulumi.gcp.sql.dataCacheConfig
@@ -1448,6 +1463,7 @@ export ko_pulumi.gcp.vertex.bruteForceConfig
 export ko_pulumi.gcp.vertex.buildSpec
 export ko_pulumi.gcp.vertex.categoricalThresholdConfig
 export ko_pulumi.gcp.vertex.clientToAgentConfig
+export ko_pulumi.gcp.vertex.cloudObservability
 export ko_pulumi.gcp.vertex.codeExecutionResult
 export ko_pulumi.gcp.vertex.condition
 export ko_pulumi.gcp.vertex.config
@@ -1469,6 +1485,7 @@ export ko_pulumi.gcp.vertex.deploymentSpec
 export ko_pulumi.gcp.vertex.developerConnectSource
 export ko_pulumi.gcp.vertex.diskSpec
 export ko_pulumi.gcp.vertex.dnsPeeringConfigs
+export ko_pulumi.gcp.vertex.duration
 export ko_pulumi.gcp.vertex.embeddingManagement
 export ko_pulumi.gcp.vertex.encryptionSpec
 export ko_pulumi.gcp.vertex.endpointConfig

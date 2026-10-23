@@ -33,7 +33,7 @@ object mskconnect:
       builder.capacity(args(argsBuilder).build)
 
     /**
-     * @param kafkaCluster Specifies which Apache Kafka cluster to connect to. See `kafkaCluster` Block for details.
+     * @param kafkaCluster Apache Kafka cluster to connect to. See `kafkaCluster` Block for details.
      * @return builder
      */
     def kafkaCluster(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterArgs.Builder]):
@@ -69,7 +69,7 @@ object mskconnect:
       builder.logDelivery(args(argsBuilder).build)
 
     /**
-     * @param plugins Specifies which plugins to use for the connector. See `plugin` Block for details.
+     * @param plugins Plugins to use for the connector. See `plugin` Block for details.
      * @return builder
      */
     def plugins(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorPluginArgs.Builder]*):
@@ -78,7 +78,7 @@ object mskconnect:
       builder.plugins(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param workerConfiguration Specifies which worker configuration to use with the connector. See `workerConfiguration` Block for details.
+     * @param workerConfiguration Worker configuration to use with the connector. See `workerConfiguration` Block for details.
      * @return builder
      */
     def workerConfiguration(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorWorkerConfigurationArgs.Builder]):
@@ -196,7 +196,7 @@ object mskconnect:
 
   extension (builder: com.pulumi.aws.mskconnect.inputs.ConnectorCapacityAutoscalingArgs.Builder)
     /**
-     * @param scaleInPolicy The scale-in policy for the connector. See `scaleInPolicy` Block for details.
+     * @param scaleInPolicy Scale-in policy for the connector. See `scaleInPolicy` Block for details.
      * @return builder
      */
     def scaleInPolicy(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorCapacityAutoscalingScaleInPolicyArgs.Builder]):
@@ -205,7 +205,7 @@ object mskconnect:
       builder.scaleInPolicy(args(argsBuilder).build)
 
     /**
-     * @param scaleOutPolicy The scale-out policy for the connector. See `scaleOutPolicy` Block for details.
+     * @param scaleOutPolicy Scale-out policy for the connector. See `scaleOutPolicy` Block for details.
      * @return builder
      */
     def scaleOutPolicy(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorCapacityAutoscalingScaleOutPolicyArgs.Builder]):
@@ -225,7 +225,7 @@ object mskconnect:
 
   extension (builder: com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterArgs.Builder)
     /**
-     * @param apacheKafkaCluster The Apache Kafka cluster to which the connector is connected. See `apacheKafkaCluster` Block for details.
+     * @param apacheKafkaCluster Apache Kafka cluster to which the connector is connected. See `apacheKafkaCluster` Block for details.
      * @return builder
      */
     def apacheKafkaCluster(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterApacheKafkaClusterArgs.Builder]):
@@ -235,7 +235,7 @@ object mskconnect:
 
   extension (builder: com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryArgs.Builder)
     /**
-     * @param workerLogDelivery The workers can send worker logs to different destination types. This configuration specifies the details of these destinations. See `workerLogDelivery` Block for details.
+     * @param workerLogDelivery Workers can send worker logs to different destination types. This configuration specifies the details of these destinations. See `workerLogDelivery` Block for details.
      * @return builder
      */
     def workerLogDelivery(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryArgs.Builder]):
@@ -292,7 +292,7 @@ object mskconnect:
       builder.capacity(args(argsBuilder).build)
 
     /**
-     * @param kafkaCluster Specifies which Apache Kafka cluster to connect to. See `kafkaCluster` Block for details.
+     * @param kafkaCluster Apache Kafka cluster to connect to. See `kafkaCluster` Block for details.
      * @return builder
      */
     def kafkaCluster(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterArgs.Builder]):
@@ -328,7 +328,7 @@ object mskconnect:
       builder.logDelivery(args(argsBuilder).build)
 
     /**
-     * @param plugins Specifies which plugins to use for the connector. See `plugin` Block for details.
+     * @param plugins Plugins to use for the connector. See `plugin` Block for details.
      * @return builder
      */
     def plugins(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorPluginArgs.Builder]*):
@@ -337,7 +337,7 @@ object mskconnect:
       builder.plugins(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param workerConfiguration Specifies which worker configuration to use with the connector. See `workerConfiguration` Block for details.
+     * @param workerConfiguration Worker configuration to use with the connector. See `workerConfiguration` Block for details.
      * @return builder
      */
     def workerConfiguration(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorWorkerConfigurationArgs.Builder]):

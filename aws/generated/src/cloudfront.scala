@@ -148,13 +148,13 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetOriginAccessControlPlainArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getOriginAccessControlPlain(args(argsBuilder).build)
 
-    /** Use this data source to get ARNs, ids and S3 canonical user IDs of Amazon CloudFront origin access identities. */
+    /** Use this data source to get ARNs, IDs and S3 canonical user IDs of Amazon CloudFront origin access identities. */
     inline def getOriginAccessIdentities(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginAccessIdentitiesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudfront.outputs.GetOriginAccessIdentitiesResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetOriginAccessIdentitiesArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getOriginAccessIdentities(args(argsBuilder).build)
 
-    /** Use this data source to get ARNs, ids and S3 canonical user IDs of Amazon CloudFront origin access identities. */
+    /** Use this data source to get ARNs, IDs and S3 canonical user IDs of Amazon CloudFront origin access identities. */
     inline def getOriginAccessIdentitiesPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginAccessIdentitiesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudfront.outputs.GetOriginAccessIdentitiesResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetOriginAccessIdentitiesPlainArgs.builder
@@ -1152,7 +1152,7 @@ object cloudfront:
       builder.forwardedValues(args(argsBuilder).build)
 
     /**
-     * @param functionAssociations A config block that triggers a cloudfront function with specific actions (maximum 2).
+     * @param functionAssociations A config block that triggers a CloudFront function with specific actions (maximum 2).
      * @return builder
      */
     def functionAssociations(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionDefaultCacheBehaviorFunctionAssociationArgs.Builder]*):
@@ -1161,7 +1161,7 @@ object cloudfront:
       builder.functionAssociations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param grpcConfig A config block that sets the grpc config.
+     * @param grpcConfig A config block that sets the gRPC config.
      * @return builder
      */
     def grpcConfig(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionDefaultCacheBehaviorGrpcConfigArgs.Builder]):
@@ -1199,7 +1199,7 @@ object cloudfront:
       builder.forwardedValues(args(argsBuilder).build)
 
     /**
-     * @param functionAssociations A config block that triggers a cloudfront function with specific actions (maximum 2).
+     * @param functionAssociations A config block that triggers a CloudFront function with specific actions (maximum 2).
      * @return builder
      */
     def functionAssociations(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionOrderedCacheBehaviorFunctionAssociationArgs.Builder]*):
@@ -1208,7 +1208,7 @@ object cloudfront:
       builder.functionAssociations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param grpcConfig A config block that sets the grpc config.
+     * @param grpcConfig A config block that sets the gRPC config.
      * @return builder
      */
     def grpcConfig(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionOrderedCacheBehaviorGrpcConfigArgs.Builder]):

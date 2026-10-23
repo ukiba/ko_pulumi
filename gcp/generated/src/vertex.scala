@@ -5502,6 +5502,66 @@ object vertex:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
+   * An OnlineEvaluator contains the configuration for an Online Evaluation. It
+   * periodically samples traces or sessions emitted by an agent and evaluates them
+   * using the configured metric sources.
+   * 
+   * To get more information about OnlineEvaluator, see:
+   * 
+   * * [API documentation](https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/rest#rest-resource:-v1beta1.projects.locations.onlineevaluators)
+   * * How-to Guides
+   *     * [Official Documentation](https://docs.cloud.google.com/gemini-enterprise-agent-platform/optimize/evaluation/evaluate-online)
+   */
+  def AiOnlineEvaluator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.vertex.AiOnlineEvaluatorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.vertex.AiOnlineEvaluatorArgs.builder
+    com.pulumi.gcp.vertex.AiOnlineEvaluator(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.vertex.AiOnlineEvaluatorArgs.Builder)
+    /**
+     * @param cloudObservability Data source for the OnlineEvaluator, based on the Google Cloud
+     * Observability stack (Cloud Trace &amp; Cloud Logging). The data source type is
+     * immutable once set. Within `cloudObservability`, `logView` and
+     * `traceView` can be updated; the eval scope (`traceScope` /
+     * `sessionScope`) and the convention (`openTelemetry`) are immutable.
+     * Structure is documented below.
+     * @return builder
+     */
+    def cloudObservability(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.Builder]):
+        com.pulumi.gcp.vertex.AiOnlineEvaluatorArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.builder
+      builder.cloudObservability(args(argsBuilder).build)
+
+    /**
+     * @param config Configuration for sampling behavior of the OnlineEvaluator. The
+     * OnlineEvaluator runs at a fixed interval of 10 minutes.
+     * Structure is documented below.
+     * @return builder
+     */
+    def config(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.AiOnlineEvaluatorArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigArgs.builder
+      builder.config(args(argsBuilder).build)
+
+    /**
+     * @param metricSources A list of metric sources to be used for evaluating samples. At least one
+     * metric source must be provided. Only predefined metrics (inline `metric`)
+     * and registered metrics (`metricResourceName`) are supported. Every
+     * registered metric must have a `displayName` (or `title`) and a
+     * `scoreRange` defined, otherwise the evaluations will fail. The maximum
+     * number of metric sources is 25. Exactly one of `metric` or
+     * `metricResourceName` must be set per metric source.
+     * Structure is documented below.
+     * @return builder
+     */
+    def metricSources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorMetricSourceArgs.Builder]*):
+        com.pulumi.gcp.vertex.AiOnlineEvaluatorArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorMetricSourceArgs.builder
+      builder.metricSources(args.map(_(argsBuilder).build)*)
+
+  /**
    * Represents long-lasting resources that are dedicated to users to runs custom
    * workloads. A PersistentResource can have multiple node pools and each node
    * pool can have its own machine spec.
@@ -8055,6 +8115,235 @@ object vertex:
         com.pulumi.gcp.vertex.inputs.AiMetadataStoreState.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiMetadataStoreStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.Builder)
+    /**
+     * @param openTelemetry Configuration for a data source following the OpenTelemetry
+     * convention. This is the convention that the data source follows.
+     * Structure is documented below.
+     * @return builder
+     */
+    def openTelemetry(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityOpenTelemetryArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityOpenTelemetryArgs.builder
+      builder.openTelemetry(args(argsBuilder).build)
+
+    /**
+     * @param sessionScope If chosen, the OnlineEvaluator will evaluate sessions matching the
+     * specified filter. A session is a group of traces with a common
+     * `gen_ai.conversation.id`. Exactly one of `traceScope` or
+     * `sessionScope` must be set.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sessionScope(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeArgs.builder
+      builder.sessionScope(args(argsBuilder).build)
+
+    /**
+     * @param traceScope If chosen, the OnlineEvaluator will evaluate single traces matching
+     * the specified filter. Exactly one of `traceScope` or `sessionScope`
+     * must be set.
+     * Structure is documented below.
+     * @return builder
+     */
+    def traceScope(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeArgs.builder
+      builder.traceScope(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeArgs.Builder)
+    /**
+     * @param filters A list of predicates to filter sessions. Multiple predicates are
+     * combined using AND. The maximum number of predicates is 10.
+     * Structure is documented below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param inactivityTrigger Session is considered ready for evaluation when there are no new
+     * traces for a specified period of inactivity.
+     * Structure is documented below.
+     * @return builder
+     */
+    def inactivityTrigger(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeInactivityTriggerArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeInactivityTriggerArgs.builder
+      builder.inactivityTrigger(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder)
+    /**
+     * @param duration Filter on the duration of a session (in seconds).
+     * Structure is documented below.
+     * @return builder
+     */
+    def duration(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterDurationArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterDurationArgs.builder
+      builder.duration(args(argsBuilder).build)
+
+    /**
+     * @param modelCallErrors Filter on the number of LLM call errors within a session.
+     * Structure is documented below.
+     * @return builder
+     */
+    def modelCallErrors(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterModelCallErrorsArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterModelCallErrorsArgs.builder
+      builder.modelCallErrors(args(argsBuilder).build)
+
+    /**
+     * @param modelCalls Filter on the number of underlying LLM calls within a session.
+     * Structure is documented below.
+     * @return builder
+     */
+    def modelCalls(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterModelCallsArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterModelCallsArgs.builder
+      builder.modelCalls(args(argsBuilder).build)
+
+    /**
+     * @param toolCallErrors Filter on the number of tool call errors within a session.
+     * Structure is documented below.
+     * @return builder
+     */
+    def toolCallErrors(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterToolCallErrorsArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterToolCallErrorsArgs.builder
+      builder.toolCallErrors(args(argsBuilder).build)
+
+    /**
+     * @param toolCalls Filter on the number of underlying tool calls within a session.
+     * Structure is documented below.
+     * @return builder
+     */
+    def toolCalls(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterToolCallsArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterToolCallsArgs.builder
+      builder.toolCalls(args(argsBuilder).build)
+
+    /**
+     * @param totalTokenUsage Filter on the total token usage within a session.
+     * Structure is documented below.
+     * @return builder
+     */
+    def totalTokenUsage(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterTotalTokenUsageArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterTotalTokenUsageArgs.builder
+      builder.totalTokenUsage(args(argsBuilder).build)
+
+    /**
+     * @param userTurns Filter on the number of user turns within a session.
+     * Structure is documented below.
+     * @return builder
+     */
+    def userTurns(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterUserTurnsArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterUserTurnsArgs.builder
+      builder.userTurns(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeArgs.Builder)
+    /**
+     * @param filters A list of predicates to filter traces. Multiple predicates are
+     * combined using AND. The maximum number of predicates is 10.
+     * Structure is documented below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterArgs.Builder)
+    /**
+     * @param duration Filter on the duration of a session (in seconds).
+     * Structure is documented below.
+     * @return builder
+     */
+    def duration(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterDurationArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterDurationArgs.builder
+      builder.duration(args(argsBuilder).build)
+
+    /**
+     * @param totalTokenUsage Filter on the total token usage within a session.
+     * Structure is documented below.
+     * @return builder
+     */
+    def totalTokenUsage(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterTotalTokenUsageArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterTotalTokenUsageArgs.builder
+      builder.totalTokenUsage(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigArgs.Builder)
+    /**
+     * @param randomSampling Configuration for random sampling. This is the sampling method used to
+     * select traces for evaluation.
+     * Structure is documented below.
+     * @return builder
+     */
+    def randomSampling(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigRandomSamplingArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigRandomSamplingArgs.builder
+      builder.randomSampling(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorState.Builder)
+    /**
+     * @param cloudObservability Data source for the OnlineEvaluator, based on the Google Cloud
+     * Observability stack (Cloud Trace &amp; Cloud Logging). The data source type is
+     * immutable once set. Within `cloudObservability`, `logView` and
+     * `traceView` can be updated; the eval scope (`traceScope` /
+     * `sessionScope`) and the convention (`openTelemetry`) are immutable.
+     * Structure is documented below.
+     * @return builder
+     */
+    def cloudObservability(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorState.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.builder
+      builder.cloudObservability(args(argsBuilder).build)
+
+    /**
+     * @param config Configuration for sampling behavior of the OnlineEvaluator. The
+     * OnlineEvaluator runs at a fixed interval of 10 minutes.
+     * Structure is documented below.
+     * @return builder
+     */
+    def config(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorState.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigArgs.builder
+      builder.config(args(argsBuilder).build)
+
+    /**
+     * @param metricSources A list of metric sources to be used for evaluating samples. At least one
+     * metric source must be provided. Only predefined metrics (inline `metric`)
+     * and registered metrics (`metricResourceName`) are supported. Every
+     * registered metric must have a `displayName` (or `title`) and a
+     * `scoreRange` defined, otherwise the evaluations will fail. The maximum
+     * number of metric sources is 25. Exactly one of `metric` or
+     * `metricResourceName` must be set per metric source.
+     * Structure is documented below.
+     * @return builder
+     */
+    def metricSources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorMetricSourceArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorState.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorMetricSourceArgs.builder
+      builder.metricSources(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param stateDetails Contains additional information about the state of the OnlineEvaluator.
+     * This is used to provide more details in the event of a failure.
+     * Structure is documented below.
+     * @return builder
+     */
+    def stateDetails(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorStateDetailArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorState.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorStateDetailArgs.builder
+      builder.stateDetails(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigArgs.Builder)
     /**

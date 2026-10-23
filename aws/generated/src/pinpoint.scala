@@ -120,7 +120,7 @@ object pinpoint:
   /**
    * Provides an End User Messaging Baidu Channel resource.
    * 
-   * &gt; **Note:** All arguments including the Api Key and Secret Key will be stored in the raw state as plain-text.
+   * &gt; **Note:** All arguments including the API Key and Secret Key will be stored in the raw state as plain-text.
    */
   def BaiduChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.BaiduChannelArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

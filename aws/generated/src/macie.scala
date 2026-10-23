@@ -42,7 +42,7 @@ object macie:
 
   extension (builder: com.pulumi.aws.macie.FindingsFilterArgs.Builder)
     /**
-     * @param findingCriteria The criteria to use to filter findings.
+     * @param findingCriteria Criteria to use to filter findings. See `findingCriteria` Block for details.
      * @return builder
      */
     def findingCriteria(args: Endofunction[com.pulumi.aws.macie.inputs.FindingsFilterFindingCriteriaArgs.Builder]):
@@ -52,7 +52,7 @@ object macie:
 
   extension (builder: com.pulumi.aws.macie.inputs.FindingsFilterFindingCriteriaArgs.Builder)
     /**
-     * @param criterions A condition that specifies the property, operator, and one or more values to use to filter the results.  (documented below)
+     * @param criterions Condition that specifies the property, operator, and one or more values to use to filter the results. See `criterion` Block for details.
      * @return builder
      */
     def criterions(args: Endofunction[com.pulumi.aws.macie.inputs.FindingsFilterFindingCriteriaCriterionArgs.Builder]*):
@@ -62,7 +62,7 @@ object macie:
 
   extension (builder: com.pulumi.aws.macie.inputs.FindingsFilterState.Builder)
     /**
-     * @param findingCriteria The criteria to use to filter findings.
+     * @param findingCriteria Criteria to use to filter findings. See `findingCriteria` Block for details.
      * @return builder
      */
     def findingCriteria(args: Endofunction[com.pulumi.aws.macie.inputs.FindingsFilterFindingCriteriaArgs.Builder]):

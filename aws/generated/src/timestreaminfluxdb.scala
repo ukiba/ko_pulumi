@@ -37,7 +37,7 @@ object timestreaminfluxdb:
       builder.logDeliveryConfiguration(args(argsBuilder).build)
 
     /**
-     * @param maintenanceSchedule Maintenance schedule for the DB cluster, including the preferred maintenance window and timezone. This argument is updatable. This field is only supported for InfluxDB V3 clusters (when using an InfluxDB V3 db parameter group).
+     * @param maintenanceSchedule Maintenance schedule for the DB cluster, including the preferred maintenance window and timezone. This argument is updatable. This field is only supported for InfluxDB V3 clusters (when using an InfluxDB V3 DB parameter group).
      * @return builder
      */
     def maintenanceSchedule(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterMaintenanceScheduleArgs.Builder]):
@@ -113,7 +113,7 @@ object timestreaminfluxdb:
       builder.logDeliveryConfiguration(args(argsBuilder).build)
 
     /**
-     * @param maintenanceSchedule Maintenance schedule for the DB cluster, including the preferred maintenance window and timezone. This argument is updatable. This field is only supported for InfluxDB V3 clusters (when using an InfluxDB V3 db parameter group).
+     * @param maintenanceSchedule Maintenance schedule for the DB cluster, including the preferred maintenance window and timezone. This argument is updatable. This field is only supported for InfluxDB V3 clusters (when using an InfluxDB V3 DB parameter group).
      * @return builder
      */
     def maintenanceSchedule(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterMaintenanceScheduleArgs.Builder]):

@@ -1412,7 +1412,7 @@ object sagemaker:
       builder.oidcConfig(args(argsBuilder).build)
 
     /**
-     * @param sourceIpConfig A list of IP address ranges Used to create an allow list of IP addresses for a private workforce. By default, a workforce isn&#39;t restricted to specific IP addresses. see Source Ip Config details below.
+     * @param sourceIpConfig A list of IP address ranges Used to create an allow list of IP addresses for a private workforce. By default, a workforce isn&#39;t restricted to specific IP addresses. see Source IP Config details below.
      * @return builder
      */
     def sourceIpConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.WorkforceSourceIpConfigArgs.Builder]):
@@ -3072,7 +3072,7 @@ object sagemaker:
       builder.securityConfig(args(argsBuilder).build)
 
     /**
-     * @param ttlDuration Time to live duration, where the record is hard deleted after the expiration time is reached; ExpiresAt = EventTime + TtlDuration.. See TTl Duration Below.
+     * @param ttlDuration Time to live duration, where the record is hard deleted after the expiration time is reached; ExpiresAt = EventTime + TtlDuration.. See TTL Duration Below.
      * @return builder
      */
     def ttlDuration(args: Endofunction[com.pulumi.aws.sagemaker.inputs.FeatureGroupOnlineStoreConfigTtlDurationArgs.Builder]):
@@ -3877,7 +3877,7 @@ object sagemaker:
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelContainerImageConfigArgs.Builder)
     /**
-     * @param repositoryAuthConfig Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified Vpc as the value for the RepositoryAccessMode field, and the private Docker registry where the model image is hosted requires authentication. see Repository Auth Config.
+     * @param repositoryAuthConfig Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified `Vpc` as the value for the RepositoryAccessMode field, and the private Docker registry where the model image is hosted requires authentication. see Repository Auth Config.
      * @return builder
      */
     def repositoryAuthConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.ModelContainerImageConfigRepositoryAuthConfigArgs.Builder]):
@@ -3964,7 +3964,7 @@ object sagemaker:
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerImageConfigArgs.Builder)
     /**
-     * @param repositoryAuthConfig Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified Vpc as the value for the RepositoryAccessMode field, and the private Docker registry where the model image is hosted requires authentication. see Repository Auth Config.
+     * @param repositoryAuthConfig Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified `Vpc` as the value for the RepositoryAccessMode field, and the private Docker registry where the model image is hosted requires authentication. see Repository Auth Config.
      * @return builder
      */
     def repositoryAuthConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerImageConfigRepositoryAuthConfigArgs.Builder]):
@@ -4826,7 +4826,7 @@ object sagemaker:
       builder.customFileSystemConfigs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param customPosixUserConfig Details about the POSIX identity that is used for file system operations. See Custom Posix User Config below.
+     * @param customPosixUserConfig Details about the POSIX identity that is used for file system operations. See Custom POSIX User Config below.
      * @return builder
      */
     def customPosixUserConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsCustomPosixUserConfigArgs.Builder]):
@@ -5181,7 +5181,7 @@ object sagemaker:
       builder.oidcConfig(args(argsBuilder).build)
 
     /**
-     * @param sourceIpConfig A list of IP address ranges Used to create an allow list of IP addresses for a private workforce. By default, a workforce isn&#39;t restricted to specific IP addresses. see Source Ip Config details below.
+     * @param sourceIpConfig A list of IP address ranges Used to create an allow list of IP addresses for a private workforce. By default, a workforce isn&#39;t restricted to specific IP addresses. see Source IP Config details below.
      * @return builder
      */
     def sourceIpConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.WorkforceSourceIpConfigArgs.Builder]):

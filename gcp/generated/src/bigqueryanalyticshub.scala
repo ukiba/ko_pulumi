@@ -2144,6 +2144,18 @@ object bigqueryanalyticshub:
 
   extension (builder: com.pulumi.gcp.bigqueryanalyticshub.QueryTemplateArgs.Builder)
     /**
+     * @param encryptionConfiguration Encryption configuration for the query template.
+     * If set, the customer-managed KMS key is used to encrypt the query
+     * template definition body.
+     * Structure is documented below.
+     * @return builder
+     */
+    def encryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateEncryptionConfigurationArgs.Builder]):
+        com.pulumi.gcp.bigqueryanalyticshub.QueryTemplateArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateEncryptionConfigurationArgs.builder
+      builder.encryptionConfiguration(args(argsBuilder).build)
+
+    /**
      * @param routine The routine associated with the QueryTemplate.
      * Structure is documented below.
      * @return builder
@@ -2541,6 +2553,18 @@ object bigqueryanalyticshub:
       builder.linkedResources(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateState.Builder)
+    /**
+     * @param encryptionConfiguration Encryption configuration for the query template.
+     * If set, the customer-managed KMS key is used to encrypt the query
+     * template definition body.
+     * Structure is documented below.
+     * @return builder
+     */
+    def encryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateEncryptionConfigurationArgs.Builder]):
+        com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateState.Builder =
+      val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateEncryptionConfigurationArgs.builder
+      builder.encryptionConfiguration(args(argsBuilder).build)
+
     /**
      * @param routine The routine associated with the QueryTemplate.
      * Structure is documented below.

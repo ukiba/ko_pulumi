@@ -3296,6 +3296,18 @@ object cloudrunv2:
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVpcAccessArgs.builder
       builder.vpcAccess(args(argsBuilder).build)
 
+    /**
+     * @param workloadIdentityConfig (Optional, Beta)
+     * The Task&#39;s workload identity settings. Used to assign an
+     * [Agent Platform](https://cloud.google.com/run/docs/ai/agent-platform-features) identity to the workload.
+     * Structure is documented below.
+     * @return builder
+     */
+    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateWorkloadIdentityConfigArgs.Builder]):
+        com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateWorkloadIdentityConfigArgs.builder
+      builder.workloadIdentityConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerArgs.Builder)
     /**
      * @param envs List of environment variables to set in the container.
@@ -3663,7 +3675,8 @@ object cloudrunv2:
       builder.vpcAccess(args(argsBuilder).build)
 
     /**
-     * @param workloadIdentityConfig Workload identity settings for this Revision.
+     * @param workloadIdentityConfig The Revision&#39;s workload identity settings. Used to assign an
+     * [Agent Platform](https://cloud.google.com/run/docs/ai/agent-platform-features) identity to the workload.
      * Structure is documented below.
      * @return builder
      */

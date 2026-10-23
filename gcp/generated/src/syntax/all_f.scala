@@ -173,6 +173,7 @@ export ko_pulumi.gcp.compute.httpHealthCheck
 export ko_pulumi.gcp.compute.httpsHealthCheck
 export ko_pulumi.gcp.compute.iap
 export ko_pulumi.gcp.compute.imageEncryptionKey
+export ko_pulumi.gcp.compute.imageOptimizationPolicy
 export ko_pulumi.gcp.compute.initializeParams
 export ko_pulumi.gcp.compute.innerVlanToApplianceMappings
 export ko_pulumi.gcp.compute.instanceEncryptionKey
@@ -313,6 +314,7 @@ export ko_pulumi.gcp.diagflow.fewShotExamples
 export ko_pulumi.gcp.diagflow.fillBehavior
 export ko_pulumi.gcp.diagflow.followupIntentInfos
 export ko_pulumi.gcp.diagflow.form
+export ko_pulumi.gcp.diagflow.freeFormContext
 export ko_pulumi.gcp.diagflow.fulfillment
 export ko_pulumi.gcp.diagflow.functionSpec
 export ko_pulumi.gcp.diagflow.genAppBuilderSettings
@@ -329,6 +331,7 @@ export ko_pulumi.gcp.diagflow.initialPromptFulfillment
 export ko_pulumi.gcp.diagflow.input
 export ko_pulumi.gcp.diagflow.insightsExportSettings
 export ko_pulumi.gcp.diagflow.instruction
+export ko_pulumi.gcp.diagflow.instructions
 export ko_pulumi.gcp.discoveryengine.facetFields
 export ko_pulumi.gcp.discoveryengine.failureReasons
 export ko_pulumi.gcp.discoveryengine.featureConfig
@@ -370,6 +373,7 @@ export ko_pulumi.gcp.firestore.geoSpec
 export ko_pulumi.gcp.firestore.indexConfig
 export ko_pulumi.gcp.firestore.indexSpecs
 export ko_pulumi.gcp.firestore.indexes
+export ko_pulumi.gcp.gemini.glossaryTerms
 export ko_pulumi.gcp.gkebackup.fieldActions
 export ko_pulumi.gcp.gkebackup.groupKindDependencies
 export ko_pulumi.gcp.gkebackup.groupKinds
@@ -522,6 +526,7 @@ export ko_pulumi.gcp.transcoder.inputs
 export ko_pulumi.gcp.vertex.featureGroups
 export ko_pulumi.gcp.vertex.featureRegistrySource
 export ko_pulumi.gcp.vertex.fileData
+export ko_pulumi.gcp.vertex.filters
 export ko_pulumi.gcp.vertex.functionCall
 export ko_pulumi.gcp.vertex.functionResponse
 export ko_pulumi.gcp.vertex.gatewayConfigs
@@ -538,6 +543,7 @@ export ko_pulumi.gcp.vertex.httpGet
 export ko_pulumi.gcp.vertex.httpHeaders
 export ko_pulumi.gcp.vertex.imageSpec
 export ko_pulumi.gcp.vertex.importFeaturesAnalysis
+export ko_pulumi.gcp.vertex.inactivityTrigger
 export ko_pulumi.gcp.vertex.indexStats
 export ko_pulumi.gcp.vertex.inlineData
 export ko_pulumi.gcp.vertex.inlineSource

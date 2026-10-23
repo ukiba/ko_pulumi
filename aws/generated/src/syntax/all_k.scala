@@ -86,6 +86,7 @@ export ko_pulumi.aws.bedrock.knowledgeBaseRetrievalConfiguration
 export ko_pulumi.aws.bedrock.lambda
 export ko_pulumi.aws.bedrock.lambdaConfig
 export ko_pulumi.aws.bedrock.lambdaFunction
+export ko_pulumi.aws.bedrock.lastDayOfMonth
 export ko_pulumi.aws.bedrock.levelConfigurations
 export ko_pulumi.aws.bedrock.lex
 export ko_pulumi.aws.bedrock.lifecycleConfigurations
@@ -124,6 +125,7 @@ export ko_pulumi.aws.bedrock.modelMapping
 export ko_pulumi.aws.bedrock.modelSource
 export ko_pulumi.aws.bedrock.models
 export ko_pulumi.aws.bedrock.mongoDbAtlasConfiguration
+export ko_pulumi.aws.bedrock.monthly
 export ko_pulumi.aws.bedrock.neptuneAnalyticsConfiguration
 export ko_pulumi.aws.bedrock.networkConfiguration
 export ko_pulumi.aws.bedrock.networkConfigurations
@@ -185,6 +187,7 @@ export ko_pulumi.aws.cloudwatch.lowerCaseStrings
 export ko_pulumi.aws.cloudwatch.maskConfig
 export ko_pulumi.aws.cloudwatch.metric
 export ko_pulumi.aws.cloudwatch.metricQueries
+export ko_pulumi.aws.cloudwatch.metricSelection
 export ko_pulumi.aws.cloudwatch.metricTransformation
 export ko_pulumi.aws.cloudwatch.moveKeys
 export ko_pulumi.aws.cloudwatch.muteTargets
@@ -571,6 +574,8 @@ export ko_pulumi.aws.rekognition.kinesisDataStream
 export ko_pulumi.aws.rekognition.kinesisVideoStream
 export ko_pulumi.aws.rekognition.notificationChannel
 export ko_pulumi.aws.rekognition.output
+export ko_pulumi.aws.resiliencehub.labelSelector
+export ko_pulumi.aws.resiliencehub.matchExpressions
 export ko_pulumi.aws.resiliencehub.multiAz
 export ko_pulumi.aws.resiliencehub.multiRegion
 export ko_pulumi.aws.rolesanywhere.notificationSettings
@@ -705,6 +710,8 @@ export ko_pulumi.aws.wafv2.managedRuleGroupStatement
 export ko_pulumi.aws.wafv2.matchPattern
 export ko_pulumi.aws.wafv2.matchPatterns
 export ko_pulumi.aws.wafv2.method
+export ko_pulumi.aws.wafv2.monetizationConfig
+export ko_pulumi.aws.wafv2.monetize
 export ko_pulumi.aws.wafv2.none
 export ko_pulumi.aws.wafv2.notStatement
 export ko_pulumi.aws.wafv2.orStatement

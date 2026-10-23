@@ -53,9 +53,9 @@ object cloudformation:
 
     /**
      * The CloudFormation Export data source allows access to stack
-     * exports specified in the [Output](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html) section of the Cloudformation Template using the optional Export Property.
+     * exports specified in the [Output](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html) section of the CloudFormation Template using the optional Export Property.
      * 
-     *  &gt; Note: If you are trying to use a value from a Cloudformation Stack in the same deployment please use normal interpolation or Cloudformation Outputs.
+     *  &gt; Note: If you are trying to use a value from a CloudFormation Stack in the same Terraform run please use normal interpolation or CloudFormation Outputs.
      */
     inline def getExport(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetExportArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudformation.outputs.GetExportResult] =
@@ -64,9 +64,9 @@ object cloudformation:
 
     /**
      * The CloudFormation Export data source allows access to stack
-     * exports specified in the [Output](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html) section of the Cloudformation Template using the optional Export Property.
+     * exports specified in the [Output](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html) section of the CloudFormation Template using the optional Export Property.
      * 
-     *  &gt; Note: If you are trying to use a value from a Cloudformation Stack in the same deployment please use normal interpolation or Cloudformation Outputs.
+     *  &gt; Note: If you are trying to use a value from a CloudFormation Stack in the same Terraform run please use normal interpolation or CloudFormation Outputs.
      */
     inline def getExportPlain(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetExportPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudformation.outputs.GetExportResult] =

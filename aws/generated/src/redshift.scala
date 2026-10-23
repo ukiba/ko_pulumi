@@ -508,7 +508,7 @@ object redshift:
 
   extension (builder: com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationLakeFormationArgs.Builder)
     /**
-     * @param lakeFormationQuery Lake formation scope.
+     * @param lakeFormationQuery Lake Formation scope.
      * @return builder
      */
     def lakeFormationQuery(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationLakeFormationLakeFormationQueryArgs.Builder]):

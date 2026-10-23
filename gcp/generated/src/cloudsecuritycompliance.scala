@@ -188,8 +188,7 @@ object cloudsecuritycompliance:
 
   extension (builder: com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueArgs.Builder)
     /**
-     * @param oneofValue Sub-parameter values.
-     * Structure is documented below.
+     * @param oneofValue Sub-parameter values, in JSON format.
      * @return builder
      */
     def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueOneofValueArgs.Builder]):
@@ -241,8 +240,7 @@ object cloudsecuritycompliance:
       builder.defaultValue(args(argsBuilder).build)
 
     /**
-     * @param subParameters The parameter spec of the cloud control.
-     * Structure is documented below.
+     * @param subParameters The parameter spec of the cloud control, in JSON format.
      * @return builder
      */
     def subParameters(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterArgs.Builder]*):
@@ -304,8 +302,7 @@ object cloudsecuritycompliance:
 
   extension (builder: com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueArgs.Builder)
     /**
-     * @param oneofValue Sub-parameter values.
-     * Structure is documented below.
+     * @param oneofValue Sub-parameter values, in JSON format.
      * @return builder
      */
     def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueOneofValueArgs.Builder]):
@@ -591,8 +588,7 @@ object cloudsecuritycompliance:
 
   extension (builder: com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueArgs.Builder)
     /**
-     * @param oneofValue Sub-parameter values.
-     * Structure is documented below.
+     * @param oneofValue Sub-parameter values, in JSON format.
      * @return builder
      */
     def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueOneofValueArgs.Builder]):
@@ -729,8 +725,7 @@ object cloudsecuritycompliance:
 
   extension (builder: com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueArgs.Builder)
     /**
-     * @param oneofValue Sub-parameter values.
-     * Structure is documented below.
+     * @param oneofValue Sub-parameter values, in JSON format.
      * @return builder
      */
     def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueOneofValueArgs.Builder]):

@@ -5,6 +5,51 @@ import com.pulumi.resources.CustomResourceOptions
 
 object backupdisasterrecovery:
   /**
+   * An AutoProtectionPolicy automates backup management by applying a backup plan to all
+   * eligible resources that match the policy&#39;s criteria, instead of protecting each resource
+   * individually. A policy takes effect only after it is attached to a scope, such as a
+   * project, with a `googleBackupDrAutoProtectionPolicyBinding`.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about AutoProtectionPolicy, see:
+   * 
+   * * [API documentation](https://cloud.google.com/backup-disaster-recovery/docs/reference/rest/v1beta/projects.locations.autoProtectionPolicies)
+   * * How-to Guides
+   *     * [Official Documentation](https://cloud.google.com/backup-disaster-recovery/docs)
+   */
+  def AutoProtectionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.AutoProtectionPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.AutoProtectionPolicyArgs.builder
+    com.pulumi.gcp.backupdisasterrecovery.AutoProtectionPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.backupdisasterrecovery.AutoProtectionPolicyArgs.Builder)
+    /**
+     * @param backupPlanDetails The backup plans to apply to the resources that match the policy&#39;s criteria. Each entry
+     * specifies a resource type and the backup plan that protects resources of that type.
+     * Currently, only one entry is supported.
+     * Structure is documented below.
+     * @return builder
+     */
+    def backupPlanDetails(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyBackupPlanDetailArgs.Builder]*):
+        com.pulumi.gcp.backupdisasterrecovery.AutoProtectionPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyBackupPlanDetailArgs.builder
+      builder.backupPlanDetails(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param criteria The criteria that a resource must meet to be protected by the policy.
+     * Structure is documented below.
+     * @return builder
+     */
+    def criteria(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaArgs.Builder]):
+        com.pulumi.gcp.backupdisasterrecovery.AutoProtectionPolicyArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaArgs.builder
+      builder.criteria(args(argsBuilder).build)
+
+  /**
    * A backup plan defines when and how to back up a resource, including the backup&#39;s schedule, retention, and location.
    * 
    * To get more information about BackupPlan, see:
@@ -330,6 +375,72 @@ object backupdisasterrecovery:
     com.pulumi.gcp.backupdisasterrecovery.ServiceConfig(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaArgs.Builder)
+    /**
+     * @param matchingConditions A list of matching conditions that a resource must meet to be protected by the policy.
+     * Currently, only one condition is supported.
+     * Structure is documented below.
+     * @return builder
+     */
+    def matchingConditions(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaMatchingConditionArgs.Builder]*):
+        com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaMatchingConditionArgs.builder
+      builder.matchingConditions(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaMatchingConditionArgs.Builder)
+    /**
+     * @param labelCondition A condition that matches resources based on their labels.
+     * Structure is documented below.
+     * @return builder
+     */
+    def labelCondition(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaMatchingConditionLabelConditionArgs.Builder]):
+        com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaMatchingConditionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaMatchingConditionLabelConditionArgs.builder
+      builder.labelCondition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyState.Builder)
+    /**
+     * @param backupPlanDetails The backup plans to apply to the resources that match the policy&#39;s criteria. Each entry
+     * specifies a resource type and the backup plan that protects resources of that type.
+     * Currently, only one entry is supported.
+     * Structure is documented below.
+     * @return builder
+     */
+    def backupPlanDetails(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyBackupPlanDetailArgs.Builder]*):
+        com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyBackupPlanDetailArgs.builder
+      builder.backupPlanDetails(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param bindingSummaries A summary of the scopes that the policy is applied to through bindings.
+     * Structure is documented below.
+     * @return builder
+     */
+    def bindingSummaries(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyBindingSummaryArgs.Builder]*):
+        com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyBindingSummaryArgs.builder
+      builder.bindingSummaries(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param criteria The criteria that a resource must meet to be protected by the policy.
+     * Structure is documented below.
+     * @return builder
+     */
+    def criteria(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaArgs.Builder]):
+        com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyState.Builder =
+      val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaArgs.builder
+      builder.criteria(args(argsBuilder).build)
+
+    /**
+     * @param policyEvaluationSummaries A summary of the last run of the job that applies the policy to matching resources.
+     * Structure is documented below.
+     * @return builder
+     */
+    def policyEvaluationSummaries(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyPolicyEvaluationSummaryArgs.Builder]*):
+        com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyPolicyEvaluationSummaryArgs.builder
+      builder.policyEvaluationSummaries(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanAssociationRulesConfigInfoArgs.Builder)
     /**

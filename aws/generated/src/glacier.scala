@@ -28,7 +28,7 @@ object glacier:
 
   extension (builder: com.pulumi.aws.glacier.VaultArgs.Builder)
     /**
-     * @param notification The notifications for the Vault. Fields documented below.
+     * @param notification Notifications for the Vault. See below.
      * @return builder
      */
     def notification(args: Endofunction[com.pulumi.aws.glacier.inputs.VaultNotificationArgs.Builder]):
@@ -54,7 +54,7 @@ object glacier:
 
   extension (builder: com.pulumi.aws.glacier.inputs.VaultState.Builder)
     /**
-     * @param notification The notifications for the Vault. Fields documented below.
+     * @param notification Notifications for the Vault. See below.
      * @return builder
      */
     def notification(args: Endofunction[com.pulumi.aws.glacier.inputs.VaultNotificationArgs.Builder]):

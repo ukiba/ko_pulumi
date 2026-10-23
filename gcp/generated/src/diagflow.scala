@@ -1029,6 +1029,26 @@ object diagflow:
 
   extension (builder: com.pulumi.gcp.diagflow.GeneratorArgs.Builder)
     /**
+     * @param agentCoachingContext Input of prebuilt Agent Coaching feature.
+     * Structure is documented below.
+     * @return builder
+     */
+    def agentCoachingContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextArgs.Builder]):
+        com.pulumi.gcp.diagflow.GeneratorArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextArgs.builder
+      builder.agentCoachingContext(args(argsBuilder).build)
+
+    /**
+     * @param freeFormContext Input of free form generator to LLM.
+     * Structure is documented below.
+     * @return builder
+     */
+    def freeFormContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorFreeFormContextArgs.Builder]):
+        com.pulumi.gcp.diagflow.GeneratorArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorFreeFormContextArgs.builder
+      builder.freeFormContext(args(argsBuilder).build)
+
+    /**
      * @param inferenceParameter Optional. Inference parameters for this generator.
      * Structure is documented below.
      * @return builder
@@ -4358,7 +4378,38 @@ object diagflow:
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.FulfillmentGenericWebServiceArgs.builder
       builder.genericWebService(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextArgs.Builder)
+    /**
+     * @param instructions Optional. Customized instructions for agent coaching.
+     * Structure is documented below.
+     * @return builder
+     */
+    def instructions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextInstructionArgs.Builder]*):
+        com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextInstructionArgs.builder
+      builder.instructions(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.diagflow.inputs.GeneratorState.Builder)
+    /**
+     * @param agentCoachingContext Input of prebuilt Agent Coaching feature.
+     * Structure is documented below.
+     * @return builder
+     */
+    def agentCoachingContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.GeneratorState.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextArgs.builder
+      builder.agentCoachingContext(args(argsBuilder).build)
+
+    /**
+     * @param freeFormContext Input of free form generator to LLM.
+     * Structure is documented below.
+     * @return builder
+     */
+    def freeFormContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorFreeFormContextArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.GeneratorState.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorFreeFormContextArgs.builder
+      builder.freeFormContext(args(argsBuilder).build)
+
     /**
      * @param inferenceParameter Optional. Inference parameters for this generator.
      * Structure is documented below.

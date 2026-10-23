@@ -581,9 +581,9 @@ object ec2:
     /**
      * Provides details about a specific EC2 Customer-Owned IP Pool.
      * 
-     * This data source can prove useful when a module accepts a coip pool id as
+     * This data source can prove useful when a module accepts a CoIP pool ID as
      * an input variable and needs to, for example, determine the CIDR block of that
-     * COIP Pool.
+     * CoIP Pool.
      */
     inline def getCoipPool(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCoipPoolArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetCoipPoolResult] =
@@ -593,9 +593,9 @@ object ec2:
     /**
      * Provides details about a specific EC2 Customer-Owned IP Pool.
      * 
-     * This data source can prove useful when a module accepts a coip pool id as
+     * This data source can prove useful when a module accepts a CoIP pool ID as
      * an input variable and needs to, for example, determine the CIDR block of that
-     * COIP Pool.
+     * CoIP Pool.
      */
     inline def getCoipPoolPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCoipPoolPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetCoipPoolResult] =
@@ -740,7 +740,7 @@ object ec2:
      * or to make it easier for an operator to connect through bastion host(s).
      * 
      * &gt; **Note:** It&#39;s strongly discouraged to use this data source for querying ephemeral
-     * instances (e.g., managed via autoscaling group), as the output may change at any time
+     * instances (e.g., managed via Auto Scaling group), as the output may change at any time
      * and you&#39;d need to re-run `apply` every time an instance comes up or dies.
      */
     inline def getInstances(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstancesArgs.Builder] = scala.Predef.identity):
@@ -754,7 +754,7 @@ object ec2:
      * or to make it easier for an operator to connect through bastion host(s).
      * 
      * &gt; **Note:** It&#39;s strongly discouraged to use this data source for querying ephemeral
-     * instances (e.g., managed via autoscaling group), as the output may change at any time
+     * instances (e.g., managed via Auto Scaling group), as the output may change at any time
      * and you&#39;d need to re-run `apply` every time an instance comes up or dies.
      */
     inline def getInstancesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstancesPlainArgs.Builder] = scala.Predef.identity):
@@ -777,7 +777,7 @@ object ec2:
     /**
      * Previews a CIDR from an IPAM address pool. Only works for private IPv4.
      * 
-     * &gt; **NOTE:** This functionality is also encapsulated in a resource sharing the same name. The data source can be used when you need to use the cidr in a calculation of the same Root module, `count` for example. However, once a cidr range has been allocated that was previewed, the next refresh will find a **new** cidr and may force new resources downstream. Make sure to use `ignoreChanges` if this is undesirable.
+     * &gt; **NOTE:** This functionality is also encapsulated in a resource sharing the same name. The data source can be used when you need to use the CIDR in a calculation of the same Root module, `count` for example. However, once a CIDR range has been allocated that was previewed, the next refresh will find a **new** CIDR and may force new resources downstream. Make sure to use Pulumi&#39;s `ignoreChanges` resource option if this is undesirable.
      */
     inline def getIpamPreviewNextCidr(args: Endofunction[com.pulumi.aws.ec2.inputs.GetIpamPreviewNextCidrArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetIpamPreviewNextCidrResult] =
@@ -787,7 +787,7 @@ object ec2:
     /**
      * Previews a CIDR from an IPAM address pool. Only works for private IPv4.
      * 
-     * &gt; **NOTE:** This functionality is also encapsulated in a resource sharing the same name. The data source can be used when you need to use the cidr in a calculation of the same Root module, `count` for example. However, once a cidr range has been allocated that was previewed, the next refresh will find a **new** cidr and may force new resources downstream. Make sure to use `ignoreChanges` if this is undesirable.
+     * &gt; **NOTE:** This functionality is also encapsulated in a resource sharing the same name. The data source can be used when you need to use the CIDR in a calculation of the same Root module, `count` for example. However, once a CIDR range has been allocated that was previewed, the next refresh will find a **new** CIDR and may force new resources downstream. Make sure to use Pulumi&#39;s `ignoreChanges` resource option if this is undesirable.
      */
     inline def getIpamPreviewNextCidrPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetIpamPreviewNextCidrPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetIpamPreviewNextCidrResult] =
@@ -845,7 +845,7 @@ object ec2:
     /**
      * Provides details about an EC2 Local Gateway Route Table.
      * 
-     * This data source can prove useful when a module accepts a local gateway route table id as
+     * This data source can prove useful when a module accepts a local gateway route table ID as
      * an input variable and needs to, for example, find the associated Outpost or Local Gateway.
      */
     inline def getLocalGatewayRouteTable(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTableArgs.Builder] = scala.Predef.identity):
@@ -856,7 +856,7 @@ object ec2:
     /**
      * Provides details about an EC2 Local Gateway Route Table.
      * 
-     * This data source can prove useful when a module accepts a local gateway route table id as
+     * This data source can prove useful when a module accepts a local gateway route table ID as
      * an input variable and needs to, for example, find the associated Outpost or Local Gateway.
      */
     inline def getLocalGatewayRouteTablePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablePlainArgs.Builder] = scala.Predef.identity):
@@ -942,13 +942,13 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetManagedPrefixListPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getManagedPrefixListPlain(args(argsBuilder).build)
 
-    /** This resource can be useful for getting back a list of managed prefix list ids to be referenced elsewhere. */
+    /** This resource can be useful for getting back a list of managed prefix list IDs to be referenced elsewhere. */
     inline def getManagedPrefixLists(args: Endofunction[com.pulumi.aws.ec2.inputs.GetManagedPrefixListsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetManagedPrefixListsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetManagedPrefixListsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getManagedPrefixLists(args(argsBuilder).build)
 
-    /** This resource can be useful for getting back a list of managed prefix list ids to be referenced elsewhere. */
+    /** This resource can be useful for getting back a list of managed prefix list IDs to be referenced elsewhere. */
     inline def getManagedPrefixListsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetManagedPrefixListsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetManagedPrefixListsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetManagedPrefixListsPlainArgs.builder
@@ -966,13 +966,13 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNatGatewayPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNatGatewayPlain(args(argsBuilder).build)
 
-    /** This resource can be useful for getting back a list of NAT gateway ids to be referenced elsewhere. */
+    /** This resource can be useful for getting back a list of NAT gateway IDs to be referenced elsewhere. */
     inline def getNatGateways(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNatGatewaysArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetNatGatewaysResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNatGatewaysArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNatGateways(args(argsBuilder).build)
 
-    /** This resource can be useful for getting back a list of NAT gateway ids to be referenced elsewhere. */
+    /** This resource can be useful for getting back a list of NAT gateway IDs to be referenced elsewhere. */
     inline def getNatGatewaysPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNatGatewaysPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetNatGatewaysResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNatGatewaysPlainArgs.builder
@@ -1142,13 +1142,13 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetRouteTablePlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getRouteTablePlain(args(argsBuilder).build)
 
-    /** This resource can be useful for getting back a list of route table ids to be referenced elsewhere. */
+    /** This resource can be useful for getting back a list of route table IDs to be referenced elsewhere. */
     inline def getRouteTables(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRouteTablesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetRouteTablesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetRouteTablesArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getRouteTables(args(argsBuilder).build)
 
-    /** This resource can be useful for getting back a list of route table ids to be referenced elsewhere. */
+    /** This resource can be useful for getting back a list of route table IDs to be referenced elsewhere. */
     inline def getRouteTablesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRouteTablesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetRouteTablesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetRouteTablesPlainArgs.builder
@@ -1157,8 +1157,8 @@ object ec2:
     /**
      * `aws.ec2.SecurityGroup` provides details about a specific Security Group.
      * 
-     * This resource can prove useful when a module accepts a Security Group id as
-     * an input variable and needs to, for example, determine the id of the
+     * This resource can prove useful when a module accepts a Security Group ID as
+     * an input variable and needs to, for example, determine the ID of the
      * VPC that the security group belongs to.
      */
     inline def getSecurityGroup(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSecurityGroupArgs.Builder] = scala.Predef.identity):
@@ -1169,8 +1169,8 @@ object ec2:
     /**
      * `aws.ec2.SecurityGroup` provides details about a specific Security Group.
      * 
-     * This resource can prove useful when a module accepts a Security Group id as
-     * an input variable and needs to, for example, determine the id of the
+     * This resource can prove useful when a module accepts a Security Group ID as
+     * an input variable and needs to, for example, determine the ID of the
      * VPC that the security group belongs to.
      */
     inline def getSecurityGroupPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSecurityGroupPlainArgs.Builder] = scala.Predef.identity):
@@ -1305,7 +1305,7 @@ object ec2:
     /**
      * `aws.ec2.Vpc` provides details about a specific VPC.
      * 
-     * This resource can prove useful when a module accepts a vpc id as
+     * This resource can prove useful when a module accepts a VPC ID as
      * an input variable and needs to, for example, determine the CIDR block of that
      * VPC.
      */
@@ -1317,7 +1317,7 @@ object ec2:
     /**
      * `aws.ec2.Vpc` provides details about a specific VPC.
      * 
-     * This resource can prove useful when a module accepts a vpc id as
+     * This resource can prove useful when a module accepts a VPC ID as
      * an input variable and needs to, for example, determine the CIDR block of that
      * VPC.
      */
@@ -1389,8 +1389,8 @@ object ec2:
     /**
      * `aws.ec2.VpcIpamPool` provides details about an IPAM pool.
      * 
-     * This resource can prove useful when an ipam pool was created in another root
-     * module and you need the pool&#39;s id as an input variable. For example, pools
+     * This resource can prove useful when an IPAM pool was created in another root
+     * module and you need the pool&#39;s ID as an input variable. For example, pools
      * can be shared via RAM and used to create vpcs with CIDRs from that pool.
      */
     inline def getVpcIpamPool(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolArgs.Builder] = scala.Predef.identity):
@@ -1401,8 +1401,8 @@ object ec2:
     /**
      * `aws.ec2.VpcIpamPool` provides details about an IPAM pool.
      * 
-     * This resource can prove useful when an ipam pool was created in another root
-     * module and you need the pool&#39;s id as an input variable. For example, pools
+     * This resource can prove useful when an IPAM pool was created in another root
+     * module and you need the pool&#39;s ID as an input variable. For example, pools
      * can be shared via RAM and used to create vpcs with CIDRs from that pool.
      */
     inline def getVpcIpamPoolPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolPlainArgs.Builder] = scala.Predef.identity):
@@ -1413,7 +1413,7 @@ object ec2:
     /**
      * `aws.ec2.getVpcIpamPoolCidrs` provides details about an IPAM pool.
      * 
-     * This resource can prove useful when an ipam pool was shared to your account and you want to know all (or a filtered list) of the CIDRs that are provisioned into the pool.
+     * This resource can prove useful when an IPAM pool was shared to your account and you want to know all (or a filtered list) of the CIDRs that are provisioned into the pool.
      */
     inline def getVpcIpamPoolCidrs(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolCidrsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpcIpamPoolCidrsResult] =
@@ -1423,7 +1423,7 @@ object ec2:
     /**
      * `aws.ec2.getVpcIpamPoolCidrs` provides details about an IPAM pool.
      * 
-     * This resource can prove useful when an ipam pool was shared to your account and you want to know all (or a filtered list) of the CIDRs that are provisioned into the pool.
+     * This resource can prove useful when an IPAM pool was shared to your account and you want to know all (or a filtered list) of the CIDRs that are provisioned into the pool.
      */
     inline def getVpcIpamPoolCidrsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolCidrsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpcIpamPoolCidrsResult] =
@@ -1434,7 +1434,7 @@ object ec2:
      * `aws.ec2.getVpcIpamPools` provides details about IPAM pools.
      * 
      * This resource can prove useful when IPAM pools are created in another root
-     * module and you need the pool ids as input variables. For example, pools
+     * module and you need the pool IDs as input variables. For example, pools
      * can be shared via RAM and used to create vpcs with CIDRs from that pool.
      */
     inline def getVpcIpamPools(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsArgs.Builder] = scala.Predef.identity):
@@ -1446,7 +1446,7 @@ object ec2:
      * `aws.ec2.getVpcIpamPools` provides details about IPAM pools.
      * 
      * This resource can prove useful when IPAM pools are created in another root
-     * module and you need the pool ids as input variables. For example, pools
+     * module and you need the pool IDs as input variables. For example, pools
      * can be shared via RAM and used to create vpcs with CIDRs from that pool.
      */
     inline def getVpcIpamPoolsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsPlainArgs.Builder] = scala.Predef.identity):
@@ -1513,9 +1513,9 @@ object ec2:
       com.pulumi.aws.ec2.Ec2Functions.getVpcPeeringConnectionsPlain(args(argsBuilder).build)
 
     /**
-     * This resource can be useful for getting back a list of VPC Ids for a region.
+     * This resource can be useful for getting back a list of VPC IDs for a region.
      * 
-     * The following example retrieves a list of VPC Ids with a custom tag of `service` set to a value of &#34;production&#34;.
+     * The following example retrieves a list of VPC IDs with a custom tag of `service` set to a value of &#34;production&#34;.
      */
     inline def getVpcs(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpcsResult] =
@@ -1523,9 +1523,9 @@ object ec2:
       com.pulumi.aws.ec2.Ec2Functions.getVpcs(args(argsBuilder).build)
 
     /**
-     * This resource can be useful for getting back a list of VPC Ids for a region.
+     * This resource can be useful for getting back a list of VPC IDs for a region.
      * 
-     * The following example retrieves a list of VPC Ids with a custom tag of `service` set to a value of &#34;production&#34;.
+     * The following example retrieves a list of VPC IDs with a custom tag of `service` set to a value of &#34;production&#34;.
      */
     inline def getVpcsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpcsResult] =
@@ -1979,11 +1979,11 @@ object ec2:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
-   * Provides a resource to create a new launch configuration, used for autoscaling groups.
+   * Provides a resource to create a new launch configuration, used for Auto Scaling groups.
    * 
    * &gt; **WARNING:** The use of launch configurations is discouraged in favor of launch templates. Read more in the [AWS EC2 Documentation](https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-configurations.html).
    * 
-   * &gt; **Note** When using `aws.ec2.LaunchConfiguration` with `aws.autoscaling.Group`, it is recommended to use the `namePrefix` (Optional) instead of the `name` (Optional) attribute.
+   * &gt; **Note** When using `aws.ec2.LaunchConfiguration` with `aws.autoscaling.Group`, it is recommended to use the `namePrefix` (Optional) instead of the `name` (Optional) attribute. This will allow Pulumi lifecycles to detect changes to the launch configuration and update the Auto Scaling group correctly.
    */
   def LaunchConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2.LaunchConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -2033,7 +2033,7 @@ object ec2:
       builder.rootBlockDevice(args(argsBuilder).build)
 
   /**
-   * Provides an EC2 launch template resource. Can be used to create instances or auto scaling groups.
+   * Provides an EC2 launch template resource. Can be used to create instances or Auto Scaling groups.
    * 
    * #### Optional
    * 
@@ -2971,7 +2971,7 @@ object ec2:
    * instances to be requested on the Spot market.
    * 
    * &gt; **NOTE [AWS strongly discourages](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use) the use of the legacy APIs called by this resource.
-   * We recommend using the EC2 Fleet or Auto Scaling Group resources instead.
+   * We recommend using the EC2 Fleet or Auto Scaling group resources instead.
    */
   def SpotFleetRequest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2.SpotFleetRequestArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -3612,7 +3612,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.VpcIpamPoolArgs.Builder)
     /**
-     * @param sourceResource Resource to use to use to configure a resource planning IPAM Pool. If configured, the `locale` of the parent pool must match the region that the vpc resides in.
+     * @param sourceResource Resource to use to use to configure a resource planning IPAM Pool. If configured, the `locale` of the parent pool must match the region that the VPC resides in.
      * @return builder
      */
     def sourceResource(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcIpamPoolSourceResourceArgs.Builder]):
@@ -3626,7 +3626,7 @@ object ec2:
    * &gt; **NOTE:** Provisioning Public IPv4 or Public IPv6 require [steps outside the scope of this resource](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#prepare-for-byoip). The resource accepts `message` and `signature` as part of the `cidrAuthorizationContext` attribute but those must be generated ahead of time. Public IPv6 CIDRs that are provisioned into a Pool with `publiclyAdvertisable = true` and all public IPv4 CIDRs also require creating a Route Origin Authorization (ROA) object in your Regional Internet Registry (RIR).
    * 
    * &gt; **NOTE:** In order to deprovision CIDRs all Allocations must be released. Allocations created by a VPC take up to 30 minutes to be released. However, for IPAM to properly manage the removal of allocation records created by VPCs and other resources, you must [grant it permissions](https://docs.aws.amazon.com/vpc/latest/ipam/choose-single-user-or-orgs-ipam.html) in
-   * either a single account or organizationally. If you are unable to deprovision a cidr after waiting over 30 minutes, you may be missing the Service Linked Role.
+   * either a single account or organizationally. If you are unable to deprovision a CIDR after waiting over 30 minutes, you may be missing the Service Linked Role.
    */
   def VpcIpamPoolCidr(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpamPoolCidrArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -6903,7 +6903,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.VpcIpamPoolState.Builder)
     /**
-     * @param sourceResource Resource to use to use to configure a resource planning IPAM Pool. If configured, the `locale` of the parent pool must match the region that the vpc resides in.
+     * @param sourceResource Resource to use to use to configure a resource planning IPAM Pool. If configured, the `locale` of the parent pool must match the region that the VPC resides in.
      * @return builder
      */
     def sourceResource(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcIpamPoolSourceResourceArgs.Builder]):

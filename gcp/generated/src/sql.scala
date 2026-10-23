@@ -43,6 +43,16 @@ object sql:
 
   extension (builder: com.pulumi.gcp.sql.DatabaseInstanceArgs.Builder)
     /**
+     * @param blueGreenDeployment The configuration for a Cloud SQL Blue-Green Deployment on this instance. The configuration is detailed below.
+     * &gt; **WARNING:** Because `blueGreenDeployment` is authoritatively managed by Terraform on the primary instance resource, if a Blue-Green Deployment is created on this instance outside of Terraform (for example, via `gcloud` or the Cloud Console) and the `blueGreenDeployment` block is not present in your Terraform configuration, running `pulumi up` will delete the out-of-band Blue-Green Deployment along with its green target instance.
+     * @return builder
+     */
+    def blueGreenDeployment(args: Endofunction[com.pulumi.gcp.sql.inputs.DatabaseInstanceBlueGreenDeploymentArgs.Builder]):
+        com.pulumi.gcp.sql.DatabaseInstanceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.sql.inputs.DatabaseInstanceBlueGreenDeploymentArgs.builder
+      builder.blueGreenDeployment(args(argsBuilder).build)
+
+    /**
      * @param clone The context needed to create this instance as a clone of another instance. When this field is set during
      * resource creation, this provider will attempt to clone another instance as indicated in the context. The
      * configuration is detailed below.
@@ -306,6 +316,16 @@ object sql:
       val argsBuilder = com.pulumi.gcp.sql.inputs.UserPasswordPolicyArgs.builder
       builder.passwordPolicy(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.sql.inputs.DatabaseInstanceBlueGreenDeploymentArgs.Builder)
+    /**
+     * @param targetInstanceIpAddresses The IP addresses assigned to the green (target) instance. Structure is documented below.
+     * @return builder
+     */
+    def targetInstanceIpAddresses(args: Endofunction[com.pulumi.gcp.sql.inputs.DatabaseInstanceBlueGreenDeploymentTargetInstanceIpAddressArgs.Builder]*):
+        com.pulumi.gcp.sql.inputs.DatabaseInstanceBlueGreenDeploymentArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.sql.inputs.DatabaseInstanceBlueGreenDeploymentTargetInstanceIpAddressArgs.builder
+      builder.targetInstanceIpAddresses(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.sql.inputs.DatabaseInstanceSettingsArgs.Builder)
     def activeDirectoryConfig(args: Endofunction[com.pulumi.gcp.sql.inputs.DatabaseInstanceSettingsActiveDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.sql.inputs.DatabaseInstanceSettingsArgs.Builder =
@@ -480,6 +500,16 @@ object sql:
       builder.targetMetrics(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.sql.inputs.DatabaseInstanceState.Builder)
+    /**
+     * @param blueGreenDeployment The configuration for a Cloud SQL Blue-Green Deployment on this instance. The configuration is detailed below.
+     * &gt; **WARNING:** Because `blueGreenDeployment` is authoritatively managed by Terraform on the primary instance resource, if a Blue-Green Deployment is created on this instance outside of Terraform (for example, via `gcloud` or the Cloud Console) and the `blueGreenDeployment` block is not present in your Terraform configuration, running `pulumi up` will delete the out-of-band Blue-Green Deployment along with its green target instance.
+     * @return builder
+     */
+    def blueGreenDeployment(args: Endofunction[com.pulumi.gcp.sql.inputs.DatabaseInstanceBlueGreenDeploymentArgs.Builder]):
+        com.pulumi.gcp.sql.inputs.DatabaseInstanceState.Builder =
+      val argsBuilder = com.pulumi.gcp.sql.inputs.DatabaseInstanceBlueGreenDeploymentArgs.builder
+      builder.blueGreenDeployment(args(argsBuilder).build)
+
     /**
      * @param clone The context needed to create this instance as a clone of another instance. When this field is set during
      * resource creation, this provider will attempt to clone another instance as indicated in the context. The

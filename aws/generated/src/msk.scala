@@ -104,7 +104,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.ClusterArgs.Builder)
     /**
-     * @param brokerNodeGroupInfo Configuration block for the broker nodes of the Kafka cluster. See brokerNodeGroupInfo Argument Reference below.
+     * @param brokerNodeGroupInfo Configuration block for the broker nodes of the Kafka cluster. See `brokerNodeGroupInfo` Block below.
      * @return builder
      */
     def brokerNodeGroupInfo(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoArgs.Builder]):
@@ -113,7 +113,7 @@ object msk:
       builder.brokerNodeGroupInfo(args(argsBuilder).build)
 
     /**
-     * @param clientAuthentication Configuration block for specifying a client authentication. See clientAuthentication Argument Reference below.
+     * @param clientAuthentication Configuration block for specifying a client authentication. See `clientAuthentication` Block below.
      * @return builder
      */
     def clientAuthentication(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterClientAuthenticationArgs.Builder]):
@@ -122,7 +122,7 @@ object msk:
       builder.clientAuthentication(args(argsBuilder).build)
 
     /**
-     * @param configurationInfo Configuration block for specifying an MSK Configuration to attach to Kafka brokers. See configurationInfo Argument Reference below.
+     * @param configurationInfo Configuration block for specifying an MSK Configuration to attach to Kafka brokers. See `configurationInfo` Block below.
      * @return builder
      */
     def configurationInfo(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterConfigurationInfoArgs.Builder]):
@@ -131,7 +131,7 @@ object msk:
       builder.configurationInfo(args(argsBuilder).build)
 
     /**
-     * @param encryptionInfo Configuration block for specifying encryption. See encryptionInfo Argument Reference below.
+     * @param encryptionInfo Configuration block for specifying encryption. See `encryptionInfo` Block below.
      * @return builder
      */
     def encryptionInfo(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterEncryptionInfoArgs.Builder]):
@@ -140,7 +140,7 @@ object msk:
       builder.encryptionInfo(args(argsBuilder).build)
 
     /**
-     * @param loggingInfo Configuration block for streaming broker logs to Cloudwatch/S3/Kinesis Firehose. See loggingInfo Argument Reference below.
+     * @param loggingInfo Configuration block for streaming broker logs to Cloudwatch/S3/Kinesis Firehose. See `loggingInfo` Block below.
      * @return builder
      */
     def loggingInfo(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterLoggingInfoArgs.Builder]):
@@ -149,7 +149,7 @@ object msk:
       builder.loggingInfo(args(argsBuilder).build)
 
     /**
-     * @param openMonitoring Configuration block for JMX and Node monitoring for the MSK cluster. See openMonitoring Argument Reference below.
+     * @param openMonitoring Configuration block for JMX and Node monitoring for the MSK cluster. See `openMonitoring` Block below.
      * @return builder
      */
     def openMonitoring(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterOpenMonitoringArgs.Builder]):
@@ -158,7 +158,7 @@ object msk:
       builder.openMonitoring(args(argsBuilder).build)
 
     /**
-     * @param rebalancing Configuration block for intelligent rebalancing. See rebalancing Argument Reference below. Only applicable to MSK Provisioned clusters with Express brokers.
+     * @param rebalancing Configuration block for intelligent rebalancing. See `rebalancing` Block below. Only applicable to MSK Provisioned clusters with Express brokers.
      * @return builder
      */
     def rebalancing(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterRebalancingArgs.Builder]):
@@ -301,7 +301,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.ReplicatorArgs.Builder)
     /**
-     * @param kafkaClusters The source and target Kafka clusters for the replicator. Exactly two blocks are required. Detailed below.
+     * @param kafkaClusters Source and target Kafka clusters for the replicator. Exactly two blocks are required. See `kafkaCluster` Block below.
      * @return builder
      */
     def kafkaClusters(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterArgs.Builder]*):
@@ -310,7 +310,7 @@ object msk:
       builder.kafkaClusters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param logDelivery Configuration block for delivering replicator logs to customer destinations. Detailed below.
+     * @param logDelivery Configuration block for delivering replicator logs to customer destinations. See `logDelivery` Block below.
      * @return builder
      */
     def logDelivery(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorLogDeliveryArgs.Builder]):
@@ -319,7 +319,7 @@ object msk:
       builder.logDelivery(args(argsBuilder).build)
 
     /**
-     * @param replicationInfoList A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.
+     * @param replicationInfoList List of replication configurations, where each configuration targets a given source cluster to target cluster replication flow. See `replicationInfoList` Block below.
      * @return builder
      */
     def replicationInfoList(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorReplicationInfoListArgs.Builder]):
@@ -370,7 +370,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.ServerlessClusterArgs.Builder)
     /**
-     * @param clientAuthentication Specifies client authentication information for the serverless cluster. See below.
+     * @param clientAuthentication Client authentication information for the serverless cluster. See `clientAuthentication` Block below.
      * @return builder
      */
     def clientAuthentication(args: Endofunction[com.pulumi.aws.msk.inputs.ServerlessClusterClientAuthenticationArgs.Builder]):
@@ -379,7 +379,7 @@ object msk:
       builder.clientAuthentication(args(argsBuilder).build)
 
     /**
-     * @param vpcConfigs VPC configuration information. See below.
+     * @param vpcConfigs VPC configuration information. See `vpcConfig` Block below.
      * @return builder
      */
     def vpcConfigs(args: Endofunction[com.pulumi.aws.msk.inputs.ServerlessClusterVpcConfigArgs.Builder]*):
@@ -618,7 +618,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoArgs.Builder)
     /**
-     * @param connectivityInfo Information about the cluster access configuration. See brokerNodeGroupInfo connectivity_info Argument Reference below. For security reasons, you can&#39;t turn on public access while creating an MSK cluster. However, you can update an existing cluster to make it publicly accessible. You can also create a new cluster and then update it to make it publicly accessible ([documentation](https://docs.aws.amazon.com/msk/latest/developerguide/public-access.html)).
+     * @param connectivityInfo Information about the cluster access configuration. See `connectivityInfo` Block below. For security reasons, you can&#39;t turn on public access while creating an MSK cluster. However, you can update an existing cluster to make it publicly accessible. You can also create a new cluster and then update it to make it publicly accessible ([documentation](https://docs.aws.amazon.com/msk/latest/developerguide/public-access.html)).
      * @return builder
      */
     def connectivityInfo(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoConnectivityInfoArgs.Builder]):
@@ -627,7 +627,7 @@ object msk:
       builder.connectivityInfo(args(argsBuilder).build)
 
     /**
-     * @param storageInfo A block that contains information about storage volumes attached to MSK broker nodes. See brokerNodeGroupInfo storage_info Argument Reference below. This block must not be specified when an Express instance type is specified for `instanceType`.
+     * @param storageInfo Configuration block that contains information about storage volumes attached to MSK broker nodes. See `storageInfo` Block below. This block must not be specified when an Express instance type is specified for `instanceType`.
      * @return builder
      */
     def storageInfo(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoStorageInfoArgs.Builder]):
@@ -637,7 +637,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoConnectivityInfoArgs.Builder)
     /**
-     * @param publicAccess Access control settings for brokers. See connectivityInfo public_access Argument Reference below.
+     * @param publicAccess Access control settings for brokers. See `publicAccess` Block below.
      * @return builder
      */
     def publicAccess(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoConnectivityInfoPublicAccessArgs.Builder]):
@@ -646,7 +646,7 @@ object msk:
       builder.publicAccess(args(argsBuilder).build)
 
     /**
-     * @param vpcConnectivity VPC connectivity access control for brokers. See connectivityInfo vpc_connectivity Argument Reference below.
+     * @param vpcConnectivity VPC connectivity access control for brokers. See `vpcConnectivity` Block below.
      * @return builder
      */
     def vpcConnectivity(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityArgs.Builder]):
@@ -656,7 +656,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityArgs.Builder)
     /**
-     * @param clientAuthentication Configuration block for specifying a client authentication. See clientAuthentication Argument Reference below.
+     * @param clientAuthentication Client authentication information for VPC connectivity. See `vpc_connectivity.client_authentication` Block below.
      * @return builder
      */
     def clientAuthentication(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationArgs.Builder]):
@@ -666,7 +666,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationArgs.Builder)
     /**
-     * @param sasl Configuration block for specifying SASL client authentication. See clientAuthentication sasl Argument Reference below.
+     * @param sasl Configuration block for specifying SASL client authentication. See `sasl` Block below.
      * @return builder
      */
     def sasl(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationSaslArgs.Builder]):
@@ -676,7 +676,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoStorageInfoArgs.Builder)
     /**
-     * @param ebsStorageInfo A block that contains EBS volume information. See storageInfo ebs_storage_info Argument Reference below.
+     * @param ebsStorageInfo Configuration block that contains EBS volume information. See `ebsStorageInfo` Block below.
      * @return builder
      */
     def ebsStorageInfo(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoArgs.Builder]):
@@ -686,7 +686,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoArgs.Builder)
     /**
-     * @param provisionedThroughput A block that contains EBS volume provisioned throughput information. To provision storage throughput, you must choose broker type kafka.m5.4xlarge or larger. See ebsStorageInfo provisioned_throughput Argument Reference below.
+     * @param provisionedThroughput Configuration block that contains EBS volume provisioned throughput information. To provision storage throughput, you must choose broker type kafka.m5.4xlarge or larger. See `provisionedThroughput` Block below.
      * @return builder
      */
     def provisionedThroughput(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoProvisionedThroughputArgs.Builder]):
@@ -696,7 +696,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ClusterClientAuthenticationArgs.Builder)
     /**
-     * @param sasl Configuration block for specifying SASL client authentication. See clientAuthentication sasl Argument Reference below.
+     * @param sasl Configuration block for specifying SASL client authentication. See `sasl` Block below.
      * @return builder
      */
     def sasl(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterClientAuthenticationSaslArgs.Builder]):
@@ -705,7 +705,7 @@ object msk:
       builder.sasl(args(argsBuilder).build)
 
     /**
-     * @param tls Configuration block for specifying TLS client authentication. See clientAuthentication tls Argument Reference below.
+     * @param tls Configuration block for specifying TLS client authentication. See `tls` Block below.
      * @return builder
      */
     def tls(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterClientAuthenticationTlsArgs.Builder]):
@@ -715,7 +715,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ClusterEncryptionInfoArgs.Builder)
     /**
-     * @param encryptionInTransit Configuration block to specify encryption in transit. See encryptionInfo encryption_in_transit Argument Reference below.
+     * @param encryptionInTransit Configuration block to specify encryption in transit. See `encryptionInTransit` Block below.
      * @return builder
      */
     def encryptionInTransit(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterEncryptionInfoEncryptionInTransitArgs.Builder]):
@@ -725,7 +725,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ClusterLoggingInfoArgs.Builder)
     /**
-     * @param brokerLogs Configuration block for Broker Logs settings for logging info. See loggingInfo broker_logs Argument Reference below.
+     * @param brokerLogs Configuration block for Broker Logs settings for logging info. See `brokerLogs` Block below.
      * @return builder
      */
     def brokerLogs(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterLoggingInfoBrokerLogsArgs.Builder]):
@@ -735,7 +735,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ClusterLoggingInfoBrokerLogsArgs.Builder)
     /**
-     * @param cloudwatchLogs Configuration block for Cloudwatch Logs settings. See loggingInfo broker_logs cloudwatchLogs Argument Reference below.
+     * @param cloudwatchLogs Configuration block for CloudWatch Logs settings. See `cloudwatchLogs` Block below.
      * @return builder
      */
     def cloudwatchLogs(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterLoggingInfoBrokerLogsCloudwatchLogsArgs.Builder]):
@@ -744,7 +744,7 @@ object msk:
       builder.cloudwatchLogs(args(argsBuilder).build)
 
     /**
-     * @param firehose Configuration block for Kinesis Data Firehose settings. See loggingInfo broker_logs firehose Argument Reference below.
+     * @param firehose Configuration block for Kinesis Data Firehose settings. See `firehose` Block below.
      * @return builder
      */
     def firehose(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterLoggingInfoBrokerLogsFirehoseArgs.Builder]):
@@ -753,7 +753,7 @@ object msk:
       builder.firehose(args(argsBuilder).build)
 
     /**
-     * @param s3 Configuration block for S3 settings. See loggingInfo broker_logs s3 Argument Reference below.
+     * @param s3 Configuration block for S3 settings. See `s3` Block below.
      * @return builder
      */
     def s3(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterLoggingInfoBrokerLogsS3Args.Builder]):
@@ -763,7 +763,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ClusterOpenMonitoringArgs.Builder)
     /**
-     * @param prometheus Configuration block for Prometheus settings for open monitoring. See openMonitoring prometheus Argument Reference below.
+     * @param prometheus Configuration block for Prometheus settings for open monitoring. See `prometheus` Block below.
      * @return builder
      */
     def prometheus(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterOpenMonitoringPrometheusArgs.Builder]):
@@ -773,7 +773,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ClusterOpenMonitoringPrometheusArgs.Builder)
     /**
-     * @param jmxExporter Configuration block for JMX Exporter. See openMonitoring prometheus jmxExporter Argument Reference below.
+     * @param jmxExporter Configuration block for JMX Exporter. See `jmxExporter` Block below.
      * @return builder
      */
     def jmxExporter(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterOpenMonitoringPrometheusJmxExporterArgs.Builder]):
@@ -782,7 +782,7 @@ object msk:
       builder.jmxExporter(args(argsBuilder).build)
 
     /**
-     * @param nodeExporter Configuration block for Node Exporter. See openMonitoring prometheus nodeExporter Argument Reference below.
+     * @param nodeExporter Configuration block for Node Exporter. See `nodeExporter` Block below.
      * @return builder
      */
     def nodeExporter(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterOpenMonitoringPrometheusNodeExporterArgs.Builder]):
@@ -792,7 +792,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ClusterState.Builder)
     /**
-     * @param brokerNodeGroupInfo Configuration block for the broker nodes of the Kafka cluster. See brokerNodeGroupInfo Argument Reference below.
+     * @param brokerNodeGroupInfo Configuration block for the broker nodes of the Kafka cluster. See `brokerNodeGroupInfo` Block below.
      * @return builder
      */
     def brokerNodeGroupInfo(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoArgs.Builder]):
@@ -801,7 +801,7 @@ object msk:
       builder.brokerNodeGroupInfo(args(argsBuilder).build)
 
     /**
-     * @param clientAuthentication Configuration block for specifying a client authentication. See clientAuthentication Argument Reference below.
+     * @param clientAuthentication Configuration block for specifying a client authentication. See `clientAuthentication` Block below.
      * @return builder
      */
     def clientAuthentication(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterClientAuthenticationArgs.Builder]):
@@ -810,7 +810,7 @@ object msk:
       builder.clientAuthentication(args(argsBuilder).build)
 
     /**
-     * @param configurationInfo Configuration block for specifying an MSK Configuration to attach to Kafka brokers. See configurationInfo Argument Reference below.
+     * @param configurationInfo Configuration block for specifying an MSK Configuration to attach to Kafka brokers. See `configurationInfo` Block below.
      * @return builder
      */
     def configurationInfo(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterConfigurationInfoArgs.Builder]):
@@ -819,7 +819,7 @@ object msk:
       builder.configurationInfo(args(argsBuilder).build)
 
     /**
-     * @param encryptionInfo Configuration block for specifying encryption. See encryptionInfo Argument Reference below.
+     * @param encryptionInfo Configuration block for specifying encryption. See `encryptionInfo` Block below.
      * @return builder
      */
     def encryptionInfo(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterEncryptionInfoArgs.Builder]):
@@ -828,7 +828,7 @@ object msk:
       builder.encryptionInfo(args(argsBuilder).build)
 
     /**
-     * @param loggingInfo Configuration block for streaming broker logs to Cloudwatch/S3/Kinesis Firehose. See loggingInfo Argument Reference below.
+     * @param loggingInfo Configuration block for streaming broker logs to Cloudwatch/S3/Kinesis Firehose. See `loggingInfo` Block below.
      * @return builder
      */
     def loggingInfo(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterLoggingInfoArgs.Builder]):
@@ -837,7 +837,7 @@ object msk:
       builder.loggingInfo(args(argsBuilder).build)
 
     /**
-     * @param openMonitoring Configuration block for JMX and Node monitoring for the MSK cluster. See openMonitoring Argument Reference below.
+     * @param openMonitoring Configuration block for JMX and Node monitoring for the MSK cluster. See `openMonitoring` Block below.
      * @return builder
      */
     def openMonitoring(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterOpenMonitoringArgs.Builder]):
@@ -846,7 +846,7 @@ object msk:
       builder.openMonitoring(args(argsBuilder).build)
 
     /**
-     * @param rebalancing Configuration block for intelligent rebalancing. See rebalancing Argument Reference below. Only applicable to MSK Provisioned clusters with Express brokers.
+     * @param rebalancing Configuration block for intelligent rebalancing. See `rebalancing` Block below. Only applicable to MSK Provisioned clusters with Express brokers.
      * @return builder
      */
     def rebalancing(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterRebalancingArgs.Builder]):
@@ -856,7 +856,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterArgs.Builder)
     /**
-     * @param amazonMskCluster Details of an Amazon MSK cluster. Exactly one of `amazonMskCluster` or `apacheKafkaCluster` must be specified. Detailed below.
+     * @param amazonMskCluster Details of an Amazon MSK cluster. Exactly one of `amazonMskCluster` or `apacheKafkaCluster` must be specified. See `amazonMskCluster` Block below.
      * @return builder
      */
     def amazonMskCluster(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterAmazonMskClusterArgs.Builder]):
@@ -865,7 +865,7 @@ object msk:
       builder.amazonMskCluster(args(argsBuilder).build)
 
     /**
-     * @param apacheKafkaCluster Details of a self-managed or on-premises Apache Kafka cluster. Exactly one of `amazonMskCluster` or `apacheKafkaCluster` must be specified. Detailed below.
+     * @param apacheKafkaCluster Details of a self-managed or on-premises Apache Kafka cluster. Exactly one of `amazonMskCluster` or `apacheKafkaCluster` must be specified. See `apacheKafkaCluster` Block below.
      * @return builder
      */
     def apacheKafkaCluster(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterApacheKafkaClusterArgs.Builder]):
@@ -874,7 +874,7 @@ object msk:
       builder.apacheKafkaCluster(args(argsBuilder).build)
 
     /**
-     * @param clientAuthentication Details of the client authentication used by the Kafka cluster. Only valid for an `apacheKafkaCluster`. Detailed below.
+     * @param clientAuthentication Details of the client authentication used by the Kafka cluster. Only valid for an `apacheKafkaCluster`. See `clientAuthentication` Block below.
      * @return builder
      */
     def clientAuthentication(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterClientAuthenticationArgs.Builder]):
@@ -883,7 +883,7 @@ object msk:
       builder.clientAuthentication(args(argsBuilder).build)
 
     /**
-     * @param encryptionInTransit Details of encryption in transit to the Kafka cluster. Only valid for an `apacheKafkaCluster`. TLS encryption in transit is always applied to an `apacheKafkaCluster`; this block is only required to supply a custom root CA chain (for a cluster using a private or self-signed certificate). Detailed below.
+     * @param encryptionInTransit Details of encryption in transit to the Kafka cluster. Only valid for an `apacheKafkaCluster`. TLS encryption in transit is always applied to an `apacheKafkaCluster`; this block is only required to supply a custom root CA chain (for a cluster using a private or self-signed certificate). See `encryptionInTransit` Block below.
      * @return builder
      */
     def encryptionInTransit(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterEncryptionInTransitArgs.Builder]):
@@ -892,7 +892,7 @@ object msk:
       builder.encryptionInTransit(args(argsBuilder).build)
 
     /**
-     * @param vpcConfig Details of an Amazon VPC which has network connectivity to the Kafka cluster. Provide this on the `amazonMskCluster` entry only; the replicator reaches the Apache Kafka cluster through that VPC.
+     * @param vpcConfig Details of an Amazon VPC which has network connectivity to the Kafka cluster. Provide this on the `amazonMskCluster` entry only; the replicator reaches the Apache Kafka cluster through that VPC. See `vpcConfig` Block below.
      * @return builder
      */
     def vpcConfig(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterVpcConfigArgs.Builder]):
@@ -902,7 +902,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterClientAuthenticationArgs.Builder)
     /**
-     * @param mtls Details of the mTLS client authentication used by the Kafka cluster. Detailed below.
+     * @param mtls Details of the mTLS client authentication used by the Kafka cluster. See `mtls` Block below.
      * @return builder
      */
     def mtls(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterClientAuthenticationMtlsArgs.Builder]):
@@ -911,7 +911,7 @@ object msk:
       builder.mtls(args(argsBuilder).build)
 
     /**
-     * @param saslScram Details of the SASL/SCRAM client authentication used by the Kafka cluster. Detailed below.
+     * @param saslScram Details of the SASL/SCRAM client authentication used by the Kafka cluster. See `saslScram` Block below.
      * @return builder
      */
     def saslScram(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterClientAuthenticationSaslScramArgs.Builder]):
@@ -921,7 +921,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ReplicatorLogDeliveryArgs.Builder)
     /**
-     * @param replicatorLogDelivery Configuration block for replicator log delivery. Detailed below.
+     * @param replicatorLogDelivery Configuration block for replicator log delivery. See `replicatorLogDelivery` Block below.
      * @return builder
      */
     def replicatorLogDelivery(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorLogDeliveryReplicatorLogDeliveryArgs.Builder]):
@@ -931,7 +931,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ReplicatorLogDeliveryReplicatorLogDeliveryArgs.Builder)
     /**
-     * @param cloudwatchLogs Configuration block for replicator log delivery to Amazon CloudWatch Logs. Detailed below.
+     * @param cloudwatchLogs Configuration block for replicator log delivery to Amazon CloudWatch Logs. See `cloudwatchLogs` Block below.
      * @return builder
      */
     def cloudwatchLogs(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorLogDeliveryReplicatorLogDeliveryCloudwatchLogsArgs.Builder]):
@@ -940,7 +940,7 @@ object msk:
       builder.cloudwatchLogs(args(argsBuilder).build)
 
     /**
-     * @param firehose Configuration block for replicator log delivery to Amazon Data Firehose. Detailed below.
+     * @param firehose Configuration block for replicator log delivery to Amazon Data Firehose. See `firehose` Block below.
      * @return builder
      */
     def firehose(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorLogDeliveryReplicatorLogDeliveryFirehoseArgs.Builder]):
@@ -949,7 +949,7 @@ object msk:
       builder.firehose(args(argsBuilder).build)
 
     /**
-     * @param s3 Configuration block for replicator log delivery to Amazon S3. Detailed below.
+     * @param s3 Configuration block for replicator log delivery to Amazon S3. See `s3` Block below.
      * @return builder
      */
     def s3(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorLogDeliveryReplicatorLogDeliveryS3Args.Builder]):
@@ -959,7 +959,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ReplicatorReplicationInfoListArgs.Builder)
     /**
-     * @param consumerGroupReplications Configuration relating to consumer group replication.
+     * @param consumerGroupReplications Configuration relating to consumer group replication. See `consumerGroupReplication` Block below.
      * @return builder
      */
     def consumerGroupReplications(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorReplicationInfoListConsumerGroupReplicationArgs.Builder]*):
@@ -968,7 +968,7 @@ object msk:
       builder.consumerGroupReplications(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param topicReplications Configuration relating to topic replication.
+     * @param topicReplications Configuration relating to topic replication. See `topicReplication` Block below.
      * @return builder
      */
     def topicReplications(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorReplicationInfoListTopicReplicationArgs.Builder]*):
@@ -978,7 +978,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ReplicatorReplicationInfoListTopicReplicationArgs.Builder)
     /**
-     * @param startingPosition Configuration for specifying the position in the topics to start replicating from.
+     * @param startingPosition Configuration for specifying the position in the topics to start replicating from. See `startingPosition` Block below.
      * @return builder
      */
     def startingPosition(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorReplicationInfoListTopicReplicationStartingPositionArgs.Builder]):
@@ -987,7 +987,7 @@ object msk:
       builder.startingPosition(args(argsBuilder).build)
 
     /**
-     * @param topicNameConfiguration Configuration for specifying replicated topic names should be the same as their corresponding upstream topics or prefixed with source cluster alias.
+     * @param topicNameConfiguration Configuration for specifying replicated topic names should be the same as their corresponding upstream topics or prefixed with source cluster alias. See `topicNameConfiguration` Block below.
      * @return builder
      */
     def topicNameConfiguration(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorReplicationInfoListTopicReplicationTopicNameConfigurationArgs.Builder]):
@@ -997,7 +997,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ReplicatorState.Builder)
     /**
-     * @param kafkaClusters The source and target Kafka clusters for the replicator. Exactly two blocks are required. Detailed below.
+     * @param kafkaClusters Source and target Kafka clusters for the replicator. Exactly two blocks are required. See `kafkaCluster` Block below.
      * @return builder
      */
     def kafkaClusters(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterArgs.Builder]*):
@@ -1006,7 +1006,7 @@ object msk:
       builder.kafkaClusters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param logDelivery Configuration block for delivering replicator logs to customer destinations. Detailed below.
+     * @param logDelivery Configuration block for delivering replicator logs to customer destinations. See `logDelivery` Block below.
      * @return builder
      */
     def logDelivery(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorLogDeliveryArgs.Builder]):
@@ -1015,7 +1015,7 @@ object msk:
       builder.logDelivery(args(argsBuilder).build)
 
     /**
-     * @param replicationInfoList A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.
+     * @param replicationInfoList List of replication configurations, where each configuration targets a given source cluster to target cluster replication flow. See `replicationInfoList` Block below.
      * @return builder
      */
     def replicationInfoList(args: Endofunction[com.pulumi.aws.msk.inputs.ReplicatorReplicationInfoListArgs.Builder]):
@@ -1025,7 +1025,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ServerlessClusterClientAuthenticationArgs.Builder)
     /**
-     * @param sasl Details for client authentication using SASL. See below.
+     * @param sasl Details for client authentication using SASL. See `sasl` Block below.
      * @return builder
      */
     def sasl(args: Endofunction[com.pulumi.aws.msk.inputs.ServerlessClusterClientAuthenticationSaslArgs.Builder]):
@@ -1035,7 +1035,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ServerlessClusterClientAuthenticationSaslArgs.Builder)
     /**
-     * @param iam Details for client authentication using IAM. See below.
+     * @param iam Details for client authentication using IAM. See `iam` Block below.
      * @return builder
      */
     def iam(args: Endofunction[com.pulumi.aws.msk.inputs.ServerlessClusterClientAuthenticationSaslIamArgs.Builder]):
@@ -1045,7 +1045,7 @@ object msk:
 
   extension (builder: com.pulumi.aws.msk.inputs.ServerlessClusterState.Builder)
     /**
-     * @param clientAuthentication Specifies client authentication information for the serverless cluster. See below.
+     * @param clientAuthentication Client authentication information for the serverless cluster. See `clientAuthentication` Block below.
      * @return builder
      */
     def clientAuthentication(args: Endofunction[com.pulumi.aws.msk.inputs.ServerlessClusterClientAuthenticationArgs.Builder]):
@@ -1054,7 +1054,7 @@ object msk:
       builder.clientAuthentication(args(argsBuilder).build)
 
     /**
-     * @param vpcConfigs VPC configuration information. See below.
+     * @param vpcConfigs VPC configuration information. See `vpcConfig` Block below.
      * @return builder
      */
     def vpcConfigs(args: Endofunction[com.pulumi.aws.msk.inputs.ServerlessClusterVpcConfigArgs.Builder]*):

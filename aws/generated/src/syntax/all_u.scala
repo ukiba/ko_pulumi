@@ -43,6 +43,7 @@ export ko_pulumi.aws.bedrock.video
 export ko_pulumi.aws.bedrock.videoExtractionConfiguration
 export ko_pulumi.aws.bedrock.vpcConfig
 export ko_pulumi.aws.bedrock.webConfiguration
+export ko_pulumi.aws.bedrock.weekly
 export ko_pulumi.aws.bedrock.weightedOverride
 export ko_pulumi.aws.bedrock.weightedRoute
 export ko_pulumi.aws.bedrock.wordPolicyConfig
@@ -59,6 +60,7 @@ export ko_pulumi.aws.cloudfront.vpcOriginEndpointConfig
 export ko_pulumi.aws.cloudfront.webAcl
 export ko_pulumi.aws.cloudfront.xssProtection
 export ko_pulumi.aws.cloudwatch.upperCaseStrings
+export ko_pulumi.aws.cloudwatch.wallClockWindow
 export ko_pulumi.aws.cloudwatch.warmUpConfiguration
 export ko_pulumi.aws.codeartifact.upstreams
 export ko_pulumi.aws.codebuild.vpcConfig

@@ -24,7 +24,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.CatalogArgs.Builder)
     /**
-     * @param catalogProperties Configuration block of properties for the catalog. See `catalogProperties` below.
+     * @param catalogProperties Configuration block of properties for the catalog. See `catalogProperties` Block below.
      * @return builder
      */
     def catalogProperties(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesArgs.Builder]):
@@ -33,7 +33,7 @@ object glue:
       builder.catalogProperties(args(argsBuilder).build)
 
     /**
-     * @param createDatabaseDefaultPermissions List of default permissions on databases for principals. See `createDatabaseDefaultPermissions` below.
+     * @param createDatabaseDefaultPermissions List of default permissions on databases for principals. See `createDatabaseDefaultPermissions` Block below.
      * @return builder
      */
     def createDatabaseDefaultPermissions(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCreateDatabaseDefaultPermissionArgs.Builder]*):
@@ -42,7 +42,7 @@ object glue:
       builder.createDatabaseDefaultPermissions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param createTableDefaultPermissions List of default permissions on tables for principals. See `createTableDefaultPermissions` below.
+     * @param createTableDefaultPermissions List of default permissions on tables for principals. See `createTableDefaultPermissions` Block below.
      * @return builder
      */
     def createTableDefaultPermissions(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCreateTableDefaultPermissionArgs.Builder]*):
@@ -51,7 +51,7 @@ object glue:
       builder.createTableDefaultPermissions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param federatedCatalog Configuration block for a federated catalog. See `federatedCatalog` below.
+     * @param federatedCatalog Configuration block for a federated catalog. See `federatedCatalog` Block below.
      * @return builder
      */
     def federatedCatalog(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogFederatedCatalogArgs.Builder]):
@@ -60,7 +60,7 @@ object glue:
       builder.federatedCatalog(args(argsBuilder).build)
 
     /**
-     * @param targetRedshiftCatalog Configuration block for a target Redshift catalog. See `targetRedshiftCatalog` below.
+     * @param targetRedshiftCatalog Configuration block for a target Redshift catalog. See `targetRedshiftCatalog` Block below.
      * @return builder
      */
     def targetRedshiftCatalog(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTargetRedshiftCatalogArgs.Builder]):
@@ -93,7 +93,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.CatalogDatabaseArgs.Builder)
     /**
-     * @param createTableDefaultPermissions Creates a set of default permissions on the table for principals. See `createTableDefaultPermission` below.
+     * @param createTableDefaultPermissions Creates a set of default permissions on the table for principals. See `createTableDefaultPermission` Block below.
      * @return builder
      */
     def createTableDefaultPermissions(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogDatabaseCreateTableDefaultPermissionArgs.Builder]*):
@@ -102,7 +102,7 @@ object glue:
       builder.createTableDefaultPermissions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param federatedDatabase Configuration block that references an entity outside the AWS Glue Data Catalog. See `federatedDatabase` below.
+     * @param federatedDatabase Configuration block that references an entity outside the AWS Glue Data Catalog. See `federatedDatabase` Block below.
      * @return builder
      */
     def federatedDatabase(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogDatabaseFederatedDatabaseArgs.Builder]):
@@ -111,7 +111,7 @@ object glue:
       builder.federatedDatabase(args(argsBuilder).build)
 
     /**
-     * @param targetDatabase Configuration block for a target database for resource linking. See `targetDatabase` below.
+     * @param targetDatabase Configuration block for a target database for resource linking. See `targetDatabase` Block below.
      * @return builder
      */
     def targetDatabase(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogDatabaseTargetDatabaseArgs.Builder]):
@@ -195,7 +195,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.CatalogTableOptimizerArgs.Builder)
     /**
-     * @param configuration A configuration block that defines the table optimizer settings. See Configuration for additional details.
+     * @param configuration Configuration block that defines the table optimizer settings. See `configuration` Block for additional details.
      * @return builder
      */
     def configuration(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationArgs.Builder]):
@@ -220,7 +220,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.ClassifierArgs.Builder)
     /**
-     * @param csvClassifier A classifier for CSV content. Defined below.
+     * @param csvClassifier Classifier for CSV content. Defined below.
      * @return builder
      */
     def csvClassifier(args: Endofunction[com.pulumi.aws.glue.inputs.ClassifierCsvClassifierArgs.Builder]):
@@ -229,7 +229,7 @@ object glue:
       builder.csvClassifier(args(argsBuilder).build)
 
     /**
-     * @param grokClassifier A classifier that uses grok patterns. Defined below.
+     * @param grokClassifier Classifier that uses grok patterns. Defined below.
      * @return builder
      */
     def grokClassifier(args: Endofunction[com.pulumi.aws.glue.inputs.ClassifierGrokClassifierArgs.Builder]):
@@ -238,7 +238,7 @@ object glue:
       builder.grokClassifier(args(argsBuilder).build)
 
     /**
-     * @param jsonClassifier A classifier for JSON content. Defined below.
+     * @param jsonClassifier Classifier for JSON content. Defined below.
      * @return builder
      */
     def jsonClassifier(args: Endofunction[com.pulumi.aws.glue.inputs.ClassifierJsonClassifierArgs.Builder]):
@@ -247,7 +247,7 @@ object glue:
       builder.jsonClassifier(args(argsBuilder).build)
 
     /**
-     * @param xmlClassifier A classifier for XML content. Defined below.
+     * @param xmlClassifier Classifier for XML content. Defined below.
      * @return builder
      */
     def xmlClassifier(args: Endofunction[com.pulumi.aws.glue.inputs.ClassifierXmlClassifierArgs.Builder]):
@@ -312,7 +312,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.CrawlerArgs.Builder)
     /**
-     * @param catalogTargets List of nested AWS Glue Data Catalog target arguments. See Catalog Target below.
+     * @param catalogTargets List of nested AWS Glue Data Catalog target arguments. See `catalogTarget` below.
      * @return builder
      */
     def catalogTargets(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerCatalogTargetArgs.Builder]*):
@@ -321,7 +321,7 @@ object glue:
       builder.catalogTargets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param deltaTargets List of nested Delta Lake target arguments. See Delta Target below.
+     * @param deltaTargets List of nested Delta Lake target arguments. See `deltaTarget` below.
      * @return builder
      */
     def deltaTargets(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerDeltaTargetArgs.Builder]*):
@@ -330,7 +330,7 @@ object glue:
       builder.deltaTargets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param dynamodbTargets List of nested DynamoDB target arguments. See Dynamodb Target below.
+     * @param dynamodbTargets List of nested DynamoDB target arguments. See `dynamodbTarget` below.
      * @return builder
      */
     def dynamodbTargets(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerDynamodbTargetArgs.Builder]*):
@@ -339,7 +339,7 @@ object glue:
       builder.dynamodbTargets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param hudiTargets List of nested Hudi target arguments. See Iceberg Target below.
+     * @param hudiTargets List of nested Hudi target arguments. See `hudiTarget` below.
      * @return builder
      */
     def hudiTargets(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerHudiTargetArgs.Builder]*):
@@ -348,7 +348,7 @@ object glue:
       builder.hudiTargets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param icebergTargets List of nested Iceberg target arguments. See Iceberg Target below.
+     * @param icebergTargets List of nested Iceberg target arguments. See `icebergTarget` below.
      * @return builder
      */
     def icebergTargets(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerIcebergTargetArgs.Builder]*):
@@ -357,7 +357,7 @@ object glue:
       builder.icebergTargets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param jdbcTargets List of nested JDBC target arguments. See JDBC Target below.
+     * @param jdbcTargets List of nested JDBC target arguments. See `jdbcTarget` below.
      * @return builder
      */
     def jdbcTargets(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerJdbcTargetArgs.Builder]*):
@@ -366,7 +366,7 @@ object glue:
       builder.jdbcTargets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param lakeFormationConfiguration Specifies Lake Formation configuration settings for the crawler. See Lake Formation Configuration below.
+     * @param lakeFormationConfiguration Lake Formation configuration settings for the crawler. See `lakeFormationConfiguration` below.
      * @return builder
      */
     def lakeFormationConfiguration(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerLakeFormationConfigurationArgs.Builder]):
@@ -375,7 +375,7 @@ object glue:
       builder.lakeFormationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param lineageConfiguration Specifies data lineage configuration settings for the crawler. See Lineage Configuration below.
+     * @param lineageConfiguration Data lineage configuration settings for the crawler. See `lineageConfiguration` below.
      * @return builder
      */
     def lineageConfiguration(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerLineageConfigurationArgs.Builder]):
@@ -384,7 +384,7 @@ object glue:
       builder.lineageConfiguration(args(argsBuilder).build)
 
     /**
-     * @param mongodbTargets List of nested MongoDB target arguments. See MongoDB Target below.
+     * @param mongodbTargets List of nested MongoDB target arguments. See `mongodbTarget` below.
      * @return builder
      */
     def mongodbTargets(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerMongodbTargetArgs.Builder]*):
@@ -393,7 +393,7 @@ object glue:
       builder.mongodbTargets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param recrawlPolicy A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.. See Recrawl Policy below.
+     * @param recrawlPolicy Policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run. See `recrawlPolicy` below.
      * @return builder
      */
     def recrawlPolicy(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerRecrawlPolicyArgs.Builder]):
@@ -402,7 +402,7 @@ object glue:
       builder.recrawlPolicy(args(argsBuilder).build)
 
     /**
-     * @param s3Targets List of nested Amazon S3 target arguments. See S3 Target below.
+     * @param s3Targets List of nested Amazon S3 target arguments. See `s3Target` below.
      * @return builder
      */
     def s3Targets(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerS3TargetArgs.Builder]*):
@@ -411,7 +411,7 @@ object glue:
       builder.s3Targets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param schemaChangePolicy Policy for the crawler&#39;s update and deletion behavior. See Schema Change Policy below.
+     * @param schemaChangePolicy Policy for the crawler&#39;s update and deletion behavior. See `schemaChangePolicy` below.
      * @return builder
      */
     def schemaChangePolicy(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerSchemaChangePolicyArgs.Builder]):
@@ -429,7 +429,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.DataCatalogEncryptionSettingsArgs.Builder)
     /**
-     * @param dataCatalogEncryptionSettings The security configuration to set. see Data Catalog Encryption Settings.
+     * @param dataCatalogEncryptionSettings Security configuration to set. see `dataCatalogEncryptionSettings` Block.
      * @return builder
      */
     def dataCatalogEncryptionSettings(args: Endofunction[com.pulumi.aws.glue.inputs.DataCatalogEncryptionSettingsDataCatalogEncryptionSettingsArgs.Builder]):
@@ -457,7 +457,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.DataQualityRulesetArgs.Builder)
     /**
-     * @param targetTable A Configuration block specifying a target table associated with the data quality ruleset. See `targetTable` below.
+     * @param targetTable Configuration block specifying a target table associated with the data quality ruleset. See `targetTable` Block below.
      * @return builder
      */
     def targetTable(args: Endofunction[com.pulumi.aws.glue.inputs.DataQualityRulesetTargetTableArgs.Builder]):
@@ -586,7 +586,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.JobArgs.Builder)
     /**
-     * @param command The command of the job. Defined below.
+     * @param command Command of the job. Defined below.
      * @return builder
      */
     def command(args: Endofunction[com.pulumi.aws.glue.inputs.JobCommandArgs.Builder]):
@@ -613,7 +613,7 @@ object glue:
       builder.notificationProperty(args(argsBuilder).build)
 
     /**
-     * @param sourceControlDetails The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository. Defined below.
+     * @param sourceControlDetails Details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository. Defined below.
      * @return builder
      */
     def sourceControlDetails(args: Endofunction[com.pulumi.aws.glue.inputs.JobSourceControlDetailsArgs.Builder]):
@@ -641,7 +641,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.MLTransformArgs.Builder)
     /**
-     * @param inputRecordTables A list of AWS Glue table definitions used by the transform. see Input Record Tables.
+     * @param inputRecordTables List of AWS Glue table definitions used by the transform. See `inputRecordTables`.
      * @return builder
      */
     def inputRecordTables(args: Endofunction[com.pulumi.aws.glue.inputs.MLTransformInputRecordTableArgs.Builder]*):
@@ -650,7 +650,7 @@ object glue:
       builder.inputRecordTables(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param parameters The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type. see Parameters.
+     * @param parameters Algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type. See `parameters`.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.glue.inputs.MLTransformParametersArgs.Builder]):
@@ -668,7 +668,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.PartitionArgs.Builder)
     /**
-     * @param storageDescriptor A storage descriptor object containing information about the physical storage of this table. You can refer to the [Glue Developer Guide](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-StorageDescriptor) for a full explanation of this object.
+     * @param storageDescriptor Storage descriptor object containing information about the physical storage of this table. You can refer to the [Glue Developer Guide](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-StorageDescriptor) for a full explanation of this object.
      * @return builder
      */
     def storageDescriptor(args: Endofunction[com.pulumi.aws.glue.inputs.PartitionStorageDescriptorArgs.Builder]):
@@ -688,7 +688,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.PartitionIndexArgs.Builder)
     /**
-     * @param partitionIndex Configuration block for a partition index. See `partitionIndex` below.
+     * @param partitionIndex Configuration block for a partition index. See `partitionIndex` Block below.
      * @return builder
      */
     def partitionIndex(args: Endofunction[com.pulumi.aws.glue.inputs.PartitionIndexPartitionIndexArgs.Builder]):
@@ -775,7 +775,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.TriggerArgs.Builder)
     /**
-     * @param actions List of actions initiated by this trigger when it fires. See Actions Below.
+     * @param actions List of actions initiated by this trigger when it fires. See `actions` below.
      * @return builder
      */
     def actions(args: Endofunction[com.pulumi.aws.glue.inputs.TriggerActionArgs.Builder]*):
@@ -784,7 +784,7 @@ object glue:
       builder.actions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param eventBatchingConditions Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires. See Event Batching Condition.
+     * @param eventBatchingConditions Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires. See `eventBatchingCondition`.
      * @return builder
      */
     def eventBatchingConditions(args: Endofunction[com.pulumi.aws.glue.inputs.TriggerEventBatchingConditionArgs.Builder]*):
@@ -793,7 +793,7 @@ object glue:
       builder.eventBatchingConditions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param predicate A predicate to specify when the new trigger should fire. Required when trigger type is `CONDITIONAL`. See Predicate Below.
+     * @param predicate Predicate to specify when the new trigger should fire. Required when trigger type is `CONDITIONAL`. See `predicate` below.
      * @return builder
      */
     def predicate(args: Endofunction[com.pulumi.aws.glue.inputs.TriggerPredicateArgs.Builder]):
@@ -814,7 +814,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.UserDefinedFunctionArgs.Builder)
     /**
-     * @param resourceUris The configuration block for Resource URIs. See resource uris below for more details.
+     * @param resourceUris Configuration block for Resource URIs. See `resourceUris` Block below for more details.
      * @return builder
      */
     def resourceUris(args: Endofunction[com.pulumi.aws.glue.inputs.UserDefinedFunctionResourceUriArgs.Builder]*):
@@ -846,7 +846,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesArgs.Builder)
     /**
-     * @param dataLakeAccessProperties Configuration block for data lake access properties. See `dataLakeAccessProperties` below.
+     * @param dataLakeAccessProperties Configuration block for data lake access properties. See `dataLakeAccessProperties` Block below.
      * @return builder
      */
     def dataLakeAccessProperties(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesDataLakeAccessPropertiesArgs.Builder]):
@@ -855,7 +855,7 @@ object glue:
       builder.dataLakeAccessProperties(args(argsBuilder).build)
 
     /**
-     * @param icebergOptimizationProperties Configuration block for Iceberg optimization properties. See `icebergOptimizationProperties` below.
+     * @param icebergOptimizationProperties Configuration block for Iceberg optimization properties. See `icebergOptimizationProperties` Block below.
      * @return builder
      */
     def icebergOptimizationProperties(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesIcebergOptimizationPropertiesArgs.Builder]):
@@ -865,7 +865,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogCreateDatabaseDefaultPermissionArgs.Builder)
     /**
-     * @param principal Principal who is granted permissions. See `principal` below.
+     * @param principal Principal who is granted permissions. See `principal` Block below.
      * @return builder
      */
     def principal(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCreateDatabaseDefaultPermissionPrincipalArgs.Builder]):
@@ -875,7 +875,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogCreateTableDefaultPermissionArgs.Builder)
     /**
-     * @param principal Principal who is granted permissions. See `principal` below.
+     * @param principal Principal who is granted permissions. See `principal` Block below.
      * @return builder
      */
     def principal(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCreateTableDefaultPermissionPrincipalArgs.Builder]):
@@ -885,7 +885,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogDatabaseCreateTableDefaultPermissionArgs.Builder)
     /**
-     * @param principal The principal who is granted permissions.. See `principal` below.
+     * @param principal Principal who is granted permissions.. See `principal` Block below.
      * @return builder
      */
     def principal(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogDatabaseCreateTableDefaultPermissionPrincipalArgs.Builder]):
@@ -895,7 +895,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogDatabaseState.Builder)
     /**
-     * @param createTableDefaultPermissions Creates a set of default permissions on the table for principals. See `createTableDefaultPermission` below.
+     * @param createTableDefaultPermissions Creates a set of default permissions on the table for principals. See `createTableDefaultPermission` Block below.
      * @return builder
      */
     def createTableDefaultPermissions(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogDatabaseCreateTableDefaultPermissionArgs.Builder]*):
@@ -904,7 +904,7 @@ object glue:
       builder.createTableDefaultPermissions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param federatedDatabase Configuration block that references an entity outside the AWS Glue Data Catalog. See `federatedDatabase` below.
+     * @param federatedDatabase Configuration block that references an entity outside the AWS Glue Data Catalog. See `federatedDatabase` Block below.
      * @return builder
      */
     def federatedDatabase(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogDatabaseFederatedDatabaseArgs.Builder]):
@@ -913,7 +913,7 @@ object glue:
       builder.federatedDatabase(args(argsBuilder).build)
 
     /**
-     * @param targetDatabase Configuration block for a target database for resource linking. See `targetDatabase` below.
+     * @param targetDatabase Configuration block for a target database for resource linking. See `targetDatabase` Block below.
      * @return builder
      */
     def targetDatabase(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogDatabaseTargetDatabaseArgs.Builder]):
@@ -923,7 +923,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogState.Builder)
     /**
-     * @param catalogProperties Configuration block of properties for the catalog. See `catalogProperties` below.
+     * @param catalogProperties Configuration block of properties for the catalog. See `catalogProperties` Block below.
      * @return builder
      */
     def catalogProperties(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesArgs.Builder]):
@@ -932,7 +932,7 @@ object glue:
       builder.catalogProperties(args(argsBuilder).build)
 
     /**
-     * @param createDatabaseDefaultPermissions List of default permissions on databases for principals. See `createDatabaseDefaultPermissions` below.
+     * @param createDatabaseDefaultPermissions List of default permissions on databases for principals. See `createDatabaseDefaultPermissions` Block below.
      * @return builder
      */
     def createDatabaseDefaultPermissions(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCreateDatabaseDefaultPermissionArgs.Builder]*):
@@ -941,7 +941,7 @@ object glue:
       builder.createDatabaseDefaultPermissions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param createTableDefaultPermissions List of default permissions on tables for principals. See `createTableDefaultPermissions` below.
+     * @param createTableDefaultPermissions List of default permissions on tables for principals. See `createTableDefaultPermissions` Block below.
      * @return builder
      */
     def createTableDefaultPermissions(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCreateTableDefaultPermissionArgs.Builder]*):
@@ -950,7 +950,7 @@ object glue:
       builder.createTableDefaultPermissions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param federatedCatalog Configuration block for a federated catalog. See `federatedCatalog` below.
+     * @param federatedCatalog Configuration block for a federated catalog. See `federatedCatalog` Block below.
      * @return builder
      */
     def federatedCatalog(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogFederatedCatalogArgs.Builder]):
@@ -959,7 +959,7 @@ object glue:
       builder.federatedCatalog(args(argsBuilder).build)
 
     /**
-     * @param targetRedshiftCatalog Configuration block for a target Redshift catalog. See `targetRedshiftCatalog` below.
+     * @param targetRedshiftCatalog Configuration block for a target Redshift catalog. See `targetRedshiftCatalog` Block below.
      * @return builder
      */
     def targetRedshiftCatalog(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTargetRedshiftCatalogArgs.Builder]):
@@ -1052,7 +1052,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationArgs.Builder)
     /**
-     * @param compactionConfiguration The configuration block for a compaction optimizer. See Compaction Configuration for additional details.
+     * @param compactionConfiguration Configuration block for a compaction optimizer. See `compactionConfiguration` Block for additional details.
      * @return builder
      */
     def compactionConfiguration(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationCompactionConfigurationArgs.Builder]):
@@ -1061,7 +1061,7 @@ object glue:
       builder.compactionConfiguration(args(argsBuilder).build)
 
     /**
-     * @param orphanFileDeletionConfiguration The configuration block for an orphan file deletion optimizer. See Orphan File Deletion Configuration for additional details.
+     * @param orphanFileDeletionConfiguration Configuration block for an orphan file deletion optimizer. See `orphanFileDeletionConfiguration` Block for additional details.
      * @return builder
      */
     def orphanFileDeletionConfiguration(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationOrphanFileDeletionConfigurationArgs.Builder]):
@@ -1070,7 +1070,7 @@ object glue:
       builder.orphanFileDeletionConfiguration(args(argsBuilder).build)
 
     /**
-     * @param retentionConfiguration The configuration block for a snapshot retention optimizer. See Retention Configuration for additional details.
+     * @param retentionConfiguration Configuration block for a snapshot retention optimizer. See `retentionConfiguration` Block for additional details.
      * @return builder
      */
     def retentionConfiguration(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationRetentionConfigurationArgs.Builder]):
@@ -1080,7 +1080,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationCompactionConfigurationArgs.Builder)
     /**
-     * @param icebergConfiguration The configuration for an Iceberg compaction optimizer.
+     * @param icebergConfiguration Configuration for an Iceberg compaction optimizer. See `configuration.compaction_configuration.iceberg_configuration` Block for additional details.
      * @return builder
      */
     def icebergConfiguration(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationCompactionConfigurationIcebergConfigurationArgs.Builder]):
@@ -1090,7 +1090,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationOrphanFileDeletionConfigurationArgs.Builder)
     /**
-     * @param icebergConfiguration The configuration for an Iceberg orphan file deletion optimizer.
+     * @param icebergConfiguration Configuration for an Iceberg orphan file deletion optimizer. See `configuration.orphan_file_deletion_configuration.iceberg_configuration` Block for additional details.
      * @return builder
      */
     def icebergConfiguration(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationOrphanFileDeletionConfigurationIcebergConfigurationArgs.Builder]):
@@ -1100,7 +1100,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationRetentionConfigurationArgs.Builder)
     /**
-     * @param icebergConfiguration The configuration for an Iceberg snapshot retention optimizer.
+     * @param icebergConfiguration Configuration for an Iceberg snapshot retention optimizer. See `configuration.retention_configuration.iceberg_configuration` Block for additional details.
      * @return builder
      */
     def icebergConfiguration(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationRetentionConfigurationIcebergConfigurationArgs.Builder]):
@@ -1110,7 +1110,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOptimizerState.Builder)
     /**
-     * @param configuration A configuration block that defines the table optimizer settings. See Configuration for additional details.
+     * @param configuration Configuration block that defines the table optimizer settings. See `configuration` Block for additional details.
      * @return builder
      */
     def configuration(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationArgs.Builder]):
@@ -1241,7 +1241,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.ClassifierState.Builder)
     /**
-     * @param csvClassifier A classifier for CSV content. Defined below.
+     * @param csvClassifier Classifier for CSV content. Defined below.
      * @return builder
      */
     def csvClassifier(args: Endofunction[com.pulumi.aws.glue.inputs.ClassifierCsvClassifierArgs.Builder]):
@@ -1250,7 +1250,7 @@ object glue:
       builder.csvClassifier(args(argsBuilder).build)
 
     /**
-     * @param grokClassifier A classifier that uses grok patterns. Defined below.
+     * @param grokClassifier Classifier that uses grok patterns. Defined below.
      * @return builder
      */
     def grokClassifier(args: Endofunction[com.pulumi.aws.glue.inputs.ClassifierGrokClassifierArgs.Builder]):
@@ -1259,7 +1259,7 @@ object glue:
       builder.grokClassifier(args(argsBuilder).build)
 
     /**
-     * @param jsonClassifier A classifier for JSON content. Defined below.
+     * @param jsonClassifier Classifier for JSON content. Defined below.
      * @return builder
      */
     def jsonClassifier(args: Endofunction[com.pulumi.aws.glue.inputs.ClassifierJsonClassifierArgs.Builder]):
@@ -1268,7 +1268,7 @@ object glue:
       builder.jsonClassifier(args(argsBuilder).build)
 
     /**
-     * @param xmlClassifier A classifier for XML content. Defined below.
+     * @param xmlClassifier Classifier for XML content. Defined below.
      * @return builder
      */
     def xmlClassifier(args: Endofunction[com.pulumi.aws.glue.inputs.ClassifierXmlClassifierArgs.Builder]):
@@ -1344,7 +1344,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CrawlerState.Builder)
     /**
-     * @param catalogTargets List of nested AWS Glue Data Catalog target arguments. See Catalog Target below.
+     * @param catalogTargets List of nested AWS Glue Data Catalog target arguments. See `catalogTarget` below.
      * @return builder
      */
     def catalogTargets(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerCatalogTargetArgs.Builder]*):
@@ -1353,7 +1353,7 @@ object glue:
       builder.catalogTargets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param deltaTargets List of nested Delta Lake target arguments. See Delta Target below.
+     * @param deltaTargets List of nested Delta Lake target arguments. See `deltaTarget` below.
      * @return builder
      */
     def deltaTargets(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerDeltaTargetArgs.Builder]*):
@@ -1362,7 +1362,7 @@ object glue:
       builder.deltaTargets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param dynamodbTargets List of nested DynamoDB target arguments. See Dynamodb Target below.
+     * @param dynamodbTargets List of nested DynamoDB target arguments. See `dynamodbTarget` below.
      * @return builder
      */
     def dynamodbTargets(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerDynamodbTargetArgs.Builder]*):
@@ -1371,7 +1371,7 @@ object glue:
       builder.dynamodbTargets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param hudiTargets List of nested Hudi target arguments. See Iceberg Target below.
+     * @param hudiTargets List of nested Hudi target arguments. See `hudiTarget` below.
      * @return builder
      */
     def hudiTargets(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerHudiTargetArgs.Builder]*):
@@ -1380,7 +1380,7 @@ object glue:
       builder.hudiTargets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param icebergTargets List of nested Iceberg target arguments. See Iceberg Target below.
+     * @param icebergTargets List of nested Iceberg target arguments. See `icebergTarget` below.
      * @return builder
      */
     def icebergTargets(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerIcebergTargetArgs.Builder]*):
@@ -1389,7 +1389,7 @@ object glue:
       builder.icebergTargets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param jdbcTargets List of nested JDBC target arguments. See JDBC Target below.
+     * @param jdbcTargets List of nested JDBC target arguments. See `jdbcTarget` below.
      * @return builder
      */
     def jdbcTargets(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerJdbcTargetArgs.Builder]*):
@@ -1398,7 +1398,7 @@ object glue:
       builder.jdbcTargets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param lakeFormationConfiguration Specifies Lake Formation configuration settings for the crawler. See Lake Formation Configuration below.
+     * @param lakeFormationConfiguration Lake Formation configuration settings for the crawler. See `lakeFormationConfiguration` below.
      * @return builder
      */
     def lakeFormationConfiguration(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerLakeFormationConfigurationArgs.Builder]):
@@ -1407,7 +1407,7 @@ object glue:
       builder.lakeFormationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param lineageConfiguration Specifies data lineage configuration settings for the crawler. See Lineage Configuration below.
+     * @param lineageConfiguration Data lineage configuration settings for the crawler. See `lineageConfiguration` below.
      * @return builder
      */
     def lineageConfiguration(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerLineageConfigurationArgs.Builder]):
@@ -1416,7 +1416,7 @@ object glue:
       builder.lineageConfiguration(args(argsBuilder).build)
 
     /**
-     * @param mongodbTargets List of nested MongoDB target arguments. See MongoDB Target below.
+     * @param mongodbTargets List of nested MongoDB target arguments. See `mongodbTarget` below.
      * @return builder
      */
     def mongodbTargets(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerMongodbTargetArgs.Builder]*):
@@ -1425,7 +1425,7 @@ object glue:
       builder.mongodbTargets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param recrawlPolicy A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.. See Recrawl Policy below.
+     * @param recrawlPolicy Policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run. See `recrawlPolicy` below.
      * @return builder
      */
     def recrawlPolicy(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerRecrawlPolicyArgs.Builder]):
@@ -1434,7 +1434,7 @@ object glue:
       builder.recrawlPolicy(args(argsBuilder).build)
 
     /**
-     * @param s3Targets List of nested Amazon S3 target arguments. See S3 Target below.
+     * @param s3Targets List of nested Amazon S3 target arguments. See `s3Target` below.
      * @return builder
      */
     def s3Targets(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerS3TargetArgs.Builder]*):
@@ -1443,7 +1443,7 @@ object glue:
       builder.s3Targets(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param schemaChangePolicy Policy for the crawler&#39;s update and deletion behavior. See Schema Change Policy below.
+     * @param schemaChangePolicy Policy for the crawler&#39;s update and deletion behavior. See `schemaChangePolicy` below.
      * @return builder
      */
     def schemaChangePolicy(args: Endofunction[com.pulumi.aws.glue.inputs.CrawlerSchemaChangePolicyArgs.Builder]):
@@ -1453,7 +1453,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.DataCatalogEncryptionSettingsDataCatalogEncryptionSettingsArgs.Builder)
     /**
-     * @param connectionPasswordEncryption When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of CreateConnection or UpdateConnection and store it in the ENCRYPTED_PASSWORD field in the connection properties. You can enable catalog encryption or only password encryption. see Connection Password Encryption.
+     * @param connectionPasswordEncryption When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of CreateConnection or UpdateConnection and store it in the ENCRYPTED_PASSWORD field in the connection properties. You can enable catalog encryption or only password encryption. see `connectionPasswordEncryption` Block.
      * @return builder
      */
     def connectionPasswordEncryption(args: Endofunction[com.pulumi.aws.glue.inputs.DataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionArgs.Builder]):
@@ -1462,7 +1462,7 @@ object glue:
       builder.connectionPasswordEncryption(args(argsBuilder).build)
 
     /**
-     * @param encryptionAtRest Specifies the encryption-at-rest configuration for the Data Catalog. see Encryption At Rest.
+     * @param encryptionAtRest Encryption-at-rest configuration for the Data Catalog. see `encryptionAtRest` Block.
      * @return builder
      */
     def encryptionAtRest(args: Endofunction[com.pulumi.aws.glue.inputs.DataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestArgs.Builder]):
@@ -1472,7 +1472,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.DataCatalogEncryptionSettingsState.Builder)
     /**
-     * @param dataCatalogEncryptionSettings The security configuration to set. see Data Catalog Encryption Settings.
+     * @param dataCatalogEncryptionSettings Security configuration to set. see `dataCatalogEncryptionSettings` Block.
      * @return builder
      */
     def dataCatalogEncryptionSettings(args: Endofunction[com.pulumi.aws.glue.inputs.DataCatalogEncryptionSettingsDataCatalogEncryptionSettingsArgs.Builder]):
@@ -1482,7 +1482,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.DataQualityRulesetState.Builder)
     /**
-     * @param targetTable A Configuration block specifying a target table associated with the data quality ruleset. See `targetTable` below.
+     * @param targetTable Configuration block specifying a target table associated with the data quality ruleset. See `targetTable` Block below.
      * @return builder
      */
     def targetTable(args: Endofunction[com.pulumi.aws.glue.inputs.DataQualityRulesetTargetTableArgs.Builder]):
@@ -1521,7 +1521,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.JobState.Builder)
     /**
-     * @param command The command of the job. Defined below.
+     * @param command Command of the job. Defined below.
      * @return builder
      */
     def command(args: Endofunction[com.pulumi.aws.glue.inputs.JobCommandArgs.Builder]):
@@ -1548,7 +1548,7 @@ object glue:
       builder.notificationProperty(args(argsBuilder).build)
 
     /**
-     * @param sourceControlDetails The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository. Defined below.
+     * @param sourceControlDetails Details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository. Defined below.
      * @return builder
      */
     def sourceControlDetails(args: Endofunction[com.pulumi.aws.glue.inputs.JobSourceControlDetailsArgs.Builder]):
@@ -1558,7 +1558,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.MLTransformParametersArgs.Builder)
     /**
-     * @param findMatchesParameters The parameters for the find matches algorithm. see Find Matches Parameters.
+     * @param findMatchesParameters Parameters for the find matches algorithm. See `findMatchesParameters`.
      * @return builder
      */
     def findMatchesParameters(args: Endofunction[com.pulumi.aws.glue.inputs.MLTransformParametersFindMatchesParametersArgs.Builder]):
@@ -1568,7 +1568,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.MLTransformState.Builder)
     /**
-     * @param inputRecordTables A list of AWS Glue table definitions used by the transform. see Input Record Tables.
+     * @param inputRecordTables List of AWS Glue table definitions used by the transform. See `inputRecordTables`.
      * @return builder
      */
     def inputRecordTables(args: Endofunction[com.pulumi.aws.glue.inputs.MLTransformInputRecordTableArgs.Builder]*):
@@ -1577,7 +1577,7 @@ object glue:
       builder.inputRecordTables(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param parameters The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type. see Parameters.
+     * @param parameters Algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type. See `parameters`.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.glue.inputs.MLTransformParametersArgs.Builder]):
@@ -1586,7 +1586,7 @@ object glue:
       builder.parameters(args(argsBuilder).build)
 
     /**
-     * @param schemas The object that represents the schema that this transform accepts. see Schema.
+     * @param schemas Object that represents the schema that this transform accepts. See `schema`.
      * @return builder
      */
     def schemas(args: Endofunction[com.pulumi.aws.glue.inputs.MLTransformSchemaArgs.Builder]*):
@@ -1596,7 +1596,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.PartitionIndexState.Builder)
     /**
-     * @param partitionIndex Configuration block for a partition index. See `partitionIndex` below.
+     * @param partitionIndex Configuration block for a partition index. See `partitionIndex` Block below.
      * @return builder
      */
     def partitionIndex(args: Endofunction[com.pulumi.aws.glue.inputs.PartitionIndexPartitionIndexArgs.Builder]):
@@ -1606,7 +1606,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.PartitionState.Builder)
     /**
-     * @param storageDescriptor A storage descriptor object containing information about the physical storage of this table. You can refer to the [Glue Developer Guide](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-StorageDescriptor) for a full explanation of this object.
+     * @param storageDescriptor Storage descriptor object containing information about the physical storage of this table. You can refer to the [Glue Developer Guide](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-StorageDescriptor) for a full explanation of this object.
      * @return builder
      */
     def storageDescriptor(args: Endofunction[com.pulumi.aws.glue.inputs.PartitionStorageDescriptorArgs.Builder]):
@@ -1616,7 +1616,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.PartitionStorageDescriptorArgs.Builder)
     /**
-     * @param columns A list of the Columns in the table.
+     * @param columns List of the `columns` in the table.
      * @return builder
      */
     def columns(args: Endofunction[com.pulumi.aws.glue.inputs.PartitionStorageDescriptorColumnArgs.Builder]*):
@@ -1643,7 +1643,7 @@ object glue:
       builder.skewedInfo(args(argsBuilder).build)
 
     /**
-     * @param sortColumns A list of Order objects specifying the sort order of each bucket in the table.
+     * @param sortColumns List of `sortColumns` objects specifying the sort order of each bucket in the table.
      * @return builder
      */
     def sortColumns(args: Endofunction[com.pulumi.aws.glue.inputs.PartitionStorageDescriptorSortColumnArgs.Builder]*):
@@ -1652,18 +1652,26 @@ object glue:
       builder.sortColumns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.glue.inputs.SecurityConfigurationEncryptionConfigurationArgs.Builder)
+    /**
+     * @param cloudwatchEncryption `cloudwatchEncryption` block as described below, which contains encryption configuration for CloudWatch.
+     * @return builder
+     */
     def cloudwatchEncryption(args: Endofunction[com.pulumi.aws.glue.inputs.SecurityConfigurationEncryptionConfigurationCloudwatchEncryptionArgs.Builder]):
         com.pulumi.aws.glue.inputs.SecurityConfigurationEncryptionConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.glue.inputs.SecurityConfigurationEncryptionConfigurationCloudwatchEncryptionArgs.builder
       builder.cloudwatchEncryption(args(argsBuilder).build)
 
+    /**
+     * @param jobBookmarksEncryption `jobBookmarksEncryption` block as described below, which contains encryption configuration for job bookmarks.
+     * @return builder
+     */
     def jobBookmarksEncryption(args: Endofunction[com.pulumi.aws.glue.inputs.SecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionArgs.Builder]):
         com.pulumi.aws.glue.inputs.SecurityConfigurationEncryptionConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.glue.inputs.SecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionArgs.builder
       builder.jobBookmarksEncryption(args(argsBuilder).build)
 
     /**
-     * @param s3Encryption A ` s3Encryption  ` block as described below, which contains encryption configuration for S3 data.
+     * @param s3Encryption `s3Encryption` block as described below, which contains encryption configuration for S3 data.
      * @return builder
      */
     def s3Encryption(args: Endofunction[com.pulumi.aws.glue.inputs.SecurityConfigurationEncryptionConfigurationS3EncryptionArgs.Builder]):
@@ -1683,7 +1691,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.TriggerActionArgs.Builder)
     /**
-     * @param notificationProperty Specifies configuration properties of a job run notification. See Notification Property details below.
+     * @param notificationProperty Configuration properties of a job run notification. See `notificationProperty` details below.
      * @return builder
      */
     def notificationProperty(args: Endofunction[com.pulumi.aws.glue.inputs.TriggerActionNotificationPropertyArgs.Builder]):
@@ -1693,7 +1701,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.TriggerPredicateArgs.Builder)
     /**
-     * @param conditions A list of the conditions that determine when the trigger will fire. See Conditions.
+     * @param conditions List of the conditions that determine when the trigger will fire. See `conditions`.
      * @return builder
      */
     def conditions(args: Endofunction[com.pulumi.aws.glue.inputs.TriggerPredicateConditionArgs.Builder]*):
@@ -1703,7 +1711,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.TriggerState.Builder)
     /**
-     * @param actions List of actions initiated by this trigger when it fires. See Actions Below.
+     * @param actions List of actions initiated by this trigger when it fires. See `actions` below.
      * @return builder
      */
     def actions(args: Endofunction[com.pulumi.aws.glue.inputs.TriggerActionArgs.Builder]*):
@@ -1712,7 +1720,7 @@ object glue:
       builder.actions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param eventBatchingConditions Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires. See Event Batching Condition.
+     * @param eventBatchingConditions Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires. See `eventBatchingCondition`.
      * @return builder
      */
     def eventBatchingConditions(args: Endofunction[com.pulumi.aws.glue.inputs.TriggerEventBatchingConditionArgs.Builder]*):
@@ -1721,7 +1729,7 @@ object glue:
       builder.eventBatchingConditions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param predicate A predicate to specify when the new trigger should fire. Required when trigger type is `CONDITIONAL`. See Predicate Below.
+     * @param predicate Predicate to specify when the new trigger should fire. Required when trigger type is `CONDITIONAL`. See `predicate` below.
      * @return builder
      */
     def predicate(args: Endofunction[com.pulumi.aws.glue.inputs.TriggerPredicateArgs.Builder]):
@@ -1731,7 +1739,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.UserDefinedFunctionState.Builder)
     /**
-     * @param resourceUris The configuration block for Resource URIs. See resource uris below for more details.
+     * @param resourceUris Configuration block for Resource URIs. See `resourceUris` Block below for more details.
      * @return builder
      */
     def resourceUris(args: Endofunction[com.pulumi.aws.glue.inputs.UserDefinedFunctionResourceUriArgs.Builder]*):

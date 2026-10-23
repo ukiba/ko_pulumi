@@ -124,8 +124,8 @@ object apigateway:
       com.pulumi.aws.apigateway.ApigatewayFunctions.getKeyPlain(args(argsBuilder).build)
 
     /**
-     * Use this data source to get the id of a Resource in API Gateway.
-     * To fetch the Resource, you must provide the REST API id as well as the full path.
+     * Use this data source to get the ID of a Resource in API Gateway.
+     * To fetch the Resource, you must provide the REST API ID as well as the full path.
      */
     inline def getResource(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetResourceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetResourceResult] =
@@ -133,8 +133,8 @@ object apigateway:
       com.pulumi.aws.apigateway.ApigatewayFunctions.getResource(args(argsBuilder).build)
 
     /**
-     * Use this data source to get the id of a Resource in API Gateway.
-     * To fetch the Resource, you must provide the REST API id as well as the full path.
+     * Use this data source to get the ID of a Resource in API Gateway.
+     * To fetch the Resource, you must provide the REST API ID as well as the full path.
      */
     inline def getResourcePlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetResourcePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetResourceResult] =
@@ -142,7 +142,7 @@ object apigateway:
       com.pulumi.aws.apigateway.ApigatewayFunctions.getResourcePlain(args(argsBuilder).build)
 
     /**
-     * Use this data source to get the id and rootResourceId of a REST API in
+     * Use this data source to get the ID and rootResourceId of a REST API in
      * API Gateway. To fetch the REST API you must provide a name to match against.
      * As there is no unique name constraint on REST APIs this data source will
      * error if there is more than one match.
@@ -153,7 +153,7 @@ object apigateway:
       com.pulumi.aws.apigateway.ApigatewayFunctions.getRestApi(args(argsBuilder).build)
 
     /**
-     * Use this data source to get the id and rootResourceId of a REST API in
+     * Use this data source to get the ID and rootResourceId of a REST API in
      * API Gateway. To fetch the REST API you must provide a name to match against.
      * As there is no unique name constraint on REST APIs this data source will
      * error if there is more than one match.
@@ -180,7 +180,7 @@ object apigateway:
       com.pulumi.aws.apigateway.ApigatewayFunctions.getSdkPlain(args(argsBuilder).build)
 
     /**
-     * Use this data source to get the id of a VPC Link in
+     * Use this data source to get the ID of a VPC Link in
      * API Gateway. To fetch the VPC Link you must provide a name to match against.
      * As there is no unique name constraint on API Gateway VPC Links this data source will
      * error if there is more than one match.
@@ -191,7 +191,7 @@ object apigateway:
       com.pulumi.aws.apigateway.ApigatewayFunctions.getVpcLink(args(argsBuilder).build)
 
     /**
-     * Use this data source to get the id of a VPC Link in
+     * Use this data source to get the ID of a VPC Link in
      * API Gateway. To fetch the VPC Link you must provide a name to match against.
      * As there is no unique name constraint on API Gateway VPC Links this data source will
      * error if there is more than one match.
@@ -318,7 +318,7 @@ object apigateway:
    * API Gateway domains can be defined as either &#39;edge-optimized&#39; or &#39;regional&#39;.  In an edge-optimized configuration,
    * API Gateway internally creates and manages a CloudFront distribution to route requests on the given hostname. In
    * addition to this resource it&#39;s necessary to create a DNS record corresponding to the given domain name which is an alias
-   * (either Route53 alias or traditional CNAME) to the Cloudfront domain name exported in the `cloudfrontDomainName`
+   * (either Route53 alias or traditional CNAME) to the CloudFront domain name exported in the `cloudfrontDomainName`
    * attribute.
    * 
    * In a regional configuration, API Gateway does not create a CloudFront distribution to route requests to the API, though
@@ -403,7 +403,7 @@ object apigateway:
   /**
    * Provides an HTTP Method Integration Response for an API Gateway Resource.
    * 
-   * &gt; **Note:** Depends on having `aws.apigateway.Integration` inside your rest api. To ensure this
+   * &gt; **Note:** Depends on having `aws.apigateway.Integration` inside your REST API. To ensure this
    * you might need to add an explicit `dependsOn` for clean runs.
    */
   def IntegrationResponse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

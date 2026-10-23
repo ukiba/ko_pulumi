@@ -165,7 +165,7 @@ object mq:
       builder.encryptionOptions(args(argsBuilder).build)
 
     /**
-     * @param instances List of information about allocated brokers (both active &amp; standby).
+     * @param instances List of information about allocated brokers (both active &amp; standby). See `instances` Block for details.
      * @return builder
      */
     def instances(args: Endofunction[com.pulumi.aws.mq.inputs.BrokerInstanceArgs.Builder]*):
@@ -201,7 +201,7 @@ object mq:
       builder.maintenanceWindowStartTime(args(argsBuilder).build)
 
     /**
-     * @param sharedResources List of resources shared with the broker via `resourceShareArns`. Only populated for `engineType` of `RabbitMQ`.
+     * @param sharedResources List of resources shared with the broker via `resourceShareArns`. Only populated for `engineType` of `RabbitMQ`. See `sharedResources` Block for details.
      * @return builder
      */
     def sharedResources(args: Endofunction[com.pulumi.aws.mq.inputs.BrokerSharedResourceArgs.Builder]*):

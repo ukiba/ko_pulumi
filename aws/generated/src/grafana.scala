@@ -67,7 +67,7 @@ object grafana:
 
   extension (builder: com.pulumi.aws.grafana.WorkspaceArgs.Builder)
     /**
-     * @param networkAccessControl Configuration for network access to your workspace.See Network Access Control below.
+     * @param networkAccessControl Configuration for network access to your workspace. See `networkAccessControl` Block below.
      * @return builder
      */
     def networkAccessControl(args: Endofunction[com.pulumi.aws.grafana.inputs.WorkspaceNetworkAccessControlArgs.Builder]):
@@ -76,7 +76,7 @@ object grafana:
       builder.networkAccessControl(args(argsBuilder).build)
 
     /**
-     * @param vpcConfiguration The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to. See VPC Configuration below.
+     * @param vpcConfiguration Configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to. See `vpcConfiguration` Block below.
      * @return builder
      */
     def vpcConfiguration(args: Endofunction[com.pulumi.aws.grafana.inputs.WorkspaceVpcConfigurationArgs.Builder]):
@@ -126,7 +126,7 @@ object grafana:
 
   extension (builder: com.pulumi.aws.grafana.inputs.WorkspaceState.Builder)
     /**
-     * @param networkAccessControl Configuration for network access to your workspace.See Network Access Control below.
+     * @param networkAccessControl Configuration for network access to your workspace. See `networkAccessControl` Block below.
      * @return builder
      */
     def networkAccessControl(args: Endofunction[com.pulumi.aws.grafana.inputs.WorkspaceNetworkAccessControlArgs.Builder]):
@@ -135,7 +135,7 @@ object grafana:
       builder.networkAccessControl(args(argsBuilder).build)
 
     /**
-     * @param vpcConfiguration The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to. See VPC Configuration below.
+     * @param vpcConfiguration Configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to. See `vpcConfiguration` Block below.
      * @return builder
      */
     def vpcConfiguration(args: Endofunction[com.pulumi.aws.grafana.inputs.WorkspaceVpcConfigurationArgs.Builder]):

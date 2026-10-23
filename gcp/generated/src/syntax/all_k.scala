@@ -46,10 +46,12 @@ export ko_pulumi.gcp.artifactregistry.mostRecentVersions
 export ko_pulumi.gcp.artifactregistry.noCache
 export ko_pulumi.gcp.artifactregistry.npmRepository
 export ko_pulumi.gcp.assuredworkloads.kmsSettings
+export ko_pulumi.gcp.backupdisasterrecovery.labelCondition
 export ko_pulumi.gcp.backupdisasterrecovery.labels
 export ko_pulumi.gcp.backupdisasterrecovery.lastBackupErrors
 export ko_pulumi.gcp.backupdisasterrecovery.localSsdRecoveryTimeout
 export ko_pulumi.gcp.backupdisasterrecovery.managementUris
+export ko_pulumi.gcp.backupdisasterrecovery.matchingConditions
 export ko_pulumi.gcp.backupdisasterrecovery.maxRunDuration
 export ko_pulumi.gcp.backupdisasterrecovery.metadata
 export ko_pulumi.gcp.backupdisasterrecovery.networkInterfaces
@@ -414,6 +416,9 @@ export ko_pulumi.gcp.filestore.nfsExportOptions
 export ko_pulumi.gcp.firebase.managedResources
 export ko_pulumi.gcp.firebaserules.metadatas
 export ko_pulumi.gcp.folder.listPolicy
+export ko_pulumi.gcp.gemini.lastPublishedContexts
+export ko_pulumi.gcp.gemini.leftSchemaPaths
+export ko_pulumi.gcp.gemini.options
 export ko_pulumi.gcp.gkebackup.namespacedNames
 export ko_pulumi.gcp.gkehub.limits
 export ko_pulumi.gcp.gkehub.loggingConfig
@@ -635,10 +640,14 @@ export ko_pulumi.gcp.vertex.mcpTools
 export ko_pulumi.gcp.vertex.memoryBankConfig
 export ko_pulumi.gcp.vertex.memoryTopics
 export ko_pulumi.gcp.vertex.metadata
+export ko_pulumi.gcp.vertex.metricSources
+export ko_pulumi.gcp.vertex.modelCallErrors
+export ko_pulumi.gcp.vertex.modelCalls
 export ko_pulumi.gcp.vertex.modelConfig
 export ko_pulumi.gcp.vertex.monitoringConfig
 export ko_pulumi.gcp.vertex.numericalThresholdConfig
 export ko_pulumi.gcp.vertex.onlineServingConfig
+export ko_pulumi.gcp.vertex.openTelemetry
 export ko_pulumi.gcp.vertex.optimized
 export ko_pulumi.gcp.vmwareengine.managementCluster
 export ko_pulumi.gcp.vmwareengine.networkConfig

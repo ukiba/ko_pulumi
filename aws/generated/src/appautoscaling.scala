@@ -4,7 +4,7 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object appautoscaling:
-  /** Provides an Application AutoScaling Policy resource. */
+  /** Provides an Application Auto Scaling Policy resource. */
   def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appautoscaling.PolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appautoscaling.PolicyArgs.builder
@@ -43,7 +43,7 @@ object appautoscaling:
       val argsBuilder = com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationArgs.builder
       builder.targetTrackingScalingPolicyConfiguration(args(argsBuilder).build)
 
-  /** Provides an Application AutoScaling ScheduledAction resource. */
+  /** Provides an Application Auto Scaling ScheduledAction resource. */
   def ScheduledAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appautoscaling.ScheduledActionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appautoscaling.ScheduledActionArgs.builder
@@ -65,7 +65,7 @@ object appautoscaling:
       builder.scalableTargetAction(args(argsBuilder).build)
 
   /**
-   * Provides an Application AutoScaling ScalableTarget resource. To manage policies which get attached to the target, see the `aws.appautoscaling.Policy` resource.
+   * Provides an Application Auto Scaling ScalableTarget resource. To manage policies which get attached to the target, see the `aws.appautoscaling.Policy` resource.
    * 
    * &gt; **NOTE:** Scalable targets created before 2023-03-20 may not have an assigned `arn`. These resource cannot use `tags` or participate in `defaultTags`. To prevent `pulumi preview` showing differences that can never be reconciled, use the `lifecycle.ignore_changes` meta-argument. See the example below.
    * 

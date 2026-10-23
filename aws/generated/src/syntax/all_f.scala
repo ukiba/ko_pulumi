@@ -154,6 +154,8 @@ export ko_pulumi.aws.cloudwatch.inputTransformer
 export ko_pulumi.aws.cloudwatch.internetMeasurementsLogDelivery
 export ko_pulumi.aws.cloudwatch.invocationConnectivityParameters
 export ko_pulumi.aws.cloudwatch.invocationHttpParameters
+export ko_pulumi.aws.cloudwatchomni.identityCenterConfiguration
+export ko_pulumi.aws.cloudwatchomni.identityProviderConfiguration
 export ko_pulumi.aws.codebuild.fileSystemLocations
 export ko_pulumi.aws.codebuild.filterGroups
 export ko_pulumi.aws.codebuild.filters

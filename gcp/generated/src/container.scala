@@ -1144,6 +1144,17 @@ object container:
       builder.autoscaling(args(argsBuilder).build)
 
     /**
+     * @param bestEffortProvisioning Best-effort provisioning allows node pool creations to automatically ignore stockout errors once the minimum number of nodes have been provisioned. Structure is documented below.
+     * 
+     * &lt;a name=&#34;nestedAutoscaling&#34;&gt;&lt;/a&gt;The `autoscaling` block supports (either total or per zone limits are required):
+     * @return builder
+     */
+    def bestEffortProvisioning(args: Endofunction[com.pulumi.gcp.container.inputs.NodePoolBestEffortProvisioningArgs.Builder]):
+        com.pulumi.gcp.container.NodePoolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.NodePoolBestEffortProvisioningArgs.builder
+      builder.bestEffortProvisioning(args(argsBuilder).build)
+
+    /**
      * @param maintenancePolicies The maintenance policy of the pool. Structure is documented below.
      * @return builder
      */
@@ -3008,6 +3019,15 @@ object container:
         com.pulumi.gcp.container.inputs.ClusterNodePoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodePoolAutoscalingArgs.builder
       builder.autoscaling(args(argsBuilder).build)
+
+    /**
+     * @param bestEffortProvisioning Best-effort provisioning allows node pool creations to automatically ignore stockout errors once the minimum number of nodes have been provisioned. Structure is documented below.
+     * @return builder
+     */
+    def bestEffortProvisioning(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolBestEffortProvisioningArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterNodePoolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodePoolBestEffortProvisioningArgs.builder
+      builder.bestEffortProvisioning(args(argsBuilder).build)
 
     /**
      * @param maintenancePolicies The maintenance policy to use for the cluster. Structure is
@@ -5073,6 +5093,17 @@ object container:
         com.pulumi.gcp.container.inputs.NodePoolState.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.NodePoolAutoscalingArgs.builder
       builder.autoscaling(args(argsBuilder).build)
+
+    /**
+     * @param bestEffortProvisioning Best-effort provisioning allows node pool creations to automatically ignore stockout errors once the minimum number of nodes have been provisioned. Structure is documented below.
+     * 
+     * &lt;a name=&#34;nestedAutoscaling&#34;&gt;&lt;/a&gt;The `autoscaling` block supports (either total or per zone limits are required):
+     * @return builder
+     */
+    def bestEffortProvisioning(args: Endofunction[com.pulumi.gcp.container.inputs.NodePoolBestEffortProvisioningArgs.Builder]):
+        com.pulumi.gcp.container.inputs.NodePoolState.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.NodePoolBestEffortProvisioningArgs.builder
+      builder.bestEffortProvisioning(args(argsBuilder).build)
 
     /**
      * @param maintenancePolicies The maintenance policy of the pool. Structure is documented below.

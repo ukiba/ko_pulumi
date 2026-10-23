@@ -19572,6 +19572,45 @@ object compute:
       builder.redirectOptions(args(argsBuilder).build)
 
   /**
+   * Represents the singleton resource Organization Snapshot Recycle Bin Policy that
+   * configures the retention duration for snapshots in the recycle bin at organization
+   * level. All projects in that organization will share the same policy. If you
+   * configure the policy at the project level it will be merged with org level policy (if any)
+   * and the snapshots in that project will use that policy.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about OrganizationSnapshotRecycleBinPolicy, see:
+   * 
+   * * [API documentation](https://docs.cloud.google.com/compute/docs/reference/rest/beta/snapshotRecycleBinPolicy)
+   * * How-to Guides
+   *     * [Official Documentation](https://docs.cloud.google.com/compute/docs/disks/configure-recycle-bin)
+   */
+  def OrganizationSnapshotRecycleBinPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.compute.OrganizationSnapshotRecycleBinPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.compute.OrganizationSnapshotRecycleBinPolicyArgs.builder
+    com.pulumi.gcp.compute.OrganizationSnapshotRecycleBinPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.compute.OrganizationSnapshotRecycleBinPolicyArgs.Builder)
+    /**
+     * @param rules The rules for the snapshot recycle bin policy. The key name is either &#39;default&#39;
+     * or namespaced name of the tag value which can be in the format:
+     * {organization_id}/{tag_key_short_name}/{tag_value_short_name} or
+     * {project_id}/{tag_key_short_name}/{tag_value_short_name} or
+     * {project_number}/{tag_key_short_name}/{tag_value_short_name}. The default rule is
+     * applied if snapshots do not have any of these tags. The value is the rule for the key.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleArgs.Builder]*):
+        com.pulumi.gcp.compute.OrganizationSnapshotRecycleBinPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleArgs.builder
+      builder.rules(args.map(_(argsBuilder).build)*)
+
+  /**
    * Packet Mirroring mirrors traffic to and from particular VM instances.
    * You can use the collected traffic to help you detect security threats
    * and monitor application performance.
@@ -23858,6 +23897,8 @@ object compute:
      * If you do not provide an encryption key when creating the disk, then
      * the disk will be encrypted using an automatically generated key and
      * you do not need to provide a key to use the disk later.
+     * ~&gt;**NOTE** Only changing `kmsKeyName` between Cloud KMS keys is done
+     * in place; other changes to this block recreate the disk.
      * Structure is documented below.
      * @return builder
      */
@@ -29638,6 +29679,8 @@ object compute:
      * If you do not provide an encryption key when creating the snapshot,
      * then the snapshot will be encrypted using an automatically generated
      * key and you do not need to provide a key to use the snapshot later.
+     * ~&gt;**NOTE** Only changing `kmsKeySelfLink` between Cloud KMS keys is
+     * done in place; other changes to this block recreate the snapshot.
      * Structure is documented below.
      * @return builder
      */
@@ -30596,6 +30639,42 @@ object compute:
     com.pulumi.gcp.compute.SnapshotIamPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * Represents the singleton resource Snapshot Recycle Bin Policy that
+   * configures the retention duration for snapshots in the recycle bin.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about SnapshotRecycleBinPolicy, see:
+   * 
+   * * [API documentation](https://docs.cloud.google.com/compute/docs/reference/rest/beta/snapshotRecycleBinPolicy)
+   * * How-to Guides
+   *     * [Official Documentation](https://docs.cloud.google.com/compute/docs/disks/configure-recycle-bin)
+   */
+  def SnapshotRecycleBinPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.compute.SnapshotRecycleBinPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.compute.SnapshotRecycleBinPolicyArgs.builder
+    com.pulumi.gcp.compute.SnapshotRecycleBinPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.compute.SnapshotRecycleBinPolicyArgs.Builder)
+    /**
+     * @param rules The rules for the snapshot recycle bin policy. The key name is either &#39;default&#39;
+     * or namespaced name of the tag value which can be in the format:
+     * {organization_id}/{tag_key_short_name}/{tag_value_short_name} or
+     * {project_id}/{tag_key_short_name}/{tag_value_short_name} or
+     * {project_number}/{tag_key_short_name}/{tag_value_short_name}. The default rule is
+     * applied if snapshots do not have any of these tags. The value is the rule for the key.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleArgs.Builder]*):
+        com.pulumi.gcp.compute.SnapshotRecycleBinPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleArgs.builder
+      builder.rules(args.map(_(argsBuilder).build)*)
 
   /**
    * Updates your project&#39;s snapshot settings and sets a new default storage location for snapshots.
@@ -34985,6 +35064,17 @@ object compute:
 
   extension (builder: com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingArgs.Builder)
     /**
+     * @param forwardProxy (Optional, Beta)
+     * Dynamic Forwarding Proxy configuration.
+     * Structure is documented below.
+     * @return builder
+     */
+    def forwardProxy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingForwardProxyArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingForwardProxyArgs.builder
+      builder.forwardProxy(args(argsBuilder).build)
+
+    /**
      * @param ipPortSelection (Optional, Beta)
      * IP:PORT based dynamic forwarding configuration.
      * Structure is documented below.
@@ -37337,7 +37427,7 @@ object compute:
       builder.onInstanceStopAction(args(argsBuilder).build)
 
     /**
-     * @param preemptionNoticeDuration Beta Specifies the Metadata Service preemption notice duration before the GCE ACPI G2 Soft Off signal is triggered for Spot VMs only. If not specified, there will be no wait before the G2 Soft Off signal is triggered. Structure is documented below.
+     * @param preemptionNoticeDuration Specifies the Metadata Service preemption notice duration before the GCE ACPI G2 Soft Off signal is triggered for Spot VMs only. If not specified, there will be no wait before the G2 Soft Off signal is triggered. Structure is documented below.
      * @return builder
      */
     def preemptionNoticeDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingPreemptionNoticeDurationArgs.Builder]):
@@ -37699,7 +37789,7 @@ object compute:
       builder.onInstanceStopAction(args(argsBuilder).build)
 
     /**
-     * @param preemptionNoticeDuration Beta Specifies the Metadata Service preemption notice duration before the GCE ACPI G2 Soft Off signal is triggered for Spot VMs only. If not specified, there will be no wait before the G2 Soft Off signal is triggered. Structure is documented below.
+     * @param preemptionNoticeDuration Specifies the Metadata Service preemption notice duration before the GCE ACPI G2 Soft Off signal is triggered for Spot VMs only. If not specified, there will be no wait before the G2 Soft Off signal is triggered. Structure is documented below.
      * @return builder
      */
     def preemptionNoticeDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingPreemptionNoticeDurationArgs.Builder]):
@@ -38882,6 +38972,56 @@ object compute:
       val argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyAdvancedOptionsConfigArgs.builder
       builder.advancedOptionsConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleArgs.Builder)
+    /**
+     * @param standardSnapshots The rule config for standard snapshots.
+     * Structure is documented below.
+     * @return builder
+     */
+    def standardSnapshots(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleStandardSnapshotsArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleStandardSnapshotsArgs.builder
+      builder.standardSnapshots(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyState.Builder)
+    /**
+     * @param rules The rules for the snapshot recycle bin policy. The key name is either &#39;default&#39;
+     * or namespaced name of the tag value which can be in the format:
+     * {organization_id}/{tag_key_short_name}/{tag_value_short_name} or
+     * {project_id}/{tag_key_short_name}/{tag_value_short_name} or
+     * {project_number}/{tag_key_short_name}/{tag_value_short_name}. The default rule is
+     * applied if snapshots do not have any of these tags. The value is the rule for the key.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleArgs.builder
+      builder.rules(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param systemRules The system rules for snapshot recycle bin policy. Defines the default rule that applies if no customer-defined
+     * rule matches.
+     * Structure is documented below.
+     * @return builder
+     */
+    def systemRules(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicySystemRuleArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicySystemRuleArgs.builder
+      builder.systemRules(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicySystemRuleArgs.Builder)
+    /**
+     * @param standardSnapshots (Output)
+     * The rule config for standard snapshots.
+     * Structure is documented below.
+     * @return builder
+     */
+    def standardSnapshots(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicySystemRuleStandardSnapshotArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicySystemRuleArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicySystemRuleStandardSnapshotArgs.builder
+      builder.standardSnapshots(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.compute.inputs.PacketMirroringMirroredResourcesArgs.Builder)
     /**
      * @param instances All the listed instances will be mirrored.  Specify at most 50.
@@ -39652,6 +39792,8 @@ object compute:
      * If you do not provide an encryption key when creating the disk, then
      * the disk will be encrypted using an automatically generated key and
      * you do not need to provide a key to use the disk later.
+     * ~&gt;**NOTE** Only changing `kmsKeyName` between Cloud KMS keys is done
+     * in place; other changes to this block recreate the disk.
      * Structure is documented below.
      * @return builder
      */
@@ -43602,6 +43744,56 @@ object compute:
       val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleArgs.Builder)
+    /**
+     * @param standardSnapshots The rule config for standard snapshots.
+     * Structure is documented below.
+     * @return builder
+     */
+    def standardSnapshots(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleStandardSnapshotsArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleStandardSnapshotsArgs.builder
+      builder.standardSnapshots(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyState.Builder)
+    /**
+     * @param rules The rules for the snapshot recycle bin policy. The key name is either &#39;default&#39;
+     * or namespaced name of the tag value which can be in the format:
+     * {organization_id}/{tag_key_short_name}/{tag_value_short_name} or
+     * {project_id}/{tag_key_short_name}/{tag_value_short_name} or
+     * {project_number}/{tag_key_short_name}/{tag_value_short_name}. The default rule is
+     * applied if snapshots do not have any of these tags. The value is the rule for the key.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleArgs.builder
+      builder.rules(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param systemRules The system rules for snapshot recycle bin policy. Defines the default rule that applies if no customer-defined
+     * rule matches.
+     * Structure is documented below.
+     * @return builder
+     */
+    def systemRules(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicySystemRuleArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicySystemRuleArgs.builder
+      builder.systemRules(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicySystemRuleArgs.Builder)
+    /**
+     * @param standardSnapshots (Output)
+     * The rule config for standard snapshots.
+     * Structure is documented below.
+     * @return builder
+     */
+    def standardSnapshots(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicySystemRuleStandardSnapshotArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicySystemRuleArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicySystemRuleStandardSnapshotArgs.builder
+      builder.standardSnapshots(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.compute.inputs.SnapshotSettingsState.Builder)
     /**
      * @param storageLocation Policy of which storage location is going to be resolved, and additional data
@@ -43649,6 +43841,8 @@ object compute:
      * If you do not provide an encryption key when creating the snapshot,
      * then the snapshot will be encrypted using an automatically generated
      * key and you do not need to provide a key to use the snapshot later.
+     * ~&gt;**NOTE** Only changing `kmsKeySelfLink` between Cloud KMS keys is
+     * done in place; other changes to this block recreate the snapshot.
      * Structure is documented below.
      * @return builder
      */
@@ -43821,6 +44015,18 @@ object compute:
       builder.corsPolicy(args(argsBuilder).build)
 
     /**
+     * @param dynamicCompressionPolicy (Optional, Beta)
+     * Dynamic compression policy for this URL Map&#39;s route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dynamicCompressionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionDynamicCompressionPolicyArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionDynamicCompressionPolicyArgs.builder
+      builder.dynamicCompressionPolicy(args(argsBuilder).build)
+
+    /**
      * @param faultInjectionPolicy The specification for fault injection introduced into traffic to test the resiliency of clients to backend service failure.
      * As part of fault injection, when clients send requests to a backend service, delays can be introduced by Loadbalancer on a
      * percentage of requests before sending those request to the backend service. Similarly requests from clients can be aborted
@@ -43833,6 +44039,17 @@ object compute:
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionFaultInjectionPolicyArgs.builder
       builder.faultInjectionPolicy(args(argsBuilder).build)
+
+    /**
+     * @param imageOptimizationPolicy (Optional, Beta)
+     * Specifies the policy for optimizing images returned in the HTTP response.
+     * Structure is documented below.
+     * @return builder
+     */
+    def imageOptimizationPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionImageOptimizationPolicyArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionImageOptimizationPolicyArgs.builder
+      builder.imageOptimizationPolicy(args(argsBuilder).build)
 
     /**
      * @param maxStreamDuration Specifies the maximum duration (timeout) for streams on the selected route.
@@ -44255,6 +44472,18 @@ object compute:
       builder.corsPolicy(args(argsBuilder).build)
 
     /**
+     * @param dynamicCompressionPolicy (Optional, Beta)
+     * Dynamic compression policy for this URL Map&#39;s route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dynamicCompressionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionDynamicCompressionPolicyArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionDynamicCompressionPolicyArgs.builder
+      builder.dynamicCompressionPolicy(args(argsBuilder).build)
+
+    /**
      * @param faultInjectionPolicy The specification for fault injection introduced into traffic to test the resiliency of clients to backend service failure.
      * As part of fault injection, when clients send requests to a backend service, delays can be introduced by Loadbalancer on a
      * percentage of requests before sending those request to the backend service. Similarly requests from clients can be aborted
@@ -44267,6 +44496,17 @@ object compute:
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyArgs.builder
       builder.faultInjectionPolicy(args(argsBuilder).build)
+
+    /**
+     * @param imageOptimizationPolicy (Optional, Beta)
+     * Specifies the policy for optimizing images returned in the HTTP response.
+     * Structure is documented below.
+     * @return builder
+     */
+    def imageOptimizationPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionImageOptimizationPolicyArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionImageOptimizationPolicyArgs.builder
+      builder.imageOptimizationPolicy(args(argsBuilder).build)
 
     /**
      * @param maxStreamDuration Specifies the maximum duration (timeout) for streams on the selected route.
@@ -44647,6 +44887,18 @@ object compute:
       builder.corsPolicy(args(argsBuilder).build)
 
     /**
+     * @param dynamicCompressionPolicy (Optional, Beta)
+     * Dynamic compression policy for this URL Map&#39;s route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dynamicCompressionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionDynamicCompressionPolicyArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionDynamicCompressionPolicyArgs.builder
+      builder.dynamicCompressionPolicy(args(argsBuilder).build)
+
+    /**
      * @param faultInjectionPolicy The specification for fault injection introduced into traffic to test the
      * resiliency of clients to backend service failure. As part of fault injection,
      * when clients send requests to a backend service, delays can be introduced by
@@ -44661,6 +44913,17 @@ object compute:
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionFaultInjectionPolicyArgs.builder
       builder.faultInjectionPolicy(args(argsBuilder).build)
+
+    /**
+     * @param imageOptimizationPolicy (Optional, Beta)
+     * Specifies the policy for optimizing images returned in the HTTP response.
+     * Structure is documented below.
+     * @return builder
+     */
+    def imageOptimizationPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionImageOptimizationPolicyArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionImageOptimizationPolicyArgs.builder
+      builder.imageOptimizationPolicy(args(argsBuilder).build)
 
     /**
      * @param maxStreamDuration Specifies the maximum duration (timeout) for streams on the selected route.
@@ -45162,6 +45425,18 @@ object compute:
       builder.corsPolicy(args(argsBuilder).build)
 
     /**
+     * @param dynamicCompressionPolicy (Optional, Beta)
+     * Dynamic compression policy for this URL Map&#39;s route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dynamicCompressionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionDynamicCompressionPolicyArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionDynamicCompressionPolicyArgs.builder
+      builder.dynamicCompressionPolicy(args(argsBuilder).build)
+
+    /**
      * @param faultInjectionPolicy The specification for fault injection introduced into traffic to test the
      * resiliency of clients to backend service failure. As part of fault injection,
      * when clients send requests to a backend service, delays can be introduced by
@@ -45176,6 +45451,17 @@ object compute:
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyArgs.builder
       builder.faultInjectionPolicy(args(argsBuilder).build)
+
+    /**
+     * @param imageOptimizationPolicy (Optional, Beta)
+     * Specifies the policy for optimizing images returned in the HTTP response.
+     * Structure is documented below.
+     * @return builder
+     */
+    def imageOptimizationPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionImageOptimizationPolicyArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionImageOptimizationPolicyArgs.builder
+      builder.imageOptimizationPolicy(args(argsBuilder).build)
 
     /**
      * @param maxStreamDuration Specifies the maximum duration (timeout) for streams on the selected route.

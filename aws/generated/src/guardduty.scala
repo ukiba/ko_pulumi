@@ -25,7 +25,7 @@ object guardduty:
 
   extension (builder: com.pulumi.aws.guardduty.DetectorArgs.Builder)
     /**
-     * @param datasources Describes which data sources will be enabled for the detector. See Data Sources below for more details. [Deprecated](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-feature-object-api-changes-march2023.html) in favor of `aws.guardduty.DetectorFeature` resources.
+     * @param datasources Data sources to enable for the detector. See `datasources` below for more details. [Deprecated](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-feature-object-api-changes-march2023.html) in favor of `aws.guardduty.DetectorFeature` resources.
      * @return builder
      * @deprecated datasources is deprecated. Use aws.guardduty.DetectorFeature resources instead.
      */
@@ -79,7 +79,7 @@ object guardduty:
 
   extension (builder: com.pulumi.aws.guardduty.FilterArgs.Builder)
     /**
-     * @param findingCriteria Represents the criteria to be used in the filter for querying findings. Contains one or more `criterion` blocks, documented below.
+     * @param findingCriteria Criteria to be used in the filter for querying findings. Contains one or more `criterion` blocks, documented below.
      * @return builder
      */
     def findingCriteria(args: Endofunction[com.pulumi.aws.guardduty.inputs.FilterFindingCriteriaArgs.Builder]):
@@ -106,13 +106,13 @@ object guardduty:
       val argsBuilder = com.pulumi.aws.guardduty.inputs.GetDetectorPlainArgs.builder
       com.pulumi.aws.guardduty.GuarddutyFunctions.getDetectorPlain(args(argsBuilder).build)
 
-    /** Data source for managing an AWS GuardDuty Finding Ids. */
+    /** Data source for managing an AWS GuardDuty Finding IDs. */
     inline def getFindingIds(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetFindingIdsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.guardduty.outputs.GetFindingIdsResult] =
       val argsBuilder = com.pulumi.aws.guardduty.inputs.GetFindingIdsArgs.builder
       com.pulumi.aws.guardduty.GuarddutyFunctions.getFindingIds(args(argsBuilder).build)
 
-    /** Data source for managing an AWS GuardDuty Finding Ids. */
+    /** Data source for managing an AWS GuardDuty Finding IDs. */
     inline def getFindingIdsPlain(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetFindingIdsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.guardduty.outputs.GetFindingIdsResult] =
       val argsBuilder = com.pulumi.aws.guardduty.inputs.GetFindingIdsPlainArgs.builder
@@ -237,9 +237,7 @@ object guardduty:
 
   extension (builder: com.pulumi.aws.guardduty.OrganizationConfigurationArgs.Builder)
     /**
-     * @param datasources Configuration for the collected datasources. [Deprecated](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-feature-object-api-changes-march2023.html) in favor of `aws.guardduty.OrganizationConfigurationFeature` resources.
-     * 
-     * &gt; **NOTE:** One of `autoEnable` or `autoEnableOrganizationMembers` must be specified.
+     * @param datasources Configuration for the collected datasources. See `datasources` below. [Deprecated](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-feature-object-api-changes-march2023.html) in favor of `aws.guardduty.OrganizationConfigurationFeature` resources.
      * @return builder
      * @deprecated datasources is deprecated. Use &#34;aws.guardduty.OrganizationConfigurationFeature&#34; resources instead.
      */
@@ -312,8 +310,7 @@ object guardduty:
 
   extension (builder: com.pulumi.aws.guardduty.inputs.DetectorDatasourcesArgs.Builder)
     /**
-     * @param kubernetes Configures [Kubernetes protection](https://docs.aws.amazon.com/guardduty/latest/ug/kubernetes-protection.html).
-     * See Kubernetes and Kubernetes Audit Logs below for more details.
+     * @param kubernetes Configures [Kubernetes protection](https://docs.aws.amazon.com/guardduty/latest/ug/kubernetes-protection.html). See `kubernetes` below for more details.
      * @return builder
      */
     def kubernetes(args: Endofunction[com.pulumi.aws.guardduty.inputs.DetectorDatasourcesKubernetesArgs.Builder]):
@@ -322,8 +319,7 @@ object guardduty:
       builder.kubernetes(args(argsBuilder).build)
 
     /**
-     * @param malwareProtection Configures [Malware Protection](https://docs.aws.amazon.com/guardduty/latest/ug/malware-protection.html).
-     * See Malware Protection, Scan EC2 instance with findings and EBS volumes below for more details.
+     * @param malwareProtection Configures [Malware Protection](https://docs.aws.amazon.com/guardduty/latest/ug/malware-protection.html). See `malwareProtection` below for more details.
      * @return builder
      */
     def malwareProtection(args: Endofunction[com.pulumi.aws.guardduty.inputs.DetectorDatasourcesMalwareProtectionArgs.Builder]):
@@ -332,8 +328,7 @@ object guardduty:
       builder.malwareProtection(args(argsBuilder).build)
 
     /**
-     * @param s3Logs Configures [S3 protection](https://docs.aws.amazon.com/guardduty/latest/ug/s3-protection.html).
-     * See S3 Logs below for more details.
+     * @param s3Logs Configures [S3 protection](https://docs.aws.amazon.com/guardduty/latest/ug/s3-protection.html). See `s3Logs` below for more details.
      * @return builder
      */
     def s3Logs(args: Endofunction[com.pulumi.aws.guardduty.inputs.DetectorDatasourcesS3LogsArgs.Builder]):
@@ -343,8 +338,7 @@ object guardduty:
 
   extension (builder: com.pulumi.aws.guardduty.inputs.DetectorDatasourcesKubernetesArgs.Builder)
     /**
-     * @param auditLogs Configures Kubernetes audit logs as a data source for [Kubernetes protection](https://docs.aws.amazon.com/guardduty/latest/ug/kubernetes-protection.html).
-     * See Kubernetes Audit Logs below for more details.
+     * @param auditLogs Configures Kubernetes audit logs as a data source for [Kubernetes protection](https://docs.aws.amazon.com/guardduty/latest/ug/kubernetes-protection.html). See `auditLogs` below for more details.
      * @return builder
      */
     def auditLogs(args: Endofunction[com.pulumi.aws.guardduty.inputs.DetectorDatasourcesKubernetesAuditLogsArgs.Builder]):
@@ -354,8 +348,7 @@ object guardduty:
 
   extension (builder: com.pulumi.aws.guardduty.inputs.DetectorDatasourcesMalwareProtectionArgs.Builder)
     /**
-     * @param scanEc2InstanceWithFindings Configure whether [Malware Protection](https://docs.aws.amazon.com/guardduty/latest/ug/malware-protection.html) is enabled as data source for EC2 instances with findings for the detector.
-     * See Scan EC2 instance with findings below for more details.
+     * @param scanEc2InstanceWithFindings Configure whether [Malware Protection](https://docs.aws.amazon.com/guardduty/latest/ug/malware-protection.html) is enabled as data source for EC2 instances with findings for the detector. See `scanEc2InstanceWithFindings` below for more details.
      * @return builder
      */
     def scanEc2InstanceWithFindings(args: Endofunction[com.pulumi.aws.guardduty.inputs.DetectorDatasourcesMalwareProtectionScanEc2InstanceWithFindingsArgs.Builder]):
@@ -365,8 +358,7 @@ object guardduty:
 
   extension (builder: com.pulumi.aws.guardduty.inputs.DetectorDatasourcesMalwareProtectionScanEc2InstanceWithFindingsArgs.Builder)
     /**
-     * @param ebsVolumes Configure whether scanning EBS volumes is enabled as data source for the detector for instances with findings.
-     * See EBS volumes below for more details.
+     * @param ebsVolumes Configure whether scanning EBS volumes is enabled as data source for the detector for instances with findings. See `ebsVolumes` below for more details.
      * @return builder
      */
     def ebsVolumes(args: Endofunction[com.pulumi.aws.guardduty.inputs.DetectorDatasourcesMalwareProtectionScanEc2InstanceWithFindingsEbsVolumesArgs.Builder]):
@@ -386,7 +378,7 @@ object guardduty:
 
   extension (builder: com.pulumi.aws.guardduty.inputs.DetectorState.Builder)
     /**
-     * @param datasources Describes which data sources will be enabled for the detector. See Data Sources below for more details. [Deprecated](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-feature-object-api-changes-march2023.html) in favor of `aws.guardduty.DetectorFeature` resources.
+     * @param datasources Data sources to enable for the detector. See `datasources` below for more details. [Deprecated](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-feature-object-api-changes-march2023.html) in favor of `aws.guardduty.DetectorFeature` resources.
      * @return builder
      * @deprecated datasources is deprecated. Use aws.guardduty.DetectorFeature resources instead.
      */
@@ -403,7 +395,7 @@ object guardduty:
 
   extension (builder: com.pulumi.aws.guardduty.inputs.FilterState.Builder)
     /**
-     * @param findingCriteria Represents the criteria to be used in the filter for querying findings. Contains one or more `criterion` blocks, documented below.
+     * @param findingCriteria Criteria to be used in the filter for querying findings. Contains one or more `criterion` blocks, documented below.
      * @return builder
      */
     def findingCriteria(args: Endofunction[com.pulumi.aws.guardduty.inputs.FilterFindingCriteriaArgs.Builder]):
@@ -413,7 +405,7 @@ object guardduty:
 
   extension (builder: com.pulumi.aws.guardduty.inputs.MalwareProtectionPlanActionArgs.Builder)
     /**
-     * @param taggings Indicates whether the scanned S3 object will have tags about the scan result. See `tagging` below.
+     * @param taggings Whether the scanned S3 object will have tags about the scan result. See `tagging` below.
      * @return builder
      */
     def taggings(args: Endofunction[com.pulumi.aws.guardduty.inputs.MalwareProtectionPlanActionTaggingArgs.Builder]*):
@@ -490,8 +482,7 @@ object guardduty:
 
   extension (builder: com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesKubernetesArgs.Builder)
     /**
-     * @param auditLogs Enable Kubernetes Audit Logs Monitoring automatically for new member accounts. [Kubernetes protection](https://docs.aws.amazon.com/guardduty/latest/ug/kubernetes-protection.html).
-     * See Kubernetes Audit Logs below for more details.
+     * @param auditLogs Enable Kubernetes Audit Logs Monitoring automatically for new member accounts. [Kubernetes protection](https://docs.aws.amazon.com/guardduty/latest/ug/kubernetes-protection.html). See `auditLogs` below for more details.
      * @return builder
      */
     def auditLogs(args: Endofunction[com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesKubernetesAuditLogsArgs.Builder]):
@@ -501,8 +492,7 @@ object guardduty:
 
   extension (builder: com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesMalwareProtectionArgs.Builder)
     /**
-     * @param scanEc2InstanceWithFindings Configure whether [Malware Protection](https://docs.aws.amazon.com/guardduty/latest/ug/malware-protection.html) for EC2 instances with findings should be auto-enabled for new members joining the organization.
-     * See Scan EC2 instance with findings below for more details.
+     * @param scanEc2InstanceWithFindings Configure whether [Malware Protection](https://docs.aws.amazon.com/guardduty/latest/ug/malware-protection.html) for EC2 instances with findings should be auto-enabled for new members joining the organization. See `scanEc2InstanceWithFindings` below for more details.
      * @return builder
      */
     def scanEc2InstanceWithFindings(args: Endofunction[com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesMalwareProtectionScanEc2InstanceWithFindingsArgs.Builder]):
@@ -512,8 +502,7 @@ object guardduty:
 
   extension (builder: com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesMalwareProtectionScanEc2InstanceWithFindingsArgs.Builder)
     /**
-     * @param ebsVolumes Configure whether scanning EBS volumes should be auto-enabled for new members joining the organization
-     * See EBS volumes below for more details.
+     * @param ebsVolumes Configure whether scanning EBS volumes should be auto-enabled for new members joining the organization. See `ebsVolumes` below for more details.
      * @return builder
      */
     def ebsVolumes(args: Endofunction[com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesMalwareProtectionScanEc2InstanceWithFindingsEbsVolumesArgs.Builder]):
@@ -533,9 +522,7 @@ object guardduty:
 
   extension (builder: com.pulumi.aws.guardduty.inputs.OrganizationConfigurationState.Builder)
     /**
-     * @param datasources Configuration for the collected datasources. [Deprecated](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-feature-object-api-changes-march2023.html) in favor of `aws.guardduty.OrganizationConfigurationFeature` resources.
-     * 
-     * &gt; **NOTE:** One of `autoEnable` or `autoEnableOrganizationMembers` must be specified.
+     * @param datasources Configuration for the collected datasources. See `datasources` below. [Deprecated](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-feature-object-api-changes-march2023.html) in favor of `aws.guardduty.OrganizationConfigurationFeature` resources.
      * @return builder
      * @deprecated datasources is deprecated. Use &#34;aws.guardduty.OrganizationConfigurationFeature&#34; resources instead.
      */

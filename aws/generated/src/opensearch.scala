@@ -55,7 +55,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Resource for managing an AWS OpenSearch Authorize Vpc Endpoint Access. */
+  /** Resource for managing an AWS OpenSearch Authorize VPC Endpoint Access. */
   def AuthorizeVpcEndpointAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.opensearch.AuthorizeVpcEndpointAccessArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.opensearch.AuthorizeVpcEndpointAccessArgs.builder

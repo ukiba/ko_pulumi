@@ -7,9 +7,9 @@ object bedrockmodel:
   /**
    * Manages an Amazon Bedrock model invocation job. A model invocation job runs a foundation model, or a model accessed through an inference profile, against multiple prompts read from Amazon S3, and writes the results back to Amazon S3.
    * 
-   * &gt; Amazon Bedrock does not support permanently deleting a model invocation job. Destroying this resource stops the job (if it hasn&#39;t already reached a terminal state) using the [StopModelInvocationJob](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_StopModelInvocationJob.html) API, then removes it from Terraform state. Set `skipDestroy` to leave the job in its current state instead.
+   * &gt; **Note:** Amazon Bedrock does not support permanently deleting a model invocation job. Destroying this resource stops the job (if it hasn&#39;t already reached a terminal state) using the [StopModelInvocationJob](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_StopModelInvocationJob.html) API, then removes it from Terraform state. Set `skipDestroy` to leave the job in its current state instead.
    * 
-   * &gt; This resource does not support `tags`. Amazon Bedrock does not allow retrieving tags for a batch inference job that has already finished running, which would cause errors when importing or listing existing jobs.
+   * &gt; **Note:** This resource does not support `tags`. Amazon Bedrock does not allow retrieving tags for a batch inference job that has already finished running, which would cause errors when importing or listing existing jobs.
    */
   def InvocationJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrockmodel.InvocationJobArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -54,7 +54,7 @@ object bedrockmodel:
   /**
    * Manages Bedrock model invocation logging configuration.
    * 
-   * &gt; Model invocation logging is configured per AWS region. To avoid overwriting settings, this resource should not be defined in multiple configurations.
+   * &gt; **Note:** Model invocation logging is configured per AWS region. To avoid overwriting settings, this resource should not be defined in multiple configurations.
    */
   def InvocationLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrockmodel.InvocationLoggingConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

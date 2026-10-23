@@ -438,7 +438,7 @@ object datasync:
       builder.nfs(args(argsBuilder).build)
 
     /**
-     * @param smb Server Message Block (SMB) protocol that DataSync uses to access your FSx ONTAP file system. See [SMB] (#smb) below.
+     * @param smb Server Message Block (SMB) protocol that DataSync uses to access your FSx ONTAP file system. See SMB below.
      * @return builder
      */
     def smb(args: Endofunction[com.pulumi.aws.datasync.inputs.LocationFsxOntapFileSystemProtocolSmbArgs.Builder]):

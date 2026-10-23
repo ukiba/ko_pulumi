@@ -848,7 +848,7 @@ object quicksight:
       builder.dataPointTooltipOption(args(argsBuilder).build)
 
     /**
-     * @param exportToCsvOption Export to .csv option. See `exportToCsvOption`.
+     * @param exportToCsvOption Export to `.csv` option. See `exportToCsvOption`.
      * @return builder
      */
     def exportToCsvOption(args: Endofunction[com.pulumi.aws.quicksight.inputs.DashboardDashboardPublishOptionsExportToCsvOptionArgs.Builder]):
@@ -1402,7 +1402,7 @@ object quicksight:
       builder.auroraPostgresql(args(argsBuilder).build)
 
     /**
-     * @param awsIotAnalytics Parameters for connecting to AWS IOT Analytics.
+     * @param awsIotAnalytics Parameters for connecting to AWS IoT Analytics.
      * @return builder
      */
     def awsIotAnalytics(args: Endofunction[com.pulumi.aws.quicksight.inputs.DataSourceParametersAwsIotAnalyticsArgs.Builder]):

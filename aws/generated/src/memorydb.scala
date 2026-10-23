@@ -251,7 +251,7 @@ object memorydb:
 
   extension (builder: com.pulumi.aws.memorydb.UserArgs.Builder)
     /**
-     * @param authenticationMode Denotes the user&#39;s authentication properties. Detailed below.
+     * @param authenticationMode Authentication properties for the user. Detailed below.
      * @return builder
      */
     def authenticationMode(args: Endofunction[com.pulumi.aws.memorydb.inputs.UserAuthenticationModeArgs.Builder]):
@@ -308,7 +308,7 @@ object memorydb:
 
   extension (builder: com.pulumi.aws.memorydb.inputs.SnapshotState.Builder)
     /**
-     * @param clusterConfigurations The configuration of the cluster from which the snapshot was taken.
+     * @param clusterConfigurations Configuration of the cluster from which the snapshot was taken.
      * @return builder
      */
     def clusterConfigurations(args: Endofunction[com.pulumi.aws.memorydb.inputs.SnapshotClusterConfigurationArgs.Builder]*):
@@ -318,7 +318,7 @@ object memorydb:
 
   extension (builder: com.pulumi.aws.memorydb.inputs.UserState.Builder)
     /**
-     * @param authenticationMode Denotes the user&#39;s authentication properties. Detailed below.
+     * @param authenticationMode Authentication properties for the user. Detailed below.
      * @return builder
      */
     def authenticationMode(args: Endofunction[com.pulumi.aws.memorydb.inputs.UserAuthenticationModeArgs.Builder]):

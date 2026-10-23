@@ -436,7 +436,7 @@ object odb:
       com.pulumi.aws.odb.OdbFunctions.getCloudVmClustersPlain(args(argsBuilder).build)
 
     /**
-     * Data source for managing db nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
+     * Data source for managing DB nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
      * 
      * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
@@ -446,7 +446,7 @@ object odb:
       com.pulumi.aws.odb.OdbFunctions.getDbNode(args(argsBuilder).build)
 
     /**
-     * Data source for managing db nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
+     * Data source for managing DB nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
      * 
      * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
@@ -456,7 +456,7 @@ object odb:
       com.pulumi.aws.odb.OdbFunctions.getDbNodePlain(args(argsBuilder).build)
 
     /**
-     * Data source for managing db nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
+     * Data source for managing DB nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
      * 
      * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
@@ -466,7 +466,7 @@ object odb:
       com.pulumi.aws.odb.OdbFunctions.getDbNodes(args(argsBuilder).build)
 
     /**
-     * Data source for managing db nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
+     * Data source for managing DB nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
      * 
      * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
@@ -476,7 +476,7 @@ object odb:
       com.pulumi.aws.odb.OdbFunctions.getDbNodesPlain(args(argsBuilder).build)
 
     /**
-     * Data source for managing db server linked to exadata infrastructure of Oracle Database{@literal @}AWS.
+     * Data source for managing DB server linked to exadata infrastructure of Oracle Database{@literal @}AWS.
      * 
      * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
@@ -486,7 +486,7 @@ object odb:
       com.pulumi.aws.odb.OdbFunctions.getDbServer(args(argsBuilder).build)
 
     /**
-     * Data source for managing db server linked to exadata infrastructure of Oracle Database{@literal @}AWS.
+     * Data source for managing DB server linked to exadata infrastructure of Oracle Database{@literal @}AWS.
      * 
      * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
@@ -496,7 +496,7 @@ object odb:
       com.pulumi.aws.odb.OdbFunctions.getDbServerPlain(args(argsBuilder).build)
 
     /**
-     * Data source for managing db servers linked to exadata infrastructure of Oracle Database{@literal @}AWS.
+     * Data source for managing DB servers linked to exadata infrastructure of Oracle Database{@literal @}AWS.
      * 
      * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
@@ -506,7 +506,7 @@ object odb:
       com.pulumi.aws.odb.OdbFunctions.getDbServers(args(argsBuilder).build)
 
     /**
-     * Data source for managing db servers linked to exadata infrastructure of Oracle Database{@literal @}AWS.
+     * Data source for managing DB servers linked to exadata infrastructure of Oracle Database{@literal @}AWS.
      * 
      * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */

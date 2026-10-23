@@ -154,25 +154,25 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentPlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getLogDataProtectionPolicyDocumentPlain(args(argsBuilder).build)
 
-    /** Use this data source to get information about an AWS Cloudwatch Log Group */
+    /** Use this data source to get information about an AWS CloudWatch Log Group */
     inline def getLogGroup(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetLogGroupResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogGroupArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getLogGroup(args(argsBuilder).build)
 
-    /** Use this data source to get information about an AWS Cloudwatch Log Group */
+    /** Use this data source to get information about an AWS CloudWatch Log Group */
     inline def getLogGroupPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetLogGroupResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogGroupPlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getLogGroupPlain(args(argsBuilder).build)
 
-    /** Use this data source to get a list of AWS Cloudwatch Log Groups */
+    /** Use this data source to get a list of AWS CloudWatch Log Groups */
     inline def getLogGroups(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetLogGroupsResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogGroupsArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getLogGroups(args(argsBuilder).build)
 
-    /** Use this data source to get a list of AWS Cloudwatch Log Groups */
+    /** Use this data source to get a list of AWS CloudWatch Log Groups */
     inline def getLogGroupsPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetLogGroupsResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogGroupsPlainArgs.builder
@@ -928,6 +928,15 @@ object cloudwatch:
       builder.evaluationCriteria(args(argsBuilder).build)
 
     /**
+     * @param evaluationWindow Configures the alarm to use a wall clock evaluation window instead of the default sliding window. Not supported for alarms that use `evaluationCriteria`. See `evaluationWindow` below.
+     * @return builder
+     */
+    def evaluationWindow(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationWindowArgs.Builder]):
+        com.pulumi.aws.cloudwatch.MetricAlarmArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationWindowArgs.builder
+      builder.evaluationWindow(args(argsBuilder).build)
+
+    /**
      * @param metricQueries Enables you to create an alarm based on a metric math expression. You may specify at most 20.
      * @return builder
      */
@@ -995,6 +1004,10 @@ object cloudwatch:
    * Manages AWS CloudWatch OTel enrichment. This is a singleton resource that enables OTel enrichment at the account level.
    * 
    * &gt; **NOTE:** This resource requires the `aws.observabilityadmin.TelemetryEnrichment` resource to be configured first. Without telemetry enrichment enabled, OTel enrichment will not function properly even if the API accepts the configuration.
+   * 
+   * &gt; **NOTE:** Creating this Terraform resource starts AWS CloudWatch OTel enrichment and deleting this Terraform resource stops AWS CloudWatch OTel enrichment.
+   * 
+   * Filters are evaluated as follows. `includeFilter` is applied first, then the `excludeFilter` match set is subtracted from the result. Exclusion always wins, so a metric matched by both is not enriched. An inactive direction is permissive: with no `includeFilter`, every supported namespace is in scope, and with no `excludeFilter`, nothing is removed. Namespaces and metric names are matched exactly and case-sensitively, with no wildcards or prefixes, so `AWS/EC2` matches only `AWS/EC2`. At most 100 selectors are allowed across `includeFilter` and `excludeFilter` **combined**. Two lists of 60 selectors each satisfy the per-list limit but are rejected together.
    */
   def OtelEnrichment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.OtelEnrichmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1004,6 +1017,24 @@ object cloudwatch:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   extension (builder: com.pulumi.aws.cloudwatch.OtelEnrichmentArgs.Builder)
+    /**
+     * @param excludeFilters Namespaces and metric names to leave unenriched. See below.
+     * @return builder
+     */
+    def excludeFilters(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentExcludeFilterArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.OtelEnrichmentArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentExcludeFilterArgs.builder
+      builder.excludeFilters(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param includeFilters Namespaces and metric names to enrich. See below.
+     * @return builder
+     */
+    def includeFilters(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentIncludeFilterArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.OtelEnrichmentArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentIncludeFilterArgs.builder
+      builder.includeFilters(args.map(_(argsBuilder).build)*)
+
     def timeouts(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentTimeoutsArgs.Builder]):
         com.pulumi.aws.cloudwatch.OtelEnrichmentArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentTimeoutsArgs.builder
@@ -1019,6 +1050,30 @@ object cloudwatch:
     com.pulumi.aws.cloudwatch.QueryDefinition(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * Manages a CloudWatch resource metrics configuration. Creating a configuration makes CloudWatch collect detailed metrics for the targeted AWS resource.
+   * 
+   * Each AWS resource can have at most one resource metrics configuration. Detailed metrics incur charges, so limit collection with `metricSelection` when you only need a subset of metrics. See [Amazon CloudWatch pricing](https://aws.amazon.com/cloudwatch/pricing/) for details.
+   * 
+   * &gt; **Note:** Not every AWS resource type is eligible for detailed metrics. At the time of writing, only Amazon ElastiCache replication groups are supported. Targeting any other resource type, including ElastiCache serverless caches and cache clusters, returns a `ValidationError` with the message `Unsupported resource type`.
+   */
+  def ResourceMetricsConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.cloudwatch.ResourceMetricsConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.cloudwatch.ResourceMetricsConfigurationArgs.builder
+    com.pulumi.aws.cloudwatch.ResourceMetricsConfiguration(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.cloudwatch.ResourceMetricsConfigurationArgs.Builder)
+    /**
+     * @param metricSelection Configuration block that limits which metrics CloudWatch collects. At most one block is supported. When omitted, CloudWatch collects all available detailed metrics for the resource. See `metricSelection` below.
+     * @return builder
+     */
+    def metricSelection(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.ResourceMetricsConfigurationMetricSelectionArgs.Builder]):
+        com.pulumi.aws.cloudwatch.ResourceMetricsConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.ResourceMetricsConfigurationMetricSelectionArgs.builder
+      builder.metricSelection(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleRuleArgs.Builder)
     /**
@@ -1109,7 +1164,7 @@ object cloudwatch:
       builder.connectivityParameters(args(argsBuilder).build)
 
     /**
-     * @param invocationHttpParameters Invocation Http Parameters are additional credentials used to sign each Invocation of the ApiDestination created from this Connection. If the ApiDestination Rule Target has additional HttpParameters, the values will be merged together, with the Connection Invocation Http Parameters taking precedence. Secret values are stored and managed by AWS Secrets Manager. A maximum of 1 are allowed. Documented below.
+     * @param invocationHttpParameters Invocation HTTP Parameters are additional credentials used to sign each Invocation of the ApiDestination created from this Connection. If the ApiDestination Rule Target has additional HttpParameters, the values will be merged together, with the Connection Invocation HTTP Parameters taking precedence. Secret values are stored and managed by AWS Secrets Manager. A maximum of 1 are allowed. Documented below.
      * @return builder
      */
     def invocationHttpParameters(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersInvocationHttpParametersArgs.Builder]):
@@ -1175,7 +1230,7 @@ object cloudwatch:
       builder.clientParameters(args(argsBuilder).build)
 
     /**
-     * @param oauthHttpParameters OAuth Http Parameters are additional credentials used to sign the request to the authorization endpoint to exchange the OAuth Client information for an access token. Secret values are stored and managed by AWS Secrets Manager. A maximum of 1 are allowed. Documented below.
+     * @param oauthHttpParameters OAuth HTTP Parameters are additional credentials used to sign the request to the authorization endpoint to exchange the OAuth Client information for an access token. Secret values are stored and managed by AWS Secrets Manager. A maximum of 1 are allowed. Documented below.
      * @return builder
      */
     def oauthHttpParameters(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersOauthOauthHttpParametersArgs.Builder]):
@@ -1949,6 +2004,16 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationCriteriaPromqlCriteriaArgs.builder
       builder.promqlCriteria(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationWindowArgs.Builder)
+    /**
+     * @param wallClockWindow Aligns the evaluated range to fixed clock boundaries that match the alarm&#39;s `period` (for example the top of the hour, midnight, or the start of the calendar week), instead of the default rolling sliding window. Only alarms with a `period` of `60`, `300`, `3600`, `86400`, or `604800` seconds support a wall clock window. See `wallClockWindow` below.
+     * @return builder
+     */
+    def wallClockWindow(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationWindowWallClockWindowArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationWindowArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationWindowWallClockWindowArgs.builder
+      builder.wallClockWindow(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.cloudwatch.inputs.MetricAlarmMetricQueryArgs.Builder)
     /**
      * @param metric The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric and not performing a math expression on returned data.
@@ -1968,6 +2033,15 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.inputs.MetricAlarmState.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationCriteriaArgs.builder
       builder.evaluationCriteria(args(argsBuilder).build)
+
+    /**
+     * @param evaluationWindow Configures the alarm to use a wall clock evaluation window instead of the default sliding window. Not supported for alarms that use `evaluationCriteria`. See `evaluationWindow` below.
+     * @return builder
+     */
+    def evaluationWindow(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationWindowArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.MetricAlarmState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationWindowArgs.builder
+      builder.evaluationWindow(args(argsBuilder).build)
 
     /**
      * @param metricQueries Enables you to create an alarm based on a metric math expression. You may specify at most 20.
@@ -2026,6 +2100,24 @@ object cloudwatch:
       builder.includeMetrics(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentState.Builder)
+    /**
+     * @param excludeFilters Namespaces and metric names to leave unenriched. See below.
+     * @return builder
+     */
+    def excludeFilters(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentExcludeFilterArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentState.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentExcludeFilterArgs.builder
+      builder.excludeFilters(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param includeFilters Namespaces and metric names to enrich. See below.
+     * @return builder
+     */
+    def includeFilters(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentIncludeFilterArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentState.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentIncludeFilterArgs.builder
+      builder.includeFilters(args.map(_(argsBuilder).build)*)
+
     def timeouts(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentTimeoutsArgs.Builder]):
         com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentState.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentTimeoutsArgs.builder
@@ -2036,3 +2128,13 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.inputs.PolicyDocumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.iam.inputs.PolicyStatementArgs.builder
       builder.Statement(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.ResourceMetricsConfigurationState.Builder)
+    /**
+     * @param metricSelection Configuration block that limits which metrics CloudWatch collects. At most one block is supported. When omitted, CloudWatch collects all available detailed metrics for the resource. See `metricSelection` below.
+     * @return builder
+     */
+    def metricSelection(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.ResourceMetricsConfigurationMetricSelectionArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.ResourceMetricsConfigurationState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.ResourceMetricsConfigurationMetricSelectionArgs.builder
+      builder.metricSelection(args(argsBuilder).build)

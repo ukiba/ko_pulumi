@@ -260,6 +260,7 @@ export ko_pulumi.aws.bedrock.containerConfiguration
 export ko_pulumi.aws.bedrock.content
 export ko_pulumi.aws.bedrock.contentConfiguration
 export ko_pulumi.aws.bedrock.contentPolicyConfig
+export ko_pulumi.aws.bedrock.contextEnrichmentConfiguration
 export ko_pulumi.aws.bedrock.contextualGroundingPolicyConfig
 export ko_pulumi.aws.bedrock.crawlerConfiguration
 export ko_pulumi.aws.bedrock.crawlerLimits
@@ -273,12 +274,14 @@ export ko_pulumi.aws.bedrock.customMetricDefinition
 export ko_pulumi.aws.bedrock.customMetrics
 export ko_pulumi.aws.bedrock.customOauth2ProviderConfig
 export ko_pulumi.aws.bedrock.customTransformationConfiguration
+export ko_pulumi.aws.bedrock.daily
 export ko_pulumi.aws.bedrock.data
 export ko_pulumi.aws.bedrock.dataSourceConfig
 export ko_pulumi.aws.bedrock.dataSourceConfiguration
 export ko_pulumi.aws.bedrock.dataset
 export ko_pulumi.aws.bedrock.datasetLocation
 export ko_pulumi.aws.bedrock.datasetMetricConfigs
+export ko_pulumi.aws.bedrock.dayOfMonth
 export ko_pulumi.aws.bedrock.definition
 export ko_pulumi.aws.bedrock.deletionProtectionConfiguration
 export ko_pulumi.aws.bedrock.disabled
@@ -286,6 +289,7 @@ export ko_pulumi.aws.bedrock.disableds
 export ko_pulumi.aws.bedrock.efsAccessPoint
 export ko_pulumi.aws.bedrock.efsAccessPoints
 export ko_pulumi.aws.bedrock.embeddingModelConfiguration
+export ko_pulumi.aws.bedrock.enrichmentStrategyConfiguration
 export ko_pulumi.aws.bedrock.enterprisePolicies
 export ko_pulumi.aws.bedrock.environmentActuals
 export ko_pulumi.aws.bedrock.environmentArtifact
@@ -385,8 +389,10 @@ export ko_pulumi.aws.cloudwatch.deliveryDestinationConfiguration
 export ko_pulumi.aws.cloudwatch.ecsTarget
 export ko_pulumi.aws.cloudwatch.entries
 export ko_pulumi.aws.cloudwatch.evaluationCriteria
+export ko_pulumi.aws.cloudwatch.evaluationWindow
 export ko_pulumi.aws.cloudwatch.eventBuses
 export ko_pulumi.aws.cloudwatch.excludeFilters
+export ko_pulumi.aws.cloudwatchomni.encryptionConfiguration
 export ko_pulumi.aws.codeartifact.externalConnections
 export ko_pulumi.aws.codebuild.artifacts
 export ko_pulumi.aws.codebuild.auth
@@ -1446,6 +1452,7 @@ export ko_pulumi.aws.wafv2.conditions
 export ko_pulumi.aws.wafv2.cookie
 export ko_pulumi.aws.wafv2.cookies
 export ko_pulumi.aws.wafv2.count
+export ko_pulumi.aws.wafv2.cryptoConfig
 export ko_pulumi.aws.wafv2.customKeys
 export ko_pulumi.aws.wafv2.customRequestHandling
 export ko_pulumi.aws.wafv2.customResponse

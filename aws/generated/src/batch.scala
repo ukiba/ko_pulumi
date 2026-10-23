@@ -145,7 +145,7 @@ object batch:
 
   extension (builder: com.pulumi.aws.batch.JobDefinitionArgs.Builder)
     /**
-     * @param eksProperties Valid eks properties. This parameter is only valid if the `type` parameter is `container`.
+     * @param eksProperties Valid EKS properties. This parameter is only valid if the `type` parameter is `container`.
      * @return builder
      */
     def eksProperties(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesArgs.Builder]):
@@ -458,7 +458,7 @@ object batch:
 
   extension (builder: com.pulumi.aws.batch.inputs.JobDefinitionState.Builder)
     /**
-     * @param eksProperties Valid eks properties. This parameter is only valid if the `type` parameter is `container`.
+     * @param eksProperties Valid EKS properties. This parameter is only valid if the `type` parameter is `container`.
      * @return builder
      */
     def eksProperties(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesArgs.Builder]):

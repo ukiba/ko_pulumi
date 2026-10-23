@@ -87,6 +87,15 @@ object wafv2:
       builder.customResponseBodies(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param monetizationConfig Monetization configuration for the rule group. Required when any rule uses the `monetize` action. See `monetizationConfig` below for details.
+     * @return builder
+     */
+    def monetizationConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigArgs.Builder]):
+        com.pulumi.aws.wafv2.RuleGroupArgs.Builder =
+      val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigArgs.builder
+      builder.monetizationConfig(args(argsBuilder).build)
+
+    /**
      * @param rules Rule blocks used to identify the web requests that you want to `allow`, `block`, or `count`. See Rules below for details.
      * @return builder
      */
@@ -259,6 +268,15 @@ object wafv2:
       builder.defaultAction(args(argsBuilder).build)
 
     /**
+     * @param monetizationConfig Monetization configuration for the web ACL. Provide this when any rule in the web ACL uses the `monetize` action. See `monetizationConfig` below for details.
+     * @return builder
+     */
+    def monetizationConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigArgs.Builder]):
+        com.pulumi.aws.wafv2.WebAclArgs.Builder =
+      val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigArgs.builder
+      builder.monetizationConfig(args(argsBuilder).build)
+
+    /**
      * @param rules **`rule` blocks in this resource have several known limitations.** Consider using `aws.wafv2.WebAclRule` to manage rules as separate resources instead. Rule blocks used to identify the web requests that you want to `allow`, `block`, or `count`. See `rule` below for details.
      * @return builder
      */
@@ -279,7 +297,7 @@ object wafv2:
   /**
    * Creates a WAFv2 Web ACL Association.
    * 
-   * &gt; **NOTE on associating a WAFv2 Web ACL with a Cloudfront distribution:** Do not use this resource to associate a WAFv2 Web ACL with a Cloudfront Distribution. The [AWS API call backing this resource](https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html) notes that you should use the `webAclId` property on the `cloudfrontDistribution` instead.
+   * &gt; **NOTE on associating a WAFv2 Web ACL with a CloudFront distribution:** Do not use this resource to associate a WAFv2 Web ACL with a CloudFront Distribution. The [AWS API call backing this resource](https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html) notes that you should use the `webAclId` property on the `cloudfrontDistribution` instead.
    * 
    * ## Import
    * 
@@ -475,6 +493,36 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RegexPatternSetRegularExpressionArgs.builder
       builder.regularExpressions(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigArgs.Builder)
+    /**
+     * @param cryptoConfig Cryptocurrency payment configuration for the rule group. See `cryptoConfig` below for details.
+     * @return builder
+     */
+    def cryptoConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigArgs.Builder]):
+        com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigArgs.builder
+      builder.cryptoConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigArgs.Builder)
+    /**
+     * @param paymentNetworks Blockchain payment networks configured to receive payments. You can specify 1 to 2 networks. See `paymentNetwork` below for details.
+     * @return builder
+     */
+    def paymentNetworks(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigPaymentNetworkArgs.Builder]*):
+        com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigPaymentNetworkArgs.builder
+      builder.paymentNetworks(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigPaymentNetworkArgs.Builder)
+    /**
+     * @param prices Price configuration for this payment network. Currently supports a single price entry. See `prices` below for details.
+     * @return builder
+     */
+    def prices(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigPaymentNetworkPricesArgs.Builder]):
+        com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigPaymentNetworkArgs.Builder =
+      val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigPaymentNetworkPricesArgs.builder
+      builder.prices(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowArgs.Builder)
     /**
      * @param customRequestHandling Custom handling for the web request. See Custom Request Handling below for details.
@@ -540,6 +588,15 @@ object wafv2:
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountArgs.builder
       builder.count(args(argsBuilder).build)
+
+    /**
+     * @param monetize Instructs AWS WAF to monetize the web request, charging per request according to the rule group&#39;s `monetizationConfig`. See Monetize below for details.
+     * @return builder
+     */
+    def monetize(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionMonetizeArgs.Builder]):
+        com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionMonetizeArgs.builder
+      builder.monetize(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockArgs.Builder)
     /**
@@ -3816,6 +3873,15 @@ object wafv2:
       builder.customResponseBodies(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param monetizationConfig Monetization configuration for the rule group. Required when any rule uses the `monetize` action. See `monetizationConfig` below for details.
+     * @return builder
+     */
+    def monetizationConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigArgs.Builder]):
+        com.pulumi.aws.wafv2.inputs.RuleGroupState.Builder =
+      val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigArgs.builder
+      builder.monetizationConfig(args(argsBuilder).build)
+
+    /**
      * @param rules Rule blocks used to identify the web requests that you want to `allow`, `block`, or `count`. See Rules below for details.
      * @return builder
      */
@@ -4082,6 +4148,36 @@ object wafv2:
         com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationState.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldArgs.builder
       builder.redactedFields(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigArgs.Builder)
+    /**
+     * @param cryptoConfig Cryptocurrency payment configuration for the web ACL. See `cryptoConfig` below for details.
+     * @return builder
+     */
+    def cryptoConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigArgs.Builder]):
+        com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigArgs.builder
+      builder.cryptoConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigArgs.Builder)
+    /**
+     * @param paymentNetworks Blockchain payment networks configured to receive payments. You can specify 1 to 2 networks. See `paymentNetwork` below for details.
+     * @return builder
+     */
+    def paymentNetworks(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigPaymentNetworkArgs.Builder]*):
+        com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigPaymentNetworkArgs.builder
+      builder.paymentNetworks(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigPaymentNetworkArgs.Builder)
+    /**
+     * @param prices Price configuration for this payment network. Currently supports a single price entry. See `prices` below for details.
+     * @return builder
+     */
+    def prices(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigPaymentNetworkPricesArgs.Builder]):
+        com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigPaymentNetworkArgs.Builder =
+      val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigPaymentNetworkPricesArgs.builder
+      builder.prices(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleActionAllowArgs.Builder)
     /**
@@ -9764,6 +9860,15 @@ object wafv2:
         com.pulumi.aws.wafv2.inputs.WebAclState.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDefaultActionArgs.builder
       builder.defaultAction(args(argsBuilder).build)
+
+    /**
+     * @param monetizationConfig Monetization configuration for the web ACL. Provide this when any rule in the web ACL uses the `monetize` action. See `monetizationConfig` below for details.
+     * @return builder
+     */
+    def monetizationConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigArgs.Builder]):
+        com.pulumi.aws.wafv2.inputs.WebAclState.Builder =
+      val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigArgs.builder
+      builder.monetizationConfig(args(argsBuilder).build)
 
     /**
      * @param rules **`rule` blocks in this resource have several known limitations.** Consider using `aws.wafv2.WebAclRule` to manage rules as separate resources instead. Rule blocks used to identify the web requests that you want to `allow`, `block`, or `count`. See `rule` below for details.

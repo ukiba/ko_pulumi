@@ -80,6 +80,7 @@ export ko_pulumi.gcp.assuredworkloads.resourceSettings
 export ko_pulumi.gcp.assuredworkloads.resources
 export ko_pulumi.gcp.assuredworkloads.saaEnrollmentResponses
 export ko_pulumi.gcp.backupdisasterrecovery.params
+export ko_pulumi.gcp.backupdisasterrecovery.policyEvaluationSummaries
 export ko_pulumi.gcp.backupdisasterrecovery.regionDiskTargetEnvironment
 export ko_pulumi.gcp.backupdisasterrecovery.resourceManagerTags
 export ko_pulumi.gcp.backupdisasterrecovery.rulesConfigInfos
@@ -518,6 +519,7 @@ export ko_pulumi.gcp.compute.specificSkuAllocations
 export ko_pulumi.gcp.compute.specificSkuProperties
 export ko_pulumi.gcp.compute.srcSecureTags
 export ko_pulumi.gcp.compute.sslHealthCheck
+export ko_pulumi.gcp.compute.standardSnapshots
 export ko_pulumi.gcp.compute.standbyPolicy
 export ko_pulumi.gcp.compute.statefulDisks
 export ko_pulumi.gcp.compute.statefulExternalIps
@@ -530,6 +532,7 @@ export ko_pulumi.gcp.compute.strongSessionAffinityCookie
 export ko_pulumi.gcp.compute.subjectAltNames
 export ko_pulumi.gcp.compute.subnetworks
 export ko_pulumi.gcp.compute.subsetting
+export ko_pulumi.gcp.compute.systemRules
 export ko_pulumi.gcp.compute.targetSecureTags
 export ko_pulumi.gcp.compute.targetSize
 export ko_pulumi.gcp.compute.targetSizePolicies
@@ -912,7 +915,13 @@ export ko_pulumi.gcp.firestore.searchConfig
 export ko_pulumi.gcp.firestore.textSpec
 export ko_pulumi.gcp.firestore.ttlConfig
 export ko_pulumi.gcp.folder.restorePolicy
+export ko_pulumi.gcp.gemini.publishedContext
+export ko_pulumi.gcp.gemini.python
 export ko_pulumi.gcp.gemini.repositories
+export ko_pulumi.gcp.gemini.rightSchemaPaths
+export ko_pulumi.gcp.gemini.schemaRelationships
+export ko_pulumi.gcp.gemini.stagingContext
+export ko_pulumi.gcp.gemini.tableReferences
 export ko_pulumi.gcp.gkebackup.requiring
 export ko_pulumi.gcp.gkebackup.resourceFilter
 export ko_pulumi.gcp.gkebackup.resourceLabels
@@ -1237,6 +1246,7 @@ export ko_pulumi.gcp.sql.settings
 export ko_pulumi.gcp.sql.sqlServerAuditConfig
 export ko_pulumi.gcp.sql.sqlServerUserDetails
 export ko_pulumi.gcp.sql.statuses
+export ko_pulumi.gcp.sql.targetInstanceIpAddresses
 export ko_pulumi.gcp.sql.targetMetrics
 export ko_pulumi.gcp.storage.parquetOptions
 export ko_pulumi.gcp.storage.posixDataSink
@@ -1293,6 +1303,7 @@ export ko_pulumi.gcp.vertex.pythonSpec
 export ko_pulumi.gcp.vertex.ragEmbeddingModelConfig
 export ko_pulumi.gcp.vertex.ragManagedDb
 export ko_pulumi.gcp.vertex.ragManagedDbConfig
+export ko_pulumi.gcp.vertex.randomSampling
 export ko_pulumi.gcp.vertex.reservationAffinity
 export ko_pulumi.gcp.vertex.resourcePools
 export ko_pulumi.gcp.vertex.resourceRuntimeSpec
@@ -1303,17 +1314,23 @@ export ko_pulumi.gcp.vertex.schemaConfigs
 export ko_pulumi.gcp.vertex.secretEnvs
 export ko_pulumi.gcp.vertex.secretRef
 export ko_pulumi.gcp.vertex.serviceAccountSpec
+export ko_pulumi.gcp.vertex.sessionScope
 export ko_pulumi.gcp.vertex.similaritySearchConfig
 export ko_pulumi.gcp.vertex.snapshotAnalysis
 export ko_pulumi.gcp.vertex.sourceCodeSpec
 export ko_pulumi.gcp.vertex.spec
 export ko_pulumi.gcp.vertex.startupProbe
+export ko_pulumi.gcp.vertex.stateDetails
 export ko_pulumi.gcp.vertex.states
 export ko_pulumi.gcp.vertex.structuredMemoryConfigs
 export ko_pulumi.gcp.vertex.syncConfig
 export ko_pulumi.gcp.vertex.targets
 export ko_pulumi.gcp.vertex.tcpSocket
+export ko_pulumi.gcp.vertex.toolCallErrors
+export ko_pulumi.gcp.vertex.toolCalls
 export ko_pulumi.gcp.vertex.topics
+export ko_pulumi.gcp.vertex.totalTokenUsage
+export ko_pulumi.gcp.vertex.traceScope
 export ko_pulumi.gcp.vertex.trafficConfig
 export ko_pulumi.gcp.vertex.trafficSplitAlwaysLatest
 export ko_pulumi.gcp.vertex.trafficSplitManual

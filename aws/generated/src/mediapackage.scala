@@ -21,7 +21,7 @@ object mediapackage:
 
   extension (builder: com.pulumi.aws.mediapackage.inputs.ChannelHlsIngestArgs.Builder)
     /**
-     * @param ingestEndpoints A list of the ingest endpoints
+     * @param ingestEndpoints List of the ingest endpoints
      * @return builder
      */
     def ingestEndpoints(args: Endofunction[com.pulumi.aws.mediapackage.inputs.ChannelHlsIngestIngestEndpointArgs.Builder]*):
@@ -31,7 +31,7 @@ object mediapackage:
 
   extension (builder: com.pulumi.aws.mediapackage.inputs.ChannelState.Builder)
     /**
-     * @param hlsIngests A single item list of HLS ingest information
+     * @param hlsIngests Single item list of HLS ingest information
      * @return builder
      */
     def hlsIngests(args: Endofunction[com.pulumi.aws.mediapackage.inputs.ChannelHlsIngestArgs.Builder]*):

@@ -659,7 +659,7 @@ object imagebuilder:
       builder.s3ExportConfiguration(args(argsBuilder).build)
 
     /**
-     * @param ssmParameterConfigurations Configuration block with SSM parameter configuration to use as AMI id output. Detailed below.
+     * @param ssmParameterConfigurations Configuration block with SSM parameter configuration to use as AMI ID output. Detailed below.
      * @return builder
      */
     def ssmParameterConfigurations(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.DistributionConfigurationDistributionSsmParameterConfigurationArgs.Builder]*):

@@ -206,13 +206,13 @@ object vpc:
     //
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
-    /** Data source for managing an AWS EC2 Vpc Endpoint Associations. */
+    /** Data source for managing an AWS EC2 VPC Endpoint Associations. */
     inline def getEndpointAssociations(args: Endofunction[com.pulumi.aws.vpc.inputs.GetEndpointAssociationsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpc.outputs.GetEndpointAssociationsResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetEndpointAssociationsArgs.builder
       com.pulumi.aws.vpc.VpcFunctions.getEndpointAssociations(args(argsBuilder).build)
 
-    /** Data source for managing an AWS EC2 Vpc Endpoint Associations. */
+    /** Data source for managing an AWS EC2 VPC Endpoint Associations. */
     inline def getEndpointAssociationsPlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetEndpointAssociationsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpc.outputs.GetEndpointAssociationsResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetEndpointAssociationsPlainArgs.builder

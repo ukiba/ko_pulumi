@@ -102,6 +102,19 @@ object networkconnectivity:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  extension (builder: com.pulumi.gcp.networkconnectivity.HubArgs.Builder)
+    /**
+     * @param exportPscConfig (Optional, Beta)
+     * Config for more granular control of Private Service Connect transitivity. Only takes effect when `exportPsc` is true.
+     * If `exportPsc` is true, at least one of `publishedServicesAndRegionalGoogleApis` and `globalGoogleApis` must be true.
+     * Structure is documented below.
+     * @return builder
+     */
+    def exportPscConfig(args: Endofunction[com.pulumi.gcp.networkconnectivity.inputs.HubExportPscConfigArgs.Builder]):
+        com.pulumi.gcp.networkconnectivity.HubArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networkconnectivity.inputs.HubExportPscConfigArgs.builder
+      builder.exportPscConfig(args(argsBuilder).build)
+
   /**
    * Three different resources help you manage your IAM policy for Network Connectivity Hub. Each of these resources serves a different use case:
    * 
@@ -1380,6 +1393,18 @@ object networkconnectivity:
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.networkconnectivity.inputs.HubState.Builder)
+    /**
+     * @param exportPscConfig (Optional, Beta)
+     * Config for more granular control of Private Service Connect transitivity. Only takes effect when `exportPsc` is true.
+     * If `exportPsc` is true, at least one of `publishedServicesAndRegionalGoogleApis` and `globalGoogleApis` must be true.
+     * Structure is documented below.
+     * @return builder
+     */
+    def exportPscConfig(args: Endofunction[com.pulumi.gcp.networkconnectivity.inputs.HubExportPscConfigArgs.Builder]):
+        com.pulumi.gcp.networkconnectivity.inputs.HubState.Builder =
+      val argsBuilder = com.pulumi.gcp.networkconnectivity.inputs.HubExportPscConfigArgs.builder
+      builder.exportPscConfig(args(argsBuilder).build)
+
     /**
      * @param routingVpcs The VPC network associated with this hub&#39;s spokes. All of the VPN tunnels, VLAN attachments, and router appliance instances referenced by this hub&#39;s spokes must belong to this VPC network. This field is read-only. Network Connectivity Center automatically populates it based on the set of spokes attached to the hub.
      * Structure is documented below.

@@ -280,6 +280,7 @@ export ko_pulumi.aws.bedrock.stringListValidation
 export ko_pulumi.aws.bedrock.stringValidation
 export ko_pulumi.aws.bedrock.summarizations
 export ko_pulumi.aws.bedrock.supplementalDataStorageConfiguration
+export ko_pulumi.aws.bedrock.syncSchedule
 export ko_pulumi.aws.bedrock.systemPrompts
 export ko_pulumi.aws.bedrock.systems
 export ko_pulumi.aws.bedrock.tables
@@ -1127,6 +1128,8 @@ export ko_pulumi.aws.pipes.sourceParameters
 export ko_pulumi.aws.pipes.sqsQueueParameters
 export ko_pulumi.aws.pipes.stepFunctionStateMachineParameters
 export ko_pulumi.aws.pipes.targetParameters
+export ko_pulumi.aws.pricingplanmanager.scheduledChanges
+export ko_pulumi.aws.pricingplanmanager.timeouts
 export ko_pulumi.aws.qbusiness.timeouts
 export ko_pulumi.aws.quicksight.parameters
 export ko_pulumi.aws.quicksight.permissions
@@ -1543,8 +1546,10 @@ export ko_pulumi.aws.wafregional.rules
 export ko_pulumi.aws.wafregional.sizeConstraints
 export ko_pulumi.aws.wafregional.sqlInjectionMatchTuples
 export ko_pulumi.aws.wafv2.passwordField
+export ko_pulumi.aws.wafv2.paymentNetworks
 export ko_pulumi.aws.wafv2.phoneNumberFields
 export ko_pulumi.aws.wafv2.preParseTextTransformations
+export ko_pulumi.aws.wafv2.prices
 export ko_pulumi.aws.wafv2.queryArgument
 export ko_pulumi.aws.wafv2.queryString
 export ko_pulumi.aws.wafv2.rateBasedStatement
