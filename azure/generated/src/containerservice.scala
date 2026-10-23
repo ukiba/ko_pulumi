@@ -91,9 +91,6 @@ object containerservice:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  /**
-   * 
-   */
   def ClusterTrustedAccessRoleBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.containerservice.ClusterTrustedAccessRoleBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.ClusterTrustedAccessRoleBindingArgs.builder

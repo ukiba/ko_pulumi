@@ -522,7 +522,9 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       .dropWhile(_.forall(_.isWhitespace))
       .dropRightWhile(_.forall(_.isWhitespace))
       .map(_.replace("/*", "&#47;&#42;"))  // avoid `unclosed comment` error (scaladoc can be nested unlike javadoc)
-    if outLines.size == 1 then
+    if outLines.isEmpty then  // e.g. only examples
+      ""
+    else if outLines.size == 1 then
       s"/** ${outLines.head} */\n$indent"
     else
       s"${outLines.mkString(s"/**\n$indent * ", s"\n$indent * ", s"\n$indent */")}\n$indent"

@@ -978,17 +978,11 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNatGatewaysPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNatGatewaysPlain(args(argsBuilder).build)
 
-    /**
-     * 
-     */
     inline def getNetworkAcls(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkAclsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetNetworkAclsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkAclsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNetworkAcls(args(argsBuilder).build)
 
-    /**
-     * 
-     */
     inline def getNetworkAclsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkAclsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetNetworkAclsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkAclsPlainArgs.builder
@@ -1030,17 +1024,11 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInterfacePlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNetworkInterfacePlain(args(argsBuilder).build)
 
-    /**
-     * 
-     */
     inline def getNetworkInterfaces(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInterfacesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetNetworkInterfacesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInterfacesArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNetworkInterfaces(args(argsBuilder).build)
 
-    /**
-     * 
-     */
     inline def getNetworkInterfacesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInterfacesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetNetworkInterfacesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInterfacesPlainArgs.builder

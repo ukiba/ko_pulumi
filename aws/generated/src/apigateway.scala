@@ -89,17 +89,11 @@ object apigateway:
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetDomainNamePlainArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getDomainNamePlain(args(argsBuilder).build)
 
-    /**
-     * 
-     */
     inline def getExport(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetExportArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetExportResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetExportArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getExport(args(argsBuilder).build)
 
-    /**
-     * 
-     */
     inline def getExportPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetExportPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetExportResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetExportPlainArgs.builder
@@ -163,17 +157,11 @@ object apigateway:
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetRestApiPlainArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getRestApiPlain(args(argsBuilder).build)
 
-    /**
-     * 
-     */
     inline def getSdk(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetSdkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetSdkResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetSdkArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getSdk(args(argsBuilder).build)
 
-    /**
-     * 
-     */
     inline def getSdkPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetSdkPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetSdkResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetSdkPlainArgs.builder

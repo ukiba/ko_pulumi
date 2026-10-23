@@ -685,17 +685,11 @@ object rds:
       val argsBuilder = com.pulumi.aws.rds.inputs.GetEngineVersionPlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getEngineVersionPlain(args(argsBuilder).build)
 
-    /**
-     * 
-     */
     inline def getEventCategories(args: Endofunction[com.pulumi.aws.rds.inputs.GetEventCategoriesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetEventCategoriesResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetEventCategoriesArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getEventCategories(args(argsBuilder).build)
 
-    /**
-     * 
-     */
     inline def getEventCategoriesPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetEventCategoriesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetEventCategoriesResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetEventCategoriesPlainArgs.builder

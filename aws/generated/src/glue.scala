@@ -676,9 +676,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.PartitionStorageDescriptorArgs.builder
       builder.storageDescriptor(args(argsBuilder).build)
 
-  /**
-   * 
-   */
   def PartitionIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.PartitionIndexArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.glue.PartitionIndexArgs.builder

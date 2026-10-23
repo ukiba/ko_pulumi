@@ -477,9 +477,6 @@ object iot:
       def argsBuilder = com.pulumi.aws.iot.inputs.TopicRuleTimestreamArgs.builder
       builder.timestreams(args.map(_(argsBuilder).build)*)
 
-  /**
-   * 
-   */
   def TopicRuleDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.iot.TopicRuleDestinationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iot.TopicRuleDestinationArgs.builder

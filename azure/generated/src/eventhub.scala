@@ -559,9 +559,6 @@ object eventhub:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  /**
-   * 
-   */
   def NamespaceSchemaGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.eventhub.NamespaceSchemaGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.NamespaceSchemaGroupArgs.builder
