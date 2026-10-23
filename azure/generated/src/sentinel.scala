@@ -69,7 +69,7 @@ object sentinel:
       builder.thresholdObservations(args.map(_(argsBuilder).build)*)
 
   /** Manages a Sentinel Fusion Alert Rule. */
-  def AlertRuleFusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("calls deprecated com.pulumi.azure.sentinel.AlertRuleFusionArgs.Builder.name: the `name` is deprecated and will be removed in v5.0 version of the provider.") def AlertRuleFusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleFusionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.AlertRuleFusionArgs.builder
     conf.logicalName2physicalName(name) match

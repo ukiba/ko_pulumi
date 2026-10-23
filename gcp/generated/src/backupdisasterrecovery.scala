@@ -256,7 +256,7 @@ object backupdisasterrecovery:
    * Creating this resource will initiate a restore operation from a specified backup.
    * The resource represents the restore operation and its result.
    */
-  def RestoreWorkload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+  @deprecated("calls deprecated com.pulumi.gcp.backupdisasterrecovery.RestoreWorkloadArgs.Builder.name: `name` is deprecated and will be removed in a future major release. The backup is identified by the parameters (location, backup_vault_id, data_source_id, backup_id).") def RestoreWorkload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.RestoreWorkloadArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.backupdisasterrecovery.RestoreWorkloadArgs.builder
     conf.logicalName2physicalName(name) match

@@ -3,6 +3,7 @@ package build
 import JavacSyntax.*
 
 import com.sun.source.tree.{ClassTree, Tree}
+import com.sun.source.doctree.DeprecatedTree
 import com.sun.source.util.{DocTrees, TreePath, TreePathScanner, JavacTask}
 
 import scala.jdk.StreamConverters.*
@@ -183,6 +184,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       val `java.lang.String`                      = elements.getTypeElement("java.lang.String")
       val `java.lang.Deprecated`                  = elements.getTypeElement("java.lang.Deprecated")
       val `java.util.Map`                         = elements.getTypeElement("java.util.Map")
+      val `com.pulumi.core.Output`                = elements.getTypeElement("com.pulumi.core.Output")
       val `com.pulumi.resources.CustomResource`   = elements.getTypeElement("com.pulumi.resources.CustomResource")
       val `com.pulumi.resources.ProviderResource` = elements.getTypeElement("com.pulumi.resources.ProviderResource")
 
@@ -191,6 +193,8 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
     val `java.lang.Deprecated` = elems.`java.lang.Deprecated`.asType
     val `java.util.Map<java.lang.String,java.lang.String>` =
         types.getDeclaredType(elems.`java.util.Map`, `java.lang.String`, `java.lang.String`)
+    val `com.pulumi.core.Output<java.util.Map<java.lang.String,java.lang.String>>` =
+        types.getDeclaredType(elems.`com.pulumi.core.Output`, `java.util.Map<java.lang.String,java.lang.String>`)
     val `com.pulumi.resources.CustomResource`   = elems.`com.pulumi.resources.CustomResource`  .asType
     val `com.pulumi.resources.ProviderResource` = elems.`com.pulumi.resources.ProviderResource`.asType
 
@@ -255,7 +259,8 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
                   throw IllegalStateException(s"pulumi Args class must have Builder inner class: $argsType")
 
                 val argsBuilderMembers = argsBuilderType.enclosedElements  // directly declared and mandated
-                val argsBuilderHasName = argsBuilderMembers.exists(isMethod("name", `java.lang.String`))
+                val nameSetter = argsBuilderMembers.find(isMethod("name", `java.lang.String`))
+                val argsBuilderHasName = nameSetter.nonEmpty
                 val argsBuilderHasTags = argsBuilderMembers.exists(isMethod("tags",
                     `java.util.Map<java.lang.String,java.lang.String>`))
 
@@ -265,26 +270,33 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
                   scaladoc(lines, indent = "  ")
                 .mkString
 
-                val deprecated = deprecatedOf(clsElem.annotationMirrors)
+                def requiredMethod(owner: Element, name: String, paramTypes: TypeMirror*): Element =
+                  owner.enclosedElements.find(isMethod(name, paramTypes*)).getOrElse:
+                    throw IllegalStateException(s"$owner must have $name(${paramTypes.mkString(", ")})")
+
+                // each conf is paired with the methods it calls, to propagate their deprecation
 
                 // pre-args-function propagation: args-function can override
                 // Name tag is handled separately because overriding a part of Map is not straight forward
-                val applyConf = Seq(
-                  Option.when(argsBuilderHasName)("""
+                val applyConfs = Seq(
+                  nameSetter.map: setter =>
+                    ("""
                     |    conf.logicalName2physicalName(name) match
                     |      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
                     |      case None               =>
-                    |""".stripMargin.trim),
+                    |""".stripMargin.trim, Seq(setter)),
 
-                  Option.when(argsType.toString == "com.pulumi.aws.ecs.TaskDefinitionArgs")("""
+                  Option.when(argsType.toString == "com.pulumi.aws.ecs.TaskDefinitionArgs"):
+                    ("""
                     |    conf.logicalName2ecsTaskDefinitionFamily(name) match
                     |      case Some(family) => argsBuilder = argsBuilder.family(family)
                     |      case None         =>
-                    |""".stripMargin.trim),
-                ).flatten.map(_ + "\n    ").mkString
+                    |""".stripMargin.trim, Seq(requiredMethod(argsBuilderType, "family", `java.lang.String`))),
+                ).flatten
 
                 // post-args-function: tags set by args-function are preserved
-                val mergeConf = Option.when(argsBuilderHasTags)("""
+                val mergeConfs = Option.when(argsBuilderHasTags):
+                  ("""
                   |    argsBuilder = args(argsBuilder)
                   |    conf.logicalName2tagName(name) match
                   |      case Some(tagName) =>
@@ -292,7 +304,34 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
                   |          transformOptOutputMap(argsBuilder.build.tags, map =>
                   |              if map.contains("Name") then map else map + ("Name" -> tagName))
                   |      case None =>
-                  |""".stripMargin.trim).map(_ + "\n    ").mkString
+                  |""".stripMargin.trim, Seq(
+                    requiredMethod(argsBuilderType, "tags",
+                        `com.pulumi.core.Output<java.util.Map<java.lang.String,java.lang.String>>`),
+                    requiredMethod(argsType, "tags")))
+                .toSeq
+
+                val applyConf = applyConfs.map(_._1 + "\n    ").mkString
+                val mergeConf = mergeConfs.map(_._1 + "\n    ").mkString
+
+                // deprecated if a called method is, so that the warning is shown to the users instead of here
+                // (like javac, scalac does not warn inside deprecated members)
+                val deprecated = deprecatedOf(clsElem.annotationMirrors) match
+                  case "" =>
+                    val calledMethods = (applyConfs ++ mergeConfs).flatMap(_._2).distinct
+                    val deprecatedMethods = calledMethods.flatMap: method =>
+                      deprecatedSinceOf(method.annotationMirrors).map(since => (method, since))
+                    Option.when(deprecatedMethods.nonEmpty):
+                      val reasons = deprecatedMethods.map: (method, _) =>
+                        val reason = deprecatedReasonOf(method).map(": " + _).mkString
+                        s"${method.getEnclosingElement}.${method.simpleName}$reason"
+                      val sinces = deprecatedMethods.flatMap(_._2).distinct
+                      val since = Option.when(sinces.nonEmpty):
+                        s", since = ${stringLiteralOf(sinces.mkString(", "))}"
+                      .mkString
+                      s"@deprecated(${stringLiteralOf(s"calls deprecated ${reasons.mkString("; ")}")}$since) "
+                    .mkString
+                  case clsDeprecated => clsDeprecated
+
                 val finalArgsExpr = if argsBuilderHasTags then "argsBuilder.build" else "args(argsBuilder).build"
 
                 // identity is qualified to avoid the collision with gcp.storage.identity
@@ -474,13 +513,23 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
     // annotation is needed since @deprecated tag in scaladoc does not suppress the deprecated warnings
     def deprecatedOf(annos: Iterable[AnnotationMirror])(using types: Types): String =
+      deprecatedSinceOf(annos).map: since =>
+        val sinceArg = since.map(value => s"since = ${stringLiteralOf(value)}").mkString
+        s"@deprecated(${sinceArg}) "  // maybe propagate anno.elementValues
+      .mkString
+
+    // Some(since) if @Deprecated
+    def deprecatedSinceOf(annos: Iterable[AnnotationMirror])(using types: Types): Option[Option[String]] =
       annos.find(anno => types.isSameType(anno.annotationType, `java.lang.Deprecated`)).map: anno =>
-        val since = anno.elementValues.collectFirst:
+        anno.elementValues.collectFirst:
           case (method: ExecutableElement, value: AnnotationValue) if method.getSimpleName.contentEquals("since") =>
             value.getValue.asInstanceOf[String]
-        .map(value => s"since = ${stringLiteralOf(value)}").mkString
-        s"@deprecated(${since}) "  // maybe propagate anno.elementValues
-      .mkString
+
+    // the body of `@deprecated` Javadoc tag, with whitespace collapsed
+    def deprecatedReasonOf(elem: Element): Option[String] =
+      Option(trees.getDocCommentTree(elem)).toSeq.flatMap(_.getBlockTags.asScala).collectFirst:
+        case tag: DeprecatedTree => tag.getBody.asScala.mkString.trim.replaceAll("\\s+", " ")
+      .filter(_.nonEmpty)
 
   def renderScalaType(typeMirror: TypeMirror): String =
     val text = typeMirror.toString
