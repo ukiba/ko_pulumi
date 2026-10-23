@@ -774,6 +774,18 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.GetQueryLogConfigFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.route53.inputs.GetQueryLogConfigPlainArgs.Builder)
+    /**
+     * @param filters One or more name/value pairs to use as filters. There are
+     * several valid keys, for a full reference, check out
+     * [Route53resolver Filter value in the AWS API reference](https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_Filter.html).
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.route53.inputs.GetQueryLogConfigFilter.Builder]*):
+        com.pulumi.aws.route53.inputs.GetQueryLogConfigPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.route53.inputs.GetQueryLogConfigFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.route53.inputs.GetResolverEndpointArgs.Builder)
     /**
      * @param filters One or more name/value pairs to use as filters. There are
@@ -784,6 +796,18 @@ object route53:
     def filters(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverEndpointFilterArgs.Builder]*):
         com.pulumi.aws.route53.inputs.GetResolverEndpointArgs.Builder =
       def argsBuilder = com.pulumi.aws.route53.inputs.GetResolverEndpointFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.route53.inputs.GetResolverEndpointPlainArgs.Builder)
+    /**
+     * @param filters One or more name/value pairs to use as filters. There are
+     * several valid keys, for a full reference, check out
+     * [Route53resolver Filter value in the AWS API reference](https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_Filter.html).
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverEndpointFilter.Builder]*):
+        com.pulumi.aws.route53.inputs.GetResolverEndpointPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.route53.inputs.GetResolverEndpointFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentArgs.Builder)
@@ -804,6 +828,76 @@ object route53:
         com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentPlainArgs.Builder)
+    /**
+     * @param endpoints Configuration block for the definitions of the endpoints that you want to use in this traffic policy. See below
+     * @return builder
+     */
+    def endpoints(args: Endofunction[com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentEndpoint.Builder]*):
+        com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentEndpoint.builder
+      builder.endpoints(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param rules Configuration block for definitions of the rules that you want to use in this traffic policy. See below
+     * @return builder
+     */
+    def rules(args: Endofunction[com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRule.Builder]*):
+        com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRule.builder
+      builder.rules(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRule.Builder)
+    /**
+     * @param geoProximityLocations Configuration block for when you add a geoproximity rule, you configure Amazon Route 53 to route traffic to your resources based on the geographic location of your resources. Only valid for `geoproximity` type. See below
+     * @return builder
+     */
+    def geoProximityLocations(args: Endofunction[com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleGeoProximityLocation.Builder]*):
+        com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRule.Builder =
+      def argsBuilder = com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleGeoProximityLocation.builder
+      builder.geoProximityLocations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param items Configuration block for when you add a multivalue answer rule, you configure your traffic policy to route traffic approximately randomly to your healthy resources.  Only valid for `multivalue` type. See below
+     * @return builder
+     */
+    def items(args: Endofunction[com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleItem.Builder]*):
+        com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRule.Builder =
+      def argsBuilder = com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleItem.builder
+      builder.items(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param locations Configuration block for when you add a geolocation rule, you configure your traffic policy to route your traffic based on the geographic location of your users.  Only valid for `geo` type. See below
+     * @return builder
+     */
+    def locations(args: Endofunction[com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleLocation.Builder]*):
+        com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRule.Builder =
+      def argsBuilder = com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleLocation.builder
+      builder.locations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param primary Configuration block for the settings for the rule or endpoint that you want to route traffic to whenever the corresponding resources are available. Only valid for `failover` type. See below
+     * @return builder
+     */
+    def primary(args: Endofunction[com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRulePrimary.Builder]):
+        com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRule.Builder =
+      val argsBuilder = com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRulePrimary.builder
+      builder.primary(args(argsBuilder).build)
+
+    def regions(args: Endofunction[com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleRegion.Builder]*):
+        com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRule.Builder =
+      def argsBuilder = com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleRegion.builder
+      builder.regions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param secondary Configuration block for the rule or endpoint that you want to route traffic to whenever the primary resources are not available. Only valid for `failover` type. See below
+     * @return builder
+     */
+    def secondary(args: Endofunction[com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleSecondary.Builder]):
+        com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRule.Builder =
+      val argsBuilder = com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleSecondary.builder
+      builder.secondary(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleArgs.Builder)
     /**

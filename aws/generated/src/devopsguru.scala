@@ -198,6 +198,25 @@ object devopsguru:
       def argsBuilder = com.pulumi.aws.devopsguru.inputs.GetNotificationChannelSnArgs.builder
       builder.sns(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.devopsguru.inputs.GetNotificationChannelPlainArgs.Builder)
+    /**
+     * @param filters Filter configurations for the Amazon SNS notification topic. See the `filters` attribute reference below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetNotificationChannelFilter.Builder]*):
+        com.pulumi.aws.devopsguru.inputs.GetNotificationChannelPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.devopsguru.inputs.GetNotificationChannelFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param sns SNS noficiation channel configurations. See the `sns` attribute reference below.
+     * @return builder
+     */
+    def sns(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetNotificationChannelSn.Builder]*):
+        com.pulumi.aws.devopsguru.inputs.GetNotificationChannelPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.devopsguru.inputs.GetNotificationChannelSn.builder
+      builder.sns(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.devopsguru.inputs.NotificationChannelState.Builder)
     /**
      * @param filters Filter configurations for the Amazon SNS notification topic. See the `filters` argument reference below.

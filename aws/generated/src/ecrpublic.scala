@@ -96,6 +96,16 @@ object ecrpublic:
       def argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetImagesImageIdArgs.builder
       builder.imageIds(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ecrpublic.inputs.GetImagesPlainArgs.Builder)
+    /**
+     * @param imageIds One or more image ID filters. Each image ID can use either a tag or digest (or both). Each object has the following attributes:
+     * @return builder
+     */
+    def imageIds(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesImageId.Builder]*):
+        com.pulumi.aws.ecrpublic.inputs.GetImagesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetImagesImageId.builder
+      builder.imageIds(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ecrpublic.inputs.RepositoryState.Builder)
     /**
      * @param catalogData Catalog data configuration for the repository. See below for schema.

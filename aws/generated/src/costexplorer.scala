@@ -845,6 +845,89 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsTimePeriodArgs.builder
       builder.timePeriod(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.costexplorer.inputs.GetTagsFilter.Builder)
+    /**
+     * @param ands Return results that match both `Dimension` objects.
+     * @return builder
+     */
+    def ands(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilterAnd.Builder]*):
+        com.pulumi.aws.costexplorer.inputs.GetTagsFilter.Builder =
+      def argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterAnd.builder
+      builder.ands(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See `costCategory` block below for details.
+     * @return builder
+     */
+    def costCategory(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilterCostCategory.Builder]):
+        com.pulumi.aws.costexplorer.inputs.GetTagsFilter.Builder =
+      val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterCostCategory.builder
+      builder.costCategory(args(argsBuilder).build)
+
+    /**
+     * @param dimension Configuration block for the specific `Dimension` to use for `Expression`. See `dimension` block below for details.
+     * @return builder
+     */
+    def dimension(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilterDimension.Builder]):
+        com.pulumi.aws.costexplorer.inputs.GetTagsFilter.Builder =
+      val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterDimension.builder
+      builder.dimension(args(argsBuilder).build)
+
+    /**
+     * @param not Return results that match both `Dimension` object.
+     * @return builder
+     */
+    def not(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilterNot.Builder]):
+        com.pulumi.aws.costexplorer.inputs.GetTagsFilter.Builder =
+      val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterNot.builder
+      builder.not(args(argsBuilder).build)
+
+    /**
+     * @param ors Return results that match both `Dimension` object.
+     * @return builder
+     */
+    def ors(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilterOr.Builder]*):
+        com.pulumi.aws.costexplorer.inputs.GetTagsFilter.Builder =
+      def argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterOr.builder
+      builder.ors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param tags Tags that match your request.
+     * @return builder
+     */
+    def tags(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilterTags.Builder]):
+        com.pulumi.aws.costexplorer.inputs.GetTagsFilter.Builder =
+      val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterTags.builder
+      builder.tags(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.costexplorer.inputs.GetTagsFilterAnd.Builder)
+    /**
+     * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See `costCategory` block below for details.
+     * @return builder
+     */
+    def costCategory(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilterAndCostCategory.Builder]):
+        com.pulumi.aws.costexplorer.inputs.GetTagsFilterAnd.Builder =
+      val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterAndCostCategory.builder
+      builder.costCategory(args(argsBuilder).build)
+
+    /**
+     * @param dimension Configuration block for the specific `Dimension` to use for `Expression`. See `dimension` block below for details.
+     * @return builder
+     */
+    def dimension(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilterAndDimension.Builder]):
+        com.pulumi.aws.costexplorer.inputs.GetTagsFilterAnd.Builder =
+      val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterAndDimension.builder
+      builder.dimension(args(argsBuilder).build)
+
+    /**
+     * @param tags Tags that match your request.
+     * @return builder
+     */
+    def tags(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilterAndTags.Builder]):
+        com.pulumi.aws.costexplorer.inputs.GetTagsFilterAnd.Builder =
+      val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterAndTags.builder
+      builder.tags(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.costexplorer.inputs.GetTagsFilterAndArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See `costCategory` block below for details.
@@ -928,6 +1011,34 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.costexplorer.inputs.GetTagsFilterNot.Builder)
+    /**
+     * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See `costCategory` block below for details.
+     * @return builder
+     */
+    def costCategory(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilterNotCostCategory.Builder]):
+        com.pulumi.aws.costexplorer.inputs.GetTagsFilterNot.Builder =
+      val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterNotCostCategory.builder
+      builder.costCategory(args(argsBuilder).build)
+
+    /**
+     * @param dimension Configuration block for the specific `Dimension` to use for `Expression`. See `dimension` block below for details.
+     * @return builder
+     */
+    def dimension(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilterNotDimension.Builder]):
+        com.pulumi.aws.costexplorer.inputs.GetTagsFilterNot.Builder =
+      val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterNotDimension.builder
+      builder.dimension(args(argsBuilder).build)
+
+    /**
+     * @param tags Tags that match your request.
+     * @return builder
+     */
+    def tags(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilterNotTags.Builder]):
+        com.pulumi.aws.costexplorer.inputs.GetTagsFilterNot.Builder =
+      val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterNotTags.builder
+      builder.tags(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.costexplorer.inputs.GetTagsFilterNotArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See `costCategory` block below for details.
@@ -954,6 +1065,34 @@ object costexplorer:
     def tags(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilterNotTagsArgs.Builder]):
         com.pulumi.aws.costexplorer.inputs.GetTagsFilterNotArgs.Builder =
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterNotTagsArgs.builder
+      builder.tags(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.costexplorer.inputs.GetTagsFilterOr.Builder)
+    /**
+     * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See `costCategory` block below for details.
+     * @return builder
+     */
+    def costCategory(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilterOrCostCategory.Builder]):
+        com.pulumi.aws.costexplorer.inputs.GetTagsFilterOr.Builder =
+      val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterOrCostCategory.builder
+      builder.costCategory(args(argsBuilder).build)
+
+    /**
+     * @param dimension Configuration block for the specific `Dimension` to use for `Expression`. See `dimension` block below for details.
+     * @return builder
+     */
+    def dimension(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilterOrDimension.Builder]):
+        com.pulumi.aws.costexplorer.inputs.GetTagsFilterOr.Builder =
+      val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterOrDimension.builder
+      builder.dimension(args(argsBuilder).build)
+
+    /**
+     * @param tags Tags that match your request.
+     * @return builder
+     */
+    def tags(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilterOrTags.Builder]):
+        com.pulumi.aws.costexplorer.inputs.GetTagsFilterOr.Builder =
+      val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterOrTags.builder
       builder.tags(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.costexplorer.inputs.GetTagsFilterOrArgs.Builder)
@@ -983,3 +1122,31 @@ object costexplorer:
         com.pulumi.aws.costexplorer.inputs.GetTagsFilterOrArgs.Builder =
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterOrTagsArgs.builder
       builder.tags(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.costexplorer.inputs.GetTagsPlainArgs.Builder)
+    /**
+     * @param filter Configuration block for the `Expression` object used to categorize costs. See `filter` block below for details.
+     * @return builder
+     */
+    def filter(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsFilter.Builder]):
+        com.pulumi.aws.costexplorer.inputs.GetTagsPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilter.builder
+      builder.filter(args(argsBuilder).build)
+
+    /**
+     * @param sortBies Configuration block for the value by which you want to sort the data. `sortBy` block below for details.
+     * @return builder
+     */
+    def sortBies(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsSortBy.Builder]*):
+        com.pulumi.aws.costexplorer.inputs.GetTagsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsSortBy.builder
+      builder.sortBies(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param timePeriod Configuration block for the start and end dates for retrieving the dimension values. See `timePeriod` block below for details.
+     * @return builder
+     */
+    def timePeriod(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsTimePeriod.Builder]):
+        com.pulumi.aws.costexplorer.inputs.GetTagsPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsTimePeriod.builder
+      builder.timePeriod(args(argsBuilder).build)

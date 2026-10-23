@@ -340,6 +340,31 @@ object ecr:
       def argsBuilder = com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentPlainArgs.Builder)
+    def rules(args: Endofunction[com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRule.Builder]*):
+        com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRule.builder
+      builder.rules(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRule.Builder)
+    /**
+     * @param action Specifies the action to take.
+     * @return builder
+     */
+    def action(args: Endofunction[com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRuleAction.Builder]):
+        com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRule.Builder =
+      val argsBuilder = com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRuleAction.builder
+      builder.action(args(argsBuilder).build)
+
+    /**
+     * @param selection Collects parameters describing the selection criteria for the ECR lifecycle policy:
+     * @return builder
+     */
+    def selection(args: Endofunction[com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRuleSelection.Builder]):
+        com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRule.Builder =
+      val argsBuilder = com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRuleSelection.builder
+      builder.selection(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRuleArgs.Builder)
     /**
      * @param action Specifies the action to take.

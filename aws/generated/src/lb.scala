@@ -449,6 +449,67 @@ object lb:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleAction.Builder)
+    /**
+     * @param authenticateCognitos An action to authenticate using Amazon Cognito.
+     * Detailed below.
+     * @return builder
+     */
+    def authenticateCognitos(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleActionAuthenticateCognito.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleAction.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleActionAuthenticateCognito.builder
+      builder.authenticateCognitos(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param authenticateOidcs An action to authenticate using OIDC.
+     * Detailed below.
+     * @return builder
+     */
+    def authenticateOidcs(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleActionAuthenticateOidc.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleAction.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleActionAuthenticateOidc.builder
+      builder.authenticateOidcs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param fixedResponses An action to return a fixed response.
+     * Detailed below.
+     * @return builder
+     */
+    def fixedResponses(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleActionFixedResponse.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleAction.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleActionFixedResponse.builder
+      builder.fixedResponses(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param forwards An action to forward the request.
+     * Detailed below.
+     * @return builder
+     */
+    def forwards(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleActionForward.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleAction.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleActionForward.builder
+      builder.forwards(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param jwtValidations An action to validate using JWT.
+     * Detailed below.
+     * @return builder
+     */
+    def jwtValidations(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleActionJwtValidation.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleAction.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleActionJwtValidation.builder
+      builder.jwtValidations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param redirects An action to redirect the request.
+     * Detailed below.
+     * @return builder
+     */
+    def redirects(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleActionRedirect.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleAction.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleActionRedirect.builder
+      builder.redirects(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleActionArgs.Builder)
     /**
      * @param authenticateCognitos An action to authenticate using Amazon Cognito.
@@ -510,6 +571,27 @@ object lb:
       def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleActionRedirectArgs.builder
       builder.redirects(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleActionForward.Builder)
+    /**
+     * @param stickinesses Target group stickiness for the rule.
+     * Detailed below.
+     * @return builder
+     */
+    def stickinesses(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleActionForwardStickiness.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleActionForward.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleActionForwardStickiness.builder
+      builder.stickinesses(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param targetGroups Set of target groups for the action.
+     * Detailed below.
+     * @return builder
+     */
+    def targetGroups(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleActionForwardTargetGroup.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleActionForward.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleActionForwardTargetGroup.builder
+      builder.targetGroups(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleActionForwardArgs.Builder)
     /**
      * @param stickinesses Target group stickiness for the rule.
@@ -530,6 +612,16 @@ object lb:
         com.pulumi.aws.lb.inputs.GetListenerRuleActionForwardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleActionForwardTargetGroupArgs.builder
       builder.targetGroups(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleActionJwtValidation.Builder)
+    /**
+     * @param additionalClaims Additional claims to validate.
+     * @return builder
+     */
+    def additionalClaims(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleActionJwtValidationAdditionalClaim.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleActionJwtValidation.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleActionJwtValidationAdditionalClaim.builder
+      builder.additionalClaims(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleActionJwtValidationArgs.Builder)
     /**
@@ -570,6 +662,66 @@ object lb:
         com.pulumi.aws.lb.inputs.GetListenerRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleTransformArgs.builder
       builder.transforms(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleCondition.Builder)
+    /**
+     * @param hostHeaders Host header patterns to match.
+     * Detailed below.
+     * @return builder
+     */
+    def hostHeaders(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleConditionHostHeader.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleCondition.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleConditionHostHeader.builder
+      builder.hostHeaders(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param httpHeaders HTTP header and values to match.
+     * Detailed below.
+     * @return builder
+     */
+    def httpHeaders(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleConditionHttpHeader.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleCondition.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleConditionHttpHeader.builder
+      builder.httpHeaders(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param httpRequestMethods Contains a single attribute `values`, which contains a set of HTTP request methods.
+     * @return builder
+     */
+    def httpRequestMethods(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleConditionHttpRequestMethod.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleCondition.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleConditionHttpRequestMethod.builder
+      builder.httpRequestMethods(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param pathPatterns Path patterns to compare against the request URL.
+     * Detailed below.
+     * @return builder
+     */
+    def pathPatterns(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleConditionPathPattern.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleCondition.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleConditionPathPattern.builder
+      builder.pathPatterns(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param queryStrings Query string parameters to match.
+     * Detailed below.
+     * @return builder
+     */
+    def queryStrings(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleConditionQueryString.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleCondition.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleConditionQueryString.builder
+      builder.queryStrings(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param sourceIps Source IP address to match.
+     * Detailed below.
+     * @return builder
+     */
+    def sourceIps(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleConditionSourceIp.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleCondition.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleConditionSourceIp.builder
+      builder.sourceIps(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleConditionArgs.Builder)
     /**
@@ -631,6 +783,16 @@ object lb:
       def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleConditionSourceIpArgs.builder
       builder.sourceIps(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleConditionQueryString.Builder)
+    /**
+     * @param values Set of source IP addresses in CIDR format for Application Load Balancers
+     * @return builder
+     */
+    def values(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleConditionQueryStringValue.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleConditionQueryString.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleConditionQueryStringValue.builder
+      builder.values(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleConditionQueryStringArgs.Builder)
     /**
      * @param values Set of source IP addresses in CIDR format for Application Load Balancers
@@ -640,6 +802,55 @@ object lb:
         com.pulumi.aws.lb.inputs.GetListenerRuleConditionQueryStringArgs.Builder =
       def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleConditionQueryStringValueArgs.builder
       builder.values(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.lb.inputs.GetListenerRulePlainArgs.Builder)
+    /**
+     * @param actions List of actions associated with the rule, sorted by `order`.
+     * Detailed below.
+     * @return builder
+     */
+    def actions(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleAction.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRulePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleAction.builder
+      builder.actions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param conditions Set of conditions associated with the rule.
+     * Detailed below.
+     * @return builder
+     */
+    def conditions(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleCondition.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRulePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleCondition.builder
+      builder.conditions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param transforms Block for transform to apply to requests that match this rule. Detailed below.
+     * @return builder
+     */
+    def transforms(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleTransform.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRulePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleTransform.builder
+      builder.transforms(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleTransform.Builder)
+    /**
+     * @param hostHeaderRewriteConfigs Block for host header rewrite. Detailed below.
+     * @return builder
+     */
+    def hostHeaderRewriteConfigs(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleTransformHostHeaderRewriteConfig.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleTransform.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleTransformHostHeaderRewriteConfig.builder
+      builder.hostHeaderRewriteConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param urlRewriteConfigs Block for URL rewrite. Detailed below.
+     * @return builder
+     */
+    def urlRewriteConfigs(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleTransformUrlRewriteConfig.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleTransform.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleTransformUrlRewriteConfig.builder
+      builder.urlRewriteConfigs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleTransformArgs.Builder)
     /**
@@ -660,6 +871,16 @@ object lb:
       def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleTransformUrlRewriteConfigArgs.builder
       builder.urlRewriteConfigs(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleTransformHostHeaderRewriteConfig.Builder)
+    /**
+     * @param rewrites Block for URL rewrite configuration. Detailed below.
+     * @return builder
+     */
+    def rewrites(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleTransformHostHeaderRewriteConfigRewrite.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleTransformHostHeaderRewriteConfig.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleTransformHostHeaderRewriteConfigRewrite.builder
+      builder.rewrites(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleTransformHostHeaderRewriteConfigArgs.Builder)
     /**
      * @param rewrites Block for URL rewrite configuration. Detailed below.
@@ -668,6 +889,16 @@ object lb:
     def rewrites(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleTransformHostHeaderRewriteConfigRewriteArgs.Builder]*):
         com.pulumi.aws.lb.inputs.GetListenerRuleTransformHostHeaderRewriteConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleTransformHostHeaderRewriteConfigRewriteArgs.builder
+      builder.rewrites(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleTransformUrlRewriteConfig.Builder)
+    /**
+     * @param rewrites Block for URL rewrite configuration. Detailed below.
+     * @return builder
+     */
+    def rewrites(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleTransformUrlRewriteConfigRewrite.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleTransformUrlRewriteConfig.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleTransformUrlRewriteConfigRewrite.builder
       builder.rewrites(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleTransformUrlRewriteConfigArgs.Builder)

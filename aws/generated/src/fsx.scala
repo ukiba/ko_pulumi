@@ -605,6 +605,16 @@ object fsx:
       def argsBuilder = com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachineFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinePlainArgs.Builder)
+    /**
+     * @param filters Configuration block. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachineFilter.Builder]*):
+        com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachineFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinesArgs.Builder)
     /**
      * @param filters Configuration block. Detailed below.
@@ -615,6 +625,16 @@ object fsx:
       def argsBuilder = com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinesPlainArgs.Builder)
+    /**
+     * @param filters Configuration block. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinesFilter.Builder]*):
+        com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinesFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.fsx.inputs.GetOpenZfsSnapshotArgs.Builder)
     /**
      * @param filters Configuration block. Detailed below.
@@ -623,6 +643,16 @@ object fsx:
     def filters(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOpenZfsSnapshotFilterArgs.Builder]*):
         com.pulumi.aws.fsx.inputs.GetOpenZfsSnapshotArgs.Builder =
       def argsBuilder = com.pulumi.aws.fsx.inputs.GetOpenZfsSnapshotFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.fsx.inputs.GetOpenZfsSnapshotPlainArgs.Builder)
+    /**
+     * @param filters Configuration block. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOpenZfsSnapshotFilter.Builder]*):
+        com.pulumi.aws.fsx.inputs.GetOpenZfsSnapshotPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.fsx.inputs.GetOpenZfsSnapshotFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.fsx.inputs.LustreFileSystemState.Builder)

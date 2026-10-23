@@ -115,3 +115,13 @@ object codecatalyst:
         com.pulumi.aws.codecatalyst.inputs.GetDevEnvironmentArgs.Builder =
       def argsBuilder = com.pulumi.aws.codecatalyst.inputs.GetDevEnvironmentRepositoryArgs.builder
       builder.repositories(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.codecatalyst.inputs.GetDevEnvironmentPlainArgs.Builder)
+    /**
+     * @param repositories The source repository that contains the branch to clone into the Dev Environment.
+     * @return builder
+     */
+    def repositories(args: Endofunction[com.pulumi.aws.codecatalyst.inputs.GetDevEnvironmentRepository.Builder]*):
+        com.pulumi.aws.codecatalyst.inputs.GetDevEnvironmentPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.codecatalyst.inputs.GetDevEnvironmentRepository.builder
+      builder.repositories(args.map(_(argsBuilder).build)*)

@@ -180,6 +180,16 @@ object accountaccess:
       val argsBuilder = com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterArgs.builder
       builder.filter(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilter.Builder)
+    /**
+     * @param principalRole principal-to-role filter criteria for narrowing entitlement results. See `filter.principal_role` Block below.
+     * @return builder
+     */
+    def principalRole(args: Endofunction[com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterPrincipalRole.Builder]):
+        com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilter.Builder =
+      val argsBuilder = com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterPrincipalRole.builder
+      builder.principalRole(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterArgs.Builder)
     /**
      * @param principalRole principal-to-role filter criteria for narrowing entitlement results. See `filter.principal_role` Block below.
@@ -189,6 +199,16 @@ object accountaccess:
         com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterArgs.Builder =
       val argsBuilder = com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterPrincipalRoleArgs.builder
       builder.principalRole(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterPrincipalRole.Builder)
+    /**
+     * @param principal principal to filter entitlements by. See `filter.principal_role.principal` Block below.
+     * @return builder
+     */
+    def principal(args: Endofunction[com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterPrincipalRolePrincipal.Builder]):
+        com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterPrincipalRole.Builder =
+      val argsBuilder = com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterPrincipalRolePrincipal.builder
+      builder.principal(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterPrincipalRoleArgs.Builder)
     /**
@@ -200,6 +220,16 @@ object accountaccess:
       val argsBuilder = com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterPrincipalRolePrincipalArgs.builder
       builder.principal(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterPrincipalRolePrincipal.Builder)
+    /**
+     * @param identityCenter IAM Identity Center principal filter criteria. See `filter.principal_role.principal.identity_center` Block below.
+     * @return builder
+     */
+    def identityCenter(args: Endofunction[com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterPrincipalRolePrincipalIdentityCenter.Builder]):
+        com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterPrincipalRolePrincipal.Builder =
+      val argsBuilder = com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterPrincipalRolePrincipalIdentityCenter.builder
+      builder.identityCenter(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterPrincipalRolePrincipalArgs.Builder)
     /**
      * @param identityCenter IAM Identity Center principal filter criteria. See `filter.principal_role.principal.identity_center` Block below.
@@ -209,3 +239,15 @@ object accountaccess:
         com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterPrincipalRolePrincipalArgs.Builder =
       val argsBuilder = com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilterPrincipalRolePrincipalIdentityCenterArgs.builder
       builder.identityCenter(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.accountaccess.inputs.GetEntitlementsPlainArgs.Builder)
+    /**
+     * @param filter Filter criteria to narrow the entitlements returned. You can filter by principal, IAM role, or account. See `filter` Block below.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def filter(args: Endofunction[com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilter.Builder]):
+        com.pulumi.aws.accountaccess.inputs.GetEntitlementsPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.accountaccess.inputs.GetEntitlementsFilter.builder
+      builder.filter(args(argsBuilder).build)

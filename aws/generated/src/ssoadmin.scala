@@ -441,6 +441,16 @@ object ssoadmin:
       def argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsApplicationAssignmentArgs.builder
       builder.applicationAssignments(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsPlainArgs.Builder)
+    /**
+     * @param applicationAssignments List of principals assigned to the application. See the `applicationAssignments` attribute reference below.
+     * @return builder
+     */
+    def applicationAssignments(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsApplicationAssignment.Builder]*):
+        com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsApplicationAssignment.builder
+      builder.applicationAssignments(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ssoadmin.inputs.InstanceAccessControlAttributesAttributeArgs.Builder)
     /**
      * @param values The value used for mapping a specified attribute to an identity source. See AccessControlAttributeValue

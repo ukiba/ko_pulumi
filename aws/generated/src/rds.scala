@@ -1060,6 +1060,16 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.GetClustersFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.rds.inputs.GetClustersPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.rds.inputs.GetClustersFilter.Builder]*):
+        com.pulumi.aws.rds.inputs.GetClustersPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.rds.inputs.GetClustersFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.rds.inputs.GetEngineVersionArgs.Builder)
     /**
      * @param filters Configuration block for filtering versions. See `filter` Block below.
@@ -1068,6 +1078,16 @@ object rds:
     def filters(args: Endofunction[com.pulumi.aws.rds.inputs.GetEngineVersionFilterArgs.Builder]*):
         com.pulumi.aws.rds.inputs.GetEngineVersionArgs.Builder =
       def argsBuilder = com.pulumi.aws.rds.inputs.GetEngineVersionFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.rds.inputs.GetEngineVersionPlainArgs.Builder)
+    /**
+     * @param filters Configuration block for filtering versions. See `filter` Block below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.rds.inputs.GetEngineVersionFilter.Builder]*):
+        com.pulumi.aws.rds.inputs.GetEngineVersionPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.rds.inputs.GetEngineVersionFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.rds.inputs.GetInstancesArgs.Builder)
@@ -1080,6 +1100,16 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.GetInstancesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.rds.inputs.GetInstancesPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) used to filter instances with AWS supported attributes, such as `engine`, `db-cluster-id` or `db-instance-id` for example. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.rds.inputs.GetInstancesFilter.Builder]*):
+        com.pulumi.aws.rds.inputs.GetInstancesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.rds.inputs.GetInstancesFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.rds.inputs.GetSnapshotsArgs.Builder)
     /**
      * @param filters Configuration block(s) used to filter snapshots with AWS supported attributes. Detailed below.
@@ -1088,6 +1118,16 @@ object rds:
     def filters(args: Endofunction[com.pulumi.aws.rds.inputs.GetSnapshotsFilterArgs.Builder]*):
         com.pulumi.aws.rds.inputs.GetSnapshotsArgs.Builder =
       def argsBuilder = com.pulumi.aws.rds.inputs.GetSnapshotsFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.rds.inputs.GetSnapshotsPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) used to filter snapshots with AWS supported attributes. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.rds.inputs.GetSnapshotsFilter.Builder]*):
+        com.pulumi.aws.rds.inputs.GetSnapshotsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.rds.inputs.GetSnapshotsFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.rds.inputs.GlobalClusterState.Builder)

@@ -139,6 +139,27 @@ object identitystore:
       val argsBuilder = com.pulumi.aws.identitystore.inputs.UserPhoneNumbersArgs.builder
       builder.phoneNumbers(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.identitystore.inputs.GetGroupAlternateIdentifier.Builder)
+    /**
+     * @param externalId Configuration block for filtering by the identifier issued by an external identity provider. Detailed below.
+     * @return builder
+     */
+    def externalId(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetGroupAlternateIdentifierExternalId.Builder]):
+        com.pulumi.aws.identitystore.inputs.GetGroupAlternateIdentifier.Builder =
+      val argsBuilder = com.pulumi.aws.identitystore.inputs.GetGroupAlternateIdentifierExternalId.builder
+      builder.externalId(args(argsBuilder).build)
+
+    /**
+     * @param uniqueAttribute An entity attribute that&#39;s unique to a specific entity. Detailed below.
+     * 
+     * &gt; Exactly one of the above arguments must be provided.
+     * @return builder
+     */
+    def uniqueAttribute(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetGroupAlternateIdentifierUniqueAttribute.Builder]):
+        com.pulumi.aws.identitystore.inputs.GetGroupAlternateIdentifier.Builder =
+      val argsBuilder = com.pulumi.aws.identitystore.inputs.GetGroupAlternateIdentifierUniqueAttribute.builder
+      builder.uniqueAttribute(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.identitystore.inputs.GetGroupAlternateIdentifierArgs.Builder)
     /**
      * @param externalId Configuration block for filtering by the identifier issued by an external identity provider. Detailed below.
@@ -170,6 +191,37 @@ object identitystore:
       val argsBuilder = com.pulumi.aws.identitystore.inputs.GetGroupAlternateIdentifierArgs.builder
       builder.alternateIdentifier(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.identitystore.inputs.GetGroupPlainArgs.Builder)
+    /**
+     * @param alternateIdentifier A unique identifier for the group that is not the primary identifier. Conflicts with `groupId` and `filter`. Detailed below.
+     * @return builder
+     */
+    def alternateIdentifier(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetGroupAlternateIdentifier.Builder]):
+        com.pulumi.aws.identitystore.inputs.GetGroupPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.identitystore.inputs.GetGroupAlternateIdentifier.builder
+      builder.alternateIdentifier(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.identitystore.inputs.GetUserAlternateIdentifier.Builder)
+    /**
+     * @param externalId Configuration block for filtering by the identifier issued by an external identity provider. Detailed below.
+     * @return builder
+     */
+    def externalId(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetUserAlternateIdentifierExternalId.Builder]):
+        com.pulumi.aws.identitystore.inputs.GetUserAlternateIdentifier.Builder =
+      val argsBuilder = com.pulumi.aws.identitystore.inputs.GetUserAlternateIdentifierExternalId.builder
+      builder.externalId(args(argsBuilder).build)
+
+    /**
+     * @param uniqueAttribute An entity attribute that&#39;s unique to a specific entity. Detailed below.
+     * 
+     * &gt; Exactly one of the above arguments must be provided.
+     * @return builder
+     */
+    def uniqueAttribute(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetUserAlternateIdentifierUniqueAttribute.Builder]):
+        com.pulumi.aws.identitystore.inputs.GetUserAlternateIdentifier.Builder =
+      val argsBuilder = com.pulumi.aws.identitystore.inputs.GetUserAlternateIdentifierUniqueAttribute.builder
+      builder.uniqueAttribute(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.identitystore.inputs.GetUserAlternateIdentifierArgs.Builder)
     /**
      * @param externalId Configuration block for filtering by the identifier issued by an external identity provider. Detailed below.
@@ -199,6 +251,16 @@ object identitystore:
     def alternateIdentifier(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetUserAlternateIdentifierArgs.Builder]):
         com.pulumi.aws.identitystore.inputs.GetUserArgs.Builder =
       val argsBuilder = com.pulumi.aws.identitystore.inputs.GetUserAlternateIdentifierArgs.builder
+      builder.alternateIdentifier(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.identitystore.inputs.GetUserPlainArgs.Builder)
+    /**
+     * @param alternateIdentifier A unique identifier for a user or group that is not the primary identifier. Conflicts with `userId` and `filter`. Detailed below.
+     * @return builder
+     */
+    def alternateIdentifier(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetUserAlternateIdentifier.Builder]):
+        com.pulumi.aws.identitystore.inputs.GetUserPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.identitystore.inputs.GetUserAlternateIdentifier.builder
       builder.alternateIdentifier(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.identitystore.inputs.GroupState.Builder)

@@ -31,3 +31,13 @@ object polly:
         com.pulumi.aws.polly.inputs.GetVoicesArgs.Builder =
       def argsBuilder = com.pulumi.aws.polly.inputs.GetVoicesVoiceArgs.builder
       builder.voices(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.polly.inputs.GetVoicesPlainArgs.Builder)
+    /**
+     * @param voices List of voices with their properties. See `voices` Block below.
+     * @return builder
+     */
+    def voices(args: Endofunction[com.pulumi.aws.polly.inputs.GetVoicesVoice.Builder]*):
+        com.pulumi.aws.polly.inputs.GetVoicesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.polly.inputs.GetVoicesVoice.builder
+      builder.voices(args.map(_(argsBuilder).build)*)

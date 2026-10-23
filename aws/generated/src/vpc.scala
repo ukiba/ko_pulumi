@@ -266,6 +266,16 @@ object vpc:
       def argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRuleFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.vpc.inputs.GetSecurityGroupRulePlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRuleFilter.Builder]*):
+        com.pulumi.aws.vpc.inputs.GetSecurityGroupRulePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRuleFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -274,6 +284,16 @@ object vpc:
     def filters(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesFilterArgs.Builder]*):
         com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesArgs.Builder =
       def argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesFilter.Builder]*):
+        com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.vpc.inputs.RouteServerEndpointState.Builder)

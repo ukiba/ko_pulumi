@@ -637,6 +637,16 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.GetBotAssociationLexBotArgs.builder
       builder.lexBot(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.connect.inputs.GetBotAssociationPlainArgs.Builder)
+    /**
+     * @param lexBot Configuration information of an Amazon Lex (V1) bot. Detailed below.
+     * @return builder
+     */
+    def lexBot(args: Endofunction[com.pulumi.aws.connect.inputs.GetBotAssociationLexBot.Builder]):
+        com.pulumi.aws.connect.inputs.GetBotAssociationPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.connect.inputs.GetBotAssociationLexBot.builder
+      builder.lexBot(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.connect.inputs.HoursOfOperationConfigArgs.Builder)
     /**
      * @param endTime A end time block specifies the time that your contact center closes. The `endTime` is documented below.

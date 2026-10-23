@@ -101,6 +101,16 @@ object datapipeline:
       def argsBuilder = com.pulumi.aws.datapipeline.inputs.GetPipelineDefinitionParameterValueArgs.builder
       builder.parameterValues(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.datapipeline.inputs.GetPipelineDefinitionPlainArgs.Builder)
+    /**
+     * @param parameterValues Parameter values used in the pipeline definition. See below
+     * @return builder
+     */
+    def parameterValues(args: Endofunction[com.pulumi.aws.datapipeline.inputs.GetPipelineDefinitionParameterValue.Builder]*):
+        com.pulumi.aws.datapipeline.inputs.GetPipelineDefinitionPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.datapipeline.inputs.GetPipelineDefinitionParameterValue.builder
+      builder.parameterValues(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.datapipeline.inputs.PipelineDefinitionParameterObjectArgs.Builder)
     /**
      * @param attributes Configuration block for attributes of the parameter object. See below

@@ -274,6 +274,16 @@ object ebs:
       def argsBuilder = com.pulumi.aws.ebs.inputs.GetEbsVolumesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ebs.inputs.GetEbsVolumesPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ebs.inputs.GetEbsVolumesFilter.Builder]*):
+        com.pulumi.aws.ebs.inputs.GetEbsVolumesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ebs.inputs.GetEbsVolumesFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ebs.inputs.GetSnapshotArgs.Builder)
     /**
      * @param filters One or more name/value pairs to filter off of. There are several valid keys, for a full reference, check out [describe-snapshots in the AWS CLI reference](http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-snapshots.html).
@@ -294,6 +304,26 @@ object ebs:
       def argsBuilder = com.pulumi.aws.ebs.inputs.GetSnapshotIdsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ebs.inputs.GetSnapshotIdsPlainArgs.Builder)
+    /**
+     * @param filters One or more name/value pairs to filter off of. There are several valid keys, for a full reference, check out [describe-volumes in the AWS CLI reference](http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-snapshots.html).
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ebs.inputs.GetSnapshotIdsFilter.Builder]*):
+        com.pulumi.aws.ebs.inputs.GetSnapshotIdsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ebs.inputs.GetSnapshotIdsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ebs.inputs.GetSnapshotPlainArgs.Builder)
+    /**
+     * @param filters One or more name/value pairs to filter off of. There are several valid keys, for a full reference, check out [describe-snapshots in the AWS CLI reference](http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-snapshots.html).
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ebs.inputs.GetSnapshotFilter.Builder]*):
+        com.pulumi.aws.ebs.inputs.GetSnapshotPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ebs.inputs.GetSnapshotFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ebs.inputs.GetVolumeArgs.Builder)
     /**
      * @param filters One or more name/value pairs to filter off of. There are
@@ -304,6 +334,18 @@ object ebs:
     def filters(args: Endofunction[com.pulumi.aws.ebs.inputs.GetVolumeFilterArgs.Builder]*):
         com.pulumi.aws.ebs.inputs.GetVolumeArgs.Builder =
       def argsBuilder = com.pulumi.aws.ebs.inputs.GetVolumeFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ebs.inputs.GetVolumePlainArgs.Builder)
+    /**
+     * @param filters One or more name/value pairs to filter off of. There are
+     * several valid keys, for a full reference, check out
+     * [describe-volumes in the AWS CLI reference](http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-volumes.html).
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ebs.inputs.GetVolumeFilter.Builder]*):
+        com.pulumi.aws.ebs.inputs.GetVolumePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ebs.inputs.GetVolumeFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ebs.inputs.SnapshotImportDiskContainerArgs.Builder)

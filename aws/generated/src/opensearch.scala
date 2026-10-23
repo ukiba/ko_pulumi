@@ -984,6 +984,34 @@ object opensearch:
       def argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigSamlOptionArgs.builder
       builder.samlOptions(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigPlainArgs.Builder)
+    /**
+     * @param iamFederationOptions IAM Federation options for the security configuration.
+     * @return builder
+     */
+    def iamFederationOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamFederationOption.Builder]*):
+        com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamFederationOption.builder
+      builder.iamFederationOptions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param iamIdentityCenterOptions IAM Identity Center options for the security configuration.
+     * @return builder
+     */
+    def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamIdentityCenterOption.Builder]*):
+        com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamIdentityCenterOption.builder
+      builder.iamIdentityCenterOptions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param samlOptions SAML options for the security configuration.
+     * @return builder
+     */
+    def samlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigSamlOption.Builder]*):
+        com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigSamlOption.builder
+      builder.samlOptions(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.opensearch.inputs.OutboundConnectionConnectionPropertiesArgs.Builder)
     /**
      * @param crossClusterSearch Configuration block for cross cluster search.

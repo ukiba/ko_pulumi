@@ -1509,6 +1509,16 @@ object glue:
       def argsBuilder = com.pulumi.aws.glue.inputs.GetScriptDagNodeArgs.builder
       builder.dagNodes(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.glue.inputs.GetScriptDagNode.Builder)
+    /**
+     * @param args Nested configuration an argument or property of a node. Defined below.
+     * @return builder
+     */
+    def args(args: Endofunction[com.pulumi.aws.glue.inputs.GetScriptDagNodeArg.Builder]*):
+        com.pulumi.aws.glue.inputs.GetScriptDagNode.Builder =
+      def argsBuilder = com.pulumi.aws.glue.inputs.GetScriptDagNodeArg.builder
+      builder.args(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.glue.inputs.GetScriptDagNodeArgs.Builder)
     /**
      * @param args Nested configuration an argument or property of a node. Defined below.
@@ -1518,6 +1528,25 @@ object glue:
         com.pulumi.aws.glue.inputs.GetScriptDagNodeArgs.Builder =
       def argsBuilder = com.pulumi.aws.glue.inputs.GetScriptDagNodeArgArgs.builder
       builder.args(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.glue.inputs.GetScriptPlainArgs.Builder)
+    /**
+     * @param dagEdges List of the edges in the DAG. Defined below.
+     * @return builder
+     */
+    def dagEdges(args: Endofunction[com.pulumi.aws.glue.inputs.GetScriptDagEdge.Builder]*):
+        com.pulumi.aws.glue.inputs.GetScriptPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.glue.inputs.GetScriptDagEdge.builder
+      builder.dagEdges(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param dagNodes List of the nodes in the DAG. Defined below.
+     * @return builder
+     */
+    def dagNodes(args: Endofunction[com.pulumi.aws.glue.inputs.GetScriptDagNode.Builder]*):
+        com.pulumi.aws.glue.inputs.GetScriptPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.glue.inputs.GetScriptDagNode.builder
+      builder.dagNodes(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.glue.inputs.JobState.Builder)
     /**

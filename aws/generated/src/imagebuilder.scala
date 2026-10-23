@@ -718,6 +718,16 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetComponentsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.imagebuilder.inputs.GetComponentsPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetComponentsFilter.Builder]*):
+        com.pulumi.aws.imagebuilder.inputs.GetComponentsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetComponentsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.imagebuilder.inputs.GetContainerRecipesArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -726,6 +736,16 @@ object imagebuilder:
     def filters(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetContainerRecipesFilterArgs.Builder]*):
         com.pulumi.aws.imagebuilder.inputs.GetContainerRecipesArgs.Builder =
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetContainerRecipesFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.imagebuilder.inputs.GetContainerRecipesPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetContainerRecipesFilter.Builder]*):
+        com.pulumi.aws.imagebuilder.inputs.GetContainerRecipesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetContainerRecipesFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationsArgs.Builder)
@@ -738,6 +758,16 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationsPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationsFilter.Builder]*):
+        com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.imagebuilder.inputs.GetImagePipelinesArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -746,6 +776,16 @@ object imagebuilder:
     def filters(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImagePipelinesFilterArgs.Builder]*):
         com.pulumi.aws.imagebuilder.inputs.GetImagePipelinesArgs.Builder =
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetImagePipelinesFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.imagebuilder.inputs.GetImagePipelinesPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImagePipelinesFilter.Builder]*):
+        com.pulumi.aws.imagebuilder.inputs.GetImagePipelinesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetImagePipelinesFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.imagebuilder.inputs.GetImageRecipesArgs.Builder)
@@ -758,6 +798,16 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetImageRecipesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.imagebuilder.inputs.GetImageRecipesPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImageRecipesFilter.Builder]*):
+        com.pulumi.aws.imagebuilder.inputs.GetImageRecipesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetImageRecipesFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationsArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -766,6 +816,16 @@ object imagebuilder:
     def filters(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationsFilterArgs.Builder]*):
         com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationsArgs.Builder =
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationsFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationsPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationsFilter.Builder]*):
+        com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationsFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.imagebuilder.inputs.ImageImageScanningConfigurationArgs.Builder)

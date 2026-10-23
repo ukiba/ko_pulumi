@@ -182,6 +182,16 @@ object secretsmanager:
       def argsBuilder = com.pulumi.aws.secretsmanager.inputs.GetSecretsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.secretsmanager.inputs.GetSecretsPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretsFilter.Builder]*):
+        com.pulumi.aws.secretsmanager.inputs.GetSecretsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.secretsmanager.inputs.GetSecretsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.secretsmanager.inputs.SecretRotationState.Builder)
     /**
      * @param externalSecretRotationMetadatas Configuration block for metadata required by the external secret partner. Required for managed external secrets. See details below.

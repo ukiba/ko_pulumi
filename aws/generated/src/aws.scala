@@ -288,6 +288,16 @@ object aws:
       def argsBuilder = com.pulumi.aws.inputs.GetAvailabilityZoneFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.inputs.GetAvailabilityZonePlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.inputs.GetAvailabilityZoneFilter.Builder]*):
+        com.pulumi.aws.inputs.GetAvailabilityZonePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.inputs.GetAvailabilityZoneFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.inputs.GetAvailabilityZonesArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -298,6 +308,16 @@ object aws:
       def argsBuilder = com.pulumi.aws.inputs.GetAvailabilityZonesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.inputs.GetAvailabilityZonesPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.inputs.GetAvailabilityZonesFilter.Builder]*):
+        com.pulumi.aws.inputs.GetAvailabilityZonesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.inputs.GetAvailabilityZonesFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.inputs.GetRegionsArgs.Builder)
     /**
      * @param filters Configuration block(s) to use as filters. Detailed below.
@@ -306,4 +326,14 @@ object aws:
     def filters(args: Endofunction[com.pulumi.aws.inputs.GetRegionsFilterArgs.Builder]*):
         com.pulumi.aws.inputs.GetRegionsArgs.Builder =
       def argsBuilder = com.pulumi.aws.inputs.GetRegionsFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.inputs.GetRegionsPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) to use as filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.inputs.GetRegionsFilter.Builder]*):
+        com.pulumi.aws.inputs.GetRegionsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.inputs.GetRegionsFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)

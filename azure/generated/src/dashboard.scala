@@ -113,6 +113,16 @@ object dashboard:
       val argsBuilder = com.pulumi.azure.dashboard.inputs.GetGrafanaIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.azure.dashboard.inputs.GetGrafanaPlainArgs.Builder)
+    /**
+     * @param identity The managed identity of the grafana resource.
+     * @return builder
+     */
+    def identity(args: Endofunction[com.pulumi.azure.dashboard.inputs.GetGrafanaIdentity.Builder]):
+        com.pulumi.azure.dashboard.inputs.GetGrafanaPlainArgs.Builder =
+      val argsBuilder = com.pulumi.azure.dashboard.inputs.GetGrafanaIdentity.builder
+      builder.identity(args(argsBuilder).build)
+
   extension (builder: com.pulumi.azure.dashboard.inputs.GrafanaState.Builder)
     /**
      * @param azureMonitorWorkspaceIntegrations A `azureMonitorWorkspaceIntegrations` block as defined below.

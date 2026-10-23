@@ -941,6 +941,44 @@ object iam:
       def argsBuilder = com.pulumi.aws.iam.inputs.GetPolicyDocumentStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.iam.inputs.GetPolicyDocumentPlainArgs.Builder)
+    /**
+     * @param statements Configuration block for a policy statement. Detailed below.
+     * @return builder
+     */
+    def statements(args: Endofunction[com.pulumi.aws.iam.inputs.GetPolicyDocumentStatement.Builder]*):
+        com.pulumi.aws.iam.inputs.GetPolicyDocumentPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.iam.inputs.GetPolicyDocumentStatement.builder
+      builder.statements(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.iam.inputs.GetPolicyDocumentStatement.Builder)
+    /**
+     * @param conditions Configuration block for a condition. Detailed below.
+     * @return builder
+     */
+    def conditions(args: Endofunction[com.pulumi.aws.iam.inputs.GetPolicyDocumentStatementCondition.Builder]*):
+        com.pulumi.aws.iam.inputs.GetPolicyDocumentStatement.Builder =
+      def argsBuilder = com.pulumi.aws.iam.inputs.GetPolicyDocumentStatementCondition.builder
+      builder.conditions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param notPrincipals Like `principals` except these are principals that the statement does *not* apply to.
+     * @return builder
+     */
+    def notPrincipals(args: Endofunction[com.pulumi.aws.iam.inputs.GetPolicyDocumentStatementNotPrincipal.Builder]*):
+        com.pulumi.aws.iam.inputs.GetPolicyDocumentStatement.Builder =
+      def argsBuilder = com.pulumi.aws.iam.inputs.GetPolicyDocumentStatementNotPrincipal.builder
+      builder.notPrincipals(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param principals Configuration block for principals. Detailed below.
+     * @return builder
+     */
+    def principals(args: Endofunction[com.pulumi.aws.iam.inputs.GetPolicyDocumentStatementPrincipal.Builder]*):
+        com.pulumi.aws.iam.inputs.GetPolicyDocumentStatement.Builder =
+      def argsBuilder = com.pulumi.aws.iam.inputs.GetPolicyDocumentStatementPrincipal.builder
+      builder.principals(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.iam.inputs.GetPolicyDocumentStatementArgs.Builder)
     /**
      * @param conditions Configuration block for a condition. Detailed below.
@@ -979,6 +1017,18 @@ object iam:
     def contexts(args: Endofunction[com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationContextArgs.Builder]*):
         com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationArgs.Builder =
       def argsBuilder = com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationContextArgs.builder
+      builder.contexts(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationPlainArgs.Builder)
+    /**
+     * @param contexts Each `context` block defines an entry in the table of additional context keys in the simulated request.
+     * 
+     * IAM uses context keys for both custom conditions and for interpolating dynamic request-specific values into policy values. If you use policies that include those features then you will need to provide suitable example values for those keys to achieve a realistic simulation.
+     * @return builder
+     */
+    def contexts(args: Endofunction[com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationContext.Builder]*):
+        com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationContext.builder
       builder.contexts(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.iam.inputs.GroupPolicyState.Builder)

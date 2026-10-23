@@ -1311,6 +1311,16 @@ object storage:
       val argsBuilder = com.pulumi.azure.storage.inputs.GetAccountBlobContainerSASPermissionsArgs.builder
       builder.permissions(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.azure.storage.inputs.GetAccountBlobContainerSASPlainArgs.Builder)
+    /**
+     * @param permissions Should Permissions permissions be enabled for this SAS?
+     * @return builder
+     */
+    def permissions(args: Endofunction[com.pulumi.azure.storage.inputs.GetAccountBlobContainerSASPermissions.Builder]):
+        com.pulumi.azure.storage.inputs.GetAccountBlobContainerSASPlainArgs.Builder =
+      val argsBuilder = com.pulumi.azure.storage.inputs.GetAccountBlobContainerSASPermissions.builder
+      builder.permissions(args(argsBuilder).build)
+
   extension (builder: com.pulumi.azure.storage.inputs.GetAccountSASArgs.Builder)
     /**
      * @param permissions A `permissions` block as defined below.
@@ -1339,6 +1349,44 @@ object storage:
       val argsBuilder = com.pulumi.azure.storage.inputs.GetAccountSASServicesArgs.builder
       builder.services(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.azure.storage.inputs.GetAccountSASPlainArgs.Builder)
+    /**
+     * @param permissions A `permissions` block as defined below.
+     * @return builder
+     */
+    def permissions(args: Endofunction[com.pulumi.azure.storage.inputs.GetAccountSASPermissions.Builder]):
+        com.pulumi.azure.storage.inputs.GetAccountSASPlainArgs.Builder =
+      val argsBuilder = com.pulumi.azure.storage.inputs.GetAccountSASPermissions.builder
+      builder.permissions(args(argsBuilder).build)
+
+    /**
+     * @param resourceTypes A `resourceTypes` block as defined below.
+     * @return builder
+     */
+    def resourceTypes(args: Endofunction[com.pulumi.azure.storage.inputs.GetAccountSASResourceTypes.Builder]):
+        com.pulumi.azure.storage.inputs.GetAccountSASPlainArgs.Builder =
+      val argsBuilder = com.pulumi.azure.storage.inputs.GetAccountSASResourceTypes.builder
+      builder.resourceTypes(args(argsBuilder).build)
+
+    /**
+     * @param services A `services` block as defined below.
+     * @return builder
+     */
+    def services(args: Endofunction[com.pulumi.azure.storage.inputs.GetAccountSASServices.Builder]):
+        com.pulumi.azure.storage.inputs.GetAccountSASPlainArgs.Builder =
+      val argsBuilder = com.pulumi.azure.storage.inputs.GetAccountSASServices.builder
+      builder.services(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.azure.storage.inputs.GetShareAcl.Builder)
+    /**
+     * @param accessPolicies An `accessPolicy` block as defined below.
+     * @return builder
+     */
+    def accessPolicies(args: Endofunction[com.pulumi.azure.storage.inputs.GetShareAclAccessPolicy.Builder]*):
+        com.pulumi.azure.storage.inputs.GetShareAcl.Builder =
+      def argsBuilder = com.pulumi.azure.storage.inputs.GetShareAclAccessPolicy.builder
+      builder.accessPolicies(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.azure.storage.inputs.GetShareAclArgs.Builder)
     /**
      * @param accessPolicies An `accessPolicy` block as defined below.
@@ -1357,6 +1405,16 @@ object storage:
     def acls(args: Endofunction[com.pulumi.azure.storage.inputs.GetShareAclArgs.Builder]*):
         com.pulumi.azure.storage.inputs.GetShareArgs.Builder =
       def argsBuilder = com.pulumi.azure.storage.inputs.GetShareAclArgs.builder
+      builder.acls(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.azure.storage.inputs.GetSharePlainArgs.Builder)
+    /**
+     * @param acls One or more acl blocks as defined below.
+     * @return builder
+     */
+    def acls(args: Endofunction[com.pulumi.azure.storage.inputs.GetShareAcl.Builder]*):
+        com.pulumi.azure.storage.inputs.GetSharePlainArgs.Builder =
+      def argsBuilder = com.pulumi.azure.storage.inputs.GetShareAcl.builder
       builder.acls(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.azure.storage.inputs.LocalUserPermissionScopeArgs.Builder)

@@ -305,6 +305,12 @@ object kms:
       def argsBuilder = com.pulumi.aws.kms.inputs.GetSecretSecretArgs.builder
       builder.secrets(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.kms.inputs.GetSecretPlainArgs.Builder)
+    def secrets(args: Endofunction[com.pulumi.aws.kms.inputs.GetSecretSecret.Builder]*):
+        com.pulumi.aws.kms.inputs.GetSecretPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.kms.inputs.GetSecretSecret.builder
+      builder.secrets(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.kms.inputs.GetSecretsArgs.Builder)
     /**
      * @param secrets One or more encrypted payload definitions from the KMS service. See `secret` below.
@@ -313,6 +319,16 @@ object kms:
     def secrets(args: Endofunction[com.pulumi.aws.kms.inputs.GetSecretsSecretArgs.Builder]*):
         com.pulumi.aws.kms.inputs.GetSecretsArgs.Builder =
       def argsBuilder = com.pulumi.aws.kms.inputs.GetSecretsSecretArgs.builder
+      builder.secrets(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.kms.inputs.GetSecretsPlainArgs.Builder)
+    /**
+     * @param secrets One or more encrypted payload definitions from the KMS service. See `secret` below.
+     * @return builder
+     */
+    def secrets(args: Endofunction[com.pulumi.aws.kms.inputs.GetSecretsSecret.Builder]*):
+        com.pulumi.aws.kms.inputs.GetSecretsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.kms.inputs.GetSecretsSecret.builder
       builder.secrets(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.kms.inputs.GrantState.Builder)

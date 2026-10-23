@@ -1537,6 +1537,16 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentConfiguration.Builder)
+    /**
+     * @param customDataIdentifiers Configures custom regular expressions to detect sensitive data. Read more in [Custom data identifiers](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL-custom-data-identifiers.html).
+     * @return builder
+     */
+    def customDataIdentifiers(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentConfigurationCustomDataIdentifier.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentConfiguration.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentConfigurationCustomDataIdentifier.builder
+      builder.customDataIdentifiers(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentConfigurationArgs.Builder)
     /**
      * @param customDataIdentifiers Configures custom regular expressions to detect sensitive data. Read more in [Custom data identifiers](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL-custom-data-identifiers.html).
@@ -1547,6 +1557,35 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentConfigurationCustomDataIdentifierArgs.builder
       builder.customDataIdentifiers(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentPlainArgs.Builder)
+    def configuration(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentConfiguration.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentConfiguration.builder
+      builder.configuration(args(argsBuilder).build)
+
+    /**
+     * @param statements Configures the data protection policy.
+     * 
+     * &gt; There must be exactly two statements: the first with an `audit` operation, and the second with a `deidentify` operation.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def statements(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatement.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatement.builder
+      builder.statements(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatement.Builder)
+    /**
+     * @param operation Configures the data protection operation applied by this statement.
+     * @return builder
+     */
+    def operation(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperation.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatement.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperation.builder
+      builder.operation(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementArgs.Builder)
     /**
      * @param operation Configures the data protection operation applied by this statement.
@@ -1556,6 +1595,27 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationArgs.builder
       builder.operation(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperation.Builder)
+    /**
+     * @param audit Configures the detection of sensitive data.
+     * @return builder
+     */
+    def audit(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAudit.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperation.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAudit.builder
+      builder.audit(args(argsBuilder).build)
+
+    /**
+     * @param deidentify Configures the masking of sensitive data.
+     * 
+     * &gt; Every policy statement must specify exactly one operation.
+     * @return builder
+     */
+    def deidentify(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationDeidentify.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperation.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationDeidentify.builder
+      builder.deidentify(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationArgs.Builder)
     /**
@@ -1578,6 +1638,16 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationDeidentifyArgs.builder
       builder.deidentify(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAudit.Builder)
+    /**
+     * @param findingsDestination Configures destinations to send audit findings to.
+     * @return builder
+     */
+    def findingsDestination(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestination.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAudit.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestination.builder
+      builder.findingsDestination(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditArgs.Builder)
     /**
      * @param findingsDestination Configures destinations to send audit findings to.
@@ -1587,6 +1657,34 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationArgs.builder
       builder.findingsDestination(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestination.Builder)
+    /**
+     * @param cloudwatchLogs Configures CloudWatch Logs as a findings destination.
+     * @return builder
+     */
+    def cloudwatchLogs(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationCloudwatchLogs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestination.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationCloudwatchLogs.builder
+      builder.cloudwatchLogs(args(argsBuilder).build)
+
+    /**
+     * @param firehose Configures Kinesis Firehose as a findings destination.
+     * @return builder
+     */
+    def firehose(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationFirehose.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestination.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationFirehose.builder
+      builder.firehose(args(argsBuilder).build)
+
+    /**
+     * @param s3 Configures S3 as a findings destination.
+     * @return builder
+     */
+    def s3(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationS3.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestination.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationS3.builder
+      builder.s3(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationArgs.Builder)
     /**
@@ -1615,6 +1713,16 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationS3Args.builder
       builder.s3(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationDeidentify.Builder)
+    /**
+     * @param maskConfig An empty object that configures masking.
+     * @return builder
+     */
+    def maskConfig(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationDeidentifyMaskConfig.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationDeidentify.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationDeidentifyMaskConfig.builder
+      builder.maskConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationDeidentifyArgs.Builder)
     /**

@@ -593,6 +593,16 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.GetInstancesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ssm.inputs.GetInstancesPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ssm.inputs.GetInstancesFilter.Builder]*):
+        com.pulumi.aws.ssm.inputs.GetInstancesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ssm.inputs.GetInstancesFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -603,6 +613,16 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsFilter.Builder]*):
+        com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ssm.inputs.GetPatchBaselinesArgs.Builder)
     /**
      * @param filters Key-value pairs used to filter the results. See `filter` below.
@@ -611,6 +631,16 @@ object ssm:
     def filters(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinesFilterArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.GetPatchBaselinesArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.GetPatchBaselinesFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ssm.inputs.GetPatchBaselinesPlainArgs.Builder)
+    /**
+     * @param filters Key-value pairs used to filter the results. See `filter` below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinesFilter.Builder]*):
+        com.pulumi.aws.ssm.inputs.GetPatchBaselinesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ssm.inputs.GetPatchBaselinesFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ssm.inputs.MaintenanceWindowTargetState.Builder)

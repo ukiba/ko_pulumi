@@ -2956,6 +2956,16 @@ object organizations:
       def argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs.builder
       builder.bindings(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfig.Builder)
+    /**
+     * @param auditLogConfigs A nested block that defines the operations you&#39;d like to log.
+     * @return builder
+     */
+    def auditLogConfigs(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfigAuditLogConfig.Builder]*):
+        com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfig.Builder =
+      def argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfigAuditLogConfig.builder
+      builder.auditLogConfigs(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfigArgs.Builder)
     /**
      * @param auditLogConfigs A nested block that defines the operations you&#39;d like to log.
@@ -2966,6 +2976,16 @@ object organizations:
       def argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfigAuditLogConfigArgs.builder
       builder.auditLogConfigs(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.organizations.inputs.GetIAMPolicyBinding.Builder)
+    /**
+     * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding. Structure is documented below.
+     * @return builder
+     */
+    def condition(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingCondition.Builder]):
+        com.pulumi.gcp.organizations.inputs.GetIAMPolicyBinding.Builder =
+      val argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingCondition.builder
+      builder.condition(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs.Builder)
     /**
      * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding. Structure is documented below.
@@ -2975,6 +2995,30 @@ object organizations:
         com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.organizations.inputs.GetIAMPolicyPlainArgs.Builder)
+    /**
+     * @param auditConfigs A nested configuration block that defines logging additional configuration for your project. This field is only supported on `gcp.projects.IAMPolicy`, `gcp.folder.IAMPolicy` and `gcp.organizations.IAMPolicy`.
+     * @return builder
+     */
+    def auditConfigs(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfig.Builder]*):
+        com.pulumi.gcp.organizations.inputs.GetIAMPolicyPlainArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfig.builder
+      builder.auditConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param bindings A nested configuration block (described below)
+     * defining a binding to be included in the policy document. Multiple
+     * `binding` arguments are supported.
+     * 
+     * Each document configuration must have one or more `binding` blocks, which
+     * each accept the following arguments:
+     * @return builder
+     */
+    def bindings(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyBinding.Builder]*):
+        com.pulumi.gcp.organizations.inputs.GetIAMPolicyPlainArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyBinding.builder
+      builder.bindings(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.organizations.inputs.IAMBindingState.Builder)
     /**

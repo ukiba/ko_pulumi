@@ -184,6 +184,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       elems.`com.pulumi.resources.InvokeArgs`  .asType,
       elems.`com.pulumi.resources.CallArgs`    .asType,
     )
+    def isArgsType(typeMirror: TypeMirror) = argsSuperclasses.exists(types.isSubtype(typeMirror, _))
 
     override def visitClass(cls: ClassTree, param: Unit) =
       val currentPath = getCurrentPath
@@ -343,9 +344,9 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
         case method: ExecutableElement if method.getKind == ElementKind.METHOD && method.parameters.length == 1 =>
           (method, method.parameters.head.asType)
       .collect:
-        case (method, paramType: ArrayType) if paramType.componentType.toString.endsWith("Args") =>
+        case (method, paramType: ArrayType) if isArgsType(paramType.componentType) =>
           (method = method, argsType = paramType.componentType, isVararg = true)
-        case (method, paramType) if paramType.toString.endsWith("Args") =>
+        case (method, paramType) if isArgsType(paramType) =>
           (method = method, argsType = paramType, isVararg = false)
 
       if argsBuilderMethods.nonEmpty then

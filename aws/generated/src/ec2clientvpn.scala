@@ -193,3 +193,13 @@ object ec2clientvpn:
         com.pulumi.aws.ec2clientvpn.inputs.GetEndpointArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.GetEndpointFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2clientvpn.inputs.GetEndpointPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.GetEndpointFilter.Builder]*):
+        com.pulumi.aws.ec2clientvpn.inputs.GetEndpointPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.GetEndpointFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)

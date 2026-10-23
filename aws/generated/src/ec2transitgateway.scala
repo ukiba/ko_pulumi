@@ -604,6 +604,16 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentFilter.Builder]*):
+        com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentsArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. Detailed below.
@@ -612,6 +622,16 @@ object ec2transitgateway:
     def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentsFilterArgs.Builder]*):
         com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentsArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentsFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentsPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentsFilter.Builder]*):
+        com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentsFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetConnectArgs.Builder)
@@ -634,6 +654,26 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetConnectPeerFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetConnectPeerPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetConnectPeerFilter.Builder]*):
+        com.pulumi.aws.ec2transitgateway.inputs.GetConnectPeerPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetConnectPeerFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetConnectPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetConnectFilter.Builder]*):
+        com.pulumi.aws.ec2transitgateway.inputs.GetConnectPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetConnectFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetDirectConnectGatewayAttachmentArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -642,6 +682,16 @@ object ec2transitgateway:
     def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetDirectConnectGatewayAttachmentFilterArgs.Builder]*):
         com.pulumi.aws.ec2transitgateway.inputs.GetDirectConnectGatewayAttachmentArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetDirectConnectGatewayAttachmentFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetDirectConnectGatewayAttachmentPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetDirectConnectGatewayAttachmentFilter.Builder]*):
+        com.pulumi.aws.ec2transitgateway.inputs.GetDirectConnectGatewayAttachmentPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetDirectConnectGatewayAttachmentFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetMulticastDomainArgs.Builder)
@@ -654,6 +704,16 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetMulticastDomainFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetMulticastDomainPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetMulticastDomainFilter.Builder]*):
+        com.pulumi.aws.ec2transitgateway.inputs.GetMulticastDomainPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetMulticastDomainFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. Detailed below.
@@ -664,6 +724,16 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentFilter.Builder]*):
+        com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentsArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. Detailed below.
@@ -672,6 +742,16 @@ object ec2transitgateway:
     def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentsFilterArgs.Builder]*):
         com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentsArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentsFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentsPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentsFilter.Builder]*):
+        com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentsFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableArgs.Builder)
@@ -697,6 +777,29 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableAssociationsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableAssociationsPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * 
+     * More complex filters can be expressed using one or more `filter` sub-blocks,
+     * which take the following arguments:
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableAssociationsFilter.Builder]*):
+        com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableAssociationsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableAssociationsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetRouteTablePlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableFilter.Builder]*):
+        com.pulumi.aws.ec2transitgateway.inputs.GetRouteTablePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetRouteTablePropagationsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -710,6 +813,19 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetRouteTablePropagationsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetRouteTablePropagationsPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * 
+     * More complex filters can be expressed using one or more `filter` sub-blocks,
+     * which take the following arguments:
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetRouteTablePropagationsFilter.Builder]*):
+        com.pulumi.aws.ec2transitgateway.inputs.GetRouteTablePropagationsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetRouteTablePropagationsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableRoutesArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -718,6 +834,16 @@ object ec2transitgateway:
     def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableRoutesFilterArgs.Builder]*):
         com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableRoutesArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableRoutesFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableRoutesPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableRoutesFilter.Builder]*):
+        com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableRoutesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableRoutesFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetTransitGatewayArgs.Builder)
@@ -730,6 +856,16 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetTransitGatewayFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetTransitGatewayPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetTransitGatewayFilter.Builder]*):
+        com.pulumi.aws.ec2transitgateway.inputs.GetTransitGatewayPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetTransitGatewayFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. Detailed below.
@@ -738,6 +874,16 @@ object ec2transitgateway:
     def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentFilterArgs.Builder]*):
         com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentFilter.Builder]*):
+        com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentsArgs.Builder)
@@ -750,6 +896,16 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentsPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentsFilter.Builder]*):
+        com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetVpnAttachmentArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -758,6 +914,16 @@ object ec2transitgateway:
     def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetVpnAttachmentFilterArgs.Builder]*):
         com.pulumi.aws.ec2transitgateway.inputs.GetVpnAttachmentArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetVpnAttachmentFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetVpnAttachmentPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetVpnAttachmentFilter.Builder]*):
+        com.pulumi.aws.ec2transitgateway.inputs.GetVpnAttachmentPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetVpnAttachmentFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.InstanceConnectEndpointState.Builder)

@@ -541,6 +541,16 @@ object emr:
       val argsBuilder = com.pulumi.aws.emr.inputs.GetReleaseLabelsFiltersArgs.builder
       builder.filters(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.emr.inputs.GetReleaseLabelsPlainArgs.Builder)
+    /**
+     * @param filters Filters the results of the request. Prefix specifies the prefix of release labels to return. Application specifies the application (with/without version) of release labels to return. See Filters.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.emr.inputs.GetReleaseLabelsFilters.Builder]):
+        com.pulumi.aws.emr.inputs.GetReleaseLabelsPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.emr.inputs.GetReleaseLabelsFilters.builder
+      builder.filters(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.emr.inputs.InstanceFleetInstanceTypeConfigArgs.Builder)
     /**
      * @param configurations A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software that run on the cluster. List of `configuration` blocks.

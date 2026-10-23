@@ -4466,6 +4466,26 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetAmiIdsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetAmiIdsPlainArgs.Builder)
+    /**
+     * @param filters One or more name/value pairs to filter off of. For a full reference, check out [describe-images in the AWS CLI reference](http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html). See `filter` Block below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetAmiIdsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetAmiIdsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetAmiIdsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetAmiPlainArgs.Builder)
+    /**
+     * @param filters One or more name/value pairs to filter off of. There are several valid keys, for a full reference, check out [describe-images in the AWS CLI reference](http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html). See `filter` below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetAmiFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetAmiPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetAmiFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetCapacityBlockReservationArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -4476,10 +4496,26 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetCapacityBlockReservationFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetCapacityBlockReservationPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCapacityBlockReservationFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetCapacityBlockReservationPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetCapacityBlockReservationFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetCoipPoolArgs.Builder)
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCoipPoolFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetCoipPoolArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetCoipPoolFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetCoipPoolPlainArgs.Builder)
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCoipPoolFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetCoipPoolPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetCoipPoolFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetCoipPoolsArgs.Builder)
@@ -4495,6 +4531,19 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetCoipPoolsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetCoipPoolsPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * 
+     * More complex filters can be expressed using one or more `filter` sub-blocks,
+     * which take the following arguments:
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCoipPoolsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetCoipPoolsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetCoipPoolsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetCustomerGatewayArgs.Builder)
     /**
      * @param filters One or more [name-value pairs](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCustomerGateways.html) to filter by.
@@ -4503,6 +4552,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCustomerGatewayFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetCustomerGatewayArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetCustomerGatewayFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetCustomerGatewayPlainArgs.Builder)
+    /**
+     * @param filters One or more [name-value pairs](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCustomerGateways.html) to filter by.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCustomerGatewayFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetCustomerGatewayPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetCustomerGatewayFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetDedicatedHostArgs.Builder)
@@ -4515,6 +4574,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetDedicatedHostFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetDedicatedHostPlainArgs.Builder)
+    /**
+     * @param filters Configuration block. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetDedicatedHostFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetDedicatedHostPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetDedicatedHostFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetEipsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4523,6 +4592,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetEipsFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetEipsArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetEipsFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetEipsPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetEipsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetEipsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetEipsFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetElasticIpArgs.Builder)
@@ -4535,6 +4614,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetElasticIpFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetElasticIpPlainArgs.Builder)
+    /**
+     * @param filters One or more name/value pairs to use as filters. There are several valid keys, for a full reference, check out the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAddresses.html).
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetElasticIpFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetElasticIpPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetElasticIpFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetHostsArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeHosts.html) for supported filters. Detailed below.
@@ -4543,6 +4632,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetHostsFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetHostsArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetHostsFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetHostsPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeHosts.html) for supported filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetHostsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetHostsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetHostsFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetInstanceArgs.Builder)
@@ -4558,6 +4657,19 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetInstancePlainArgs.Builder)
+    /**
+     * @param filters One or more filters to apply to the search.
+     * If multiple `filter` blocks are provided, they all must be true.
+     * For a full reference of filter names, see [describe-instances in the AWS CLI reference](http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html).
+     * See `filter` Block below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetInstancePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceTypeOfferings.html) for supported filters. Detailed below.
@@ -4566,6 +4678,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceTypeOfferings.html) for supported filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingsArgs.Builder)
@@ -4578,6 +4700,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingsPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceTypeOfferings.html) for supported filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetInstanceTypesArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceTypes.html) for supported filters. Detailed below.
@@ -4586,6 +4718,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypesFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetInstanceTypesArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypesFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetInstanceTypesPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceTypes.html) for supported filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypesFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetInstanceTypesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypesFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetInstancesArgs.Builder)
@@ -4601,6 +4743,19 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetInstancesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetInstancesPlainArgs.Builder)
+    /**
+     * @param filters One or more filters to apply to the search.
+     * If multiple `filter` blocks are provided, they all must be true.
+     * For a full reference of filter names, see [describe-instances in the AWS CLI reference](http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html).
+     * See `filter` Block below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstancesFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetInstancesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetInstancesFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetInternetGatewayArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4614,6 +4769,19 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetInternetGatewayFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetInternetGatewayPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * 
+     * More complex filters can be expressed using one or more `filter` sub-blocks,
+     * which take the following arguments:
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInternetGatewayFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetInternetGatewayPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetInternetGatewayFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetKeyPairArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4622,6 +4790,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetKeyPairFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetKeyPairArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetKeyPairFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetKeyPairPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetKeyPairFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetKeyPairPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetKeyPairFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetLaunchTemplateArgs.Builder)
@@ -4634,6 +4812,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetLaunchTemplateFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetLaunchTemplatePlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLaunchTemplateFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetLaunchTemplatePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetLaunchTemplateFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4644,10 +4832,26 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetLocalGatewayPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTableArgs.Builder)
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTableFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTableArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTableFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablePlainArgs.Builder)
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTableFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTableFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesArgs.Builder)
@@ -4661,6 +4865,19 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * 
+     * More complex filters can be expressed using one or more `filter` sub-blocks,
+     * which take the following arguments:
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceArgs.Builder)
@@ -4683,6 +4900,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayVirtualInterfaceGroups.html) for supported filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayVirtualInterfaceGroups.html) for supported filters. Detailed below.
@@ -4691,6 +4918,26 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayVirtualInterfaceGroups.html) for supported filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfacePlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayVirtualInterfaces.html) for supported filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfacePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewaysArgs.Builder)
@@ -4704,6 +4951,19 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewaysFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetLocalGatewaysArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewaysFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewaysPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * 
+     * More complex filters can be expressed using one or more `filter` sub-blocks,
+     * which take the following arguments:
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewaysFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetLocalGatewaysPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewaysFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetManagedPrefixListArgs.Builder)
@@ -4720,6 +4980,20 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetManagedPrefixListFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetManagedPrefixListPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * 
+     * The arguments of this data source act as filters for querying the available
+     * prefix lists. The given filters must match exactly one prefix list
+     * whose data will be exported as attributes.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetManagedPrefixListFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetManagedPrefixListPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetManagedPrefixListFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetManagedPrefixListsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4728,6 +5002,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetManagedPrefixListsFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetManagedPrefixListsArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetManagedPrefixListsFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetManagedPrefixListsPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetManagedPrefixListsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetManagedPrefixListsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetManagedPrefixListsFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetNatGatewayArgs.Builder)
@@ -4744,6 +5028,20 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetNatGatewayFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetNatGatewayPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * 
+     * The arguments of this data source act as filters for querying the available
+     * NAT Gateways in the current Region. The given filters must match exactly one
+     * NAT Gateway whose data will be exported as attributes.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNatGatewayFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetNatGatewayPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetNatGatewayFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetNatGatewaysArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4754,6 +5052,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetNatGatewaysFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetNatGatewaysPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNatGatewaysFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetNatGatewaysPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetNatGatewaysFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetNetworkAclsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4762,6 +5070,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkAclsFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetNetworkAclsArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkAclsFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetNetworkAclsPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkAclsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetNetworkAclsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkAclsFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetNetworkInsightsAnalysisArgs.Builder)
@@ -4778,6 +5096,20 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInsightsAnalysisFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetNetworkInsightsAnalysisPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * 
+     * The arguments of this data source act as filters for querying the available
+     * Network Insights Analyzes. The given filters must match exactly one Network Insights Analysis
+     * whose data will be exported as attributes.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInsightsAnalysisFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetNetworkInsightsAnalysisPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInsightsAnalysisFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -4792,6 +5124,20 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * 
+     * The arguments of this data source act as filters for querying the available
+     * Network Insights Paths. The given filters must match exactly one Network Insights Path
+     * whose data will be exported as attributes.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetNetworkInterfaceArgs.Builder)
     /**
      * @param filters One or more name/value pairs to filter off of. There are several valid keys, for a full reference, check out [describe-network-interfaces](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-network-interfaces.html) in the AWS CLI reference.
@@ -4800,6 +5146,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInterfaceFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInterfaceFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetNetworkInterfacePlainArgs.Builder)
+    /**
+     * @param filters One or more name/value pairs to filter off of. There are several valid keys, for a full reference, check out [describe-network-interfaces](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-network-interfaces.html) in the AWS CLI reference.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInterfaceFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetNetworkInterfacePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInterfaceFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetNetworkInterfacesArgs.Builder)
@@ -4812,6 +5168,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInterfacesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetNetworkInterfacesPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInterfacesFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetNetworkInterfacesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInterfacesFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetPrefixListArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -4820,6 +5186,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetPrefixListFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetPrefixListArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetPrefixListFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetPrefixListPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetPrefixListFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetPrefixListPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetPrefixListFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolsArgs.Builder)
@@ -4832,6 +5208,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolsPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetRouteTableArgs.Builder)
     /**
      * @param filters Configuration block. Detailed below.
@@ -4840,6 +5226,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRouteTableFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetRouteTableArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetRouteTableFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetRouteTablePlainArgs.Builder)
+    /**
+     * @param filters Configuration block. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRouteTableFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetRouteTablePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetRouteTableFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetRouteTablesArgs.Builder)
@@ -4852,6 +5248,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetRouteTablesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetRouteTablesPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRouteTablesFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetRouteTablesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetRouteTablesFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetSecurityGroupArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4860,6 +5266,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSecurityGroupFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetSecurityGroupArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetSecurityGroupFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetSecurityGroupPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSecurityGroupFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetSecurityGroupPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetSecurityGroupFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetSecurityGroupsArgs.Builder)
@@ -4872,6 +5288,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetSecurityGroupsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetSecurityGroupsPlainArgs.Builder)
+    /**
+     * @param filters One or more name/value pairs to use as filters. There are several valid keys, for a full reference, check out [describe-security-groups in the AWS CLI reference](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-security-groups.html).
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSecurityGroupsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetSecurityGroupsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetSecurityGroupsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeServiceLinkVirtualInterfaces.html) for supported filters. Detailed below.
@@ -4880,6 +5306,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacePlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeServiceLinkVirtualInterfaces.html) for supported filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesArgs.Builder)
@@ -4892,6 +5328,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesPlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeServiceLinkVirtualInterfaces.html) for supported filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetSpotPriceArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotPriceHistory.html) for supported filters. Detailed below.
@@ -4900,6 +5346,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSpotPriceFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetSpotPriceArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetSpotPriceFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetSpotPricePlainArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotPriceHistory.html) for supported filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSpotPriceFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetSpotPricePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetSpotPriceFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetSubnetArgs.Builder)
@@ -4912,6 +5368,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetSubnetFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetSubnetPlainArgs.Builder)
+    /**
+     * @param filters Configuration block. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSubnetFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetSubnetPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetSubnetFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetSubnetsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4922,6 +5388,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetSubnetsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetSubnetsPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSubnetsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetSubnetsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetSubnetsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4930,6 +5406,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcArgs.Builder)
@@ -4952,6 +5438,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcDhcpOptionsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetVpcDhcpOptionsPlainArgs.Builder)
+    /**
+     * @param filters List of custom filters as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcDhcpOptionsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetVpcDhcpOptionsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcDhcpOptionsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcEndpointArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4962,6 +5458,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcEndpointFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetVpcEndpointPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcEndpointFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetVpcEndpointPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcEndpointFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcEndpointServiceArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -4970,6 +5476,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcEndpointServiceFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetVpcEndpointServiceArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcEndpointServiceFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetVpcEndpointServicePlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcEndpointServiceFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetVpcEndpointServicePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcEndpointServiceFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcIpamPoolArgs.Builder)
@@ -4992,6 +5508,26 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamPoolCidrsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetVpcIpamPoolCidrsPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolCidrsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetVpcIpamPoolCidrsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamPoolCidrsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetVpcIpamPoolPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetVpcIpamPoolPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamPoolFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -5000,6 +5536,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcIpamsArgs.Builder)
@@ -5012,6 +5558,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetVpcIpamsPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetVpcIpamsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -5020,6 +5576,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionsArgs.Builder)
@@ -5032,6 +5598,26 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionsPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetVpcPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below. See `filter` Block below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetVpcPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -5040,6 +5626,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcsFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetVpcsArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcsFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetVpcsPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcsFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetVpcsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcsFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpnConnectionArgs.Builder)
@@ -5052,6 +5648,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpnConnectionFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetVpnConnectionPlainArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpnConnectionFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetVpnConnectionPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpnConnectionFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpnGatewayArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -5060,6 +5666,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpnGatewayFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetVpnGatewayArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpnGatewayFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetVpnGatewayPlainArgs.Builder)
+    /**
+     * @param filters Custom filter block as described below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpnGatewayFilter.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetVpnGatewayPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpnGatewayFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.InstanceCapacityReservationSpecificationArgs.Builder)

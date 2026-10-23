@@ -1222,6 +1222,16 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskExecutionPlacementStrategyArgs.builder
       builder.placementStrategies(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ecs.inputs.GetTaskExecutionOverrides.Builder)
+    /**
+     * @param containerOverrides One or more container overrides that are sent to a task. See below.
+     * @return builder
+     */
+    def containerOverrides(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverride.Builder]*):
+        com.pulumi.aws.ecs.inputs.GetTaskExecutionOverrides.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverride.builder
+      builder.containerOverrides(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesArgs.Builder)
     /**
      * @param containerOverrides One or more container overrides that are sent to a task. See below.
@@ -1231,6 +1241,25 @@ object ecs:
         com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesArgs.Builder =
       def argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverrideArgs.builder
       builder.containerOverrides(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverride.Builder)
+    /**
+     * @param environments Environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. See below.
+     * @return builder
+     */
+    def environments(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverrideEnvironment.Builder]*):
+        com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverride.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverrideEnvironment.builder
+      builder.environments(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param resourceRequirements Type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU. See below.
+     * @return builder
+     */
+    def resourceRequirements(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverrideResourceRequirement.Builder]*):
+        com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverride.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverrideResourceRequirement.builder
+      builder.resourceRequirements(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverrideArgs.Builder)
     /**
@@ -1250,6 +1279,52 @@ object ecs:
         com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverrideArgs.Builder =
       def argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverrideResourceRequirementArgs.builder
       builder.resourceRequirements(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ecs.inputs.GetTaskExecutionPlainArgs.Builder)
+    /**
+     * @param capacityProviderStrategies Set of capacity provider strategies to use for the cluster. See below.
+     * @return builder
+     */
+    def capacityProviderStrategies(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionCapacityProviderStrategy.Builder]*):
+        com.pulumi.aws.ecs.inputs.GetTaskExecutionPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskExecutionCapacityProviderStrategy.builder
+      builder.capacityProviderStrategies(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param networkConfiguration Network configuration for the service. This parameter is required for task definitions that use the `awsvpc` network mode to receive their own Elastic Network Interface, and it is not supported for other network modes. See below.
+     * @return builder
+     */
+    def networkConfiguration(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionNetworkConfiguration.Builder]):
+        com.pulumi.aws.ecs.inputs.GetTaskExecutionPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskExecutionNetworkConfiguration.builder
+      builder.networkConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param overrides List of container overrides that specify the name of a container in the specified task definition and the overrides it should receive.
+     * @return builder
+     */
+    def overrides(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionOverrides.Builder]):
+        com.pulumi.aws.ecs.inputs.GetTaskExecutionPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskExecutionOverrides.builder
+      builder.overrides(args(argsBuilder).build)
+
+    /**
+     * @param placementConstraints Array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task. See below.
+     * @return builder
+     */
+    def placementConstraints(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionPlacementConstraint.Builder]*):
+        com.pulumi.aws.ecs.inputs.GetTaskExecutionPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskExecutionPlacementConstraint.builder
+      builder.placementConstraints(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param placementStrategies Placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task. See below.
+     * @return builder
+     */
+    def placementStrategies(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionPlacementStrategy.Builder]*):
+        com.pulumi.aws.ecs.inputs.GetTaskExecutionPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskExecutionPlacementStrategy.builder
+      builder.placementStrategies(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceDeploymentConfigurationArgs.Builder)
     /**

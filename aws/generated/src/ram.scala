@@ -157,6 +157,16 @@ object ram:
       def argsBuilder = com.pulumi.aws.ram.inputs.GetResourceShareFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ram.inputs.GetResourceSharePlainArgs.Builder)
+    /**
+     * @param filters Filter used to scope the list e.g., by tags. See `filter` Block below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ram.inputs.GetResourceShareFilter.Builder]*):
+        com.pulumi.aws.ram.inputs.GetResourceSharePlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ram.inputs.GetResourceShareFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ram.inputs.PermissionState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ram.inputs.PermissionTimeoutsArgs.Builder]):
         com.pulumi.aws.ram.inputs.PermissionState.Builder =

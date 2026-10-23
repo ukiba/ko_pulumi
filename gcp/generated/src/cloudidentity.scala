@@ -277,6 +277,18 @@ object cloudidentity:
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupGroupKeyArgs.builder
       builder.groupKey(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupPlainArgs.Builder)
+    /**
+     * @param groupKey The EntityKey of the Group to lookup. A unique identifier for an entity in the Cloud Identity Groups API.
+     * An entity can represent either a group with an optional namespace or a user without a namespace.
+     * The combination of id and namespace must be unique; however, the same id can be used with different namespaces. Structure is documented below.
+     * @return builder
+     */
+    def groupKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupGroupKey.Builder]):
+        com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupPlainArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupGroupKey.builder
+      builder.groupKey(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.cloudidentity.inputs.GroupMembershipRoleArgs.Builder)
     /**
      * @param expiryDetail The MembershipRole expiry details, only supported for MEMBER role.

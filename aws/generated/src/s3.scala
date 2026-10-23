@@ -3311,6 +3311,35 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectoryArgs.builder
       builder.rootDirectories(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.s3.inputs.GetFilesAccessPointPlainArgs.Builder)
+    /**
+     * @param posixUsers POSIX user configuration. See `posixUser` below.
+     * @return builder
+     */
+    def posixUsers(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesAccessPointPosixUser.Builder]*):
+        com.pulumi.aws.s3.inputs.GetFilesAccessPointPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.GetFilesAccessPointPosixUser.builder
+      builder.posixUsers(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param rootDirectories Root directory configuration. See `rootDirectory` below.
+     * @return builder
+     */
+    def rootDirectories(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectory.Builder]*):
+        com.pulumi.aws.s3.inputs.GetFilesAccessPointPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectory.builder
+      builder.rootDirectories(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectory.Builder)
+    /**
+     * @param creationPermissions Permissions set when the root directory was created. See `creationPermissions` below.
+     * @return builder
+     */
+    def creationPermissions(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectoryCreationPermission.Builder]*):
+        com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectory.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectoryCreationPermission.builder
+      builder.creationPermissions(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectoryArgs.Builder)
     /**
      * @param creationPermissions Permissions set when the root directory was created. See `creationPermissions` below.
@@ -3329,6 +3358,16 @@ object s3:
     def fileSystems(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesFileSystemsFileSystemArgs.Builder]*):
         com.pulumi.aws.s3.inputs.GetFilesFileSystemsArgs.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.GetFilesFileSystemsFileSystemArgs.builder
+      builder.fileSystems(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.s3.inputs.GetFilesFileSystemsPlainArgs.Builder)
+    /**
+     * @param fileSystems List of file systems. See `fileSystems` below.
+     * @return builder
+     */
+    def fileSystems(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesFileSystemsFileSystem.Builder]*):
+        com.pulumi.aws.s3.inputs.GetFilesFileSystemsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.GetFilesFileSystemsFileSystem.builder
       builder.fileSystems(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.s3.inputs.InventoryDestinationArgs.Builder)

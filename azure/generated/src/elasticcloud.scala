@@ -81,6 +81,16 @@ object elasticcloud:
       def argsBuilder = com.pulumi.azure.elasticcloud.inputs.GetElasticsearchLogArgs.builder
       builder.logs(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.azure.elasticcloud.inputs.GetElasticsearchLog.Builder)
+    /**
+     * @param filteringTags A list of `filteringTag` blocks as defined above.
+     * @return builder
+     */
+    def filteringTags(args: Endofunction[com.pulumi.azure.elasticcloud.inputs.GetElasticsearchLogFilteringTag.Builder]*):
+        com.pulumi.azure.elasticcloud.inputs.GetElasticsearchLog.Builder =
+      def argsBuilder = com.pulumi.azure.elasticcloud.inputs.GetElasticsearchLogFilteringTag.builder
+      builder.filteringTags(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.azure.elasticcloud.inputs.GetElasticsearchLogArgs.Builder)
     /**
      * @param filteringTags A list of `filteringTag` blocks as defined above.
@@ -90,3 +100,13 @@ object elasticcloud:
         com.pulumi.azure.elasticcloud.inputs.GetElasticsearchLogArgs.Builder =
       def argsBuilder = com.pulumi.azure.elasticcloud.inputs.GetElasticsearchLogFilteringTagArgs.builder
       builder.filteringTags(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.azure.elasticcloud.inputs.GetElasticsearchPlainArgs.Builder)
+    /**
+     * @param logs A `logs` block as defined below.
+     * @return builder
+     */
+    def logs(args: Endofunction[com.pulumi.azure.elasticcloud.inputs.GetElasticsearchLog.Builder]*):
+        com.pulumi.azure.elasticcloud.inputs.GetElasticsearchPlainArgs.Builder =
+      def argsBuilder = com.pulumi.azure.elasticcloud.inputs.GetElasticsearchLog.builder
+      builder.logs(args.map(_(argsBuilder).build)*)

@@ -472,6 +472,16 @@ object autoscaling:
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.GetAmiIdsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.autoscaling.inputs.GetAmiIdsPlainArgs.Builder)
+    /**
+     * @param filters Filter used to scope the list e.g., by tags. See [related docs](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_Filter.html).
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetAmiIdsFilter.Builder]*):
+        com.pulumi.aws.autoscaling.inputs.GetAmiIdsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.autoscaling.inputs.GetAmiIdsFilter.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.autoscaling.inputs.GroupCapacityReservationSpecificationArgs.Builder)
     /**
      * @param capacityReservationTarget Describes a target Capacity Reservation or Capacity Reservation resource group.

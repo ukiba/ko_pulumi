@@ -383,6 +383,12 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.GetTableServerSideEncryptionArgs.builder
       builder.serverSideEncryption(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.dynamodb.inputs.GetTablePlainArgs.Builder)
+    def serverSideEncryption(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetTableServerSideEncryption.Builder]):
+        com.pulumi.aws.dynamodb.inputs.GetTablePlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dynamodb.inputs.GetTableServerSideEncryption.builder
+      builder.serverSideEncryption(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexState.Builder)
     /**
      * @param keySchemas Set of nested attribute definitions.

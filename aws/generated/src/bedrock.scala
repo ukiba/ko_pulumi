@@ -7309,6 +7309,16 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummary.Builder)
+    /**
+     * @param guardrailConfigurations Details about the guardrail associated with the agent. See `guardrailConfiguration` Block.
+     * @return builder
+     */
+    def guardrailConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummaryGuardrailConfiguration.Builder]*):
+        com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummary.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummaryGuardrailConfiguration.builder
+      builder.guardrailConfigurations(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummaryArgs.Builder)
     /**
      * @param guardrailConfigurations Details about the guardrail associated with the agent. See `guardrailConfiguration` Block.
@@ -7327,6 +7337,16 @@ object bedrock:
     def agentVersionSummaries(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummaryArgs.Builder]*):
         com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsArgs.Builder =
       def argsBuilder = com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummaryArgs.builder
+      builder.agentVersionSummaries(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsPlainArgs.Builder)
+    /**
+     * @param agentVersionSummaries List of objects, each of which contains information about a version of the agent. See `agentVersionSummaries` Block.
+     * @return builder
+     */
+    def agentVersionSummaries(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummary.Builder]*):
+        com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummary.builder
       builder.agentVersionSummaries(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.GuardrailContentPolicyConfigArgs.Builder)

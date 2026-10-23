@@ -511,6 +511,18 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsTableWithColumnsArgs.builder
       builder.tableWithColumns(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.lakeformation.inputs.GetPermissionsLfTagPolicy.Builder)
+    /**
+     * @param expressions List of tag conditions that apply to the resource&#39;s tag policy. Configuration block for tag conditions that apply to the policy. See `expression` below.
+     * 
+     * The following argument is optional:
+     * @return builder
+     */
+    def expressions(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsLfTagPolicyExpression.Builder]*):
+        com.pulumi.aws.lakeformation.inputs.GetPermissionsLfTagPolicy.Builder =
+      def argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsLfTagPolicyExpression.builder
+      builder.expressions(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.lakeformation.inputs.GetPermissionsLfTagPolicyArgs.Builder)
     /**
      * @param expressions List of tag conditions that apply to the resource&#39;s tag policy. Configuration block for tag conditions that apply to the policy. See `expression` below.
@@ -522,6 +534,72 @@ object lakeformation:
         com.pulumi.aws.lakeformation.inputs.GetPermissionsLfTagPolicyArgs.Builder =
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsLfTagPolicyExpressionArgs.builder
       builder.expressions(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.Builder)
+    /**
+     * @param dataCellsFilter Configuration block for a data cells filter resource. Detailed below.
+     * @return builder
+     */
+    def dataCellsFilter(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsDataCellsFilter.Builder]):
+        com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsDataCellsFilter.builder
+      builder.dataCellsFilter(args(argsBuilder).build)
+
+    /**
+     * @param dataLocation Configuration block for a data location resource. Detailed below.
+     * @return builder
+     */
+    def dataLocation(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsDataLocation.Builder]):
+        com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsDataLocation.builder
+      builder.dataLocation(args(argsBuilder).build)
+
+    /**
+     * @param database Configuration block for a database resource. Detailed below.
+     * @return builder
+     */
+    def database(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsDatabase.Builder]):
+        com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsDatabase.builder
+      builder.database(args(argsBuilder).build)
+
+    /**
+     * @param lfTag Configuration block for an LF-tag resource. Detailed below.
+     * @return builder
+     */
+    def lfTag(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsLfTag.Builder]):
+        com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsLfTag.builder
+      builder.lfTag(args(argsBuilder).build)
+
+    /**
+     * @param lfTagPolicy Configuration block for an LF-tag policy resource. Detailed below.
+     * @return builder
+     */
+    def lfTagPolicy(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsLfTagPolicy.Builder]):
+        com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsLfTagPolicy.builder
+      builder.lfTagPolicy(args(argsBuilder).build)
+
+    /**
+     * @param table Configuration block for a table resource. Detailed below.
+     * @return builder
+     */
+    def table(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsTable.Builder]):
+        com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsTable.builder
+      builder.table(args(argsBuilder).build)
+
+    /**
+     * @param tableWithColumns Configuration block for a table with columns resource. Detailed below.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def tableWithColumns(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsTableWithColumns.Builder]):
+        com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsTableWithColumns.builder
+      builder.tableWithColumns(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.lakeformation.inputs.LfTagExpressionState.Builder)
     /**

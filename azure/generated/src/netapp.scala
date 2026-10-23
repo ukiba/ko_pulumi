@@ -1816,6 +1816,12 @@ object netapp:
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetAccountIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.azure.netapp.inputs.GetAccountPlainArgs.Builder)
+    def identity(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountIdentity.Builder]):
+        com.pulumi.azure.netapp.inputs.GetAccountPlainArgs.Builder =
+      val argsBuilder = com.pulumi.azure.netapp.inputs.GetAccountIdentity.builder
+      builder.identity(args(argsBuilder).build)
+
   extension (builder: com.pulumi.azure.netapp.inputs.SnapshotPolicyState.Builder)
     /**
      * @param dailySchedule Sets a daily snapshot schedule. A `dailySchedule` block as defined below.

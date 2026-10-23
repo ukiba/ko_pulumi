@@ -413,6 +413,12 @@ object elasticache:
       def argsBuilder = com.pulumi.aws.elasticache.inputs.GetUserAuthenticationModeArgs.builder
       builder.authenticationModes(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.elasticache.inputs.GetUserPlainArgs.Builder)
+    def authenticationModes(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetUserAuthenticationMode.Builder]*):
+        com.pulumi.aws.elasticache.inputs.GetUserPlainArgs.Builder =
+      def argsBuilder = com.pulumi.aws.elasticache.inputs.GetUserAuthenticationMode.builder
+      builder.authenticationModes(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.elasticache.inputs.GlobalReplicationGroupState.Builder)
     /**
      * @param globalNodeGroups Set of node groups (shards) on the global replication group.
