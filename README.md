@@ -231,7 +231,6 @@ val sub = sns.TopicSubscription("order-worker-sub",
 
 ### Generate the Scala wrappers
 
-    rm -rf $(find . -name generated)  # delete the generated source
     ./mill _.generate
     ./mill _.compile
 

@@ -12,7 +12,7 @@ import scala.util.Using
 import javax.lang.model.`type`.{TypeMirror, ArrayType}
 import javax.lang.model.element.{Element, ElementKind, TypeElement, ExecutableElement, AnnotationValue, Modifier}
 import javax.lang.model.util.{Elements, Types}
-import javax.tools.ToolProvider
+import javax.tools.{ToolProvider, DiagnosticCollector, Diagnostic, JavaFileObject}
 import java.nio.file.{Path, Files}
 import java.nio.charset.StandardCharsets.UTF_8
 import java.io.File.pathSeparator
@@ -22,7 +22,26 @@ import java.util.Locale.ENGLISH
 class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpath: Seq[String]):
   def processDirectory(srcRoot: Path): Seq[Path] =
     val packageMembers = scan(srcRoot)
-    (writePackageFiles(packageMembers) ++ writeSyntaxFiles(packageMembers)).sorted
+
+    // the generated file and object are named by the last package component
+    val collisions = packageMembers.keys.groupBy(_.last).values.filter(_.size > 1)
+    if collisions.nonEmpty then
+      throw IllegalStateException("packages with the same last component: " +
+          collisions.map(_.map(_.mkString(".")).toSeq.sorted.mkString(", ")).toSeq.sorted.mkString("; "))
+
+    val written = (writePackageFiles(packageMembers) ++ writeSyntaxFiles(packageMembers)).sorted
+    deleteStaleFiles(written)
+    written
+
+  // delete *.scala files no longer generated, e.g. for a removed package or an emptied split range.
+  // directories are left, so that an editor with a deleted file open is not confused
+  def deleteStaleFiles(written: Seq[Path]): Unit =
+    val writtenSet = written.map(_.toAbsolutePath.normalize).toSet
+    val stale = Using.resource(Files.walk(dstRoot)):
+      _.toScala(Seq).filter: path =>
+        Files.isRegularFile(path) && path.getFileName.toString.endsWith(".scala") &&
+            !writtenSet.contains(path.toAbsolutePath.normalize)
+    stale.foreach(Files.delete)
 
   // the key is package components
   def scan(srcRoot: Path): Map[Seq[String], Vector[Member]] =
@@ -38,13 +57,14 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       ENGLISH,
       UTF_8,
     )
+    val diagnostics = DiagnosticCollector[JavaFileObject]()
     Using.resource(getStandardFileManager): fileManager =>
       val task = compiler.getTask(
         null,  // out
         fileManager,
-        null,  // diagnosticListener
+        diagnostics,
         Seq(
-          // avoid `error: cannot find symbol` in analyze() (they may be harmless though)
+          // avoid `error: cannot find symbol` in analyze()
           "-classpath", classpath.mkString(pathSeparator),
 
           "-proc:none",  // options: no annotation processors
@@ -59,10 +79,20 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
       val unitTrees = task.parse()
       task.analyze()  // needed for getElement / getTypeMirror
+      checkDiagnostics(diagnostics)
 
       Scanner(packageMembers).scan(unitTrees, ())
 
     packageMembers.toMap
+
+  // fail on errors, since erroneous types silently fail the isSubtype checks, leaving members ungenerated
+  def checkDiagnostics(diagnostics: DiagnosticCollector[JavaFileObject]): Unit =
+    val (errors, others) = diagnostics.getDiagnostics.asScala.partition(_.getKind == Diagnostic.Kind.ERROR)
+    others.foreach(System.err.println)  // as javac would print without a listener
+    if errors.nonEmpty then
+      val maxShown = 10
+      throw IllegalStateException(s"javac reported ${errors.size} errors (pulumiProviderJars incomplete?):\n" +
+          errors.take(maxShown).mkString("\n") + (if errors.size > maxShown then "\n..." else ""))
 
   // one file per package
   def writePackageFiles(packageMembers: Map[Seq[String], Vector[Member]]): Seq[Path] =
@@ -162,7 +192,9 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
   class Scanner(packageMembers: collection.mutable.Map[Seq[String], Vector[Member]])
       (using trees: DocTrees, elements: Elements, types: Types) extends TreePathScanner[Unit, Unit]:
-    def typeElemOf(qualifiedName: String): TypeElement = elements.getTypeElement(qualifiedName)
+    def typeElemOf(qualifiedName: String): TypeElement =
+      Option(elements.getTypeElement(qualifiedName)).getOrElse:
+        throw IllegalStateException(s"$qualifiedName not found in the classpath")
     def typeOf(qualifiedName: String): TypeMirror = typeElemOf(qualifiedName).asType
 
     val outputElem = typeElemOf("com.pulumi.core.Output")
