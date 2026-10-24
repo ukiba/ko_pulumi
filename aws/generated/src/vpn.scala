@@ -21,23 +21,3 @@ object vpn:
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpn.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.vpn.inputs.GetConnectionPlainArgs.builder
       com.pulumi.aws.vpn.VpnFunctions.getConnectionPlain(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.aws.vpn.inputs.GetConnectionArgs.Builder)
-    /**
-     * @param filters Configuration block(s) for filtering. Detailed below.
-     * @return builder
-     */
-    def filters(args: Endofunction[com.pulumi.aws.vpn.inputs.GetConnectionFilterArgs.Builder]*):
-        com.pulumi.aws.vpn.inputs.GetConnectionArgs.Builder =
-      def argsBuilder = com.pulumi.aws.vpn.inputs.GetConnectionFilterArgs.builder
-      builder.filters(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.aws.vpn.inputs.GetConnectionPlainArgs.Builder)
-    /**
-     * @param filters Configuration block(s) for filtering. Detailed below.
-     * @return builder
-     */
-    def filters(args: Endofunction[com.pulumi.aws.vpn.inputs.GetConnectionFilter.Builder]*):
-        com.pulumi.aws.vpn.inputs.GetConnectionPlainArgs.Builder =
-      def argsBuilder = com.pulumi.aws.vpn.inputs.GetConnectionFilter.builder
-      builder.filters(args.map(_(argsBuilder).build)*)

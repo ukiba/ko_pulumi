@@ -26,16 +26,6 @@ object glacier:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.glacier.VaultArgs.Builder)
-    /**
-     * @param notification Notifications for the Vault. See below.
-     * @return builder
-     */
-    def notification(args: Endofunction[com.pulumi.aws.glacier.inputs.VaultNotificationArgs.Builder]):
-        com.pulumi.aws.glacier.VaultArgs.Builder =
-      val argsBuilder = com.pulumi.aws.glacier.inputs.VaultNotificationArgs.builder
-      builder.notification(args(argsBuilder).build)
-
   /**
    * Manages a Glacier Vault Lock. You can refer to the [Glacier Developer Guide](https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html) for a full explanation of the Glacier Vault Lock functionality.
    * 
@@ -51,13 +41,3 @@ object glacier:
     com.pulumi.aws.glacier.VaultLock(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.aws.glacier.inputs.VaultState.Builder)
-    /**
-     * @param notification Notifications for the Vault. See below.
-     * @return builder
-     */
-    def notification(args: Endofunction[com.pulumi.aws.glacier.inputs.VaultNotificationArgs.Builder]):
-        com.pulumi.aws.glacier.inputs.VaultState.Builder =
-      val argsBuilder = com.pulumi.aws.glacier.inputs.VaultNotificationArgs.builder
-      builder.notification(args(argsBuilder).build)

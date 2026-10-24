@@ -4,6 +4,7 @@ Scala wrapper libraries for [pulumi-java](https://github.com/pulumi/pulumi-java)
     1. [pulumi-aws](https://github.com/pulumi/pulumi-aws)
     1. [pulumi-gcp](https://github.com/pulumi/pulumi-gcp)
     1. [pulumi-azure](https://github.com/pulumi/pulumi-azure)
+    1. [pulumi-cloudflare](https://github.com/pulumi/pulumi-cloudflare)
     1. [pulumi-postgresql](https://github.com/pulumi/pulumi-postgresql)
 
 1. The syntax and implicit conversions are provided to make the code concise.

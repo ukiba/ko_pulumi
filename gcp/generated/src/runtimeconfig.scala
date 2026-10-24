@@ -338,12 +338,6 @@ object runtimeconfig:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.gcp.runtimeconfig.ConfigIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.ConfigIamBindingConditionArgs.Builder]):
-        com.pulumi.gcp.runtimeconfig.ConfigIamBindingArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.runtimeconfig.inputs.ConfigIamBindingConditionArgs.builder
-      builder.condition(args(argsBuilder).build)
-
   /**
    * Three different resources help you manage your IAM policy for Runtime Configurator Config. Each of these resources serves a different use case:
    * 
@@ -655,12 +649,6 @@ object runtimeconfig:
     com.pulumi.gcp.runtimeconfig.ConfigIamMember(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.gcp.runtimeconfig.ConfigIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.ConfigIamMemberConditionArgs.Builder]):
-        com.pulumi.gcp.runtimeconfig.ConfigIamMemberArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.runtimeconfig.inputs.ConfigIamMemberConditionArgs.builder
-      builder.condition(args(argsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Runtime Configurator Config. Each of these resources serves a different use case:
@@ -1079,15 +1067,3 @@ object runtimeconfig:
     com.pulumi.gcp.runtimeconfig.Variable(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.gcp.runtimeconfig.inputs.ConfigIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.ConfigIamBindingConditionArgs.Builder]):
-        com.pulumi.gcp.runtimeconfig.inputs.ConfigIamBindingState.Builder =
-      val argsBuilder = com.pulumi.gcp.runtimeconfig.inputs.ConfigIamBindingConditionArgs.builder
-      builder.condition(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.runtimeconfig.inputs.ConfigIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.ConfigIamMemberConditionArgs.Builder]):
-        com.pulumi.gcp.runtimeconfig.inputs.ConfigIamMemberState.Builder =
-      val argsBuilder = com.pulumi.gcp.runtimeconfig.inputs.ConfigIamMemberConditionArgs.builder
-      builder.condition(args(argsBuilder).build)

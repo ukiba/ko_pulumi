@@ -21,23 +21,3 @@ object fabric:
     com.pulumi.azure.fabric.Capacity(name,
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.azure.fabric.CapacityArgs.Builder)
-    /**
-     * @param sku A `sku` block as defined below.
-     * @return builder
-     */
-    def sku(args: Endofunction[com.pulumi.azure.fabric.inputs.CapacitySkuArgs.Builder]):
-        com.pulumi.azure.fabric.CapacityArgs.Builder =
-      val argsBuilder = com.pulumi.azure.fabric.inputs.CapacitySkuArgs.builder
-      builder.sku(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.azure.fabric.inputs.CapacityState.Builder)
-    /**
-     * @param sku A `sku` block as defined below.
-     * @return builder
-     */
-    def sku(args: Endofunction[com.pulumi.azure.fabric.inputs.CapacitySkuArgs.Builder]):
-        com.pulumi.azure.fabric.inputs.CapacityState.Builder =
-      val argsBuilder = com.pulumi.azure.fabric.inputs.CapacitySkuArgs.builder
-      builder.sku(args(argsBuilder).build)

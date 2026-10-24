@@ -19,21 +19,6 @@ object controltower:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.controltower.BaselineArgs.Builder)
-    /**
-     * @param parameters A list of key-value objects that specify enablement parameters, where key is a string and value is a document of any type. See Parameter below for details.
-     * @return builder
-     */
-    def parameters(args: Endofunction[com.pulumi.aws.controltower.inputs.BaselineParametersArgs.Builder]):
-        com.pulumi.aws.controltower.BaselineArgs.Builder =
-      val argsBuilder = com.pulumi.aws.controltower.inputs.BaselineParametersArgs.builder
-      builder.parameters(args(argsBuilder).build)
-
-    def timeouts(args: Endofunction[com.pulumi.aws.controltower.inputs.BaselineTimeoutsArgs.Builder]):
-        com.pulumi.aws.controltower.BaselineArgs.Builder =
-      val argsBuilder = com.pulumi.aws.controltower.inputs.BaselineTimeoutsArgs.builder
-      builder.timeouts(args(argsBuilder).build)
-
   /**
    * Allows the application of pre-defined controls to organizational units. For more information on usage, please see the
    * [AWS Control Tower User Guide](https://docs.aws.amazon.com/controltower/latest/userguide/enable-guardrails.html).
@@ -44,16 +29,6 @@ object controltower:
     com.pulumi.aws.controltower.ControlTowerControl(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.aws.controltower.ControlTowerControlArgs.Builder)
-    /**
-     * @param parameters Parameter values which are specified to configure the control when you enable it. See Parameters for more details.
-     * @return builder
-     */
-    def parameters(args: Endofunction[com.pulumi.aws.controltower.inputs.ControlTowerControlParameterArgs.Builder]*):
-        com.pulumi.aws.controltower.ControlTowerControlArgs.Builder =
-      def argsBuilder = com.pulumi.aws.controltower.inputs.ControlTowerControlParameterArgs.builder
-      builder.parameters(args.map(_(argsBuilder).build)*)
 
   object ControltowerFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -99,38 +74,3 @@ object controltower:
     com.pulumi.aws.controltower.LandingZone(name,
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.aws.controltower.inputs.BaselineState.Builder)
-    /**
-     * @param parameters A list of key-value objects that specify enablement parameters, where key is a string and value is a document of any type. See Parameter below for details.
-     * @return builder
-     */
-    def parameters(args: Endofunction[com.pulumi.aws.controltower.inputs.BaselineParametersArgs.Builder]):
-        com.pulumi.aws.controltower.inputs.BaselineState.Builder =
-      val argsBuilder = com.pulumi.aws.controltower.inputs.BaselineParametersArgs.builder
-      builder.parameters(args(argsBuilder).build)
-
-    def timeouts(args: Endofunction[com.pulumi.aws.controltower.inputs.BaselineTimeoutsArgs.Builder]):
-        com.pulumi.aws.controltower.inputs.BaselineState.Builder =
-      val argsBuilder = com.pulumi.aws.controltower.inputs.BaselineTimeoutsArgs.builder
-      builder.timeouts(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.aws.controltower.inputs.ControlTowerControlState.Builder)
-    /**
-     * @param parameters Parameter values which are specified to configure the control when you enable it. See Parameters for more details.
-     * @return builder
-     */
-    def parameters(args: Endofunction[com.pulumi.aws.controltower.inputs.ControlTowerControlParameterArgs.Builder]*):
-        com.pulumi.aws.controltower.inputs.ControlTowerControlState.Builder =
-      def argsBuilder = com.pulumi.aws.controltower.inputs.ControlTowerControlParameterArgs.builder
-      builder.parameters(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.aws.controltower.inputs.LandingZoneState.Builder)
-    /**
-     * @param driftStatuses The drift status summary of the landing zone.
-     * @return builder
-     */
-    def driftStatuses(args: Endofunction[com.pulumi.aws.controltower.inputs.LandingZoneDriftStatusArgs.Builder]*):
-        com.pulumi.aws.controltower.inputs.LandingZoneState.Builder =
-      def argsBuilder = com.pulumi.aws.controltower.inputs.LandingZoneDriftStatusArgs.builder
-      builder.driftStatuses(args.map(_(argsBuilder).build)*)

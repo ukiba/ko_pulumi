@@ -30,25 +30,6 @@ object directoryservice:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.directoryservice.DirectoryArgs.Builder)
-    /**
-     * @param connectSettings Connector related information about the directory. Fields documented below.
-     * @return builder
-     */
-    def connectSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.DirectoryConnectSettingsArgs.Builder]):
-        com.pulumi.aws.directoryservice.DirectoryArgs.Builder =
-      val argsBuilder = com.pulumi.aws.directoryservice.inputs.DirectoryConnectSettingsArgs.builder
-      builder.connectSettings(args(argsBuilder).build)
-
-    /**
-     * @param vpcSettings VPC related information about the directory. Fields documented below.
-     * @return builder
-     */
-    def vpcSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.DirectoryVpcSettingsArgs.Builder]):
-        com.pulumi.aws.directoryservice.DirectoryArgs.Builder =
-      val argsBuilder = com.pulumi.aws.directoryservice.inputs.DirectoryVpcSettingsArgs.builder
-      builder.vpcSettings(args(argsBuilder).build)
-
   object DirectoryserviceFunctions:
     // Pulumi methods are reproduced as Scala methods.
     // Java methods cause Scala warnings under -Yexplicit-nulls flag
@@ -82,12 +63,6 @@ object directoryservice:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.directoryservice.IpRouteArgs.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRouteTimeoutsArgs.Builder]):
-        com.pulumi.aws.directoryservice.IpRouteArgs.Builder =
-      val argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRouteTimeoutsArgs.builder
-      builder.timeouts(args(argsBuilder).build)
-
   /**
    * Manages an exclusive set of IP routes for an AWS Directory Service directory. IP routes are used to route traffic from an AWS Managed Microsoft AD or AD Connector directory to an IPv4 or IPv6 CIDR block, such as an on-premises network reachable over a VPN or AWS Direct Connect connection, or a peered VPC.
    * 
@@ -103,21 +78,6 @@ object directoryservice:
     com.pulumi.aws.directoryservice.IpRoutesExclusive(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.aws.directoryservice.IpRoutesExclusiveArgs.Builder)
-    /**
-     * @param ipRoutes Set of IP routes the directory should have. Omit all `ipRoute` blocks to remove every IP route from the directory. See `ipRoute` Block below.
-     * @return builder
-     */
-    def ipRoutes(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveIpRouteArgs.Builder]*):
-        com.pulumi.aws.directoryservice.IpRoutesExclusiveArgs.Builder =
-      def argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveIpRouteArgs.builder
-      builder.ipRoutes(args.map(_(argsBuilder).build)*)
-
-    def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveTimeoutsArgs.Builder]):
-        com.pulumi.aws.directoryservice.IpRoutesExclusiveArgs.Builder =
-      val argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveTimeoutsArgs.builder
-      builder.timeouts(args(argsBuilder).build)
 
   /** Provides a Log subscription for AWS Directory Service that pushes logs to CloudWatch. */
   def LogSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -153,16 +113,6 @@ object directoryservice:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.directoryservice.ServiceRegionArgs.Builder)
-    /**
-     * @param vpcSettings VPC information in the replicated Region. Detailed below.
-     * @return builder
-     */
-    def vpcSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.ServiceRegionVpcSettingsArgs.Builder]):
-        com.pulumi.aws.directoryservice.ServiceRegionArgs.Builder =
-      val argsBuilder = com.pulumi.aws.directoryservice.inputs.ServiceRegionVpcSettingsArgs.builder
-      builder.vpcSettings(args(argsBuilder).build)
-
   /** Manages a directory in your account (directory owner) shared with another account (directory consumer). */
   def SharedDirectory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.SharedDirectoryArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -183,18 +133,6 @@ object directoryservice:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.directoryservice.SharedDirectoryArgs.Builder)
-    /**
-     * @param target Identifier for the directory consumer account with whom the directory is to be shared. See below.
-     * 
-     * The following arguments are optional:
-     * @return builder
-     */
-    def target(args: Endofunction[com.pulumi.aws.directoryservice.inputs.SharedDirectoryTargetArgs.Builder]):
-        com.pulumi.aws.directoryservice.SharedDirectoryArgs.Builder =
-      val argsBuilder = com.pulumi.aws.directoryservice.inputs.SharedDirectoryTargetArgs.builder
-      builder.target(args(argsBuilder).build)
-
   /**
    * Manages a trust relationship between two Active Directory Directories.
    * 
@@ -210,65 +148,3 @@ object directoryservice:
     com.pulumi.aws.directoryservice.Trust(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.aws.directoryservice.inputs.DirectoryState.Builder)
-    /**
-     * @param connectSettings Connector related information about the directory. Fields documented below.
-     * @return builder
-     */
-    def connectSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.DirectoryConnectSettingsArgs.Builder]):
-        com.pulumi.aws.directoryservice.inputs.DirectoryState.Builder =
-      val argsBuilder = com.pulumi.aws.directoryservice.inputs.DirectoryConnectSettingsArgs.builder
-      builder.connectSettings(args(argsBuilder).build)
-
-    /**
-     * @param vpcSettings VPC related information about the directory. Fields documented below.
-     * @return builder
-     */
-    def vpcSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.DirectoryVpcSettingsArgs.Builder]):
-        com.pulumi.aws.directoryservice.inputs.DirectoryState.Builder =
-      val argsBuilder = com.pulumi.aws.directoryservice.inputs.DirectoryVpcSettingsArgs.builder
-      builder.vpcSettings(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.aws.directoryservice.inputs.IpRouteState.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRouteTimeoutsArgs.Builder]):
-        com.pulumi.aws.directoryservice.inputs.IpRouteState.Builder =
-      val argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRouteTimeoutsArgs.builder
-      builder.timeouts(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveState.Builder)
-    /**
-     * @param ipRoutes Set of IP routes the directory should have. Omit all `ipRoute` blocks to remove every IP route from the directory. See `ipRoute` Block below.
-     * @return builder
-     */
-    def ipRoutes(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveIpRouteArgs.Builder]*):
-        com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveState.Builder =
-      def argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveIpRouteArgs.builder
-      builder.ipRoutes(args.map(_(argsBuilder).build)*)
-
-    def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveTimeoutsArgs.Builder]):
-        com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveState.Builder =
-      val argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveTimeoutsArgs.builder
-      builder.timeouts(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.aws.directoryservice.inputs.ServiceRegionState.Builder)
-    /**
-     * @param vpcSettings VPC information in the replicated Region. Detailed below.
-     * @return builder
-     */
-    def vpcSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.ServiceRegionVpcSettingsArgs.Builder]):
-        com.pulumi.aws.directoryservice.inputs.ServiceRegionState.Builder =
-      val argsBuilder = com.pulumi.aws.directoryservice.inputs.ServiceRegionVpcSettingsArgs.builder
-      builder.vpcSettings(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.aws.directoryservice.inputs.SharedDirectoryState.Builder)
-    /**
-     * @param target Identifier for the directory consumer account with whom the directory is to be shared. See below.
-     * 
-     * The following arguments are optional:
-     * @return builder
-     */
-    def target(args: Endofunction[com.pulumi.aws.directoryservice.inputs.SharedDirectoryTargetArgs.Builder]):
-        com.pulumi.aws.directoryservice.inputs.SharedDirectoryState.Builder =
-      val argsBuilder = com.pulumi.aws.directoryservice.inputs.SharedDirectoryTargetArgs.builder
-      builder.target(args(argsBuilder).build)

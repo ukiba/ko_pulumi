@@ -29,7 +29,9 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
           collisions.map(_.map(_.mkString(".")).toSeq.sorted.mkString(", ")).toSeq.sorted.mkString("; "))
 
     // rendered in memory before writing, so that a failure does not leave a mix of new and old files
-    val contents = renderPackageFiles(packageMembers) ++ renderSyntaxFiles(packageMembers)
+    val extObjects = extObjectsOf(packageMembers)
+    val contents = renderPackageFiles(packageMembers) ++ renderExtFiles(extObjects) ++
+        renderSyntaxFiles(extObjects, packageMembers)
     val written = contents.map(writeIfChanged).sorted
     deleteStaleFiles(written)
     written
@@ -105,28 +107,75 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       throw IllegalStateException(s"javac reported ${errors.size} errors (pulumiProviderJars incomplete?):\n" +
           errors.take(maxShown).mkString("\n") + (if errors.size > maxShown then "\n..." else ""))
 
-  // one file per package
+  // one file per package, without the extensions (see extObjectsOf)
   def renderPackageFiles(packageMembers: Map[Seq[String], Vector[Member]]): Seq[(Path, String)] =
-    packageMembers.toSeq.map: (packageComps, members) =>
-      val scalaFile = dstRoot.resolve(s"${packageComps.last}.scala")
+    packageMembers.toSeq.flatMap: (packageComps, allMembers) =>
+      val members = allMembers.filterNot(_.isInstanceOf[ResourceArgsMember])
+      Option.when(members.nonEmpty)(renderPackageFile(packageComps, members))
 
-      val importCustomResourceOptions =
-        if members.exists(_.isInstanceOf[CustomResourceMember]) then
-          "\nimport com.pulumi.resources.CustomResourceOptions"
-        else
-          ""
+  def renderPackageFile(packageComps: Seq[String], members: Vector[Member]): (Path, String) =
+    val scalaFile = dstRoot.resolve(s"${packageComps.last}.scala")
 
+    val importCustomResourceOptions =
+      if members.exists(_.isInstanceOf[CustomResourceMember]) then
+        "\nimport com.pulumi.resources.CustomResourceOptions"
+      else
+        ""
+
+    val header = s"""
+      |package jp.ukiba.ko_pulumi
+      |package $packageName
+      |$importCustomResourceOptions
+      |
+      |object ${packageComps.last}:
+      |""".stripMargin.dropWhile(_ == '\n')  // drop the leading empty line
+    (scalaFile, header + members.map(_.text).mkString("\n"))
+
+  /*
+    The extensions are in their own objects, apart from the resources and functions, to avoid `Class too large` error
+    from JVM's per-class limit of 65535 constant pool entries.
+    e.g. pulumi-cloudflare 6.23.1 has a single package; an object holding all of it takes 74% of the limit,
+    while pulumi-java spreads the package over 14,243 classes.
+
+    The objects are `<pkg>_ext` when the extension methods fit in maxExtMethodsPerObject,
+    otherwise `<pkg>_ext1`, `<pkg>_ext2`, ...; users don't see the names, since syntax.all exports the methods.
+  */
+  case class ExtObject(name: String, members: Vector[ResourceArgsMember])
+
+  // about 22 constant pool entries per extension method; the largest object takes 29% of the limit (aws lex_ext1)
+  val maxExtMethodsPerObject = 1000
+
+  def extObjectsOf(packageMembers: Map[Seq[String], Vector[Member]]): Seq[ExtObject] =
+    packageMembers.toSeq.flatMap: (packageComps, members) =>
+      val extMembers = members.collect:
+        case member: ResourceArgsMember => member
+
+      // greedy, in the scan order; an extension block is not split
+      val chunks = extMembers.foldLeft(Vector.empty[Vector[ResourceArgsMember]]): (chunks, member) =>
+        chunks.lastOption match
+          case Some(last) if last.map(_.names.size).sum + member.names.size <= maxExtMethodsPerObject =>
+            chunks.init :+ (last :+ member)
+          case _ =>
+            chunks :+ Vector(member)
+
+      val baseName = s"${packageComps.last}_ext"
+      chunks match
+        case Vector(chunk) => Seq(ExtObject(baseName, chunk))
+        case _             => chunks.zipWithIndex.map((chunk, i) => ExtObject(s"$baseName${i + 1}", chunk))
+
+  def renderExtFiles(extObjects: Seq[ExtObject]): Seq[(Path, String)] =
+    extObjects.map: extObject =>
       val header = s"""
         |package jp.ukiba.ko_pulumi
         |package $packageName
-        |$importCustomResourceOptions
         |
-        |object ${packageComps.last}:
+        |object ${extObject.name}:
         |""".stripMargin.dropWhile(_ == '\n')  // drop the leading empty line
-      (scalaFile, header + members.map(_.text).mkString("\n"))
+      (dstRoot.resolve(s"${extObject.name}.scala"), header + extObject.members.map(_.text).mkString("\n"))
 
   // support `jp.ukiba.ko_pulumi.$packageName.syntax.all.*`
-  def renderSyntaxFiles(packageMembers: Map[Seq[String], Vector[Member]]): Seq[(Path, String)] =
+  def renderSyntaxFiles(extObjects: Seq[ExtObject],
+      packageMembers: Map[Seq[String], Vector[Member]]): Seq[(Path, String)] =
     case class ExtMethod(cls: String, method: String)
     object ExtMethod:
       given Ordering[ExtMethod] = Ordering.by(e => (e.cls, e.method))
@@ -157,10 +206,10 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
     // for ecs.Cluster, eks.Cluster, rds.Cluster, redshift.Cluster, msk.Cluster, ...
     // they would be referenced with the prefix
     val exportedExtMethods = (for
-      (packageComps, members) <- packageMembers.toSeq
-      case ResourceArgsMember(_, names) <- members
-      name <- names
-    yield ExtMethod(packageComps.last, name)).toSet
+      extObject <- extObjects
+      member    <- extObject.members
+      name      <- member.names
+    yield ExtMethod(extObject.name, name)).toSet
     val exportedFuncs = (for
       (packageComps, members) <- packageMembers.toSeq
       case FunctionsMember(_, name) <- members

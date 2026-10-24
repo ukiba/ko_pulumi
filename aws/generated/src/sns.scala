@@ -88,16 +88,6 @@ object sns:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.sns.TopicPolicyArgs.Builder)
-    /**
-     * @param policy The fully-formed AWS policy as JSON.
-     * @return builder
-     */
-    def policy(args: Endofunction[com.pulumi.aws.sns.inputs.PolicyDocumentArgs.Builder]):
-        com.pulumi.aws.sns.TopicPolicyArgs.Builder =
-      val argsBuilder = com.pulumi.aws.sns.inputs.PolicyDocumentArgs.builder
-      builder.policy(args(argsBuilder).build)
-
   /**
    * Provides a resource for subscribing to SNS topics. Requires that an SNS topic exist for the subscription to attach to. This resource allows you to automatically place messages sent to SNS topics in SQS queues, send them as HTTP(S) POST requests to a given endpoint, send SMS messages, or notify devices / applications. The most likely use case for provider users will probably be SQS queues.
    * 
@@ -117,19 +107,3 @@ object sns:
     com.pulumi.aws.sns.TopicSubscription(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.aws.sns.inputs.PolicyDocumentArgs.Builder)
-    def Statement(args: Endofunction[com.pulumi.aws.iam.inputs.PolicyStatementArgs.Builder]*):
-        com.pulumi.aws.sns.inputs.PolicyDocumentArgs.Builder =
-      def argsBuilder = com.pulumi.aws.iam.inputs.PolicyStatementArgs.builder
-      builder.Statement(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.aws.sns.inputs.TopicPolicyState.Builder)
-    /**
-     * @param policy The fully-formed AWS policy as JSON.
-     * @return builder
-     */
-    def policy(args: Endofunction[com.pulumi.aws.sns.inputs.PolicyDocumentArgs.Builder]):
-        com.pulumi.aws.sns.inputs.TopicPolicyState.Builder =
-      val argsBuilder = com.pulumi.aws.sns.inputs.PolicyDocumentArgs.builder
-      builder.policy(args(argsBuilder).build)

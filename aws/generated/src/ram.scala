@@ -22,12 +22,6 @@ object ram:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.ram.PermissionArgs.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.ram.inputs.PermissionTimeoutsArgs.Builder]):
-        com.pulumi.aws.ram.PermissionArgs.Builder =
-      val argsBuilder = com.pulumi.aws.ram.inputs.PermissionTimeoutsArgs.builder
-      builder.timeouts(args(argsBuilder).build)
-
   /**
    * Provides a Resource Access Manager (RAM) principal association. Depending if [RAM Sharing with AWS Organizations is enabled](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs), the RAM behavior with different principal types changes.
    * 
@@ -109,16 +103,6 @@ object ram:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.ram.ResourceShareArgs.Builder)
-    /**
-     * @param resourceShareConfiguration Configuration block for the resource share. See `resourceShareConfiguration` Block for details.
-     * @return builder
-     */
-    def resourceShareConfiguration(args: Endofunction[com.pulumi.aws.ram.inputs.ResourceShareResourceShareConfigurationArgs.Builder]):
-        com.pulumi.aws.ram.ResourceShareArgs.Builder =
-      val argsBuilder = com.pulumi.aws.ram.inputs.ResourceShareResourceShareConfigurationArgs.builder
-      builder.resourceShareConfiguration(args(argsBuilder).build)
-
   /**
    * Resource for maintaining exclusive management of principal and resource associations for an AWS RAM (Resource Access Manager) Resource Share.
    * 
@@ -146,39 +130,3 @@ object ram:
     com.pulumi.aws.ram.SharingWithOrganization(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.aws.ram.inputs.GetResourceShareArgs.Builder)
-    /**
-     * @param filters Filter used to scope the list e.g., by tags. See `filter` Block below.
-     * @return builder
-     */
-    def filters(args: Endofunction[com.pulumi.aws.ram.inputs.GetResourceShareFilterArgs.Builder]*):
-        com.pulumi.aws.ram.inputs.GetResourceShareArgs.Builder =
-      def argsBuilder = com.pulumi.aws.ram.inputs.GetResourceShareFilterArgs.builder
-      builder.filters(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.aws.ram.inputs.GetResourceSharePlainArgs.Builder)
-    /**
-     * @param filters Filter used to scope the list e.g., by tags. See `filter` Block below.
-     * @return builder
-     */
-    def filters(args: Endofunction[com.pulumi.aws.ram.inputs.GetResourceShareFilter.Builder]*):
-        com.pulumi.aws.ram.inputs.GetResourceSharePlainArgs.Builder =
-      def argsBuilder = com.pulumi.aws.ram.inputs.GetResourceShareFilter.builder
-      builder.filters(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.aws.ram.inputs.PermissionState.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.ram.inputs.PermissionTimeoutsArgs.Builder]):
-        com.pulumi.aws.ram.inputs.PermissionState.Builder =
-      val argsBuilder = com.pulumi.aws.ram.inputs.PermissionTimeoutsArgs.builder
-      builder.timeouts(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.aws.ram.inputs.ResourceShareState.Builder)
-    /**
-     * @param resourceShareConfiguration Configuration block for the resource share. See `resourceShareConfiguration` Block for details.
-     * @return builder
-     */
-    def resourceShareConfiguration(args: Endofunction[com.pulumi.aws.ram.inputs.ResourceShareResourceShareConfigurationArgs.Builder]):
-        com.pulumi.aws.ram.inputs.ResourceShareState.Builder =
-      val argsBuilder = com.pulumi.aws.ram.inputs.ResourceShareResourceShareConfigurationArgs.builder
-      builder.resourceShareConfiguration(args(argsBuilder).build)

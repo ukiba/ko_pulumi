@@ -23,18 +23,6 @@ object sourcerepo:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.gcp.sourcerepo.RepositoryArgs.Builder)
-    /**
-     * @param pubsubConfigs How this repository publishes a change in the repository through Cloud Pub/Sub.
-     * Keyed by the topic names.
-     * Structure is documented below.
-     * @return builder
-     */
-    def pubsubConfigs(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.RepositoryPubsubConfigArgs.Builder]*):
-        com.pulumi.gcp.sourcerepo.RepositoryArgs.Builder =
-      def argsBuilder = com.pulumi.gcp.sourcerepo.inputs.RepositoryPubsubConfigArgs.builder
-      builder.pubsubConfigs(args.map(_(argsBuilder).build)*)
-
   /**
    * Three different resources help you manage your IAM policy for Cloud Source Repositories Repository. Each of these resources serves a different use case:
    * 
@@ -340,12 +328,6 @@ object sourcerepo:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.gcp.sourcerepo.RepositoryIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.RepositoryIamBindingConditionArgs.Builder]):
-        com.pulumi.gcp.sourcerepo.RepositoryIamBindingArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.RepositoryIamBindingConditionArgs.builder
-      builder.condition(args(argsBuilder).build)
-
   /**
    * Three different resources help you manage your IAM policy for Cloud Source Repositories Repository. Each of these resources serves a different use case:
    * 
@@ -650,12 +632,6 @@ object sourcerepo:
     com.pulumi.gcp.sourcerepo.RepositoryIamMember(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.gcp.sourcerepo.RepositoryIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.RepositoryIamMemberConditionArgs.Builder]):
-        com.pulumi.gcp.sourcerepo.RepositoryIamMemberArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.RepositoryIamMemberConditionArgs.builder
-      builder.condition(args(argsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Source Repositories Repository. Each of these resources serves a different use case:
@@ -1002,27 +978,3 @@ object sourcerepo:
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sourcerepo.outputs.GetRepositoryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyPlainArgs.builder
       com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepositoryIamPolicyPlain(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.sourcerepo.inputs.RepositoryIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.RepositoryIamBindingConditionArgs.Builder]):
-        com.pulumi.gcp.sourcerepo.inputs.RepositoryIamBindingState.Builder =
-      val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.RepositoryIamBindingConditionArgs.builder
-      builder.condition(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.sourcerepo.inputs.RepositoryIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.RepositoryIamMemberConditionArgs.Builder]):
-        com.pulumi.gcp.sourcerepo.inputs.RepositoryIamMemberState.Builder =
-      val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.RepositoryIamMemberConditionArgs.builder
-      builder.condition(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.sourcerepo.inputs.RepositoryState.Builder)
-    /**
-     * @param pubsubConfigs How this repository publishes a change in the repository through Cloud Pub/Sub.
-     * Keyed by the topic names.
-     * Structure is documented below.
-     * @return builder
-     */
-    def pubsubConfigs(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.RepositoryPubsubConfigArgs.Builder]*):
-        com.pulumi.gcp.sourcerepo.inputs.RepositoryState.Builder =
-      def argsBuilder = com.pulumi.gcp.sourcerepo.inputs.RepositoryPubsubConfigArgs.builder
-      builder.pubsubConfigs(args.map(_(argsBuilder).build)*)

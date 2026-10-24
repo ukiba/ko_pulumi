@@ -19,16 +19,6 @@ object operationalinsights:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.azure.operationalinsights.AnalyticsSolutionArgs.Builder)
-    /**
-     * @param plan A `plan` block as documented below.
-     * @return builder
-     */
-    def plan(args: Endofunction[com.pulumi.azure.operationalinsights.inputs.AnalyticsSolutionPlanArgs.Builder]):
-        com.pulumi.azure.operationalinsights.AnalyticsSolutionArgs.Builder =
-      val argsBuilder = com.pulumi.azure.operationalinsights.inputs.AnalyticsSolutionPlanArgs.builder
-      builder.plan(args(argsBuilder).build)
-
   /** Manages a Log Analytics (formally Operational Insights) Workspace. */
   def AnalyticsWorkspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.operationalinsights.AnalyticsWorkspaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -46,16 +36,6 @@ object operationalinsights:
     com.pulumi.azure.operationalinsights.AnalyticsWorkspace(name,
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.azure.operationalinsights.AnalyticsWorkspaceArgs.Builder)
-    /**
-     * @param identity An `identity` block as defined below.
-     * @return builder
-     */
-    def identity(args: Endofunction[com.pulumi.azure.operationalinsights.inputs.AnalyticsWorkspaceIdentityArgs.Builder]):
-        com.pulumi.azure.operationalinsights.AnalyticsWorkspaceArgs.Builder =
-      val argsBuilder = com.pulumi.azure.operationalinsights.inputs.AnalyticsWorkspaceIdentityArgs.builder
-      builder.identity(args(argsBuilder).build)
 
   object OperationalinsightsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -93,23 +73,3 @@ object operationalinsights:
     com.pulumi.azure.operationalinsights.QueryPackQuery(name,
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.azure.operationalinsights.inputs.AnalyticsSolutionState.Builder)
-    /**
-     * @param plan A `plan` block as documented below.
-     * @return builder
-     */
-    def plan(args: Endofunction[com.pulumi.azure.operationalinsights.inputs.AnalyticsSolutionPlanArgs.Builder]):
-        com.pulumi.azure.operationalinsights.inputs.AnalyticsSolutionState.Builder =
-      val argsBuilder = com.pulumi.azure.operationalinsights.inputs.AnalyticsSolutionPlanArgs.builder
-      builder.plan(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.azure.operationalinsights.inputs.AnalyticsWorkspaceState.Builder)
-    /**
-     * @param identity An `identity` block as defined below.
-     * @return builder
-     */
-    def identity(args: Endofunction[com.pulumi.azure.operationalinsights.inputs.AnalyticsWorkspaceIdentityArgs.Builder]):
-        com.pulumi.azure.operationalinsights.inputs.AnalyticsWorkspaceState.Builder =
-      val argsBuilder = com.pulumi.azure.operationalinsights.inputs.AnalyticsWorkspaceIdentityArgs.builder
-      builder.identity(args(argsBuilder).build)

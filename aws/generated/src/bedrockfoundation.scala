@@ -54,15 +54,3 @@ object bedrockfoundation:
     com.pulumi.aws.bedrockfoundation.ModelAgreement(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.aws.bedrockfoundation.ModelAgreementArgs.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.bedrockfoundation.inputs.ModelAgreementTimeoutsArgs.Builder]):
-        com.pulumi.aws.bedrockfoundation.ModelAgreementArgs.Builder =
-      val argsBuilder = com.pulumi.aws.bedrockfoundation.inputs.ModelAgreementTimeoutsArgs.builder
-      builder.timeouts(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.aws.bedrockfoundation.inputs.ModelAgreementState.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.bedrockfoundation.inputs.ModelAgreementTimeoutsArgs.Builder]):
-        com.pulumi.aws.bedrockfoundation.inputs.ModelAgreementState.Builder =
-      val argsBuilder = com.pulumi.aws.bedrockfoundation.inputs.ModelAgreementTimeoutsArgs.builder
-      builder.timeouts(args(argsBuilder).build)

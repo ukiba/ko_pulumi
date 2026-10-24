@@ -27,16 +27,6 @@ object extendedlocation:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.azure.extendedlocation.CustomLocationArgs.Builder)
-    /**
-     * @param authentication An `authentication` block as defined below.
-     * @return builder
-     */
-    def authentication(args: Endofunction[com.pulumi.azure.extendedlocation.inputs.CustomLocationAuthenticationArgs.Builder]):
-        com.pulumi.azure.extendedlocation.CustomLocationArgs.Builder =
-      val argsBuilder = com.pulumi.azure.extendedlocation.inputs.CustomLocationAuthenticationArgs.builder
-      builder.authentication(args(argsBuilder).build)
-
   object ExtendedlocationFunctions:
     // Pulumi methods are reproduced as Scala methods.
     // Java methods cause Scala warnings under -Yexplicit-nulls flag
@@ -55,13 +45,3 @@ object extendedlocation:
         java.util.concurrent.CompletableFuture[com.pulumi.azure.extendedlocation.outputs.GetCustomLocationResult] =
       val argsBuilder = com.pulumi.azure.extendedlocation.inputs.GetCustomLocationPlainArgs.builder
       com.pulumi.azure.extendedlocation.ExtendedlocationFunctions.getCustomLocationPlain(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.azure.extendedlocation.inputs.CustomLocationState.Builder)
-    /**
-     * @param authentication An `authentication` block as defined below.
-     * @return builder
-     */
-    def authentication(args: Endofunction[com.pulumi.azure.extendedlocation.inputs.CustomLocationAuthenticationArgs.Builder]):
-        com.pulumi.azure.extendedlocation.inputs.CustomLocationState.Builder =
-      val argsBuilder = com.pulumi.azure.extendedlocation.inputs.CustomLocationAuthenticationArgs.builder
-      builder.authentication(args(argsBuilder).build)

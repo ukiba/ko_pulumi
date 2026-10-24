@@ -1,0 +1,292 @@
+package jp.ukiba.ko_pulumi
+package aws
+
+object macie2_ext:
+  extension (builder: com.pulumi.aws.macie2.ClassificationExportConfigurationArgs.Builder)
+    /**
+     * @param s3Destination Configuration block for a S3 Destination. Defined below
+     * @return builder
+     */
+    def s3Destination(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationExportConfigurationS3DestinationArgs.Builder]):
+        com.pulumi.aws.macie2.ClassificationExportConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationExportConfigurationS3DestinationArgs.builder
+      builder.s3Destination(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.macie2.ClassificationJobArgs.Builder)
+    /**
+     * @param s3JobDefinition S3 buckets that contain the objects to analyze, and the scope of that analysis. See `s3JobDefinition` Block for details.
+     * @return builder
+     */
+    def s3JobDefinition(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionArgs.Builder]):
+        com.pulumi.aws.macie2.ClassificationJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionArgs.builder
+      builder.s3JobDefinition(args(argsBuilder).build)
+
+    /**
+     * @param scheduleFrequency Recurrence pattern for running the job. To run the job only once, omit this argument and set `jobType` to `ONE_TIME`. See `scheduleFrequency` Block for details.
+     * @return builder
+     */
+    def scheduleFrequency(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobScheduleFrequencyArgs.Builder]):
+        com.pulumi.aws.macie2.ClassificationJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobScheduleFrequencyArgs.builder
+      builder.scheduleFrequency(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationExportConfigurationState.Builder)
+    /**
+     * @param s3Destination Configuration block for a S3 Destination. Defined below
+     * @return builder
+     */
+    def s3Destination(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationExportConfigurationS3DestinationArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationExportConfigurationState.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationExportConfigurationS3DestinationArgs.builder
+      builder.s3Destination(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionArgs.Builder)
+    /**
+     * @param bucketCriteria Property- and tag-based conditions that determine which S3 buckets to include or exclude from the analysis. Conflicts with `bucketDefinitions`. See `bucketCriteria` Block for details.
+     * @return builder
+     */
+    def bucketCriteria(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaArgs.builder
+      builder.bucketCriteria(args(argsBuilder).build)
+
+    /**
+     * @param bucketDefinitions Array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for the account. Conflicts with `bucketCriteria`. See `bucketDefinitions` Block for details.
+     * @return builder
+     */
+    def bucketDefinitions(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketDefinitionArgs.Builder]*):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketDefinitionArgs.builder
+      builder.bucketDefinitions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param scoping Property- and tag-based conditions that determine which objects to include or exclude from the analysis. See `scoping` Block for details.
+     * @return builder
+     */
+    def scoping(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingArgs.builder
+      builder.scoping(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaArgs.Builder)
+    /**
+     * @param excludes Property- or tag-based conditions that determine which S3 buckets to exclude from the analysis. See `bucket_criteria.excludes` Block for details.
+     * @return builder
+     */
+    def excludes(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesArgs.builder
+      builder.excludes(args(argsBuilder).build)
+
+    /**
+     * @param includes Property- or tag-based conditions that determine which S3 buckets to include in the analysis. See `bucket_criteria.includes` Block for details.
+     * @return builder
+     */
+    def includes(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesArgs.builder
+      builder.includes(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndArgs.Builder)
+    /**
+     * @param simpleCriterion Property-based condition that defines a property, operator, and one or more values for including or excluding an S3 bucket from the job. See `includes.simple_criterion` Block for details.
+     * @return builder
+     */
+    def simpleCriterion(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndSimpleCriterionArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndSimpleCriterionArgs.builder
+      builder.simpleCriterion(args(argsBuilder).build)
+
+    /**
+     * @param tagCriterion Tag-based condition that defines the operator and tag keys or tag key and value pairs for including or excluding an S3 bucket from the job. See `includes.tag_criterion` Block for details.
+     * @return builder
+     */
+    def tagCriterion(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndTagCriterionArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndTagCriterionArgs.builder
+      builder.tagCriterion(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndTagCriterionArgs.Builder)
+    /**
+     * @param tagValues Tag key and value pairs to use in the condition. One or more blocks are allowed. See `s3_job_definition.bucket_criteria.includes.and.tag_criterion.tag_values` Block for details.
+     * @return builder
+     */
+    def tagValues(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndTagCriterionTagValueArgs.Builder]*):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndTagCriterionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndTagCriterionTagValueArgs.builder
+      builder.tagValues(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesArgs.Builder)
+    /**
+     * @param ands Array of conditions, one for each condition that determines which objects to include or exclude from the job. See `scoping.excludes.and` Block for details.
+     * @return builder
+     */
+    def ands(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndArgs.Builder]*):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesArgs.Builder =
+      def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndArgs.builder
+      builder.ands(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndArgs.Builder)
+    /**
+     * @param simpleCriterion Property-based condition that defines a property, operator, and one or more values for including or excluding an S3 bucket from the job. See `includes.simple_criterion` Block for details.
+     * @return builder
+     */
+    def simpleCriterion(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndSimpleCriterionArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndSimpleCriterionArgs.builder
+      builder.simpleCriterion(args(argsBuilder).build)
+
+    /**
+     * @param tagCriterion Tag-based condition that defines the operator and tag keys or tag key and value pairs for including or excluding an S3 bucket from the job. See `includes.tag_criterion` Block for details.
+     * @return builder
+     */
+    def tagCriterion(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndTagCriterionArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndTagCriterionArgs.builder
+      builder.tagCriterion(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndTagCriterionArgs.Builder)
+    /**
+     * @param tagValues Tag key and value pairs to use in the condition. One or more blocks are allowed. See `s3_job_definition.bucket_criteria.includes.and.tag_criterion.tag_values` Block for details.
+     * @return builder
+     */
+    def tagValues(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndTagCriterionTagValueArgs.Builder]*):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndTagCriterionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndTagCriterionTagValueArgs.builder
+      builder.tagValues(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesArgs.Builder)
+    /**
+     * @param ands Array of conditions, one for each condition that determines which objects to include or exclude from the job. See `scoping.includes.and` Block for details.
+     * @return builder
+     */
+    def ands(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndArgs.Builder]*):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesArgs.Builder =
+      def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndArgs.builder
+      builder.ands(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingArgs.Builder)
+    /**
+     * @param excludes Property- or tag-based conditions that determine which objects to exclude from the analysis. See `scoping.excludes` Block for details.
+     * @return builder
+     */
+    def excludes(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesArgs.builder
+      builder.excludes(args(argsBuilder).build)
+
+    /**
+     * @param includes Property- or tag-based conditions that determine which objects to include in the analysis. See `scoping.includes` Block for details.
+     * @return builder
+     */
+    def includes(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesArgs.builder
+      builder.includes(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndArgs.Builder)
+    /**
+     * @param simpleScopeTerm Property-based condition that defines a property, operator, and one or more values for including or excluding an object from the job. See `includes.simple_scope_term` Block for details.
+     * @return builder
+     */
+    def simpleScopeTerm(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermArgs.builder
+      builder.simpleScopeTerm(args(argsBuilder).build)
+
+    /**
+     * @param tagScopeTerm Tag-based condition that defines the operator and tag keys or tag key and value pairs for including or excluding an object from the job. See `includes.tag_scope_term` Block for details.
+     * @return builder
+     */
+    def tagScopeTerm(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermArgs.builder
+      builder.tagScopeTerm(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermArgs.Builder)
+    /**
+     * @param tagValues Tag keys or tag key and value pairs to use in the condition. See `s3_job_definition.scoping.includes.and.tag_scope_term.tag_values` Block for details.
+     * @return builder
+     */
+    def tagValues(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermTagValueArgs.Builder]*):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermArgs.Builder =
+      def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermTagValueArgs.builder
+      builder.tagValues(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesArgs.Builder)
+    /**
+     * @param ands Array of conditions, one for each condition that determines which objects to include or exclude from the job. See `scoping.excludes.and` Block for details.
+     * @return builder
+     */
+    def ands(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndArgs.Builder]*):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesArgs.Builder =
+      def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndArgs.builder
+      builder.ands(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndArgs.Builder)
+    /**
+     * @param simpleScopeTerm Property-based condition that defines a property, operator, and one or more values for including or excluding an object from the job. See `includes.simple_scope_term` Block for details.
+     * @return builder
+     */
+    def simpleScopeTerm(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermArgs.builder
+      builder.simpleScopeTerm(args(argsBuilder).build)
+
+    /**
+     * @param tagScopeTerm Tag-based condition that defines the operator and tag keys or tag key and value pairs for including or excluding an object from the job. See `includes.tag_scope_term` Block for details.
+     * @return builder
+     */
+    def tagScopeTerm(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndArgs.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermArgs.builder
+      builder.tagScopeTerm(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermArgs.Builder)
+    /**
+     * @param tagValues Tag keys or tag key and value pairs to use in the condition. See `s3_job_definition.scoping.includes.and.tag_scope_term.tag_values` Block for details.
+     * @return builder
+     */
+    def tagValues(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValueArgs.Builder]*):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermArgs.Builder =
+      def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValueArgs.builder
+      builder.tagValues(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesArgs.Builder)
+    /**
+     * @param ands Array of conditions, one for each condition that determines which objects to include or exclude from the job. See `scoping.includes.and` Block for details.
+     * @return builder
+     */
+    def ands(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndArgs.Builder]*):
+        com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesArgs.Builder =
+      def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndArgs.builder
+      builder.ands(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobState.Builder)
+    /**
+     * @param s3JobDefinition S3 buckets that contain the objects to analyze, and the scope of that analysis. See `s3JobDefinition` Block for details.
+     * @return builder
+     */
+    def s3JobDefinition(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationJobState.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionArgs.builder
+      builder.s3JobDefinition(args(argsBuilder).build)
+
+    /**
+     * @param scheduleFrequency Recurrence pattern for running the job. To run the job only once, omit this argument and set `jobType` to `ONE_TIME`. See `scheduleFrequency` Block for details.
+     * @return builder
+     */
+    def scheduleFrequency(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobScheduleFrequencyArgs.Builder]):
+        com.pulumi.aws.macie2.inputs.ClassificationJobState.Builder =
+      val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobScheduleFrequencyArgs.builder
+      builder.scheduleFrequency(args(argsBuilder).build)
+
+    /**
+     * @param userPausedDetails If the current status of the job is `USER_PAUSED`, information about when the job was paused and when the job or job run will expire and be cancelled if it isn&#39;t resumed. This value is present only if `jobStatus` is `USER_PAUSED`. See `userPausedDetails` Block for details.
+     * @return builder
+     */
+    def userPausedDetails(args: Endofunction[com.pulumi.aws.macie2.inputs.ClassificationJobUserPausedDetailArgs.Builder]*):
+        com.pulumi.aws.macie2.inputs.ClassificationJobState.Builder =
+      def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobUserPausedDetailArgs.builder
+      builder.userPausedDetails(args.map(_(argsBuilder).build)*)

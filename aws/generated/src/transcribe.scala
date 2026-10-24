@@ -23,16 +23,6 @@ object transcribe:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.transcribe.LanguageModelArgs.Builder)
-    /**
-     * @param inputDataConfig Input data configuration for the LanguageModel. See `inputDataConfig` Block for details.
-     * @return builder
-     */
-    def inputDataConfig(args: Endofunction[com.pulumi.aws.transcribe.inputs.LanguageModelInputDataConfigArgs.Builder]):
-        com.pulumi.aws.transcribe.LanguageModelArgs.Builder =
-      val argsBuilder = com.pulumi.aws.transcribe.inputs.LanguageModelInputDataConfigArgs.builder
-      builder.inputDataConfig(args(argsBuilder).build)
-
   /** Resource for managing an AWS Transcribe MedicalVocabulary. */
   def MedicalVocabulary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transcribe.MedicalVocabularyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -77,13 +67,3 @@ object transcribe:
     com.pulumi.aws.transcribe.VocabularyFilter(name,
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.aws.transcribe.inputs.LanguageModelState.Builder)
-    /**
-     * @param inputDataConfig Input data configuration for the LanguageModel. See `inputDataConfig` Block for details.
-     * @return builder
-     */
-    def inputDataConfig(args: Endofunction[com.pulumi.aws.transcribe.inputs.LanguageModelInputDataConfigArgs.Builder]):
-        com.pulumi.aws.transcribe.inputs.LanguageModelState.Builder =
-      val argsBuilder = com.pulumi.aws.transcribe.inputs.LanguageModelInputDataConfigArgs.builder
-      builder.inputDataConfig(args(argsBuilder).build)

@@ -144,34 +144,6 @@ object elb:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.elb.LoadBalancerArgs.Builder)
-    /**
-     * @param accessLogs An Access Logs block. Access Logs documented below.
-     * @return builder
-     */
-    def accessLogs(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerAccessLogsArgs.Builder]):
-        com.pulumi.aws.elb.LoadBalancerArgs.Builder =
-      val argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerAccessLogsArgs.builder
-      builder.accessLogs(args(argsBuilder).build)
-
-    /**
-     * @param healthCheck A healthCheck block. Health Check documented below.
-     * @return builder
-     */
-    def healthCheck(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerHealthCheckArgs.Builder]):
-        com.pulumi.aws.elb.LoadBalancerArgs.Builder =
-      val argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerHealthCheckArgs.builder
-      builder.healthCheck(args(argsBuilder).build)
-
-    /**
-     * @param listeners A list of listener blocks. Listeners documented below.
-     * @return builder
-     */
-    def listeners(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerListenerArgs.Builder]*):
-        com.pulumi.aws.elb.LoadBalancerArgs.Builder =
-      def argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerListenerArgs.builder
-      builder.listeners(args.map(_(argsBuilder).build)*)
-
   /** Attaches a load balancer policy to an ELB backend server. */
   def LoadBalancerBackendServerPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.elb.LoadBalancerBackendServerPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -199,16 +171,6 @@ object elb:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.elb.LoadBalancerPolicyArgs.Builder)
-    /**
-     * @param policyAttributes Policy attribute to apply to the policy.
-     * @return builder
-     */
-    def policyAttributes(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerPolicyPolicyAttributeArgs.Builder]*):
-        com.pulumi.aws.elb.LoadBalancerPolicyArgs.Builder =
-      def argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerPolicyPolicyAttributeArgs.builder
-      builder.policyAttributes(args.map(_(argsBuilder).build)*)
-
   /** Provides a load balancer SSL negotiation policy, which allows an ELB to control the ciphers and protocols that are supported during SSL negotiations between a client and a load balancer. */
   def SslNegotiationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.elb.SslNegotiationPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -219,61 +181,3 @@ object elb:
     com.pulumi.aws.elb.SslNegotiationPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.aws.elb.SslNegotiationPolicyArgs.Builder)
-    /**
-     * @param attributes An SSL Negotiation policy attribute. Each has two properties:
-     * @return builder
-     */
-    def attributes(args: Endofunction[com.pulumi.aws.elb.inputs.SslNegotiationPolicyAttributeArgs.Builder]*):
-        com.pulumi.aws.elb.SslNegotiationPolicyArgs.Builder =
-      def argsBuilder = com.pulumi.aws.elb.inputs.SslNegotiationPolicyAttributeArgs.builder
-      builder.attributes(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.aws.elb.inputs.LoadBalancerPolicyState.Builder)
-    /**
-     * @param policyAttributes Policy attribute to apply to the policy.
-     * @return builder
-     */
-    def policyAttributes(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerPolicyPolicyAttributeArgs.Builder]*):
-        com.pulumi.aws.elb.inputs.LoadBalancerPolicyState.Builder =
-      def argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerPolicyPolicyAttributeArgs.builder
-      builder.policyAttributes(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.aws.elb.inputs.LoadBalancerState.Builder)
-    /**
-     * @param accessLogs An Access Logs block. Access Logs documented below.
-     * @return builder
-     */
-    def accessLogs(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerAccessLogsArgs.Builder]):
-        com.pulumi.aws.elb.inputs.LoadBalancerState.Builder =
-      val argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerAccessLogsArgs.builder
-      builder.accessLogs(args(argsBuilder).build)
-
-    /**
-     * @param healthCheck A healthCheck block. Health Check documented below.
-     * @return builder
-     */
-    def healthCheck(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerHealthCheckArgs.Builder]):
-        com.pulumi.aws.elb.inputs.LoadBalancerState.Builder =
-      val argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerHealthCheckArgs.builder
-      builder.healthCheck(args(argsBuilder).build)
-
-    /**
-     * @param listeners A list of listener blocks. Listeners documented below.
-     * @return builder
-     */
-    def listeners(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerListenerArgs.Builder]*):
-        com.pulumi.aws.elb.inputs.LoadBalancerState.Builder =
-      def argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerListenerArgs.builder
-      builder.listeners(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.aws.elb.inputs.SslNegotiationPolicyState.Builder)
-    /**
-     * @param attributes An SSL Negotiation policy attribute. Each has two properties:
-     * @return builder
-     */
-    def attributes(args: Endofunction[com.pulumi.aws.elb.inputs.SslNegotiationPolicyAttributeArgs.Builder]*):
-        com.pulumi.aws.elb.inputs.SslNegotiationPolicyState.Builder =
-      def argsBuilder = com.pulumi.aws.elb.inputs.SslNegotiationPolicyAttributeArgs.builder
-      builder.attributes(args.map(_(argsBuilder).build)*)

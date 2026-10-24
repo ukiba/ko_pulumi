@@ -57,16 +57,6 @@ object authorization:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.azure.authorization.RoleDefinitionArgs.Builder)
-    /**
-     * @param permissions A `permissions` block as defined below.
-     * @return builder
-     */
-    def permissions(args: Endofunction[com.pulumi.azure.authorization.inputs.RoleDefinitionPermissionArgs.Builder]*):
-        com.pulumi.azure.authorization.RoleDefinitionArgs.Builder =
-      def argsBuilder = com.pulumi.azure.authorization.inputs.RoleDefinitionPermissionArgs.builder
-      builder.permissions(args.map(_(argsBuilder).build)*)
-
   /**
    * &lt;!-- Note: This documentation is generated. Any manual changes will be overwritten --&gt;
    * 
@@ -88,13 +78,3 @@ object authorization:
     com.pulumi.azure.authorization.UserAssignedIdentity(name,
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.azure.authorization.inputs.RoleDefinitionState.Builder)
-    /**
-     * @param permissions A `permissions` block as defined below.
-     * @return builder
-     */
-    def permissions(args: Endofunction[com.pulumi.azure.authorization.inputs.RoleDefinitionPermissionArgs.Builder]*):
-        com.pulumi.azure.authorization.inputs.RoleDefinitionState.Builder =
-      def argsBuilder = com.pulumi.azure.authorization.inputs.RoleDefinitionPermissionArgs.builder
-      builder.permissions(args.map(_(argsBuilder).build)*)

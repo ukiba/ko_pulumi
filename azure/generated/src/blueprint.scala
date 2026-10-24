@@ -21,16 +21,6 @@ object blueprint:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.azure.blueprint.AssignmentArgs.Builder)
-    /**
-     * @param identity An `identity` block as defined below.
-     * @return builder
-     */
-    def identity(args: Endofunction[com.pulumi.azure.blueprint.inputs.AssignmentIdentityArgs.Builder]):
-        com.pulumi.azure.blueprint.AssignmentArgs.Builder =
-      val argsBuilder = com.pulumi.azure.blueprint.inputs.AssignmentIdentityArgs.builder
-      builder.identity(args(argsBuilder).build)
-
   object BlueprintFunctions:
     // Pulumi methods are reproduced as Scala methods.
     // Java methods cause Scala warnings under -Yexplicit-nulls flag
@@ -77,13 +67,3 @@ object blueprint:
         java.util.concurrent.CompletableFuture[com.pulumi.azure.blueprint.outputs.GetPublishedVersionResult] =
       val argsBuilder = com.pulumi.azure.blueprint.inputs.GetPublishedVersionPlainArgs.builder
       com.pulumi.azure.blueprint.BlueprintFunctions.getPublishedVersionPlain(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.azure.blueprint.inputs.AssignmentState.Builder)
-    /**
-     * @param identity An `identity` block as defined below.
-     * @return builder
-     */
-    def identity(args: Endofunction[com.pulumi.azure.blueprint.inputs.AssignmentIdentityArgs.Builder]):
-        com.pulumi.azure.blueprint.inputs.AssignmentState.Builder =
-      val argsBuilder = com.pulumi.azure.blueprint.inputs.AssignmentIdentityArgs.builder
-      builder.identity(args(argsBuilder).build)

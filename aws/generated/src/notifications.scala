@@ -80,12 +80,6 @@ object notifications:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.notifications.NotificationHubArgs.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.notifications.inputs.NotificationHubTimeoutsArgs.Builder]):
-        com.pulumi.aws.notifications.NotificationHubArgs.Builder =
-      val argsBuilder = com.pulumi.aws.notifications.inputs.NotificationHubTimeoutsArgs.builder
-      builder.timeouts(args(argsBuilder).build)
-
   /** Resource for managing an AWS User Notifications Organizational Unit Association. This resource associates an organizational unit with a notification configuration. */
   def OrganizationalUnitAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.notifications.OrganizationalUnitAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -107,21 +101,3 @@ object notifications:
     com.pulumi.aws.notifications.OrganizationsAccess(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.aws.notifications.OrganizationsAccessArgs.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.notifications.inputs.OrganizationsAccessTimeoutsArgs.Builder]):
-        com.pulumi.aws.notifications.OrganizationsAccessArgs.Builder =
-      val argsBuilder = com.pulumi.aws.notifications.inputs.OrganizationsAccessTimeoutsArgs.builder
-      builder.timeouts(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.aws.notifications.inputs.NotificationHubState.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.notifications.inputs.NotificationHubTimeoutsArgs.Builder]):
-        com.pulumi.aws.notifications.inputs.NotificationHubState.Builder =
-      val argsBuilder = com.pulumi.aws.notifications.inputs.NotificationHubTimeoutsArgs.builder
-      builder.timeouts(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.aws.notifications.inputs.OrganizationsAccessState.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.notifications.inputs.OrganizationsAccessTimeoutsArgs.Builder]):
-        com.pulumi.aws.notifications.inputs.OrganizationsAccessState.Builder =
-      val argsBuilder = com.pulumi.aws.notifications.inputs.OrganizationsAccessTimeoutsArgs.builder
-      builder.timeouts(args(argsBuilder).build)

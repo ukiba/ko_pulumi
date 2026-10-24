@@ -73,34 +73,3 @@ object avs:
     com.pulumi.azure.avs.PrivateCloud(name,
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.azure.avs.PrivateCloudArgs.Builder)
-    /**
-     * @param managementCluster A `managementCluster` block as defined below.
-     * &gt; **Note:** `internetConnectionEnabled` and `management_cluster[0].size` cannot be updated at the same time.
-     * @return builder
-     */
-    def managementCluster(args: Endofunction[com.pulumi.azure.avs.inputs.PrivateCloudManagementClusterArgs.Builder]):
-        com.pulumi.azure.avs.PrivateCloudArgs.Builder =
-      val argsBuilder = com.pulumi.azure.avs.inputs.PrivateCloudManagementClusterArgs.builder
-      builder.managementCluster(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.azure.avs.inputs.PrivateCloudState.Builder)
-    /**
-     * @param circuits A `circuit` block as defined below.
-     * @return builder
-     */
-    def circuits(args: Endofunction[com.pulumi.azure.avs.inputs.PrivateCloudCircuitArgs.Builder]*):
-        com.pulumi.azure.avs.inputs.PrivateCloudState.Builder =
-      def argsBuilder = com.pulumi.azure.avs.inputs.PrivateCloudCircuitArgs.builder
-      builder.circuits(args.map(_(argsBuilder).build)*)
-
-    /**
-     * @param managementCluster A `managementCluster` block as defined below.
-     * &gt; **Note:** `internetConnectionEnabled` and `management_cluster[0].size` cannot be updated at the same time.
-     * @return builder
-     */
-    def managementCluster(args: Endofunction[com.pulumi.azure.avs.inputs.PrivateCloudManagementClusterArgs.Builder]):
-        com.pulumi.azure.avs.inputs.PrivateCloudState.Builder =
-      val argsBuilder = com.pulumi.azure.avs.inputs.PrivateCloudManagementClusterArgs.builder
-      builder.managementCluster(args(argsBuilder).build)

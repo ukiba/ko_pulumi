@@ -1,0 +1,119 @@
+package jp.ukiba.ko_pulumi
+package aws
+
+object timestreaminfluxdb_ext:
+  extension (builder: com.pulumi.aws.timestreaminfluxdb.DbClusterArgs.Builder)
+    /**
+     * @param logDeliveryConfiguration Configuration for sending InfluxDB engine logs to a specified S3 bucket. This argument is updatable.
+     * @return builder
+     */
+    def logDeliveryConfiguration(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterLogDeliveryConfigurationArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.DbClusterArgs.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterLogDeliveryConfigurationArgs.builder
+      builder.logDeliveryConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param maintenanceSchedule Maintenance schedule for the DB cluster, including the preferred maintenance window and timezone. This argument is updatable. This field is only supported for InfluxDB V3 clusters (when using an InfluxDB V3 DB parameter group).
+     * @return builder
+     */
+    def maintenanceSchedule(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterMaintenanceScheduleArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.DbClusterArgs.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterMaintenanceScheduleArgs.builder
+      builder.maintenanceSchedule(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterTimeoutsArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.DbClusterArgs.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.timestreaminfluxdb.DbInstanceArgs.Builder)
+    /**
+     * @param logDeliveryConfiguration Configuration for sending InfluxDB engine logs to a specified S3 bucket. This argument is updatable.
+     * @return builder
+     */
+    def logDeliveryConfiguration(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceLogDeliveryConfigurationArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.DbInstanceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceLogDeliveryConfigurationArgs.builder
+      builder.logDeliveryConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param maintenanceSchedule Maintenance schedule for the DB instance, including the preferred maintenance window and timezone. This argument is updatable.
+     * @return builder
+     */
+    def maintenanceSchedule(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceMaintenanceScheduleArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.DbInstanceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceMaintenanceScheduleArgs.builder
+      builder.maintenanceSchedule(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceTimeoutsArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.DbInstanceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterLogDeliveryConfigurationArgs.Builder)
+    /**
+     * @param s3Configuration Configuration for S3 bucket log delivery.
+     * @return builder
+     */
+    def s3Configuration(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterLogDeliveryConfigurationS3ConfigurationArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterLogDeliveryConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterLogDeliveryConfigurationS3ConfigurationArgs.builder
+      builder.s3Configuration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterState.Builder)
+    /**
+     * @param logDeliveryConfiguration Configuration for sending InfluxDB engine logs to a specified S3 bucket. This argument is updatable.
+     * @return builder
+     */
+    def logDeliveryConfiguration(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterLogDeliveryConfigurationArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterState.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterLogDeliveryConfigurationArgs.builder
+      builder.logDeliveryConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param maintenanceSchedule Maintenance schedule for the DB cluster, including the preferred maintenance window and timezone. This argument is updatable. This field is only supported for InfluxDB V3 clusters (when using an InfluxDB V3 DB parameter group).
+     * @return builder
+     */
+    def maintenanceSchedule(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterMaintenanceScheduleArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterState.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterMaintenanceScheduleArgs.builder
+      builder.maintenanceSchedule(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterTimeoutsArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterState.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceLogDeliveryConfigurationArgs.Builder)
+    /**
+     * @param s3Configuration Configuration for S3 bucket log delivery.
+     * @return builder
+     */
+    def s3Configuration(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceLogDeliveryConfigurationS3ConfigurationArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceLogDeliveryConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceLogDeliveryConfigurationS3ConfigurationArgs.builder
+      builder.s3Configuration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceState.Builder)
+    /**
+     * @param logDeliveryConfiguration Configuration for sending InfluxDB engine logs to a specified S3 bucket. This argument is updatable.
+     * @return builder
+     */
+    def logDeliveryConfiguration(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceLogDeliveryConfigurationArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceState.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceLogDeliveryConfigurationArgs.builder
+      builder.logDeliveryConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param maintenanceSchedule Maintenance schedule for the DB instance, including the preferred maintenance window and timezone. This argument is updatable.
+     * @return builder
+     */
+    def maintenanceSchedule(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceMaintenanceScheduleArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceState.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceMaintenanceScheduleArgs.builder
+      builder.maintenanceSchedule(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceTimeoutsArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceState.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)

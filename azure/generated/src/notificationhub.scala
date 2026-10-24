@@ -33,38 +33,6 @@ object notificationhub:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.azure.notificationhub.HubArgs.Builder)
-    /**
-     * @param apnsCredential A `apnsCredential` block as defined below.
-     * 
-     * &gt; **Note:** Removing the `apnsCredential` block will currently force a recreation of this resource [due to this bug in the Azure SDK for Go](https://github.com/Azure/azure-sdk-for-go/issues/2246) - we&#39;ll remove this limitation when the SDK bug is fixed.
-     * @return builder
-     */
-    def apnsCredential(args: Endofunction[com.pulumi.azure.notificationhub.inputs.HubApnsCredentialArgs.Builder]):
-        com.pulumi.azure.notificationhub.HubArgs.Builder =
-      val argsBuilder = com.pulumi.azure.notificationhub.inputs.HubApnsCredentialArgs.builder
-      builder.apnsCredential(args(argsBuilder).build)
-
-    /**
-     * @param browserCredential A `browserCredential` block as defined below. Changing this forces a new resource to be created.
-     * @return builder
-     */
-    def browserCredential(args: Endofunction[com.pulumi.azure.notificationhub.inputs.HubBrowserCredentialArgs.Builder]):
-        com.pulumi.azure.notificationhub.HubArgs.Builder =
-      val argsBuilder = com.pulumi.azure.notificationhub.inputs.HubBrowserCredentialArgs.builder
-      builder.browserCredential(args(argsBuilder).build)
-
-    /**
-     * @param gcmCredential A `gcmCredential` block as defined below.
-     * 
-     * &gt; **Note:** Removing the `gcmCredential` block will currently force a recreation of this resource [due to this bug in the Azure SDK for Go](https://github.com/Azure/azure-sdk-for-go/issues/2246) - we&#39;ll remove this limitation when the SDK bug is fixed.
-     * @return builder
-     */
-    def gcmCredential(args: Endofunction[com.pulumi.azure.notificationhub.inputs.HubGcmCredentialArgs.Builder]):
-        com.pulumi.azure.notificationhub.HubArgs.Builder =
-      val argsBuilder = com.pulumi.azure.notificationhub.inputs.HubGcmCredentialArgs.builder
-      builder.gcmCredential(args(argsBuilder).build)
-
   /** Manages a Notification Hub Namespace. */
   def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.notificationhub.NamespaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -113,35 +81,3 @@ object notificationhub:
         java.util.concurrent.CompletableFuture[com.pulumi.azure.notificationhub.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.azure.notificationhub.inputs.GetNamespacePlainArgs.builder
       com.pulumi.azure.notificationhub.NotificationhubFunctions.getNamespacePlain(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.azure.notificationhub.inputs.HubState.Builder)
-    /**
-     * @param apnsCredential A `apnsCredential` block as defined below.
-     * 
-     * &gt; **Note:** Removing the `apnsCredential` block will currently force a recreation of this resource [due to this bug in the Azure SDK for Go](https://github.com/Azure/azure-sdk-for-go/issues/2246) - we&#39;ll remove this limitation when the SDK bug is fixed.
-     * @return builder
-     */
-    def apnsCredential(args: Endofunction[com.pulumi.azure.notificationhub.inputs.HubApnsCredentialArgs.Builder]):
-        com.pulumi.azure.notificationhub.inputs.HubState.Builder =
-      val argsBuilder = com.pulumi.azure.notificationhub.inputs.HubApnsCredentialArgs.builder
-      builder.apnsCredential(args(argsBuilder).build)
-
-    /**
-     * @param browserCredential A `browserCredential` block as defined below. Changing this forces a new resource to be created.
-     * @return builder
-     */
-    def browserCredential(args: Endofunction[com.pulumi.azure.notificationhub.inputs.HubBrowserCredentialArgs.Builder]):
-        com.pulumi.azure.notificationhub.inputs.HubState.Builder =
-      val argsBuilder = com.pulumi.azure.notificationhub.inputs.HubBrowserCredentialArgs.builder
-      builder.browserCredential(args(argsBuilder).build)
-
-    /**
-     * @param gcmCredential A `gcmCredential` block as defined below.
-     * 
-     * &gt; **Note:** Removing the `gcmCredential` block will currently force a recreation of this resource [due to this bug in the Azure SDK for Go](https://github.com/Azure/azure-sdk-for-go/issues/2246) - we&#39;ll remove this limitation when the SDK bug is fixed.
-     * @return builder
-     */
-    def gcmCredential(args: Endofunction[com.pulumi.azure.notificationhub.inputs.HubGcmCredentialArgs.Builder]):
-        com.pulumi.azure.notificationhub.inputs.HubState.Builder =
-      val argsBuilder = com.pulumi.azure.notificationhub.inputs.HubGcmCredentialArgs.builder
-      builder.gcmCredential(args(argsBuilder).build)

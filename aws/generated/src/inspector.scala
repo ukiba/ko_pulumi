@@ -33,16 +33,6 @@ object inspector:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.inspector.AssessmentTemplateArgs.Builder)
-    /**
-     * @param eventSubscriptions A block that enables sending notifications about a specified assessment template event to a designated SNS topic. See Event Subscriptions for details.
-     * @return builder
-     */
-    def eventSubscriptions(args: Endofunction[com.pulumi.aws.inspector.inputs.AssessmentTemplateEventSubscriptionArgs.Builder]*):
-        com.pulumi.aws.inspector.AssessmentTemplateArgs.Builder =
-      def argsBuilder = com.pulumi.aws.inspector.inputs.AssessmentTemplateEventSubscriptionArgs.builder
-      builder.eventSubscriptions(args.map(_(argsBuilder).build)*)
-
   object InspectorFunctions:
     // Pulumi methods are reproduced as Scala methods.
     // Java methods cause Scala warnings under -Yexplicit-nulls flag
@@ -84,13 +74,3 @@ object inspector:
     com.pulumi.aws.inspector.ResourceGroup(name,
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.aws.inspector.inputs.AssessmentTemplateState.Builder)
-    /**
-     * @param eventSubscriptions A block that enables sending notifications about a specified assessment template event to a designated SNS topic. See Event Subscriptions for details.
-     * @return builder
-     */
-    def eventSubscriptions(args: Endofunction[com.pulumi.aws.inspector.inputs.AssessmentTemplateEventSubscriptionArgs.Builder]*):
-        com.pulumi.aws.inspector.inputs.AssessmentTemplateState.Builder =
-      def argsBuilder = com.pulumi.aws.inspector.inputs.AssessmentTemplateEventSubscriptionArgs.builder
-      builder.eventSubscriptions(args.map(_(argsBuilder).build)*)

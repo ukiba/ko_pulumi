@@ -125,16 +125,6 @@ object location:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.location.MapArgs.Builder)
-    /**
-     * @param configuration Configuration block with the map style selected from an available data provider. Detailed below.
-     * @return builder
-     */
-    def configuration(args: Endofunction[com.pulumi.aws.location.inputs.MapConfigurationArgs.Builder]):
-        com.pulumi.aws.location.MapArgs.Builder =
-      val argsBuilder = com.pulumi.aws.location.inputs.MapConfigurationArgs.builder
-      builder.configuration(args(argsBuilder).build)
-
   /** Provides a Location Service Place Index. */
   def PlaceIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.location.PlaceIndexArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -149,16 +139,6 @@ object location:
     com.pulumi.aws.location.PlaceIndex(name,
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.aws.location.PlaceIndexArgs.Builder)
-    /**
-     * @param dataSourceConfiguration Configuration block with the data storage option chosen for requesting Places. Detailed below.
-     * @return builder
-     */
-    def dataSourceConfiguration(args: Endofunction[com.pulumi.aws.location.inputs.PlaceIndexDataSourceConfigurationArgs.Builder]):
-        com.pulumi.aws.location.PlaceIndexArgs.Builder =
-      val argsBuilder = com.pulumi.aws.location.inputs.PlaceIndexDataSourceConfigurationArgs.builder
-      builder.dataSourceConfiguration(args(argsBuilder).build)
 
   /** Provides a Location Service Route Calculator. */
   def RouteCalculation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -197,23 +177,3 @@ object location:
     com.pulumi.aws.location.TrackerAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.aws.location.inputs.MapState.Builder)
-    /**
-     * @param configuration Configuration block with the map style selected from an available data provider. Detailed below.
-     * @return builder
-     */
-    def configuration(args: Endofunction[com.pulumi.aws.location.inputs.MapConfigurationArgs.Builder]):
-        com.pulumi.aws.location.inputs.MapState.Builder =
-      val argsBuilder = com.pulumi.aws.location.inputs.MapConfigurationArgs.builder
-      builder.configuration(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.aws.location.inputs.PlaceIndexState.Builder)
-    /**
-     * @param dataSourceConfiguration Configuration block with the data storage option chosen for requesting Places. Detailed below.
-     * @return builder
-     */
-    def dataSourceConfiguration(args: Endofunction[com.pulumi.aws.location.inputs.PlaceIndexDataSourceConfigurationArgs.Builder]):
-        com.pulumi.aws.location.inputs.PlaceIndexState.Builder =
-      val argsBuilder = com.pulumi.aws.location.inputs.PlaceIndexDataSourceConfigurationArgs.builder
-      builder.dataSourceConfiguration(args(argsBuilder).build)

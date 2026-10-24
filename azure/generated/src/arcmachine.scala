@@ -22,16 +22,6 @@ object arcmachine:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.azure.arcmachine.ArcMachineArgs.Builder)
-    /**
-     * @param identity An `identity` block as defined below.
-     * @return builder
-     */
-    def identity(args: Endofunction[com.pulumi.azure.arcmachine.inputs.ArcMachineIdentityArgs.Builder]):
-        com.pulumi.azure.arcmachine.ArcMachineArgs.Builder =
-      val argsBuilder = com.pulumi.azure.arcmachine.inputs.ArcMachineIdentityArgs.builder
-      builder.identity(args(argsBuilder).build)
-
   object ArcmachineFunctions:
     // Pulumi methods are reproduced as Scala methods.
     // Java methods cause Scala warnings under -Yexplicit-nulls flag
@@ -76,13 +66,3 @@ object arcmachine:
     com.pulumi.azure.arcmachine.Extension(name,
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.azure.arcmachine.inputs.ArcMachineState.Builder)
-    /**
-     * @param identity An `identity` block as defined below.
-     * @return builder
-     */
-    def identity(args: Endofunction[com.pulumi.azure.arcmachine.inputs.ArcMachineIdentityArgs.Builder]):
-        com.pulumi.azure.arcmachine.inputs.ArcMachineState.Builder =
-      val argsBuilder = com.pulumi.azure.arcmachine.inputs.ArcMachineIdentityArgs.builder
-      builder.identity(args(argsBuilder).build)

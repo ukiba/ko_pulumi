@@ -41,16 +41,6 @@ object search:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.azure.search.ServiceArgs.Builder)
-    /**
-     * @param identity An `identity` block as defined below.
-     * @return builder
-     */
-    def identity(args: Endofunction[com.pulumi.azure.search.inputs.ServiceIdentityArgs.Builder]):
-        com.pulumi.azure.search.ServiceArgs.Builder =
-      val argsBuilder = com.pulumi.azure.search.inputs.ServiceIdentityArgs.builder
-      builder.identity(args(argsBuilder).build)
-
   /** Manages the Shared Private Link Service for an Azure Search Service. */
   def SharedPrivateLinkService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.search.SharedPrivateLinkServiceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -61,22 +51,3 @@ object search:
     com.pulumi.azure.search.SharedPrivateLinkService(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.azure.search.inputs.ServiceState.Builder)
-    /**
-     * @param identity An `identity` block as defined below.
-     * @return builder
-     */
-    def identity(args: Endofunction[com.pulumi.azure.search.inputs.ServiceIdentityArgs.Builder]):
-        com.pulumi.azure.search.inputs.ServiceState.Builder =
-      val argsBuilder = com.pulumi.azure.search.inputs.ServiceIdentityArgs.builder
-      builder.identity(args(argsBuilder).build)
-
-    /**
-     * @param queryKeys A `queryKeys` block as defined below.
-     * @return builder
-     */
-    def queryKeys(args: Endofunction[com.pulumi.azure.search.inputs.ServiceQueryKeyArgs.Builder]*):
-        com.pulumi.azure.search.inputs.ServiceState.Builder =
-      def argsBuilder = com.pulumi.azure.search.inputs.ServiceQueryKeyArgs.builder
-      builder.queryKeys(args.map(_(argsBuilder).build)*)

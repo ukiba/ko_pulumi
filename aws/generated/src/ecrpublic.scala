@@ -62,16 +62,6 @@ object ecrpublic:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.ecrpublic.RepositoryArgs.Builder)
-    /**
-     * @param catalogData Catalog data configuration for the repository. See below for schema.
-     * @return builder
-     */
-    def catalogData(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.RepositoryCatalogDataArgs.Builder]):
-        com.pulumi.aws.ecrpublic.RepositoryArgs.Builder =
-      val argsBuilder = com.pulumi.aws.ecrpublic.inputs.RepositoryCatalogDataArgs.builder
-      builder.catalogData(args(argsBuilder).build)
-
   /**
    * Provides an Elastic Container Registry Public Repository Policy.
    * 
@@ -85,33 +75,3 @@ object ecrpublic:
     com.pulumi.aws.ecrpublic.RepositoryPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.Builder)
-    /**
-     * @param imageIds One or more image ID filters. Each image ID can use either a tag or digest (or both). Each object has the following attributes:
-     * @return builder
-     */
-    def imageIds(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesImageIdArgs.Builder]*):
-        com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.Builder =
-      def argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetImagesImageIdArgs.builder
-      builder.imageIds(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.aws.ecrpublic.inputs.GetImagesPlainArgs.Builder)
-    /**
-     * @param imageIds One or more image ID filters. Each image ID can use either a tag or digest (or both). Each object has the following attributes:
-     * @return builder
-     */
-    def imageIds(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesImageId.Builder]*):
-        com.pulumi.aws.ecrpublic.inputs.GetImagesPlainArgs.Builder =
-      def argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetImagesImageId.builder
-      builder.imageIds(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.aws.ecrpublic.inputs.RepositoryState.Builder)
-    /**
-     * @param catalogData Catalog data configuration for the repository. See below for schema.
-     * @return builder
-     */
-    def catalogData(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.RepositoryCatalogDataArgs.Builder]):
-        com.pulumi.aws.ecrpublic.inputs.RepositoryState.Builder =
-      val argsBuilder = com.pulumi.aws.ecrpublic.inputs.RepositoryCatalogDataArgs.builder
-      builder.catalogData(args(argsBuilder).build)

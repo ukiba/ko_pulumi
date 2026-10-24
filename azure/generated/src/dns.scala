@@ -92,16 +92,6 @@ object dns:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.azure.dns.CaaRecordArgs.Builder)
-    /**
-     * @param records A list of values that make up the CAA record. Each `record` block supports fields documented below.
-     * @return builder
-     */
-    def records(args: Endofunction[com.pulumi.azure.dns.inputs.CaaRecordRecordArgs.Builder]*):
-        com.pulumi.azure.dns.CaaRecordArgs.Builder =
-      def argsBuilder = com.pulumi.azure.dns.inputs.CaaRecordRecordArgs.builder
-      builder.records(args.map(_(argsBuilder).build)*)
-
   object DnsFunctions:
     // Pulumi methods are reproduced as Scala methods.
     // Java methods cause Scala warnings under -Yexplicit-nulls flag
@@ -343,16 +333,6 @@ object dns:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.azure.dns.MxRecordArgs.Builder)
-    /**
-     * @param records A list of values that make up the MX record. Each `record` block supports fields documented below.
-     * @return builder
-     */
-    def records(args: Endofunction[com.pulumi.azure.dns.inputs.MxRecordRecordArgs.Builder]*):
-        com.pulumi.azure.dns.MxRecordArgs.Builder =
-      def argsBuilder = com.pulumi.azure.dns.inputs.MxRecordRecordArgs.builder
-      builder.records(args.map(_(argsBuilder).build)*)
-
   /**
    * Enables you to manage DNS NS Records within Azure DNS.
    * 
@@ -419,16 +399,6 @@ object dns:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.azure.dns.SrvRecordArgs.Builder)
-    /**
-     * @param records A list of values that make up the SRV record. Each `record` block supports fields documented below.
-     * @return builder
-     */
-    def records(args: Endofunction[com.pulumi.azure.dns.inputs.SrvRecordRecordArgs.Builder]*):
-        com.pulumi.azure.dns.SrvRecordArgs.Builder =
-      def argsBuilder = com.pulumi.azure.dns.inputs.SrvRecordRecordArgs.builder
-      builder.records(args.map(_(argsBuilder).build)*)
-
   /**
    * Enables you to manage DNS TXT Records within Azure DNS.
    * 
@@ -451,16 +421,6 @@ object dns:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.azure.dns.TxtRecordArgs.Builder)
-    /**
-     * @param records A list of values that make up the txt record. Each `record` block supports fields documented below.
-     * @return builder
-     */
-    def records(args: Endofunction[com.pulumi.azure.dns.inputs.TxtRecordRecordArgs.Builder]*):
-        com.pulumi.azure.dns.TxtRecordArgs.Builder =
-      def argsBuilder = com.pulumi.azure.dns.inputs.TxtRecordRecordArgs.builder
-      builder.records(args.map(_(argsBuilder).build)*)
-
   /** Enables you to manage DNS zones within Azure DNS. These zones are hosted on Azure&#39;s name servers to which you can delegate the zone from the parent domain. */
   def Zone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.dns.ZoneArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -478,63 +438,3 @@ object dns:
     com.pulumi.azure.dns.Zone(name,
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.azure.dns.ZoneArgs.Builder)
-    /**
-     * @param soaRecord A `soaRecord` block as defined below.
-     * @return builder
-     */
-    def soaRecord(args: Endofunction[com.pulumi.azure.dns.inputs.ZoneSoaRecordArgs.Builder]):
-        com.pulumi.azure.dns.ZoneArgs.Builder =
-      val argsBuilder = com.pulumi.azure.dns.inputs.ZoneSoaRecordArgs.builder
-      builder.soaRecord(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.azure.dns.inputs.CaaRecordState.Builder)
-    /**
-     * @param records A list of values that make up the CAA record. Each `record` block supports fields documented below.
-     * @return builder
-     */
-    def records(args: Endofunction[com.pulumi.azure.dns.inputs.CaaRecordRecordArgs.Builder]*):
-        com.pulumi.azure.dns.inputs.CaaRecordState.Builder =
-      def argsBuilder = com.pulumi.azure.dns.inputs.CaaRecordRecordArgs.builder
-      builder.records(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.azure.dns.inputs.MxRecordState.Builder)
-    /**
-     * @param records A list of values that make up the MX record. Each `record` block supports fields documented below.
-     * @return builder
-     */
-    def records(args: Endofunction[com.pulumi.azure.dns.inputs.MxRecordRecordArgs.Builder]*):
-        com.pulumi.azure.dns.inputs.MxRecordState.Builder =
-      def argsBuilder = com.pulumi.azure.dns.inputs.MxRecordRecordArgs.builder
-      builder.records(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.azure.dns.inputs.SrvRecordState.Builder)
-    /**
-     * @param records A list of values that make up the SRV record. Each `record` block supports fields documented below.
-     * @return builder
-     */
-    def records(args: Endofunction[com.pulumi.azure.dns.inputs.SrvRecordRecordArgs.Builder]*):
-        com.pulumi.azure.dns.inputs.SrvRecordState.Builder =
-      def argsBuilder = com.pulumi.azure.dns.inputs.SrvRecordRecordArgs.builder
-      builder.records(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.azure.dns.inputs.TxtRecordState.Builder)
-    /**
-     * @param records A list of values that make up the txt record. Each `record` block supports fields documented below.
-     * @return builder
-     */
-    def records(args: Endofunction[com.pulumi.azure.dns.inputs.TxtRecordRecordArgs.Builder]*):
-        com.pulumi.azure.dns.inputs.TxtRecordState.Builder =
-      def argsBuilder = com.pulumi.azure.dns.inputs.TxtRecordRecordArgs.builder
-      builder.records(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.azure.dns.inputs.ZoneState.Builder)
-    /**
-     * @param soaRecord A `soaRecord` block as defined below.
-     * @return builder
-     */
-    def soaRecord(args: Endofunction[com.pulumi.azure.dns.inputs.ZoneSoaRecordArgs.Builder]):
-        com.pulumi.azure.dns.inputs.ZoneState.Builder =
-      val argsBuilder = com.pulumi.azure.dns.inputs.ZoneSoaRecordArgs.builder
-      builder.soaRecord(args(argsBuilder).build)

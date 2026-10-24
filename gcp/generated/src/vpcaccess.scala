@@ -23,17 +23,6 @@ object vpcaccess:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.gcp.vpcaccess.ConnectorArgs.Builder)
-    /**
-     * @param subnet The subnet in which to house the connector
-     * Structure is documented below.
-     * @return builder
-     */
-    def subnet(args: Endofunction[com.pulumi.gcp.vpcaccess.inputs.ConnectorSubnetArgs.Builder]):
-        com.pulumi.gcp.vpcaccess.ConnectorArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.vpcaccess.inputs.ConnectorSubnetArgs.builder
-      builder.subnet(args(argsBuilder).build)
-
   object VpcaccessFunctions:
     // Pulumi methods are reproduced as Scala methods.
     // Java methods cause Scala warnings under -Yexplicit-nulls flag
@@ -68,14 +57,3 @@ object vpcaccess:
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vpcaccess.outputs.GetConnectorResult] =
       val argsBuilder = com.pulumi.gcp.vpcaccess.inputs.GetConnectorPlainArgs.builder
       com.pulumi.gcp.vpcaccess.VpcaccessFunctions.getConnectorPlain(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.vpcaccess.inputs.ConnectorState.Builder)
-    /**
-     * @param subnet The subnet in which to house the connector
-     * Structure is documented below.
-     * @return builder
-     */
-    def subnet(args: Endofunction[com.pulumi.gcp.vpcaccess.inputs.ConnectorSubnetArgs.Builder]):
-        com.pulumi.gcp.vpcaccess.inputs.ConnectorState.Builder =
-      val argsBuilder = com.pulumi.gcp.vpcaccess.inputs.ConnectorSubnetArgs.builder
-      builder.subnet(args(argsBuilder).build)

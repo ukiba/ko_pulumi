@@ -16,14 +16,3 @@ object gcp:
     com.pulumi.gcp.Provider(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.gcp.ProviderArgs.Builder)
-    def batching(args: Endofunction[com.pulumi.gcp.inputs.ProviderBatchingArgs.Builder]):
-        com.pulumi.gcp.ProviderArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.inputs.ProviderBatchingArgs.builder
-      builder.batching(args(argsBuilder).build)
-
-    def externalCredentials(args: Endofunction[com.pulumi.gcp.inputs.ProviderExternalCredentialsArgs.Builder]):
-        com.pulumi.gcp.ProviderArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.inputs.ProviderExternalCredentialsArgs.builder
-      builder.externalCredentials(args(argsBuilder).build)

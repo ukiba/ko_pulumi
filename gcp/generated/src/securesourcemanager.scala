@@ -34,17 +34,6 @@ object securesourcemanager:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.gcp.securesourcemanager.HookArgs.Builder)
-    /**
-     * @param pushOption The trigger option for push events.
-     * Structure is documented below.
-     * @return builder
-     */
-    def pushOption(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.HookPushOptionArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.HookArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.HookPushOptionArgs.builder
-      builder.pushOption(args(argsBuilder).build)
-
   /**
    * Instances are deployed to an available Google Cloud region and are accessible via their web interface.
    * 
@@ -61,28 +50,6 @@ object securesourcemanager:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.gcp.securesourcemanager.InstanceArgs.Builder)
-    /**
-     * @param privateConfig Private settings for private instance.
-     * Structure is documented below.
-     * @return builder
-     */
-    def privateConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.InstanceArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigArgs.builder
-      builder.privateConfig(args(argsBuilder).build)
-
-    /**
-     * @param workforceIdentityFederationConfig Configuration for Workforce Identity Federation to support third party identity provider.
-     * If unset, defaults to the Google OIDC IdP.
-     * Structure is documented below.
-     * @return builder
-     */
-    def workforceIdentityFederationConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceWorkforceIdentityFederationConfigArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.InstanceArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstanceWorkforceIdentityFederationConfigArgs.builder
-      builder.workforceIdentityFederationConfig(args(argsBuilder).build)
-
   def InstanceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.securesourcemanager.InstanceIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securesourcemanager.InstanceIamBindingArgs.builder
@@ -90,24 +57,12 @@ object securesourcemanager:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.gcp.securesourcemanager.InstanceIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceIamBindingConditionArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.InstanceIamBindingArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstanceIamBindingConditionArgs.builder
-      builder.condition(args(argsBuilder).build)
-
   def InstanceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.securesourcemanager.InstanceIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securesourcemanager.InstanceIamMemberArgs.builder
     com.pulumi.gcp.securesourcemanager.InstanceIamMember(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.gcp.securesourcemanager.InstanceIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceIamMemberConditionArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.InstanceIamMemberArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstanceIamMemberConditionArgs.builder
-      builder.condition(args(argsBuilder).build)
 
   def InstanceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.securesourcemanager.InstanceIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -131,27 +86,6 @@ object securesourcemanager:
     com.pulumi.gcp.securesourcemanager.Repository(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.gcp.securesourcemanager.RepositoryArgs.Builder)
-    /**
-     * @param initialConfig Initial configurations for the repository.
-     * Structure is documented below.
-     * @return builder
-     */
-    def initialConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryInitialConfigArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.RepositoryArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryInitialConfigArgs.builder
-      builder.initialConfig(args(argsBuilder).build)
-
-    /**
-     * @param scanConfig Provides configuration for scanning.
-     * Structure is documented below.
-     * @return builder
-     */
-    def scanConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.RepositoryArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.builder
-      builder.scanConfig(args(argsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Secure Source Manager Repository. Each of these resources serves a different use case:
@@ -466,12 +400,6 @@ object securesourcemanager:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.gcp.securesourcemanager.RepositoryIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamBindingConditionArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.RepositoryIamBindingArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamBindingConditionArgs.builder
-      builder.condition(args(argsBuilder).build)
-
   /**
    * Three different resources help you manage your IAM policy for Secure Source Manager Repository. Each of these resources serves a different use case:
    * 
@@ -784,12 +712,6 @@ object securesourcemanager:
     com.pulumi.gcp.securesourcemanager.RepositoryIamMember(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.gcp.securesourcemanager.RepositoryIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamMemberConditionArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.RepositoryIamMemberArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamMemberConditionArgs.builder
-      builder.condition(args(argsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Secure Source Manager Repository. Each of these resources serves a different use case:
@@ -1134,123 +1056,3 @@ object securesourcemanager:
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.securesourcemanager.outputs.GetRepositoryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.GetRepositoryIamPolicyPlainArgs.builder
       com.pulumi.gcp.securesourcemanager.SecuresourcemanagerFunctions.getRepositoryIamPolicyPlain(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.securesourcemanager.inputs.HookState.Builder)
-    /**
-     * @param pushOption The trigger option for push events.
-     * Structure is documented below.
-     * @return builder
-     */
-    def pushOption(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.HookPushOptionArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.inputs.HookState.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.HookPushOptionArgs.builder
-      builder.pushOption(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.securesourcemanager.inputs.InstanceIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceIamBindingConditionArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.inputs.InstanceIamBindingState.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstanceIamBindingConditionArgs.builder
-      builder.condition(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.securesourcemanager.inputs.InstanceIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceIamMemberConditionArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.inputs.InstanceIamMemberState.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstanceIamMemberConditionArgs.builder
-      builder.condition(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigArgs.Builder)
-    /**
-     * @param customHostConfig Custom host configuration for the instance.
-     * Structure is documented below.
-     * @return builder
-     */
-    def customHostConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigCustomHostConfigArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigCustomHostConfigArgs.builder
-      builder.customHostConfig(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.securesourcemanager.inputs.InstanceState.Builder)
-    /**
-     * @param hostConfigs A list of hostnames for this instance.
-     * Structure is documented below.
-     * @return builder
-     */
-    def hostConfigs(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceHostConfigArgs.Builder]*):
-        com.pulumi.gcp.securesourcemanager.inputs.InstanceState.Builder =
-      def argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstanceHostConfigArgs.builder
-      builder.hostConfigs(args.map(_(argsBuilder).build)*)
-
-    /**
-     * @param privateConfig Private settings for private instance.
-     * Structure is documented below.
-     * @return builder
-     */
-    def privateConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.inputs.InstanceState.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigArgs.builder
-      builder.privateConfig(args(argsBuilder).build)
-
-    /**
-     * @param workforceIdentityFederationConfig Configuration for Workforce Identity Federation to support third party identity provider.
-     * If unset, defaults to the Google OIDC IdP.
-     * Structure is documented below.
-     * @return builder
-     */
-    def workforceIdentityFederationConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceWorkforceIdentityFederationConfigArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.inputs.InstanceState.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstanceWorkforceIdentityFederationConfigArgs.builder
-      builder.workforceIdentityFederationConfig(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamBindingConditionArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamBindingState.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamBindingConditionArgs.builder
-      builder.condition(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamMemberConditionArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamMemberState.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamMemberConditionArgs.builder
-      builder.condition(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.Builder)
-    /**
-     * @param secretScanConfig Configuration for secret scanning.
-     * Structure is documented below.
-     * @return builder
-     */
-    def secretScanConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigSecretScanConfigArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigSecretScanConfigArgs.builder
-      builder.secretScanConfig(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.gcp.securesourcemanager.inputs.RepositoryState.Builder)
-    /**
-     * @param initialConfig Initial configurations for the repository.
-     * Structure is documented below.
-     * @return builder
-     */
-    def initialConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryInitialConfigArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.inputs.RepositoryState.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryInitialConfigArgs.builder
-      builder.initialConfig(args(argsBuilder).build)
-
-    /**
-     * @param scanConfig Provides configuration for scanning.
-     * Structure is documented below.
-     * @return builder
-     */
-    def scanConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.Builder]):
-        com.pulumi.gcp.securesourcemanager.inputs.RepositoryState.Builder =
-      val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.builder
-      builder.scanConfig(args(argsBuilder).build)
-
-    /**
-     * @param uris URIs for the repository.
-     * Structure is documented below.
-     * @return builder
-     */
-    def uris(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryUriArgs.Builder]*):
-        com.pulumi.gcp.securesourcemanager.inputs.RepositoryState.Builder =
-      def argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryUriArgs.builder
-      builder.uris(args.map(_(argsBuilder).build)*)

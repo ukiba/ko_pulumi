@@ -74,16 +74,6 @@ object digitaltwins:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.azure.digitaltwins.InstanceArgs.Builder)
-    /**
-     * @param identity An `identity` block as defined below.
-     * @return builder
-     */
-    def identity(args: Endofunction[com.pulumi.azure.digitaltwins.inputs.InstanceIdentityArgs.Builder]):
-        com.pulumi.azure.digitaltwins.InstanceArgs.Builder =
-      val argsBuilder = com.pulumi.azure.digitaltwins.inputs.InstanceIdentityArgs.builder
-      builder.identity(args(argsBuilder).build)
-
   /** Manages a Digital Twins Time Series Database Connection. */
   def TimeSeriesDatabaseConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.digitaltwins.TimeSeriesDatabaseConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -94,13 +84,3 @@ object digitaltwins:
     com.pulumi.azure.digitaltwins.TimeSeriesDatabaseConnection(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.azure.digitaltwins.inputs.InstanceState.Builder)
-    /**
-     * @param identity An `identity` block as defined below.
-     * @return builder
-     */
-    def identity(args: Endofunction[com.pulumi.azure.digitaltwins.inputs.InstanceIdentityArgs.Builder]):
-        com.pulumi.azure.digitaltwins.inputs.InstanceState.Builder =
-      val argsBuilder = com.pulumi.azure.digitaltwins.inputs.InstanceIdentityArgs.builder
-      builder.identity(args(argsBuilder).build)

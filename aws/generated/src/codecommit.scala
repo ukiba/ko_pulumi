@@ -76,23 +76,3 @@ object codecommit:
     com.pulumi.aws.codecommit.Trigger(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.aws.codecommit.TriggerArgs.Builder)
-    /**
-     * @param triggers The name of the trigger.
-     * @return builder
-     */
-    def triggers(args: Endofunction[com.pulumi.aws.codecommit.inputs.TriggerTriggerArgs.Builder]*):
-        com.pulumi.aws.codecommit.TriggerArgs.Builder =
-      def argsBuilder = com.pulumi.aws.codecommit.inputs.TriggerTriggerArgs.builder
-      builder.triggers(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.aws.codecommit.inputs.TriggerState.Builder)
-    /**
-     * @param triggers The name of the trigger.
-     * @return builder
-     */
-    def triggers(args: Endofunction[com.pulumi.aws.codecommit.inputs.TriggerTriggerArgs.Builder]*):
-        com.pulumi.aws.codecommit.inputs.TriggerState.Builder =
-      def argsBuilder = com.pulumi.aws.codecommit.inputs.TriggerTriggerArgs.builder
-      builder.triggers(args.map(_(argsBuilder).build)*)

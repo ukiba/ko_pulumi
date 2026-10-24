@@ -26,16 +26,6 @@ object role:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.azure.role.DefinitionArgs.Builder)
-    /**
-     * @param permissions A `permissions` block as defined below.
-     * @return builder
-     */
-    def permissions(args: Endofunction[com.pulumi.azure.role.inputs.DefinitionPermissionArgs.Builder]*):
-        com.pulumi.azure.role.DefinitionArgs.Builder =
-      def argsBuilder = com.pulumi.azure.role.inputs.DefinitionPermissionArgs.builder
-      builder.permissions(args.map(_(argsBuilder).build)*)
-
   object RoleFunctions:
     // Pulumi methods are reproduced as Scala methods.
     // Java methods cause Scala warnings under -Yexplicit-nulls flag
@@ -54,13 +44,3 @@ object role:
         java.util.concurrent.CompletableFuture[com.pulumi.azure.role.outputs.GetRoleDefinitionResult] =
       val argsBuilder = com.pulumi.azure.role.inputs.GetRoleDefinitionPlainArgs.builder
       com.pulumi.azure.role.RoleFunctions.getRoleDefinitionPlain(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.azure.role.inputs.DefinitionState.Builder)
-    /**
-     * @param permissions A `permissions` block as defined below.
-     * @return builder
-     */
-    def permissions(args: Endofunction[com.pulumi.azure.role.inputs.DefinitionPermissionArgs.Builder]*):
-        com.pulumi.azure.role.inputs.DefinitionState.Builder =
-      def argsBuilder = com.pulumi.azure.role.inputs.DefinitionPermissionArgs.builder
-      builder.permissions(args.map(_(argsBuilder).build)*)

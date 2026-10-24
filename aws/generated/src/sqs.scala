@@ -38,16 +38,6 @@ object sqs:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.aws.sqs.QueuePolicyArgs.Builder)
-    /**
-     * @param policy JSON policy for the SQS queue. For more information about building AWS IAM policy documents with Terraform, see the AWS IAM Policy Document Guide. Ensure that `Version = &#34;2012-10-17&#34;` is set in the policy or AWS may hang in creating the queue.
-     * @return builder
-     */
-    def policy(args: Endofunction[com.pulumi.aws.sqs.inputs.PolicyDocumentArgs.Builder]):
-        com.pulumi.aws.sqs.QueuePolicyArgs.Builder =
-      val argsBuilder = com.pulumi.aws.sqs.inputs.PolicyDocumentArgs.builder
-      builder.policy(args(argsBuilder).build)
-
   /** Provides a SQS Queue Redrive Allow Policy resource. */
   def RedriveAllowPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sqs.RedriveAllowPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -113,19 +103,3 @@ object sqs:
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sqs.outputs.GetQueuesResult] =
       val argsBuilder = com.pulumi.aws.sqs.inputs.GetQueuesPlainArgs.builder
       com.pulumi.aws.sqs.SqsFunctions.getQueuesPlain(args(argsBuilder).build)
-
-  extension (builder: com.pulumi.aws.sqs.inputs.PolicyDocumentArgs.Builder)
-    def Statement(args: Endofunction[com.pulumi.aws.iam.inputs.PolicyStatementArgs.Builder]*):
-        com.pulumi.aws.sqs.inputs.PolicyDocumentArgs.Builder =
-      def argsBuilder = com.pulumi.aws.iam.inputs.PolicyStatementArgs.builder
-      builder.Statement(args.map(_(argsBuilder).build)*)
-
-  extension (builder: com.pulumi.aws.sqs.inputs.QueuePolicyState.Builder)
-    /**
-     * @param policy JSON policy for the SQS queue. For more information about building AWS IAM policy documents with Terraform, see the AWS IAM Policy Document Guide. Ensure that `Version = &#34;2012-10-17&#34;` is set in the policy or AWS may hang in creating the queue.
-     * @return builder
-     */
-    def policy(args: Endofunction[com.pulumi.aws.sqs.inputs.PolicyDocumentArgs.Builder]):
-        com.pulumi.aws.sqs.inputs.QueuePolicyState.Builder =
-      val argsBuilder = com.pulumi.aws.sqs.inputs.PolicyDocumentArgs.builder
-      builder.policy(args(argsBuilder).build)

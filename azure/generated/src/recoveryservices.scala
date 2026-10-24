@@ -41,36 +41,6 @@ object recoveryservices:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  extension (builder: com.pulumi.azure.recoveryservices.VaultArgs.Builder)
-    /**
-     * @param encryption An `encryption` block as defined below. Required with `identity`.
-     * 
-     * &gt; **Note:** Once Encryption with your own key has been Enabled it&#39;s not possible to Disable it.
-     * @return builder
-     */
-    def encryption(args: Endofunction[com.pulumi.azure.recoveryservices.inputs.VaultEncryptionArgs.Builder]):
-        com.pulumi.azure.recoveryservices.VaultArgs.Builder =
-      val argsBuilder = com.pulumi.azure.recoveryservices.inputs.VaultEncryptionArgs.builder
-      builder.encryption(args(argsBuilder).build)
-
-    /**
-     * @param identity An `identity` block as defined below.
-     * @return builder
-     */
-    def identity(args: Endofunction[com.pulumi.azure.recoveryservices.inputs.VaultIdentityArgs.Builder]):
-        com.pulumi.azure.recoveryservices.VaultArgs.Builder =
-      val argsBuilder = com.pulumi.azure.recoveryservices.inputs.VaultIdentityArgs.builder
-      builder.identity(args(argsBuilder).build)
-
-    /**
-     * @param monitoring A `monitoring` block as defined below.
-     * @return builder
-     */
-    def monitoring(args: Endofunction[com.pulumi.azure.recoveryservices.inputs.VaultMonitoringArgs.Builder]):
-        com.pulumi.azure.recoveryservices.VaultArgs.Builder =
-      val argsBuilder = com.pulumi.azure.recoveryservices.inputs.VaultMonitoringArgs.builder
-      builder.monitoring(args(argsBuilder).build)
-
   /** Manages an association of a Resource Guard and Recovery Services Vault. */
   def VaultResourceGuardAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.recoveryservices.VaultResourceGuardAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -78,33 +48,3 @@ object recoveryservices:
     com.pulumi.azure.recoveryservices.VaultResourceGuardAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
-
-  extension (builder: com.pulumi.azure.recoveryservices.inputs.VaultState.Builder)
-    /**
-     * @param encryption An `encryption` block as defined below. Required with `identity`.
-     * 
-     * &gt; **Note:** Once Encryption with your own key has been Enabled it&#39;s not possible to Disable it.
-     * @return builder
-     */
-    def encryption(args: Endofunction[com.pulumi.azure.recoveryservices.inputs.VaultEncryptionArgs.Builder]):
-        com.pulumi.azure.recoveryservices.inputs.VaultState.Builder =
-      val argsBuilder = com.pulumi.azure.recoveryservices.inputs.VaultEncryptionArgs.builder
-      builder.encryption(args(argsBuilder).build)
-
-    /**
-     * @param identity An `identity` block as defined below.
-     * @return builder
-     */
-    def identity(args: Endofunction[com.pulumi.azure.recoveryservices.inputs.VaultIdentityArgs.Builder]):
-        com.pulumi.azure.recoveryservices.inputs.VaultState.Builder =
-      val argsBuilder = com.pulumi.azure.recoveryservices.inputs.VaultIdentityArgs.builder
-      builder.identity(args(argsBuilder).build)
-
-    /**
-     * @param monitoring A `monitoring` block as defined below.
-     * @return builder
-     */
-    def monitoring(args: Endofunction[com.pulumi.azure.recoveryservices.inputs.VaultMonitoringArgs.Builder]):
-        com.pulumi.azure.recoveryservices.inputs.VaultState.Builder =
-      val argsBuilder = com.pulumi.azure.recoveryservices.inputs.VaultMonitoringArgs.builder
-      builder.monitoring(args(argsBuilder).build)
