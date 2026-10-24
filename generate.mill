@@ -30,8 +30,8 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
     // rendered in memory before writing, so that a failure does not leave a mix of new and old files
     val extObjects = extObjectsOf(packageMembers)
-    val contents = renderPackageFiles(packageMembers) ++ renderExtFiles(extObjects) ++
-        renderSyntaxFiles(extObjects, packageMembers)
+    val contents = renderPackageFiles(packageMembers) ++ renderExtFiles(extObjects) :+
+        renderSyntaxFile(extObjects, packageMembers)
     val written = contents.map(writeIfChanged).sorted
     deleteStaleFiles(written)
     written
@@ -133,36 +133,22 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
     (scalaFile, header + members.map(_.text).mkString("\n"))
 
   /*
-    The extensions are in their own objects, apart from the resources and functions, to avoid `Class too large` error
-    from JVM's per-class limit of 65535 constant pool entries.
-    e.g. pulumi-cloudflare 6.23.1 has a single package; an object holding all of it takes 74% of the limit,
-    while pulumi-java spreads the package over 14,243 classes.
+    The extensions of a package are in `object <pkg>_ext`, apart from its resources and functions, so that an
+    extension method named `identity` (e.g. gcp.storage) does not shadow the `identity` in their default arguments.
+    Users don't see the name, since syntax.all exports the methods.
 
-    The objects are `<pkg>_ext` when the extension methods fit in maxExtMethodsPerObject,
-    otherwise `<pkg>_ext1`, `<pkg>_ext2`, ...; users don't see the names, since syntax.all exports the methods.
+    No object or syntax file is split by size. Splitting kept classes below JVM's per-class limit of 65535 constant
+    pool entries: the extensions into `<pkg>_ext1`, `<pkg>_ext2`, ..., and the syntax file by method name.
+    It is not needed, since inline methods emit no bytecode: the largest generated class,
+    cloudflare's CloudflareFunctions$ with the getters of the default arguments, takes 27% of the limit.
   */
   case class ExtObject(name: String, members: Vector[ResourceArgsMember])
-
-  // about 22 constant pool entries per extension method; the largest object takes 29% of the limit (aws lex_ext1)
-  val maxExtMethodsPerObject = 1000
 
   def extObjectsOf(packageMembers: Map[Seq[String], Vector[Member]]): Seq[ExtObject] =
     packageMembers.toSeq.flatMap: (packageComps, members) =>
       val extMembers = members.collect:
         case member: ResourceArgsMember => member
-
-      // greedy, in the scan order; an extension block is not split
-      val chunks = extMembers.foldLeft(Vector.empty[Vector[ResourceArgsMember]]): (chunks, member) =>
-        chunks.lastOption match
-          case Some(last) if last.map(_.names.size).sum + member.names.size <= maxExtMethodsPerObject =>
-            chunks.init :+ (last :+ member)
-          case _ =>
-            chunks :+ Vector(member)
-
-      val baseName = s"${packageComps.last}_ext"
-      chunks match
-        case Vector(chunk) => Seq(ExtObject(baseName, chunk))
-        case _             => chunks.zipWithIndex.map((chunk, i) => ExtObject(s"$baseName${i + 1}", chunk))
+      Option.when(extMembers.nonEmpty)(ExtObject(s"${packageComps.last}_ext", extMembers))
 
   def renderExtFiles(extObjects: Seq[ExtObject]): Seq[(Path, String)] =
     extObjects.map: extObject =>
@@ -174,33 +160,12 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
         |""".stripMargin.dropWhile(_ == '\n')  // drop the leading empty line
       (dstRoot.resolve(s"${extObject.name}.scala"), header + extObject.members.map(_.text).mkString("\n"))
 
-  // support `jp.ukiba.ko_pulumi.$packageName.syntax.all.*`
-  def renderSyntaxFiles(extObjects: Seq[ExtObject],
-      packageMembers: Map[Seq[String], Vector[Member]]): Seq[(Path, String)] =
+  // support `jp.ukiba.ko_pulumi.$packageName.syntax.all.*`, in one file (see ExtObject for why it is not split)
+  def renderSyntaxFile(extObjects: Seq[ExtObject],
+      packageMembers: Map[Seq[String], Vector[Member]]): (Path, String) =
     case class ExtMethod(cls: String, method: String)
     object ExtMethod:
       given Ordering[ExtMethod] = Ordering.by(e => (e.cls, e.method))
-
-    // split into multiple package files, to avoid `Class too large` error,
-    // caused by JVM's per-class limit (65535 methods, 64K constant pool entries).
-    // the sizes are not checked here, since the compilation fails loudly when a range outgrows the limit
-    case class SplitConf(range: (from: Char, to: Char), fileName: String):
-      def contains(name: String): Boolean =
-        val head = name.stripPrefix("`").head  // escapeScalaKeyword wraps keyword in backticks
-        head >= range.from && head <= range.to
-      def contains(extMethod: ExtMethod): Boolean = contains(extMethod.method)
-    val splitConfs = Seq(
-      SplitConf(('a', 'e'), "syntax/all_a.scala"),
-      SplitConf(('f', 'j'), "syntax/all_f.scala"),
-      SplitConf(('k', 'o'), "syntax/all_k.scala"),
-      SplitConf(('p', 't'), "syntax/all_p.scala"),
-      SplitConf(('u', 'z'), "syntax/all_u.scala"),
-      // uppercase letters and `_`, e.g. iam PolicyDocumentArgs.Builder.Statement
-      // not all_A.scala, which collides with all_a.scala on case-insensitive file systems
-      SplitConf(('A', '_'), "syntax/all_nonlowercase.scala"),
-    )
-
-    val `all.scala` = dstRoot.resolve("syntax/all.scala")
 
     // CustomResourceMember is not exported,
     // to avoid `two or more overloaded variants of method Cluster have default arguments`
@@ -216,10 +181,6 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       case FunctionsMember(_, name, _) <- members
     yield s"${packageComps.last}.$name").toSet
 
-    // don't create empty files
-    val splitFiles = splitConfs.filter(conf => exportedExtMethods.exists(conf.contains)).map: conf =>
-      (conf = conf, file = dstRoot.resolve(conf.fileName))
-
     val header = s"""
       |package jp.ukiba.ko_pulumi.$packageName.syntax.all
       |
@@ -227,16 +188,12 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       |
       |""".stripMargin.dropWhile(_ == '\n')  // drop the leading empty line
 
-    val mainContent = header + exportedFuncs.toSeq.sorted.map: func =>
+    val funcExports = exportedFuncs.toSeq.sorted.map: func =>
       s"export ko_pulumi.$packageName.$func\n"
-    .mkString
+    val extExports = exportedExtMethods.toSeq.sorted.map: extMethod =>
+      s"export ko_pulumi.$packageName.${extMethod.cls}.${extMethod.method}\n"
 
-    val splitContents = splitFiles.map: (conf, file) =>
-      (file, header + exportedExtMethods.filter(conf.contains).toSeq.sorted.map: extMethod =>
-        s"export ko_pulumi.$packageName.${extMethod.cls}.${extMethod.method}\n"
-      .mkString)
-
-    (`all.scala`, mainContent) +: splitContents
+    (dstRoot.resolve("syntax/all.scala"), header + (funcExports ++ extExports).mkString)
 
   sealed trait Member:
     def text: String
